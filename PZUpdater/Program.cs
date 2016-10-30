@@ -13,18 +13,6 @@ namespace PZUpdater
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("You are on linux. This program requires dmd to be installed.");
                 Console.ResetColor();
-                //if (System.IO.File.Exists("dmd"))
-                //{
-                //    Console.ForegroundColor = ConsoleColor.Green;
-                //    Console.WriteLine("dmd is installed");
-                //    Console.ResetColor();
-                //}
-                //else
-                //{
-                //    Console.ForegroundColor = ConsoleColor.Red;
-                //    Console.WriteLine("FATAL: dmd is not installed!");
-                //    Console.ResetColor();
-                //}
                 try
                 {
                     Process.Start("rdmd", "--help");
