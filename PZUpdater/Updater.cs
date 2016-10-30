@@ -28,6 +28,8 @@ namespace PZUpdater
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e);
                 Console.ResetColor();
+                client.Cleanup();
+                return;
             }
             try
             {
@@ -42,6 +44,8 @@ namespace PZUpdater
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e);
                 Console.ResetColor();
+                client.Cleanup();
+                return;
             }
             try
             {
@@ -56,6 +60,8 @@ namespace PZUpdater
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e);
                 Console.ResetColor();
+                client.Cleanup();
+                return;
             }
             try
             {
@@ -70,6 +76,8 @@ namespace PZUpdater
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e);
                 Console.ResetColor();
+                client.Cleanup();
+                return;
             }
             client.Cleanup();
         }
