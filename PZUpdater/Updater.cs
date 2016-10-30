@@ -145,7 +145,7 @@ namespace PZUpdater
                 StringBuilder sbItems = new StringBuilder("<Objects>" + Environment.NewLine);
                 StringBuilder sbObjects = new StringBuilder("<Objects>" + Environment.NewLine);
 
-                XDocument doc = XDocument.Parse(wc.DownloadString("https://static.drips.pw/rotmg/production/current/xmlc/Objects.xml"));
+                XDocument doc = XDocument.Parse(wc.DownloadString("http://static.drips.pw/rotmg/production/current/xmlc/Objects.xml"));
                 foreach (XElement elem in doc.Element("Objects").Elements("Object"))
                 {
                     if (elem.Element("Enemy") != null)
