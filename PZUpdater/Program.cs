@@ -7,43 +7,58 @@ namespace PZUpdater
     {
         public static void Main(string[] args)
         {
+            if (!Consts.rabcdasmDir.Exists)
+            {
+                //woah this is pretty bad. Will be dealt with later
+                //Consts.rabcdasmDir.Create();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("FATAL: Your RABCDAsm directory is missing");
+                Console.ResetColor();
+            }
+            if (!System.IO.Directory.Exists(Consts.OUTPUT_DIR))
+            {
+                System.IO.Directory.CreateDirectory(Consts.OUTPUT_DIR);
+            }
+
             if (Consts.IsLinux)
             {
                 Consts.UseDMD = true;
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("You are on linux. This program requires dmd to be installed.");
+                Logger.WriteLine("You are on linux. This program requires dmd to be installed.");
                 Console.ResetColor();
-                try
-                {
-                    //Process.Start("rdmd", "--help");
-                    Process p = new Process();
-                    p.StartInfo.FileName = "rdmd";
-                    p.StartInfo.Arguments = "--help";
-                    p.StartInfo.RedirectStandardOutput = true;
-                    p.StartInfo.RedirectStandardError = true;
-                    p.Start();
-                    p.WaitForExit();
+                //try
+                //{
+                //    Process p = new Process();
+                //    p.StartInfo.FileName = "rdmd";
+                //    p.StartInfo.Arguments = "--help";
+                //    p.StartInfo.RedirectStandardOutput = true;
+                //    p.StartInfo.RedirectStandardError = true;
+                //    p.Start();
+                //    p.WaitForExit();
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("dmd is installed");
-                    Console.ResetColor();
-                }
-                catch
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("FATAL: dmd is not installed!");
-                    Console.ResetColor();
-                }
+                //    Console.ForegroundColor = ConsoleColor.Green;
+                //    Logger.WriteLine("dmd is installed");
+                //    Console.ResetColor();
+                //}
+                //catch
+                //{
+                //    Console.ForegroundColor = ConsoleColor.Red;
+                //    Logger.WriteLine("FATAL: dmd is not installed!");
+                //    Console.ResetColor();
+                //}
             }
             else
             {
                 Consts.UseDMD = false;
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("You are not on linux.");
+                Logger.WriteLine("You are not on linux.");
                 Console.ResetColor();
             }
             new Updater().Update();
+
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
         }
 
         public static void RunCommand(string workingDirectory, string file, string args)
@@ -51,7 +66,7 @@ namespace PZUpdater
             try
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("> " + file + " " + args);
+                Logger.WriteLine("> " + file + " " + args);
                 ProcessStartInfo i = new ProcessStartInfo();
                 i.CreateNoWindow = true;
                 i.WindowStyle = ProcessWindowStyle.Hidden;
@@ -70,18 +85,18 @@ namespace PZUpdater
                 string se = p.StandardError.ReadToEnd();
                 if (!string.IsNullOrWhiteSpace(so))
                 {
-                    Console.WriteLine(">> " + so);
+                    Logger.WriteLine(">> " + so);
                 }
                 if (!string.IsNullOrWhiteSpace(se))
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine(">> " + se);
+                    Logger.WriteLine(">> " + se);
                 }
             }
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error running command!");
+                Logger.WriteLine("Error running command!");
                 Console.ResetColor();
                 throw;
             }

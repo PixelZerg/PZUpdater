@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace PZUpdater
 {
-    public class Client
+    public class Client : IDisposable
     {
 
-        public FileInfo clientFile = new FileInfo("client.swf");
+        public FileInfo clientFile = new FileInfo(Consts.RABCDASM_DIR + "client.swf");
 
         public List<FileInfo> abcFiles = new List<FileInfo>();
         public List<DirectoryInfo> expDirs = new List<DirectoryInfo>();
@@ -24,7 +24,7 @@ namespace PZUpdater
 
         public void Fetch()
         {
-            Console.Write("Fetching client...");
+            Logger.Write("Fetching client...");
             try
             {
                 if (clientFile.Exists)
@@ -35,71 +35,83 @@ namespace PZUpdater
                 using (WebClient wc = new WebClient())
                 {
                     wc.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
-                    wc.DownloadFile("http://realmeye.com/appspot", "client.swf");
+                    wc.DownloadFile("http://realmeye.com/appspot", clientFile.FullName);
                 }
-                Console.WriteLine("[OK!]");
+                Logger.WriteLine("[OK!]");
             }
             catch
             {
-                Console.WriteLine("[FAIL!]");
+                Logger.WriteLine("[FAIL!]");
+                Logger.UnIndent();
                 throw;
             }
         }
 
         public void Decompile()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Logger.WriteLine("Decompiling client...");
+            Console.ResetColor();
+            Logger.Indent();
+
             if (Consts.UseDMD)
             {
-                Program.RunCommand("rdmd", "abcexport.d \"" + clientFile.FullName + "\"");
+                Program.RunCommand("rdmd", Consts.RABCDASM_DIR+"abcexport.d \"" + clientFile.FullName + "\"");
             }
             else
             {
-                Program.RunCommand("abcexport.exe", "\"" + clientFile.FullName + "\""); //untested
+                Program.RunCommand(Consts.RABCDASM_DIR + "abcexport.exe", "\"" + clientFile.FullName + "\"");
             }
 
-            foreach (FileInfo f in Consts.curDir.GetFiles("*.abc", SearchOption.TopDirectoryOnly))
+            foreach (FileInfo f in Consts.rabcdasmDir.GetFiles("*.abc", SearchOption.TopDirectoryOnly))
             {
                 abcFiles.Add(f);
                 if (Consts.UseDMD)
                 {
-                    Program.RunCommand("rdmd", "rabcdasm.d \"" + f.FullName + "\"");
+                    Program.RunCommand("rdmd", Consts.RABCDASM_DIR + "rabcdasm.d \"" + f.FullName + "\"");
                 }
                 else
                 {
-                    Program.RunCommand("rabcdasm.exe", "\"" + f.FullName + "\""); //untested
+                    Program.RunCommand(Consts.RABCDASM_DIR + "rabcdasm.exe", "\"" + f.FullName + "\"");
                 }
 
-                DirectoryInfo d = new DirectoryInfo(Path.GetFileNameWithoutExtension(f.Name));
+                DirectoryInfo d = new DirectoryInfo(Consts.RABCDASM_DIR + Path.GetFileNameWithoutExtension(f.FullName));
                 if (d.Exists)
                 {
                     expDirs.Add(d);
-                    //ParsePacketIDs(d);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Could not locate the generated directory for \""+f.Name+"\"!");
+                    Logger.WriteLine("Could not locate the generated directory for \""+f.Name+"\"!");
                     Console.ResetColor();
                 }
             }
+
+            Logger.UnIndent();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Logger.WriteLine("Finished decompiling!");
+            
+            Console.ResetColor();
         }
 
-        public string[] LocateGameServerConnection()
+        public string[] GetGameServerConnection()
         {
             foreach (DirectoryInfo d in expDirs)
             {
-                string[] located = LocateGameServerConnectionInDir(d);
+                string[] located = LocateGameServerConnection(d);
                 if (located != null)
                 {
+                    Logger.WriteLine("Successfully located GameServerConnection file!");
                     return located;
                 }
             }
             throw new Exception("Could not locate GameServerConnection");
         }
 
-        private string[] LocateGameServerConnectionInDir(DirectoryInfo d)
+        private string[] LocateGameServerConnection(DirectoryInfo d)
         {
-            Console.Write("Locating GameServerConnection in \""+d.Name+"\"...");
+            Logger.Write("Locating GameServerConnection in \""+d.Name+"\"...");
             string[] raw = null;
 
             FileInfo file = new FileInfo(Path.Combine(d.FullName, "kabam/rotmg/messaging/impl/GameServerConnection.class.asasm"));
@@ -112,7 +124,7 @@ namespace PZUpdater
                 foreach (FileInfo f in d.GetFiles("*.class.asasm", SearchOption.AllDirectories))
                 {
                     string praw = File.ReadAllText(f.FullName);
-                    if (praw.Contains("\"FAILURE\") slotid 1"))
+                    if (praw.Contains(Consts.PACKETIDS_TOP))
                     {
                         file = f;
                         raw = praw.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
@@ -121,12 +133,66 @@ namespace PZUpdater
                 }
                 if (raw == null)
                 {
-                    Console.WriteLine("[FAIL!]");
+                    Logger.WriteLine("[FAIL!]");
                     return null;
                 }
             }
-            Console.WriteLine("[OK!]");
+            Logger.WriteLine("[OK!]");
             return raw;
+        }
+
+        public void Cleanup(bool altMessage = true)
+        {
+            if (!altMessage)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Logger.WriteLine("Cleaning up...");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("Cleaning up...");
+                Console.ResetColor();
+            }
+            try
+            {
+                this.clientFile.Delete();
+            }
+            catch (IOException) { }
+            try
+            {
+                foreach (FileInfo f in this.abcFiles)
+                {
+                    f.Delete();
+                }
+            }
+            catch (IOException) { }
+            try
+            {
+                foreach (DirectoryInfo d in this.expDirs)
+                {
+                    d.Delete(true);
+                }
+            }
+            catch (IOException) { }
+            if (!altMessage)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Logger.WriteLine("Finished cleaning up!");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("[OK!]");
+                Console.ResetColor();
+            }
+        }
+
+        public void Dispose()
+        {
+            this.Cleanup();
         }
     }
 }
