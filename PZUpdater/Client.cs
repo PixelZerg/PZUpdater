@@ -8,7 +8,7 @@ namespace PZUpdater
     public class Client : IDisposable
     {
 
-        public FileInfo clientFile = new FileInfo(System.IO.Path.Combine(Consts.rabcdasmDir.FullName,"client.swf"));
+        public FileInfo clientFile = new FileInfo(System.IO.Path.GetFullPath(System.IO.Path.Combine(Consts.rabcdasmDir.FullName,"client.swf")));
 
         public List<FileInfo> abcFiles = new List<FileInfo>();
         public List<DirectoryInfo> expDirs = new List<DirectoryInfo>();
