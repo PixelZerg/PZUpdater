@@ -15,7 +15,15 @@ namespace PZUpdater
                 Console.ResetColor();
                 try
                 {
-                    Process.Start("rdmd", "--help");
+                    //Process.Start("rdmd", "--help");
+                    Process p = new Process();
+                    p.StartInfo.FileName = "rdmd";
+                    p.StartInfo.Arguments = "--help";
+                    p.StartInfo.RedirectStandardOutput = true;
+                    p.StartInfo.RedirectStandardError = true;
+                    p.Start();
+                    p.WaitForExit();
+
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("dmd is installed");
                     Console.ResetColor();
