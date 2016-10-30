@@ -73,22 +73,33 @@ namespace PZUpdater
                 if (d.Exists)
                 {
                     expDirs.Add(d);
-                    ParsePacketIDs(d);
+                    //ParsePacketIDs(d);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Could not locate the generated directory!");
+                    Console.WriteLine("Could not locate the generated directory for \""+f.Name+"\"!");
                     Console.ResetColor();
                 }
             }
         }
 
-        public void ParsePacketIDs(DirectoryInfo d)
+        public string[] LocateGameServerConnection()
         {
-            Console.WriteLine("Parsing packet IDs for \"" + d.Name + "\"...");
+            foreach (DirectoryInfo d in expDirs)
+            {
+                string[] located = LocateGameServerConnectionInDir(d);
+                if (located != null)
+                {
+                    return located;
+                }
+            }
+            throw new Exception("Could not locate GameServerConnection");
+        }
 
-            Console.Write("\tLocating GameServerConnection...");
+        private string[] LocateGameServerConnectionInDir(DirectoryInfo d)
+        {
+            Console.Write("Locating GameServerConnection in \""+d.Name+"\"...");
             string[] raw = null;
 
             FileInfo file = new FileInfo(Path.Combine(d.FullName, "kabam/rotmg/messaging/impl/GameServerConnection.class.asasm"));
@@ -104,21 +115,18 @@ namespace PZUpdater
                     if (praw.Contains("\"FAILURE\") slotid 1"))
                     {
                         file = f;
-                        raw = praw.Split(new string[]{ Environment.NewLine }, StringSplitOptions.None);
+                        raw = praw.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                         break;
                     }
                 }
                 if (raw == null)
                 {
                     Console.WriteLine("[FAIL!]");
-                    return;
+                    return null;
                 }
             }
             Console.WriteLine("[OK!]");
-
-            Console.WriteLine(string.Join(Environment.NewLine, raw));
+            return raw;
         }
-
-
     }
 }

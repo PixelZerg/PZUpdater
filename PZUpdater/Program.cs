@@ -7,9 +7,34 @@ namespace PZUpdater
     {
         public static void Main(string[] args)
         {
-            Client c = new Client();
-            c.Fetch();
-            c.Decompile();
+            if (Consts.IsLinux)
+            {
+                Consts.UseDMD = true;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("You are on linux. This program requires dmd to be installed.");
+                Console.ResetColor();
+                if (System.IO.File.Exists("dmd"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("dmd is installed");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("FATAL: dmd is not installed!");
+                    Console.ResetColor();
+                }
+            }
+            else
+            {
+                Consts.UseDMD = false;
+
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("You are not on linux.");
+                Console.ResetColor();
+            }
+            new Updater().Update();
         }
 
         public static void RunCommand(string workingDirectory, string file, string args)
