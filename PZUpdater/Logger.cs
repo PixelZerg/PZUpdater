@@ -19,6 +19,8 @@ namespace PZUpdater
 
         public static void WriteLine(string ss)
         {
+            if (Consts.Quiet) return;
+
             if (wasNewLine)
             {
                 string[] split = ss.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
@@ -44,6 +46,8 @@ namespace PZUpdater
 
         public static void Write(string s)
         {
+            if (Consts.Quiet) return;
+
             if (wasNewLine)
             {
                 for (int i = 0; i < indent; i++)
@@ -57,11 +61,15 @@ namespace PZUpdater
 
         public static void Indent()
         {
+            if (Consts.Quiet) return;
+
             indent++;
         }
 
         public static void UnIndent()
         {
+            if (Consts.Quiet) return;
+
             if (indent > 0)
             {
                 indent--;

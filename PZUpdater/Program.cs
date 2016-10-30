@@ -7,6 +7,34 @@ namespace PZUpdater
     {
         public static void Main(string[] args)
         {
+            bool overrideDMD = false;
+            foreach (string arg in args)
+            {
+                if (arg == "--help" || arg == "-h" || arg == "?")
+                {
+                    Console.WriteLine("Arguments:");
+                    Console.WriteLine("\t-q, --quet     = Quiet mode, output will be supressed.");
+                    Console.WriteLine("\t--nodmd        = Regardless of your operating system, using dmd will be disabled.");
+                    Console.WriteLine("\t--dmd          = Regardless of your operating system, using dmd will be enabled.");
+                    Console.WriteLine("\t--help, ?, -h  = Show this message.");
+                    return;
+                }
+                if (arg == "-q" || arg == "--quiet")
+                {
+                    Consts.Quiet = true;
+                }
+                if (arg == "--nodmd")
+                {
+                    Consts.UseDMD = false;
+                    overrideDMD = true;
+                }
+                if (arg == "--dmd")
+                {
+                    Consts.UseDMD = true;
+                    overrideDMD = true;
+                }
+            }
+
             if (!Consts.rabcdasmDir.Exists)
             {
                 //woah this is pretty bad. Will be dealt with later
@@ -20,40 +48,23 @@ namespace PZUpdater
                 System.IO.Directory.CreateDirectory(Consts.OUTPUT_DIR);
             }
 
-            if (Consts.IsLinux)
+            if (!overrideDMD)
             {
-                Consts.UseDMD = true;
-                Console.ForegroundColor = ConsoleColor.White;
-                Logger.WriteLine("You are on linux. This program requires dmd to be installed.");
-                Console.ResetColor();
-                //try
-                //{
-                //    Process p = new Process();
-                //    p.StartInfo.FileName = "rdmd";
-                //    p.StartInfo.Arguments = "--help";
-                //    p.StartInfo.RedirectStandardOutput = true;
-                //    p.StartInfo.RedirectStandardError = true;
-                //    p.Start();
-                //    p.WaitForExit();
+                if (Consts.IsLinux)
+                {
+                    Consts.UseDMD = true;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Logger.WriteLine("You are on linux. This program requires dmd to be installed.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Consts.UseDMD = false;
 
-                //    Console.ForegroundColor = ConsoleColor.Green;
-                //    Logger.WriteLine("dmd is installed");
-                //    Console.ResetColor();
-                //}
-                //catch
-                //{
-                //    Console.ForegroundColor = ConsoleColor.Red;
-                //    Logger.WriteLine("FATAL: dmd is not installed!");
-                //    Console.ResetColor();
-                //}
-            }
-            else
-            {
-                Consts.UseDMD = false;
-
-                Console.ForegroundColor = ConsoleColor.White;
-                Logger.WriteLine("You are not on linux.");
-                Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Logger.WriteLine("You are not on linux.");
+                    Console.ResetColor();
+                }
             }
             new Updater().Update();
 

@@ -214,10 +214,10 @@ namespace PZUpdater
             foreach (var pair in packets)
             {
                 string name = GetPacketIdName(pair.Key.Key);
-                sb.AppendLine("\t<Packet>");
-                sb.AppendLine("\t\t<PacketName>" + ((name != null) ? name : pair.Key.Value) + "</PacketName>");
-                sb.AppendLine("\t\t<PacketID>" + pair.Value + "</PacketID>");
-                sb.AppendLine("\t</Packet>");
+                sb.AppendLine("  <Packet>");
+                sb.AppendLine("    <PacketName>" + ((name != null) ? name : pair.Key.Value) + "</PacketName>");
+                sb.AppendLine("    <PacketID>" + pair.Value + "</PacketID>");
+                sb.AppendLine("  </Packet>");
             }
             sb.AppendLine("</Packets>");
             return sb.ToString();
