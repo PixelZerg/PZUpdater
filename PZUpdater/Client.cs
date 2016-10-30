@@ -8,7 +8,7 @@ namespace PZUpdater
     public class Client : IDisposable
     {
 
-        public FileInfo clientFile = new FileInfo(System.IO.Path.GetFullPath(System.IO.Path.Combine(Consts.rabcdasmDir.FullName,"client.swf")));
+        public FileInfo clientFile = new FileInfo((Consts.RABCDASM_DIR + "client.swf").FixPath());
 
         public List<FileInfo> abcFiles = new List<FileInfo>();
         public List<DirectoryInfo> expDirs = new List<DirectoryInfo>();
@@ -56,7 +56,7 @@ namespace PZUpdater
 
             if (Consts.UseDMD)
             {
-                Program.RunCommand("rdmd", Consts.RABCDASM_DIR_ALT +"abcexport.d \"" + clientFile.FullName + "\"");
+                Program.RunCommand("rdmd", (Consts.RABCDASM_DIR_ALT + "abcexport.d").FixPath() +" \"" + clientFile.FullName.FixPath() + "\"");
             }
             else
             {
@@ -68,14 +68,14 @@ namespace PZUpdater
                 abcFiles.Add(f);
                 if (Consts.UseDMD)
                 {
-                    Program.RunCommand("rdmd", Consts.RABCDASM_DIR_ALT + "rabcdasm.d \"" + f.FullName + "\"");
+                    Program.RunCommand("rdmd", (Consts.RABCDASM_DIR_ALT + "rabcdasm.d").FixPath()+" \"" + f.FullName.FixPath() + "\"");
                 }
                 else
                 {
                     Program.RunCommand(Consts.RABCDASM_DIR + "rabcdasm.exe", "\"" + f.FullName + "\"");
                 }
 
-                DirectoryInfo d = new DirectoryInfo(Consts.RABCDASM_DIR + Path.GetFileNameWithoutExtension(f.FullName));
+                DirectoryInfo d = new DirectoryInfo((Consts.RABCDASM_DIR + Path.GetFileNameWithoutExtension(f.FullName)).FixPath());
                 if (d.Exists)
                 {
                     expDirs.Add(d);
@@ -114,7 +114,7 @@ namespace PZUpdater
             Logger.Write("Locating GameServerConnection in \""+d.Name+"\"...");
             string[] raw = null;
 
-            FileInfo file = new FileInfo(Path.Combine(d.FullName, "kabam/rotmg/messaging/impl/GameServerConnection.class.asasm"));
+            FileInfo file = new FileInfo(Path.Combine(d.FullName, "kabam/rotmg/messaging/impl/GameServerConnection.class.asasm").FixPath());
             if (file.Exists)
             {
                 raw = File.ReadAllLines(file.FullName);

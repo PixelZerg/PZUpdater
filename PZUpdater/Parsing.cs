@@ -8,6 +8,11 @@ namespace PZUpdater
 {
     public static class Parsing
     {
+        public static string FixPath(this string s)
+        {
+            return s.Replace('\\', '/');
+        }
+
         public static Uri AbsUri(string baseUrl, string relUrl)
         {
             return new Uri(new Uri(baseUrl), relUrl);
