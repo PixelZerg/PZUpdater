@@ -132,7 +132,7 @@ namespace PZUpdater
                 using (StreamWriter sw = new StreamWriter(Consts.OUTPUT_DIR + "tiles.xml"))
                 {
                     sw.WriteLine("<!--Acquired using PixelZerg's PZUpdater-->");
-                    sw.WriteLine(XDocument.Parse(wc.DownloadString("https://static.drips.pw/rotmg/production/current/xmlc/GroundTypes.xml")).ToString());
+                    sw.WriteLine(XDocument.Parse(wc.DownloadString("http://static.drips.pw/rotmg/production/current/xmlc/GroundTypes.xml")).ToString());
                 }
             }
             Logger.WriteLine("[OK!]");
