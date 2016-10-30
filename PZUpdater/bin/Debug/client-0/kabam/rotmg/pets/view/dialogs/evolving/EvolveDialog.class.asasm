@@ -1,0 +1,194 @@
+class
+ refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolveDialog")
+  extends QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetDialog")
+  implements Multiname("DialogCloser", [PackageNamespace("com.company.assembleegameclient.ui.dialogs")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog")
+  iinit
+   refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolveAnimation")
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 11
+    maxscopedepth 12
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "CloseDialogComponent")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "CloseDialogComponent"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "closeDialogComponent")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "evolveAnimation")
+
+     getlocal0
+     pushstring          "EvolveDialog.title"
+     pushstring          ""
+     pushstring          "ErrorDialog.ok"
+     pushnull
+     pushnull
+     constructsuper      5
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "closeDialogComponent")
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+     getproperty         QName(PackageNamespace(""), "LEFT_BUTTON")
+     callpropvoid        QName(PackageNamespace(""), "add"), 2
+
+     findproperty        QName(PackageNamespace(""), "dialogWidth")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            1
+     add
+     initproperty        QName(PackageNamespace(""), "dialogWidth")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "evolveAnimation") type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolveAnimation") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "closeDialogComponent") type QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "CloseDialogComponent") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "makeUIAndAdd") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog/instance/kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog:makeUIAndAdd"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "box_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolveAnimation")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "drawAdditionalUI") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog/instance/kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog:drawAdditionalUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolveAnimation")
+      getlex              QName(PackageNamespace(""), "dialogWidth")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolveAnimation")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolveAnimation")
+      getlex              QName(PackageNamespace(""), "titleText_")
+      getlex              QName(PackageNamespace(""), "box_")
+      callproperty        QName(PackageNamespace(""), "getBounds"), 1
+      getproperty         QName(PackageNamespace(""), "bottom")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "VERTICAL_SPACE")
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "drawGraphicsTemplate") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog/instance/kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog:drawGraphicsTemplate"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(ProtectedNamespace("kabam.rotmg.pets.view.dialogs:PetDialog"), "drawGraphicsTemplate"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolveAnimation")
+      getlex              QName(PackageNamespace(""), "rect_")
+      callproperty        QName(PackageNamespace(""), "getBounds"), 1
+      getproperty         QName(PackageNamespace(""), "bottom")
+      convert_d
+      setlocal1
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.dialogs:PetDialog"), "petDialogStyler")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "drawLine"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCloseSignal")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog/instance/getCloseSignal"
+    returns QName(PackageNamespace("org.osflash.signals"), "Signal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "closeDialogComponent")
+      callproperty        QName(PackageNamespace(""), "getCloseSignal"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 10
+   maxscopedepth 11
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "VERTICAL_SPACE")
+    pushbyte            6
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "VERTICAL_SPACE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveDialog"), "VERTICAL_SPACE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(6) end
+end ; class

@@ -1,0 +1,219 @@
+class
+ refid "com.company.assembleegameclient.editor:CommandQueue"
+ instance QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandQueue")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.editor:CommandQueue")
+  iinit
+   refid "com.company.assembleegameclient.editor:CommandQueue/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.editor"), PackageInternalNs("com.company.assembleegameclient.editor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.editor:CommandQueue"), StaticProtectedNs("com.company.assembleegameclient.editor:CommandQueue"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandList")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandList")>) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "addCommandList")
+   method
+    refid "com.company.assembleegameclient.editor:CommandQueue/instance/addCommandList"
+    param QName(PackageNamespace("com.company.assembleegameclient.editor"), "CommandList")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "execute"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+      increment_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "undo")
+   method
+    refid "com.company.assembleegameclient.editor:CommandQueue/instance/undo"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+      pushbyte            0
+      ifne                L7
+
+      returnvoid
+
+L7:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_")
+      getlocal0
+      dup
+      setlocal1
+
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+      decrement_i
+      dup
+      setlocal2
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+
+      kill                2
+      kill                1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.editor"), PackageInternalNs("com.company.assembleegameclient.editor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.editor:CommandQueue"), StaticProtectedNs("com.company.assembleegameclient.editor:CommandQueue")])
+      callpropvoid        QName(PackageNamespace(""), "unexecute"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "redo")
+   method
+    refid "com.company.assembleegameclient.editor:CommandQueue/instance/redo"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_")
+      getproperty         QName(PackageNamespace(""), "length")
+      ifne                L9
+
+      returnvoid
+
+L9:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_")
+      getlocal0
+      dup
+      setlocal1
+
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+      dup
+      increment_i
+      setlocal2
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+
+      kill                2
+      kill                1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.editor"), PackageInternalNs("com.company.assembleegameclient.editor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.editor:CommandQueue"), StaticProtectedNs("com.company.assembleegameclient.editor:CommandQueue")])
+      callpropvoid        QName(PackageNamespace(""), "execute"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "com.company.assembleegameclient.editor:CommandQueue/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "currPos")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.editor:CommandQueue/instance#0"), "list_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.editor:CommandQueue/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

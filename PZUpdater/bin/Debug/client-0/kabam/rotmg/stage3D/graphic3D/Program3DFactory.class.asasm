@@ -1,0 +1,298 @@
+class
+ refid "kabam.rotmg.stage3D.graphic3D:Program3DFactory"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "Program3DFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.stage3D.graphic3D:Program3DFactory")
+  iinit
+   refid "kabam.rotmg.stage3D.graphic3D:Program3DFactory/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   optional Utf8("")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal1
+     pushstring          "yoThisIsInternal"
+     ifeq                L11
+
+     findpropstrict      QName(PackageNamespace(""), "Error")
+     pushstring          "Program3DFactory is a singleton. Use Program3DFactory.getInstance()"
+     constructprop       QName(PackageNamespace(""), "Error"), 1
+     throw
+
+L11:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram") type QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Program3DProxy") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "noRepeatProgram") type QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Program3DProxy") end
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    refid "kabam.rotmg.stage3D.graphic3D:Program3DFactory/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      pushnull
+      ifeq                L10
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      callproperty        QName(PackageNamespace(""), "getProgram3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L10:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "noRepeatProgram")
+      pushnull
+      ifeq                L18
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "noRepeatProgram")
+      callproperty        QName(PackageNamespace(""), "getProgram3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L18:
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "instance")
+      pushnull
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "instance")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getProgram")
+   method
+    refid "kabam.rotmg.stage3D.graphic3D:Program3DFactory/instance/getProgram"
+    param QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Context3DProxy")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Program3DProxy")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Program3DProxy")
+      setlocal3
+
+      jump                L79
+
+L6:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      pushnull
+      ifne                L24
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "VertextShader")
+      constructprop       QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "VertextShader"), 0
+      callproperty        QName(PackageNamespace(""), "getVertexProgram"), 0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "FragmentShaderRepeat")
+      constructprop       QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "FragmentShaderRepeat"), 0
+      callproperty        QName(PackageNamespace(""), "getVertexProgram"), 0
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+L24:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Program3DProxy")
+      setlocal3
+
+      jump                L101
+
+L29:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "noRepeatProgram")
+      pushnull
+      ifne                L47
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "noRepeatProgram")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "noRepeatProgram")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "VertextShader")
+      constructprop       QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "VertextShader"), 0
+      callproperty        QName(PackageNamespace(""), "getVertexProgram"), 0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "FragmentShader")
+      constructprop       QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "FragmentShader"), 0
+      callproperty        QName(PackageNamespace(""), "getVertexProgram"), 0
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+L47:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "noRepeatProgram")
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Program3DProxy")
+      setlocal3
+
+      jump                L101
+
+L52:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      pushnull
+      ifne                L70
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "VertextShader")
+      constructprop       QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "VertextShader"), 0
+      callproperty        QName(PackageNamespace(""), "getVertexProgram"), 0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "FragmentShaderRepeat")
+      constructprop       QName(PackageNamespace("kabam.rotmg.stage3D.shaders"), "FragmentShaderRepeat"), 0
+      callproperty        QName(PackageNamespace(""), "getVertexProgram"), 0
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+L70:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "repeatProgram")
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Program3DProxy")
+      setlocal3
+
+      jump                L101
+
+      ; 0x10
+      ; 0x3F
+      ; 0x00
+      ; 0x00
+L79:
+      getlocal2
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "TYPE_REPEAT_ON")
+      getlocal            4
+      ifstrictne          L86
+
+      pushbyte            0
+      jump                L99
+
+L86:
+      getlex              QName(PackageNamespace(""), "TYPE_REPEAT_OFF")
+      getlocal            4
+      ifstrictne          L91
+
+      pushbyte            1
+      jump                L99
+
+L91:
+      jump                L98
+
+      ; 0x24
+      ; 0x02
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L98:
+      pushbyte            2
+L99:
+      kill                4
+      lookupswitch        L52, [L6, L29, L52]
+
+L101:
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D.graphic3D:Program3DFactory/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "TYPE_REPEAT_ON")
+    pushtrue
+    initproperty        QName(PackageNamespace(""), "TYPE_REPEAT_ON")
+
+    findproperty        QName(PackageNamespace(""), "TYPE_REPEAT_OFF")
+    pushfalse
+    initproperty        QName(PackageNamespace(""), "TYPE_REPEAT_OFF")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "instance") slotid 1 type QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "Program3DFactory") end
+ trait const QName(PackageNamespace(""), "TYPE_REPEAT_ON") slotid 2 type QName(PackageNamespace(""), "Boolean") value True() end
+ trait const QName(PackageNamespace(""), "TYPE_REPEAT_OFF") slotid 3 type QName(PackageNamespace(""), "Boolean") value False() end
+ trait method QName(PackageNamespace(""), "getInstance") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.stage3D.graphic3D:Program3DFactory/class/getInstance"
+   returns QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "Program3DFactory")
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "instance")
+     pushnull
+     ifne                L10
+
+     findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "instance")
+     getlocal0
+     pushstring          "yoThisIsInternal"
+     construct           1
+     setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "instance")
+
+L10:
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:Program3DFactory"), "instance")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

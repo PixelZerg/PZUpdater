@@ -1,0 +1,526 @@
+class
+ refid "kabam.rotmg.stage3D.graphic3D:TextureFactory"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "TextureFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.stage3D.graphic3D:TextureFactory")
+  iinit
+   refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context3D") flag METADATA type QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Context3DProxy")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "make")
+   method
+    refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/instance/make"
+    param QName(PackageNamespace("flash.display"), "BitmapData")
+    returns QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "TextureProxy")
+    body
+     maxstack 6
+     localcount 8
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "TextureProxy")
+      setlocal            4
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            5
+
+      getlocal1
+      pushnull
+      ifne                L17
+
+      pushnull
+      returnvalue
+
+L17:
+      getlocal1
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+      in
+      iffalse             L25
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.stage3D.graphic3D"), PackageInternalNs("kabam.rotmg.stage3D.graphic3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D.graphic3D:TextureFactory"), StaticProtectedNs("kabam.rotmg.stage3D.graphic3D:TextureFactory")])
+      returnvalue
+
+L25:
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "getNextPowerOf2")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "getNextPowerOf2"), 1
+      convert_i
+      setlocal2
+
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "getNextPowerOf2")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "getNextPowerOf2"), 1
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlocal2
+      getlocal3
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DTextureFormat")
+      getproperty         QName(PackageNamespace(""), "BGRA")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "createTexture"), 4
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "TextureProxy")
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal2
+      getlocal3
+      pushtrue
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            5
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "rect")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      dup
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      getlocal            4
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "uploadFromBitmapData"), 1
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+      pushshort           1000
+      ifngt               L75
+
+      findpropstrict      QName(PackageNamespace(""), "disposeNormalTextures")
+      callpropvoid        QName(PackageNamespace(""), "disposeNormalTextures"), 0
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+      pushbyte            0
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+
+L75:
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+      getlocal1
+      getlocal            4
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.stage3D.graphic3D"), PackageInternalNs("kabam.rotmg.stage3D.graphic3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D.graphic3D:TextureFactory"), StaticProtectedNs("kabam.rotmg.stage3D.graphic3D:TextureFactory")])
+
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+      dup
+      setlocal            6
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+      increment_i
+      setlocal            7
+
+      getlocal            6
+      getlocal            7
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+
+      kill                7
+      kill                6
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+    findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+    constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+    setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+    pushbyte            0
+    setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures") slotid 1 type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures") slotid 2 type QName(PackageNamespace("flash.utils"), "Dictionary") end
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count") slotid 3 type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait method QName(PackageNamespace(""), "GetFlippedBitmapData") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/class/GetFlippedBitmapData"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlocal1
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+     in
+     iffalse             L13
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+     getlocal1
+     getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.stage3D.graphic3D"), PackageInternalNs("kabam.rotmg.stage3D.graphic3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D.graphic3D:TextureFactory"), StaticProtectedNs("kabam.rotmg.stage3D.graphic3D:TextureFactory")])
+     returnvalue
+
+L13:
+     findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flipBitmapData")
+     getlocal1
+     pushstring          "y"
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flipBitmapData"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+     getlocal1
+     getlocal2
+     setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.stage3D.graphic3D"), PackageInternalNs("kabam.rotmg.stage3D.graphic3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D.graphic3D:TextureFactory"), StaticProtectedNs("kabam.rotmg.stage3D.graphic3D:TextureFactory")])
+
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flipBitmapData") flag FINAL dispid 4
+  method
+   refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/class/kabam.rotmg.stage3D.graphic3D:TextureFactory/flipBitmapData"
+   param QName(PackageNamespace("flash.display"), "BitmapData")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   flag HAS_OPTIONAL
+   optional Utf8("x")
+   body
+    maxstack 7
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+     setlocal            4
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     pushtrue
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     getlocal2
+     pushstring          "x"
+     ifne                L30
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+     pushbyte            -1
+     pushbyte            0
+     dup
+     pushbyte            1
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 6
+     coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+     setlocal            4
+
+     jump                L41
+
+L30:
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+     pushbyte            1
+     pushbyte            0
+     dup
+     pushbyte            -1
+     pushbyte            0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 6
+     coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+     setlocal            4
+
+L41:
+     getlocal3
+     getlocal1
+     getlocal            4
+     pushnull
+     pushnull
+     pushnull
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "draw"), 6
+
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "getNextPowerOf2") flag FINAL dispid 5
+  method
+   refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/class/kabam.rotmg.stage3D.graphic3D:TextureFactory/getNextPowerOf2"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     decrement_i
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            1
+     rshift
+     bitor
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            2
+     rshift
+     bitor
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            4
+     rshift
+     bitor
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            8
+     rshift
+     bitor
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            16
+     rshift
+     bitor
+     setlocal1
+
+     inclocal_i          1
+     getlocal1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "disposeTextures") flag FINAL dispid 6
+  method
+   refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/class/disposeTextures"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "TextureProxy")
+     setlocal1
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     pushbyte            0
+     setlocal3
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+     coerce_a
+     setlocal            4
+
+     jump                L22
+
+L14:
+     label
+     getlocal            4
+     getlocal3
+     nextvalue
+     coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "TextureProxy")
+     setlocal1
+
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L22:
+     hasnext2            4, 3
+     iftrue              L14
+
+     kill                4
+     kill                3
+     findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+
+     pushbyte            0
+     setlocal3
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+     coerce_a
+     setlocal            4
+
+     jump                L44
+
+L36:
+     label
+     getlocal            4
+     getlocal3
+     nextvalue
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L44:
+     hasnext2            4, 3
+     iftrue              L36
+
+     kill                4
+     kill                3
+     findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "flippedTextures")
+
+     findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+     pushbyte            0
+     setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "count")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "disposeNormalTextures") flag FINAL dispid 7
+  method
+   refid "kabam.rotmg.stage3D.graphic3D:TextureFactory/class/disposeNormalTextures"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "TextureProxy")
+     setlocal1
+
+     pushbyte            0
+     setlocal2
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+     coerce_a
+     setlocal3
+
+     jump                L19
+
+L11:
+     label
+     getlocal3
+     getlocal2
+     nextvalue
+     coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "TextureProxy")
+     setlocal1
+
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L19:
+     hasnext2            3, 2
+     iftrue              L11
+
+     kill                3
+     kill                2
+     findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.graphic3D:TextureFactory#0"), "textures")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

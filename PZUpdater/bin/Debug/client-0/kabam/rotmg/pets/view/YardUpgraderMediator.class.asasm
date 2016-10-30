@@ -1,0 +1,252 @@
+class
+ refid "kabam.rotmg.pets.view:YardUpgraderMediator"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view"), "YardUpgraderMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view:YardUpgraderMediator")
+  iinit
+   refid "kabam.rotmg.pets.view:YardUpgraderMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.view"), "YardUpgraderView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "upgradePet") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.controller"), "UpgradePetSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "YardUpgraderVO")
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.data"), "YardUpgraderVO"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "YardUpgraderVO")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petModel")
+      callproperty        QName(PackageNamespace(""), "getPetYardRarity"), 0
+      convert_i
+      setlocal2
+
+      getlocal2
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getproperty         QName(PackageNamespace(""), "DIVINE")
+      getproperty         QName(PackageNamespace(""), "ordinal")
+      lessthan
+      iffalse             L25
+
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getlocal2
+      pushbyte            1
+      add
+      callproperty        QName(PackageNamespace(""), "selectByOrdinal"), 1
+      getproperty         QName(PackageNamespace(""), "ordinal")
+      convert_i
+      jump                L29
+
+L25:
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getproperty         QName(PackageNamespace(""), "DIVINE")
+      getproperty         QName(PackageNamespace(""), "ordinal")
+      convert_i
+L29:
+      convert_i
+      setlocal3
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "selectByOrdinal"), 1
+      getproperty         QName(PackageNamespace(""), "value")
+      setproperty         QName(PackageNamespace(""), "currentRarityLevel")
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "selectByOrdinal"), 1
+      getproperty         QName(PackageNamespace(""), "value")
+      setproperty         QName(PackageNamespace(""), "nextRarityLevel")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petModel")
+      callproperty        QName(PackageNamespace(""), "getPetYardUpgradeFamePrice"), 0
+      setproperty         QName(PackageNamespace(""), "famePrice")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petModel")
+      callproperty        QName(PackageNamespace(""), "getPetYardUpgradeGoldPrice"), 0
+      setproperty         QName(PackageNamespace(""), "goldPrice")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "init"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "famePurchase")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderMediator/instance"), "onFamePurchase")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "goldPurchase")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderMediator/instance"), "onGoldPurchase")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderMediator/instance"), "onGoldPurchase")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderMediator/instance/kabam.rotmg.pets.view:YardUpgraderMediator/instance/onGoldPurchase"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderMediator/instance"), "purchaseUpgrade"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderMediator/instance"), "onFamePurchase")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderMediator/instance/kabam.rotmg.pets.view:YardUpgraderMediator/instance/onFamePurchase"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderMediator/instance"), "purchaseUpgrade"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderMediator/instance"), "purchaseUpgrade")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderMediator/instance/kabam.rotmg.pets.view:YardUpgraderMediator/instance/purchaseUpgrade"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petModel")
+      callproperty        QName(PackageNamespace(""), "getPetYardObjectID"), 0
+      convert_i
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO")
+      getlocal2
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "upgradePet")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view:YardUpgraderMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

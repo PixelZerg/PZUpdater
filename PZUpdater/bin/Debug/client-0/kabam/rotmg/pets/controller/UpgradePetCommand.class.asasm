@@ -1,0 +1,261 @@
+class
+ refid "kabam.rotmg.pets.controller:UpgradePetCommand"
+ instance QName(PackageNamespace("kabam.rotmg.pets.controller"), "UpgradePetCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.controller:UpgradePetCommand")
+  iinit
+   refid "kabam.rotmg.pets.controller:UpgradePetCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "vo") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "IUpgradePetRequestVO")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "server") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.controller:UpgradePetCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpgradeRequest")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO")
+      istypelate
+      iffalse             L43
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iftrue              L17
+
+      getlocal0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.controller:UpgradePetCommand"), "PET_YARD_REGISTER_STRING")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.controller:UpgradePetCommand"), "showPromptToRegister"), 1
+
+L17:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection")
+      getproperty         QName(PackageNamespace(""), "PETUPGRADEREQUEST")
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpgradeRequest")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpgradeRequest")
+      setlocal1
+
+      getlocal1
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "petTransType")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "objectID")
+      setproperty         QName(PackageNamespace(""), "objectId")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "UpgradePetYardRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "paymentTransType")
+      setproperty         QName(PackageNamespace(""), "paymentTransType")
+
+L43:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "FeedPetRequestVO")
+      istypelate
+      iffalse             L81
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection")
+      getproperty         QName(PackageNamespace(""), "PETUPGRADEREQUEST")
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpgradeRequest")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpgradeRequest")
+      setlocal1
+
+      getlocal1
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "petTransType")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "FeedPetRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "FeedPetRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "petInstanceId")
+      setproperty         QName(PackageNamespace(""), "PIDOne")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "FeedPetRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "FeedPetRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "slotObject")
+      setproperty         QName(PackageNamespace(""), "slotObject")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "FeedPetRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "FeedPetRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "paymentTransType")
+      setproperty         QName(PackageNamespace(""), "paymentTransType")
+
+L81:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "FusePetRequestVO")
+      istypelate
+      iffalse             L119
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection")
+      getproperty         QName(PackageNamespace(""), "PETUPGRADEREQUEST")
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpgradeRequest")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpgradeRequest")
+      setlocal1
+
+      getlocal1
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "petTransType")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "FusePetRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "FusePetRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "petInstanceIdOne")
+      setproperty         QName(PackageNamespace(""), "PIDOne")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "FusePetRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "FusePetRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "petInstanceIdTwo")
+      setproperty         QName(PackageNamespace(""), "PIDTwo")
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "FusePetRequestVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.data"), "FusePetRequestVO"), 1
+      getproperty         QName(PackageNamespace(""), "paymentTransType")
+      setproperty         QName(PackageNamespace(""), "paymentTransType")
+
+L119:
+      getlocal1
+      iffalse             L125
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "server")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+L125:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.controller:UpgradePetCommand"), "showPromptToRegister")
+   method
+    refid "kabam.rotmg.pets.controller:UpgradePetCommand/instance/kabam.rotmg.pets.controller:UpgradePetCommand/showPromptToRegister"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.controller:UpgradePetCommand/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.controller:UpgradePetCommand"), "PET_YARD_REGISTER_STRING")
+    pushstring          "In order to upgrade your yard you must be a registered user."
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.controller:UpgradePetCommand"), "PET_YARD_REGISTER_STRING")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.controller:UpgradePetCommand"), "PET_YARD_REGISTER_STRING") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("In order to upgrade your yard you must be a registered user.") end
+end ; class

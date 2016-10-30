@@ -1,0 +1,118 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:QuestFetchResponse"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "QuestFetchResponse")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "IncomingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:QuestFetchResponse")
+  iinit
+   refid "kabam.rotmg.messaging.impl.incoming:QuestFetchResponse/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "tier") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "goal") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "description") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "image") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "parseFromInput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:QuestFetchResponse/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      setproperty         QName(PackageNamespace(""), "tier")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      setproperty         QName(PackageNamespace(""), "goal")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      setproperty         QName(PackageNamespace(""), "description")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      setproperty         QName(PackageNamespace(""), "image")
+
+      getlocal1
+      coerce              QName(PackageNamespace("flash.utils"), "IDataInput")
+      setlocal1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:QuestFetchResponse/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "QUESTFETCHRESPONSE"
+      pushstring          "tier"
+      pushstring          "goal"
+      pushstring          "description"
+      pushstring          "image"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:QuestFetchResponse/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

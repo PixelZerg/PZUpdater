@@ -1,0 +1,166 @@
+class
+ refid "com.company.util:HTMLUtil"
+ instance QName(PackageNamespace("com.company.util"), "HTMLUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.util:HTMLUtil")
+  iinit
+   refid "com.company.util:HTMLUtil/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.util:HTMLUtil/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "unescape") flag FINAL dispid 3
+  method
+   refid "com.company.util:HTMLUtil/class/unescape"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("flash.xml"), "XMLDocument")
+     getlocal1
+     constructprop       QName(PackageNamespace("flash.xml"), "XMLDocument"), 1
+     getproperty         QName(PackageNamespace(""), "firstChild")
+     getproperty         QName(PackageNamespace(""), "nodeValue")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "escape") flag FINAL dispid 4
+  method
+   refid "com.company.util:HTMLUtil/class/escape"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "XML")
+     findpropstrict      QName(PackageNamespace("flash.xml"), "XMLNode")
+     getlex              QName(PackageNamespace("flash.xml"), "XMLNodeType")
+     getproperty         QName(PackageNamespace(""), "TEXT_NODE")
+     getlocal1
+     constructprop       QName(PackageNamespace("flash.xml"), "XMLNode"), 2
+     callproperty        QName(PackageNamespace(""), "XML"), 1
+     callproperty        Multiname("toXMLString", [PrivateNamespace(null, "com.company.util:HTMLUtil/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.util:HTMLUtil/class#1"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.util:HTMLUtil"), StaticProtectedNs("com.company.util:HTMLUtil")]), 0
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "refreshPageNoParams") flag FINAL dispid 5
+  method
+   refid "com.company.util:HTMLUtil/class/refreshPageNoParams"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce_s
+     setlocal1
+
+     pushnull
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal2
+
+     pushnull
+     coerce_s
+     setlocal3
+
+     getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+     getproperty         QName(PackageNamespace(""), "available")
+     iffalse             L44
+
+     getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+     pushstring          "window.location.toString"
+     callproperty        QName(PackageNamespace(""), "call"), 1
+     coerce_s
+     setlocal1
+
+     getlocal1
+     pushstring          "?"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal2
+
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "length")
+     pushbyte            0
+     ifngt               L44
+
+     getlocal2
+     pushbyte            0
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.util:HTMLUtil/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.util:HTMLUtil/class#1"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.util:HTMLUtil"), StaticProtectedNs("com.company.util:HTMLUtil")])
+     coerce_s
+     setlocal3
+
+     getlocal3
+     pushstring          "www.kabam"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     pushbyte            -1
+     ifeq                L40
+
+     pushstring          "http://www.realmofthemadgod.com"
+     setlocal3
+
+L40:
+     getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+     pushstring          "window.location.assign"
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "call"), 2
+
+L44:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

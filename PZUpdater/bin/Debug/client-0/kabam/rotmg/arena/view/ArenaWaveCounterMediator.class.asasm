@@ -1,0 +1,126 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaWaveCounterMediator"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaWaveCounterMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.view:ArenaWaveCounterMediator")
+  iinit
+   refid "kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaWaveCounter")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "currentRunModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "CurrentArenaRunModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "waveUpdated")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance"), "onUpdateWaveNumber")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "waveUpdated")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance"), "onUpdateWaveNumber")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance"), "onUpdateWaveNumber")
+   method
+    refid "kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance/kabam.rotmg.arena.view:ArenaWaveCounterMediator/instance/onUpdateWaveNumber"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      callpropvoid        QName(PackageNamespace(""), "setWaveNumber"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaWaveCounterMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

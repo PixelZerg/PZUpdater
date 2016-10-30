@@ -1,0 +1,114 @@
+class
+ refid "org.hamcrest:DiagnosingMatcher"
+ instance QName(PackageNamespace("org.hamcrest"), "DiagnosingMatcher")
+  extends QName(PackageNamespace("org.hamcrest"), "BaseMatcher")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.hamcrest:DiagnosingMatcher")
+  iinit
+   refid "org.hamcrest:DiagnosingMatcher/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "describeMismatch") flag OVERRIDE
+   method
+    refid "org.hamcrest:DiagnosingMatcher/instance/describeMismatch"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace("org.hamcrest"), "Description")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("org.hamcrest:DiagnosingMatcher"), "matchesOrDescribesMismatch")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("org.hamcrest:DiagnosingMatcher"), "matchesOrDescribesMismatch"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("org.hamcrest:DiagnosingMatcher"), "matchesOrDescribesMismatch")
+   method
+    refid "org.hamcrest:DiagnosingMatcher/instance/org.hamcrest:DiagnosingMatcher:matchesOrDescribesMismatch"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace("org.hamcrest"), "Description")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.errors"), "IllegalOperationError")
+      pushstring          "DiagnosingMatcher#matches is abstract and must be overriden in a subclass"
+      constructprop       QName(PackageNamespace("flash.errors"), "IllegalOperationError"), 1
+      throw
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "matches") flag OVERRIDE
+   method
+    refid "org.hamcrest:DiagnosingMatcher/instance/matches"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("org.hamcrest:DiagnosingMatcher"), "matchesOrDescribesMismatch")
+      getlocal1
+      findpropstrict      QName(PackageNamespace("org.hamcrest"), "NullDescription")
+      constructprop       QName(PackageNamespace("org.hamcrest"), "NullDescription"), 0
+      callproperty        QName(ProtectedNamespace("org.hamcrest:DiagnosingMatcher"), "matchesOrDescribesMismatch"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.hamcrest:DiagnosingMatcher/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

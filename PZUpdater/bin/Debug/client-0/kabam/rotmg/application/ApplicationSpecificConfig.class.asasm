@@ -1,0 +1,80 @@
+class
+ refid "kabam.rotmg.application:ApplicationSpecificConfig"
+ instance QName(PackageNamespace("kabam.rotmg.application"), "ApplicationSpecificConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.application:ApplicationSpecificConfig")
+  iinit
+   refid "kabam.rotmg.application:ApplicationSpecificConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "applicationSetup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.application:ApplicationSpecificConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "applicationSetup")
+      callproperty        QName(Namespace("kabam.rotmg.application.api:DebugSetup"), "isDebug"), 0
+      iffalse             L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.lib.console"), "ConsoleExtension")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "extend"), 1
+
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application:ApplicationSpecificConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

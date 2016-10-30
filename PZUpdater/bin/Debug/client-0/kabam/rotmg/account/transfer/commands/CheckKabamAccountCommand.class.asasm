@@ -1,0 +1,165 @@
+class
+ refid "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.transfer.commands"), "CheckKabamAccountCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand")
+  iinit
+   refid "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "checkKBMtask") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.transfer.services"), "CheckKabamAccountTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.transfer.model"), "TransferAccountData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateAccount") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "UpdateAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "taskError") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "close") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "loginError") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "checkKBMtask")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/execute"), "makeSuccess"), 0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/execute"), "makeFailure"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask"), 3
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/execute"), "makeSuccess")
+   method
+    refid "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/execute/makeSuccess"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.transfer.view"), "TransferAccountView")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "currentEmail")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "currentPassword")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.transfer.view"), "TransferAccountView"), 2
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/execute"), "makeFailure")
+   method
+    refid "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/instance/execute/makeFailure"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loginError")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "checkKBMtask")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.transfer.commands:CheckKabamAccountCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

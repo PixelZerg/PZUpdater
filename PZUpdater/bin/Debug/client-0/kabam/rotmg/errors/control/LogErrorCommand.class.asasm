@@ -1,0 +1,132 @@
+class
+ refid "kabam.rotmg.errors.control:LogErrorCommand"
+ instance QName(PackageNamespace("kabam.rotmg.errors.control"), "LogErrorCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.errors.control:LogErrorCommand")
+  iinit
+   refid "kabam.rotmg.errors.control:LogErrorCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "event") flag METADATA type QName(PackageNamespace("flash.events"), "ErrorEvent")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.errors.control:LogErrorCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "event")
+      getproperty         QName(PackageNamespace(""), "text")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "error"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "event")
+      pushstring          "error"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.errors.control"), PackageInternalNs("kabam.rotmg.errors.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.errors.control:LogErrorCommand"), StaticProtectedNs("kabam.rotmg.errors.control:LogErrorCommand")])
+      convert_b
+      dup
+      iffalse             L22
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "event")
+      pushstring          "error"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.errors.control"), PackageInternalNs("kabam.rotmg.errors.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.errors.control:LogErrorCommand"), StaticProtectedNs("kabam.rotmg.errors.control:LogErrorCommand")])
+      getlex              QName(PackageNamespace(""), "Error")
+      istypelate
+L22:
+      iffalse             L29
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "event")
+      pushstring          "error"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.errors.control"), PackageInternalNs("kabam.rotmg.errors.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.errors.control:LogErrorCommand"), StaticProtectedNs("kabam.rotmg.errors.control:LogErrorCommand")])
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#0"), "logErrorObject"), 1
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.errors.control:LogErrorCommand/instance/execute#0"), "logErrorObject")
+   method
+    refid "kabam.rotmg.errors.control:LogErrorCommand/instance/kabam.rotmg.errors.control:LogErrorCommand/instance/execute/logErrorObject"
+    param QName(PackageNamespace(""), "Error")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "message")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "error"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getStackTrace"), 0
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "error"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.errors.control:LogErrorCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

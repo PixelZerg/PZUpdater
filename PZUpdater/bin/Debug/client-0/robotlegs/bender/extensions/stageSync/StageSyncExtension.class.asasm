@@ -1,0 +1,276 @@
+class
+ refid "robotlegs.bender.extensions.stageSync:StageSyncExtension"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.stageSync"), "StageSyncExtension")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IExtension", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.stageSync:StageSyncExtension")
+  iinit
+   refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "UID")
+     getlex              QName(PackageNamespace("robotlegs.bender.extensions.stageSync"), "StageSyncExtension")
+     callproperty        QName(PackageNamespace(""), "create"), 1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_uid")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_uid") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_context") type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView") type QName(PackageNamespace("flash.display"), "DisplayObjectContainer") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_logger") type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger") end
+  trait method QName(PackageNamespace(""), "extend")
+   method
+    refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/extend"
+    param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_context")
+
+      getlocal0
+      getlocal1
+      getlocal0
+      callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "getLogger"), 1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_logger")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_context")
+      findpropstrict      QName(PackageNamespace("org.hamcrest.object"), "instanceOf")
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+      callproperty        QName(PackageNamespace("org.hamcrest.object"), "instanceOf"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "handleContextView")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "addConfigHandler"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_uid")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "handleContextView")
+   method
+    refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/handleContextView"
+    param QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView")
+      iffalse             L12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_logger")
+      pushstring          "A contextView has already been set, ignoring {0}"
+      getlocal1
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "warn"), 2
+
+      returnvoid
+
+L12:
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView")
+      getproperty         QName(PackageNamespace(""), "stage")
+      iffalse             L22
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "initializeContext"), 0
+
+      jump                L33
+
+L22:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_logger")
+      pushstring          "Context view is not yet on stage. Waiting..."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "onAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L33:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "onAddedToStage")
+   method
+    refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "onAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "initializeContext"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "initializeContext")
+   method
+    refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/initializeContext"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_logger")
+      pushstring          "Context view is now on stage. Initializing context..."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_context")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "initialize"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "onRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "onRemovedFromStage")
+   method
+    refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/robotlegs.bender.extensions.stageSync:StageSyncExtension/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_logger")
+      pushstring          "Context view has left the stage. Destroying context..."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_contextView")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "onRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.stageSync:StageSyncExtension/instance"), "_context")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "destroy"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.extensions.stageSync:StageSyncExtension/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

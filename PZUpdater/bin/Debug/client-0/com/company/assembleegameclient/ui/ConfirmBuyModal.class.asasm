@@ -1,0 +1,870 @@
+class
+ refid "com.company.assembleegameclient.ui:ConfirmBuyModal"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui:ConfirmBuyModal")
+  iinit
+   refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/init"
+   param QName(PackageNamespace("org.osflash.signals"), "Signal")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "SellableObject")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 6
+    localcount 9
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldConcreteBuilder")
+     setlocal            6
+
+     pushnull
+     coerce              QName(PackageNamespace("kabam.rotmg.fortune.components"), "ItemWithTooltip")
+     setlocal            8
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+     getproperty         QName(PackageNamespace(""), "WIDTH")
+     callproperty        QName(PackageNamespace(""), "returnCloseButton"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "closeButton")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "SELLABLEOBJECTPANEL_BUY")
+     pushbyte            16
+     pushbyte            0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+     getproperty         QName(PackageNamespace(""), "INVALID")
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton"), 4
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+
+     getlocal0
+     constructsuper      0
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "free")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "buyItem")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "buttonWidth")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "availableInventoryNumber")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "events"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "positionAndStuff"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "addChildren"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+     getproperty         QName(PackageNamespace(""), "price_")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+     getproperty         QName(PackageNamespace(""), "currency_")
+     callpropvoid        QName(PackageNamespace(""), "setPrice"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+     callproperty        QName(PackageNamespace(""), "soldObjectName"), 0
+     coerce_s
+     setlocal            5
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldConcreteBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldConcreteBuilder"), 0
+     coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldConcreteBuilder")
+     dup
+     setlocal            6
+
+     getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+     setproperty         QName(PackageNamespace(""), "containerMargin")
+
+     getlocal            6
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     setproperty         QName(PackageNamespace(""), "containerWidth")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            6
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "BUY_CONFIRMATION_TITLE")
+     getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+     pushbyte            5
+     callproperty        QName(PackageNamespace(""), "getLocalizedTextObject"), 3
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            6
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "BUY_CONFIRMATION_DESC")
+     getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+     pushbyte            40
+     callproperty        QName(PackageNamespace(""), "getLocalizedTextObject"), 3
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            6
+     getlocal            5
+     getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+     pushbyte            90
+     callproperty        QName(PackageNamespace(""), "getLocalizedTextObject"), 3
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal            6
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "BUY_CONFIRMATION_AMOUNT")
+     getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+     pushshort           140
+     callproperty        QName(PackageNamespace(""), "getLocalizedTextObject"), 3
+     coerce_a
+     setlocal            7
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            7
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal            6
+     pushstring          "1"
+     getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+     pushshort           160
+     callproperty        QName(PackageNamespace(""), "getLiteralTextObject"), 3
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantityInputText")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+     callproperty        QName(PackageNamespace(""), "getSellableType"), 0
+     pushbyte            -1
+     ifeq                L131
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.fortune.components"), "ItemWithTooltip")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+     callproperty        QName(PackageNamespace(""), "getSellableType"), 0
+     pushbyte            64
+     constructprop       QName(PackageNamespace("kabam.rotmg.fortune.components"), "ItemWithTooltip"), 2
+     coerce              QName(PackageNamespace("kabam.rotmg.fortune.components"), "ItemWithTooltip")
+     setlocal            8
+
+L131:
+     getlocal            8
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     pushbyte            1
+     multiply
+     pushbyte            2
+     divide
+     getlocal            8
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal            8
+     pushbyte            100
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal            8
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal            6
+     pushstring          "1"
+     getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+     pushshort           160
+     callproperty        QName(PackageNamespace(""), "getLiteralTextObject"), 3
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantityInputText")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantityInputText")
+     pushfalse
+     callpropvoid        QName(PackageNamespace(""), "setMultiLine"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantityInputText")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "UIAssetsHelper")
+     getproperty         QName(PackageNamespace(""), "LEFT_NEVIGATOR")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "makeNavigator"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite")
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "UIAssetsHelper")
+     getproperty         QName(PackageNamespace(""), "RIGHT_NEVIGATOR")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "makeNavigator"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite")
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     pushbyte            4
+     multiply
+     pushbyte            11
+     divide
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite")
+     pushshort           150
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     pushbyte            7
+     multiply
+     pushbyte            11
+     divide
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+     pushshort           150
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "refreshNavDisable"), 0
+
+     getlocal0
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "open")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "closeButton") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton") end
+  trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton") type QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButtonClicked") type QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantityInputText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_") type QName(PackageNamespace(""), "int") value Integer(1) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "availableInventoryNumber") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "SellableObject") end
+  trait slot QName(PackageNamespace(""), "buyItem") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "open") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "buttonWidth") type QName(PackageNamespace(""), "int") end
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "refreshNavDisable")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/refreshNavDisable"
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      pushbyte            1
+      ifne                L11
+
+      pushdouble          0.5
+      convert_d
+      jump                L13
+
+L11:
+      pushbyte            1
+      convert_d
+L13:
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "availableInventoryNumber")
+      ifne                L24
+
+      pushdouble          0.5
+      convert_d
+      jump                L26
+
+L24:
+      pushbyte            1
+      convert_d
+L26:
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "positionAndStuff")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/positionAndStuff"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushshort           -300
+      setlocal1
+
+      pushshort           -200
+      setlocal2
+
+      getlocal0
+      getlocal1
+      pushbyte            -1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+      getproperty         QName(PackageNamespace(""), "WIDTH")
+      multiply
+      pushdouble          0.5
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getlocal2
+      pushbyte            -1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+      getproperty         QName(PackageNamespace(""), "HEIGHT")
+      multiply
+      pushdouble          0.5
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            35
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushshort           195
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buttonWidth")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "events")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/events"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onCloseClick")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal"), 3
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButtonClicked")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButtonClicked")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "onBuyClick")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "addChildren")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "makeModalBackground")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+      getproperty         QName(PackageNamespace(""), "WIDTH")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+      getproperty         QName(PackageNamespace(""), "HEIGHT")
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "makeModalBackground"), 2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onCloseClick")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/onCloseClick"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "close"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onBuyClick")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/onBuyClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      setproperty         QName(PackageNamespace(""), "quantity_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyItem")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "close"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "close")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/close"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "free")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "open")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "onRemovedFromStage")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "ConfirmBuyModal")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "free")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "open")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "onClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "makeNavigator")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/makeNavigator"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "UIAssetsHelper")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createLeftNevigatorIcon"), 1
+      coerce_a
+      setlocal2
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "onClick")
+      callpropvoid        Multiname("addEventListener", [PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.ui"), PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/makeNavigator"), PackageInternalNs("com.company.assembleegameclient.ui"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui:ConfirmBuyModal"), StaticProtectedNs("com.company.assembleegameclient.ui:ConfirmBuyModal"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 2
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "onClick")
+   method
+    refid "com.company.assembleegameclient.ui:ConfirmBuyModal/instance/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/onClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      jump                L29
+
+L3:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "availableInventoryNumber")
+      ifnlt               L15
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      pushbyte            1
+      add
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+
+L15:
+      jump                L54
+
+L16:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      pushbyte            1
+      ifngt               L26
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      decrement
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+
+L26:
+      jump                L54
+
+L27:
+      label
+      jump                L54
+
+L29:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "rightNavSprite")
+      getlocal3
+      ifstrictne          L38
+
+      pushbyte            0
+      jump                L52
+
+L38:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "leftNavSprite")
+      getlocal3
+      ifstrictne          L44
+
+      pushbyte            1
+      jump                L52
+
+L44:
+      jump                L51
+
+      ; 0x24
+      ; 0x02
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L51:
+      pushbyte            2
+L52:
+      kill                3
+      lookupswitch        L27, [L3, L16, L27]
+
+L54:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "refreshNavDisable"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+      getproperty         QName(PackageNamespace(""), "price_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      multiply
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "buyButton")
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "owner_")
+      getproperty         QName(PackageNamespace(""), "currency_")
+      callpropvoid        QName(PackageNamespace(""), "setPrice"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantityInputText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "quantity_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui:ConfirmBuyModal/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "WIDTH")
+    pushshort           280
+    initproperty        QName(PackageNamespace(""), "WIDTH")
+
+    findproperty        QName(PackageNamespace(""), "HEIGHT")
+    pushshort           240
+    initproperty        QName(PackageNamespace(""), "HEIGHT")
+
+    findproperty        QName(PackageNamespace(""), "TEXT_MARGIN")
+    pushbyte            20
+    initproperty        QName(PackageNamespace(""), "TEXT_MARGIN")
+
+    findproperty        QName(PackageNamespace(""), "free")
+    pushtrue
+    setproperty         QName(PackageNamespace(""), "free")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") slotid 1 type QName(PackageNamespace(""), "int") value Integer(280) end
+ trait const QName(PackageNamespace(""), "HEIGHT") slotid 2 type QName(PackageNamespace(""), "int") value Integer(240) end
+ trait const QName(PackageNamespace(""), "TEXT_MARGIN") slotid 3 type QName(PackageNamespace(""), "int") value Integer(20) end
+ trait slot QName(PackageNamespace(""), "free") slotid 4 type QName(PackageNamespace(""), "Boolean") value True() end
+ trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:ConfirmBuyModal/instance"), "makeModalBackground") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.ui:ConfirmBuyModal/class/com.company.assembleegameclient.ui:ConfirmBuyModal/instance/makeModalBackground"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground")
+   body
+    maxstack 3
+    localcount 4
+    initscopedepth 8
+    maxscopedepth 9
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground"), 0
+     coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground")
+     setlocal3
+
+     getlocal3
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+     getlocal3
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground")
+     getproperty         QName(PackageNamespace(""), "HORIZONTAL_DIVISION")
+     pushbyte            30
+     callpropvoid        QName(PackageNamespace(""), "divide"), 2
+
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

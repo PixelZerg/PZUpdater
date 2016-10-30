@@ -1,0 +1,187 @@
+class
+ refid "kabam.rotmg.pets.data:PetSlotsState"
+ instance QName(PackageNamespace("kabam.rotmg.pets.data"), "PetSlotsState")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.data:PetSlotsState")
+  iinit
+   refid "kabam.rotmg.pets.data:PetSlotsState/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "leftSlotPetVO") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO") end
+  trait slot QName(PackageNamespace(""), "rightSlotItemId") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "rightSlotPetVO") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO") end
+  trait slot QName(PackageNamespace(""), "rightSlotOwnerId") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "rightSlotId") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "caller") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(PackageNamespace(""), "selected") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "kabam.rotmg.pets.data:PetSlotsState/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "caller")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "leftSlotPetVO")
+
+      getlocal0
+      pushbyte            -1
+      initproperty        QName(PackageNamespace(""), "rightSlotItemId")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "rightSlotPetVO")
+
+      getlocal0
+      pushbyte            -1
+      initproperty        QName(PackageNamespace(""), "rightSlotOwnerId")
+
+      getlocal0
+      pushbyte            -1
+      initproperty        QName(PackageNamespace(""), "rightSlotId")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isAcceptableFeedState")
+   method
+    refid "kabam.rotmg.pets.data:PetSlotsState/instance/isAcceptableFeedState"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rightSlotId")
+      pushbyte            -1
+      equals
+      not
+      dup
+      iffalse             L15
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rightSlotOwnerId")
+      pushbyte            -1
+      equals
+      not
+L15:
+      dup
+      iffalse             L23
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rightSlotItemId")
+      pushbyte            -1
+      equals
+      not
+L23:
+      dup
+      iffalse             L31
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+      pushnull
+      equals
+      not
+L31:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isAcceptableFuseState")
+   method
+    refid "kabam.rotmg.pets.data:PetSlotsState/instance/isAcceptableFuseState"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rightSlotPetVO")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L15
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+      pushnull
+      equals
+      not
+L15:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.data:PetSlotsState/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "LEFT")
+    pushstring          "leftSide"
+    initproperty        QName(PackageNamespace(""), "LEFT")
+
+    findproperty        QName(PackageNamespace(""), "RIGHT")
+    pushstring          "rightSide"
+    initproperty        QName(PackageNamespace(""), "RIGHT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "LEFT") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("leftSide") end
+ trait const QName(PackageNamespace(""), "RIGHT") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("rightSide") end
+end ; class

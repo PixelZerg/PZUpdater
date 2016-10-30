@@ -1,0 +1,372 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:LightningEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "LightningEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:LightningEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:LightningEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param null
+   flag HAS_OPTIONAL
+   optional Double(1)
+   body
+    maxstack 4
+    localcount 6
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "start_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "end_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "color_")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "particleSize_")
+
+     getlocal0
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "lifetimeMultiplier_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "end_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "particleSize_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "lifetimeMultiplier_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "runNormalRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:LightningEffect/instance/runNormalRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 7
+     localcount 9
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      pushnan
+      setlocal            8
+
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      getlex              QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      callproperty        QName(PackageNamespace(""), "distance"), 2
+      convert_d
+      setlocal3
+
+      getlocal3
+      pushbyte            3
+      multiply
+      convert_i
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L104
+
+L36:
+      label
+      getlex              QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      getlocal            5
+      getlocal            4
+      divide
+      callproperty        QName(PackageNamespace(""), "interpolate"), 3
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "particleSize_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      pushshort           1000
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetimeMultiplier_")
+      multiply
+      getlocal            5
+      getlocal            4
+      divide
+      pushshort           900
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetimeMultiplier_")
+      multiply
+      subtract
+      pushdouble          0.5
+      pushbyte            0
+      dup
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle"), 6
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            5
+      getlocal            4
+      getlocal            5
+      subtract
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            8
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            7
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "x")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal3
+      pushshort           200
+      divide
+      getlocal            8
+      multiply
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      add
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "y")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal3
+      pushshort           200
+      divide
+      getlocal            8
+      multiply
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      add
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          5
+L104:
+      getlocal            5
+      getlocal            4
+      iflt                L36
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runEasyRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:LightningEffect/instance/runEasyRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 7
+     localcount 9
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      pushnan
+      setlocal            8
+
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      getlex              QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      callproperty        QName(PackageNamespace(""), "distance"), 2
+      convert_d
+      setlocal3
+
+      getlocal3
+      pushbyte            2
+      multiply
+      convert_i
+      setlocal            4
+
+      getlocal0
+      pushbyte            80
+      initproperty        QName(PackageNamespace(""), "particleSize_")
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L107
+
+L39:
+      label
+      getlex              QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      getlocal            5
+      getlocal            4
+      divide
+      callproperty        QName(PackageNamespace(""), "interpolate"), 3
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "particleSize_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      pushshort           750
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetimeMultiplier_")
+      multiply
+      getlocal            5
+      getlocal            4
+      divide
+      pushshort           675
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetimeMultiplier_")
+      multiply
+      subtract
+      pushdouble          0.5
+      pushbyte            0
+      dup
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle"), 6
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            5
+      getlocal            4
+      getlocal            5
+      subtract
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            8
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            7
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "x")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal3
+      pushshort           200
+      divide
+      getlocal            8
+      multiply
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      add
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "y")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal3
+      pushshort           200
+      divide
+      getlocal            8
+      multiply
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      add
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          5
+L107:
+      getlocal            5
+      getlocal            4
+      iflt                L39
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:LightningEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

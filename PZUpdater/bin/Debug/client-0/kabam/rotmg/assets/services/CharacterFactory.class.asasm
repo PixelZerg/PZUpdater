@@ -1,0 +1,277 @@
+class
+ refid "kabam.rotmg.assets.services:CharacterFactory"
+ instance QName(PackageNamespace("kabam.rotmg.assets.services"), "CharacterFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.assets.services:CharacterFactory")
+  iinit
+   refid "kabam.rotmg.assets.services:CharacterFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture1") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture2") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "size") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "makeCharacter")
+   method
+    refid "kabam.rotmg.assets.services:CharacterFactory/instance/makeCharacter"
+    param QName(PackageNamespace("kabam.rotmg.assets.model"), "CharacterTemplate")
+    returns QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChars")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "file")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "index")
+      callproperty        QName(PackageNamespace(""), "getAnimatedChar"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeIcon")
+   method
+    refid "kabam.rotmg.assets.services:CharacterFactory/instance/makeIcon"
+    param QName(PackageNamespace("kabam.rotmg.assets.model"), "CharacterTemplate")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    flag HAS_OPTIONAL
+    optional Integer(100)
+    optional Integer(0)
+    optional Integer(0)
+    body
+     maxstack 7
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture1")
+
+      getlocal0
+      getlocal            4
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture2")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "size")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "makeCharacter"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      setlocal            5
+
+      getlocal0
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "STAND")
+      pushbyte            0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "makeFrame"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal            6
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+      getlocal            6
+      pushbyte            6
+      dup
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            12
+      subtract
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            6
+      subtract
+      callproperty        QName(PackageNamespace(""), "cropToBitmapData"), 5
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            6
+
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeWalkingIcon")
+   method
+    refid "kabam.rotmg.assets.services:CharacterFactory/instance/makeWalkingIcon"
+    param QName(PackageNamespace("kabam.rotmg.assets.model"), "CharacterTemplate")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.assets.model"), "Animation")
+    flag HAS_OPTIONAL
+    optional Integer(100)
+    optional Integer(0)
+    optional Integer(0)
+    body
+     maxstack 4
+     localcount 9
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture1")
+
+      getlocal0
+      getlocal            4
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture2")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "size")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "makeCharacter"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      setlocal            5
+
+      getlocal0
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "WALK")
+      pushdouble          0.5
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "makeFrame"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal            6
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            6
+
+      getlocal0
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "WALK")
+      pushbyte            0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "makeFrame"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal            7
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.assets.model"), "Animation")
+      constructprop       QName(PackageNamespace("kabam.rotmg.assets.model"), "Animation"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.assets.model"), "Animation")
+      dup
+      setlocal            8
+
+      getlocal            6
+      getlocal            7
+      callpropvoid        QName(PackageNamespace(""), "setFrames"), 2
+
+      getlocal            8
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "makeFrame")
+   method
+    refid "kabam.rotmg.assets.services:CharacterFactory/instance/kabam.rotmg.assets.services:CharacterFactory/instance/makeFrame"
+    param QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    body
+     maxstack 7
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "RIGHT")
+      getlocal2
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "imageFromDir"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "image_")
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "mask_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "size")
+      pushfalse
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture1")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.services:CharacterFactory/instance"), "texture2")
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.assets.services:CharacterFactory/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

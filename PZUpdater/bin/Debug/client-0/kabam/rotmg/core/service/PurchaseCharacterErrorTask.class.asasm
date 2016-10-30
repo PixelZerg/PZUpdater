@@ -1,0 +1,90 @@
+class
+ refid "kabam.rotmg.core.service:PurchaseCharacterErrorTask"
+ instance QName(PackageNamespace("kabam.rotmg.core.service"), "PurchaseCharacterErrorTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterErrorTask")
+  iinit
+   refid "kabam.rotmg.core.service:PurchaseCharacterErrorTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "parentTask") type QName(PackageNamespace("kabam.rotmg.core.service"), "PurchaseCharacterClassTask") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterErrorTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.core.service:PurchaseCharacterErrorTask/instance/kabam.rotmg.core.service:PurchaseCharacterErrorTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parentTask")
+      getproperty         QName(PackageNamespace(""), "error")
+      pushstring          "Not enough Gold."
+      ifne                L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L21
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parentTask")
+      getproperty         QName(PackageNamespace(""), "error")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.service:PurchaseCharacterErrorTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

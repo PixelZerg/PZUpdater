@@ -1,0 +1,2258 @@
+class
+ refid "ru.inspirit.net:MultipartURLLoader"
+ instance QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader")
+  extends QName(PackageNamespace("flash.events"), "EventDispatcher")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("ru.inspirit.net:MultipartURLLoader")
+  iinit
+   refid "ru.inspirit.net:MultipartURLLoader/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace(""), "Array")
+     constructprop       QName(PackageNamespace(""), "Array"), 0
+     initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace(""), "Array")
+     constructprop       QName(PackageNamespace(""), "Array"), 0
+     initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variableNames")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variables")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.net"), "URLLoader")
+     constructprop       QName(PackageNamespace("flash.net"), "URLLoader"), 0
+     initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace(""), "Array")
+     constructprop       QName(PackageNamespace(""), "Array"), 0
+     initproperty        QName(PackageNamespace(""), "requestHeaders")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader") type QName(PackageNamespace("flash.net"), "URLLoader") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variableNames") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variables") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_async") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_path") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data") type QName(PackageNamespace("flash.utils"), "ByteArray") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncWriteTimeoutId") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncFilePointer") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writtenBytes") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "requestHeaders") type QName(PackageNamespace(""), "Array") end
+  trait method QName(PackageNamespace(""), "load")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/load"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional False()
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushnull
+      equals
+      dup
+      iftrue              L11
+
+      pop
+      getlocal1
+      pushstring          ""
+      equals
+L11:
+      iffalse             L16
+
+      findpropstrict      QName(PackageNamespace("flash.errors"), "IllegalOperationError")
+      pushstring          "You cant load without specifing PATH"
+      constructprop       QName(PackageNamespace("flash.errors"), "IllegalOperationError"), 1
+      throw
+
+L16:
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_path")
+
+      getlocal0
+      getlocal2
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_async")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_async")
+      iffalse             L34
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+      iftrue              L31
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructPostDataAsync"), 0
+
+      jump                L33
+
+L31:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "doSend"), 0
+
+L33:
+      jump                L40
+
+L34:
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructPostData"), 0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "doSend"), 0
+
+L40:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "startLoad")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/startLoad"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_path")
+      pushnull
+      equals
+      dup
+      iftrue              L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_path")
+      pushstring          ""
+      equals
+L13:
+      dup
+      iftrue              L20
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_async")
+      pushfalse
+      equals
+L20:
+      iffalse             L25
+
+      findpropstrict      QName(PackageNamespace("flash.errors"), "IllegalOperationError")
+      pushstring          "You can use this method only if loading asynchronous."
+      constructprop       QName(PackageNamespace("flash.errors"), "IllegalOperationError"), 1
+      throw
+
+L25:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+      not
+      dup
+      iffalse             L34
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_async")
+      convert_b
+L34:
+      iffalse             L39
+
+      findpropstrict      QName(PackageNamespace("flash.errors"), "IllegalOperationError")
+      pushstring          "You should prepare data before sending when using asynchronous."
+      constructprop       QName(PackageNamespace("flash.errors"), "IllegalOperationError"), 1
+      throw
+
+L39:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "doSend"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "prepareData")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/prepareData"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructPostDataAsync"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "close")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/close"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+L2:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      callpropvoid        QName(PackageNamespace(""), "close"), 0
+
+L5:
+      jump                L17
+
+L6:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal1
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+      kill                1
+L17:
+      returnvoid
+     end ; code
+     try from L2 to L5 target L6 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "e") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addVariable")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/addVariable"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Utf8("")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variableNames")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      ifne                L12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variableNames")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L12:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variables")
+      getlocal1
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addFile")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/addFile"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Utf8("Filedata")
+    optional Utf8("application/octet-stream")
+    body
+     maxstack 7
+     localcount 6
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart")
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      ifne                L33
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+      getlocal2
+      findpropstrict      QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart")
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      constructprop       QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart"), 4
+      setproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      add
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+
+      jump                L69
+
+L33:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getglobalscope
+      getslot             2
+      astypelate
+      coerce              QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart")
+      setlocal            5
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "fileContent")
+      getproperty         QName(PackageNamespace(""), "length")
+      subtract
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+
+      getlocal            5
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "fileContent")
+
+      getlocal            5
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "fileName")
+
+      getlocal            5
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "dataField")
+
+      getlocal            5
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "contentType")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      add
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+
+L69:
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearVariables")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/clearVariables"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace(""), "Array")
+      constructprop       QName(PackageNamespace(""), "Array"), 0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variableNames")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variables")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearFiles")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/clearFiles"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      coerce_a
+      setlocal3
+
+      jump                L26
+
+L12:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getglobalscope
+      getslot             2
+      astypelate
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L26:
+      hasnext2            3, 2
+      iftrue              L12
+
+      kill                3
+      kill                2
+      getlocal0
+      findpropstrict      QName(PackageNamespace(""), "Array")
+      constructprop       QName(PackageNamespace(""), "Array"), 0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "clearInterval")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncWriteTimeoutId")
+      callpropvoid        QName(PackageNamespace("flash.utils"), "clearInterval"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "removeListener"), 0
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "close"), 0
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variableNames")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variables")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "requestHeaders")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBoundary")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/getBoundary"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 7
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary")
+      pushnull
+      ifne                L34
+
+      getlocal0
+      pushstring          ""
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary")
+
+      pushbyte            0
+      setlocal1
+
+      jump                L31
+
+L14:
+      label
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary")
+      getlex              QName(PackageNamespace(""), "String")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      pushbyte            97
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            25
+      multiply
+      add
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "fromCharCode"), 1
+      add
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary")
+
+      inclocal_i          1
+L31:
+      getlocal1
+      pushbyte            32
+      iflt                L14
+
+L34:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "ASYNC")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ASYNC/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_async")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "PREPARED")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/PREPARED/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "dataFormat")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/dataFormat/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getproperty         QName(PackageNamespace(""), "dataFormat")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "dataFormat")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/dataFormat/setter"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.net"), "URLLoaderDataFormat")
+      getproperty         QName(PackageNamespace(""), "BINARY")
+      equals
+      not
+      dup
+      iffalse             L15
+
+      pop
+      getlocal1
+      getlex              QName(PackageNamespace("flash.net"), "URLLoaderDataFormat")
+      getproperty         QName(PackageNamespace(""), "TEXT")
+      equals
+      not
+L15:
+      dup
+      iffalse             L23
+
+      pop
+      getlocal1
+      getlex              QName(PackageNamespace("flash.net"), "URLLoaderDataFormat")
+      getproperty         QName(PackageNamespace(""), "VARIABLES")
+      equals
+      not
+L23:
+      iffalse             L28
+
+      findpropstrict      QName(PackageNamespace("flash.errors"), "IllegalOperationError")
+      pushstring          "Illegal URLLoader Data Format"
+      constructprop       QName(PackageNamespace("flash.errors"), "IllegalOperationError"), 1
+      throw
+
+L28:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "dataFormat")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "loader")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/loader/getter"
+    returns QName(PackageNamespace("flash.net"), "URLLoader")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "doSend")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/doSend"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_path")
+      setproperty         QName(PackageNamespace(""), "url")
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.net"), "URLRequestMethod")
+      getproperty         QName(PackageNamespace(""), "POST")
+      setproperty         QName(PackageNamespace(""), "method")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      setproperty         QName(PackageNamespace(""), "data")
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "requestHeaders")
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequestHeader")
+      pushstring          "Content-type"
+      pushstring          "multipart/form-data; boundary="
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getBoundary"), 0
+      add
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequestHeader"), 2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "requestHeaders")
+      getproperty         QName(PackageNamespace(""), "length")
+      iffalse             L39
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "requestHeaders")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "requestHeaders")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+      setproperty         QName(PackageNamespace(""), "requestHeaders")
+
+L39:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "addListener"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructPostDataAsync")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/constructPostDataAsync"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "clearInterval")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncWriteTimeoutId")
+      callpropvoid        QName(PackageNamespace("flash.utils"), "clearInterval"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "ByteArray")
+      constructprop       QName(PackageNamespace("flash.utils"), "ByteArray"), 0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      getlex              QName(PackageNamespace("flash.utils"), "Endian")
+      getproperty         QName(PackageNamespace(""), "BIG_ENDIAN")
+      setproperty         QName(PackageNamespace(""), "endian")
+
+      getlocal0
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructVariablesPart"), 1
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncFilePointer")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writtenBytes")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      getproperty         QName(PackageNamespace(""), "length")
+      iffalse             L37
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "nextAsyncLoop"), 0
+
+      jump                L52
+
+L37:
+      getlocal0
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "closeDataObject"), 1
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getlex              QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getproperty         QName(PackageNamespace(""), "DATA_PREPARE_COMPLETE")
+      constructprop       QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+L52:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructPostData")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/constructPostData"
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "ByteArray")
+      constructprop       QName(PackageNamespace("flash.utils"), "ByteArray"), 0
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.utils"), "Endian")
+      getproperty         QName(PackageNamespace(""), "BIG_ENDIAN")
+      setproperty         QName(PackageNamespace(""), "endian")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructVariablesPart"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructFilesPart"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "closeDataObject"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "closeDataObject")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/closeDataObject"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "BOUNDARY"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "DOUBLEDASH"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructVariablesPart")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/constructVariablesPart"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      pushnull
+      coerce_s
+      setlocal3
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variableNames")
+      coerce_a
+      setlocal            6
+
+      jump                L79
+
+L18:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce_s
+      setlocal            4
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "BOUNDARY"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      pushstring          "Content-Disposition: form-data; name=\""
+      getlocal            4
+      add
+      pushstring          "\""
+      add
+      setlocal3
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      jump                L54
+
+L44:
+      label
+      getlocal1
+      getlocal3
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal2
+      increment
+      convert_u
+      setlocal2
+
+L54:
+      getlocal2
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L44
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_variables")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callpropvoid        QName(PackageNamespace(""), "writeUTFBytes"), 1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+L79:
+      hasnext2            6, 5
+      iftrue              L18
+
+      kill                6
+      kill                5
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "constructFilesPart")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/constructFilesPart"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 4
+     localcount 7
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      pushnull
+      coerce_s
+      setlocal3
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      getproperty         QName(PackageNamespace(""), "length")
+      iffalse             L76
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      coerce_a
+      setlocal            6
+
+      jump                L67
+
+L22:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce_s
+      setlocal            4
+
+      getlocal0
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getglobalscope
+      getslot             2
+      astypelate
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "getFilePartHeader"), 2
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getglobalscope
+      getslot             2
+      astypelate
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "getFilePartData"), 2
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      getproperty         QName(PackageNamespace(""), "length")
+      decrement
+      ifeq                L63
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+L63:
+      getlocal2
+      increment
+      convert_u
+      setlocal2
+
+L67:
+      hasnext2            6, 5
+      iftrue              L22
+
+      kill                6
+      kill                5
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "closeFilePartsData"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+L76:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "closeFilePartsData")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/closeFilePartsData"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      pushnull
+      coerce_s
+      setlocal3
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "BOUNDARY"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      pushstring          "Content-Disposition: form-data; name=\"Upload\""
+      setlocal3
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      jump                L39
+
+L29:
+      label
+      getlocal1
+      getlocal3
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal2
+      increment
+      convert_u
+      setlocal2
+
+L39:
+      getlocal2
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L29
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      pushstring          "Submit Query"
+      setlocal3
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      jump                L69
+
+L59:
+      label
+      getlocal1
+      getlocal3
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal2
+      increment
+      convert_u
+      setlocal2
+
+L69:
+      getlocal2
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L59
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "getFilePartHeader")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/getFilePartHeader"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    param QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal3
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "BOUNDARY"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      pushstring          "Content-Disposition: form-data; name=\"Filename\""
+      setlocal            4
+
+      pushbyte            0
+      convert_u
+      setlocal3
+
+      jump                L34
+
+L24:
+      label
+      getlocal1
+      getlocal            4
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal3
+      increment
+      convert_u
+      setlocal3
+
+L34:
+      getlocal3
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L24
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "fileName")
+      callpropvoid        QName(PackageNamespace(""), "writeUTFBytes"), 1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "BOUNDARY"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      pushstring          "Content-Disposition: form-data; name=\""
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "dataField")
+      add
+      pushstring          "\"; filename=\""
+      add
+      setlocal            4
+
+      pushbyte            0
+      convert_u
+      setlocal3
+
+      jump                L88
+
+L78:
+      label
+      getlocal1
+      getlocal            4
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal3
+      increment
+      convert_u
+      setlocal3
+
+L88:
+      getlocal3
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L78
+
+      getlocal1
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "fileName")
+      callpropvoid        QName(PackageNamespace(""), "writeUTFBytes"), 1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "QUOTATIONMARK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      pushstring          "Content-Type: "
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "contentType")
+      add
+      coerce_s
+      setlocal            4
+
+      pushbyte            0
+      convert_u
+      setlocal3
+
+      jump                L126
+
+L116:
+      label
+      getlocal1
+      getlocal            4
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal3
+      increment
+      convert_u
+      setlocal3
+
+L126:
+      getlocal3
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L116
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "getFilePartData")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/getFilePartData"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    param QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "fileContent")
+      pushbyte            0
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "fileContent")
+      getproperty         QName(PackageNamespace(""), "length")
+      callpropvoid        QName(PackageNamespace(""), "writeBytes"), 3
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onProgress")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/onProgress"
+    param QName(PackageNamespace("flash.events"), "ProgressEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onComplete")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/onComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "removeListener"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onIOError")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/onIOError"
+    param QName(PackageNamespace("flash.events"), "IOErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "removeListener"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onSecurityError")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/onSecurityError"
+    param QName(PackageNamespace("flash.events"), "SecurityErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "removeListener"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onHTTPStatus")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/onHTTPStatus"
+    param QName(PackageNamespace("flash.events"), "HTTPStatusEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "addListener")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/addListener"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onComplete")
+      pushfalse
+      pushbyte            0
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "ProgressEvent")
+      getproperty         QName(PackageNamespace(""), "PROGRESS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onProgress")
+      pushfalse
+      pushbyte            0
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onIOError")
+      pushfalse
+      pushbyte            0
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "HTTPStatusEvent")
+      getproperty         QName(PackageNamespace(""), "HTTP_STATUS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onHTTPStatus")
+      pushfalse
+      pushbyte            0
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "SecurityErrorEvent")
+      getproperty         QName(PackageNamespace(""), "SECURITY_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onSecurityError")
+      pushfalse
+      pushbyte            0
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "removeListener")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/removeListener"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "ProgressEvent")
+      getproperty         QName(PackageNamespace(""), "PROGRESS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onProgress")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onIOError")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "HTTPStatusEvent")
+      getproperty         QName(PackageNamespace(""), "HTTP_STATUS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onHTTPStatus")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_loader")
+      getlex              QName(PackageNamespace("flash.events"), "SecurityErrorEvent")
+      getproperty         QName(PackageNamespace(""), "SECURITY_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "onSecurityError")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "BOUNDARY")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/BOUNDARY"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getBoundary"), 0
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal2
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "DOUBLEDASH"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      jump                L23
+
+L15:
+      label
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_boundary")
+      getlocal3
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charCodeAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      inclocal_i          3
+L23:
+      getlocal3
+      getlocal2
+      iflt                L15
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/LINEBREAK"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushshort           3338
+      callpropvoid        QName(PackageNamespace(""), "writeShort"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "QUOTATIONMARK")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/QUOTATIONMARK"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            34
+      callpropvoid        QName(PackageNamespace(""), "writeByte"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "DOUBLEDASH")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/DOUBLEDASH"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    returns QName(PackageNamespace("flash.utils"), "ByteArray")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushshort           11565
+      callpropvoid        QName(PackageNamespace(""), "writeShort"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "nextAsyncLoop")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/nextAsyncLoop"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncFilePointer")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      getproperty         QName(PackageNamespace(""), "length")
+      ifnlt               L55
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_files")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_fileNames")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncFilePointer")
+      getproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getproperty         MultinameL([PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), PackageNamespace("ru.inspirit.net"), PackageInternalNs("ru.inspirit.net"), ProtectedNamespace("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("ru.inspirit.net:MultipartURLLoader"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getglobalscope
+      getslot             2
+      astypelate
+      coerce              QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader"), "FilePart")
+      setlocal1
+
+      getlocal0
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "getFilePartHeader"), 2
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "setTimeout")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writeChunkLoop")
+      pushbyte            10
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "fileContent")
+      pushbyte            0
+      callproperty        QName(PackageNamespace("flash.utils"), "setTimeout"), 5
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncWriteTimeoutId")
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncFilePointer")
+      increment
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncFilePointer")
+
+      kill                3
+      kill                2
+      jump                L86
+
+L55:
+      getlocal0
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "closeFilePartsData"), 1
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      getlocal0
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "closeDataObject"), 1
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_data")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "_prepared")
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getlex              QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getproperty         QName(PackageNamespace(""), "DATA_PREPARE_PROGRESS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+      constructprop       QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent"), 3
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getlex              QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getproperty         QName(PackageNamespace(""), "DATA_PREPARE_COMPLETE")
+      constructprop       QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+L86:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writeChunkLoop")
+   method
+    refid "ru.inspirit.net:MultipartURLLoader/instance/ru.inspirit.net:MultipartURLLoader/instance/writeChunkLoop"
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    param QName(PackageNamespace("flash.utils"), "ByteArray")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Integer(0)
+    body
+     maxstack 7
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace(""), "BLOCK_SIZE")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal3
+      subtract
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_u
+      setlocal            4
+
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "writeBytes"), 3
+
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "BLOCK_SIZE")
+      lessthan
+      dup
+      iftrue              L28
+
+      pop
+      getlocal3
+      getlocal            4
+      add
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      greaterequals
+L28:
+      iffalse             L37
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "LINEBREAK"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "nextAsyncLoop"), 0
+
+      returnvoid
+
+L37:
+      getlocal3
+      getlocal            4
+      add
+      convert_u
+      setlocal3
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writtenBytes")
+      getlocal            4
+      add
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writtenBytes")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writtenBytes")
+      getlex              QName(PackageNamespace(""), "BLOCK_SIZE")
+      modulo
+      pushbyte            2
+      multiply
+      pushbyte            0
+      ifne                L66
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getlex              QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent")
+      getproperty         QName(PackageNamespace(""), "DATA_PREPARE_PROGRESS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writtenBytes")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "totalFilesSize")
+      constructprop       QName(PackageNamespace("ru.inspirit.net.events"), "MultipartURLLoaderEvent"), 3
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+L66:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "setTimeout")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "writeChunkLoop")
+      pushbyte            10
+      getlocal1
+      getlocal2
+      getlocal3
+      callproperty        QName(PackageNamespace("flash.utils"), "setTimeout"), 5
+      initproperty        QName(PrivateNamespace(null, "ru.inspirit.net:MultipartURLLoader/instance"), "asyncWriteTimeoutId")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "ru.inspirit.net:MultipartURLLoader/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "BLOCK_SIZE")
+    pushbyte            64
+    pushshort           1024
+    multiply
+    setproperty         QName(PackageNamespace(""), "BLOCK_SIZE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "BLOCK_SIZE") slotid 1 type QName(PackageNamespace(""), "uint") value Double(65536) end
+end ; class

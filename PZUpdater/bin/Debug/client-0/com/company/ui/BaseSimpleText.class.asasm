@@ -1,0 +1,606 @@
+class
+ refid "com.company.ui:BaseSimpleText"
+ instance QName(PackageNamespace("com.company.ui"), "BaseSimpleText")
+  extends QName(PackageNamespace("flash.text"), "TextField")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.ui:BaseSimpleText")
+  iinit
+   refid "com.company.ui:BaseSimpleText/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_OPTIONAL
+   optional False()
+   optional Integer(0)
+   optional Integer(0)
+   body
+    maxstack 3
+    localcount 8
+    initscopedepth 8
+    maxscopedepth 9
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "inputWidth_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "inputWidth_")
+     pushbyte            0
+     ifeq                L14
+
+     findproperty        QName(PackageNamespace(""), "width")
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "width")
+
+L14:
+     getlocal0
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "inputHeight_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "inputHeight_")
+     pushbyte            0
+     ifeq                L24
+
+     findproperty        QName(PackageNamespace(""), "height")
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "height")
+
+L24:
+     getlex              QName(PackageNamespace("flash.text"), "Font")
+     getlex              QName(PackageNamespace(""), "MyriadPro")
+     callpropvoid        QName(PackageNamespace(""), "registerFont"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "MyriadPro")
+     constructprop       QName(PackageNamespace(""), "MyriadPro"), 0
+     coerce              QName(PackageNamespace("flash.text"), "Font")
+     setlocal            6
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "defaultTextFormat")
+     coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+     dup
+     setlocal            7
+
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "fontName")
+     setproperty         QName(PackageNamespace(""), "font")
+
+     getlocal            7
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "bold")
+
+     getlocal            7
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "size")
+
+     getlocal            7
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "color")
+
+     findproperty        QName(PackageNamespace(""), "defaultTextFormat")
+     getlocal            7
+     initproperty        QName(PackageNamespace(""), "defaultTextFormat")
+
+     getlocal3
+     iffalse             L82
+
+     findproperty        QName(PackageNamespace(""), "selectable")
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "selectable")
+
+     findproperty        QName(PackageNamespace(""), "mouseEnabled")
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "mouseEnabled")
+
+     findproperty        QName(PackageNamespace(""), "type")
+     getlex              QName(PackageNamespace("flash.text"), "TextFieldType")
+     getproperty         QName(PackageNamespace(""), "INPUT")
+     initproperty        QName(PackageNamespace(""), "type")
+
+     findproperty        QName(PackageNamespace(""), "embedFonts")
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "embedFonts")
+
+     findproperty        QName(PackageNamespace(""), "border")
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "border")
+
+     findproperty        QName(PackageNamespace(""), "borderColor")
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "borderColor")
+
+     findpropstrict      QName(PackageNamespace(""), "setTextFormat")
+     getlocal            7
+     callpropvoid        QName(PackageNamespace(""), "setTextFormat"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "CHANGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.ui:BaseSimpleText/instance"), "onChange")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     jump                L88
+
+L82:
+     findproperty        QName(PackageNamespace(""), "selectable")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "selectable")
+
+     findproperty        QName(PackageNamespace(""), "mouseEnabled")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "mouseEnabled")
+
+L88:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "inputWidth_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "inputHeight_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "actualWidth_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "actualHeight_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "setFont")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/setFont"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "defaultTextFormat")
+      coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "font")
+
+      findproperty        QName(PackageNamespace(""), "defaultTextFormat")
+      getlocal2
+      initproperty        QName(PackageNamespace(""), "defaultTextFormat")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSize")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/setSize"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "defaultTextFormat")
+      coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "size")
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "com.company.ui:BaseSimpleText/instance"), "applyFormat"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setColor")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/setColor"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "defaultTextFormat")
+      coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "color")
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "com.company.ui:BaseSimpleText/instance"), "applyFormat"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setBold")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/setBold"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "defaultTextFormat")
+      coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "bold")
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "com.company.ui:BaseSimpleText/instance"), "applyFormat"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setAlignment")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/setAlignment"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "defaultTextFormat")
+      coerce              QName(PackageNamespace("flash.text"), "TextFormat")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "align")
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "com.company.ui:BaseSimpleText/instance"), "applyFormat"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setText")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/setText"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "text")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setMultiLine")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/setMultiLine"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      findproperty        QName(PackageNamespace(""), "multiline")
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "multiline")
+
+      findproperty        QName(PackageNamespace(""), "wordWrap")
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "wordWrap")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.ui:BaseSimpleText/instance"), "applyFormat")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/com.company.ui:BaseSimpleText/instance/applyFormat"
+    param QName(PackageNamespace("flash.text"), "TextFormat")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "setTextFormat")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setTextFormat"), 1
+
+      findproperty        QName(PackageNamespace(""), "defaultTextFormat")
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "defaultTextFormat")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.ui:BaseSimpleText/instance"), "onChange")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/com.company.ui:BaseSimpleText/instance/onChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateMetrics"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateMetrics")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/updateMetrics"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.text"), "TextLineMetrics")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PackageNamespace(""), "actualWidth_")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PackageNamespace(""), "actualHeight_")
+
+      pushbyte            0
+      setlocal1
+
+      jump                L50
+
+L18:
+      label
+      findpropstrict      QName(PackageNamespace(""), "getLineMetrics")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLineMetrics"), 1
+      coerce              QName(PackageNamespace("flash.text"), "TextLineMetrics")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            4
+      add
+      convert_i
+      setlocal3
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            4
+      add
+      convert_i
+      setlocal            4
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "actualWidth_")
+      ifngt               L43
+
+      getlocal0
+      getlocal3
+      initproperty        QName(PackageNamespace(""), "actualWidth_")
+
+L43:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "actualHeight_")
+      getlocal            4
+      add
+      initproperty        QName(PackageNamespace(""), "actualHeight_")
+
+      inclocal_i          1
+L50:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "numLines")
+      iflt                L18
+
+      findproperty        QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputWidth_")
+      pushbyte            0
+      ifne                L62
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "actualWidth_")
+      convert_d
+      jump                L65
+
+L62:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputWidth_")
+      convert_d
+L65:
+      initproperty        QName(PackageNamespace(""), "width")
+
+      findproperty        QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputHeight_")
+      pushbyte            0
+      ifne                L75
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "actualHeight_")
+      convert_d
+      jump                L78
+
+L75:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputHeight_")
+      convert_d
+L78:
+      initproperty        QName(PackageNamespace(""), "height")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "useTextDimensions")
+   method
+    refid "com.company.ui:BaseSimpleText/instance/useTextDimensions"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 8
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      findproperty        QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputWidth_")
+      pushbyte            0
+      ifne                L12
+
+      getlex              QName(PackageNamespace(""), "textWidth")
+      pushbyte            4
+      add
+      convert_d
+      jump                L15
+
+L12:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputWidth_")
+      convert_d
+L15:
+      initproperty        QName(PackageNamespace(""), "width")
+
+      findproperty        QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputHeight_")
+      pushbyte            0
+      ifne                L26
+
+      getlex              QName(PackageNamespace(""), "textHeight")
+      pushbyte            4
+      add
+      convert_d
+      jump                L29
+
+L26:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "inputHeight_")
+      convert_d
+L29:
+      initproperty        QName(PackageNamespace(""), "height")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.ui:BaseSimpleText/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 7
+   maxscopedepth 8
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "MyriadPro")
+    getlex              QName(PackageNamespace("com.company.ui"), "BaseSimpleText_MyriadPro")
+    initproperty        QName(PackageNamespace(""), "MyriadPro")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MyriadPro") slotid 1 type QName(PackageNamespace(""), "Class") end
+end ; class

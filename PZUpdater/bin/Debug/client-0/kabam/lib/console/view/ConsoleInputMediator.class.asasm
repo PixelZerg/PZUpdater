@@ -1,0 +1,344 @@
+class
+ refid "kabam.lib.console.view:ConsoleInputMediator"
+ instance QName(PackageNamespace("kabam.lib.console.view"), "ConsoleInputMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag FINAL
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.console.view:ConsoleInputMediator")
+  iinit
+   refid "kabam.lib.console.view:ConsoleInputMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.lib.console.view"), "ConsoleInputView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "console") flag METADATA type QName(PackageNamespace("kabam.lib.console.model"), "Console")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "log") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ConsoleLogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      getproperty         QName(PackageNamespace(""), "INPUT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onInput")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener"), 3
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      getproperty         QName(PackageNamespace(""), "GET_PREVIOUS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onGetPrevious")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener"), 3
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      getproperty         QName(PackageNamespace(""), "GET_NEXT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onGetNext")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      getproperty         QName(PackageNamespace(""), "INPUT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onInput")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener"), 3
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      getproperty         QName(PackageNamespace(""), "GET_PREVIOUS")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onGetPrevious")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener"), 3
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      getproperty         QName(PackageNamespace(""), "GET_NEXT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onGetNext")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onInput")
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/onInput"
+    param QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "data")
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "logInput"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "console")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "execute"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "logInput")
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/logInput"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "console")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "hasAction"), 1
+      iffalse             L11
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "logAction"), 1
+
+      jump                L14
+
+L11:
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "logError"), 1
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "logAction")
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/logAction"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          " "
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      getlocal2
+      pushbyte            0
+      getlex              QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ACTION_PATTERN")
+      pushstring          "${value}"
+      getlocal2
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), PackageNamespace("kabam.lib.console.view"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/logAction"), PackageInternalNs("kabam.lib.console.view"), ProtectedNamespace("kabam.lib.console.view:ConsoleInputMediator"), StaticProtectedNs("kabam.lib.console.view:ConsoleInputMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), PackageNamespace("kabam.lib.console.view"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/logAction"), PackageInternalNs("kabam.lib.console.view"), ProtectedNamespace("kabam.lib.console.view:ConsoleInputMediator"), StaticProtectedNs("kabam.lib.console.view:ConsoleInputMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "log")
+      getlocal2
+      pushstring          " "
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "logError")
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/logError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ERROR_PATTERN")
+      pushstring          "${value}"
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "log")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onGetPrevious")
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/onGetPrevious"
+    param QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "console")
+      callproperty        QName(PackageNamespace(""), "getPreviousAction"), 0
+      setproperty         QName(PackageNamespace(""), "text")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "onGetNext")
+   method
+    refid "kabam.lib.console.view:ConsoleInputMediator/instance/kabam.lib.console.view:ConsoleInputMediator/onGetNext"
+    param QName(PackageNamespace("kabam.lib.console.view"), "ConsoleEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "console")
+      callproperty        QName(PackageNamespace(""), "getNextAction"), 0
+      setproperty         QName(PackageNamespace(""), "text")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.console.view:ConsoleInputMediator/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ERROR_PATTERN")
+    pushstring          "[0xFF3333:error - \"${value}\" not found]"
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ERROR_PATTERN")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ACTION_PATTERN")
+    pushstring          "[0xFFEE00:${value}]"
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ACTION_PATTERN")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ERROR_PATTERN") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("[0xFF3333:error - \"${value}\" not found]") end
+ trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleInputMediator"), "ACTION_PATTERN") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("[0xFFEE00:${value}]") end
+end ; class

@@ -1,0 +1,234 @@
+class
+ refid "kabam.rotmg.classes.view:CharacterSkinListItemFactory"
+ instance QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItemFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.classes.view:CharacterSkinListItemFactory")
+  iinit
+   refid "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "characters") flag METADATA type QName(PackageNamespace("kabam.rotmg.assets.services"), "CharacterFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "make")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/make"
+    param QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkins")
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+    body
+     maxstack 5
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")>)
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getListedSkins"), 0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")>)
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), PackageNamespace("__AS3__.vec"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/make"), PackageNamespace("kabam.rotmg.classes.view"), PackageInternalNs("kabam.rotmg.classes.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.classes.view:CharacterSkinListItemFactory"), StaticProtectedNs("kabam.rotmg.classes.view:CharacterSkinListItemFactory")])
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+      applytype           1
+      getlocal3
+      pushtrue
+      construct           2
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L36
+
+L26:
+      label
+      getlocal            4
+      getlocal            5
+      getlocal0
+      getlocal2
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/make"), PackageNamespace("kabam.rotmg.classes.view"), PackageInternalNs("kabam.rotmg.classes.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.classes.view:CharacterSkinListItemFactory"), StaticProtectedNs("kabam.rotmg.classes.view:CharacterSkinListItemFactory")])
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), "makeCharacterSkinTile"), 1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/make"), PackageNamespace("kabam.rotmg.classes.view"), PackageInternalNs("kabam.rotmg.classes.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.classes.view:CharacterSkinListItemFactory"), StaticProtectedNs("kabam.rotmg.classes.view:CharacterSkinListItemFactory")])
+
+      inclocal_i          5
+L36:
+      getlocal            5
+      getlocal3
+      iflt                L26
+
+      getlocal            4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), "makeCharacterSkinTile")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/makeCharacterSkinTile"
+    param QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+    returns QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItem")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItem")
+      constructprop       QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItem"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItem")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), "makeIcon"), 1
+      callpropvoid        QName(PackageNamespace(""), "setSkin"), 1
+
+      getlocal2
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setModel"), 1
+
+      getlocal2
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterface2"
+      pushbyte            5
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      callpropvoid        QName(PackageNamespace(""), "setLockIcon"), 1
+
+      getlocal2
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), "makeBuyButton"), 0
+      callpropvoid        QName(PackageNamespace(""), "setBuyButton"), 1
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), "makeBuyButton")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/makeBuyButton"
+    returns QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton")
+      pushstring          ""
+      pushbyte            16
+      pushbyte            0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getproperty         QName(PackageNamespace(""), "GOLD")
+      constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance"), "makeIcon")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/kabam.rotmg.classes.view:CharacterSkinListItemFactory/instance/makeIcon"
+    param QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+    returns QName(PackageNamespace("flash.display"), "Bitmap")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "skinTypes16")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "id")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      ifeq                L11
+
+      pushbyte            50
+      jump                L12
+
+L11:
+      pushbyte            100
+L12:
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "characters")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "template")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "makeIcon"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal3
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.classes.view:CharacterSkinListItemFactory/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

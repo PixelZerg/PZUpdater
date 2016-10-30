@@ -1,0 +1,461 @@
+class
+ refid "kabam.rotmg.news.view:NewsTicker"
+ instance QName(PackageNamespace("kabam.rotmg.news.view"), "NewsTicker")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.news.view:NewsTicker")
+  iinit
+   refid "kabam.rotmg.news.view:NewsTicker/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "createScrollText"), 0
+     initproperty        QName(PackageNamespace(""), "scrollText")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushdouble          0.17
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "drawBackground"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "align"), 0
+
+     getlocal0
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "visible")
+
+     getlex              QName(PackageNamespace("kabam.rotmg.news.view"), "NewsTicker")
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "pendingScrollText")
+     pushstring          ""
+     ifeq                L32
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.news.view"), "NewsTicker")
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "pendingScrollText")
+     callpropvoid        QName(PackageNamespace(""), "activateNewScrollText"), 1
+
+     getlex              QName(PackageNamespace("kabam.rotmg.news.view"), "NewsTicker")
+     pushstring          ""
+     setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "pendingScrollText")
+
+L32:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "WIDTH") type QName(PackageNamespace(""), "int") value Integer(280) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "HEIGHT") type QName(PackageNamespace(""), "int") value Integer(25) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "MAX_REPEATS") type QName(PackageNamespace(""), "int") value Integer(2) end
+  trait slot QName(PackageNamespace(""), "scrollText") type QName(PackageNamespace("flash.text"), "TextField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "SCROLL_PREPEND") type QName(PackageNamespace(""), "String") value Utf8("                                                                               ") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "SCROLL_APPEND") type QName(PackageNamespace(""), "String") value Utf8("                                                                                ") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "currentRepeat") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollOffset") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "activateNewScrollText")
+   method
+    refid "kabam.rotmg.news.view:NewsTicker/instance/activateNewScrollText"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "visible")
+      pushfalse
+      ifne                L10
+
+      getlocal0
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      jump                L11
+
+L10:
+      returnvoid
+
+L11:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "SCROLL_PREPEND")
+      getlocal1
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "SCROLL_APPEND")
+      add
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollAnimation")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      pushbyte            1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "currentRepeat")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollAnimation")
+   method
+    refid "kabam.rotmg.news.view:NewsTicker/instance/kabam.rotmg.news.view:NewsTicker/scrollAnimation"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      getproperty         QName(PackageNamespace(""), "scrollH")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      getproperty         QName(PackageNamespace(""), "maxScrollH")
+      ifnlt               L32
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollOffset")
+      increment_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollOffset")
+
+      kill                3
+      kill                2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollOffset")
+      setproperty         QName(PackageNamespace(""), "scrollH")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      jump                L87
+
+L32:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "currentRepeat")
+      pushbyte            1
+      greaterequals
+      dup
+      iffalse             L44
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "currentRepeat")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "MAX_REPEATS")
+      lessthan
+L44:
+      iffalse             L67
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "currentRepeat")
+      increment
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "currentRepeat")
+
+      kill                3
+      kill                2
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollOffset")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "scrollH")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      jump                L87
+
+L67:
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "currentRepeat")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollOffset")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "scrollH")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "scrollAnimation")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L87:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "align")
+   method
+    refid "kabam.rotmg.news.view:NewsTicker/instance/kabam.rotmg.news.view:NewsTicker/align"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollText")
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "drawBackground")
+   method
+    refid "kabam.rotmg.news.view:NewsTicker/instance/kabam.rotmg.news.view:NewsTicker/drawBackground"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushdouble          0.4
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "WIDTH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "HEIGHT")
+      pushbyte            12
+      dup
+      callpropvoid        QName(PackageNamespace(""), "drawRoundRect"), 6
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "createScrollText")
+   method
+    refid "kabam.rotmg.news.view:NewsTicker/instance/kabam.rotmg.news.view:NewsTicker/createScrollText"
+    returns QName(PackageNamespace("flash.text"), "TextField")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.text"), "TextField")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("flash.text"), "TextField")
+      constructprop       QName(PackageNamespace("flash.text"), "TextField"), 0
+      coerce              QName(PackageNamespace("flash.text"), "TextField")
+      setlocal1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "FontModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.model"), "FontModel")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      pushbyte            16
+      pushint             16777215
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "apply"), 4
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "selectable")
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "doubleClickEnabled")
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseEnabled")
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "mouseWheelEnabled")
+
+      getlocal1
+      pushstring          ""
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "wordWrap")
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "multiline")
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "selectable")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "WIDTH")
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal1
+      pushbyte            25
+      setproperty         QName(PackageNamespace(""), "height")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.news.view:NewsTicker/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "pendingScrollText")
+    pushstring          ""
+    setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "pendingScrollText")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "pendingScrollText") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("") end
+ trait method QName(PackageNamespace(""), "setPendingScrollText") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.news.view:NewsTicker/class/setPendingScrollText"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 8
+    maxscopedepth 9
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("kabam.rotmg.news.view"), "NewsTicker")
+     getlocal1
+     setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsTicker"), "pendingScrollText")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,82 @@
+class
+ refid "robotlegs.bender.bundles.mvcs:MVCSBundle"
+ instance QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "MVCSBundle")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IBundle", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.bundles.mvcs:MVCSBundle")
+  iinit
+   refid "robotlegs.bender.bundles.mvcs:MVCSBundle/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "extend")
+   method
+    refid "robotlegs.bender.bundles.mvcs:MVCSBundle/instance/extend"
+    param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 14
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.logging"), "LoggingExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.logging"), "TraceLoggingExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.contextView"), "ContextViewExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.eventDispatcher"), "EventDispatcherExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.modularity"), "ModularityExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter"), "CommandCenterExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.eventCommandMap"), "EventCommandMapExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.localEventMap"), "LocalEventMapExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager"), "ViewManagerExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager"), "StageObserverExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.viewManager"), "ManualStageObserverExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap"), "MediatorMapExtension")
+      getlex              QName(PackageNamespace("robotlegs.bender.extensions.stageSync"), "StageSyncExtension")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "extend"), 13
+
+      getlocal1
+      getlex              QName(PackageNamespace("robotlegs.bender.bundles.shared.configs"), "ContextViewListenerConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.bundles.mvcs:MVCSBundle/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

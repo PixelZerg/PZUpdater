@@ -1,0 +1,552 @@
+class
+ refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterWebAccountDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.view:RegisterWebAccountDialog")
+  iinit
+   refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "register")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_DIALOG_TITLE")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_DIALOG_LEFTBUTTON")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_DIALOG_RIGHTBUTTON")
+     pushstring          "/kongregateRegisterAccount"
+     constructsuper      4
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "createAssets"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "enableForTabBehavior"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "addEventListeners"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "register") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "retypePasswordInput") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "addEventListeners")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/addEventListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "leftButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "createAssets")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/createAssets"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_EMAIL")
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+
+      findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+      callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_PASSWORD")
+      pushtrue
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+
+      findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+      callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "RETYPE_PASSWORD")
+      pushtrue
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "retypePasswordInput")
+
+      findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "retypePasswordInput")
+      callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+      pushstring          ""
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox")
+
+      pushstring          "<font color=\"#7777EE\"><a href=\""
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "TERMS_OF_USE_URL")
+      add
+      pushstring          "\" target=\"_blank\">"
+      add
+      setlocal1
+
+      pushstring          "</a></font>."
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_CHECKBOX")
+      pushstring          "link"
+      getlocal1
+      pushstring          "_link"
+      getlocal2
+      newobject           2
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setTextStringBuilder"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addCheckBox")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox")
+      callpropvoid        QName(PackageNamespace(""), "addCheckBox"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "enableForTabBehavior")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/enableForTabBehavior"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "retypePasswordInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox")
+      getproperty         QName(PackageNamespace(""), "checkBox_")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlex              QName(PackageNamespace(""), "leftButton_")
+      pushbyte            6
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "retypePasswordInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox")
+      getproperty         QName(PackageNamespace(""), "checkBox_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      getlex              QName(PackageNamespace(""), "leftButton_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "onCancel")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "onRegister")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/onRegister"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+      setlocal2
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isEmailValid"), 0
+      convert_b
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isPasswordValid"), 0
+      convert_b
+L14:
+      dup
+      iffalse             L20
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isPasswordVerified"), 0
+      convert_b
+L20:
+      dup
+      iffalse             L26
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isCheckboxChecked"), 0
+      convert_b
+L26:
+      iffalse             L45
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      setproperty         QName(PackageNamespace(""), "username")
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      setproperty         QName(PackageNamespace(""), "password")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isCheckboxChecked")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/isCheckboxChecked"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      convert_b
+      setlocal1
+
+      getlocal1
+      iftrue              L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "checkbox")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_CHECK_ERROR")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L14:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isEmailValid")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/isEmailValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.util"), "EmailValidator")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callproperty        QName(PackageNamespace(""), "isValidEmail"), 1
+      convert_b
+      setlocal1
+
+      getlocal1
+      iftrue              L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "INVALID_EMAIL_ADDRESS")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L16:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isPasswordValid")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/isPasswordValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            5
+      greaterequals
+      setlocal1
+
+      getlocal1
+      iftrue              L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_SHORT_ERROR")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L16:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "isPasswordVerified")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/isPasswordVerified"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "passwordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "retypePasswordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      equals
+      setlocal1
+
+      getlocal1
+      iftrue              L17
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "retypePasswordInput")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_MATCH_ERROR")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L17:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "showError")
+   method
+    refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance/showError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:RegisterWebAccountDialog/instance"), "emailInput")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.view:RegisterWebAccountDialog/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

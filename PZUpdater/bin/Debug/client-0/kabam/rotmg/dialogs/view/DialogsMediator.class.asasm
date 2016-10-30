@@ -1,0 +1,328 @@
+class
+ refid "kabam.rotmg.dialogs.view:DialogsMediator"
+ instance QName(PackageNamespace("kabam.rotmg.dialogs.view"), "DialogsMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.dialogs.view:DialogsMediator")
+  iinit
+   refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.view"), "DialogsView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialogNoModal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogNoModalSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showDialogBackground") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "ShowDialogBackgroundSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "pushDialogSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "PushDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "popDialogSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "PopDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showDialogBackground")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onShowDialogBackground")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onOpenDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialogNoModal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onOpenDialogNoModal")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onCloseDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "pushDialogSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onPushDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "popDialogSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onPopDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onPushDialog")
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/kabam.rotmg.dialogs.view:DialogsMediator/instance/onPushDialog"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onPopDialog")
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/kabam.rotmg.dialogs.view:DialogsMediator/instance/onPopDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "pop"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showDialogBackground")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onShowDialogBackground")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onOpenDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialogNoModal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onOpenDialogNoModal")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onCloseDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "pushDialogSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onPushDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "popDialogSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onPopDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onShowDialogBackground")
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/kabam.rotmg.dialogs.view:DialogsMediator/instance/onShowDialogBackground"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Integer(1381653)
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "showBackground"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onOpenDialog")
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/kabam.rotmg.dialogs.view:DialogsMediator/instance/onOpenDialog"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "show"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onOpenDialogNoModal")
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/kabam.rotmg.dialogs.view:DialogsMediator/instance/onOpenDialogNoModal"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "show"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.dialogs.view:DialogsMediator/instance"), "onCloseDialog")
+   method
+    refid "kabam.rotmg.dialogs.view:DialogsMediator/instance/kabam.rotmg.dialogs.view:DialogsMediator/instance/onCloseDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "stage")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "focus")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "hideAll"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.dialogs.view:DialogsMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

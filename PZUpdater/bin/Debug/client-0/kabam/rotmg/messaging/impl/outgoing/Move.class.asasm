@@ -1,0 +1,149 @@
+class
+ refid "kabam.rotmg.messaging.impl.outgoing:Move"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "Move")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "OutgoingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:Move")
+  iinit
+   refid "kabam.rotmg.messaging.impl.outgoing:Move/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+     constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData"), 0
+     initproperty        QName(PackageNamespace(""), "newPosition_")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:Move/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:Move/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), PackageInternalNs("kabam.rotmg.messaging.impl.outgoing"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:Move"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:Move"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:OutgoingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "records_")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "tickId_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "time_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "newPosition_") type QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData") end
+  trait slot QName(PackageNamespace(""), "records_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord")>) end
+  trait method QName(PackageNamespace(""), "writeToOutput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.outgoing:Move/instance/writeToOutput"
+    param QName(PackageNamespace("flash.utils"), "IDataOutput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tickId_")
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeInt"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "time_")
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeInt"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "newPosition_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "writeToOutput"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      getproperty         QName(PackageNamespace(""), "length")
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeShort"), 1
+
+      pushbyte            0
+      setlocal2
+
+      jump                L30
+
+L22:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:Move/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:Move/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), PackageInternalNs("kabam.rotmg.messaging.impl.outgoing"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:Move"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:Move"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:OutgoingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message")])
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "writeToOutput"), 1
+
+      inclocal_i          2
+L30:
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L22
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.outgoing:Move/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "MOVE"
+      pushstring          "tickId_"
+      pushstring          "time_"
+      pushstring          "newPosition_"
+      pushstring          "records_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.outgoing:Move/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,695 @@
+class
+ refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "SealComparison")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "SlotComparison")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison")
+  iinit
+   refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "healingTag") type QName(PackageNamespace(""), "XML") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "damageTag") type QName(PackageNamespace(""), "XML") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherHealingTag") type QName(PackageNamespace(""), "XML") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherDamageTag") type QName(PackageNamespace(""), "XML") end
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), "compareSlots") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison:compareSlots"
+    param QName(PackageNamespace(""), "XML")
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 6
+     localcount 9
+     initscopedepth 6
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal3
+
+      pushscope
+
+      getscopeobject      1
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setslot             3
+
+      getscopeobject      1
+      getlocal1
+      setslot             1
+
+      getscopeobject      1
+      getlocal2
+      setslot             2
+
+      findproperty        QName(PackageNamespace(""), "comparisonStringBuilder")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder"), 0
+      initproperty        QName(PackageNamespace(""), "comparisonStringBuilder")
+
+      getlocal0
+      getlocal0
+      getscopeobject      1
+      getslot             1
+      pushstring          "Healing"
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "getEffectTag"), 2
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "healingTag")
+
+      getlocal0
+      getlocal0
+      getscopeobject      1
+      getslot             1
+      pushstring          "Damaging"
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "getEffectTag"), 2
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "damageTag")
+
+      getlocal0
+      getlocal0
+      getscopeobject      1
+      getslot             2
+      pushstring          "Healing"
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "getEffectTag"), 2
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherHealingTag")
+
+      getlocal0
+      getlocal0
+      getscopeobject      1
+      getslot             2
+      pushstring          "Damaging"
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "getEffectTag"), 2
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherDamageTag")
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "canCompare"), 0
+      iffalse             L137
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "handleHealingText"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "handleDamagingText"), 0
+
+      getscopeobject      1
+      getslot             1
+      getproperty         MultinameA("id", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      pushstring          "Seal of Blasphemous Prayer"
+      ifne                L137
+
+      getscopeobject      1
+      pushbyte            0
+      setlocal            5
+
+      getscopeobject      1
+      getslot             1
+      getproperty         Multiname("Activate", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      checkfilter
+      coerce_a
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "XMLList")
+      pushstring          ""
+      construct           1
+      setlocal            4
+
+      jump                L95
+
+L74:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      dup
+      setlocal            7
+
+      dup
+      setlocal            8
+
+      pushwith
+      findpropstrict      Multiname("text", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        Multiname("text", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")]), 0
+      pushstring          "ConditionEffectSelf"
+      equals
+      iffalse             L92
+
+      getlocal            4
+      getlocal            5
+      getlocal            7
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+
+L92:
+      popscope
+      kill                8
+      kill                7
+L95:
+      hasnext2            6, 5
+      iftrue              L74
+
+      kill                6
+      kill                5
+      getlocal            4
+      kill                4
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setslot             3
+
+      getlex              QName(PackageNamespace(""), "comparisonStringBuilder")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "EFFECT_ON_SELF")
+      pushstring          "effect"
+      pushstring          ""
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 2
+
+      getlex              QName(PackageNamespace(""), "comparisonStringBuilder")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "EFFECT_FOR_DURATION")
+      pushstring          "effect"
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "ACTIVE_EFFECT_INVULERABLE")
+      callproperty        QName(PackageNamespace(""), "wrapForTokenResolution"), 1
+      pushstring          "duration"
+      getscopeobject      1
+      getslot             3
+      getproperty         MultinameA("duration", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      newobject           2
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      getlex              QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "UNTIERED_COLOR")
+      callproperty        QName(PackageNamespace(""), "getOpenTag"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      callproperty        QName(PackageNamespace(""), "getCloseTag"), 0
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 4
+
+      getlex              QName(PackageNamespace(""), "processedTags")
+      getscopeobject      1
+      getslot             3
+      callproperty        Multiname("toXMLString", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")]), 0
+      pushtrue
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+
+L137:
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "itemXML") slotid 1 type QName(PackageNamespace(""), "XML") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "curItemXML") slotid 2 type QName(PackageNamespace(""), "XML") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "tag") slotid 3 type QName(PackageNamespace(""), "XML") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "canCompare")
+   method
+    refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/canCompare"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "healingTag")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L15
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "damageTag")
+      pushnull
+      equals
+      not
+L15:
+      dup
+      iffalse             L23
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherHealingTag")
+      pushnull
+      equals
+      not
+L23:
+      dup
+      iffalse             L31
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherDamageTag")
+      pushnull
+      equals
+      not
+L31:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "getEffectTag")
+   method
+    refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/getEffectTag"
+    param QName(PackageNamespace(""), "XML")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "XML")
+    flag NEED_ACTIVATION
+    body
+     maxstack 4
+     localcount 9
+     initscopedepth 6
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal3
+
+      pushscope
+
+      getscopeobject      1
+      pushnull
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setslot             3
+
+      getscopeobject      1
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setslot             4
+
+      getscopeobject      1
+      getlocal1
+      setslot             1
+
+      getscopeobject      1
+      getlocal2
+      setslot             2
+
+      getscopeobject      1
+      pushbyte            0
+      setlocal            5
+
+      getscopeobject      1
+      getslot             1
+      getproperty         Multiname("Activate", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      checkfilter
+      coerce_a
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "XMLList")
+      pushstring          ""
+      construct           1
+      setlocal            4
+
+      jump                L55
+
+L34:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      dup
+      setlocal            7
+
+      dup
+      setlocal            8
+
+      pushwith
+      findpropstrict      Multiname("text", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        Multiname("text", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")]), 0
+      pushstring          "ConditionEffectAura"
+      equals
+      iffalse             L52
+
+      getlocal            4
+      getlocal            5
+      getlocal            7
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+
+L52:
+      popscope
+      kill                8
+      kill                7
+L55:
+      hasnext2            6, 5
+      iftrue              L34
+
+      kill                6
+      kill                5
+      getlocal            4
+      kill                4
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setslot             3
+
+      pushbyte            0
+      setlocal            4
+
+      getscopeobject      1
+      getslot             3
+      coerce_a
+      setlocal            5
+
+      jump                L86
+
+L70:
+      label
+      getscopeobject      1
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setslot             4
+
+      getscopeobject      1
+      getslot             4
+      getproperty         MultinameA("effect", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      getscopeobject      1
+      getslot             2
+      ifne                L86
+
+      getscopeobject      1
+      getslot             4
+      returnvalue
+
+L86:
+      hasnext2            5, 4
+      iftrue              L70
+
+      kill                5
+      kill                4
+      pushnull
+      returnvalue
+     end ; code
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "xml") slotid 1 type QName(PackageNamespace(""), "XML") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "effectName") slotid 2 type QName(PackageNamespace(""), "String") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "matches") slotid 3 type QName(PackageNamespace(""), "XMLList") end
+     trait slot QName(PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), "tag") slotid 4 type QName(PackageNamespace(""), "XML") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "handleHealingText")
+   method
+    refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/handleHealingText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 9
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "healingTag")
+      getproperty         MultinameA("duration", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherHealingTag")
+      getproperty         MultinameA("duration", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "Number")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "healingTag")
+      getproperty         MultinameA("range", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "Number"), 1
+      convert_d
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "Number")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherHealingTag")
+      getproperty         MultinameA("range", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "Number"), 1
+      convert_d
+      setlocal            4
+
+      pushdouble          0.5
+      getlocal1
+      multiply
+      pushdouble          0.5
+      multiply
+      getlocal3
+      multiply
+      convert_d
+      setlocal            5
+
+      pushdouble          0.5
+      getlocal2
+      multiply
+      pushdouble          0.5
+      multiply
+      getlocal            4
+      multiply
+      convert_d
+      setlocal            6
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison"), "getTextColor")
+      getlocal            5
+      getlocal            6
+      subtract
+      callproperty        QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison"), "getTextColor"), 1
+      convert_u
+      setlocal            7
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      dup
+      setlocal            8
+
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "WITHIN_SQRS")
+      pushstring          "range"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "healingTag")
+      getproperty         MultinameA("range", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      newobject           1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getOpenTag"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      callproperty        QName(PackageNamespace(""), "getCloseTag"), 0
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 4
+
+      getlocal            8
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "EFFECT_FOR_DURATION")
+      pushstring          "effect"
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "ACTIVE_EFFECT_HEALING")
+      callproperty        QName(PackageNamespace(""), "wrapForTokenResolution"), 1
+      pushstring          "duration"
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      newobject           2
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getOpenTag"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      callproperty        QName(PackageNamespace(""), "getCloseTag"), 0
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 4
+
+      getlex              QName(PackageNamespace(""), "comparisonStringBuilder")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PARTY_EFFECT")
+      pushstring          "effect"
+      getlocal            8
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 2
+
+      getlex              QName(PackageNamespace(""), "processedTags")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "healingTag")
+      callproperty        Multiname("toXMLString", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")]), 0
+      pushtrue
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "handleDamagingText")
+   method
+    refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/handleDamagingText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 9
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "damageTag")
+      getproperty         MultinameA("duration", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherDamageTag")
+      getproperty         MultinameA("duration", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "Number")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "damageTag")
+      getproperty         MultinameA("range", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "Number"), 1
+      convert_d
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "Number")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "otherDamageTag")
+      getproperty         MultinameA("range", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      callproperty        QName(PackageNamespace(""), "Number"), 1
+      convert_d
+      setlocal            4
+
+      pushdouble          0.5
+      getlocal1
+      multiply
+      pushdouble          0.5
+      multiply
+      getlocal3
+      multiply
+      convert_d
+      setlocal            5
+
+      pushdouble          0.5
+      getlocal2
+      multiply
+      pushdouble          0.5
+      multiply
+      getlocal            4
+      multiply
+      convert_d
+      setlocal            6
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison"), "getTextColor")
+      getlocal            5
+      getlocal            6
+      subtract
+      callproperty        QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison"), "getTextColor"), 1
+      convert_u
+      setlocal            7
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      dup
+      setlocal            8
+
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "WITHIN_SQRS")
+      pushstring          "range"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "damageTag")
+      getproperty         MultinameA("range", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+      newobject           1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getOpenTag"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      callproperty        QName(PackageNamespace(""), "getCloseTag"), 0
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 4
+
+      getlocal            8
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "EFFECT_FOR_DURATION")
+      pushstring          "effect"
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "ACTIVE_EFFECT_DAMAGING")
+      callproperty        QName(PackageNamespace(""), "wrapForTokenResolution"), 1
+      pushstring          "duration"
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      newobject           2
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getOpenTag"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+      callproperty        QName(PackageNamespace(""), "getCloseTag"), 0
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 4
+
+      getlex              QName(PackageNamespace(""), "comparisonStringBuilder")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PARTY_EFFECT")
+      pushstring          "effect"
+      getlocal            8
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 2
+
+      getlex              QName(PackageNamespace(""), "processedTags")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), "damageTag")
+      callproperty        Multiname("toXMLString", [PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")]), 0
+      pushtrue
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/instance/com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), PackageNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), PackageInternalNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison"), StaticProtectedNs("com.company.assembleegameclient.ui.tooltip.slotcomparisons:SlotComparison")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.tooltip.slotcomparisons:SealComparison/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

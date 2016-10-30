@@ -1,0 +1,428 @@
+class
+ refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.steam.services"), "SteamPurchaseGoldTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  implements Multiname("PurchaseGoldTask", [PackageNamespace("kabam.rotmg.account.core.services")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.steam.services:SteamPurchaseGoldTask")
+  iinit
+   refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "steam") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.steam"), "SteamApi")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "offer") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "paymentMethod") flag METADATA type QName(PackageNamespace(""), "String")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "moneyFrameEnableCancelSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "MoneyFrameEnableCancelSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "first") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "second") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "requestPlayerCredits") flag METADATA type QName(PackageNamespace("kabam.rotmg.external.command"), "RequestPlayerCreditsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.steam.services:SteamPurchaseGoldTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "steam")
+      getproperty         QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "isOverlayEnabled")
+      iftrue              L14
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "isOverlayEnabled false!"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      pushstring          "Can’t process purchase, because Steam Overlay is disabled for the RotMG! To enabled it go to you games library, right click on the \"Realm of the Mad God\" and select \"Properties\" from the drop-down menu. On the \"Properties\" popup, select \"GENERAL\" tab and select option \"Enable the Steam Overlay while in-game\". Next, restart the game and try again."
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "reportError"), 1
+
+      jump                L47
+
+L14:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "SteamPurchaseGoldTask startTask"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "steam")
+      getproperty         QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "paymentAuthorized")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onPaymentAuthorized")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "first")
+      pushbyte            2
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "first")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "first")
+      pushstring          "/steamworks/purchaseOffer"
+      pushstring          "steamid"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "steam")
+      callproperty        QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "getSteamId"), 0
+      pushstring          "data"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offer")
+      getproperty         QName(PackageNamespace(""), "data_")
+      newobject           2
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+L47:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L7
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onPurchaseOfferComplete"), 0
+
+      jump                L10
+
+L7:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "reportError"), 1
+
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onPurchaseOfferComplete")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/onPurchaseOfferComplete"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal1
+
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "SteamPurchaseGoldTask purchaseOffer confirmed by AppEngine"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "setTimeout")
+      newfunction         "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/onPurchaseOfferComplete/inline_method"
+      pushshort           1100
+      callpropvoid        QName(PackageNamespace("flash.utils"), "setTimeout"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onPaymentAuthorized")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/onPaymentAuthorized"
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal3
+      pushfalse
+      ifne                L28
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "SteamPurchaseGoldTask payment canceled by user"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "second")
+      pushbyte            2
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "second")
+      pushstring          "/steamworks/finalizePurchase"
+      pushstring          "appid"
+      getlocal1
+      pushstring          "orderid"
+      getlocal2
+      pushstring          "authorized"
+      pushbyte            0
+      newobject           3
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      jump                L59
+
+L28:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "SteamPurchaseGoldTask payment authorized by Steam"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "second")
+      pushbyte            2
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "second")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onAuthorized")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "second")
+      pushstring          "/steamworks/finalizePurchase"
+      pushstring          "appid"
+      getlocal1
+      pushstring          "orderid"
+      getlocal2
+      pushstring          "authorized"
+      getlocal3
+      iffalse             L55
+
+      pushbyte            1
+      coerce_a
+      jump                L57
+
+L55:
+      pushbyte            0
+      coerce_a
+L57:
+      newobject           3
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+L59:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onAuthorized")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/onAuthorized"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L7
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onPurchaseFinalizeComplete"), 0
+
+      jump                L10
+
+L7:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "reportError"), 1
+
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "onPurchaseFinalizeComplete")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/onPurchaseFinalizeComplete"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "SteamPurchaseGoldTask purchase finalized"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "requestPlayerCredits")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance"), "reportError")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/instance/reportError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "Error: "
+      getlocal1
+      add
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "finalize error {0}"
+      getlocal2
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "DebugDialog")
+      getlocal2
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "DebugDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushfalse
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.steam.services:SteamPurchaseGoldTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,529 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ParticleGenerator"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleGenerator")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleGenerator")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   body
+    maxstack 6
+    localcount 3
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "targetGO")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#1"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.objects.particles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleGenerator"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleGenerator"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "particlePool")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#1"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.objects.particles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleGenerator"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleGenerator"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+     getproperty         QName(PackageNamespace(""), "bitmapFile")
+     iffalse             L48
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+     getproperty         QName(PackageNamespace(""), "bitmapFile")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+     getproperty         QName(PackageNamespace(""), "bitmapIndex")
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "bitmapData")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "bitmapData")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+     getproperty         QName(PackageNamespace(""), "size")
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "bitmapData")
+
+     jump                L58
+
+L48:
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+     getproperty         QName(PackageNamespace(""), "color")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+     getproperty         QName(PackageNamespace(""), "size")
+     callproperty        QName(PackageNamespace(""), "redrawSolidSquare"), 2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "bitmapData")
+
+L58:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "particlePool") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")>) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")>) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "targetGO") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "generatedParticles") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "totalTime") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps") type QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "bitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "friction") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 8
+     localcount 11
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            4
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      setlocal            9
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      setlocal            10
+
+      getlocal1
+      pushshort           1000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal2
+      pushshort           1000
+      divide
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "targetGO")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L27
+
+      pushfalse
+      returnvalue
+
+L27:
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "targetGO")
+      getproperty         QName(PackageNamespace(""), "x_")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "targetGO")
+      getproperty         QName(PackageNamespace(""), "y_")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      findproperty        QName(PackageNamespace(""), "z_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "targetGO")
+      getproperty         QName(PackageNamespace(""), "z_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "zOffset")
+      add
+      initproperty        QName(PackageNamespace(""), "z_")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "totalTime")
+      getlocal            4
+      add
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "totalTime")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "rate")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "totalTime")
+      multiply
+      convert_d
+      dup
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "generatedParticles")
+      subtract
+      convert_i
+      setlocal            6
+
+      pushbyte            0
+      setlocal            7
+
+      jump                L171
+
+L69:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "particlePool")
+      getproperty         QName(PackageNamespace(""), "length")
+      iffalse             L80
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "particlePool")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "pop"), 0
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      setlocal            9
+
+      jump                L86
+
+L80:
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "bitmapData")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      setlocal            9
+
+L86:
+      getlocal            9
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "life")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "lifeVariance")
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      decrement
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      decrement
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      decrement
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "rise")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "riseVariance")
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      decrement
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "z_")
+      callpropvoid        QName(PackageNamespace(""), "initialize"), 5
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            9
+      getlex              QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "rangeX")
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      decrement
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "rangeY")
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      decrement
+      multiply
+      add
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles")
+      getlocal            9
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          7
+L171:
+      getlocal            7
+      getlocal            6
+      iflt                L69
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "generatedParticles")
+      getlocal            6
+      add
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "generatedParticles")
+
+      pushbyte            0
+      setlocal            8
+
+      jump                L255
+
+L183:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles")
+      getlocal            8
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#1"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.objects.particles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleGenerator"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleGenerator"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      dup
+      dup
+      setlocal            10
+
+      getproperty         QName(PackageNamespace(""), "timeLeft")
+      getlocal            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "timeLeft")
+
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "timeLeft")
+      pushbyte            0
+      ifnle               L217
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles")
+      getlocal            8
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      callpropvoid        QName(PackageNamespace(""), "removeObj"), 1
+
+      getlocal            8
+      decrement_i
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "particlePool")
+      getlocal            10
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      jump                L254
+
+L217:
+      getlocal            10
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "spdZ")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "effectProps")
+      getproperty         QName(PackageNamespace(""), "riseAcc")
+      getlocal            4
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "spdZ")
+
+      getlocal            10
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "spdX")
+      getlocal            4
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            10
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "y_")
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "spdY")
+      getlocal            4
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal            10
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "z_")
+      getlocal            10
+      getproperty         QName(PackageNamespace(""), "spdZ")
+      getlocal            4
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "z_")
+
+L254:
+      inclocal_i          8
+L255:
+      getlocal            8
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L183
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeFromMap") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance/removeFromMap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles")
+      coerce_a
+      setlocal3
+
+      jump                L22
+
+L12:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BaseParticle")
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      callpropvoid        QName(PackageNamespace(""), "removeObj"), 1
+
+L22:
+      hasnext2            3, 2
+      iftrue              L12
+
+      kill                3
+      kill                2
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "liveParticles")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ParticleGenerator/instance#0"), "particlePool")
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "removeFromMap"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ParticleGenerator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "attachParticleGenerator") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.objects.particles:ParticleGenerator/class/attachParticleGenerator"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   returns QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleGenerator")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     construct           2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

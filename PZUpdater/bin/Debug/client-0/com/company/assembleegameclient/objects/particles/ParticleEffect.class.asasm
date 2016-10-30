@@ -1,0 +1,312 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ParticleEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:ParticleEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:ParticleEffect/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushnull
+     constructsuper      1
+
+     findproperty        QName(PackageNamespace(""), "objectId_")
+     findpropstrict      QName(PackageNamespace(""), "getNextFakeObjectId")
+     callproperty        QName(PackageNamespace(""), "getNextFakeObjectId"), 0
+     initproperty        QName(PackageNamespace(""), "objectId_")
+
+     findproperty        QName(PackageNamespace(""), "hasShadow_")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "hasShadow_")
+
+     getlocal0
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "reducedDrawEnabled")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "reducedDrawEnabled") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:ParticleEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reducedDrawEnabled")
+      iffalse             L10
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "runEasyRendering"), 2
+      returnvalue
+
+L10:
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "runNormalRendering"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runNormalRendering")
+   method
+    refid "com.company.assembleegameclient.objects.particles:ParticleEffect/instance/runNormalRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runEasyRendering")
+   method
+    refid "com.company.assembleegameclient.objects.particles:ParticleEffect/instance/runEasyRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:ParticleEffect/instance/draw"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 4
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ParticleEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "fromProps") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.objects.particles:ParticleEffect/class/fromProps"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   returns QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+   body
+    maxstack 3
+    localcount 4
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     jump                L45
+
+L3:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealingEffect")
+     getlocal2
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealingEffect"), 1
+     returnvalue
+
+L8:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "FountainEffect")
+     getlocal2
+     getlocal1
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "FountainEffect"), 2
+     returnvalue
+
+L14:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasEffect")
+     getlocal2
+     getlocal1
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasEffect"), 2
+     returnvalue
+
+L20:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "VentEffect")
+     getlocal2
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "VentEffect"), 1
+     returnvalue
+
+L25:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleEffect")
+     getlocal2
+     getlocal1
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleEffect"), 2
+     returnvalue
+
+L31:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "XMLEffect")
+     getlocal2
+     getlocal1
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "XMLEffect"), 2
+     returnvalue
+
+L37:
+     label
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleGenerator")
+     getlocal1
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "attachParticleGenerator"), 2
+     returnvalue
+
+L43:
+     label
+     jump                L93
+
+L45:
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "id")
+     setlocal3
+
+     pushstring          "Healing"
+     getlocal3
+     ifstrictne          L53
+
+     pushbyte            0
+     jump                L91
+
+L53:
+     pushstring          "Fountain"
+     getlocal3
+     ifstrictne          L58
+
+     pushbyte            1
+     jump                L91
+
+L58:
+     pushstring          "Gas"
+     getlocal3
+     ifstrictne          L63
+
+     pushbyte            2
+     jump                L91
+
+L63:
+     pushstring          "Vent"
+     getlocal3
+     ifstrictne          L68
+
+     pushbyte            3
+     jump                L91
+
+L68:
+     pushstring          "Bubbles"
+     getlocal3
+     ifstrictne          L73
+
+     pushbyte            4
+     jump                L91
+
+L73:
+     pushstring          "XMLEffect"
+     getlocal3
+     ifstrictne          L78
+
+     pushbyte            5
+     jump                L91
+
+L78:
+     pushstring          "CustomParticles"
+     getlocal3
+     ifstrictne          L83
+
+     pushbyte            6
+     jump                L91
+
+L83:
+     jump                L90
+
+     ; 0x24
+     ; 0x07
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L90:
+     pushbyte            7
+L91:
+     kill                3
+     lookupswitch        L43, [L3, L8, L14, L20, L25, L31, L37, L43]
+
+L93:
+     pushnull
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,492 @@
+class
+ refid "kabam.rotmg.pets.view.components:PetsTabContentView"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetsTabContentView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:PetsTabContentView")
+  iinit
+   refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/init#1"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             11776947
+     pushbyte            13
+     pushfalse
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PackageNamespace(""), "petRarityTextField")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             11776947
+     pushbyte            15
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "tabTitleTextField")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             11776947
+     pushbyte            13
+     pushfalse
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petFamilyTextField")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "petBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "petRarityTextField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "tabTitleTextField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petFamilyTextField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO") end
+  trait method QName(PackageNamespace(""), "init")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/init#0"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getSkin"), 0
+      initproperty        QName(PackageNamespace(""), "petBitmap")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "addChildren"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "addAbilities"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "positionChildren"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "updateTextFields"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.model"), "TabStripModel")
+      getproperty         QName(PackageNamespace(""), "PETS")
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "updated")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "onUpdate")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "onUpdate")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/onUpdate"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "updatePetBitmap"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petRarityTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      callproperty        QName(PackageNamespace(""), "getRarity"), 0
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "updatePetBitmap")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/updatePetBitmap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmap")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      callproperty        QName(PackageNamespace(""), "getSkin"), 0
+      initproperty        QName(PackageNamespace(""), "petBitmap")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmap")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "addAbilities")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/addAbilities"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal1
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetAbilityDisplay")
+      setlocal3
+
+      pushbyte            3
+      convert_u
+      setlocal2
+
+      pushbyte            0
+      convert_u
+      setlocal1
+
+      jump                L44
+
+L15:
+      label
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetAbilityDisplay")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.pets.view.components"), PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/addAbilities"), PackageInternalNs("kabam.rotmg.pets.view.components"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.view.components:PetsTabContentView"), StaticProtectedNs("kabam.rotmg.pets.view.components:PetsTabContentView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushshort           171
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetAbilityDisplay"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetAbilityDisplay")
+      setlocal3
+
+      getlocal3
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal3
+      pushbyte            72
+      pushbyte            17
+      getlocal1
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      increment
+      convert_u
+      setlocal1
+
+L44:
+      getlocal1
+      getlocal2
+      iflt                L15
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "getNumAbilities")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/getNumAbilities"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      callproperty        QName(PackageNamespace(""), "getRarity"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getproperty         QName(PackageNamespace(""), "DIVINE")
+      getproperty         QName(PackageNamespace(""), "value")
+      equals
+      dup
+      iftrue              L19
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      callproperty        QName(PackageNamespace(""), "getRarity"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getproperty         QName(PackageNamespace(""), "LEGENDARY")
+      getproperty         QName(PackageNamespace(""), "value")
+      equals
+L19:
+      convert_b
+      setlocal1
+
+      getlocal1
+      iffalse             L25
+
+      pushbyte            2
+      returnvalue
+
+L25:
+      pushbyte            3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "updateTextFields")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/updateTextFields"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "tabTitleTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petRarityTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      callproperty        QName(PackageNamespace(""), "getRarity"), 0
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petFamilyTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetFamilyKeys")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petVO")
+      callproperty        QName(PackageNamespace(""), "getFamily"), 0
+      callproperty        QName(PackageNamespace(""), "getTranslationKey"), 1
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "addChildren")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmap")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "tabTitleTextField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petRarityTextField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petFamilyTextField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "positionChildren")
+   method
+    refid "kabam.rotmg.pets.view.components:PetsTabContentView/instance/kabam.rotmg.pets.view.components:PetsTabContentView/instance/positionChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmap")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmap")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushbyte            8
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmap")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmap")
+      getproperty         QName(PackageNamespace(""), "y")
+      decrement
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      pushbyte            7
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petsContent")
+      pushbyte            6
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "tabTitleTextField")
+      pushbyte            45
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "tabTitleTextField")
+      pushbyte            20
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petRarityTextField")
+      pushbyte            45
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petRarityTextField")
+      pushbyte            33
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petFamilyTextField")
+      pushbyte            45
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetsTabContentView/instance"), "petFamilyTextField")
+      pushbyte            47
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:PetsTabContentView/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

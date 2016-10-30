@@ -1,0 +1,346 @@
+class
+ refid "kabam.rotmg.core.commands:PurchaseCharacterCommand"
+ instance QName(PackageNamespace("kabam.rotmg.core.commands"), "PurchaseCharacterCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.commands:PurchaseCharacterCommand")
+  iinit
+   refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "classType") flag METADATA type QName(PackageNamespace(""), "int")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateNewCharacterScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "UpdateNewCharacterScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "buyCharacterPending") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "BuyCharacterPendingSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.service"), "PurchaseCharacterClassTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "failure") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.service"), "PurchaseCharacterErrorTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "charList") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "GetCharListTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "cost") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "getCostToUnlockCharacter"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "cost")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iftrue              L13
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "showPromptToRegister"), 0
+
+      jump                L21
+
+L13:
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "isCharacterUnlockAffordable"), 0
+      iffalse             L19
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "purchaseCharacterClass"), 0
+
+      jump                L21
+
+L19:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "showNotEnoughGoldDialog"), 0
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "showPromptToRegister")
+   method
+    refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/showPromptToRegister"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+      pushstring          "In order to unlock a class type you must be a registered user."
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateNewCharacterScreen")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "purchaseCharacterClass")
+   method
+    refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/purchaseCharacterClass"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      pushbyte            -1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "cost")
+      multiply
+      callpropvoid        QName(PackageNamespace(""), "changeCredits"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buyCharacterPending")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classType")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "charList")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "makeFailureTask"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask"), 3
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateNewCharacterScreen")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "makeFailureTask")
+   method
+    refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/makeFailureTask"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "failure")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      setproperty         QName(PackageNamespace(""), "parentTask")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "failure")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "showNotEnoughGoldDialog")
+   method
+    refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/showNotEnoughGoldDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.view"), "NotEnoughGoldDialog")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PURCHASECHARACTER_CHARACTERCOST")
+      pushstring          "cost"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "cost")
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "setTextParams"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateNewCharacterScreen")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "getCostToUnlockCharacter")
+   method
+    refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/getCostToUnlockCharacter"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classType")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/getCostToUnlockCharacter"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:PurchaseCharacterCommand"), StaticProtectedNs("kabam.rotmg.core.commands:PurchaseCharacterCommand")])
+      getproperty         Multiname("UnlockCost", [PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/getCostToUnlockCharacter"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:PurchaseCharacterCommand"), StaticProtectedNs("kabam.rotmg.core.commands:PurchaseCharacterCommand")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "isCharacterUnlockAffordable")
+   method
+    refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/kabam.rotmg.core.commands:PurchaseCharacterCommand/instance/isCharacterUnlockAffordable"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "cost")
+      not
+      dup
+      iftrue              L14
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core.commands:PurchaseCharacterCommand/instance"), "cost")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getCredits"), 0
+      lessequals
+L14:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.commands:PurchaseCharacterCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

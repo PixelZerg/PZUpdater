@@ -1,0 +1,693 @@
+class
+ refid "kabam.rotmg.news.view:NewsCell"
+ instance QName(PackageNamespace("kabam.rotmg.news.view"), "NewsCell")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.news.view:NewsCell")
+  iinit
+   refid "kabam.rotmg.news.view:NewsCell/instance/init#0"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "clickSignal")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "injector")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "setSize"), 2
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "initImageContainer"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "initMask"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "initBox"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "imageContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "maskShape") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "boxShape") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "size") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "w") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "h") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_vo") type QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_loader") type QName(PackageNamespace("flash.display"), "Loader") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textSize") type QName(PackageNamespace(""), "uint") value Integer(18) end
+  trait slot QName(PackageNamespace(""), "clickSignal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "setSize")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/setSize"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "w")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "h")
+
+      getlocal1
+      pushshort           306
+      equals
+      dup
+      iffalse             L17
+
+      pop
+      getlocal2
+      pushshort           194
+      equals
+L17:
+      iffalse             L22
+
+      getlocal0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "LARGE")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "size")
+
+      jump                L35
+
+L22:
+      getlocal1
+      pushshort           151
+      equals
+      dup
+      iffalse             L31
+
+      pop
+      getlocal2
+      pushshort           189
+      equals
+L31:
+      iffalse             L35
+
+      getlocal0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "SMALL")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "size")
+
+L35:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "init")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/init#1"
+    param QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_vo")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "updateTextField"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findproperty        QName(PackageNamespace(""), "buttonMode")
+      pushtrue
+      initproperty        QName(PackageNamespace(""), "buttonMode")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "addDisplayAssets")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/addDisplayAssets"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "maskShape")
+
+      getlocal1
+      kill                1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "boxShape")
+
+      getlocal1
+      kill                1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "initImageContainer")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/initImageContainer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "imageContainer")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "imageContainer")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "initMask")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/initMask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "maskShape")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "maskShape")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             16711935
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "maskShape")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "w")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "h")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "imageContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "maskShape")
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "maskShape")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "initBox")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/initBox"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+      constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "boxShape")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "boxShape")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushdouble          0.8
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "boxShape")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "h")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "BOX_HEIGHT")
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "w")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "BOX_HEIGHT")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "boxShape")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "updateTextField")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/updateTextField"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.view"), "TextDisplay")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textSize")
+      callproperty        Multiname("setSize", [PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), PackageInternalNs("kabam.rotmg.news.view"), PackageNamespace("kabam.rotmg.news.view"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/updateTextField"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.news.view:NewsCell"), StaticProtectedNs("kabam.rotmg.news.view:NewsCell"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      pushint             16777215
+      callproperty        Multiname("setColor", [PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), PackageInternalNs("kabam.rotmg.news.view"), PackageNamespace("kabam.rotmg.news.view"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/updateTextField"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.news.view:NewsCell"), StaticProtectedNs("kabam.rotmg.news.view:NewsCell"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+      getproperty         QName(PackageNamespace(""), "CENTER")
+      callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      getproperty         QName(PackageNamespace(""), "MIDDLE")
+      callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_vo")
+      getproperty         QName(PackageNamespace(""), "headline")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "resizeTextField"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "w")
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "h")
+      pushbyte            25
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "resizeTextField")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/resizeTextField"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "w")
+      pushbyte            10
+      subtract
+      ifngt               L25
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textSize")
+      pushbyte            2
+      subtract
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textSize")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "textSize")
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "resizeTextField"), 0
+
+L25:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "load")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/load"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Loader")
+      constructprop       QName(PackageNamespace("flash.display"), "Loader"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_loader")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_loader")
+      getproperty         QName(PackageNamespace(""), "contentLoaderInfo")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_loader")
+      getproperty         QName(PackageNamespace(""), "contentLoaderInfo")
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "onIOError")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_loader")
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_vo")
+      getproperty         QName(PackageNamespace(""), "imageURL")
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+      callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "onComplete")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/onComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "imageContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_loader")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "onIOError")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/onIOError"
+    param QName(PackageNamespace("flash.events"), "IOErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      jump                L19
+
+L3:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "imageContainer")
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicLarge")
+      constructprop       QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicLarge"), 0
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      jump                L42
+
+L10:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "imageContainer")
+      findpropstrict      QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicSmall")
+      constructprop       QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicSmall"), 0
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      jump                L42
+
+L17:
+      label
+      jump                L42
+
+L19:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "size")
+      setlocal2
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "LARGE")
+      getlocal2
+      ifstrictne          L27
+
+      pushbyte            0
+      jump                L40
+
+L27:
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "SMALL")
+      getlocal2
+      ifstrictne          L32
+
+      pushbyte            1
+      jump                L40
+
+L32:
+      jump                L39
+
+      ; 0x24
+      ; 0x02
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L39:
+      pushbyte            2
+L40:
+      kill                2
+      lookupswitch        L17, [L3, L10, L17]
+
+L42:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "onMouseDown")
+   method
+    refid "kabam.rotmg.news.view:NewsCell/instance/kabam.rotmg.news.view:NewsCell/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "_vo")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.news.view:NewsCell/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicLarge")
+    getlex              QName(PackageNamespace("kabam.rotmg.news.view"), "NewsCell_DefaultGraphicLarge")
+    setproperty         QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicLarge")
+
+    findproperty        QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicSmall")
+    getlex              QName(PackageNamespace("kabam.rotmg.news.view"), "NewsCell_DefaultGraphicSmall")
+    setproperty         QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicSmall")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "BOX_HEIGHT")
+    pushbyte            30
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "BOX_HEIGHT")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "LARGE")
+    pushstring          "LARGE"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "LARGE")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "SMALL")
+    pushstring          "SMALL"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "SMALL")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicLarge") slotid 1 type QName(PackageNamespace(""), "Class") end
+ trait slot QName(PackageInternalNs("kabam.rotmg.news.view"), "DefaultGraphicSmall") slotid 2 type QName(PackageNamespace(""), "Class") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "BOX_HEIGHT") slotid 3 type QName(PackageNamespace(""), "uint") value Integer(30) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "LARGE") slotid 4 type QName(PackageNamespace(""), "String") value Utf8("LARGE") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCell"), "SMALL") slotid 5 type QName(PackageNamespace(""), "String") value Utf8("SMALL") end
+end ; class

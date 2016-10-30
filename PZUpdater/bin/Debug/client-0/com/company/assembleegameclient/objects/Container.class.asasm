@@ -1,0 +1,248 @@
+class
+ refid "com.company.assembleegameclient.objects:Container"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "Container")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  implements Multiname("IInteractiveObject", [PackageNamespace("com.company.assembleegameclient.objects")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects:Container")
+  iinit
+   refid "com.company.assembleegameclient.objects:Container/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     findproperty        QName(PackageNamespace(""), "isInteractive_")
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "isInteractive_")
+
+     getlocal0
+     getlocal1
+     pushstring          "Loot"
+     callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "com.company.assembleegameclient.objects:Container/instance/init#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.objects:Container/instance/init#1"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects:Container"), StaticProtectedNs("com.company.assembleegameclient.objects:Container"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")]), 1
+     initproperty        QName(PackageNamespace(""), "isLoot_")
+
+     getlocal0
+     pushstring          ""
+     initproperty        QName(PackageNamespace(""), "ownerId_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "isLoot_") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "ownerId_") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "setOwnerId")
+   method
+    refid "com.company.assembleegameclient.objects:Container/instance/setOwnerId"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "ownerId_")
+
+      findproperty        QName(PackageNamespace(""), "isInteractive_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ownerId_")
+      pushstring          ""
+      equals
+      dup
+      iftrue              L16
+
+      pop
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "isBoundToCurrentAccount"), 0
+      convert_b
+L16:
+      initproperty        QName(PackageNamespace(""), "isInteractive_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isBoundToCurrentAccount")
+   method
+    refid "com.company.assembleegameclient.objects:Container/instance/isBoundToCurrentAccount"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "accountId_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ownerId_")
+      equals
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addTo") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects:Container/instance/addTo"
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      callsuper           QName(PackageNamespace(""), "addTo"), 3
+      iftrue              L10
+
+      pushfalse
+      returnvalue
+
+L10:
+      getlex              QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "player_")
+      pushnull
+      ifne                L16
+
+      pushtrue
+      returnvalue
+
+L16:
+      getlex              QName(PackageNamespace("com.company.util"), "PointUtil")
+      getlex              QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "player_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      getlocal2
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "distanceXY"), 4
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "isLoot_")
+      convert_b
+      dup
+      iffalse             L37
+
+      pop
+      getlocal            4
+      pushbyte            10
+      lessthan
+L37:
+      iffalse             L41
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "loot_appears"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+L41:
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPanel")
+   method
+    refid "com.company.assembleegameclient.objects:Container/instance/getPanel"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+    returns QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      convert_b
+      dup
+      iffalse             L10
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "map")
+      convert_b
+L10:
+      iffalse             L16
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player_")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      jump                L18
+
+L16:
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+L18:
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ContainerGrid")
+      getlocal0
+      getlocal2
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ContainerGrid"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ContainerGrid")
+      setlocal3
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:Container/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,531 @@
+class
+ refid "kabam.lib.console.view:ConsoleOutputView"
+ instance QName(PackageNamespace("kabam.lib.console.view"), "ConsoleOutputView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("Resizable", [PackageNamespace("kabam.lib.resizing.view")])
+  flag SEALED
+  flag FINAL
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.console.view:ConsoleOutputView")
+  iinit
+   refid "kabam.lib.console.view:ConsoleOutputView/instance/init"
+   body
+    maxstack 6
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "RegExp")
+     pushstring          "\\[0x(.+)\\:(.+)\\]"
+     pushstring          "ig"
+     construct           2
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "PATTERN")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.text"), "TextField")
+     constructprop       QName(PackageNamespace("flash.text"), "TextField"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+
+     getlocal0
+     newarray            0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logged")
+
+     getlocal0
+     newarray            0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watched")
+
+     getlocal0
+     newobject           0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap")
+
+     getlocal0
+     constructsuper      0
+
+     findproperty        QName(PackageNamespace(""), "alpha")
+     pushdouble          0.8
+     initproperty        QName(PackageNamespace(""), "alpha")
+
+     findproperty        QName(PackageNamespace(""), "blendMode")
+     getlex              QName(PackageNamespace("flash.display"), "BlendMode")
+     getproperty         QName(PackageNamespace(""), "LAYER")
+     initproperty        QName(PackageNamespace(""), "blendMode")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     pushdouble          0.6
+     setproperty         QName(PackageNamespace(""), "alpha")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     findpropstrict      QName(PackageNamespace("flash.text"), "TextFormat")
+     pushstring          "_sans"
+     pushbyte            14
+     pushint             16777215
+     pushtrue
+     constructprop       QName(PackageNamespace("flash.text"), "TextFormat"), 4
+     setproperty         QName(PackageNamespace(""), "defaultTextFormat")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     getlex              QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "DEFAULT_OUTPUT")
+     setproperty         QName(PackageNamespace(""), "htmlText")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "selectable")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "multiline")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "wordWrap")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+     getproperty         QName(PackageNamespace(""), "LEFT")
+     setproperty         QName(PackageNamespace(""), "autoSize")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     pushtrue
+     setproperty         QName(PackageNamespace(""), "background")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "border")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+     pushshort           13056
+     setproperty         QName(PackageNamespace(""), "backgroundColor")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.junkbyte.console"), "Console")
+     pushstring          ""
+     findpropstrict      QName(PackageNamespace("com.junkbyte.console"), "ConsoleConfig")
+     constructprop       QName(PackageNamespace("com.junkbyte.console"), "ConsoleConfig"), 0
+     constructprop       QName(PackageNamespace("com.junkbyte.console"), "Console"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logConsole")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logConsole")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "PATTERN") type QName(PackageNamespace(""), "RegExp") end
+  trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "HTML_TEMPLATE") type QName(PackageNamespace(""), "String") value Utf8("<font color='#$1'>$2</font>") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField") type QName(PackageNamespace("flash.text"), "TextField") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logConsole") type QName(PackageNamespace("com.junkbyte.console"), "Console") end
+  trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logged") type QName(PackageNamespace(""), "Array") end
+  trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watched") type QName(PackageNamespace(""), "Array") end
+  trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchBottom") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "watch")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/watch"
+    param QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView/instance"), PackageNamespace("kabam.lib.console.view"), PackageInternalNs("kabam.lib.console.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_a
+      dup
+      iftrue              L20
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name")
+      callproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "makeWatch"), 1
+      coerce_a
+L20:
+      dup
+      setlocal3
+
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView/instance"), PackageNamespace("kabam.lib.console.view"), PackageInternalNs("kabam.lib.console.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlocal3
+      kill                3
+      coerce              QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "data")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "PATTERN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "HTML_TEMPLATE")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      setproperty         QName(PackageNamespace(""), "data")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "updateOutputText"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unwatch")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/unwatch"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView/instance"), PackageNamespace("kabam.lib.console.view"), PackageInternalNs("kabam.lib.console.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+      setlocal2
+
+      getlocal2
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap")
+      getlocal1
+      deleteproperty      MultinameL([PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView/instance"), PackageNamespace("kabam.lib.console.view"), PackageInternalNs("kabam.lib.console.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watched")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watched")
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "makeWatch")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/kabam.lib.console.view:ConsoleOutputView/makeWatch"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.lib.console.model"), "Watch"), 1
+      coerce              QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watched")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "log")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/log"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "PATTERN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "HTML_TEMPLATE")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logged")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logConsole")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addHTML"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logged")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watched")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap")
+      coerce_a
+      setlocal3
+
+      jump                L31
+
+L20:
+      label
+      getlocal3
+      getlocal2
+      nextname
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchMap")
+      getlocal1
+      deleteproperty      MultinameL([PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView/instance"), PackageNamespace("kabam.lib.console.view"), PackageInternalNs("kabam.lib.console.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("kabam.lib.console.view:ConsoleOutputView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pop
+L31:
+      hasnext2            3, 2
+      iftrue              L20
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "resize")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/resize"
+    param QName(PackageNamespace("flash.geom"), "Rectangle")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      getlex              QName(PackageNamespace("kabam.lib.console.view"), "ConsoleInputView")
+      getproperty         QName(PackageNamespace(""), "HEIGHT")
+      subtract
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchBottom")
+
+      findproperty        QName(PackageNamespace(""), "x")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x")
+
+      findproperty        QName(PackageNamespace(""), "y")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logConsole")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "snapWatchTextToInputView"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "snapWatchTextToInputView")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/kabam.lib.console.view:ConsoleOutputView/snapWatchTextToInputView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchBottom")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "updateOutputText")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/kabam.lib.console.view:ConsoleOutputView/updateOutputText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watchTextField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "watched")
+      pushstring          "\n"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+      setproperty         QName(PackageNamespace(""), "htmlText")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "snapWatchTextToInputView"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getText")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputView/instance/getText"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "logged")
+      pushstring          "\r"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.console.view:ConsoleOutputView/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "DEFAULT_OUTPUT")
+    pushstring          "kabam.lib/console"
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "DEFAULT_OUTPUT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputView"), "DEFAULT_OUTPUT") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("kabam.lib/console") end
+end ; class

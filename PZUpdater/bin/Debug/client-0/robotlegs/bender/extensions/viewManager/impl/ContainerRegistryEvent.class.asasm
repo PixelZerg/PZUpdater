@@ -1,0 +1,113 @@
+class
+ refid "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistryEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent")
+  iinit
+   refid "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/instance"), "_container")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/instance"), "_container") type QName(PackageNamespace("flash.display"), "DisplayObjectContainer") end
+  trait getter QName(PackageNamespace(""), "container")
+   method
+    refid "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/instance/container/getter"
+    returns QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/instance"), "_container")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    refid "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistryEvent")
+      getlex              QName(PackageNamespace(""), "type")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/instance"), "_container")
+      constructprop       QName(PackageNamespace("robotlegs.bender.extensions.viewManager.impl"), "ContainerRegistryEvent"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.extensions.viewManager.impl:ContainerRegistryEvent/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "CONTAINER_ADD")
+    pushstring          "containerAdd"
+    initproperty        QName(PackageNamespace(""), "CONTAINER_ADD")
+
+    findproperty        QName(PackageNamespace(""), "CONTAINER_REMOVE")
+    pushstring          "containerRemove"
+    initproperty        QName(PackageNamespace(""), "CONTAINER_REMOVE")
+
+    findproperty        QName(PackageNamespace(""), "ROOT_CONTAINER_ADD")
+    pushstring          "rootContainerAdd"
+    initproperty        QName(PackageNamespace(""), "ROOT_CONTAINER_ADD")
+
+    findproperty        QName(PackageNamespace(""), "ROOT_CONTAINER_REMOVE")
+    pushstring          "rootContainerRemove"
+    initproperty        QName(PackageNamespace(""), "ROOT_CONTAINER_REMOVE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "CONTAINER_ADD") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("containerAdd") end
+ trait const QName(PackageNamespace(""), "CONTAINER_REMOVE") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("containerRemove") end
+ trait const QName(PackageNamespace(""), "ROOT_CONTAINER_ADD") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("rootContainerAdd") end
+ trait const QName(PackageNamespace(""), "ROOT_CONTAINER_REMOVE") slotid 4 type QName(PackageNamespace(""), "String") value Utf8("rootContainerRemove") end
+end ; class

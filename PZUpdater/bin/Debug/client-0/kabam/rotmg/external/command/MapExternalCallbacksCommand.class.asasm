@@ -1,0 +1,68 @@
+class
+ refid "kabam.rotmg.external.command:MapExternalCallbacksCommand"
+ instance QName(PackageNamespace("kabam.rotmg.external.command"), "MapExternalCallbacksCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.external.command:MapExternalCallbacksCommand")
+  iinit
+   refid "kabam.rotmg.external.command:MapExternalCallbacksCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "externalServiceHelper") flag METADATA type QName(PackageNamespace("kabam.rotmg.external.service"), "ExternalServiceHelper")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.external.command:MapExternalCallbacksCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "externalServiceHelper")
+      callpropvoid        QName(PackageNamespace(""), "mapExternalCallbacks"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.external.command:MapExternalCallbacksCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

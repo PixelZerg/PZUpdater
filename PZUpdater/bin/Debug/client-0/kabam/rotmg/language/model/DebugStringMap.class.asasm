@@ -1,0 +1,330 @@
+class
+ refid "kabam.rotmg.language.model:DebugStringMap"
+ instance QName(PackageNamespace("kabam.rotmg.language.model"), "DebugStringMap")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("StringMap", [PackageNamespace("kabam.rotmg.language.model")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.language.model:DebugStringMap")
+  iinit
+   refid "kabam.rotmg.language.model:DebugStringMap/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance/init"), PackageNamespace("kabam.rotmg.language.model"), PackageInternalNs("kabam.rotmg.language.model"), ProtectedNamespace("kabam.rotmg.language.model:DebugStringMap"), StaticProtectedNs("kabam.rotmg.language.model:DebugStringMap"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "DebugTextInfo")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "debugTextInfos")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "delegate") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "StringMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "languageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "debugTextInfos") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.text.model"), "DebugTextInfo")>) end
+  trait method QName(PackageNamespace(""), "hasKey")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/hasKey"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getValue")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/getValue"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          ""
+      equals
+      not
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), "isInvalid"), 1
+      convert_b
+L13:
+      iffalse             L16
+
+      getlocal1
+      returnvalue
+
+L16:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "delegate")
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.language.model:StringMap"), "getValue"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), "isInvalid")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/kabam.rotmg.language.model:DebugStringMap/instance/isInvalid"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), "hasNo"), 1
+      convert_b
+      dup
+      iftrue              L13
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), "hasWrongLanguage"), 1
+      convert_b
+L13:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), "hasNo")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/kabam.rotmg.language.model:DebugStringMap/instance/hasNo"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "delegate")
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.language.model:StringMap"), "hasKey"), 1
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), "pushDebugInfo")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/kabam.rotmg.language.model:DebugStringMap/instance/pushDebugInfo"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLanguageFamily"), 1
+      coerce_s
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.model"), "DebugTextInfo")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.model"), "DebugTextInfo"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.model"), "DebugTextInfo")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "key")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "delegate")
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.language.model:StringMap"), "hasKey"), 1
+      setproperty         QName(PackageNamespace(""), "hasKey")
+
+      getlocal3
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "languageFamily")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "delegate")
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.language.model:StringMap"), "getValue"), 1
+      setproperty         QName(PackageNamespace(""), "value")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "debugTextInfos")
+      getlocal3
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.language.model:DebugStringMap/instance"), "hasWrongLanguage")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/kabam.rotmg.language.model:DebugStringMap/instance/hasWrongLanguage"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLanguageFamily"), 1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguage"), 0
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setValue")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/setValue"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "delegate")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("kabam.rotmg.language.model:StringMap"), "setValue"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getLanguageFamily")
+   method
+    refid "kabam.rotmg.language.model:DebugStringMap/instance/getLanguageFamily"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "delegate")
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.language.model:StringMap"), "getLanguageFamily"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.language.model:DebugStringMap/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,290 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:MapInfo"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "MapInfo")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "IncomingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:MapInfo")
+  iinit
+   refid "kabam.rotmg.messaging.impl.incoming:MapInfo/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance/init"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:MapInfo"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:MapInfo"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "String")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "clientXML_")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance/init"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:MapInfo"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:MapInfo"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "String")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "extraXML_")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "width_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "height_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "name_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "displayName_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "difficulty_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "fp_") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "background_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "allowPlayerTeleport_") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "showDisplays_") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "clientXML_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+  trait slot QName(PackageNamespace(""), "extraXML_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+  trait method QName(PackageNamespace(""), "parseFromInput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:MapInfo/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance"), "parseProperties"), 1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance"), "parseXML"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance"), "parseProperties")
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:MapInfo/instance/kabam.rotmg.messaging.impl.incoming:MapInfo/instance/parseProperties"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "width_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "height_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      initproperty        QName(PackageNamespace(""), "name_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      initproperty        QName(PackageNamespace(""), "displayName_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUnsignedInt"), 0
+      initproperty        QName(PackageNamespace(""), "fp_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "background_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "difficulty_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readBoolean"), 0
+      initproperty        QName(PackageNamespace(""), "allowPlayerTeleport_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readBoolean"), 0
+      initproperty        QName(PackageNamespace(""), "showDisplays_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:MapInfo/instance"), "parseXML")
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:MapInfo/instance/kabam.rotmg.messaging.impl.incoming:MapInfo/instance/parseXML"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readShort"), 0
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clientXML_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal3
+
+      jump                L31
+
+L19:
+      label
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      convert_i
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clientXML_")
+      getlocal1
+      getlocal            4
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTFBytes"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          3
+L31:
+      getlocal3
+      getlocal2
+      iflt                L19
+
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readShort"), 0
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "extraXML_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal3
+
+      jump                L57
+
+L45:
+      label
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      convert_i
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "extraXML_")
+      getlocal1
+      getlocal            4
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTFBytes"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          3
+L57:
+      getlocal3
+      getlocal2
+      iflt                L45
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:MapInfo/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 11
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "MAPINFO"
+      pushstring          "width_"
+      pushstring          "height_"
+      pushstring          "name_"
+      pushstring          "fp_"
+      pushstring          "background_"
+      pushstring          "allowPlayerTeleport_"
+      pushstring          "showDisplays_"
+      pushstring          "clientXML_"
+      pushstring          "extraXML_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 10
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:MapInfo/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

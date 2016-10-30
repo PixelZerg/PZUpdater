@@ -1,0 +1,132 @@
+class
+ refid "kabam.rotmg.account.core.control:IsAccountRegisteredGuard"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.control"), "IsAccountRegisteredGuard")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IGuard", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.control:IsAccountRegisteredGuard")
+  iinit
+   refid "kabam.rotmg.account.core.control:IsAccountRegisteredGuard/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "approve")
+   method
+    refid "kabam.rotmg.account.core.control:IsAccountRegisteredGuard/instance/approve"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      convert_b
+      setlocal1
+
+      getlocal1
+      coerce_a
+      dup
+      iftrue              L15
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.control:IsAccountRegisteredGuard/instance/approve"), "enterRegisterFlow"), 0
+      coerce_a
+L15:
+      pop
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.core.control:IsAccountRegisteredGuard"), "getString")
+   method
+    refid "kabam.rotmg.account.core.control:IsAccountRegisteredGuard/instance/kabam.rotmg.account.core.control:IsAccountRegisteredGuard:getString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.control:IsAccountRegisteredGuard/instance/approve"), "enterRegisterFlow")
+   method
+    refid "kabam.rotmg.account.core.control:IsAccountRegisteredGuard/instance/kabam.rotmg.account.core.control:IsAccountRegisteredGuard/instance/approve/enterRegisterFlow"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+      getlocal0
+      callproperty        QName(ProtectedNamespace("kabam.rotmg.account.core.control:IsAccountRegisteredGuard"), "getString"), 0
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.control:IsAccountRegisteredGuard/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,104 @@
+class
+ refid "kabam.rotmg.minimap:MiniMapConfig"
+ instance QName(PackageNamespace("kabam.rotmg.minimap"), "MiniMapConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.minimap:MiniMapConfig")
+  iinit
+   refid "kabam.rotmg.minimap:MiniMapConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mediatorMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.minimap:MiniMapConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.control"), "MiniMapZoomSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.control"), "SetMiniMapMapSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.control"), "UpdateGameObjectTileSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.control"), "UpdateGroundTileSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.view"), "MiniMap")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.view"), "MiniMapMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.minimap:MiniMapConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,264 @@
+class
+ refid "kabam.rotmg.language.service:GetLanguageService"
+ instance QName(PackageNamespace("kabam.rotmg.language.service"), "GetLanguageService")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.language.service:GetLanguageService")
+  iinit
+   refid "kabam.rotmg.language.service:GetLanguageService/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "strings") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "StringMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "language") type QName(PackageNamespace(""), "String") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.language.service:GetLanguageService"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.language.service:GetLanguageService/instance/kabam.rotmg.language.service:GetLanguageService:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguageFamily"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "language")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushbyte            3
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/app/getLanguageStrings"
+      pushstring          "languageType"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "language")
+      newobject           1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "onComplete")
+   method
+    refid "kabam.rotmg.language.service:GetLanguageService/instance/kabam.rotmg.language.service:GetLanguageService/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "onLanguageResponse"), 1
+
+      jump                L10
+
+L8:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "onLanguageError"), 0
+
+L10:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "onLanguageResponse")
+   method
+    refid "kabam.rotmg.language.service:GetLanguageService/instance/kabam.rotmg.language.service:GetLanguageService/onLanguageResponse"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 6
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "strings")
+      callpropvoid        QName(Namespace("kabam.rotmg.language.model:StringMap"), "clear"), 0
+
+      getlex              QName(PackageNamespace(""), "JSON")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "parse"), 1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal2
+      coerce_a
+      setlocal            5
+
+      jump                L37
+
+L19:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "strings")
+      getlocal3
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService/instance/kabam.rotmg.language.service:GetLanguageService/onLanguageResponse"), PackageNamespace("kabam.rotmg.language.service"), PackageInternalNs("kabam.rotmg.language.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.language.service:GetLanguageService"), StaticProtectedNs("kabam.rotmg.language.service:GetLanguageService"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getlocal3
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService/instance/kabam.rotmg.language.service:GetLanguageService/onLanguageResponse"), PackageNamespace("kabam.rotmg.language.service"), PackageInternalNs("kabam.rotmg.language.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.language.service:GetLanguageService"), StaticProtectedNs("kabam.rotmg.language.service:GetLanguageService"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getlocal3
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService/instance/kabam.rotmg.language.service:GetLanguageService/onLanguageResponse"), PackageNamespace("kabam.rotmg.language.service"), PackageInternalNs("kabam.rotmg.language.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.language.service:GetLanguageService"), StaticProtectedNs("kabam.rotmg.language.service:GetLanguageService"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callpropvoid        QName(Namespace("kabam.rotmg.language.model:StringMap"), "setValue"), 3
+
+L37:
+      hasnext2            5, 4
+      iftrue              L19
+
+      kill                5
+      kill                4
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "onLanguageError")
+   method
+    refid "kabam.rotmg.language.service:GetLanguageService/instance/kabam.rotmg.language.service:GetLanguageService/onLanguageError"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "strings")
+      pushstring          "ok"
+      pushstring          "ok"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguageFamily"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.language.model:StringMap"), "setValue"), 3
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      pushstring          "Unable to load language ["
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "language")
+      add
+      pushstring          "]"
+      add
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushfalse
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.language.service:GetLanguageService/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "LANGUAGE")
+    pushstring          "LANGUAGE"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "LANGUAGE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.language.service:GetLanguageService"), "LANGUAGE") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("LANGUAGE") end
+end ; class

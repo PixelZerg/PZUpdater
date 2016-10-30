@@ -1,0 +1,140 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:XMLEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "XMLEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:XMLEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:XMLEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "go_")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleLibrary")
+     getproperty         QName(PackageNamespace(""), "propsLibrary_")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "particle")
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance/init"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:XMLEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:XMLEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")])
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "partProps_")
+
+     getlocal0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "cooldown")
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldown_")
+
+     getlocal0
+     pushdouble          0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldownLeft_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "partProps_") type QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleProperties") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldown_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldownLeft_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:XMLEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L9
+
+      pushfalse
+      returnvalue
+
+L9:
+      getlocal2
+      pushshort           1000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldownLeft_")
+      getlocal3
+      subtract
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldownLeft_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldownLeft_")
+      pushbyte            0
+      ifnge               L26
+
+      pushtrue
+      returnvalue
+
+L26:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldown_")
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "cooldownLeft_")
+
+      getlex              QName(PackageNamespace(""), "map_")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "XMLParticle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "partProps_")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "XMLParticle"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:XMLEffect/instance"), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:XMLEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,105 @@
+class
+ refid "robotlegs.bender.extensions.logging.impl:LogMessageParser"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "LogMessageParser")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.logging.impl:LogMessageParser")
+  iinit
+   refid "robotlegs.bender.extensions.logging.impl:LogMessageParser/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "parseMessage")
+   method
+    refid "robotlegs.bender.extensions.logging.impl:LogMessageParser/instance/parseMessage"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal2
+      iffalse             L33
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L30
+
+L15:
+      label
+      getlocal1
+      pushstring          "{"
+      getlocal            4
+      add
+      pushstring          "}"
+      add
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:LogMessageParser/instance/parseMessage#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:LogMessageParser/instance/parseMessage#1"), PackageNamespace("robotlegs.bender.extensions.logging.impl"), PackageInternalNs("robotlegs.bender.extensions.logging.impl"), ProtectedNamespace("robotlegs.bender.extensions.logging.impl:LogMessageParser"), StaticProtectedNs("robotlegs.bender.extensions.logging.impl:LogMessageParser")])
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+      coerce_s
+      setlocal1
+
+      inclocal_i          4
+L30:
+      getlocal            4
+      getlocal3
+      iflt                L15
+
+L33:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.extensions.logging.impl:LogMessageParser/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,784 @@
+class
+ refid "org.osflash.signals.natives:NativeSignal"
+ instance QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("INativeDispatcher", [PackageNamespace("org.osflash.signals.natives")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.osflash.signals.natives:NativeSignal")
+  iinit
+   refid "org.osflash.signals.natives:NativeSignal/instance/init"
+   param QName(PackageNamespace("flash.events"), "IEventDispatcher")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Class")
+   flag HAS_OPTIONAL
+   optional Null()
+   optional Utf8("")
+   optional Null()
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("org.osflash.signals"), "SlotList")
+     getproperty         QName(PackageNamespace(""), "NIL")
+     initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "target")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "eventType")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "eventClass")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_target") type QName(PackageNamespace("flash.events"), "IEventDispatcher") end
+  trait slot QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventType") type QName(PackageNamespace(""), "String") end
+  trait slot QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventClass") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_valueClasses") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots") type QName(PackageNamespace("org.osflash.signals"), "SlotList") end
+  trait getter QName(PackageNamespace(""), "eventType")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/eventType/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventType")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "eventType")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/eventType/setter"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventType")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "eventClass")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/eventClass/getter"
+    returns QName(PackageNamespace(""), "Class")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventClass")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "eventClass")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/eventClass/setter"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      coerce              QName(PackageNamespace(""), "Class")
+      dup
+      iftrue              L10
+
+      pop
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      coerce              QName(PackageNamespace(""), "Class")
+L10:
+      initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventClass")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventClass")
+      newarray            1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_valueClasses")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "valueClasses") flag METADATA
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/valueClasses/getter"
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_valueClasses")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+   metadata "ArrayElementType"
+    item null "Class"
+   end ; metadata
+  end ; trait
+  trait setter QName(PackageNamespace(""), "valueClasses")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/valueClasses/setter"
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      convert_b
+      dup
+      iffalse             L12
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+L12:
+      iffalse             L18
+
+      getlocal1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals.natives:NativeSignal/instance#0"), PackageNamespace(""), ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), PrivateNamespace(null, "org.osflash.signals.natives:NativeSignal/instance#1"), PackageNamespace("org.osflash.signals.natives"), PackageInternalNs("org.osflash.signals.natives"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("org.osflash.signals.natives:NativeSignal")])
+      coerce              QName(PackageNamespace(""), "Class")
+      jump                L20
+
+L18:
+      pushnull
+      coerce              QName(PackageNamespace(""), "Class")
+L20:
+      initproperty        QName(PackageNamespace(""), "eventClass")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "numListeners")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/numListeners/getter"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      getproperty         QName(PackageNamespace(""), "length")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "target")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/target/getter"
+    returns QName(PackageNamespace("flash.events"), "IEventDispatcher")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_target")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "target")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/target/setter"
+    param QName(PackageNamespace("flash.events"), "IEventDispatcher")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_target")
+      ifne                L7
+
+      returnvoid
+
+L7:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_target")
+      iffalse             L12
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+L12:
+      getlocal0
+      getlocal1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_target")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "add")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/add"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "addWithPriority"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addWithPriority")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/addWithPriority"
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    flag HAS_OPTIONAL
+    optional Integer(0)
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      pushfalse
+      getlocal2
+      callproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "registerListenerWithPriority"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addOnce")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/addOnce"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "addOnceWithPriority"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addOnceWithPriority")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/addOnceWithPriority"
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    flag HAS_OPTIONAL
+    optional Integer(0)
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      pushtrue
+      getlocal2
+      callproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "registerListenerWithPriority"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "remove")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/remove"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "find"), 1
+      coerce              QName(PackageNamespace("org.osflash.signals"), "ISlot")
+      setlocal2
+
+      getlocal2
+      iftrue              L12
+
+      pushnull
+      returnvalue
+
+L12:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_target")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventType")
+      getlocal2
+      getproperty         QName(Namespace("org.osflash.signals:ISlot"), "execute1")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "filterNot"), 1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeAll")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/removeAll"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      coerce              QName(PackageNamespace("org.osflash.signals"), "SlotList")
+      setlocal1
+
+      jump                L20
+
+L7:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "target")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventType")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "head")
+      getproperty         QName(Namespace("org.osflash.signals:ISlot"), "execute1")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tail")
+      coerce              QName(PackageNamespace("org.osflash.signals"), "SlotList")
+      setlocal1
+
+L20:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "nonEmpty")
+      iftrue              L7
+
+      getlocal0
+      getlex              QName(PackageNamespace("org.osflash.signals"), "SlotList")
+      getproperty         QName(PackageNamespace(""), "NIL")
+      initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispatch")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/dispatch"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_REST
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      getlocal1
+      ifne                L9
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Event object expected."
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L9:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      ifeq                L17
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "No more than one Event object expected."
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L17:
+      getlocal0
+      getlocal1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals.natives:NativeSignal/instance#0"), PackageNamespace(""), ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), PrivateNamespace(null, "org.osflash.signals.natives:NativeSignal/instance#1"), PackageNamespace("org.osflash.signals.natives"), PackageInternalNs("org.osflash.signals.natives"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("org.osflash.signals.natives:NativeSignal")])
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      astypelate
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispatchEvent")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/dispatchEvent"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "target")
+      iftrue              L9
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Target object cannot be null."
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L9:
+      getlocal1
+      iftrue              L15
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Event object cannot be null."
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L15:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventClass")
+      istypelate
+      iftrue              L33
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Event object "
+      getlocal1
+      add
+      pushstring          " is not an instance of "
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventClass")
+      add
+      pushstring          "."
+      add
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L33:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "type")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventType")
+      ifeq                L52
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Event object has incorrect type. Expected <"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventType")
+      add
+      pushstring          "> but was <"
+      add
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "type")
+      add
+      pushstring          ">."
+      add
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L52:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "target")
+      getlocal1
+      callproperty        QName(Namespace("flash.events:IEventDispatcher"), "dispatchEvent"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "registerListenerWithPriority")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/org.osflash.signals.natives:NativeSignal:registerListenerWithPriority"
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    flag HAS_OPTIONAL
+    optional False()
+    optional Integer(0)
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("org.osflash.signals"), "ISlot")
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "target")
+      iftrue              L12
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Target object cannot be null."
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L12:
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "registrationPossible"), 2
+      iffalse             L42
+
+      findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Slot")
+      getlocal1
+      getlocal0
+      getlocal2
+      getlocal3
+      constructprop       QName(PackageNamespace("org.osflash.signals"), "Slot"), 4
+      coerce              QName(PackageNamespace("org.osflash.signals"), "ISlot")
+      setlocal            4
+
+      getlocal0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "prepend"), 1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_target")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "_eventType")
+      getlocal            4
+      getproperty         QName(Namespace("org.osflash.signals:ISlot"), "execute1")
+      pushfalse
+      getlocal3
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 4
+
+      getlocal            4
+      returnvalue
+
+L42:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "find"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "registrationPossible")
+   method
+    refid "org.osflash.signals.natives:NativeSignal/instance/org.osflash.signals.natives:NativeSignal:registrationPossible"
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      getproperty         QName(PackageNamespace(""), "nonEmpty")
+      iftrue              L8
+
+      pushtrue
+      returnvalue
+
+L8:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals.natives:NativeSignal"), "slots")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "find"), 1
+      coerce              QName(PackageNamespace("org.osflash.signals"), "ISlot")
+      setlocal3
+
+      getlocal3
+      iffalse             L26
+
+      getlocal3
+      getproperty         QName(Namespace("org.osflash.signals:ISlot"), "once")
+      getlocal2
+      ifeq                L24
+
+      findpropstrict      QName(PackageNamespace("flash.errors"), "IllegalOperationError")
+      pushstring          "You cannot addOnce() then add() the same listener without removing the relationship first."
+      constructprop       QName(PackageNamespace("flash.errors"), "IllegalOperationError"), 1
+      throw
+
+L24:
+      pushfalse
+      returnvalue
+
+L26:
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.osflash.signals.natives:NativeSignal/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

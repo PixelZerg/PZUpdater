@@ -1,0 +1,272 @@
+class
+ refid "com.company.assembleegameclient.game:MoveRecords"
+ instance QName(PackageNamespace("com.company.assembleegameclient.game"), "MoveRecords")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.game:MoveRecords")
+  iinit
+   refid "com.company.assembleegameclient.game:MoveRecords/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.game"), PackageInternalNs("com.company.assembleegameclient.game"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.game:MoveRecords"), StaticProtectedNs("com.company.assembleegameclient.game:MoveRecords"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "records_")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "lastClearTime_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "records_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord")>) end
+  trait method QName(PackageNamespace(""), "addRecord")
+   method
+    refid "com.company.assembleegameclient.game:MoveRecords/instance/addRecord"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 9
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastClearTime_")
+      pushbyte            0
+      ifnlt               L7
+
+      returnvoid
+
+L7:
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), "getId"), 1
+      convert_i
+      dup
+      setlocal            4
+
+      pushbyte            1
+      lessthan
+      dup
+      iftrue              L21
+
+      pop
+      getlocal            4
+      pushbyte            10
+      greaterthan
+L21:
+      iffalse             L23
+
+      returnvoid
+
+L23:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L37
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord")
+      getlocal1
+      getlocal2
+      getlocal3
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord"), 3
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+
+L37:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      getproperty         QName(PackageNamespace(""), "length")
+      decrement
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.game"), PackageInternalNs("com.company.assembleegameclient.game"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.game:MoveRecords"), StaticProtectedNs("com.company.assembleegameclient.game:MoveRecords")])
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord")
+      setlocal            5
+
+      getlocal0
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "time_")
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), "getId"), 1
+      convert_i
+      setlocal            6
+
+      getlocal            4
+      getlocal            6
+      ifeq                L64
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord")
+      getlocal1
+      getlocal2
+      getlocal3
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "MoveRecord"), 3
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+
+L64:
+      getlocal0
+      getlocal            4
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), "getScore"), 2
+      convert_i
+      setlocal            7
+
+      getlocal0
+      getlocal            4
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "time_")
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), "getScore"), 2
+      convert_i
+      setlocal            8
+
+      getlocal            7
+      getlocal            8
+      ifnlt               L90
+
+      getlocal            5
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "time_")
+
+      getlocal            5
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            5
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      returnvoid
+
+L90:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), "getId")
+   method
+    refid "com.company.assembleegameclient.game:MoveRecords/instance/com.company.assembleegameclient.game:MoveRecords/instance/getId"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastClearTime_")
+      subtract
+      pushbyte            50
+      add
+      pushbyte            100
+      divide
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.game:MoveRecords/instance#0"), "getScore")
+   method
+    refid "com.company.assembleegameclient.game:MoveRecords/instance/com.company.assembleegameclient.game:MoveRecords/instance/getScore"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastClearTime_")
+      subtract
+      getlocal1
+      pushbyte            100
+      multiply
+      subtract
+      callproperty        QName(PackageNamespace(""), "abs"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "com.company.assembleegameclient.game:MoveRecords/instance/clear"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "records_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "lastClearTime_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.game:MoveRecords/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

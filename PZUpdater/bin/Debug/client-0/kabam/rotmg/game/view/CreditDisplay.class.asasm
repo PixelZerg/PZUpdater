@@ -1,0 +1,960 @@
+class
+ refid "kabam.rotmg.game.view:CreditDisplay"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:CreditDisplay")
+  iinit
+   refid "kabam.rotmg.game.view:CreditDisplay/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Number")
+   flag HAS_OPTIONAL
+   optional Null()
+   optional True()
+   optional False()
+   optional Integer(0)
+   body
+    maxstack 6
+    localcount 7
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("kabam.rotmg.fortune.model"), "FortuneInfo")
+     setlocal            6
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "openAccountDialog")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFame_")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "gs")
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PackageNamespace(""), "makeTextField"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+
+     getlex              QName(PackageNamespace(""), "waiter")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     getlex              QName(PackageNamespace(""), "IMAGE_NAME")
+     getlex              QName(PackageNamespace(""), "IMAGE_ID")
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            5
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal            5
+     pushbyte            40
+     pushtrue
+     pushbyte            0
+     callproperty        QName(PackageNamespace(""), "redraw"), 4
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            5
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal            5
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFame_")
+     iffalse             L82
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PackageNamespace(""), "makeTextField"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+
+     getlex              QName(PackageNamespace(""), "waiter")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FameUtil")
+     callproperty        QName(PackageNamespace(""), "getFameIcon"), 0
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L82:
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+     convert_b
+     dup
+     iffalse             L91
+
+     pop
+     getlex              QName(PackageNamespace("kabam.rotmg.fortune.services"), "FortuneModel")
+     getproperty         QName(PackageNamespace(""), "HAS_FORTUNES")
+     convert_b
+L91:
+     iffalse             L158
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.fortune.services"), "FortuneModel")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     callproperty        Multiname("getFortune", [PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay/instance"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.view:CreditDisplay"), StaticProtectedNs("kabam.rotmg.game.view:CreditDisplay"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+     coerce              QName(PackageNamespace("kabam.rotmg.fortune.model"), "FortuneInfo")
+     dup
+     setlocal            6
+
+     getproperty         QName(PackageNamespace(""), "_endTime")
+     pushnull
+     ifeq                L133
+
+     getlocal0
+     getlocal            6
+     getproperty         QName(PackageNamespace(""), "_endTime")
+     getproperty         QName(PackageNamespace(""), "time")
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeEnd")
+
+     getlocal0
+     getlocal0
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "makeTextField"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+
+     getlex              QName(PackageNamespace(""), "waiter")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     getlocal0
+     callproperty        QName(PackageNamespace(""), "getFortuneTimeLeftStr"), 0
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "visible")
+
+L133:
+     getlocal0
+     getlocal0
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "makeTextField"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+
+     getlex              QName(PackageNamespace(""), "waiter")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlex              QName(PackageNamespace("kabam.rotmg.assets.services"), "IconFactory")
+     callproperty        QName(PackageNamespace(""), "makeFortune"), 0
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneIcon_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneIcon_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     jump                L161
+
+L158:
+     getlocal0
+     pushfalse
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+
+L161:
+     getlocal0
+     pushbyte            0
+     dup
+     dup
+     callpropvoid        QName(PackageNamespace(""), "draw"), 3
+
+     findproperty        QName(PackageNamespace(""), "mouseEnabled")
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "mouseEnabled")
+
+     findproperty        QName(PackageNamespace(""), "doubleClickEnabled")
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "doubleClickEnabled")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "DOUBLE_CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "onDoubleClick")
+     pushfalse
+     pushbyte            0
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+     getlex              QName(PackageNamespace(""), "waiter")
+     getproperty         QName(PackageNamespace(""), "complete")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "onAlignHorizontal")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneIcon_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "credits_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fame_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortune_") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFame_") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "gs") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait slot QName(PackageNamespace(""), "openAccountDialog") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeEnd") type QName(PackageNamespace(""), "Number") value Integer(-1) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeLeftString") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "onAlignHorizontal")
+   method
+    refid "kabam.rotmg.game.view:CreditDisplay/instance/kabam.rotmg.game.view:CreditDisplay/onAlignHorizontal"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+      iffalse             L109
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "width")
+      negate
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneIcon_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "width")
+      negate
+      pushbyte            10
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneIcon_")
+      pushbyte            10
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            8
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+      getproperty         QName(PackageNamespace(""), "width")
+      negate
+      pushbyte            2
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+      pushbyte            33
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            8
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      jump                L146
+
+L109:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "width")
+      negate
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            8
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "coinIcon_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+L146:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFame_")
+      iffalse             L189
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            8
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameIcon_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+L189:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "onDoubleClick")
+   method
+    refid "kabam.rotmg.game.view:CreditDisplay/instance/kabam.rotmg.game.view:CreditDisplay/onDoubleClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "gs")
+      not
+      dup
+      iftrue              L12
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "gs")
+      callproperty        QName(PackageNamespace(""), "evalIsNotInCombatMapArea"), 0
+      convert_b
+L12:
+      dup
+      iftrue              L20
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("clickForGold", [PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay/instance"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.view:CreditDisplay"), StaticProtectedNs("kabam.rotmg.game.view:CreditDisplay"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushtrue
+      equals
+L20:
+      iffalse             L24
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openAccountDialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L24:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeTextField")
+   method
+    refid "kabam.rotmg.game.view:CreditDisplay/instance/makeTextField"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+    flag HAS_OPTIONAL
+    optional Integer(16777215)
+    body
+     maxstack 9
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "FONT_SIZE")
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushbyte            16
+      callproperty        QName(PackageNamespace(""), "setTextHeight"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      setlocal2
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      pushbyte            1
+      pushbyte            4
+      dup
+      pushbyte            2
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 7
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "handleFortuneTimeTextUpdate")
+   method
+    refid "kabam.rotmg.game.view:CreditDisplay/instance/kabam.rotmg.game.view:CreditDisplay/handleFortuneTimeTextUpdate"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getFortuneTimeLeftStr"), 0
+      coerce_s
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeLeftString")
+      ifeq                L43
+
+      getlocal1
+      pushstring          "Ended"
+      ifne                L32
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneIcon_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.fortune.services"), "FortuneModel")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "HAS_FORTUNES")
+
+      jump                L41
+
+L32:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeLeftString")
+
+L41:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "onAlignHorizontal"), 0
+
+L43:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    refid "kabam.rotmg.game.view:CreditDisplay/instance/draw"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Integer(0)
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+      iffalse             L7
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "handleFortuneTimeTextUpdate"), 0
+
+L7:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "credits_")
+      equals
+      dup
+      iffalse             L24
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFame_")
+      convert_b
+      dup
+      iffalse             L24
+
+      pop
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fame_")
+      equals
+L24:
+      dup
+      iffalse             L37
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+      convert_b
+      dup
+      iffalse             L37
+
+      pop
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortune_")
+      equals
+L37:
+      iffalse             L39
+
+      returnvoid
+
+L39:
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "credits_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "creditsText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "credits_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFame_")
+      iffalse             L64
+
+      getlocal0
+      getlocal2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fame_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fameText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fame_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+L64:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "displayFortune_")
+      iffalse             L78
+
+      getlocal0
+      getlocal3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortune_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortune_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+L78:
+      getlex              QName(PackageNamespace(""), "waiter")
+      callproperty        QName(PackageNamespace(""), "isEmpty"), 0
+      iffalse             L83
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "onAlignHorizontal"), 0
+
+L83:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getFortuneTimeLeftStr")
+   method
+    refid "kabam.rotmg.game.view:CreditDisplay/instance/getFortuneTimeLeftStr"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "fortuneTimeEnd")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "time")
+      subtract
+      pushshort           1000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal3
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getproperty         QName(PackageNamespace(""), "DAY_IN_S")
+      ifngt               L32
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "secondsToDays"), 1
+      callproperty        QName(PackageNamespace(""), "ceil"), 1
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      pushstring          " days"
+      add
+      setlocal1
+
+      jump                L79
+
+L32:
+      getlocal3
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getproperty         QName(PackageNamespace(""), "HOUR_IN_S")
+      ifngt               L47
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "secondsToHours"), 1
+      callproperty        QName(PackageNamespace(""), "ceil"), 1
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      pushstring          " hours"
+      add
+      setlocal1
+
+      jump                L79
+
+L47:
+      getlocal3
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getproperty         QName(PackageNamespace(""), "MIN_IN_S")
+      ifngt               L62
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "secondsToMins"), 1
+      callproperty        QName(PackageNamespace(""), "ceil"), 1
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      pushstring          " minutes"
+      add
+      setlocal1
+
+      jump                L79
+
+L62:
+      getlocal3
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+      getproperty         QName(PackageNamespace(""), "MIN_IN_S")
+      pushbyte            2
+      divide
+      ifngt               L71
+
+      pushstring          "One Minute Left!"
+      setlocal1
+
+      jump                L79
+
+L71:
+      getlocal3
+      pushbyte            0
+      ifngt               L77
+
+      pushstring          "Ending in a few seconds!!"
+      setlocal1
+
+      jump                L79
+
+L77:
+      pushstring          "Ended"
+      setlocal1
+
+L79:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:CreditDisplay/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "FONT_SIZE")
+    pushbyte            18
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "FONT_SIZE")
+
+    findproperty        QName(PackageNamespace(""), "IMAGE_NAME")
+    pushstring          "lofiObj3"
+    initproperty        QName(PackageNamespace(""), "IMAGE_NAME")
+
+    findproperty        QName(PackageNamespace(""), "IMAGE_ID")
+    pushshort           225
+    initproperty        QName(PackageNamespace(""), "IMAGE_ID")
+
+    findproperty        QName(PackageNamespace(""), "waiter")
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+    constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter"), 0
+    initproperty        QName(PackageNamespace(""), "waiter")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.game.view:CreditDisplay"), "FONT_SIZE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(18) end
+ trait const QName(PackageNamespace(""), "IMAGE_NAME") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("lofiObj3") end
+ trait const QName(PackageNamespace(""), "IMAGE_ID") slotid 3 type QName(PackageNamespace(""), "int") value Integer(225) end
+ trait const QName(PackageNamespace(""), "waiter") slotid 4 type QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter") end
+end ; class

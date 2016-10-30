@@ -1,0 +1,375 @@
+class
+ refid "kabam.rotmg.legends.model:LegendFactory"
+ instance QName(PackageNamespace("kabam.rotmg.legends.model"), "LegendFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory")
+  iinit
+   refid "kabam.rotmg.legends.model:LegendFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "classesModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "factory") flag METADATA type QName(PackageNamespace("kabam.rotmg.assets.services"), "CharacterFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "ownAccountId") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "legends") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")>) end
+  trait method QName(PackageNamespace(""), "makeLegends")
+   method
+    refid "kabam.rotmg.legends.model:LegendFactory/instance/makeLegends"
+    param QName(PackageNamespace(""), "XML")
+    returns TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")>)
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getAccountId"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "ownAccountId")
+
+      getlocal0
+      findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+      getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      getlex              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      applytype           1
+      pushbyte            0
+      construct           1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "legends")
+
+      getlocal0
+      getlocal1
+      getproperty         Multiname("FameListElem", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      pushfalse
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "makeLegendsFromList"), 2
+
+      getlocal0
+      getlocal1
+      getproperty         Multiname("MyFameListElem", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      pushtrue
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "makeLegendsFromList"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "legends")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "makeLegendsFromList")
+   method
+    refid "kabam.rotmg.legends.model:LegendFactory/instance/kabam.rotmg.legends.model:LegendFactory/instance/makeLegendsFromList"
+    param QName(PackageNamespace(""), "XMLList")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal1
+      coerce_a
+      setlocal            6
+
+      jump                L43
+
+L14:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal0
+      getlocal3
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "legendsContains"), 1
+      iftrue              L43
+
+      getlocal0
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "makeLegend"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      dup
+      setlocal            4
+
+      getlocal3
+      getproperty         MultinameA("accountId", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "ownAccountId")
+      equals
+      setproperty         QName(PackageNamespace(""), "isOwnLegend")
+
+      getlocal            4
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "isFocus")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "legends")
+      getlocal            4
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L43:
+      hasnext2            6, 5
+      iftrue              L14
+
+      kill                6
+      kill                5
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "legendsContains")
+   method
+    refid "kabam.rotmg.legends.model:LegendFactory/instance/kabam.rotmg.legends.model:LegendFactory/instance/legendsContains"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), "legends")
+      coerce_a
+      setlocal            4
+
+      jump                L34
+
+L12:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "accountId")
+      getlocal1
+      getproperty         MultinameA("accountId", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      equals
+      dup
+      iffalse             L31
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "charId")
+      getlocal1
+      getproperty         MultinameA("charId", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      equals
+L31:
+      iffalse             L34
+
+      pushtrue
+      returnvalue
+
+L34:
+      hasnext2            4, 3
+      iftrue              L12
+
+      kill                4
+      kill                3
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeLegend")
+   method
+    refid "kabam.rotmg.legends.model:LegendFactory/instance/makeLegend"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+    body
+     maxstack 6
+     localcount 9
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         Multiname("ObjectType", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      convert_i
+      setlocal2
+
+      getlocal1
+      getproperty         Multiname("Texture", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classesModel")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "skins")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "getSkin"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+      setlocal            5
+
+      getlocal1
+      pushstring          "Tex1"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")]), 1
+      iffalse             L30
+
+      getlocal1
+      getproperty         Multiname("Tex1", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      convert_i
+      jump                L31
+
+L30:
+      pushbyte            0
+L31:
+      convert_i
+      setlocal            6
+
+      getlocal1
+      pushstring          "Tex2"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")]), 1
+      iffalse             L41
+
+      getlocal1
+      getproperty         Multiname("Tex2", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      convert_i
+      jump                L42
+
+L41:
+      pushbyte            0
+L42:
+      convert_i
+      setlocal            7
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      constructprop       QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")
+      dup
+      setlocal            8
+
+      getlocal1
+      getproperty         MultinameA("accountId", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      setproperty         QName(PackageNamespace(""), "accountId")
+
+      getlocal            8
+      getlocal1
+      getproperty         MultinameA("charId", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      setproperty         QName(PackageNamespace(""), "charId")
+
+      getlocal            8
+      getlocal1
+      getproperty         Multiname("Name", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal            8
+      getlocal1
+      getproperty         Multiname("TotalFame", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      setproperty         QName(PackageNamespace(""), "totalFame")
+
+      getlocal            8
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "factory")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "template")
+      pushbyte            100
+      getlocal            6
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "makeIcon"), 4
+      setproperty         QName(PackageNamespace(""), "character")
+
+      getlocal            8
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "slotTypes")
+      setproperty         QName(PackageNamespace(""), "equipmentSlots")
+
+      getlocal            8
+      getlex              QName(PackageNamespace("com.company.util"), "ConversionUtil")
+      getlocal1
+      getproperty         Multiname("Equipment", [PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.model:LegendFactory/instance#1"), PackageNamespace("kabam.rotmg.legends.model"), PackageInternalNs("kabam.rotmg.legends.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.model:LegendFactory"), StaticProtectedNs("kabam.rotmg.legends.model:LegendFactory")])
+      callproperty        QName(PackageNamespace(""), "toIntVector"), 1
+      setproperty         QName(PackageNamespace(""), "equipment")
+
+      getlocal            8
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.legends.model:LegendFactory/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

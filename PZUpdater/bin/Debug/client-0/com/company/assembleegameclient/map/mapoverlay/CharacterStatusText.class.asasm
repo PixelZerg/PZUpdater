@@ -1,0 +1,473 @@
+class
+ refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText"
+ instance QName(PackageNamespace("com.company.assembleegameclient.map.mapoverlay"), "CharacterStatusText")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("IMapOverlayElement", [PackageNamespace("com.company.assembleegameclient.map.mapoverlay")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.map.mapoverlay:CharacterStatusText")
+  iinit
+   refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_OPTIONAL
+   optional Integer(0)
+   body
+    maxstack 8
+    localcount 5
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     pushbyte            0
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "texture_")
+     getproperty         QName(PackageNamespace(""), "height")
+     negate
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "size_")
+     pushbyte            100
+     divide
+     multiply
+     pushbyte            5
+     multiply
+     pushbyte            20
+     subtract
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "offset_")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "color_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "lifetime_")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "offsetTime_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            24
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "GlowFilter")
+     pushbyte            0
+     pushbyte            1
+     pushbyte            4
+     dup
+     pushbyte            2
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.filters"), "GlowFilter"), 6
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findproperty        QName(PackageNamespace(""), "visible")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "visible")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "MAX_DRIFT") type QName(PackageNamespace(""), "int") value Integer(40) end
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "offset_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "lifetime_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "offsetTime_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "startTime_") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/draw"
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "startTime_")
+      pushbyte            0
+      ifne                L12
+
+      getlocal0
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offsetTime_")
+      add
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "startTime_")
+
+L12:
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "startTime_")
+      ifnlt               L21
+
+      findproperty        QName(PackageNamespace(""), "visible")
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "visible")
+
+      pushtrue
+      returnvalue
+
+L21:
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "startTime_")
+      subtract
+      convert_i
+      setlocal3
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetime_")
+      greaterthan
+      dup
+      iftrue              L47
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L47
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      equals
+L47:
+      iffalse             L50
+
+      pushfalse
+      returnvalue
+
+L50:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      pushnull
+      equals
+      dup
+      iftrue              L61
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "drawn_")
+      not
+L61:
+      iffalse             L67
+
+      findproperty        QName(PackageNamespace(""), "visible")
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "visible")
+
+      pushtrue
+      returnvalue
+
+L67:
+      findproperty        QName(PackageNamespace(""), "visible")
+      pushtrue
+      initproperty        QName(PackageNamespace(""), "visible")
+
+      findproperty        QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      pushnull
+      ifeq                L82
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "posS_")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/draw"), PackageNamespace("com.company.assembleegameclient.map.mapoverlay"), PackageInternalNs("com.company.assembleegameclient.map.mapoverlay"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map.mapoverlay:CharacterStatusText"), StaticProtectedNs("com.company.assembleegameclient.map.mapoverlay:CharacterStatusText"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_a
+      jump                L84
+
+L82:
+      pushbyte            0
+      coerce_a
+L84:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offset_")
+      pushnull
+      ifeq                L93
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offset_")
+      getproperty         QName(PackageNamespace(""), "x")
+      coerce_a
+      jump                L95
+
+L93:
+      pushbyte            0
+      coerce_a
+L95:
+      add
+      initproperty        QName(PackageNamespace(""), "x")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetime_")
+      divide
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "MAX_DRIFT")
+      multiply
+      convert_d
+      setlocal            4
+
+      findproperty        QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      pushnull
+      ifeq                L118
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "posS_")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/draw"), PackageNamespace("com.company.assembleegameclient.map.mapoverlay"), PackageInternalNs("com.company.assembleegameclient.map.mapoverlay"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map.mapoverlay:CharacterStatusText"), StaticProtectedNs("com.company.assembleegameclient.map.mapoverlay:CharacterStatusText"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_a
+      jump                L120
+
+L118:
+      pushbyte            0
+      coerce_a
+L120:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offset_")
+      pushnull
+      ifeq                L129
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offset_")
+      getproperty         QName(PackageNamespace(""), "y")
+      coerce_a
+      jump                L131
+
+L129:
+      pushbyte            0
+      coerce_a
+L131:
+      add
+      getlocal            4
+      subtract
+      initproperty        QName(PackageNamespace(""), "y")
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getGameObject")
+   method
+    refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/getGameObject"
+    returns QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setStringBuilder")
+   method
+    refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/setStringBuilder"
+    param QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StringBuilder")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "onTextChanged")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "onTextChanged")
+   method
+    refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance/onTextChanged"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushtrue
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal1
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal2
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+      constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      getlocal2
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "width")
+      pushdouble          0.5
+      multiply
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal2
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "height")
+      pushdouble          0.5
+      multiply
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/instance"), "textDisplay")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.map.mapoverlay:CharacterStatusText/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

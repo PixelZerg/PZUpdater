@@ -1,0 +1,160 @@
+class
+ refid "kabam.rotmg.tooltips.view:TooltipsMediator"
+ instance QName(PackageNamespace("kabam.rotmg.tooltips.view"), "TooltipsMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.tooltips.view:TooltipsMediator")
+  iinit
+   refid "kabam.rotmg.tooltips.view:TooltipsMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.tooltips.view"), "TooltipsView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showTooltip") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideTooltips") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.tooltips.view:TooltipsMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.tooltips.view:TooltipsMediator/instance"), "onShowTooltip")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideTooltips")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.tooltips.view:TooltipsMediator/instance"), "onHideTooltips")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.tooltips.view:TooltipsMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.tooltips.view:TooltipsMediator/instance"), "onShowTooltip")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideTooltips")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.tooltips.view:TooltipsMediator/instance"), "onHideTooltips")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.tooltips.view:TooltipsMediator/instance"), "onShowTooltip")
+   method
+    refid "kabam.rotmg.tooltips.view:TooltipsMediator/instance/kabam.rotmg.tooltips.view:TooltipsMediator/instance/onShowTooltip"
+    param QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "show"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.tooltips.view:TooltipsMediator/instance"), "onHideTooltips")
+   method
+    refid "kabam.rotmg.tooltips.view:TooltipsMediator/instance/kabam.rotmg.tooltips.view:TooltipsMediator/instance/onHideTooltips"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "hide"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.tooltips.view:TooltipsMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

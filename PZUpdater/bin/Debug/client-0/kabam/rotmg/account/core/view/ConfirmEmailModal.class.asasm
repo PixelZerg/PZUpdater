@@ -1,0 +1,655 @@
+class
+ refid "kabam.rotmg.account.core.view:ConfirmEmailModal"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.view"), "ConfirmEmailModal")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.view:ConfirmEmailModal")
+  iinit
+   refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "register")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "VERIFY_WEB_ACCOUNT_DIALOG_TITLE")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_DIALOG_LEFTBUTTON")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "VERIFY_WEB_ACCOUNT_DIALOG_BUTTON")
+     constructsuper      3
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "positionAndStuff"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "removeChild")
+     getlex              QName(PackageNamespace(""), "leftButton_")
+     callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "account")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "createAssets"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "enableForTabBehavior"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "addEventListeners"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "register") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "account") type QName(PackageNamespace("kabam.rotmg.account.core"), "Account") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "closeButton") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "isKabam") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "addEventListeners")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/addEventListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onVerify")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "closeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "createAssets")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/createAssets"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_EMAIL")
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+
+      getlex              QName(PackageNamespace("com.company.util"), "EmailValidator")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      callproperty        QName(PackageNamespace(""), "isValidEmail"), 1
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      jump                L31
+
+L23:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      pushstring          ""
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "isKabam")
+
+L31:
+      findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton")
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "closeButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "closeButton")
+      pushbyte            -2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "closeButton")
+      getlex              QName(PackageNamespace(""), "w_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            8
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "enableForTabBehavior")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/enableForTabBehavior"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "tabIndex")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "tabEnabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onCancel")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "close"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "close")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/close"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      convert_b
+      dup
+      iffalse             L11
+
+      pop
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      convert_b
+L11:
+      iffalse             L15
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L15:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onVerify")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/onVerify"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "isEmailValid"), 0
+      iffalse             L45
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      pushstring          "newGuid"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      newobject           1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal2
+      pushstring          "account/changeEmail"
+      getlocal3
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onVerify")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L7
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onSent"), 0
+
+      jump                L10
+
+L7:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onError"), 1
+
+L10:
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onVerify")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onSent")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/onSent"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "isKabam")
+      iftrue              L20
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getPassword"), 0
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getToken"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "updateUser"), 3
+
+L20:
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlex              QName(PackageNamespace(""), "titleText_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      findproperty        QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            12
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      initproperty        QName(PackageNamespace(""), "titleText_")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "WebAccountDetailDialog.sent"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      pushdouble          0.5
+      pushbyte            12
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlex              QName(PackageNamespace(""), "titleText_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "onError")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/onError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlex              QName(PackageNamespace(""), "titleText_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      findproperty        QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            12
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16549442
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      initproperty        QName(PackageNamespace(""), "titleText_")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      pushdouble          0.5
+      pushbyte            12
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlex              QName(PackageNamespace(""), "titleText_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "isEmailValid")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/isEmailValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.util"), "EmailValidator")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callproperty        QName(PackageNamespace(""), "isValidEmail"), 1
+      convert_b
+      setlocal1
+
+      getlocal1
+      iftrue              L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "emailInput")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "INVALID_EMAIL_ADDRESS")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L16:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:ConfirmEmailModal/instance"), "positionAndStuff")
+   method
+    refid "kabam.rotmg.account.core.view:ConfirmEmailModal/instance/kabam.rotmg.account.core.view:ConfirmEmailModal/instance/positionAndStuff"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "w_")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "h_")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.view:ConfirmEmailModal/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

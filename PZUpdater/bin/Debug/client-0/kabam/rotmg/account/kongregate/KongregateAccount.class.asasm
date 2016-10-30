@@ -1,0 +1,559 @@
+class
+ refid "kabam.rotmg.account.kongregate:KongregateAccount"
+ instance QName(PackageNamespace("kabam.rotmg.account.kongregate"), "KongregateAccount")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("Account", [PackageNamespace("kabam.rotmg.account.core")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kongregate:KongregateAccount")
+  iinit
+   refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "api") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.kongregate.view"), "KongregateApi")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "userId") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "password") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "isVerifiedEmail") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "platformToken") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "_rememberMe") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "updateUser")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/updateUser"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "userId")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "password")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserName")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getUserName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      callproperty        QName(Namespace("kabam.rotmg.account.kongregate.view:KongregateApi"), "getUserName"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserId")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "userId")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPassword")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getPassword"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSecret")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getSecret"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "password")
+      coerce_s
+      dup
+      iftrue              L9
+
+      pop
+      pushstring          ""
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCredentials")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getCredentials"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "guid"
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getUserId"), 0
+      pushstring          "secret"
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getSecret"), 0
+      newobject           2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isRegistered")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/isRegistered"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getSecret"), 0
+      pushstring          ""
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "gameNetworkUserId")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/gameNetworkUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      callproperty        QName(Namespace("kabam.rotmg.account.kongregate.view:KongregateApi"), "getUserId"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "gameNetwork")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/gameNetwork"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "NETWORK_NAME")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "playPlatform")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/playPlatform"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "kongregate"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reportIntStat")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/reportIntStat"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(Namespace("kabam.rotmg.account.kongregate.view:KongregateApi"), "reportStatistic"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getRequestPrefix")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getRequestPrefix"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "/kongregate"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getEntryTag")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getEntryTag"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "kongregate"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "verify")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/verify"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "isVerifiedEmail")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isVerified")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/isVerified"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "isVerifiedEmail")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPlatformToken")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getPlatformToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "platformToken")
+      coerce_s
+      dup
+      iftrue              L9
+
+      pop
+      pushstring          ""
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPlatformToken")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/setPlatformToken"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "platformToken")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMoneyAccessToken")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getMoneyAccessToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "No current support for new Kabam offer wall on Kongregate."
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMoneyUserId")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getMoneyUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "No current support for new Kabam offer wall on Kongregate."
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "rememberMe")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/rememberMe/setter"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "_rememberMe")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "rememberMe")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/rememberMe/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate:KongregateAccount/instance"), "_rememberMe")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getToken")
+   method
+    refid "kabam.rotmg.account.kongregate:KongregateAccount/instance/getToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kongregate:KongregateAccount/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "NETWORK_NAME")
+    pushstring          "kongregate"
+    initproperty        QName(PackageNamespace(""), "NETWORK_NAME")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "NETWORK_NAME") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("kongregate") end
+end ; class

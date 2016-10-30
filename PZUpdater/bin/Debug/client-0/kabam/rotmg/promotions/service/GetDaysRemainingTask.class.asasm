@@ -1,0 +1,149 @@
+class
+ refid "kabam.rotmg.promotions.service:GetDaysRemainingTask"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.service"), "GetDaysRemainingTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.promotions.service:GetDaysRemainingTask")
+  iinit
+   refid "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.promotions.service:GetDaysRemainingTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/kabam.rotmg.promotions.service:GetDaysRemainingTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/account/getBeginnerPackageTimeLeft"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance"), "onDaysRemainingResponse"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance"), "onDaysRemainingResponse")
+   method
+    refid "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/onDaysRemainingResponse"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/kabam.rotmg.promotions.service:GetDaysRemainingTask/instance/onDaysRemainingResponse"), PackageNamespace("kabam.rotmg.promotions.service"), PackageInternalNs("kabam.rotmg.promotions.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.promotions.service:GetDaysRemainingTask"), StaticProtectedNs("kabam.rotmg.promotions.service:GetDaysRemainingTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setBeginnersOfferSecondsLeft"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal2
+      pushbyte            0
+      greaterthan
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.service:GetDaysRemainingTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

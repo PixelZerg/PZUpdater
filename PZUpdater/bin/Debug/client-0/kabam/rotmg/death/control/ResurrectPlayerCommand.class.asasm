@@ -1,0 +1,96 @@
+class
+ refid "kabam.rotmg.death.control:ResurrectPlayerCommand"
+ instance QName(PackageNamespace("kabam.rotmg.death.control"), "ResurrectPlayerCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.death.control:ResurrectPlayerCommand")
+  iinit
+   refid "kabam.rotmg.death.control:ResurrectPlayerCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "deathModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.death.model"), "DeathModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.death.control:ResurrectPlayerCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Resurrect Player"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "deathModel")
+      callpropvoid        QName(PackageNamespace(""), "clearPendingDeathView"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setHasPlayerDied"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.death.view"), "ResurrectionView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.death.view"), "ResurrectionView"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.death.control:ResurrectPlayerCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

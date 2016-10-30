@@ -1,0 +1,353 @@
+class
+ refid "kabam.rotmg.arena.component:BattleSummaryText"
+ instance QName(PackageNamespace("kabam.rotmg.arena.component"), "BattleSummaryText")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.component:BattleSummaryText")
+  iinit
+   refid "kabam.rotmg.arena.component:BattleSummaryText/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   body
+    maxstack 6
+    localcount 4
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "makeTitleText"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "titleText")
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "makeSubtitleText"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText")
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "makeSubtitleText"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "timeText")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "titleText")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "BATTLE_SUMMARY_WAVENUMBER")
+     pushstring          "waveNumber"
+     getlocal2
+     decrement
+     newobject           1
+     callproperty        QName(PackageNamespace(""), "setParams"), 2
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "timeText")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+     getlocal0
+     getlocal3
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "createTimerString"), 1
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "align"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "titleText") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "timeText") type QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "align")
+   method
+    refid "kabam.rotmg.arena.component:BattleSummaryText/instance/kabam.rotmg.arena.component:BattleSummaryText/instance/align"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "titleText")
+      getlex              QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "titleText")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "titleText")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            10
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText")
+      getlex              QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "timeText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "waveText")
+      getproperty         QName(PackageNamespace(""), "height")
+      add
+      pushbyte            5
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "timeText")
+      getlex              QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "timeText")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "createTimerString")
+   method
+    refid "kabam.rotmg.arena.component:BattleSummaryText/instance/kabam.rotmg.arena.component:BattleSummaryText/instance/createTimerString"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            60
+      divide
+      convert_i
+      setlocal2
+
+      getlocal1
+      pushbyte            60
+      modulo
+      convert_i
+      setlocal3
+
+      getlocal2
+      pushbyte            10
+      lessthan
+      iffalse             L18
+
+      pushstring          "0"
+      jump                L19
+
+L18:
+      pushstring          ""
+L19:
+      coerce_s
+      dup
+      setlocal            4
+
+      getlocal2
+      pushstring          ":"
+      add
+      add
+      coerce_s
+      dup
+      setlocal            4
+
+      getlocal3
+      pushbyte            10
+      lessthan
+      iffalse             L36
+
+      pushstring          "0"
+      coerce_a
+      jump                L38
+
+L36:
+      pushstring          ""
+      coerce_a
+L38:
+      add
+      coerce_s
+      dup
+      setlocal            4
+
+      getlocal3
+      add
+      coerce_s
+      dup
+      setlocal            4
+
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "makeTitleText")
+   method
+    refid "kabam.rotmg.arena.component:BattleSummaryText/instance/kabam.rotmg.arena.component:BattleSummaryText/instance/makeTitleText"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      setlocal1
+
+      getlocal1
+      pushbyte            16
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      pushbyte            1
+      pushbyte            8
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.component:BattleSummaryText/instance"), "makeSubtitleText")
+   method
+    refid "kabam.rotmg.arena.component:BattleSummaryText/instance/kabam.rotmg.arena.component:BattleSummaryText/instance/makeSubtitleText"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+    body
+     maxstack 8
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "StaticTextDisplay")
+      setlocal1
+
+      getlocal1
+      pushbyte            14
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushint             11776947
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      pushbyte            1
+      pushbyte            8
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.component:BattleSummaryText/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

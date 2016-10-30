@@ -1,0 +1,120 @@
+class
+ refid "kabam.rotmg.pets.view:ClearsPetSlotsMediator"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view"), "ClearsPetSlotsMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view:ClearsPetSlotsMediator")
+  iinit
+   refid "kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "petSlotsState") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetSlotsState")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "changeMapSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "ChangeMapSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "changeMapSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance"), "onMapChange")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "changeMapSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance"), "onMapChange")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance"), "onMapChange")
+   method
+    refid "kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance/kabam.rotmg.pets.view:ClearsPetSlotsMediator/instance/onMapChange"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petSlotsState")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view:ClearsPetSlotsMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,531 @@
+class
+ refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "AnimatedAbilityBar")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:AnimatedAbilityBar")
+  iinit
+   refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "Boolean")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "animating")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "filledUp")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "backgroundBar")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxWidth")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "barHeight")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "backgroundBar")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "BACKGROUND_BAR_COLOR")
+     pushbyte            1
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "backgroundBar")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     pushbyte            0
+     dup
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "backgroundBar")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "animating") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "filledUp") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "NORMAL_BAR_COLOR") type QName(PackageNamespace(""), "uint") value Integer(11776947) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "FILLING_BAR_COLOR") type QName(PackageNamespace(""), "uint") value Integer(1572859) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "BACKGROUND_BAR_COLOR") type QName(PackageNamespace(""), "uint") value Integer(5658198) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "backgroundBar") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxPoints") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "currentPoints") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxWidth") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "barHeight") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "reset")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/reset"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PackageNamespace(""), "currentPoints")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "NORMAL_BAR_COLOR")
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "barHeight")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "fill")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/fill"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentPoints")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxPoints")
+      ifne                L13
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "filledUp")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+
+L13:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxWidth")
+      convert_d
+      setlocal1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "FILLING_BAR_COLOR")
+      callpropvoid        QName(PackageNamespace(""), "setBarColor"), 1
+
+      findpropstrict      QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      pushbyte            1
+      pushstring          "width"
+      getlocal1
+      newobject           1
+      constructprop       QName(PackageNamespace("com.gskinner.motion"), "GTween"), 3
+      coerce              QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "filled")
+      setproperty         QName(PackageNamespace(""), "onComplete")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "filled")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/filled"
+    param QName(PackageNamespace("com.gskinner.motion"), "GTween")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "filledUp")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setBarColor")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/setBarColor"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getproperty         QName(PackageNamespace(""), "colorTransform")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "color")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setMaxPointValue")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/setMaxPointValue"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxPoints")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "adjustFilledBar"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setCurrentPointValue")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/setCurrentPointValue"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentPoints")
+      pushbyte            -1
+      ifne                L31
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "currentPoints")
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "getBarWidth"), 0
+      convert_d
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "NORMAL_BAR_COLOR")
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "barHeight")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+L31:
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "currentPoints")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "adjustFilledBar"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "adjustFilledBar")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/adjustFilledBar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      setlocal2
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "getBarWidth"), 0
+      convert_i
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentPoints")
+      pushbyte            -1
+      equals
+      not
+      dup
+      iffalse             L22
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentPoints")
+      pushbyte            0
+      equals
+      not
+L22:
+      dup
+      iffalse             L33
+
+      pop
+      getlocal1
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      getproperty         QName(PackageNamespace(""), "width")
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      equals
+      not
+L33:
+      iffalse             L56
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "animating")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "FILLING_BAR_COLOR")
+      callpropvoid        QName(PackageNamespace(""), "setBarColor"), 1
+
+      findpropstrict      QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "animatedBar")
+      pushbyte            2
+      pushstring          "width"
+      getlocal1
+      newobject           1
+      constructprop       QName(PackageNamespace("com.gskinner.motion"), "GTween"), 3
+      coerce              QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "handleTweenComplete")
+      setproperty         QName(PackageNamespace(""), "onComplete")
+
+L56:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "getBarWidth")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/getBarWidth"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentPoints")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxWidth")
+      multiply
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxPoints")
+      divide
+      convert_i
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "isNaN")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "isNaN"), 1
+      iffalse             L18
+
+      pushbyte            1
+      jump                L29
+
+L18:
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace(""), "Math")
+      pushbyte            1
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "maxWidth")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      convert_i
+L29:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "handleTweenComplete")
+   method
+    refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance/handleTweenComplete"
+    param QName(PackageNamespace("com.gskinner.motion"), "GTween")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:AnimatedAbilityBar/instance"), "NORMAL_BAR_COLOR")
+      callpropvoid        QName(PackageNamespace(""), "setBarColor"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "animating")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:AnimatedAbilityBar/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

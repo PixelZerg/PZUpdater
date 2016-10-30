@@ -1,0 +1,248 @@
+class
+ refid "kabam.lib.console.view:ConsoleMediator"
+ instance QName(PackageNamespace("kabam.lib.console.view"), "ConsoleMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.console.view:ConsoleMediator")
+  iinit
+   refid "kabam.lib.console.view:ConsoleMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.lib.console.view"), "ConsoleView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "toggle") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ToggleConsoleSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "show") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ShowConsoleSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hide") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "HideConsoleSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "remove") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "RemoveConsoleSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.lib.console.view:ConsoleMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "remove")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onRemoveConsole")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "toggle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onToggleConsole")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "show")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onShowConsole")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hide")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onHideConsole")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.lib.console.view:ConsoleMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "remove")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onRemoveConsole")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "toggle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onToggleConsole")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "show")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onShowConsole")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hide")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onHideConsole")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onRemoveConsole")
+   method
+    refid "kabam.lib.console.view:ConsoleMediator/instance/kabam.lib.console.view:ConsoleMediator/instance/onRemoveConsole"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onToggleConsole")
+   method
+    refid "kabam.lib.console.view:ConsoleMediator/instance/kabam.lib.console.view:ConsoleMediator/instance/onToggleConsole"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "visible")
+      not
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onShowConsole")
+   method
+    refid "kabam.lib.console.view:ConsoleMediator/instance/kabam.lib.console.view:ConsoleMediator/instance/onShowConsole"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleMediator/instance"), "onHideConsole")
+   method
+    refid "kabam.lib.console.view:ConsoleMediator/instance/kabam.lib.console.view:ConsoleMediator/instance/onHideConsole"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.console.view:ConsoleMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

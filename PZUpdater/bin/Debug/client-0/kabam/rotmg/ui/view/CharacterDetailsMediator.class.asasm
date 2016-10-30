@@ -1,0 +1,365 @@
+class
+ refid "kabam.rotmg.ui.view:CharacterDetailsMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "CharacterDetailsMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:CharacterDetailsMediator")
+  iinit
+   refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.view"), "CharacterDetailsView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "initHUDModelSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "HUDModelInitialized")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateHUD") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateHUDSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "nameChanged") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "NameChangedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "iconButtonFactory") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButtonFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "imageFactory") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.objects"), "ImageFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "tellModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "TellModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "injectFactories"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      callproperty        QName(PackageNamespace(""), "getPlayerName"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      callproperty        QName(PackageNamespace(""), "getButtonType"), 0
+      callpropvoid        QName(PackageNamespace(""), "init"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onDraw")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nameChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onNameChange")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gotoNexus")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onGotoNexus")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gotoOptions")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onGotoOptions")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "injectFactories")
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/kabam.rotmg.ui.view:CharacterDetailsMediator/instance/injectFactories"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "iconButtonFactory")
+      setproperty         QName(PackageNamespace(""), "iconButtonFactory")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "imageFactory")
+      setproperty         QName(PackageNamespace(""), "imageFactory")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onDraw")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nameChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onNameChange")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gotoNexus")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onGotoNexus")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gotoOptions")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onGotoOptions")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onGotoNexus")
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/kabam.rotmg.ui.view:CharacterDetailsMediator/instance/onGotoNexus"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tellModel")
+      callpropvoid        QName(PackageNamespace(""), "clearRecipients"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      callpropvoid        QName(PackageNamespace(""), "escape"), 0
+
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "enterPortal"
+      pushstring          "Nexus Button"
+      callpropvoid        QName(PackageNamespace(""), "trackEvent"), 2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      pushfalse
+      setproperty         Multiname("needsRandomRealm", [PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/kabam.rotmg.ui.view:CharacterDetailsMediator/instance/onGotoNexus"), PackageNamespace("kabam.rotmg.ui.view"), PackageInternalNs("kabam.rotmg.ui.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.ui.view:CharacterDetailsMediator"), StaticProtectedNs("kabam.rotmg.ui.view:CharacterDetailsMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onGotoOptions")
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/kabam.rotmg.ui.view:CharacterDetailsMediator/instance/onGotoOptions"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "mui_")
+      callpropvoid        QName(PackageNamespace(""), "clearInput"), 0
+
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "options"
+      pushstring          "Options Button"
+      callpropvoid        QName(PackageNamespace(""), "trackEvent"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "Options")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "Options"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onUpdateHUD")
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/kabam.rotmg.ui.view:CharacterDetailsMediator/instance/onUpdateHUD"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "update"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onDraw")
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/kabam.rotmg.ui.view:CharacterDetailsMediator/instance/onDraw"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "draw"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CharacterDetailsMediator/instance"), "onNameChange")
+   method
+    refid "kabam.rotmg.ui.view:CharacterDetailsMediator/instance/kabam.rotmg.ui.view:CharacterDetailsMediator/instance/onNameChange"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setName"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:CharacterDetailsMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

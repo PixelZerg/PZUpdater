@@ -1,0 +1,184 @@
+class
+ refid "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.commands"), "ShowBeginnersPackageCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand")
+  iinit
+   refid "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "getDaysRemaining") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.service"), "GetDaysRemainingTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "getOffers") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "GetOffersTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "getDaysRemaining")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/execute"), "makeSuccessTask"), 0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/execute"), "makeFailureTask"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask"), 3
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/execute"), "makeSuccessTask")
+   method
+    refid "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/execute/makeSuccessTask"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      coerce_a
+      dup
+      iffalse             L18
+
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "getOffers")
+      callproperty        QName(PackageNamespace(""), "add"), 1
+      coerce_a
+L18:
+      pop
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.promotions.view"), "BeginnersPackageOfferDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.promotions.view"), "BeginnersPackageOfferDialog"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/execute"), "makeFailureTask")
+   method
+    refid "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/instance/execute/makeFailureTask"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.promotions.view"), "AlreadyPurchasedBeginnersPackageDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.promotions.view"), "AlreadyPurchasedBeginnersPackageDialog"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.commands:ShowBeginnersPackageCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

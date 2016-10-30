@@ -1,0 +1,439 @@
+class
+ refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator"
+ instance QName(PackageNamespace("kabam.rotmg.account.securityQuestions.mediators"), "SecurityQuestionsMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator")
+  iinit
+   refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "infoView") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsInfoDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "confirmationView") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsConfirmDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "saveQuestions") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.signals"), "SaveSecurityQuestionsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "taskError") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "securityQuestionsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onShowConfirmationClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "infoView")
+      getproperty         QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onContinueClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      getproperty         QName(PackageNamespace(""), "leftButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onBackClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      getproperty         QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onSaveQuestions")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "taskError")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onTaskError")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "taskError")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onTaskError")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onShowConfirmationClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "infoView")
+      getproperty         QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onContinueClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      getproperty         QName(PackageNamespace(""), "leftButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onBackClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      getproperty         QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onSaveQuestions")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "infoView")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onTaskError")
+   method
+    refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/onTaskError"
+    param QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      callpropvoid        QName(PackageNamespace(""), "enable"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      getlocal1
+      getproperty         QName(Namespace("kabam.lib.tasks:Task"), "error")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onShowConfirmationClick")
+   method
+    refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/onShowConfirmationClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "clearErrors"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callproperty        QName(PackageNamespace(""), "areQuestionsValid"), 0
+      iftrue              L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "displayErrorText"), 0
+
+      jump                L33
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callproperty        QName(PackageNamespace(""), "getAnswers"), 0
+      setproperty         QName(PackageNamespace(""), "securityQuestionsAnswers")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsConfirmDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getproperty         QName(PackageNamespace(""), "securityQuestionsList")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getproperty         QName(PackageNamespace(""), "securityQuestionsAnswers")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsConfirmDialog"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L33:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onBackClick")
+   method
+    refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/onBackClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getproperty         QName(PackageNamespace(""), "securityQuestionsList")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getproperty         QName(PackageNamespace(""), "securityQuestionsAnswers")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsDialog"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onContinueClick")
+   method
+    refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/onContinueClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getproperty         QName(PackageNamespace(""), "securityQuestionsList")
+      newarray            0
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsDialog"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance"), "onSaveQuestions")
+   method
+    refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/instance/onSaveQuestions"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confirmationView")
+      callpropvoid        QName(PackageNamespace(""), "setInProgressMessage"), 0
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsData")
+      setlocal2
+
+      getlocal2
+      newarray            0
+      setproperty         QName(PackageNamespace(""), "answers")
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getproperty         QName(PackageNamespace(""), "securityQuestionsAnswers")
+      coerce_a
+      setlocal            5
+
+      jump                L38
+
+L26:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce_s
+      setlocal3
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "answers")
+      getlex              QName(PackageNamespace("com.hurlant.util"), "Base64")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "encode"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L38:
+      hasnext2            5, 4
+      iftrue              L26
+
+      kill                5
+      kill                4
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "saveQuestions")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.securityQuestions.mediators:SecurityQuestionsMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

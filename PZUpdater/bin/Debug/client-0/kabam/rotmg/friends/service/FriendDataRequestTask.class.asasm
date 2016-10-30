@@ -1,0 +1,133 @@
+class
+ refid "kabam.rotmg.friends.service:FriendDataRequestTask"
+ instance QName(PackageNamespace("kabam.rotmg.friends.service"), "FriendDataRequestTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.friends.service:FriendDataRequestTask")
+  iinit
+   refid "kabam.rotmg.friends.service:FriendDataRequestTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "requestURL") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "xml") type QName(PackageNamespace(""), "XML") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.friends.service:FriendDataRequestTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.friends.service:FriendDataRequestTask/instance/kabam.rotmg.friends.service:FriendDataRequestTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushbyte            8
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.service:FriendDataRequestTask/instance/kabam.rotmg.friends.service:FriendDataRequestTask:startTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "requestURL")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.service:FriendDataRequestTask/instance/kabam.rotmg.friends.service:FriendDataRequestTask:startTask"), "onComplete")
+   method
+    refid "kabam.rotmg.friends.service:FriendDataRequestTask/instance/kabam.rotmg.friends.service:FriendDataRequestTask/instance/kabam.rotmg.friends.service:FriendDataRequestTask:startTask/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L13
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      initproperty        QName(PackageNamespace(""), "xml")
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      jump                L17
+
+L13:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushfalse
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.friends.service:FriendDataRequestTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

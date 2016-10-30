@@ -1,0 +1,199 @@
+class
+ refid "com.company.assembleegameclient.util:TimeUtil"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "TimeUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.util:TimeUtil")
+  iinit
+   refid "com.company.assembleegameclient.util:TimeUtil/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:TimeUtil/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "DAY_IN_MS")
+    pushint             86400000
+    initproperty        QName(PackageNamespace(""), "DAY_IN_MS")
+
+    findproperty        QName(PackageNamespace(""), "DAY_IN_S")
+    pushint             86400
+    initproperty        QName(PackageNamespace(""), "DAY_IN_S")
+
+    findproperty        QName(PackageNamespace(""), "HOUR_IN_S")
+    pushshort           3600
+    initproperty        QName(PackageNamespace(""), "HOUR_IN_S")
+
+    findproperty        QName(PackageNamespace(""), "MIN_IN_S")
+    pushbyte            60
+    initproperty        QName(PackageNamespace(""), "MIN_IN_S")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "DAY_IN_MS") slotid 1 type QName(PackageNamespace(""), "int") value Integer(86400000) end
+ trait const QName(PackageNamespace(""), "DAY_IN_S") slotid 2 type QName(PackageNamespace(""), "int") value Integer(86400) end
+ trait const QName(PackageNamespace(""), "HOUR_IN_S") slotid 3 type QName(PackageNamespace(""), "int") value Integer(3600) end
+ trait const QName(PackageNamespace(""), "MIN_IN_S") slotid 4 type QName(PackageNamespace(""), "int") value Integer(60) end
+ trait method QName(PackageNamespace(""), "secondsToDays") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.util:TimeUtil/class/secondsToDays"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "DAY_IN_S")
+     divide
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "secondsToHours") flag FINAL dispid 4
+  method
+   refid "com.company.assembleegameclient.util:TimeUtil/class/secondsToHours"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "HOUR_IN_S")
+     divide
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "secondsToMins") flag FINAL dispid 5
+  method
+   refid "com.company.assembleegameclient.util:TimeUtil/class/secondsToMins"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "MIN_IN_S")
+     divide
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "parseUTCDate") flag FINAL dispid 6
+  method
+   refid "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "Date")
+   body
+    maxstack 6
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "RegExp")
+     pushstring          "(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d) (\\d\\d):(\\d\\d):(\\d\\d)"
+     construct           1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "match"), 1
+     coerce              QName(PackageNamespace(""), "Array")
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace(""), "Date")
+     constructprop       QName(PackageNamespace(""), "Date"), 0
+     coerce              QName(PackageNamespace(""), "Date")
+     setlocal3
+
+     getlocal3
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal2
+     pushbyte            1
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), ProtectedNamespace("com.company.assembleegameclient.util:TimeUtil"), StaticProtectedNs("com.company.assembleegameclient.util:TimeUtil")])
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal2
+     pushbyte            2
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), ProtectedNamespace("com.company.assembleegameclient.util:TimeUtil"), StaticProtectedNs("com.company.assembleegameclient.util:TimeUtil")])
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     decrement
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal2
+     pushbyte            3
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), ProtectedNamespace("com.company.assembleegameclient.util:TimeUtil"), StaticProtectedNs("com.company.assembleegameclient.util:TimeUtil")])
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCFullYear"), 3
+
+     getlocal3
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal2
+     pushbyte            4
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), ProtectedNamespace("com.company.assembleegameclient.util:TimeUtil"), StaticProtectedNs("com.company.assembleegameclient.util:TimeUtil")])
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal2
+     pushbyte            5
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), ProtectedNamespace("com.company.assembleegameclient.util:TimeUtil"), StaticProtectedNs("com.company.assembleegameclient.util:TimeUtil")])
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal2
+     pushbyte            6
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.util:TimeUtil/class/parseUTCDate#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), ProtectedNamespace("com.company.assembleegameclient.util:TimeUtil"), StaticProtectedNs("com.company.assembleegameclient.util:TimeUtil")])
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     pushbyte            0
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "setUTCHours"), 4
+
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

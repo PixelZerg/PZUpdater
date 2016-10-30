@@ -1,0 +1,170 @@
+class
+ refid "kabam.rotmg.characters.model:LegacyCharacterModel"
+ instance QName(PackageNamespace("kabam.rotmg.characters.model"), "LegacyCharacterModel")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("CharacterModel", [PackageNamespace("kabam.rotmg.characters.model")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.characters.model:LegacyCharacterModel")
+  iinit
+   refid "kabam.rotmg.characters.model:LegacyCharacterModel/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "wrapped") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.characters.model:LegacyCharacterModel/instance"), "selected") type QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter") end
+  trait method QName(PackageNamespace(""), "getCharacterCount")
+   method
+    refid "kabam.rotmg.characters.model:LegacyCharacterModel/instance/getCharacterCount"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      callproperty        QName(PackageNamespace(""), "getCharacterCount"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCharacter")
+   method
+    refid "kabam.rotmg.characters.model:LegacyCharacterModel/instance/getCharacter"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getCharById"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "deleteCharacter")
+   method
+    refid "kabam.rotmg.characters.model:LegacyCharacterModel/instance/deleteCharacter"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "deleteCharacter"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.characters.model:LegacyCharacterModel/instance"), "selected")
+      callproperty        QName(PackageNamespace(""), "charId"), 0
+      getlocal1
+      ifne                L14
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.characters.model:LegacyCharacterModel/instance"), "selected")
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "select")
+   method
+    refid "kabam.rotmg.characters.model:LegacyCharacterModel/instance/select"
+    param QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.characters.model:LegacyCharacterModel/instance"), "selected")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSelected")
+   method
+    refid "kabam.rotmg.characters.model:LegacyCharacterModel/instance/getSelected"
+    returns QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.characters.model:LegacyCharacterModel/instance"), "selected")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.characters.model:LegacyCharacterModel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

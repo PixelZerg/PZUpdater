@@ -1,0 +1,459 @@
+class
+ refid "kabam.rotmg.core:CoreConfig"
+ instance QName(PackageNamespace("kabam.rotmg.core"), "CoreConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core:CoreConfig")
+  iinit
+   refid "kabam.rotmg.core:CoreConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "contextView") flag METADATA type QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "commandMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.api"), "ISignalCommandMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mediatorMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "startup") flag METADATA type QName(PackageNamespace("kabam.rotmg.startup.control"), "StartupSequence")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "layers") type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers") end
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.core:CoreConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureModel"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureCommands"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureServices"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureSignals"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureViews"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startup")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "SetupDomainSecuritySignal")
+      pushshort           -1000
+      callpropvoid        QName(PackageNamespace(""), "addSignal"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startup")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "SetupAnalyticsSignal")
+      pushshort           -999
+      callpropvoid        QName(PackageNamespace(""), "addSignal"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startup")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.service"), "RequestAppInitTask")
+      callpropvoid        QName(PackageNamespace(""), "addTask"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "init")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "afterInitializing"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureModel")
+   method
+    refid "kabam.rotmg.core:CoreConfig/instance/kabam.rotmg.core:CoreConfig/instance/configureModel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.model"), "MapModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.model"), "ScreenModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.control"), "SpamFilter")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureCommands")
+   method
+    refid "kabam.rotmg.core:CoreConfig/instance/kabam.rotmg.core:CoreConfig/instance/configureCommands"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "SetupDomainSecuritySignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "SetupDomainSecurityCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "SetupAnalyticsSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "SetupAnalyticsCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackEventSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "TrackEventCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackPageViewSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "TrackPageViewCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "InvalidateDataSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "InvalidateDataCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "SetScreenWithValidDataCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "PurchaseCharacterSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "PurchaseCharacterCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "AppInitDataReceivedSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "ConfigurePaymentsWindowCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "AppInitDataReceivedSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "ConfigureSpamFilterCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.signals"), "CharListDataSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "UpdatePlayerModelCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.signals"), "CharListDataSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.commands"), "UpdatePetsModelCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureServices")
+   method
+    refid "kabam.rotmg.core:CoreConfig/instance/kabam.rotmg.core:CoreConfig/instance/configureServices"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.lib.json"), "JsonParser")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.lib.json"), "SoftwareJsonParser")
+      callpropvoid        QName(PackageNamespace(""), "toSingleton"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.service"), "PurchaseCharacterClassTask")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.service"), "PurchaseCharacterErrorTask")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.service"), "GoogleAnalytics")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.service"), "RequestAppInitTask")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureSignals")
+   method
+    refid "kabam.rotmg.core:CoreConfig/instance/kabam.rotmg.core:CoreConfig/instance/configureSignals"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "GotoPreviousScreenSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "LaunchGameSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "SetLoadingMessageSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "UpdateNewCharacterScreenSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "BuyCharacterPendingSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "configureViews")
+   method
+    refid "kabam.rotmg.core:CoreConfig/instance/kabam.rotmg.core:CoreConfig/instance/configureViews"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.view"), "ScreensView")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.core.view"), "ScreensMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipAble")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.tooltips.controller"), "TooltipAbleMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "init")
+   method
+    refid "kabam.rotmg.core:CoreConfig/instance/kabam.rotmg.core:CoreConfig/instance/init"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "contextView")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "mediate"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.view"), "Layers"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "layers")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "layers")
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "contextView")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core:CoreConfig/instance"), "layers")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core:CoreConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

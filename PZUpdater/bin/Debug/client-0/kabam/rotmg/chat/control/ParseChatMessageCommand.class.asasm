@@ -1,0 +1,140 @@
+class
+ refid "kabam.rotmg.chat.control:ParseChatMessageCommand"
+ instance QName(PackageNamespace("kabam.rotmg.chat.control"), "ParseChatMessageCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.chat.control:ParseChatMessageCommand")
+  iinit
+   refid "kabam.rotmg.chat.control:ParseChatMessageCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "String")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addTextLine") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.chat.control:ParseChatMessageCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      jump                L27
+
+L3:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addTextLine")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "HELP_CHAT_NAME")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "HELP_COMMAND")
+      callproperty        QName(PackageNamespace(""), "make"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L45
+
+L14:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      callpropvoid        QName(PackageNamespace(""), "playerText"), 1
+
+      jump                L45
+
+      ; 0x10
+      ; 0x2D
+      ; 0x00
+      ; 0x00
+L27:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      setlocal1
+
+      pushstring          "/help"
+      getlocal1
+      ifstrictne          L35
+
+      pushbyte            0
+      jump                L43
+
+L35:
+      jump                L42
+
+      ; 0x24
+      ; 0x01
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L42:
+      pushbyte            1
+L43:
+      kill                1
+      lookupswitch        L14, [L3, L14]
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.control:ParseChatMessageCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

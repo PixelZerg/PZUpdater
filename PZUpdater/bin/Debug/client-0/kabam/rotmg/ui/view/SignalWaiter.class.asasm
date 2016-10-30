@@ -1,0 +1,235 @@
+class
+ refid "kabam.rotmg.ui.view:SignalWaiter"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:SignalWaiter")
+  iinit
+   refid "kabam.rotmg.ui.view:SignalWaiter/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "complete")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), "texts")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "complete") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), "texts") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait method QName(PackageNamespace(""), "push")
+   method
+    refid "kabam.rotmg.ui.view:SignalWaiter/instance/push"
+    param QName(PackageNamespace("org.osflash.signals"), "Signal")
+    returns QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), "texts")
+      getlocal1
+      pushtrue
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.ui.view"), PackageInternalNs("kabam.rotmg.ui.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.ui.view:SignalWaiter"), StaticProtectedNs("kabam.rotmg.ui.view:SignalWaiter")])
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), "listenTo"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "pushArgs")
+   method
+    refid "kabam.rotmg.ui.view:SignalWaiter/instance/pushArgs"
+    returns QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+    flag NEED_REST
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      coerce_a
+      setlocal            4
+
+      jump                L20
+
+L11:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+L20:
+      hasnext2            4, 3
+      iftrue              L11
+
+      kill                4
+      kill                3
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), "listenTo")
+   method
+    refid "kabam.rotmg.ui.view:SignalWaiter/instance/kabam.rotmg.ui.view:SignalWaiter/instance/listenTo"
+    param QName(PackageNamespace("org.osflash.signals"), "Signal")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal2
+
+      pushscope
+
+      getscopeobject      1
+      pushnull
+      coerce              QName(PackageNamespace(""), "Function")
+      setslot             2
+
+      getscopeobject      1
+      getlocal1
+      setslot             1
+
+      getscopeobject      1
+      newfunction         "kabam.rotmg.ui.view:SignalWaiter/instance/kabam.rotmg.ui.view:SignalWaiter/instance/listenTo/inline_method"
+      coerce              QName(PackageNamespace(""), "Function")
+      setslot             2
+
+      getscopeobject      1
+      getslot             1
+      getscopeobject      1
+      getslot             2
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      returnvoid
+     end ; code
+     trait slot QName(PackageInternalNs("kabam.rotmg.ui.view"), "value") slotid 1 type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.ui.view"), "onTextChanged") slotid 2 type QName(PackageNamespace(""), "Function") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), "checkEmpty")
+   method
+    refid "kabam.rotmg.ui.view:SignalWaiter/instance/kabam.rotmg.ui.view:SignalWaiter/instance/checkEmpty"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "isEmpty"), 0
+      iffalse             L8
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "complete")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L8:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isEmpty")
+   method
+    refid "kabam.rotmg.ui.view:SignalWaiter/instance/isEmpty"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.adobe.utils"), "DictionaryUtil")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:SignalWaiter/instance#0"), "texts")
+      callproperty        QName(PackageNamespace(""), "getKeys"), 1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      equals
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:SignalWaiter/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

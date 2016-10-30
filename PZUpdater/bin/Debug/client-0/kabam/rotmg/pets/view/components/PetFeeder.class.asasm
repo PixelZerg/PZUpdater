@@ -1,0 +1,458 @@
+class
+ refid "kabam.rotmg.pets.view.components:PetFeeder"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetFeeder")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:PetFeeder")
+  iinit
+   refid "kabam.rotmg.pets.view.components:PetFeeder/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "openPetPicker")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "Boolean")
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 2
+     initproperty        QName(PackageNamespace(""), "acceptableMatch")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "petLoaded")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components.slot"), "PetFeedFuseSlot")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components.slot"), "PetFeedFuseSlot"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     callproperty        QName(PackageNamespace(""), "returnPetFeederArrow"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "arrow")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     callproperty        QName(PackageNamespace(""), "returnPetFeederRightSlot"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "arrow")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+     getproperty         QName(PackageNamespace(""), "openPetPicker")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "onOpenPetPicker")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+     getproperty         QName(PackageNamespace(""), "foodLoaded")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "onFoodLoaded")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+     getproperty         QName(PackageNamespace(""), "foodUnloaded")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "onFoodUnloaded")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "openPetPicker") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "acceptableMatch") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "petLoaded") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot") type QName(PackageNamespace("kabam.rotmg.pets.view.components.slot"), "PetFeedFuseSlot") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "arrow") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "FeedFuseArrow") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot") type QName(PackageNamespace("kabam.rotmg.pets.view.components.slot"), "FoodFeedFuseSlot") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetSlotsState") end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/initialize"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetSlotsState")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      getproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+      callpropvoid        QName(PackageNamespace(""), "setPet"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "update"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPet")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/setPet"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setPet"), 1
+
+      getlocal1
+      iffalse             L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petLoaded")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearFood")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/clearFood"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "rightSlotItemId")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "rightSlotOwnerId")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "rightSlotId")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+      callpropvoid        QName(PackageNamespace(""), "clearItem"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "update"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "onFoodUnloaded")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/kabam.rotmg.pets.view.components:PetFeeder/instance/onFoodUnloaded"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "rightSlotItemId")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "rightSlotOwnerId")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "rightSlotId")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "update"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "onFoodLoaded")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/kabam.rotmg.pets.view.components:PetFeeder/instance/onFoodLoaded"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "rightSlotItemId")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "update"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "update")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/kabam.rotmg.pets.view.components:PetFeeder/instance/update"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateHighlights"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "acceptableMatch")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      callproperty        QName(PackageNamespace(""), "isAcceptableFeedState"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      getproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "onOpenPetPicker")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/kabam.rotmg.pets.view.components:PetFeeder/instance/onOpenPetPicker"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openPetPicker")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateHighlights")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/updateHighlights"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      callproperty        QName(PackageNamespace(""), "isAcceptableFeedState"), 0
+      iffalse             L19
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "arrow")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      jump                L39
+
+L19:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      getproperty         QName(PackageNamespace(""), "rightSlotItemId")
+      pushbyte            -1
+      equals
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "state")
+      getproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+      pushnull
+      equals
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "arrow")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+L39:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setProcessing")
+   method
+    refid "kabam.rotmg.pets.view.components:PetFeeder/instance/setProcessing"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setProcessing"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setProcessing"), 1
+
+      getlocal1
+      iffalse             L25
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "arrow")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "rightSlot")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "leftSlot")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "highlight"), 1
+
+      jump                L27
+
+L25:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetFeeder/instance"), "update"), 0
+
+L27:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:PetFeeder/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

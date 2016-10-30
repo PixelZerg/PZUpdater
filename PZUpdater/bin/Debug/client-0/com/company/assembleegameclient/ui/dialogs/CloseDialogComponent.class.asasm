@@ -1,0 +1,171 @@
+class
+ refid "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "CloseDialogComponent")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.dialogs:CloseDialogComponent")
+  iinit
+   refid "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "closeSignal")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.ui.dialogs"), PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance/init"), PackageInternalNs("com.company.assembleegameclient.ui.dialogs"), ProtectedNamespace("com.company.assembleegameclient.ui.dialogs:CloseDialogComponent"), StaticProtectedNs("com.company.assembleegameclient.ui.dialogs:CloseDialogComponent"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "String")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "types")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "closeSignal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "dialog") type QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "DialogCloser") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "types") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+  trait method QName(PackageNamespace(""), "add")
+   method
+    refid "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance/add"
+    param QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "DialogCloser")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "dialog")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "types")
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "onButtonType")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "onButtonType")
+   method
+    refid "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance/com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance/onButtonType"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "types")
+      coerce_a
+      setlocal            4
+
+      jump                L24
+
+L12:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "dialog")
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "onButtonType")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+L24:
+      hasnext2            4, 3
+      iftrue              L12
+
+      kill                4
+      kill                3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "dialog")
+      callproperty        QName(Namespace("com.company.assembleegameclient.ui.dialogs:DialogCloser"), "getCloseSignal"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCloseSignal")
+   method
+    refid "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance/getCloseSignal"
+    returns QName(PackageNamespace("org.osflash.signals"), "Signal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/instance"), "closeSignal")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.dialogs:CloseDialogComponent/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

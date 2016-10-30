@@ -1,0 +1,228 @@
+class
+ refid "kabam.rotmg.core.service:PurchaseCharacterClassTask"
+ instance QName(PackageNamespace("kabam.rotmg.core.service"), "PurchaseCharacterClassTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterClassTask")
+  iinit
+   refid "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "classType") flag METADATA type QName(PackageNamespace(""), "int")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterClassTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/kabam.rotmg.core.service:PurchaseCharacterClassTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "PurchaseCharacterClassTask.startTask: Started "
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/char/purchaseClassUnlock"
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "makeRequestPacket"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeRequestPacket")
+   method
+    refid "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/makeRequestPacket"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetworkUserId"), 0
+      setproperty         Multiname("game_net_user_id", [PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/makeRequestPacket"), PackageNamespace("kabam.rotmg.core.service"), PackageInternalNs("kabam.rotmg.core.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetwork"), 0
+      setproperty         Multiname("game_net", [PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/makeRequestPacket"), PackageNamespace("kabam.rotmg.core.service"), PackageInternalNs("kabam.rotmg.core.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "playPlatform"), 0
+      setproperty         Multiname("play_platform", [PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/makeRequestPacket"), PackageNamespace("kabam.rotmg.core.service"), PackageInternalNs("kabam.rotmg.core.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "sendLogin_")
+      setproperty         Multiname("do_login", [PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/makeRequestPacket"), PackageNamespace("kabam.rotmg.core.service"), PackageInternalNs("kabam.rotmg.core.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classType")
+      setproperty         Multiname("classType", [PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/makeRequestPacket"), PackageNamespace("kabam.rotmg.core.service"), PackageInternalNs("kabam.rotmg.core.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.rotmg.core.service:PurchaseCharacterClassTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "PurchaseCharacterClassTask.onComplete: Ended "
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal1
+      coerce_a
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), "onReceiveResponseFromClassPurchase"), 0
+      coerce_a
+L14:
+      pop
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance"), "onReceiveResponseFromClassPurchase")
+   method
+    refid "kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/kabam.rotmg.core.service:PurchaseCharacterClassTask/instance/onReceiveResponseFromClassPurchase"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classType")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharactersList")
+      getproperty         QName(PackageNamespace(""), "UNRESTRICTED")
+      callpropvoid        QName(PackageNamespace(""), "setClassAvailability"), 2
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.service:PurchaseCharacterClassTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

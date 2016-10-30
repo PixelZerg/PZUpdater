@@ -1,0 +1,452 @@
+class
+ refid "kabam.rotmg.minimap.view:MiniMapMediator"
+ instance QName(PackageNamespace("kabam.rotmg.minimap.view"), "MiniMapMediator")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IMediator", [PackageNamespace("robotlegs.bender.extensions.mediatorMap.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.minimap.view:MiniMapMediator")
+  iinit
+   refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.minimap.view"), "MiniMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setFocus") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.focus.control"), "SetGameFocusSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateGroundTileSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.minimap.control"), "UpdateGroundTileSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateGameObjectTileSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.minimap.control"), "UpdateGameObjectTileSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "miniMapZoomSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.minimap.control"), "MiniMapZoomSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateHUD") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "UpdateHUDSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "exitGameSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "ExitGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "layers") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      callpropvoid        QName(PackageNamespace(""), "setMap"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setFocus")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onSetFocus")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateGameObjectTileSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateGameObjectTile")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateGroundTileSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateGroundTile")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "miniMapZoomSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onMiniMapZoom")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exitGameSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onExitGame")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "layers")
+      getproperty         QName(PackageNamespace(""), "top")
+      setproperty         QName(PackageNamespace(""), "menuLayer")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onExitGame")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/kabam.rotmg.minimap.view:MiniMapMediator/instance/onExitGame"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "deactivate"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setFocus")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onSetFocus")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateHUD")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateHUD")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateGameObjectTileSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateGameObjectTile")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateGroundTileSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateGroundTile")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "miniMapZoomSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onMiniMapZoom")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exitGameSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onExitGame")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onSetFocus")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/kabam.rotmg.minimap.view:MiniMapMediator/instance/onSetFocus"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "getFocusById"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setFocus"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "getFocusById")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/kabam.rotmg.minimap.view:MiniMapMediator/instance/getFocusById"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal3
+
+      getlocal1
+      pushstring          ""
+      ifne                L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player_")
+      returnvalue
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "goDict_")
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal2
+      coerce_a
+      setlocal            5
+
+      jump                L37
+
+L25:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "name_")
+      getlocal1
+      ifne                L37
+
+      getlocal3
+      returnvalue
+
+L37:
+      hasnext2            5, 4
+      iftrue              L25
+
+      kill                5
+      kill                4
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player_")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateGroundTile")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/kabam.rotmg.minimap.view:MiniMapMediator/instance/onUpdateGroundTile"
+    param QName(PackageNamespace("kabam.rotmg.minimap.model"), "UpdateGroundTileVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tileX")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tileY")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tileType")
+      callpropvoid        QName(PackageNamespace(""), "setGroundTile"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateGameObjectTile")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/kabam.rotmg.minimap.view:MiniMapMediator/instance/onUpdateGameObjectTile"
+    param QName(PackageNamespace("kabam.rotmg.ui.model"), "UpdateGameObjectTileVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tileX")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tileY")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "gameObject")
+      callpropvoid        QName(PackageNamespace(""), "setGameObjectTile"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onMiniMapZoom")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/kabam.rotmg.minimap.view:MiniMapMediator/instance/onMiniMapZoom"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.control"), "MiniMapZoomSignal")
+      getproperty         QName(PackageNamespace(""), "IN")
+      ifne                L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "zoomIn"), 0
+
+      jump                L17
+
+L10:
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.minimap.control"), "MiniMapZoomSignal")
+      getproperty         QName(PackageNamespace(""), "OUT")
+      ifne                L17
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "zoomOut"), 0
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.minimap.view:MiniMapMediator/instance"), "onUpdateHUD")
+   method
+    refid "kabam.rotmg.minimap.view:MiniMapMediator/instance/kabam.rotmg.minimap.view:MiniMapMediator/instance/onUpdateHUD"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.minimap.view:MiniMapMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

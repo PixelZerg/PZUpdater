@@ -1,0 +1,104 @@
+class
+ refid "kabam.rotmg.language.control:ReloadCurrentScreenCommand"
+ instance QName(PackageNamespace("kabam.rotmg.language.control"), "ReloadCurrentScreenCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.language.control:ReloadCurrentScreenCommand")
+  iinit
+   refid "kabam.rotmg.language.control:ReloadCurrentScreenCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "invalidate") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "InvalidateDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "screensModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "ScreenModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.language.control:ReloadCurrentScreenCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "screensModel")
+      callproperty        QName(PackageNamespace(""), "getCurrentScreenType"), 0
+      coerce              QName(PackageNamespace(""), "Class")
+      dup
+      iftrue              L11
+
+      pop
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      coerce              QName(PackageNamespace(""), "Class")
+L11:
+      coerce              QName(PackageNamespace(""), "Class")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "invalidate")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      getlocal1
+      construct           0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.language.control:ReloadCurrentScreenCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,102 @@
+class
+ refid "org.hamcrest.object:IsInstanceOfMatcher"
+ instance QName(PackageNamespace("org.hamcrest.object"), "IsInstanceOfMatcher")
+  extends QName(PackageNamespace("org.hamcrest"), "BaseMatcher")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.hamcrest.object:IsInstanceOfMatcher")
+  iinit
+   refid "org.hamcrest.object:IsInstanceOfMatcher/instance/init"
+   param QName(PackageNamespace(""), "Class")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findproperty        QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_type")
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_type")
+
+     findproperty        QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_typeName")
+     findpropstrict      QName(PackageNamespace("flash.utils"), "getQualifiedClassName")
+     getlocal1
+     callproperty        QName(PackageNamespace("flash.utils"), "getQualifiedClassName"), 1
+     initproperty        QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_typeName")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_typeName") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "describeTo") flag OVERRIDE
+   method
+    refid "org.hamcrest.object:IsInstanceOfMatcher/instance/describeTo"
+    param QName(PackageNamespace("org.hamcrest"), "Description")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          "an instance of "
+      callproperty        QName(Namespace("org.hamcrest:Description"), "appendText"), 1
+      getlex              QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_typeName")
+      callpropvoid        QName(Namespace("org.hamcrest:Description"), "appendText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_type") type QName(PackageNamespace(""), "Class") end
+  trait method QName(PackageNamespace(""), "matches") flag OVERRIDE
+   method
+    refid "org.hamcrest.object:IsInstanceOfMatcher/instance/matches"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PrivateNamespace(null, "org.hamcrest.object:IsInstanceOfMatcher/instance"), "_type")
+      istypelate
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.hamcrest.object:IsInstanceOfMatcher/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

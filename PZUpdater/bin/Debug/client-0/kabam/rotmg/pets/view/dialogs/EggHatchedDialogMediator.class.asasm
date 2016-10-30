@@ -1,0 +1,195 @@
+class
+ refid "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "EggHatchedDialogMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator")
+  iinit
+   refid "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "EggHatchedDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), "getTypeBitmap"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "init"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), "onClosed")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/onClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), "getTypeBitmap")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/getTypeBitmap"
+    returns QName(PackageNamespace("flash.display"), "Bitmap")
+    body
+     maxstack 7
+     localcount 8
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.pets.view.dialogs"), "skinType")
+      callproperty        QName(PackageNamespace(""), "getIdFromType"), 1
+      coerce_s
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getXMLfromId"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal2
+      getproperty         Multiname("AnimatedTexture", [PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), PackageNamespace(""), PackageInternalNs("kabam.rotmg.pets.view.dialogs"), PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/getTypeBitmap"), PackageNamespace("kabam.rotmg.pets.view.dialogs"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      getproperty         Multiname("File", [PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), PackageNamespace(""), PackageInternalNs("kabam.rotmg.pets.view.dialogs"), PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/getTypeBitmap"), PackageNamespace("kabam.rotmg.pets.view.dialogs"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      coerce_s
+      setlocal3
+
+      getlocal2
+      getproperty         Multiname("AnimatedTexture", [PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), PackageNamespace(""), PackageInternalNs("kabam.rotmg.pets.view.dialogs"), PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/getTypeBitmap"), PackageNamespace("kabam.rotmg.pets.view.dialogs"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      getproperty         Multiname("Index", [PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance"), PackageNamespace(""), PackageInternalNs("kabam.rotmg.pets.view.dialogs"), PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/instance/getTypeBitmap"), PackageNamespace("kabam.rotmg.pets.view.dialogs"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      convert_i
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChars")
+      getlocal3
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "getAnimatedChar"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      dup
+      setlocal            5
+
+      pushbyte            0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "STAND")
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "imageFromAngle"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "image_")
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "mask_")
+      pushshort           160
+      pushtrue
+      pushbyte            0
+      dup
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal            7
+      pushbyte            0
+      pushbyte            6
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal            7
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.dialogs:EggHatchedDialogMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

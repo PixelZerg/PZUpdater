@@ -1,0 +1,290 @@
+class
+ refid "kabam.rotmg.promotions.view:BeginnersPackageButton"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.view"), "BeginnersPackageButton")
+  extends QName(PackageNamespace("kabam.rotmg.packages.view"), "BasePackageButton")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.promotions.view:BeginnersPackageButton")
+  iinit
+   refid "kabam.rotmg.promotions.view:BeginnersPackageButton/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.ui"), "UIUtils")
+     callproperty        QName(PackageNamespace(""), "makeStaticHUDBackground"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "clickArea")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     initproperty        QName(PackageNamespace(""), "clicked")
+
+     findproperty        QName(PackageNamespace(""), "tabChildren")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "tabChildren")
+
+     findproperty        QName(PackageNamespace(""), "tabEnabled")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "tabEnabled")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "makeUI"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "clicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "timeLeftText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "lootIcon") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "daysRemaining") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "clickArea") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait method QName(PackageNamespace(""), "setDaysRemaining")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButton/instance/setDaysRemaining"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "daysRemaining")
+      getlocal1
+      ifeq                L11
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "daysRemaining")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "updateTimeLeftPosition"), 0
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButton/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "makeUI")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButton/instance/kabam.rotmg.promotions.view:BeginnersPackageButton/makeUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "clickArea")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(StaticProtectedNs("kabam.rotmg.packages.view:BasePackageButton"), "makeIcon")
+      callproperty        QName(StaticProtectedNs("kabam.rotmg.packages.view:BasePackageButton"), "makeIcon"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "lootIcon")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "lootIcon")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "makeTimeLeftText"), 0
+
+      getlocal0
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "setDaysRemaining"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "makeTimeLeftText")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButton/instance/kabam.rotmg.promotions.view:BeginnersPackageButton/makeTimeLeftText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "FONT_SIZE")
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16777215
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "timeLeftText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "timeLeftText")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "updateTimeLeftPosition"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "timeLeftText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "updateTimeLeftPosition")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButton/instance/kabam.rotmg.promotions.view:BeginnersPackageButton/updateTimeLeftPosition"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "timeLeftText")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "onTextChanged")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "timeLeftText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "daysRemaining")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      pushstring          " day"
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "daysRemaining")
+      pushbyte            1
+      ifngt               L23
+
+      pushstring          "s"
+      coerce_a
+      jump                L25
+
+L23:
+      pushstring          ""
+      coerce_a
+L25:
+      add
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "onTextChanged")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButton/instance/kabam.rotmg.promotions.view:BeginnersPackageButton/onTextChanged"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.rotmg.packages.view:BasePackageButton"), "positionText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "lootIcon")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "timeLeftText")
+      callpropvoid        QName(ProtectedNamespace("kabam.rotmg.packages.view:BasePackageButton"), "positionText"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.view:BeginnersPackageButton/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "FONT_SIZE")
+    pushbyte            16
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "FONT_SIZE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButton"), "FONT_SIZE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(16) end
+end ; class

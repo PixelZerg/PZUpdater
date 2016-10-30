@@ -1,0 +1,327 @@
+class
+ refid "kabam.rotmg.pets.view.components:PetIcon"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("TooltipAble", [PackageNamespace("kabam.rotmg.tooltips")])
+  implements Multiname("Disableable", [PackageNamespace("kabam.rotmg.pets.view.dialogs")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:PetIcon")
+  iinit
+   refid "kabam.rotmg.pets.view.components:PetIcon/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+     constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+     initproperty        QName(PackageNamespace(""), "hoverTooltipDelegate")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "petVO")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetTooltip")
+     getlocal1
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetTooltip"), 1
+     setproperty         QName(PackageNamespace(""), "tooltip")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "bitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "enabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "petVO") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "doShowTooltip") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "disable")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/disable"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "DISABLE_COLOR")
+      setproperty         QName(PackageNamespace(""), "color")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "bitmap")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "enabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isEnabled")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/isEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "enabled")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispatchEvent") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/dispatchEvent"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "enabled")
+      iffalse             L9
+
+      getlocal0
+      getlocal1
+      callsuper           QName(PackageNamespace(""), "dispatchEvent"), 1
+      returnvalue
+
+L9:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setBitmap")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/setBitmap"
+    param QName(PackageNamespace("flash.display"), "Bitmap")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "bitmap")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setShowToolTipSignal")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/setShowToolTipSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getShowToolTip")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/getShowToolTip"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setHideToolTipsSignal")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/setHideToolTipsSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getHideToolTips")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/getHideToolTips"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getHideToolTips"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPetVO")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/getPetVO"
+    returns QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "petVO")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setTooltipEnabled")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIcon/instance/setTooltipEnabled"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetIcon/instance"), "doShowTooltip")
+
+      getlocal1
+      iftrue              L7
+
+L7:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:PetIcon/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "DISABLE_COLOR")
+    pushint             2697513
+    initproperty        QName(PackageNamespace(""), "DISABLE_COLOR")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "DISABLE_COLOR") slotid 1 type QName(PackageNamespace(""), "uint") value Integer(2697513) end
+end ; class

@@ -1,0 +1,202 @@
+class
+ refid "kabam.lib.console.model:ActionHistory"
+ instance QName(PackageInternalNs("kabam.lib.console.model"), "ActionHistory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag FINAL
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.console.model:ActionHistory")
+  iinit
+   refid "kabam.lib.console.model:ActionHistory/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#1"), PackageNamespace(""), PackageNamespace("kabam.lib.console.model"), PackageInternalNs("kabam.lib.console.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.model:ActionHistory"), StaticProtectedNs("kabam.lib.console.model:ActionHistory"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "String")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "stack")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "stack") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "add")
+   method
+    refid "kabam.lib.console.model:ActionHistory/instance/add"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "stack")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "length")
+   method
+    refid "kabam.lib.console.model:ActionHistory/instance/length/getter"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "stack")
+      getproperty         QName(PackageNamespace(""), "length")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPrevious")
+   method
+    refid "kabam.lib.console.model:ActionHistory/instance/getPrevious"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+      pushbyte            0
+      greaterthan
+      iffalse             L24
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "stack")
+      getlocal0
+      dup
+      setlocal1
+
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+      decrement_i
+      dup
+      setlocal2
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+
+      kill                2
+      kill                1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#1"), PackageNamespace(""), PackageNamespace("kabam.lib.console.model"), PackageInternalNs("kabam.lib.console.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.model:ActionHistory"), StaticProtectedNs("kabam.lib.console.model:ActionHistory")])
+      coerce_s
+      jump                L25
+
+L24:
+      pushstring          ""
+L25:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getNext")
+   method
+    refid "kabam.lib.console.model:ActionHistory/instance/getNext"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "stack")
+      getproperty         QName(PackageNamespace(""), "length")
+      decrement
+      lessthan
+      iffalse             L27
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "stack")
+      getlocal0
+      dup
+      setlocal1
+
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+      increment_i
+      dup
+      setlocal2
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), "index")
+
+      kill                2
+      kill                1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#0"), PrivateNamespace(null, "kabam.lib.console.model:ActionHistory/instance#1"), PackageNamespace(""), PackageNamespace("kabam.lib.console.model"), PackageInternalNs("kabam.lib.console.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.model:ActionHistory"), StaticProtectedNs("kabam.lib.console.model:ActionHistory")])
+      coerce_s
+      jump                L28
+
+L27:
+      pushstring          ""
+L28:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.console.model:ActionHistory/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

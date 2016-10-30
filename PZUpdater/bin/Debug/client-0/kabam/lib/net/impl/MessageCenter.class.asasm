@@ -1,0 +1,299 @@
+class
+ refid "kabam.lib.net.impl:MessageCenter"
+ instance QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenter")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("MessageMap", [PackageNamespace("kabam.lib.net.api")])
+  implements Multiname("MessageProvider", [PackageNamespace("kabam.lib.net.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.net.impl:MessageCenter")
+  iinit
+   refid "kabam.lib.net.impl:MessageCenter/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+     applytype           1
+     getlex              QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "MAX_ID")
+     pushtrue
+     construct           2
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "maps")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+     applytype           1
+     getlex              QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "MAX_ID")
+     pushtrue
+     construct           2
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "pools")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "maps") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")>) end
+  trait const QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "pools") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait method QName(PackageNamespace(""), "setInjector")
+   method
+    refid "kabam.lib.net.impl:MessageCenter/instance/setInjector"
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenter")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "injector")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "map")
+   method
+    refid "kabam.lib.net.impl:MessageCenter/instance/map"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.lib.net.api"), "MessageMapping")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "maps")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "maps")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+      dup
+      iftrue              L17
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "makeMapping"), 1
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+L17:
+      dup
+      setlocal2
+
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+
+      getlocal2
+      kill                2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unmap")
+   method
+    refid "kabam.lib.net.impl:MessageCenter/instance/unmap"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "pools")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+      coerce_a
+      dup
+      iffalse             L16
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "pools")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+      callproperty        QName(PackageNamespace(""), "dispose"), 0
+      coerce_a
+L16:
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "pools")
+      getlocal1
+      pushnull
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "maps")
+      getlocal1
+      pushnull
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "makeMapping")
+   method
+    refid "kabam.lib.net.impl:MessageCenter/instance/kabam.lib.net.impl:MessageCenter/makeMapping"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+      constructprop       QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "injector")
+      callproperty        QName(PackageNamespace(""), "setInjector"), 1
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setID"), 1
+      getlex              QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+      astypelate
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "require")
+   method
+    refid "kabam.lib.net.impl:MessageCenter/instance/require"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "pools")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "pools")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+      dup
+      iftrue              L17
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "makePool"), 1
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+L17:
+      dup
+      setlocal3
+
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+
+      getlocal3
+      kill                3
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+      setlocal2
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "require"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "makePool")
+   method
+    refid "kabam.lib.net.impl:MessageCenter/instance/kabam.lib.net.impl:MessageCenter/makePool"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "maps")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), PackageNamespace("kabam.lib.net.impl"), PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter/instance"), PackageNamespace(""), PackageInternalNs("kabam.lib.net.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.net.impl:MessageCenter"), StaticProtectedNs("kabam.lib.net.impl:MessageCenter")])
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessageCenterMapping")
+      setlocal2
+
+      getlocal2
+      iffalse             L14
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "makePool"), 0
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+      jump                L16
+
+L14:
+      pushnull
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+L16:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.net.impl:MessageCenter/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "MAX_ID")
+    pushshort           256
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "MAX_ID")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.lib.net.impl:MessageCenter"), "MAX_ID") slotid 1 type QName(PackageNamespace(""), "int") value Integer(256) end
+end ; class

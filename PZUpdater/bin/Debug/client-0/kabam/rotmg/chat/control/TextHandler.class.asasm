@@ -1,0 +1,1229 @@
+class
+ refid "kabam.rotmg.chat.control:TextHandler"
+ instance QName(PackageNamespace("kabam.rotmg.chat.control"), "TextHandler")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.chat.control:TextHandler")
+  iinit
+   refid "kabam.rotmg.chat.control:TextHandler/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors")
+     pushint             14802908
+     pushint             16777215
+     pushint             5526612
+     constructprop       QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "NORMAL_SPEECH_COLORS")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors")
+     pushint             5644060
+     pushint             16549442
+     pushint             13484223
+     constructprop       QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "ENEMY_SPEECH_COLORS")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors")
+     pushint             2493110
+     pushint             61695
+     pushint             13880567
+     constructprop       QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "TELL_SPEECH_COLORS")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors")
+     pushint             4098560
+     pushint             10944349
+     pushint             13891532
+     constructprop       QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "GUILD_SPEECH_COLORS")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "NORMAL_SPEECH_COLORS") type QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "ENEMY_SPEECH_COLORS") type QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "TELL_SPEECH_COLORS") type QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "GUILD_SPEECH_COLORS") type QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors") end
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addTextLine") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addSpeechBalloon") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddSpeechBalloonSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "stringMap") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "StringMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "tellModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "TellModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "spamFilter") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.control"), "SpamFilter")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialogSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "friendModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/execute"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Text")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal3
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      pushnull
+      coerce_s
+      setlocal            5
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "numStars_")
+      pushbyte            -1
+      equals
+      setlocal2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "numStars_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("chatStarRequirement", [PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#1"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.chat.control:TextHandler"), StaticProtectedNs("kabam.rotmg.chat.control:TextHandler")])
+      lessthan
+      dup
+      iffalse             L33
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      equals
+      not
+L33:
+      dup
+      iffalse             L38
+
+      pop
+      getlocal2
+      not
+L38:
+      dup
+      iffalse             L46
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isSpecialRecipientChat"), 1
+      not
+L46:
+      iffalse             L48
+
+      returnvoid
+
+L48:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      pushstring          ""
+      equals
+      not
+      coerce_a
+      convert_b
+      dup
+      iffalse             L63
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("chatFriend", [PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#1"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.chat.control:TextHandler"), StaticProtectedNs("kabam.rotmg.chat.control:TextHandler")])
+      coerce_a
+      convert_b
+L63:
+      dup
+      iffalse             L72
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "friendModel")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      callproperty        QName(PackageNamespace(""), "isMyFriend"), 1
+      not
+L72:
+      iffalse             L74
+
+      returnvoid
+
+L74:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("chatAll", [PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#1"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.chat.control:TextHandler"), StaticProtectedNs("kabam.rotmg.chat.control:TextHandler")])
+      not
+      dup
+      iffalse             L89
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      equals
+      not
+L89:
+      dup
+      iffalse             L94
+
+      pop
+      getlocal2
+      not
+L94:
+      dup
+      iffalse             L102
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isSpecialRecipientChat"), 1
+      not
+L102:
+      iffalse             L132
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "GUILD_CHAT_NAME")
+      equals
+      dup
+      iffalse             L115
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("chatGuild", [PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#1"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.chat.control:TextHandler"), StaticProtectedNs("kabam.rotmg.chat.control:TextHandler")])
+      convert_b
+L115:
+      iffalse             L117
+
+      jump                L132
+
+L117:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      pushstring          ""
+      equals
+      not
+      dup
+      iffalse             L129
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("chatWhisper", [PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#1"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.chat.control:TextHandler"), StaticProtectedNs("kabam.rotmg.chat.control:TextHandler")])
+      convert_b
+L129:
+      iffalse             L131
+
+      jump                L132
+
+L131:
+      returnvoid
+
+L132:
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "useCleanString"), 1
+      iffalse             L147
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "cleanText_")
+      coerce_s
+      setlocal3
+
+      getlocal1
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "cleanText_")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "replaceIfSlashServerCommand"), 1
+      setproperty         QName(PackageNamespace(""), "cleanText_")
+
+      jump                L157
+
+L147:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text_")
+      coerce_s
+      setlocal3
+
+      getlocal1
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text_")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "replaceIfSlashServerCommand"), 1
+      setproperty         QName(PackageNamespace(""), "text_")
+
+L157:
+      getlocal2
+      convert_b
+      dup
+      iffalse             L166
+
+      pop
+      getlocal0
+      getlocal3
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isToBeLocalized"), 1
+      convert_b
+L166:
+      iffalse             L172
+
+      getlocal0
+      getlocal3
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "getLocalizedString"), 1
+      coerce_s
+      setlocal3
+
+L172:
+      getlocal2
+      not
+      dup
+      iffalse             L182
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "spamFilter")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "isSpam"), 1
+      convert_b
+L182:
+      iffalse             L199
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      ifne                L198
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addTextLine")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "ERROR_CHAT_NAME")
+      pushstring          "This message has been flagged as spam."
+      callproperty        QName(PackageNamespace(""), "make"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L198:
+      returnvoid
+
+L199:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      iffalse             L243
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      equals
+      not
+      dup
+      iffalse             L218
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isSpecialRecipientChat"), 1
+      not
+L218:
+      iffalse             L228
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tellModel")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tellModel")
+      callpropvoid        QName(PackageNamespace(""), "resetRecipients"), 0
+
+      jump                L243
+
+L228:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      ifne                L243
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tellModel")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tellModel")
+      callpropvoid        QName(PackageNamespace(""), "resetRecipients"), 0
+
+L243:
+      getlocal2
+      convert_b
+      dup
+      iffalse             L252
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "TextureDataConcrete")
+      getproperty         QName(PackageNamespace(""), "remoteTexturesUsed")
+      pushtrue
+      equals
+L252:
+      iffalse             L279
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "TextureDataConcrete")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "remoteTexturesUsed")
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      coerce_s
+      setlocal            4
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text_")
+      coerce_s
+      setlocal            5
+
+      getlocal1
+      pushstring          ""
+      setproperty         QName(PackageNamespace(""), "name_")
+
+      getlocal1
+      pushstring          "Remote Textures used in this build"
+      setproperty         QName(PackageNamespace(""), "text_")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addTextAsTextLine"), 1
+
+      getlocal1
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "name_")
+
+      getlocal1
+      getlocal            5
+      setproperty         QName(PackageNamespace(""), "text_")
+
+L279:
+      getlocal2
+      iffalse             L372
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text_")
+      pushstring          "Please verify your email before chat"
+      equals
+      dup
+      iffalse             L293
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      pushnull
+      equals
+      not
+L293:
+      dup
+      iffalse             L303
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "name_")
+      pushstring          "Nexus"
+      equals
+L303:
+      dup
+      iffalse             L311
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialogSignal")
+      pushnull
+      equals
+      not
+L311:
+      iffalse             L318
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialogSignal")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "ConfirmEmailModal")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "ConfirmEmailModal"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L372
+
+L318:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      pushstring          "@ANNOUNCEMENT"
+      ifne                L360
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L336
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      pushnull
+      equals
+      not
+L336:
+      dup
+      iffalse             L346
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "newsTicker")
+      pushnull
+      equals
+      not
+L346:
+      iffalse             L355
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "newsTicker")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text_")
+      callpropvoid        QName(PackageNamespace(""), "activateNewScrollText"), 1
+
+      jump                L359
+
+L355:
+      getlex              QName(PackageNamespace("kabam.rotmg.news.view"), "NewsTicker")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text_")
+      callpropvoid        QName(PackageNamespace(""), "setPendingScrollText"), 1
+
+L359:
+      jump                L372
+
+L360:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      pushstring          "#{objects.ft_shopkeep}"
+      equals
+      dup
+      iffalse             L370
+
+      pop
+      getlex              QName(PackageNamespace("kabam.rotmg.fortune.services"), "FortuneModel")
+      getproperty         QName(PackageNamespace(""), "HAS_FORTUNES")
+      not
+L370:
+      iffalse             L372
+
+      returnvoid
+
+L372:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      pushbyte            0
+      ifnge               L380
+
+      getlocal0
+      getlocal1
+      getlocal3
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "showSpeechBaloon"), 2
+
+L380:
+      getlocal2
+      convert_b
+      dup
+      iftrue              L405
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      convert_b
+      dup
+      iffalse             L405
+
+      pop
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      pushstring          "hidePlayerChat"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#1"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.chat.control:TextHandler"), StaticProtectedNs("kabam.rotmg.chat.control:TextHandler")])
+      not
+      dup
+      iftrue              L405
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isSpecialRecipientChat"), 1
+      convert_b
+L405:
+      iffalse             L409
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addTextAsTextLine"), 1
+
+L409:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isSpecialRecipientChat")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/kabam.rotmg.chat.control:TextHandler/instance/isSpecialRecipientChat"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+      dup
+      iffalse             L22
+
+      pop
+      getlocal1
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "#"
+      equals
+      dup
+      iftrue              L22
+
+      pop
+      getlocal1
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "*"
+      equals
+L22:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addTextAsTextLine")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/addTextAsTextLine"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Text")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      constructprop       QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      setproperty         QName(PackageNamespace(""), "objectId")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "numStars_")
+      setproperty         QName(PackageNamespace(""), "numStars")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      setproperty         QName(PackageNamespace(""), "recipient")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      convert_b
+      dup
+      iffalse             L34
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isSpecialRecipientChat"), 1
+      not
+L34:
+      setproperty         QName(PackageNamespace(""), "isWhisper")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "name_")
+      equals
+      setproperty         QName(PackageNamespace(""), "isToMe")
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addMessageText"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addTextLine")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addMessageText")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/addMessageText"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Text")
+    param QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal3
+
+      pushscope
+
+      getscopeobject      1
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      setslot             3
+
+      getscopeobject      1
+      getlocal1
+      setslot             1
+
+      getscopeobject      1
+      getlocal2
+      setslot             2
+
+L16:
+      getscopeobject      1
+      getlex              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      getscopeobject      1
+      getslot             1
+      getproperty         QName(PackageNamespace(""), "text_")
+      callproperty        QName(PackageNamespace(""), "fromJSON"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      setslot             3
+
+      getscopeobject      1
+      getslot             2
+      getscopeobject      1
+      getslot             3
+      getproperty         QName(PackageNamespace(""), "key")
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getscopeobject      1
+      getslot             2
+      getscopeobject      1
+      getslot             3
+      getproperty         QName(PackageNamespace(""), "tokens")
+      setproperty         QName(PackageNamespace(""), "tokens")
+
+L36:
+      jump                L67
+
+L37:
+      getlocal0
+      pushscope
+
+      getlocal3
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal            4
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      getscopeobject      1
+      getslot             2
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "useCleanString")
+      getscopeobject      1
+      getslot             1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "useCleanString"), 1
+      iffalse             L60
+
+      getscopeobject      1
+      getslot             1
+      getproperty         QName(PackageNamespace(""), "cleanText_")
+      coerce_s
+      jump                L64
+
+L60:
+      getscopeobject      1
+      getslot             1
+      getproperty         QName(PackageNamespace(""), "text_")
+      coerce_s
+L64:
+      setproperty         QName(PackageNamespace(""), "text")
+
+      popscope
+      kill                4
+L67:
+      returnvoid
+     end ; code
+     try from L16 to L36 target L37 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "error") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.chat.control"), "text") slotid 1 type QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Text") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.chat.control"), "message") slotid 2 type QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.chat.control"), "lb") slotid 3 type QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "replaceIfSlashServerCommand")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/kabam.rotmg.chat.control:TextHandler/instance/replaceIfSlashServerCommand"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+      setlocal2
+
+      getlocal1
+      pushbyte            0
+      pushbyte            7
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      pushstring          "74026S9"
+      ifne                L35
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+      setlocal2
+
+      getlocal2
+      convert_b
+      dup
+      iffalse             L25
+
+      pop
+      getlocal2
+      callproperty        QName(Namespace("kabam.rotmg.servers.api:ServerModel"), "getServer"), 0
+      convert_b
+L25:
+      iffalse             L35
+
+      getlocal1
+      pushstring          "74026S9"
+      getlocal2
+      callproperty        QName(Namespace("kabam.rotmg.servers.api:ServerModel"), "getServer"), 0
+      getproperty         QName(PackageNamespace(""), "name")
+      pushstring          ", "
+      add
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      returnvalue
+
+L35:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "isToBeLocalized")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/kabam.rotmg.chat.control:TextHandler/instance/isToBeLocalized"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "{"
+      equals
+      dup
+      iffalse             L17
+
+      pop
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      decrement
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "}"
+      equals
+L17:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "getLocalizedString")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/kabam.rotmg.chat.control:TextHandler/instance/getLocalizedString"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "fromJSON"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stringMap")
+      callpropvoid        QName(PackageNamespace(""), "setStringMap"), 1
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getString"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "showSpeechBaloon")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/kabam.rotmg.chat.control:TextHandler/instance/showSpeechBaloon"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Text")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 14
+     localcount 8
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors")
+      setlocal            4
+
+      pushfalse
+      setlocal            5
+
+      pushfalse
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "AddSpeechBalloonVO")
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      callproperty        QName(PackageNamespace(""), "getGameObject"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      setlocal3
+
+      getlocal3
+      pushnull
+      ifeq                L69
+
+      getlocal0
+      getlocal1
+      getlocal3
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "getColors"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors")
+      setlocal            4
+
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItemFactory")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "numStars_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "isTradeMessage"), 3
+      convert_b
+      setlocal            5
+
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatListItemFactory")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      callproperty        QName(PackageNamespace(""), "isGuildMessage"), 1
+      convert_b
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "AddSpeechBalloonVO")
+      getlocal3
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name_")
+      getlocal            5
+      getlocal            6
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "back")
+      pushbyte            1
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "outline")
+      pushbyte            1
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "text")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bubbleTime_")
+      pushfalse
+      pushtrue
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "AddSpeechBalloonVO"), 13
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "AddSpeechBalloonVO")
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addSpeechBalloon")
+      getlocal            7
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L69:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "getColors")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/kabam.rotmg.chat.control:TextHandler/instance/getColors"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Text")
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+    returns QName(PackageNamespace("kabam.rotmg.chat.control"), "TextColors")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "props_")
+      getproperty         QName(PackageNamespace(""), "isEnemy_")
+      iffalse             L9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "ENEMY_SPEECH_COLORS")
+      returnvalue
+
+L9:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "GUILD_CHAT_NAME")
+      ifne                L17
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "GUILD_SPEECH_COLORS")
+      returnvalue
+
+L17:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "recipient_")
+      pushstring          ""
+      ifeq                L24
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "TELL_SPEECH_COLORS")
+      returnvalue
+
+L24:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "NORMAL_SPEECH_COLORS")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), "useCleanString")
+   method
+    refid "kabam.rotmg.chat.control:TextHandler/instance/kabam.rotmg.chat.control:TextHandler/instance/useCleanString"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Text")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("filterLanguage", [PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.control:TextHandler/instance#1"), PackageNamespace("kabam.rotmg.chat.control"), PackageInternalNs("kabam.rotmg.chat.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.chat.control:TextHandler"), StaticProtectedNs("kabam.rotmg.chat.control:TextHandler")])
+      convert_b
+      dup
+      iffalse             L14
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "cleanText_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+L14:
+      dup
+      iffalse             L25
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      equals
+      not
+L25:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.control:TextHandler/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

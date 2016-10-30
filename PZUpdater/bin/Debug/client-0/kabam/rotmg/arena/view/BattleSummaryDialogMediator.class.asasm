@@ -1,0 +1,298 @@
+class
+ refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "BattleSummaryDialogMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.view:BattleSummaryDialogMediator")
+  iinit
+   refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           800
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "fadeOutTimer")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.view"), "BattleSummaryDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeMapLoading") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "HideMapLoadingSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "currentRunModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "CurrentArenaRunModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "bestRunModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "BestArenaRunModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "fadeOutTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "positionThis"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "runtime")
+      callpropvoid        QName(PackageNamespace(""), "setCurrentRun"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bestRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      greaterthan
+      dup
+      iftrue              L53
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bestRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      equals
+      dup
+      iffalse             L53
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bestRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "runtime")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getproperty         QName(PackageNamespace(""), "runtime")
+      lessthan
+L53:
+      convert_b
+      setlocal1
+
+      getlocal1
+      iffalse             L62
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bestRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      jump                L66
+
+L62:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+L66:
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "currentWave")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "runtime")
+      callpropvoid        QName(PackageNamespace(""), "setBestRun"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeMapLoading")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "startTimer")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "onClose")
+   method
+    refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboard")
+      constructprop       QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaLeaderboard"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "startTimer")
+   method
+    refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/startTimer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "fadeOutTimer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "showBattleSummaryDialog")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "fadeOutTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "showBattleSummaryDialog")
+   method
+    refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/showBattleSummaryDialog"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "fadeOutTimer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "showBattleSummaryDialog")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:BattleSummaryDialogMediator/instance"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:BattleSummaryDialogMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

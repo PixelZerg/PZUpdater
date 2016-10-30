@@ -1,0 +1,194 @@
+class
+ refid "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.language"), "LanguageOptionOverlayMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator")
+  iinit
+   refid "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "layers") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "languageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setLanguage") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.control"), "SetLanguageSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.ui.language"), "LanguageOptionOverlay")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguageNames"), 0
+      callpropvoid        QName(PackageNamespace(""), "setLanguageDropdown"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguage"), 0
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getNameForLanguageCode"), 1
+      callpropvoid        QName(PackageNamespace(""), "setSelected"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "languageSelected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance"), "onLanguageSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "back")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance"), "onBack")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "languageSelected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance"), "onLanguageSelected")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "back")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance"), "onBack")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance"), "onBack")
+   method
+    refid "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance/com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance/onBack"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance"), "onLanguageSelected")
+   method
+    refid "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance/com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/instance/onLanguageSelected"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setLanguage")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      getlocal1
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguageCodeForName"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.language:LanguageOptionOverlayMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

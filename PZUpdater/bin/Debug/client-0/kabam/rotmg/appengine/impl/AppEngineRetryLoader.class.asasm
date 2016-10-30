@@ -1,0 +1,800 @@
+class
+ refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader"
+ instance QName(PackageNamespace("kabam.rotmg.appengine.impl"), "AppEngineRetryLoader")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("RetryLoader", [PackageNamespace("kabam.rotmg.appengine.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.appengine.impl:AppEngineRetryLoader")
+  iinit
+   refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "OnceSignal")
+     getlex              QName(PackageNamespace(""), "Boolean")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "OnceSignal"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "_complete")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     pushfalse
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "inProgress")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "maxRetries")
+
+     getlocal0
+     getlex              QName(PackageNamespace("flash.net"), "URLLoaderDataFormat")
+     getproperty         QName(PackageNamespace(""), "TEXT")
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "dataFormat")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "_complete") type QName(PackageNamespace("org.osflash.signals"), "OnceSignal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "maxRetries") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "dataFormat") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "url") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "params") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlRequest") type QName(PackageNamespace("flash.net"), "URLRequest") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader") type QName(PackageNamespace("flash.net"), "URLLoader") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "retriesLeft") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "inProgress") type QName(PackageNamespace(""), "Boolean") end
+  trait getter QName(PackageNamespace(""), "complete")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/complete/getter"
+    returns QName(PackageNamespace("org.osflash.signals"), "OnceSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "_complete")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isInProgress")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/isInProgress"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "inProgress")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setDataFormat")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/setDataFormat"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "dataFormat")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setMaxRetries")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/setMaxRetries"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "maxRetries")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "sendRequest")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/sendRequest"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "url")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "params")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "maxRetries")
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "retriesLeft")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "inProgress")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "internalSendRequest"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "internalSendRequest")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/internalSendRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cancelPendingRequest"), 0
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "makeUrlRequest"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlRequest")
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "makeUrlLoader"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlRequest")
+      callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "makeUrlRequest")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/makeUrlRequest"
+    returns QName(PackageNamespace("flash.net"), "URLRequest")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "url")
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+      coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.net"), "URLRequestMethod")
+      getproperty         QName(PackageNamespace(""), "POST")
+      setproperty         QName(PackageNamespace(""), "method")
+
+      getlocal1
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "makeUrlVariables"), 0
+      setproperty         QName(PackageNamespace(""), "data")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "makeUrlVariables")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/makeUrlVariables"
+    returns QName(PackageNamespace("flash.net"), "URLVariables")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLVariables")
+      constructprop       QName(PackageNamespace("flash.net"), "URLVariables"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLVariables")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      setproperty         Multiname("ignore", [PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace("kabam.rotmg.appengine.impl"), PackageInternalNs("kabam.rotmg.appengine.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.appengine.impl:AppEngineRetryLoader"), StaticProtectedNs("kabam.rotmg.appengine.impl:AppEngineRetryLoader")])
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "params")
+      coerce_a
+      setlocal            4
+
+      jump                L33
+
+L20:
+      label
+      getlocal            4
+      getlocal3
+      nextname
+      coerce_s
+      setlocal2
+
+      getlocal1
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "params")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace("kabam.rotmg.appengine.impl"), PackageInternalNs("kabam.rotmg.appengine.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.appengine.impl:AppEngineRetryLoader"), StaticProtectedNs("kabam.rotmg.appengine.impl:AppEngineRetryLoader")])
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace("kabam.rotmg.appengine.impl"), PackageInternalNs("kabam.rotmg.appengine.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.appengine.impl:AppEngineRetryLoader"), StaticProtectedNs("kabam.rotmg.appengine.impl:AppEngineRetryLoader")])
+
+L33:
+      hasnext2            4, 3
+      iftrue              L20
+
+      kill                4
+      kill                3
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "makeUrlLoader")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/makeUrlLoader"
+    returns QName(PackageNamespace("flash.net"), "URLLoader")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLLoader")
+      constructprop       QName(PackageNamespace("flash.net"), "URLLoader"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLLoader")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "dataFormat")
+      setproperty         QName(PackageNamespace(""), "dataFormat")
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onIOError")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.events"), "SecurityErrorEvent")
+      getproperty         QName(PackageNamespace(""), "SECURITY_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onSecurityError")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onIOError")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/onIOError"
+    param QName(PackageNamespace("flash.events"), "IOErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "inProgress")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      getproperty         QName(PackageNamespace(""), "data")
+      coerce_s
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L16
+
+      pushstring          "Unable to contact server"
+      setlocal2
+
+L16:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "retryOrReportError"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onSecurityError")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/onSecurityError"
+    param QName(PackageNamespace("flash.events"), "SecurityErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "inProgress")
+
+      getlocal0
+      pushfalse
+      pushstring          "Security Error"
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cleanUpAndComplete"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "retryOrReportError")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/retryOrReportError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "retriesLeft")
+      dup
+      decrement_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "retriesLeft")
+
+      kill                3
+      kill                2
+      pushbyte            0
+      ifngt               L19
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "internalSendRequest"), 0
+
+      jump                L23
+
+L19:
+      getlocal0
+      pushfalse
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cleanUpAndComplete"), 2
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/onComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "inProgress")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "dataFormat")
+      getlex              QName(PackageNamespace("flash.net"), "URLLoaderDataFormat")
+      getproperty         QName(PackageNamespace(""), "TEXT")
+      ifne                L16
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      getproperty         QName(PackageNamespace(""), "data")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "handleTextResponse"), 1
+
+      jump                L24
+
+L16:
+      getlocal0
+      pushtrue
+      findpropstrict      QName(PackageNamespace("flash.utils"), "ByteArray")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      getproperty         QName(PackageNamespace(""), "data")
+      callproperty        QName(PackageNamespace("flash.utils"), "ByteArray"), 1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cleanUpAndComplete"), 2
+
+L24:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "handleTextResponse")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/handleTextResponse"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            0
+      pushbyte            7
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 2
+      pushstring          "<Error>"
+      ifne                L12
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "retryOrReportError"), 1
+
+      jump                L27
+
+L12:
+      getlocal1
+      pushbyte            0
+      pushbyte            12
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 2
+      pushstring          "<FatalError>"
+      ifne                L23
+
+      getlocal0
+      pushfalse
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cleanUpAndComplete"), 2
+
+      jump                L27
+
+L23:
+      getlocal0
+      pushtrue
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cleanUpAndComplete"), 2
+
+L27:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cleanUpAndComplete")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/cleanUpAndComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      not
+      dup
+      iffalse             L10
+
+      pop
+      getlocal2
+      getlex              QName(PackageNamespace(""), "String")
+      istypelate
+L10:
+      iffalse             L16
+
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "parseXML"), 1
+      coerce_a
+      setlocal2
+
+L16:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cancelPendingRequest"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "_complete")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "parseXML")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/parseXML"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          "<.*>(.*)</.*>"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "match"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      getlocal2
+      convert_b
+      dup
+      iffalse             L16
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      greaterthan
+L16:
+      iffalse             L22
+
+      getlocal2
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), PackageNamespace("kabam.rotmg.appengine.impl"), PackageInternalNs("kabam.rotmg.appengine.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.appengine.impl:AppEngineRetryLoader"), StaticProtectedNs("kabam.rotmg.appengine.impl:AppEngineRetryLoader")])
+      coerce_s
+      jump                L24
+
+L22:
+      getlocal1
+      coerce_s
+L24:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "cancelPendingRequest")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/cancelPendingRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      iffalse             L31
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onIOError")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      getlex              QName(PackageNamespace("flash.events"), "SecurityErrorEvent")
+      getproperty         QName(PackageNamespace(""), "SECURITY_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onSecurityError")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "closeLoader"), 0
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+
+L31:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "closeLoader")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance/closeLoader"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+L2:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRetryLoader/instance"), "urlLoader")
+      callpropvoid        QName(PackageNamespace(""), "close"), 0
+
+L5:
+      jump                L17
+
+L6:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal1
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+      kill                1
+L17:
+      returnvoid
+     end ; code
+     try from L2 to L5 target L6 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "e") end
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.appengine.impl:AppEngineRetryLoader/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

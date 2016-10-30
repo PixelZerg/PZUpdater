@@ -1,0 +1,481 @@
+class
+ refid "kabam.rotmg.fame.view:FameMediator"
+ instance QName(PackageNamespace("kabam.rotmg.fame.view"), "FameMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.fame.view:FameMediator")
+  iinit
+   refid "kabam.rotmg.fame.view:FameMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.fame.view"), "FameView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "fameModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.fame.model"), "FameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "deathModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.death.model"), "DeathModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gotoPrevious") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "GotoPreviousScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "track") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackPageViewSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.fame.service"), "RequestCharacterFameTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "factory") flag METADATA type QName(PackageNamespace("kabam.rotmg.assets.services"), "CharacterFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "isFreshDeath") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death") type QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Death") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "track")
+      pushstring          "/fame"
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "setViewDataFromDeath"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "requestFameData"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "clearBackground"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+      coerce_a
+      dup
+      iffalse             L21
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+      callproperty        QName(PackageNamespace(""), "disposeBackground"), 0
+      coerce_a
+L21:
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getproperty         QName(PackageNamespace(""), "finished")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "setViewDataFromDeath")
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/setViewDataFromDeath"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "deathModel")
+      callproperty        QName(PackageNamespace(""), "getIsDeathViewPending"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "isFreshDeath")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "isFreshDeath")
+      callpropvoid        QName(PackageNamespace(""), "setIsAnimation"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "deathModel")
+      callproperty        QName(PackageNamespace(""), "getLastDeath"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+      convert_b
+      dup
+      iffalse             L27
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+      getproperty         QName(PackageNamespace(""), "background")
+      convert_b
+L27:
+      iffalse             L34
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+      getproperty         QName(PackageNamespace(""), "background")
+      callpropvoid        QName(PackageNamespace(""), "setBackground"), 1
+
+L34:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "requestFameData")
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/requestFameData"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameModel")
+      getproperty         QName(PackageNamespace(""), "accountId")
+      setproperty         QName(PackageNamespace(""), "accountId")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameModel")
+      getproperty         QName(PackageNamespace(""), "characterId")
+      setproperty         QName(PackageNamespace(""), "charId")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getproperty         QName(PackageNamespace(""), "finished")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "onFameResponse")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "onFameResponse")
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/onFameResponse"
+    param QName(PackageNamespace("kabam.rotmg.fame.service"), "RequestCharacterFameTask")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Utf8("")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "makeIcon"), 0
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "level")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "type")
+      callpropvoid        QName(PackageNamespace(""), "setCharacterInfo"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "deathDate")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "killer")
+      callpropvoid        QName(PackageNamespace(""), "setDeathInfo"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "setIcon"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "totalFame")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "xml")
+      callpropvoid        QName(PackageNamespace(""), "setScore"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "makeIcon")
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/makeIcon"
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "isFreshDeath")
+      convert_b
+      dup
+      iffalse             L12
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+      getproperty         QName(PackageNamespace(""), "isZombie")
+      convert_b
+L12:
+      iffalse             L16
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "makeZombieTexture"), 0
+      returnvalue
+
+L16:
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "makeNormalTexture"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "makeNormalTexture")
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/makeNormalTexture"
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "factory")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getproperty         QName(PackageNamespace(""), "template")
+      pushshort           250
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getproperty         QName(PackageNamespace(""), "texture1")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getproperty         QName(PackageNamespace(""), "texture2")
+      callproperty        QName(PackageNamespace(""), "makeIcon"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "makeZombieTexture")
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/makeZombieTexture"
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    body
+     maxstack 7
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "typeToTextureData_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "death")
+      getproperty         QName(PackageNamespace(""), "zombieType")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/makeZombieTexture"), PackageNamespace("kabam.rotmg.fame.view"), PackageInternalNs("kabam.rotmg.fame.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.fame.view:FameMediator"), StaticProtectedNs("kabam.rotmg.fame.view:FameMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "TextureData")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "animatedChar_")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      setlocal2
+
+      getlocal2
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "RIGHT")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "STAND")
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "imageFromDir"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "image_")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "mask_")
+      pushshort           250
+      pushtrue
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getproperty         QName(PackageNamespace(""), "texture1")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getproperty         QName(PackageNamespace(""), "texture2")
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "onClosed")
+   method
+    refid "kabam.rotmg.fame.view:FameMediator/instance/kabam.rotmg.fame.view:FameMediator/instance/onClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.fame.view:FameMediator/instance"), "isFreshDeath")
+      iffalse             L11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsView"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L14
+
+L11:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gotoPrevious")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.fame.view:FameMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

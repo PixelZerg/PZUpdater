@@ -1,0 +1,270 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:TradeStart"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "TradeStart")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "IncomingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:TradeStart")
+  iinit
+   refid "kabam.rotmg.messaging.impl.incoming:TradeStart/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "myItems_")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "yourItems_")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "myItems_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")>) end
+  trait slot QName(PackageNamespace(""), "yourName_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "yourItems_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")>) end
+  trait method QName(PackageNamespace(""), "parseFromInput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:TradeStart/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readShort"), 0
+      convert_i
+      setlocal3
+
+      getlocal3
+      convert_i
+      setlocal2
+
+      jump                L20
+
+L12:
+      label
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "myItems_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message")])
+      callpropvoid        QName(PackageNamespace(""), "deleteObject"), 1
+
+      inclocal_i          2
+L20:
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "myItems_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "myItems_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "myItems_")
+      getproperty         QName(PackageNamespace(""), "length")
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      setproperty         QName(PackageNamespace(""), "length")
+
+      jump                L44
+
+L35:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "myItems_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")
+      callproperty        QName(PackageNamespace(""), "newObject"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")
+      astypelate
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L44:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "myItems_")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal3
+      iflt                L35
+
+      pushbyte            0
+      setlocal2
+
+      jump                L60
+
+L52:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "myItems_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message")])
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "parseFromInput"), 1
+
+      inclocal_i          2
+L60:
+      getlocal2
+      getlocal3
+      iflt                L52
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      initproperty        QName(PackageNamespace(""), "yourName_")
+
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readShort"), 0
+      convert_i
+      setlocal3
+
+      getlocal3
+      convert_i
+      setlocal2
+
+      jump                L83
+
+L75:
+      label
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "yourItems_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message")])
+      callpropvoid        QName(PackageNamespace(""), "deleteObject"), 1
+
+      inclocal_i          2
+L83:
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "yourItems_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L75
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "yourItems_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "yourItems_")
+      getproperty         QName(PackageNamespace(""), "length")
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      setproperty         QName(PackageNamespace(""), "length")
+
+      jump                L107
+
+L98:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "yourItems_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")
+      callproperty        QName(PackageNamespace(""), "newObject"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "TradeItem")
+      astypelate
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L107:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "yourItems_")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal3
+      iflt                L98
+
+      pushbyte            0
+      setlocal2
+
+      jump                L123
+
+L115:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "yourItems_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:TradeStart/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.incoming"), PackageInternalNs("kabam.rotmg.messaging.impl.incoming"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:TradeStart"), StaticProtectedNs("kabam.rotmg.messaging.impl.incoming:IncomingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message")])
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "parseFromInput"), 1
+
+      inclocal_i          2
+L123:
+      getlocal2
+      getlocal3
+      iflt                L115
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:TradeStart/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "TRADESTART"
+      pushstring          "myItems_"
+      pushstring          "yourName_"
+      pushstring          "yourItems_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:TradeStart/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

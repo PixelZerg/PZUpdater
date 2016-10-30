@@ -1,0 +1,190 @@
+class
+ refid "kabam.rotmg.arena.service:GetBestArenaRunTask"
+ instance QName(PackageNamespace("kabam.rotmg.arena.service"), "GetBestArenaRunTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.service:GetBestArenaRunTask")
+  iinit
+   refid "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "bestRunModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.model"), "BestArenaRunModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.arena.service:GetBestArenaRunTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "REQUEST")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "makeRequestObject"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "onComplete")
+   method
+    refid "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "updateBestRun"), 1
+      coerce_a
+L11:
+      pop
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "updateBestRun")
+   method
+    refid "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask/updateBestRun"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bestRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal2
+      getproperty         Multiname("Record", [PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask/updateBestRun"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getproperty         Multiname("Time", [PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask/updateBestRun"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      setproperty         QName(PackageNamespace(""), "runtime")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "bestRunModel")
+      getproperty         QName(PackageNamespace(""), "entry")
+      getlocal2
+      getproperty         Multiname("Record", [PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask/updateBestRun"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getproperty         Multiname("WaveNumber", [PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask/updateBestRun"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.rotmg.arena.service:GetBestArenaRunTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      setproperty         QName(PackageNamespace(""), "currentWave")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "makeRequestObject")
+   method
+    refid "kabam.rotmg.arena.service:GetBestArenaRunTask/instance/kabam.rotmg.arena.service:GetBestArenaRunTask/makeRequestObject"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.service:GetBestArenaRunTask/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "REQUEST")
+    pushstring          "arena/getPersonalBest"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "REQUEST")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetBestArenaRunTask"), "REQUEST") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("arena/getPersonalBest") end
+end ; class

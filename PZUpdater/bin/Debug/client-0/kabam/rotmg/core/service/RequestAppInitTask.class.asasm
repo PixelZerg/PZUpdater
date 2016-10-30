@@ -1,0 +1,174 @@
+class
+ refid "kabam.rotmg.core.service:RequestAppInitTask"
+ instance QName(PackageNamespace("kabam.rotmg.core.service"), "RequestAppInitTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.service:RequestAppInitTask")
+  iinit
+   refid "kabam.rotmg.core.service:RequestAppInitTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "appInitConfigData") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "AppInitDataReceivedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.core.service:RequestAppInitTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.core.service:RequestAppInitTask/instance/kabam.rotmg.core.service:RequestAppInitTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushbyte            2
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "setMaxRetries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.core.service:RequestAppInitTask/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/app/init"
+      pushstring          "game_net"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "gameNetwork"), 0
+      newobject           1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.service:RequestAppInitTask/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.core.service:RequestAppInitTask/instance/kabam.rotmg.core.service:RequestAppInitTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal1
+      coerce_a
+      dup
+      iffalse             L17
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "appInitConfigData")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "dispatch"), 1
+      coerce_a
+L17:
+      pop
+      getlocal0
+      getlocal3
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.core.service:RequestAppInitTask/instance"), "initDynamicSettingsClass"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.service:RequestAppInitTask/instance"), "initDynamicSettingsClass")
+   method
+    refid "kabam.rotmg.core.service:RequestAppInitTask/instance/kabam.rotmg.core.service:RequestAppInitTask/instance/initDynamicSettingsClass"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushnull
+      ifeq                L8
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "xml")
+
+L8:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.service:RequestAppInitTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

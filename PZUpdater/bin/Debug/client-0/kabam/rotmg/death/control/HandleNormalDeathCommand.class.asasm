@@ -1,0 +1,278 @@
+class
+ refid "kabam.rotmg.death.control:HandleNormalDeathCommand"
+ instance QName(PackageNamespace("kabam.rotmg.death.control"), "HandleNormalDeathCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.death.control:HandleNormalDeathCommand")
+  iinit
+   refid "kabam.rotmg.death.control:HandleNormalDeathCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "death") flag METADATA type QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Death")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "player") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "track") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackEventSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "GetCharListTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showFame") flag METADATA type QName(PackageNamespace("kabam.rotmg.fame.control"), "ShowFameViewSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "fameVO") type QName(PackageNamespace("kabam.rotmg.fame.model"), "FameVO") end
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.death.control:HandleNormalDeathCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.fame.model"), "SimpleFameVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "death")
+      getproperty         QName(PackageNamespace(""), "accountId_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "death")
+      getproperty         QName(PackageNamespace(""), "charId_")
+      constructprop       QName(PackageNamespace("kabam.rotmg.fame.model"), "SimpleFameVO"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "fameVO")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "trackDeath"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "updateParameters"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "gotoFameView"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "trackDeath")
+   method
+    refid "kabam.rotmg.death.control:HandleNormalDeathCommand/instance/kabam.rotmg.death.control:HandleNormalDeathCommand/instance/trackDeath"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "death")
+      getproperty         QName(PackageNamespace(""), "charId_")
+      callproperty        QName(PackageNamespace(""), "getCharById"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+      setlocal1
+
+      getlocal1
+      iffalse             L16
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "level"), 0
+      convert_i
+      jump                L17
+
+L16:
+      pushbyte            0
+L17:
+      convert_i
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      setlocal3
+
+      getlocal3
+      pushstring          "killedBy"
+      setproperty         QName(PackageNamespace(""), "category")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "death")
+      getproperty         QName(PackageNamespace(""), "killedBy_")
+      setproperty         QName(PackageNamespace(""), "action")
+
+      getlocal3
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "value")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "track")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "updateParameters")
+   method
+    refid "kabam.rotmg.death.control:HandleNormalDeathCommand/instance/kabam.rotmg.death.control:HandleNormalDeathCommand/instance/updateParameters"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      pushfalse
+      setproperty         Multiname("needsRandomRealm", [PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance/kabam.rotmg.death.control:HandleNormalDeathCommand/instance/updateParameters"), PackageNamespace("kabam.rotmg.death.control"), PackageInternalNs("kabam.rotmg.death.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.death.control:HandleNormalDeathCommand"), StaticProtectedNs("kabam.rotmg.death.control:HandleNormalDeathCommand")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "gotoFameView")
+   method
+    refid "kabam.rotmg.death.control:HandleNormalDeathCommand/instance/kabam.rotmg.death.control:HandleNormalDeathCommand/instance/gotoFameView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player")
+      callproperty        QName(PackageNamespace(""), "getAccountId"), 0
+      pushstring          ""
+      ifne                L10
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "gotoFameViewOnceDataIsLoaded"), 0
+
+      jump                L15
+
+L10:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showFame")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "fameVO")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L15:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "gotoFameViewOnceDataIsLoaded")
+   method
+    refid "kabam.rotmg.death.control:HandleNormalDeathCommand/instance/kabam.rotmg.death.control:HandleNormalDeathCommand/instance/gotoFameViewOnceDataIsLoaded"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showFame")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.death.control:HandleNormalDeathCommand/instance"), "fameVO")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.death.control:HandleNormalDeathCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

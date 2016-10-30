@@ -1,0 +1,426 @@
+class
+ refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui"), "PlayerGameObjectListItem")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui"), "GameObjectListItem")
+  implements Multiname("TooltipAble", [PackageNamespace("kabam.rotmg.tooltips")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui:PlayerGameObjectListItem")
+  iinit
+   refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   body
+    maxstack 4
+    localcount 5
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate")
+     constructprop       QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate"), 0
+     initproperty        QName(PackageNamespace(""), "hoverTooltipDelegate")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     constructsuper      3
+
+     getlocal3
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+     astypelate
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+     dup
+     setlocal            4
+
+     iffalse             L22
+
+     getlocal0
+     getlocal            4
+     getproperty         QName(PackageNamespace(""), "starred_")
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "starred")
+
+L22:
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "hoverTooltipDelegate") type QName(PackageNamespace("kabam.rotmg.tooltips"), "HoverTooltipDelegate") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "enabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "starred") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onAddedToStage")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_OVER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "setDisplayObject"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onRemovedFromStage")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_OVER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "onMouseOver")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "enabled")
+      iffalse             L14
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PlayerToolTip")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      getlex              QName(PackageNamespace(""), "go")
+      callproperty        QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player"), 1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PlayerToolTip"), 1
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      jump                L16
+
+L14:
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+L16:
+      setproperty         QName(PackageNamespace(""), "tooltip")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setEnabled")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/setEnabled"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "enabled")
+      getlocal1
+      equals
+      not
+      dup
+      iffalse             L16
+
+      pop
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      getlex              QName(PackageNamespace(""), "go")
+      callproperty        QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player"), 1
+      pushnull
+      equals
+      not
+L16:
+      iffalse             L45
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "enabled")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "enabled")
+      iffalse             L32
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PlayerToolTip")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      getlex              QName(PackageNamespace(""), "go")
+      callproperty        QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player"), 1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PlayerToolTip"), 1
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      jump                L34
+
+L32:
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+L34:
+      setproperty         QName(PackageNamespace(""), "tooltip")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "enabled")
+      iftrue              L45
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getproperty         QName(PackageNamespace(""), "tooltip")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/draw"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+    param QName(PackageNamespace("flash.geom"), "ColorTransform")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal3
+
+      getlocal3
+      convert_b
+      dup
+      iffalse             L18
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "starred")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "starred_")
+      equals
+      not
+L18:
+      iffalse             L33
+
+      getlex              QName(PackageNamespace(""), "transform")
+      getlocal2
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      dup
+      iftrue              L28
+
+      pop
+      getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+      getproperty         QName(PackageNamespace(""), "identity")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+L28:
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      getlocal0
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "starred_")
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance"), "starred")
+
+L33:
+      getlocal0
+      getlocal1
+      getlocal2
+      callsupervoid       QName(PackageNamespace(""), "draw"), 2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setShowToolTipSignal")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/setShowToolTipSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setShowToolTipSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getShowToolTip")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/getShowToolTip"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getShowToolTip"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setHideToolTipsSignal")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/setHideToolTipsSignal"
+    param QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setHideToolTipsSignal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getHideToolTips")
+   method
+    refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/instance/getHideToolTips"
+    returns QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hoverTooltipDelegate")
+      callproperty        QName(PackageNamespace(""), "getHideToolTips"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui:PlayerGameObjectListItem/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

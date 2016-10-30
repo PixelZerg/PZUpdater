@@ -1,0 +1,90 @@
+class
+ refid "kabam.rotmg.characters:CharactersConfig"
+ instance QName(PackageNamespace("kabam.rotmg.characters"), "CharactersConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.characters:CharactersConfig")
+  iinit
+   refid "kabam.rotmg.characters:CharactersConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "commandMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.api"), "ISignalCommandMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.characters:CharactersConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.characters.model"), "CharacterModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.characters.model"), "LegacyCharacterModel")
+      callpropvoid        QName(PackageNamespace(""), "toSingleton"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.characters.deletion"), "DeletionConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.characters.reskin"), "ReskinConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.characters:CharactersConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,227 @@
+class
+ refid "kabam.lib.util:StageLifecycleUtil"
+ instance QName(PackageNamespace("kabam.lib.util"), "StageLifecycleUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.util:StageLifecycleUtil")
+  iinit
+   refid "kabam.lib.util:StageLifecycleUtil/instance/init"
+   param QName(PackageNamespace("flash.display"), "DisplayObject")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "target")
+
+     getlocal1
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "handleAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "target") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_addedToStage") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_removedFromStage") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "handleAddedToStage")
+   method
+    refid "kabam.lib.util:StageLifecycleUtil/instance/kabam.lib.util:StageLifecycleUtil/instance/handleAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "target")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "handleAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "target")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "handleRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_addedToStage")
+      coerce_a
+      dup
+      iffalse             L26
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_addedToStage")
+      callproperty        QName(PackageNamespace(""), "dispatch"), 0
+      coerce_a
+L26:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "handleRemovedFromStage")
+   method
+    refid "kabam.lib.util:StageLifecycleUtil/instance/kabam.lib.util:StageLifecycleUtil/instance/handleRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "target")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "handleAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "target")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "handleRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_removedFromStage")
+      coerce_a
+      dup
+      iffalse             L26
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_removedFromStage")
+      callproperty        QName(PackageNamespace(""), "dispatch"), 0
+      coerce_a
+L26:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "addedToStage")
+   method
+    refid "kabam.lib.util:StageLifecycleUtil/instance/addedToStage/getter"
+    returns QName(PackageNamespace("org.osflash.signals"), "Signal")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_addedToStage")
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+      dup
+      iftrue              L12
+
+      pop
+      findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+      constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+L12:
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_addedToStage")
+
+      getlocal1
+      kill                1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "removedFromStage")
+   method
+    refid "kabam.lib.util:StageLifecycleUtil/instance/removedFromStage/getter"
+    returns QName(PackageNamespace("org.osflash.signals"), "Signal")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_removedFromStage")
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+      dup
+      iftrue              L12
+
+      pop
+      findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+      constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+L12:
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.util:StageLifecycleUtil/instance"), "_removedFromStage")
+
+      getlocal1
+      kill                1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.util:StageLifecycleUtil/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

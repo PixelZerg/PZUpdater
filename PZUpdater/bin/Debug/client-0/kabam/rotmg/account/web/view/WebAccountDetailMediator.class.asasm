@@ -1,0 +1,441 @@
+class
+ refid "kabam.rotmg.account.web.view:WebAccountDetailMediator"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebAccountDetailMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.view:WebAccountDetailMediator")
+  iinit
+   refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebAccountDetailDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "track") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackEventSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "verify") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "SendConfirmEmailSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateAccount") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "UpdateAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserName"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isVerified"), 0
+      callpropvoid        QName(PackageNamespace(""), "setUserInfo"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "change")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onChange")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "logout")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onLogout")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onDone")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "verify")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onVerify")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "change")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onChange")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "logout")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onLogout")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onDone")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "verify")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onVerify")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onChange")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/onChange"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebChangePasswordDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebChangePasswordDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onLogout")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/onLogout"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "trackLoggedOut"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateAccount")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "trackLoggedOut")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/trackLoggedOut"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      setlocal1
+
+      getlocal1
+      pushstring          "account"
+      setproperty         QName(PackageNamespace(""), "category")
+
+      getlocal1
+      pushstring          "loggedOut"
+      setproperty         QName(PackageNamespace(""), "action")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "track")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onDone")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/onDone"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onVerify")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/onVerify"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal1
+      pushstring          "/account/sendVerifyEmail"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L7
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onSent"), 0
+
+      jump                L10
+
+L7:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onError"), 1
+
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onSent")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/onSent"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "trackEmailSent"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "trackEmailSent")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/trackEmailSent"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      setlocal1
+
+      getlocal1
+      pushstring          "account"
+      setproperty         QName(PackageNamespace(""), "category")
+
+      getlocal1
+      pushstring          "verifyEmailSent"
+      setproperty         QName(PackageNamespace(""), "action")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "track")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance"), "onError")
+   method
+    refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/kabam.rotmg.account.web.view:WebAccountDetailMediator/instance/onError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "clear"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.view:WebAccountDetailMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

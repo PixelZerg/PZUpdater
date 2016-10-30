@@ -1,0 +1,130 @@
+class
+ refid "kabam.rotmg.game.view:GiftStatusDisplayMediator"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "GiftStatusDisplayMediator")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:GiftStatusDisplayMediator")
+  iinit
+   refid "kabam.rotmg.game.view:GiftStatusDisplayMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "updateGiftStatusDisplay") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "UpdateGiftStatusDisplaySignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.view"), "GiftStatusDisplay")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "giftStatusModel") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.game"), "GiftStatusModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "kabam.rotmg.game.view:GiftStatusDisplayMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateGiftStatusDisplay")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:GiftStatusDisplayMediator/instance/initialize"), "onGiftChestUpdate")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "giftStatusModel")
+      getproperty         QName(PackageNamespace(""), "hasGift")
+      iffalse             L15
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+      jump                L18
+
+L15:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsClosed"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:GiftStatusDisplayMediator/instance/initialize"), "onGiftChestUpdate")
+   method
+    refid "kabam.rotmg.game.view:GiftStatusDisplayMediator/instance/kabam.rotmg.game.view:GiftStatusDisplayMediator/instance/initialize/onGiftChestUpdate"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "giftStatusModel")
+      getproperty         QName(PackageNamespace(""), "hasGift")
+      iffalse             L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsOpen"), 0
+
+      jump                L13
+
+L10:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "drawAsClosed"), 0
+
+L13:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:GiftStatusDisplayMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,348 @@
+class
+ refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator"
+ instance QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "NewChooseNameFrameMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator")
+  iinit
+   refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "NewChooseNameFrame")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "nameChanged") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "NameChangedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "name") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "choose")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onChoose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "choose")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onChoose")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onChoose")
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/onChoose"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "name")
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      ifnlt               L14
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushstring          "Name too short"
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      jump                L16
+
+L14:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "sendNameToServer"), 0
+
+L16:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "sendNameToServer")
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/sendNameToServer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "name"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "name")
+      newobject           1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/account/setName"
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onComplete")
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L7
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onNameChoseDone"), 0
+
+      jump                L10
+
+L7:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onNameChoseError"), 1
+
+L10:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onNameChoseDone")
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/onNameChoseDone"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      pushnull
+      ifeq                L11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "name")
+      callpropvoid        QName(PackageNamespace(""), "setName"), 1
+
+L11:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "nameChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "name")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onNameChoseError")
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/onNameChoseError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "enable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance"), "onCancel")
+   method
+    refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/instance/onCancel"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.account.ui:NewChooseNameFrameMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,101 @@
+class
+ refid "kabam.rotmg.account.steam.services:SteamLoadAccountTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.steam.services"), "SteamLoadAccountTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+  implements Multiname("LoadAccountTask", [PackageNamespace("kabam.rotmg.account.core.services")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.steam.services:SteamLoadAccountTask")
+  iinit
+   refid "kabam.rotmg.account.steam.services:SteamLoadAccountTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "loadAPI") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.steam.services"), "SteamLoadApiTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "getCredentials") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.steam.services"), "SteamGetCredentialsTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "setup") flag METADATA
+   method
+    refid "kabam.rotmg.account.steam.services:SteamLoadAccountTask/instance/setup"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "add")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loadAPI")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "add")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "getCredentials")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+   metadata "PostConstruct"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.steam.services:SteamLoadAccountTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.steam.services:SteamLoadAccountTask/instance/kabam.rotmg.account.steam.services:SteamLoadAccountTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(ProtectedNamespace("kabam.lib.tasks:TaskSequence"), "startTask"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.steam.services:SteamLoadAccountTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

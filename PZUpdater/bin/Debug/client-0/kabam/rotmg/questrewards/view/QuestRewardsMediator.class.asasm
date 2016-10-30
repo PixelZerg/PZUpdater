@@ -1,0 +1,987 @@
+class
+ refid "kabam.rotmg.questrewards.view:QuestRewardsMediator"
+ instance QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsMediator")
+  iinit
+   refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "container") flag METADATA type QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsContainer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "questFetchComplete") flag METADATA type QName(PackageNamespace("kabam.rotmg.questrewards.controller"), "QuestFetchCompleteSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "questRedeemComplete") flag METADATA type QName(PackageNamespace("kabam.rotmg.questrewards.controller"), "QuestRedeemCompleteSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "targetItem") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PackageNamespace(""), "itemslot") type QName(PackageNamespace("kabam.rotmg.questrewards.components"), "ModalItemSlot") end
+  trait slot QName(PackageNamespace(""), "exchangeButton") type QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton") end
+  trait slot QName(PackageNamespace(""), "gsc") type QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view") type QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "oldView") type QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "state_tinkering") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "container")
+      getproperty         QName(PackageNamespace(""), "parent")
+      pushnull
+      ifne                L8
+
+      returnvoid
+
+L8:
+      pushdouble          0.2
+      convert_d
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L25
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      getproperty         QName(PackageNamespace(""), "parent")
+      pushnull
+      equals
+      not
+L25:
+      iffalse             L52
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "removeEvents"), 0
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "oldView")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "resetVars"), 0
+
+      findpropstrict      QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "oldView")
+      pushdouble          0.4
+      pushstring          "alpha"
+      pushbyte            0
+      newobject           1
+      constructprop       QName(PackageNamespace("com.gskinner.motion"), "GTween"), 3
+      pop
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.fortune.components"), "TimerCallback")
+      pushdouble          0.4
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "removeOldView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.fortune.components"), "TimerCallback"), 2
+      pop
+      pushdouble          0.4
+      convert_d
+      setlocal1
+
+L52:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "container")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "alpha")
+
+      findpropstrict      QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      getlocal1
+      pushstring          "alpha"
+      pushbyte            1
+      newobject           1
+      constructprop       QName(PackageNamespace("com.gskinner.motion"), "GTween"), 3
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L88
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      pushnull
+      equals
+      not
+L88:
+      dup
+      iffalse             L98
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      pushnull
+      equals
+      not
+L98:
+      iffalse             L113
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      initproperty        QName(PackageNamespace(""), "gsc")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gsc")
+      callpropvoid        QName(PackageNamespace(""), "questFetch"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setCloseButton"), 1
+
+      jump                L116
+
+L113:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClose"), 0
+
+      returnvoid
+
+L116:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "questFetchComplete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onQuestFetchComplete")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "questRedeemComplete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onQuestRedeemComplete")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "presentNextQuest")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/presentNextQuest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "removeEvents"), 0
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "initialize"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "removeOldView")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/removeOldView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "oldView")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L16
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "oldView")
+      getproperty         QName(PackageNamespace(""), "parent")
+      pushnull
+      equals
+      not
+L16:
+      iffalse             L22
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "container")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "oldView")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L22:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClose")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView")
+      getproperty         QName(PackageNamespace(""), "closed")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "removeEvents"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onInit")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onInit"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      ifnlt               L14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      pushbyte            1
+      pushshort           3205
+      pushstring          "AAAAAAHHH we are in need of this {goal} now. Help help help."
+      pushstring          "http://i.imgur.com/ceobPxd.png"
+      callpropvoid        QName(PackageNamespace(""), "init"), 4
+
+      jump                L21
+
+L14:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      pushbyte            1
+      pushshort           1793
+      pushstring          "WOAAH we are in need of this {goal} now. Help help."
+      pushstring          "https://www.google.com/images/srpr/logo11w.png"
+      callpropvoid        QName(PackageNamespace(""), "init"), 4
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onQuestFetchComplete")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onQuestFetchComplete"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "QuestFetchResponse")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "goal")
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      initproperty        QName(PackageNamespace(""), "targetItem")
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tier")
+      convert_i
+      setlocal2
+
+      getlocal2
+      pushbyte            0
+      ifngt               L31
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tier")
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "targetItem")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "description")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "image")
+      callpropvoid        QName(PackageNamespace(""), "init"), 4
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "setupEvents"), 0
+
+      jump                L72
+
+L31:
+      getlocal2
+      pushbyte            -1
+      ifne                L67
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "oldView")
+      pushnull
+      equals
+      not
+      dup
+      iftrue              L54
+
+      pop
+      getlex              QName(PackageNamespace(""), "questsCompletedDayUTC")
+      pushbyte            -1
+      equals
+      not
+      dup
+      iffalse             L54
+
+      pop
+      getlex              QName(PackageNamespace(""), "questsCompletedDayUTC")
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      getproperty         QName(PackageNamespace(""), "dayUTC")
+      equals
+L54:
+      iffalse             L64
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      callpropvoid        QName(PackageNamespace(""), "noNewQuests"), 0
+
+      findproperty        QName(PackageNamespace(""), "questsCompletedDayUTC")
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      getproperty         QName(PackageNamespace(""), "dayUTC")
+      setproperty         QName(PackageNamespace(""), "questsCompletedDayUTC")
+
+      jump                L66
+
+L64:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClose"), 0
+
+L66:
+      jump                L72
+
+L67:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "description")
+      callpropvoid        QName(PackageNamespace(""), "constructDescription"), 1
+
+L72:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onQuestRedeemComplete")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onQuestRedeemComplete"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "QuestRedeemResponse")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Boolean")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "ok")
+      callproperty        QName(PackageNamespace(""), "Boolean"), 1
+      convert_b
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "message")
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      coerce_s
+      setlocal3
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "state_tinkering")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      pushnull
+      ifeq                L48
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onOKClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      callpropvoid        QName(PackageNamespace(""), "freezeSize"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      pushstring          "OK"
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      pushint             5526612
+      callpropvoid        QName(PackageNamespace(""), "setOutLineColor"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      callpropvoid        QName(PackageNamespace(""), "setCheckMark"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      callpropvoid        QName(PackageNamespace(""), "onQuestComplete"), 0
+
+L48:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "setupEvents")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/setupEvents"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      callproperty        QName(PackageNamespace(""), "getItemSlot"), 0
+      initproperty        QName(PackageNamespace(""), "itemslot")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      callproperty        QName(PackageNamespace(""), "getExchangeButton"), 0
+      initproperty        QName(PackageNamespace(""), "exchangeButton")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "foodLoaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onNewItem")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "foodLoaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onNewItem")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "foodUnloaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClearItem")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "foodUnloaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClearItem")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onExchangeClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onOKClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "removeEvents")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/removeEvents"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "questFetchComplete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onQuestFetchComplete")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "questRedeemComplete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onQuestFetchComplete")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      pushnull
+      ifeq                L28
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "foodLoaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onNewItem")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "foodUnloaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClearItem")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+L28:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      pushnull
+      ifeq                L46
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onExchangeClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onOKClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L46:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "resetVars")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/resetVars"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            -1
+      initproperty        QName(PackageNamespace(""), "targetItem")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "itemslot")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "exchangeButton")
+
+      getlocal0
+      pushbyte            -1
+      initproperty        QName(PackageNamespace(""), "targetItem")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "itemslot")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "exchangeButton")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "gsc")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "removeEvents"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onNewItem")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onNewItem"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "state_tinkering")
+      not
+L13:
+      iffalse             L47
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "targetItem")
+      ifne                L37
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onExchangeClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "hideOuterSlot"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "empty")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      callpropvoid        QName(PackageNamespace(""), "updateTitle"), 0
+
+      jump                L47
+
+L37:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      callpropvoid        QName(PackageNamespace(""), "clearItem"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      callpropvoid        QName(PackageNamespace(""), "makeRedTemporarily"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "hideOuterSlot"), 1
+
+L47:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onClearItem")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onClearItem"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onExchangeClick")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onExchangeClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gsc")
+      pushnull
+      ifeq                L42
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onExchangeClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      pushstring          "Tinkering"
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      pushint             5526612
+      callpropvoid        QName(PackageNamespace(""), "setOutLineColor"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "exchangeButton")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 0
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "state_tinkering")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gsc")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "slotId")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemslot")
+      getproperty         QName(PackageNamespace(""), "itemId")
+      callpropvoid        QName(PackageNamespace(""), "questRedeem"), 3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "view")
+      callpropvoid        QName(PackageNamespace(""), "onExchangeClick"), 0
+
+L42:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance"), "onOKClick")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsMediator/instance/onOKClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "initialize"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.questrewards.view:QuestRewardsMediator/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "questsCompletedDayUTC")
+    pushbyte            -1
+    setproperty         QName(PackageNamespace(""), "questsCompletedDayUTC")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "questsCompletedDayUTC") slotid 1 type QName(PackageNamespace(""), "Number") value Integer(-1) end
+end ; class

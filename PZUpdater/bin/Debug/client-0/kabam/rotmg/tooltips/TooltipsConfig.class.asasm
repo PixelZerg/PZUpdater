@@ -1,0 +1,76 @@
+class
+ refid "kabam.rotmg.tooltips:TooltipsConfig"
+ instance QName(PackageNamespace("kabam.rotmg.tooltips"), "TooltipsConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.tooltips:TooltipsConfig")
+  iinit
+   refid "kabam.rotmg.tooltips:TooltipsConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mediatorMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.tooltips:TooltipsConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.tooltips.view"), "TooltipsView")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.tooltips.view"), "TooltipsMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.tooltips:TooltipsConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

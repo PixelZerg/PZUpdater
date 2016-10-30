@@ -1,0 +1,95 @@
+class
+ refid "kabam.rotmg.startup.model.impl:SignalTaskDelegate"
+ instance QName(PackageNamespace("kabam.rotmg.startup.model.impl"), "SignalTaskDelegate")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("StartupDelegate", [PackageNamespace("kabam.rotmg.startup.model.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.startup.model.impl:SignalTaskDelegate")
+  iinit
+   refid "kabam.rotmg.startup.model.impl:SignalTaskDelegate/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PackageNamespace(""), "signalClass") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(PackageNamespace(""), "priority") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "getPriority")
+   method
+    refid "kabam.rotmg.startup.model.impl:SignalTaskDelegate/instance/getPriority"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "priority")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "make")
+   method
+    refid "kabam.rotmg.startup.model.impl:SignalTaskDelegate/instance/make"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "signalClass")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("org.osflash.signals"), "Signal")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.startup.model.impl:SignalTaskDelegate/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

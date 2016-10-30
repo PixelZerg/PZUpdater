@@ -1,0 +1,224 @@
+class
+ refid "kabam.rotmg.pets.view.components:PetAbilityTooltip"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetAbilityTooltip")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:PetAbilityTooltip")
+  iinit
+   refid "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityContent")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTopAlignedTextfield"), 4
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            14
+     pushfalse
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTopAlignedTextfield"), 4
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField")
+
+     getlocal0
+     pushint             3552822
+     pushbyte            1
+     pushint             16777215
+     pushbyte            1
+     pushtrue
+     constructsuper      5
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField")
+     pushshort           200
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setWordWrap"), 1
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityVO")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "addChildren"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "updateTextFields"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityContent") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityVO") type QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "updateTextFields")
+   method
+    refid "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance/kabam.rotmg.pets.view.components:PetAbilityTooltip/instance/updateTextFields"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip:ToolTip"), "waiter")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlex              QName(ProtectedNamespace("com.company.assembleegameclient.ui.tooltip:ToolTip"), "waiter")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityVO")
+      getproperty         QName(PackageNamespace(""), "name")
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityVO")
+      getproperty         QName(PackageNamespace(""), "description")
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "addChildren")
+   method
+    refid "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance/kabam.rotmg.pets.view.components:PetAbilityTooltip/instance/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityContent")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityContent")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "abilityContent")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.pets.view.components:PetAbilityTooltip"), "alignUI") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance/kabam.rotmg.pets.view.components:PetAbilityTooltip:alignUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "ABILITY_TOOLTIP_TITLE_POSITION_X")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "ABILITY_TOOLTIP_TITLE_POSITION_Y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "ABILITY_TOOLTIP_TITLE_POSITION_X")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "descriptionTextField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:PetAbilityTooltip/instance"), "titleTextField")
+      getproperty         QName(PackageNamespace(""), "height")
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:PetAbilityTooltip/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

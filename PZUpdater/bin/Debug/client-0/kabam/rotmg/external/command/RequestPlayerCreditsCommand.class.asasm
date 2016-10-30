@@ -1,0 +1,99 @@
+class
+ refid "kabam.rotmg.external.command:RequestPlayerCreditsCommand"
+ instance QName(PackageNamespace("kabam.rotmg.external.command"), "RequestPlayerCreditsCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.external.command:RequestPlayerCreditsCommand")
+  iinit
+   refid "kabam.rotmg.external.command:RequestPlayerCreditsCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "taskMonitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "requestPlayerCreditsComplete") flag METADATA type QName(PackageNamespace("kabam.rotmg.external.command"), "RequestPlayerCreditsCompleteSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.external.command:RequestPlayerCreditsCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.external.service"), "RequestPlayerCreditsTask")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "requestPlayerCreditsComplete")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "taskMonitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.external.command:RequestPlayerCreditsCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

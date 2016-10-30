@@ -1,0 +1,183 @@
+class
+ refid "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"
+ instance QName(PackageNamespace("kabam.rotmg.account.kabam.view"), "AccountLoadErrorMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kabam.view:AccountLoadErrorMediator")
+  iinit
+   refid "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.kabam.view"), "AccountLoadErrorDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "close")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "onClose")
+   method
+    refid "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator/instance/kabam.rotmg.account.kabam.view:AccountLoadErrorMediator/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "navigateToURL")
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "getUrl"), 0
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "TOP")
+      callpropvoid        QName(PackageNamespace("flash.net"), "navigateToURL"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "getUrl")
+   method
+    refid "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator/instance/kabam.rotmg.account.kabam.view:AccountLoadErrorMediator/getUrl"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal2
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "KABAM_DOT_COM")
+      coerce_s
+      setlocal1
+
+L8:
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "GET_KABAM_PAGE_JS")
+      callproperty        QName(PackageNamespace(""), "call"), 1
+      coerce_s
+      setlocal2
+
+      getlocal2
+      convert_b
+      dup
+      iffalse             L21
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_b
+L21:
+      iffalse             L25
+
+      getlocal2
+      coerce_s
+      setlocal1
+
+L25:
+      jump                L37
+
+L26:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal3
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+      kill                3
+L37:
+      getlocal1
+      returnvalue
+     end ; code
+     try from L8 to L25 target L26 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "error") end
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "GET_KABAM_PAGE_JS")
+    pushstring          "rotmg.KabamDotComLib.getKabamGamePage"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "GET_KABAM_PAGE_JS")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "KABAM_DOT_COM")
+    pushstring          "https://www.kabam.com"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "KABAM_DOT_COM")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "TOP")
+    pushstring          "_top"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "TOP")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "GET_KABAM_PAGE_JS") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("rotmg.KabamDotComLib.getKabamGamePage") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "KABAM_DOT_COM") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("https://www.kabam.com") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:AccountLoadErrorMediator"), "TOP") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("_top") end
+end ; class

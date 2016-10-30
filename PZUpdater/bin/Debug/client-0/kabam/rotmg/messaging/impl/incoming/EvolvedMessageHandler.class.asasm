@@ -1,0 +1,202 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "EvolvedMessageHandler")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler")
+  iinit
+   refid "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "evolvePetInfo") type QName(PackageNamespace("kabam.rotmg.messaging.impl"), "EvolvePetInfo") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "message") type QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "EvolvedPetMessage") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "finalPet") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "initialPet") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO") end
+  trait method QName(PackageNamespace(""), "handleMessage")
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/handleMessage"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "EvolvedPetMessage")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "message")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl"), "EvolvePetInfo")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl"), "EvolvePetInfo"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "evolvePetInfo")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "addFinalPet"), 0
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "addInitialPet"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "dispatchEvolvePetSignal"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "addFinalPet")
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/addFinalPet"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "message")
+      getproperty         QName(PackageNamespace(""), "petID")
+      callproperty        QName(PackageNamespace(""), "getPet"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "finalPet")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "finalPet")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "message")
+      getproperty         QName(PackageNamespace(""), "finalSkin")
+      callpropvoid        QName(PackageNamespace(""), "setSkin"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "evolvePetInfo")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "finalPet")
+      setproperty         QName(PackageNamespace(""), "finalPet")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "addInitialPet")
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/addInitialPet"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "EvolvedPetMessage")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "finalPet")
+      callproperty        QName(PackageNamespace(""), "clone"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "initialPet")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "initialPet")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "initialSkin")
+      callpropvoid        QName(PackageNamespace(""), "setSkin"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "evolvePetInfo")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "initialPet")
+      setproperty         QName(PackageNamespace(""), "initialPet")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "dispatchEvolvePetSignal")
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance/dispatchEvolvePetSignal"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.controller"), "EvolvePetSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.controller"), "EvolvePetSignal")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/instance"), "evolvePetInfo")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:EvolvedMessageHandler/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

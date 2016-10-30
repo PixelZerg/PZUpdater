@@ -1,0 +1,104 @@
+class
+ refid "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.commands"), "WebSetPaymentDataCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand")
+  iinit
+   refid "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "characterListData") flag METADATA type QName(PackageNamespace(""), "XML")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "characterListData")
+      pushstring          "KabamPaymentInfo"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.account.web.commands"), PackageInternalNs("kabam.rotmg.account.web.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand"), StaticProtectedNs("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand")]), 1
+      iffalse             L31
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "characterListData")
+      getproperty         Multiname("KabamPaymentInfo", [PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.account.web.commands"), PackageInternalNs("kabam.rotmg.account.web.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand"), StaticProtectedNs("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand")])
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("signedRequest", [PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.account.web.commands"), PackageInternalNs("kabam.rotmg.account.web.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand"), StaticProtectedNs("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand")])
+      setproperty         QName(PackageNamespace(""), "signedRequest")
+
+      getlocal1
+      getlocal2
+      getproperty         Multiname("naid", [PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.account.web.commands"), PackageInternalNs("kabam.rotmg.account.web.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand"), StaticProtectedNs("kabam.rotmg.account.web.commands:WebSetPaymentDataCommand")])
+      setproperty         QName(PackageNamespace(""), "kabamId")
+
+L31:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.commands:WebSetPaymentDataCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

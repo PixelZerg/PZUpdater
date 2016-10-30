@@ -1,0 +1,241 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:GasEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:GasEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:GasEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "color")
+     initproperty        QName(PackageNamespace(""), "color_")
+
+     getlocal0
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "rate")
+     initproperty        QName(PackageNamespace(""), "rate")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "props")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "props") type QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "EffectProperties") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "rate") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "type") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:GasEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 8
+     localcount 11
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            5
+
+      pushnan
+      setlocal            6
+
+      pushnan
+      setlocal            7
+
+      pushnan
+      setlocal            8
+
+      pushnan
+      setlocal            9
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasParticle")
+      setlocal            10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L22
+
+      pushfalse
+      returnvalue
+
+L22:
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      pushbyte            20
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L127
+
+L37:
+      label
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.3
+      add
+      pushshort           200
+      multiply
+      convert_d
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      convert_d
+      setlocal            6
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal            6
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      subtract
+      multiply
+      multiply
+      subtract
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      convert_d
+      setlocal            7
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal            6
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      subtract
+      multiply
+      multiply
+      subtract
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      convert_d
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "life")
+      pushshort           1000
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "life")
+      pushshort           1000
+      multiply
+      getlocal            6
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "lifeVariance")
+      multiply
+      multiply
+      subtract
+      convert_d
+      setlocal            9
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasParticle")
+      getlocal            5
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      getlocal            9
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "props")
+      getproperty         QName(PackageNamespace(""), "spread")
+      pushdouble          0.75
+      getlocal            7
+      getlocal            8
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasParticle"), 7
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "GasParticle")
+      setlocal            10
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            10
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          4
+L127:
+      getlocal            4
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rate")
+      iflt                L37
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:GasEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

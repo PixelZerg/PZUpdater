@@ -1,0 +1,141 @@
+class
+ refid "com.company.assembleegameclient.screens:AccountLoadingScreen"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountLoadingScreen")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.screens:AccountLoadingScreen")
+  iinit
+   refid "com.company.assembleegameclient.screens:AccountLoadingScreen/instance/init"
+   body
+    maxstack 8
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("com.company.rotmg.graphics"), "ScreenGraphic")
+     constructprop       QName(PackageNamespace("com.company.rotmg.graphics"), "ScreenGraphic"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            30
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "LOADING_TEXT")
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     dup
+     dup
+     pushbyte            1
+     pushbyte            4
+     dup
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_")
+     getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+     getproperty         QName(PackageNamespace(""), "CENTER")
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     getlex              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     getproperty         QName(PackageNamespace(""), "MIDDLE")
+     callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.screens:AccountLoadingScreen"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.screens:AccountLoadingScreen"), "onAddedToStage")
+   method
+    refid "com.company.assembleegameclient.screens:AccountLoadingScreen/instance/com.company.assembleegameclient.screens:AccountLoadingScreen:onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.screens:AccountLoadingScreen"), "onAddedToStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:AccountLoadingScreen/instance"), "loadingText_")
+      pushshort           550
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens:AccountLoadingScreen/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

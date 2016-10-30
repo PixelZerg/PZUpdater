@@ -1,0 +1,198 @@
+class
+ refid "com.company.assembleegameclient.mapeditor:EditTileProperties"
+ instance QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "EditTileProperties")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.mapeditor:EditTileProperties")
+  iinit
+   refid "com.company.assembleegameclient.mapeditor:EditTileProperties/instance/init"
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.util"), "IntPoint")>)
+   param QName(PackageNamespace(""), "String")
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "tiles_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "darkBox_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "darkBox_")
+     getproperty         QName(PackageNamespace(""), "graphics")
+     coerce              QName(PackageNamespace("flash.display"), "Graphics")
+     setlocal3
+
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+     getlocal3
+     pushbyte            0
+     pushdouble          0.8
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+     getlocal3
+     pushbyte            0
+     dup
+     pushshort           800
+     pushshort           600
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "darkBox_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "EditTilePropertiesFrame")
+     getlocal2
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "EditTilePropertiesFrame"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "frame_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "frame_")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "COMPLETE")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onComplete")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "frame_")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "CANCEL")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "onCancel")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "frame_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "tiles_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.util"), "IntPoint")>) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "darkBox_") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "frame_") type QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "EditTilePropertiesFrame") end
+  trait method QName(PackageNamespace(""), "getObjectName")
+   method
+    refid "com.company.assembleegameclient.mapeditor:EditTileProperties/instance/getObjectName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "frame_")
+      getproperty         QName(PackageNamespace(""), "objectName_")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      pushstring          ""
+      ifne                L10
+
+      pushnull
+      returnvalue
+
+L10:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:EditTileProperties/instance"), "frame_")
+      getproperty         QName(PackageNamespace(""), "objectName_")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onComplete")
+   method
+    refid "com.company.assembleegameclient.mapeditor:EditTileProperties/instance/onComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "onCancel")
+   method
+    refid "com.company.assembleegameclient.mapeditor:EditTileProperties/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.mapeditor:EditTileProperties/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

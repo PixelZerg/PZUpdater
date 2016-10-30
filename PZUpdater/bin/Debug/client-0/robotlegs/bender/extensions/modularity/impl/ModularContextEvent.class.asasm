@@ -1,0 +1,127 @@
+class
+ refid "robotlegs.bender.extensions.modularity.impl:ModularContextEvent"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ModularContextEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.modularity.impl:ModularContextEvent")
+  iinit
+   refid "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushtrue
+     pushtrue
+     constructsuper      3
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/instance"), "_context")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/instance"), "_context") type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext") end
+  trait getter QName(PackageNamespace(""), "context")
+   method
+    refid "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/instance/context/getter"
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/instance"), "_context")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    refid "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ModularContextEvent")
+      getlex              QName(PackageNamespace(""), "type")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      constructprop       QName(PackageNamespace("robotlegs.bender.extensions.modularity.impl"), "ModularContextEvent"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "formatToString")
+      pushstring          "ModularContextEvent"
+      pushstring          "context"
+      callproperty        QName(PackageNamespace(""), "formatToString"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.extensions.modularity.impl:ModularContextEvent/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "CONTEXT_ADD")
+    pushstring          "contextAdd"
+    initproperty        QName(PackageNamespace(""), "CONTEXT_ADD")
+
+    findproperty        QName(PackageNamespace(""), "CONTEXT_REMOVE")
+    pushstring          "contextRemove"
+    initproperty        QName(PackageNamespace(""), "CONTEXT_REMOVE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "CONTEXT_ADD") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("contextAdd") end
+ trait const QName(PackageNamespace(""), "CONTEXT_REMOVE") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("contextRemove") end
+end ; class

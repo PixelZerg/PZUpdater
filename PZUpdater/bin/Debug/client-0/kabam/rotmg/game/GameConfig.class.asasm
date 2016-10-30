@@ -1,0 +1,439 @@
+class
+ refid "kabam.rotmg.game:GameConfig"
+ instance QName(PackageNamespace("kabam.rotmg.game"), "GameConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game:GameConfig")
+  iinit
+   refid "kabam.rotmg.game:GameConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mediatorMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "commandMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.api"), "ISignalCommandMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "generalGameConfiguration")
+   method
+    refid "kabam.rotmg.game:GameConfig/instance/kabam.rotmg.game:GameConfig/instance/generalGameConfiguration"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "UpdateGiftStatusDisplaySignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "SetWorldInteractionSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "SetTextBoxVisibilitySignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "AddSpeechBalloonSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "ChatFilter")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.game"), "GiftStatusModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.model"), "TabStripModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "ExitGameSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "QueueStatusTextSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.lib.net.impl"), "SocketServerModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "makeTextPanelMappings"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "makeGiftStatusDisplayMappings"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "PortalPanel")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "PortalPanelMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "PartyPanel")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.mediators"), "PartyPanelMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "InteractPanel")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.mediators"), "InteractPanelMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "ItemGrid")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.mediators"), "ItemGridMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "InventoryGrid")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.mediators"), "InventoryGridMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileSprite")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileSpriteMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeSlot")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeSlotMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map.mapoverlay"), "MapOverlay")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "MapOverlayMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "MapMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatView")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsView")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "StatsMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabStripView")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view.components"), "TabStripMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "AppInitDataReceivedSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.commands"), "ParsePotionDataCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "GiftStatusUpdateSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.commands"), "GiftStatusUpdateCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "UseBuyPotionSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.commands"), "UseBuyPotionCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "GameClosedSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.commands"), "TransitionFromGameToMenuCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "PlayGameSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.commands"), "PlayGameCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "mapLoopMonitor"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.game:GameConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.focus"), "GameFocusConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "generalGameConfiguration"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat"), "ChatConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "makeTextPanelMappings")
+   method
+    refid "kabam.rotmg.game:GameConfig/instance/kabam.rotmg.game:GameConfig/instance/makeTextPanelMappings"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "TextPanelData")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "TextPanelMessageUpdateSignal")
+      pushtrue
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 2
+      getlex              QName(PackageNamespace("kabam.rotmg.game.commands"), "TextPanelMessageUpdateCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "TextPanel")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "TextPanelMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "makeGiftStatusDisplayMappings")
+   method
+    refid "kabam.rotmg.game:GameConfig/instance/kabam.rotmg.game:GameConfig/instance/makeGiftStatusDisplayMappings"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "GiftStatusDisplay")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "GiftStatusDisplayMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "GameSpriteMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplayMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "MoneyChangerPanel")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "MoneyChangerPanelMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "SellableObjectPanel")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.view"), "SellableObjectPanelMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game:GameConfig/instance"), "mapLoopMonitor")
+   method
+    refid "kabam.rotmg.game:GameConfig/instance/kabam.rotmg.game:GameConfig/instance/mapLoopMonitor"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setup")
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "isGameLoopMonitored"), 0
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.logging"), "LoopMonitor")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.logging"), "RollingMeanLoopMonitor")
+      callpropvoid        QName(PackageNamespace(""), "toType"), 1
+
+      jump                L19
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.logging"), "LoopMonitor")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.game.logging"), "NullLoopMonitor")
+      callpropvoid        QName(PackageNamespace(""), "toType"), 1
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game:GameConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

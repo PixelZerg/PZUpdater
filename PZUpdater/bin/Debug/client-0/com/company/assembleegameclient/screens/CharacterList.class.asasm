@@ -1,0 +1,204 @@
+class
+ refid "com.company.assembleegameclient.screens:CharacterList"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterList")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.screens:CharacterList")
+  iinit
+   refid "com.company.assembleegameclient.screens:CharacterList/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   param QName(PackageNamespace(""), "int")
+   body
+    maxstack 5
+    localcount 6
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.display"), "Shape")
+     setlocal3
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.display"), "Graphics")
+     setlocal            4
+
+     getlocal0
+     constructsuper      0
+
+     jump                L30
+
+L11:
+     label
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens.charrects"), "CharacterRectList")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens.charrects"), "CharacterRectList"), 0
+     initproperty        QName(PackageNamespace(""), "charRectList_")
+
+     jump                L52
+
+L17:
+     label
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "Graveyard")
+     getlocal1
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "Graveyard"), 1
+     initproperty        QName(PackageNamespace(""), "charRectList_")
+
+     jump                L52
+
+L24:
+     label
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     initproperty        QName(PackageNamespace(""), "charRectList_")
+
+     jump                L52
+
+L30:
+     getlocal2
+     setlocal            5
+
+     getlex              QName(PackageNamespace(""), "TYPE_CHAR_SELECT")
+     getlocal            5
+     ifstrictne          L37
+
+     pushbyte            0
+     jump                L50
+
+L37:
+     getlex              QName(PackageNamespace(""), "TYPE_GRAVE_SELECT")
+     getlocal            5
+     ifstrictne          L42
+
+     pushbyte            1
+     jump                L50
+
+L42:
+     jump                L49
+
+     ; 0x24
+     ; 0x02
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L49:
+     pushbyte            2
+L50:
+     kill                5
+     lookupswitch        L24, [L11, L17, L24]
+
+L52:
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "charRectList_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlex              QName(PackageNamespace(""), "height")
+     pushshort           400
+     ifngt               L84
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Shape")
+     setlocal3
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "graphics")
+     coerce              QName(PackageNamespace("flash.display"), "Graphics")
+     dup
+     setlocal            4
+
+     pushbyte            0
+     callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+     getlocal            4
+     pushbyte            0
+     dup
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     getlex              QName(PackageNamespace(""), "HEIGHT")
+     callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findproperty        QName(PackageNamespace(""), "mask")
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "mask")
+
+L84:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "charRectList_") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait method QName(PackageNamespace(""), "setPos")
+   method
+    refid "com.company.assembleegameclient.screens:CharacterList/instance/setPos"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "charRectList_")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens:CharacterList/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "WIDTH")
+    pushshort           760
+    initproperty        QName(PackageNamespace(""), "WIDTH")
+
+    findproperty        QName(PackageNamespace(""), "HEIGHT")
+    pushshort           415
+    initproperty        QName(PackageNamespace(""), "HEIGHT")
+
+    findproperty        QName(PackageNamespace(""), "TYPE_CHAR_SELECT")
+    pushbyte            1
+    initproperty        QName(PackageNamespace(""), "TYPE_CHAR_SELECT")
+
+    findproperty        QName(PackageNamespace(""), "TYPE_GRAVE_SELECT")
+    pushbyte            2
+    initproperty        QName(PackageNamespace(""), "TYPE_GRAVE_SELECT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") slotid 1 type QName(PackageNamespace(""), "int") value Integer(760) end
+ trait const QName(PackageNamespace(""), "HEIGHT") slotid 2 type QName(PackageNamespace(""), "int") value Integer(415) end
+ trait const QName(PackageNamespace(""), "TYPE_CHAR_SELECT") slotid 3 type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "TYPE_GRAVE_SELECT") slotid 4 type QName(PackageNamespace(""), "int") value Integer(2) end
+end ; class

@@ -1,0 +1,433 @@
+class
+ refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Object3DStage3D")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.stage3D.Object3D:Object3DStage3D")
+  iinit
+   refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Model3D_stage3d")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "model_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 0
+     initproperty        QName(PackageNamespace(""), "modelMatrix_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 0
+     initproperty        QName(PackageNamespace(""), "modelView_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 0
+     initproperty        QName(PackageNamespace(""), "modelViewProjection_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "model_") type QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Model3D_stage3d") value Null() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PackageNamespace(""), "modelMatrix_") type QName(PackageNamespace("flash.geom"), "Matrix3D") end
+  trait slot QName(PackageNamespace(""), "modelView_") type QName(PackageNamespace("flash.geom"), "Matrix3D") end
+  trait slot QName(PackageNamespace(""), "modelViewProjection_") type QName(PackageNamespace("flash.geom"), "Matrix3D") end
+  trait slot QName(PackageNamespace(""), "position") type QName(PackageNamespace("flash.geom"), "Vector3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "zRotation_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_") type QName(PackageNamespace("flash.display3D.textures"), "Texture") end
+  trait method QName(PackageNamespace(""), "setBitMapData")
+   method
+    refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance/setBitMapData"
+    param QName(PackageNamespace("flash.display"), "BitmapData")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "TextureFactory")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "GetFlippedBitmapData"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPosition")
+   method
+    refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance/setPosition"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+      getlocal1
+      getlocal2
+      negate
+      getlocal3
+      constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+      initproperty        QName(PackageNamespace(""), "position")
+
+      getlocal0
+      getlocal            4
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "zRotation_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+      pushnull
+      ifeq                L12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+
+L12:
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "modelMatrix_")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "modelView_")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "modelViewProjection_")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "position")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "UpdateModelMatrix")
+   method
+    refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance/UpdateModelMatrix"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "modelMatrix_")
+      callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "modelMatrix_")
+      pushbyte            -90
+      getlex              QName(PackageNamespace("flash.geom"), "Vector3D")
+      getproperty         QName(PackageNamespace(""), "Z_AXIS")
+      callpropvoid        QName(PackageNamespace(""), "appendRotation"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "modelMatrix_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "zRotation_")
+      negate
+      getlex              QName(PackageNamespace("flash.geom"), "Vector3D")
+      getproperty         QName(PackageNamespace(""), "Z_AXIS")
+      callpropvoid        QName(PackageNamespace(""), "appendRotation"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "modelMatrix_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "position")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "position")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "appendTranslation"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "modelMatrix_")
+      getlocal1
+      getlocal2
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "appendTranslation"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "GetModelMatrix")
+   method
+    refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance/GetModelMatrix"
+    returns QName(PackageNamespace("flash.geom"), "Matrix3D")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "modelMatrix_")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance/draw"
+    param QName(PackageNamespace("flash.display3D"), "Context3D")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "OBJGroup")
+      setlocal2
+
+      getlocal1
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model_")
+      getproperty         QName(PackageNamespace(""), "vertexBuffer")
+      pushbyte            0
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DVertexBufferFormat")
+      getproperty         QName(PackageNamespace(""), "FLOAT_3")
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 4
+
+      getlocal1
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model_")
+      getproperty         QName(PackageNamespace(""), "vertexBuffer")
+      pushbyte            3
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DVertexBufferFormat")
+      getproperty         QName(PackageNamespace(""), "FLOAT_3")
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 4
+
+      getlocal1
+      pushbyte            2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model_")
+      getproperty         QName(PackageNamespace(""), "vertexBuffer")
+      pushbyte            6
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DVertexBufferFormat")
+      getproperty         QName(PackageNamespace(""), "FLOAT_2")
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+      pushnull
+      equals
+      dup
+      iffalse             L44
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+      pushnull
+      equals
+      not
+L44:
+      iffalse             L64
+
+      getlocal0
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DTextureFormat")
+      getproperty         QName(PackageNamespace(""), "BGRA")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "createTexture"), 4
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+      callpropvoid        QName(PackageNamespace(""), "uploadFromBitmapData"), 1
+
+      jump                L89
+
+L64:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+      pushnull
+      ifne                L89
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "missingTextureBitmap")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+
+      getlocal0
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DTextureFormat")
+      getproperty         QName(PackageNamespace(""), "BGRA")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "createTexture"), 4
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "bitmapData")
+      callpropvoid        QName(PackageNamespace(""), "uploadFromBitmapData"), 1
+
+L89:
+      getlocal1
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Object3DStage3D/instance"), "texture_")
+      callpropvoid        QName(PackageNamespace(""), "setTextureAt"), 2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model_")
+      getproperty         QName(PackageNamespace(""), "groups")
+      coerce_a
+      setlocal            4
+
+      jump                L116
+
+L102:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "OBJGroup")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "indexBuffer")
+      pushnull
+      ifeq                L116
+
+      getlocal1
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "indexBuffer")
+      callpropvoid        QName(PackageNamespace(""), "drawTriangles"), 1
+
+L116:
+      hasnext2            4, 3
+      iftrue              L102
+
+      kill                4
+      kill                3
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D.Object3D:Object3DStage3D/class/init"
+  body
+   maxstack 6
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "missingTextureBitmap")
+    findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+    pushbyte            1
+    dup
+    pushtrue
+    pushdouble          2290649343
+    constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+    initproperty        QName(PackageNamespace(""), "missingTextureBitmap")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "missingTextureBitmap") slotid 1 type QName(PackageNamespace("flash.display"), "BitmapData") end
+end ; class

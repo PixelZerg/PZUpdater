@@ -1,0 +1,54 @@
+class
+ refid "kabam.rotmg.account.core.model:OfferModel"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.model"), "OfferModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.model:OfferModel")
+  iinit
+   refid "kabam.rotmg.account.core.model:OfferModel/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "lastOfferRequestTime") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "lastOfferRequestGUID") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "offers") type QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers") end
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.model:OfferModel/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "TIME_BETWEEN_REQS")
+    pushbyte            5
+    pushbyte            60
+    multiply
+    pushshort           1000
+    multiply
+    initproperty        QName(PackageNamespace(""), "TIME_BETWEEN_REQS")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "TIME_BETWEEN_REQS") slotid 1 type QName(PackageNamespace(""), "int") value Double(300000) end
+end ; class

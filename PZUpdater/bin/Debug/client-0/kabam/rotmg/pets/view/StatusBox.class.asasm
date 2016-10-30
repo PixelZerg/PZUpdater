@@ -1,0 +1,263 @@
+class
+ refid "kabam.rotmg.pets.view:StatusBox"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view"), "StatusBox")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view:StatusBox")
+  iinit
+   refid "kabam.rotmg.pets.view:StatusBox/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "labelTextfield")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "createBackground"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "addChildren"), 0
+
+     getlocal0
+     pushstring          "Text"
+     pushstring          "Text"
+     callpropvoid        QName(PackageNamespace(""), "updateTextfields"), 2
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "waitForTextChanged"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "labelTextfield") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "WIDTH") type QName(PackageNamespace(""), "uint") value Integer(238) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "HEIGHT") type QName(PackageNamespace(""), "uint") value Integer(30) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "PADDING") type QName(PackageNamespace(""), "uint") value Integer(10) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "POS_Y") type QName(PackageNamespace(""), "uint") value Integer(21) end
+  trait method QName(PackageNamespace(""), "updateTextfields")
+   method
+    refid "kabam.rotmg.pets.view:StatusBox/instance/updateTextfields"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "labelTextfield")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "addChildren")
+   method
+    refid "kabam.rotmg.pets.view:StatusBox/instance/kabam.rotmg.pets.view:StatusBox/instance/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "labelTextfield")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "createBackground")
+   method
+    refid "kabam.rotmg.pets.view:StatusBox/instance/kabam.rotmg.pets.view:StatusBox/instance/createBackground"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushint             10066329
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "WIDTH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "HEIGHT")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "waitForTextChanged")
+   method
+    refid "kabam.rotmg.pets.view:StatusBox/instance/kabam.rotmg.pets.view:StatusBox/instance/waitForTextChanged"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "labelTextfield")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "positionTextField")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "positionTextField")
+   method
+    refid "kabam.rotmg.pets.view:StatusBox/instance/kabam.rotmg.pets.view:StatusBox/instance/positionTextField"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "labelTextfield")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "PADDING")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "labelTextfield")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "POS_Y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "WIDTH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "PADDING")
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "valueTextfield")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:StatusBox/instance"), "POS_Y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view:StatusBox/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

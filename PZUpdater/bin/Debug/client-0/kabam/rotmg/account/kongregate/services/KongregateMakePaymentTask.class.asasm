@@ -1,0 +1,124 @@
+class
+ refid "kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.kongregate.services"), "KongregateMakePaymentTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  implements Multiname("MakePaymentTask", [PackageNamespace("kabam.rotmg.account.core.services")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask")
+  iinit
+   refid "kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "payment") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "api") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.kongregate.view"), "KongregateApi")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask/instance/kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "payment")
+      getproperty         QName(PackageNamespace(""), "offer")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+      setlocal1
+
+      pushstring          "identifier"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "id_")
+      pushstring          "data"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "data_")
+      newobject           2
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getproperty         QName(Namespace("kabam.rotmg.account.kongregate.view:KongregateApi"), "purchaseResponse")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask/instance/kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask:startTask"), "onPurchaseResult")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getlocal2
+      callpropvoid        QName(Namespace("kabam.rotmg.account.kongregate.view:KongregateApi"), "purchaseItems"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask/instance/kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask:startTask"), "onPurchaseResult")
+   method
+    refid "kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask/instance/kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask/instance/kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask:startTask/onPurchaseResult"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kongregate.services:KongregateMakePaymentTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

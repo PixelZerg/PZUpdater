@@ -1,0 +1,135 @@
+class
+ refid "com.gskinner.motion.easing:Sine"
+ instance QName(PackageNamespace("com.gskinner.motion.easing"), "Sine")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.gskinner.motion.easing:Sine")
+  iinit
+   refid "com.gskinner.motion.easing:Sine/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.gskinner.motion.easing:Sine/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "easeIn") flag FINAL dispid 3
+  method
+   refid "com.gskinner.motion.easing:Sine/class/easeIn"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            1
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     getlex              QName(PackageNamespace(""), "Math")
+     getproperty         QName(PackageNamespace(""), "PI")
+     pushbyte            2
+     divide
+     multiply
+     callproperty        QName(PackageNamespace(""), "cos"), 1
+     subtract
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "easeOut") flag FINAL dispid 4
+  method
+   refid "com.gskinner.motion.easing:Sine/class/easeOut"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 4
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     getlex              QName(PackageNamespace(""), "Math")
+     getproperty         QName(PackageNamespace(""), "PI")
+     pushbyte            2
+     divide
+     multiply
+     callproperty        QName(PackageNamespace(""), "sin"), 1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "easeInOut") flag FINAL dispid 5
+  method
+   refid "com.gskinner.motion.easing:Sine/class/easeInOut"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 4
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushdouble          -0.5
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     getlex              QName(PackageNamespace(""), "Math")
+     getproperty         QName(PackageNamespace(""), "PI")
+     multiply
+     callproperty        QName(PackageNamespace(""), "cos"), 1
+     decrement
+     multiply
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

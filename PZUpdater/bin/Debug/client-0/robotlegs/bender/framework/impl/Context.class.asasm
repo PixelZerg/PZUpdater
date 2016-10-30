@@ -1,0 +1,689 @@
+class
+ refid "robotlegs.bender.framework.impl:Context"
+ instance QName(PackageNamespace("robotlegs.bender.framework.impl"), "Context")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IContext", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.framework.impl:Context")
+  iinit
+   refid "robotlegs.bender.framework.impl:Context/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+     constructprop       QName(PackageNamespace("org.swiftsuspenders"), "Injector"), 0
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_injector")
+
+     getlocal0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "UID")
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "Context")
+     callproperty        QName(PackageNamespace(""), "create"), 1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_uid")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("robotlegs.bender.framework.impl"), "LogManager")
+     constructprop       QName(PackageNamespace("robotlegs.bender.framework.impl"), "LogManager"), 0
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logManager")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("robotlegs.bender.framework.impl"), "Pin")
+     constructprop       QName(PackageNamespace("robotlegs.bender.framework.impl"), "Pin"), 0
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_pin")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "setup"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait getter QName(PackageNamespace(""), "injector")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/injector/getter"
+    returns QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_injector")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "logLevel")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/logLevel/getter"
+    returns QName(PackageNamespace(""), "uint")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logManager")
+      getproperty         QName(PackageNamespace(""), "logLevel")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "logLevel")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/logLevel/setter"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logManager")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "logLevel")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle") type QName(PackageNamespace("robotlegs.bender.framework.impl"), "Lifecycle") end
+  trait getter QName(PackageNamespace(""), "lifecycle")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/lifecycle/getter"
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "ILifecycle")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_uid") type QName(PackageNamespace(""), "String") end
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logManager") type QName(PackageNamespace("robotlegs.bender.framework.impl"), "LogManager") end
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_pin") type QName(PackageNamespace("robotlegs.bender.framework.impl"), "Pin") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_configManager") type QName(PackageNamespace("robotlegs.bender.framework.impl"), "ConfigManager") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_extensionInstaller") type QName(PackageNamespace("robotlegs.bender.framework.impl"), "ExtensionInstaller") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logger") type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger") end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+      callpropvoid        QName(PackageNamespace(""), "initialize"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "extend")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/extend"
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    flag NEED_REST
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      coerce_a
+      setlocal            4
+
+      jump                L21
+
+L11:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_extensionInstaller")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "install"), 1
+
+L21:
+      hasnext2            4, 3
+      iftrue              L11
+
+      kill                4
+      kill                3
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/configure"
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    flag NEED_REST
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      coerce_a
+      setlocal            4
+
+      jump                L21
+
+L11:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_configManager")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addConfig"), 1
+
+L21:
+      hasnext2            4, 3
+      iftrue              L11
+
+      kill                4
+      kill                3
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addConfigHandler")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/addConfigHandler"
+    param QName(PackageNamespace("org.hamcrest"), "Matcher")
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_configManager")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addConfigHandler"), 2
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getLogger")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/getLogger"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logManager")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLogger"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addLogTarget")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/addLogTarget"
+    param QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogTarget")
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logManager")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addLogTarget"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "detain")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/detain"
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    flag NEED_REST
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      coerce_a
+      setlocal            4
+
+      jump                L21
+
+L11:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_pin")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "detain"), 1
+
+L21:
+      hasnext2            4, 3
+      iftrue              L11
+
+      kill                4
+      kill                3
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "release")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/release"
+    returns QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+    flag NEED_REST
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      coerce_a
+      setlocal            4
+
+      jump                L21
+
+L11:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_pin")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "release"), 1
+
+L21:
+      hasnext2            4, 3
+      iftrue              L11
+
+      kill                4
+      kill                3
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_uid")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "setup")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/robotlegs.bender.framework.impl:Context/instance/setup"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_injector")
+      getlex              QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_injector")
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_injector")
+      getlex              QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logManager")
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getLogger"), 1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logger")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.framework.impl"), "Lifecycle")
+      getlocal0
+      constructprop       QName(PackageNamespace("robotlegs.bender.framework.impl"), "Lifecycle"), 1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.framework.impl"), "ConfigManager")
+      getlocal0
+      constructprop       QName(PackageNamespace("robotlegs.bender.framework.impl"), "ConfigManager"), 1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_configManager")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.framework.impl"), "ExtensionInstaller")
+      getlocal0
+      constructprop       QName(PackageNamespace("robotlegs.bender.framework.impl"), "ExtensionInstaller"), 1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_extensionInstaller")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "beforeInitializing")
+      callpropvoid        QName(PackageNamespace(""), "beforeInitializing"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "afterInitializing")
+      callpropvoid        QName(PackageNamespace(""), "afterInitializing"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "beforeDestroying")
+      callpropvoid        QName(PackageNamespace(""), "beforeDestroying"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "afterDestroying")
+      callpropvoid        QName(PackageNamespace(""), "afterDestroying"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "beforeInitializing")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/robotlegs.bender.framework.impl:Context/instance/beforeInitializing"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logger")
+      pushstring          "Initializing..."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "afterInitializing")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/robotlegs.bender.framework.impl:Context/instance/afterInitializing"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logger")
+      pushstring          "Initialize complete"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "beforeDestroying")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/robotlegs.bender.framework.impl:Context/instance/beforeDestroying"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logger")
+      pushstring          "Destroying..."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "afterDestroying")
+   method
+    refid "robotlegs.bender.framework.impl:Context/instance/robotlegs.bender.framework.impl:Context/instance/afterDestroying"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_pin")
+      callpropvoid        QName(PackageNamespace(""), "flush"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_injector")
+      callpropvoid        QName(PackageNamespace(""), "teardown"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:Context/instance"), "_logger")
+      pushstring          "Destroy complete"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.framework.impl:Context/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

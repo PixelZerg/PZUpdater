@@ -1,0 +1,665 @@
+class
+ refid "kabam.rotmg.account.kabam:KabamAccount"
+ instance QName(PackageNamespace("kabam.rotmg.account.kabam"), "KabamAccount")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("Account", [PackageNamespace("kabam.rotmg.account.core")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount")
+  iinit
+   refid "kabam.rotmg.account.kabam:KabamAccount/instance/init"
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 4
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce_s
+     setlocal1
+
+     getlocal0
+     constructsuper      0
+
+L7:
+     getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+     pushstring          "rotmg.UrlLib.getParam"
+     pushstring          "entrypt"
+     callproperty        QName(PackageNamespace(""), "call"), 2
+     coerce_s
+     setlocal1
+
+     getlocal1
+     pushnull
+     ifeq                L19
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "entryTag")
+
+L19:
+     jump                L31
+
+L20:
+     getlocal0
+     pushscope
+
+     newcatch            0
+     dup
+     setlocal2
+
+     dup
+     pushscope
+
+     swap
+     setslot             1
+
+     popscope
+     kill                2
+L31:
+     returnvoid
+    end ; code
+    try from L7 to L19 target L20 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "error") end
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "entryTag") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "userId") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "password") type QName(PackageNamespace(""), "String") value Null() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "isVerifiedEmail") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "platformToken") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "signedRequest") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "userSession") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PackageNamespace(""), "json") flag METADATA type QName(PackageNamespace("kabam.lib.json"), "JsonParser")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateUser")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/updateUser"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "userId")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "password")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getRequestPrefix")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getRequestPrefix"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "/credits"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCredentials")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getCredentials"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "guid"
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getUserId"), 0
+      pushstring          "secret"
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getSecret"), 0
+      pushstring          "signedRequest"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "signedRequest")
+      newobject           3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getEntryTag")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getEntryTag"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "entryTag")
+      coerce_s
+      dup
+      iftrue              L9
+
+      pop
+      pushstring          ""
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "gameNetworkUserId")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/gameNetworkUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushnull
+      equals
+      dup
+      iftrue              L15
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushstring          "kabam_naid"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      pushnull
+      equals
+L15:
+      iffalse             L18
+
+      pushstring          ""
+      returnvalue
+
+L18:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushstring          "kabam_naid"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "gameNetwork")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/gameNetwork"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "NETWORK_NAME")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserName")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getUserName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushnull
+      equals
+      dup
+      iftrue              L15
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushstring          "user"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      pushnull
+      equals
+L15:
+      dup
+      iftrue              L26
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushstring          "user"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      pushstring          "email"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      pushnull
+      equals
+L26:
+      iffalse             L29
+
+      pushstring          ""
+      returnvalue
+
+L29:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushstring          "user"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      pushstring          "email"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      coerce_s
+      setlocal1
+
+      getlocal1
+      pushstring          "@"
+      pushbyte            2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            2
+      ifeq                L49
+
+      pushstring          ""
+      returnvalue
+
+L49:
+      getlocal2
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserId")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "userId")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isLinked")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/isLinked"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isRegistered")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/isRegistered"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "playPlatform")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/playPlatform"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "PLAY_PLATFORM_NAME")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSecret")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getSecret"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "password")
+      coerce_s
+      dup
+      iftrue              L9
+
+      pop
+      pushstring          ""
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPassword")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getPassword"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reportIntStat")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/reportIntStat"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "verify")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/verify"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "isVerifiedEmail")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isVerified")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/isVerified"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "isVerifiedEmail")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPlatformToken")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getPlatformToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "platformToken")
+      coerce_s
+      dup
+      iftrue              L9
+
+      pop
+      pushstring          ""
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPlatformToken")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/setPlatformToken"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "platformToken")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMoneyAccessToken")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getMoneyAccessToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "userSession")
+      pushstring          "oauth_token"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount/instance"), PackageNamespace("kabam.rotmg.account.kabam"), PackageInternalNs("kabam.rotmg.account.kabam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kabam:KabamAccount"), StaticProtectedNs("kabam.rotmg.account.kabam:KabamAccount")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMoneyUserId")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getMoneyUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "gameNetworkUserId"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getToken")
+   method
+    refid "kabam.rotmg.account.kabam:KabamAccount/instance/getToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kabam:KabamAccount/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "NETWORK_NAME")
+    pushstring          "kabam.com"
+    initproperty        QName(PackageNamespace(""), "NETWORK_NAME")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "PLAY_PLATFORM_NAME")
+    pushstring          "kabam.com"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "PLAY_PLATFORM_NAME")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "NETWORK_NAME") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("kabam.com") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.account.kabam:KabamAccount"), "PLAY_PLATFORM_NAME") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("kabam.com") end
+end ; class

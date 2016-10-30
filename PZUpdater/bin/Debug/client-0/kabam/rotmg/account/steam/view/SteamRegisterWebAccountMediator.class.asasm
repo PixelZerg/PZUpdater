@@ -1,0 +1,157 @@
+class
+ refid "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator"
+ instance QName(PackageNamespace("kabam.rotmg.account.steam.view"), "SteamRegisterWebAccountMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator")
+  iinit
+   refid "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterWebAccountDialog")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "register") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "RegisterAccountSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogsSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance"), "onClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance"), "onRegister")
+   method
+    refid "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance/kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance/onRegister"
+    param QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance"), "onClose")
+   method
+    refid "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance/kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/instance/onClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogsSignal")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.steam.view:SteamRegisterWebAccountMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

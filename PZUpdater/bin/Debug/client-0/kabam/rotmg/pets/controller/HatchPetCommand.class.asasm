@@ -1,0 +1,82 @@
+class
+ refid "kabam.rotmg.pets.controller:HatchPetCommand"
+ instance QName(PackageNamespace("kabam.rotmg.pets.controller"), "HatchPetCommand")
+  extends QName(PackageNamespace("com.company.assembleegameclient.editor"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.controller:HatchPetCommand")
+  iinit
+   refid "kabam.rotmg.pets.controller:HatchPetCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "petName") flag METADATA type QName(PackageNamespace(""), "String")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petSkin") flag METADATA type QName(PackageNamespace(""), "int")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.controller:HatchPetCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "EggHatchedDialog")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petName")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petSkin")
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "EggHatchedDialog"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.controller:HatchPetCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,186 @@
+class
+ refid "com.company.assembleegameclient.ui.options:KeyMapper"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "KeyMapper")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "BaseOption")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.options:KeyMapper")
+  iinit
+   refid "com.company.assembleegameclient.ui.options:KeyMapper/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   optional False()
+   body
+    maxstack 4
+    localcount 5
+    initscopedepth 11
+    maxscopedepth 12
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     constructsuper      3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "KeyCodeBox")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getlex              QName(PackageNamespace(""), "paramName_")
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), PackageNamespace("com.company.assembleegameclient.ui.options"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#1"), PackageInternalNs("com.company.assembleegameclient.ui.options"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.options:KeyMapper"), StaticProtectedNs("com.company.assembleegameclient.ui.options:KeyMapper"), StaticProtectedNs("com.company.assembleegameclient.ui.options:BaseOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:Option"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "KeyCodeBox"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "keyCodeBox_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "keyCodeBox_")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "CHANGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "onChange")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "keyCodeBox_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "setDisabled"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "keyCodeBox_") type QName(PackageNamespace("com.company.assembleegameclient.ui.options"), "KeyCodeBox") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "disabled_") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "setDisabled")
+   method
+    refid "com.company.assembleegameclient.ui.options:KeyMapper/instance/setDisabled"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "disabled_")
+
+      getlex              QName(PackageNamespace(""), "transform")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "disabled_")
+      iffalse             L13
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+      getproperty         QName(PackageNamespace(""), "darkCT")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      jump                L16
+
+L13:
+      getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+      getproperty         QName(PackageNamespace(""), "identity")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+L16:
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+      findproperty        QName(PackageNamespace(""), "mouseEnabled")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "disabled_")
+      not
+      initproperty        QName(PackageNamespace(""), "mouseEnabled")
+
+      findproperty        QName(PackageNamespace(""), "mouseChildren")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "disabled_")
+      not
+      initproperty        QName(PackageNamespace(""), "mouseChildren")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "refresh") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui.options:KeyMapper/instance/refresh"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "keyCodeBox_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getlex              QName(PackageNamespace(""), "paramName_")
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), PackageNamespace("com.company.assembleegameclient.ui.options"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#1"), PackageInternalNs("com.company.assembleegameclient.ui.options"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.options:KeyMapper"), StaticProtectedNs("com.company.assembleegameclient.ui.options:KeyMapper"), StaticProtectedNs("com.company.assembleegameclient.ui.options:BaseOption"), StaticProtectedNs("com.company.assembleegameclient.ui.options:Option"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callpropvoid        QName(PackageNamespace(""), "setKeyCode"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "onChange")
+   method
+    refid "com.company.assembleegameclient.ui.options:KeyMapper/instance/com.company.assembleegameclient.ui.options:KeyMapper/instance/onChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getlex              QName(PackageNamespace(""), "paramName_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.options:KeyMapper/instance#0"), "keyCodeBox_")
+      callproperty        QName(PackageNamespace(""), "value"), 0
+      callpropvoid        QName(PackageNamespace(""), "setKey"), 2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.options:KeyMapper/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 10
+   maxscopedepth 11
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,270 @@
+class
+ refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels.mediators"), "InteractPanelMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator")
+  iinit
+   refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "InteractPanel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mapModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "MapModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "currentInteractive") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "IInteractiveObject") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "provideInteractive")
+      setproperty         QName(PackageNamespace(""), "requestInteractive")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "destroy"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "provideInteractive")
+   method
+    refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/provideInteractive"
+    returns QName(PackageNamespace("com.company.assembleegameclient.objects"), "IInteractiveObject")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "isMapNameYardName"), 0
+      iftrue              L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mapModel")
+      getproperty         QName(PackageNamespace(""), "currentInteractiveTarget")
+      returnvalue
+
+L9:
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "doesNewPanelOverrideOld"), 0
+      iffalse             L17
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mapModel")
+      getproperty         QName(PackageNamespace(""), "currentInteractiveTarget")
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "currentInteractive")
+
+L17:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "currentInteractive")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "doesNewPanelOverrideOld")
+   method
+    refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/doesNewPanelOverrideOld"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mapModel")
+      getproperty         QName(PackageNamespace(""), "currentInteractiveTarget")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet")
+      istypelate
+      iffalse             L12
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "doShowPet"), 0
+      convert_b
+      jump                L13
+
+L12:
+      pushtrue
+L13:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "doShowPet")
+   method
+    refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/doShowPet"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "currentInteractive")
+      not
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "isMapNameYardName"), 0
+      convert_b
+L11:
+      iffalse             L14
+
+      pushtrue
+      returnvalue
+
+L14:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "currentInteractive")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet")
+      istypelate
+      dup
+      iffalse             L24
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "isMapNameYardName"), 0
+      convert_b
+L24:
+      dup
+      iffalse             L42
+
+      pop
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mapModel")
+      getproperty         QName(PackageNamespace(""), "currentInteractiveTarget")
+      callproperty        QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet"), 1
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace(""), "getID"), 0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "currentInteractive")
+      callproperty        QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet"), 1
+      getproperty         QName(PackageNamespace(""), "vo")
+      callproperty        QName(PackageNamespace(""), "getID"), 0
+      equals
+      not
+L42:
+      iffalse             L45
+
+      pushtrue
+      returnvalue
+
+L45:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance"), "isMapNameYardName")
+   method
+    refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/instance/isMapNameYardName"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "isPetYard")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels.mediators:InteractPanelMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

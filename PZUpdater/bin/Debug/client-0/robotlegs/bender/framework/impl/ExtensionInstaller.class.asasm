@@ -1,0 +1,180 @@
+class
+ refid "robotlegs.bender.framework.impl:ExtensionInstaller"
+ instance QName(PackageNamespace("robotlegs.bender.framework.impl"), "ExtensionInstaller")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.framework.impl:ExtensionInstaller")
+  iinit
+   refid "robotlegs.bender.framework.impl:ExtensionInstaller/instance/init"
+   param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "UID")
+     getlex              QName(PackageNamespace("robotlegs.bender.framework.impl"), "ExtensionInstaller")
+     callproperty        QName(PackageNamespace(""), "create"), 1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_uid")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     pushtrue
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_classes")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.swiftsuspenders.reflection"), "DescribeTypeReflector")
+     constructprop       QName(PackageNamespace("org.swiftsuspenders.reflection"), "DescribeTypeReflector"), 0
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_reflector")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_context")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_context")
+     getlocal0
+     callproperty        QName(Namespace("robotlegs.bender.framework.api:IContext"), "getLogger"), 1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_logger")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_uid") type QName(PackageNamespace(""), "String") end
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_classes") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_reflector") type QName(PackageNamespace("org.swiftsuspenders.reflection"), "Reflector") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_context") type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_logger") type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger") end
+  trait method QName(PackageNamespace(""), "install")
+   method
+    refid "robotlegs.bender.framework.impl:ExtensionInstaller/instance/install"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Class")
+      setlocal2
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "Class")
+      istypelate
+      iffalse             L26
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_classes")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), PackageNamespace("robotlegs.bender.framework.impl"), PackageNamespace(""), PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance/install"), PackageInternalNs("robotlegs.bender.framework.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.framework.impl:ExtensionInstaller"), StaticProtectedNs("robotlegs.bender.framework.impl:ExtensionInstaller")])
+      coerce_a
+      dup
+      iftrue              L24
+
+      pop
+      getlocal0
+      getlocal1
+      getlex              QName(PackageNamespace(""), "Class")
+      astypelate
+      construct           0
+      callproperty        QName(PackageNamespace(""), "install"), 1
+      coerce_a
+L24:
+      pop
+      jump                L53
+
+L26:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_reflector")
+      getlocal1
+      callproperty        QName(Namespace("org.swiftsuspenders.reflection:Reflector"), "getClass"), 1
+      coerce              QName(PackageNamespace(""), "Class")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_classes")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), PackageNamespace("robotlegs.bender.framework.impl"), PackageNamespace(""), PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance/install"), PackageInternalNs("robotlegs.bender.framework.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.framework.impl:ExtensionInstaller"), StaticProtectedNs("robotlegs.bender.framework.impl:ExtensionInstaller")])
+      iffalse             L38
+
+      returnvoid
+
+L38:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_logger")
+      pushstring          "Installing extension {0}"
+      getlocal1
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_classes")
+      getlocal2
+      pushtrue
+      setproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), PackageNamespace("robotlegs.bender.framework.impl"), PackageNamespace(""), PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance/install"), PackageInternalNs("robotlegs.bender.framework.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.framework.impl:ExtensionInstaller"), StaticProtectedNs("robotlegs.bender.framework.impl:ExtensionInstaller")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_context")
+      callpropvoid        Multiname("extend", [PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), PackageNamespace("robotlegs.bender.framework.impl"), PackageNamespace(""), PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance/install"), PackageInternalNs("robotlegs.bender.framework.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.framework.impl:ExtensionInstaller"), StaticProtectedNs("robotlegs.bender.framework.impl:ExtensionInstaller")]), 1
+
+L53:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    refid "robotlegs.bender.framework.impl:ExtensionInstaller/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.framework.impl:ExtensionInstaller/instance"), "_uid")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.framework.impl:ExtensionInstaller/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

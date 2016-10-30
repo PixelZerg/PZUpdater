@@ -1,0 +1,131 @@
+class
+ refid "kabam.rotmg.util.components:UIAssetsHelper"
+ instance QName(PackageNamespace("kabam.rotmg.util.components"), "UIAssetsHelper")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.util.components:UIAssetsHelper")
+  iinit
+   refid "kabam.rotmg.util.components:UIAssetsHelper/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "kabam.rotmg.util.components:UIAssetsHelper/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "LEFT_NEVIGATOR")
+    pushstring          "left"
+    initproperty        QName(PackageNamespace(""), "LEFT_NEVIGATOR")
+
+    findproperty        QName(PackageNamespace(""), "RIGHT_NEVIGATOR")
+    pushstring          "right"
+    initproperty        QName(PackageNamespace(""), "RIGHT_NEVIGATOR")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "LEFT_NEVIGATOR") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("left") end
+ trait const QName(PackageNamespace(""), "RIGHT_NEVIGATOR") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("right") end
+ trait method QName(PackageNamespace(""), "createLeftNevigatorIcon") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.util.components:UIAssetsHelper/class/createLeftNevigatorIcon"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("flash.display"), "Sprite")
+   flag HAS_OPTIONAL
+   optional Utf8("left")
+   optional Integer(4)
+   optional Integer(0)
+   body
+    maxstack 3
+    localcount 7
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            4
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "LEFT_NEVIGATOR")
+     ifne                L15
+
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterface"
+     pushbyte            55
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            4
+
+     jump                L21
+
+L15:
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterface"
+     pushbyte            54
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal            4
+
+L21:
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     getlocal            4
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+     dup
+     setlocal            5
+
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "scaleX")
+
+     getlocal            5
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "scaleY")
+
+     getlocal            5
+     getlocal3
+     setproperty         QName(PackageNamespace(""), "rotation")
+
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     coerce              QName(PackageNamespace("flash.display"), "Sprite")
+     dup
+     setlocal            6
+
+     getlocal            5
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal            6
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

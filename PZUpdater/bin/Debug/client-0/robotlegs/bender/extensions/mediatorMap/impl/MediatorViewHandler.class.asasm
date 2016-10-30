@@ -1,0 +1,367 @@
+class
+ refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), "MediatorViewHandler")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IMediatorViewHandler", [PackageNamespace("robotlegs.bender.extensions.mediatorMap.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")
+  iinit
+   refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/init"
+   param QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorFactory")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     newarray            0
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_mappings")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     pushtrue
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_factory")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_mappings") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_factory") type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorFactory") end
+  trait method QName(PackageNamespace(""), "addMapping")
+   method
+    refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/addMapping"
+    param QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMapping")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_mappings")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      convert_i
+      setlocal2
+
+      getlocal2
+      pushbyte            -1
+      ifngt               L12
+
+      returnvoid
+
+L12:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_mappings")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "flushCache"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeMapping")
+   method
+    refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/removeMapping"
+    param QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMapping")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_mappings")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      convert_i
+      setlocal2
+
+      getlocal2
+      pushbyte            -1
+      ifne                L12
+
+      returnvoid
+
+L12:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_mappings")
+      getlocal2
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "flushCache"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "handleView")
+   method
+    refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/handleView"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "getInterestedMappingsFor"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      getlocal3
+      iffalse             L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_factory")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorFactory"), "createMediators"), 3
+
+L16:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "handleItem")
+   method
+    refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/handleItem"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "getInterestedMappingsFor"), 2
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      getlocal3
+      iffalse             L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_factory")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorFactory"), "createMediators"), 3
+
+L16:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "flushCache")
+   method
+    refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/flushCache"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      pushtrue
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "getInterestedMappingsFor")
+   method
+    refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMapping")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+      pushfalse
+      ifstrictne          L13
+
+      pushnull
+      returnvalue
+
+L13:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+      getlex              QName(PackageNamespace(""), "undefined")
+      ifne                L76
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      pushfalse
+      setproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_mappings")
+      coerce_a
+      setlocal            5
+
+      jump                L64
+
+L31:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMapping")
+      setlocal3
+
+      getlocal3
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMapping"), "validate"), 0
+
+      getlocal3
+      getproperty         QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMapping"), "matcher")
+      getlocal1
+      callproperty        QName(Namespace("robotlegs.bender.extensions.matching:ITypeFilter"), "matches"), 1
+      iffalse             L64
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+      coerce_a
+      dup
+      iftrue              L57
+
+      pop
+      newarray            0
+      coerce_a
+L57:
+      setproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+      getlocal3
+      callpropvoid        Multiname("push", [PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")]), 1
+
+L64:
+      hasnext2            5, 4
+      iftrue              L31
+
+      kill                5
+      kill                4
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+      pushfalse
+      ifstrictne          L76
+
+      pushnull
+      returnvalue
+
+L76:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), "_knownMappings")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/instance/getInterestedMappingsFor"), PackageNamespace("robotlegs.bender.extensions.mediatorMap.impl"), PackageInternalNs("robotlegs.bender.extensions.mediatorMap.impl"), ProtectedNamespace("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler"), StaticProtectedNs("robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler")])
+      getlex              QName(PackageNamespace(""), "Array")
+      astypelate
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.extensions.mediatorMap.impl:MediatorViewHandler/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,98 @@
+class
+ refid "kabam.rotmg.promotions.commands:MakeBeginnersPackagePaymentCommand"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.commands"), "MakeBeginnersPackagePaymentCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.promotions.commands:MakeBeginnersPackagePaymentCommand")
+  iinit
+   refid "kabam.rotmg.promotions.commands:MakeBeginnersPackagePaymentCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "MakePaymentTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "init") flag METADATA type QName(PackageNamespace("kabam.rotmg.packages.control"), "InitPackagesSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.promotions.commands:MakeBeginnersPackagePaymentCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      callpropvoid        QName(Namespace("kabam.lib.tasks:Task"), "start"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callpropvoid        QName(PackageNamespace(""), "markAsPurchased"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "init")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.commands:MakeBeginnersPackagePaymentCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

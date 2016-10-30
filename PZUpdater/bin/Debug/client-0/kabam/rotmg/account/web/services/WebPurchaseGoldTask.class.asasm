@@ -1,0 +1,121 @@
+class
+ refid "kabam.rotmg.account.web.services:WebPurchaseGoldTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.services"), "WebPurchaseGoldTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  implements Multiname("PurchaseGoldTask", [PackageNamespace("kabam.rotmg.account.core.services")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.services:WebPurchaseGoldTask")
+  iinit
+   refid "kabam.rotmg.account.web.services:WebPurchaseGoldTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "offer") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "offersModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.model"), "OfferModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "paymentMethod") flag METADATA type QName(PackageNamespace(""), "String")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.web.services:WebPurchaseGoldTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.web.services:WebPurchaseGoldTask/instance/kabam.rotmg.account.web.services:WebPurchaseGoldTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "paymentMethod")
+      setproperty         Multiname("paymentMethod", [PrivateNamespace(null, "kabam.rotmg.account.web.services:WebPurchaseGoldTask/instance/kabam.rotmg.account.web.services:WebPurchaseGoldTask:startTask#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.web.services:WebPurchaseGoldTask/instance/kabam.rotmg.account.web.services:WebPurchaseGoldTask:startTask#1"), PackageNamespace("kabam.rotmg.account.web.services"), PackageInternalNs("kabam.rotmg.account.web.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.web.services:WebPurchaseGoldTask"), StaticProtectedNs("kabam.rotmg.account.web.services:WebPurchaseGoldTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offersModel")
+      getproperty         QName(PackageNamespace(""), "offers")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offers")
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "paymentMethod")
+      callproperty        QName(PackageNamespace(""), "getPaymentMethodByLabel"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "tok")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "exp")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offer")
+      callproperty        QName(PackageNamespace(""), "getURL"), 3
+      coerce_s
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "navigateToURL")
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      getlocal3
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+      pushstring          "_blank"
+      callpropvoid        QName(PackageNamespace("flash.net"), "navigateToURL"), 2
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.services:WebPurchaseGoldTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

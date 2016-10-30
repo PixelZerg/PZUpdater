@@ -1,0 +1,336 @@
+class
+ refid "kabam.rotmg.stage3D.Object3D:Util"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Util")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.stage3D.Object3D:Util")
+  iinit
+   refid "kabam.rotmg.stage3D.Object3D:Util/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D.Object3D:Util/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "perspectiveProjection") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.stage3D.Object3D:Util/class/perspectiveProjection"
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("flash.geom"), "Matrix3D")
+   flag HAS_OPTIONAL
+   optional Integer(90)
+   optional Integer(1)
+   optional Integer(1)
+   optional Integer(2048)
+   body
+    maxstack 19
+    localcount 15
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal3
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     getlex              QName(PackageNamespace(""), "Math")
+     getproperty         QName(PackageNamespace(""), "PI")
+     multiply
+     pushshort           360
+     divide
+     callproperty        QName(PackageNamespace(""), "tan"), 1
+     multiply
+     convert_d
+     dup
+     setlocal            5
+
+     negate
+     convert_d
+     dup
+     setlocal            6
+
+     getlocal2
+     multiply
+     convert_d
+     setlocal            7
+
+     getlocal            5
+     getlocal2
+     multiply
+     convert_d
+     setlocal            8
+
+     pushbyte            2
+     getlocal3
+     multiply
+     getlocal            8
+     getlocal            7
+     subtract
+     divide
+     convert_d
+     setlocal            9
+
+     pushbyte            2
+     getlocal3
+     multiply
+     getlocal            5
+     getlocal            6
+     subtract
+     divide
+     convert_d
+     setlocal            10
+
+     getlocal            8
+     getlocal            7
+     add
+     getlocal            8
+     getlocal            7
+     subtract
+     divide
+     convert_d
+     setlocal            11
+
+     getlocal            5
+     getlocal            6
+     add
+     getlocal            5
+     getlocal            6
+     subtract
+     divide
+     convert_d
+     setlocal            12
+
+     getlocal            4
+     getlocal3
+     add
+     negate
+     getlocal            4
+     getlocal3
+     subtract
+     divide
+     convert_d
+     setlocal            13
+
+     pushbyte            -2
+     getlocal            4
+     getlocal3
+     multiply
+     multiply
+     getlocal            4
+     getlocal3
+     subtract
+     divide
+     convert_d
+     setlocal            14
+
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Util/class/perspectiveProjection#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D.Object3D:Util/class/perspectiveProjection#1"), PackageNamespace("kabam.rotmg.stage3D.Object3D"), PackageInternalNs("kabam.rotmg.stage3D.Object3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D.Object3D:Util"), StaticProtectedNs("kabam.rotmg.stage3D.Object3D:Util"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "Number")
+     applytype           1
+     getglobalscope
+     getlocal            9
+     pushbyte            0
+     dup
+     dup
+     pushbyte            0
+     getlocal            10
+     pushbyte            0
+     dup
+     getlocal            11
+     getlocal            12
+     getlocal            13
+     pushbyte            -1
+     pushbyte            0
+     dup
+     getlocal            14
+     pushbyte            0
+     newarray            16
+     call                1
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "readString") flag FINAL dispid 4
+  method
+   refid "kabam.rotmg.stage3D.Object3D:Util/class/readString"
+   param QName(PackageNamespace("flash.utils"), "ByteArray")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 7
+    localcount 6
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     convert_u
+     setlocal            5
+
+     pushstring          ""
+     setlocal3
+
+     pushbyte            0
+     setlocal            4
+
+     jump                L44
+
+L10:
+     label
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "readUnsignedByte"), 0
+     convert_u
+     dup
+     setlocal            5
+
+     pushbyte            0
+     ifstrictne          L36
+
+     getlocal1
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "position")
+     getlex              QName(PackageNamespace(""), "Math")
+     pushbyte            0
+     getlocal2
+     getlocal            4
+     pushbyte            1
+     add
+     subtract
+     callproperty        QName(PackageNamespace(""), "max"), 2
+     add
+     setproperty         QName(PackageNamespace(""), "position")
+
+     jump                L47
+
+     ; 0x10
+     ; 0x0D
+     ; 0x00
+     ; 0x00
+L36:
+     getlocal3
+     getlex              QName(PackageNamespace(""), "String")
+     getlocal            5
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "fromCharCode"), 1
+     add
+     coerce_s
+     setlocal3
+
+     inclocal_i          4
+L44:
+     getlocal            4
+     getlocal2
+     iflt                L10
+
+L47:
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "upperPowerOfTwo") flag FINAL dispid 5
+  method
+   refid "kabam.rotmg.stage3D.Object3D:Util/class/upperPowerOfTwo"
+   param QName(PackageNamespace(""), "uint")
+   returns QName(PackageNamespace(""), "uint")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     decrement
+     convert_u
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            1
+     rshift
+     bitor
+     convert_u
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            2
+     rshift
+     bitor
+     convert_u
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            4
+     rshift
+     bitor
+     convert_u
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            8
+     rshift
+     bitor
+     convert_u
+     setlocal1
+
+     getlocal1
+     getlocal1
+     pushbyte            16
+     rshift
+     bitor
+     convert_u
+     setlocal1
+
+     getlocal1
+     increment
+     convert_u
+     setlocal1
+
+     getlocal1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,229 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:ConfettiEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ConfettiEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:ConfettiEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:ConfettiEffect/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+   param QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   optional False()
+   body
+    maxstack 4
+    localcount 6
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "start_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "end_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "color_")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "lifetime_")
+
+     getlocal0
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "confettiColor_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "end_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "lifetime_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "confettiColor_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:ConfettiEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 8
+     localcount 9
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            4
+
+      pushbyte            0
+      setlocal            7
+
+      pushnull
+      coerce              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ConfettiEffect"), "ConfettiParticle")
+      setlocal            8
+
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      pushbyte            5
+      setlocal3
+
+      pushint             65535
+      pushint             16711935
+      pushint             16776960
+      pushint             16777215
+      newarray            4
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      pushbyte            0
+      setlocal            6
+
+      jump                L102
+
+L31:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "confettiColor_")
+      iffalse             L51
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      add
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ConfettiEffect/instance/update"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ConfettiEffect"), PackageNamespace("com.company.assembleegameclient.objects.particles"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:ConfettiEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ConfettiEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")])
+      convert_i
+      setlocal            4
+
+      jump                L55
+
+L51:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      convert_i
+      setlocal            4
+
+L55:
+      pushbyte            3
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            5
+      multiply
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      add
+      pushbyte            20
+      multiply
+      convert_i
+      setlocal            7
+
+      findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ConfettiEffect"), "ConfettiParticle")
+      pushdouble          1.85
+      getlocal            7
+      getlocal            4
+      pushshort           500
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetime_")
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushshort           500
+      multiply
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifetime_")
+      multiply
+      add
+      pushdouble          0.1
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.1
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      constructprop       QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ConfettiEffect"), "ConfettiParticle"), 7
+      coerce              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:ConfettiEffect"), "ConfettiParticle")
+      setlocal            8
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            8
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          6
+L102:
+      getlocal            6
+      getlocal3
+      iflt                L31
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:ConfettiEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

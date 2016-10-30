@@ -1,0 +1,110 @@
+class
+ refid "kabam.rotmg.pets.view.components:FusionStrengthMediator"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "FusionStrengthMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:FusionStrengthMediator")
+  iinit
+   refid "kabam.rotmg.pets.view.components:FusionStrengthMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "FusionStrength")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petSlotsState") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetSlotsState")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view.components:FusionStrengthMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petSlotsState")
+      getproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+      iftrue              L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petSlotsState")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petsModel")
+      callproperty        QName(PackageNamespace(""), "getActivePet"), 0
+      setproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+
+L12:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petSlotsState")
+      callproperty        QName(PackageNamespace(""), "isAcceptableFuseState"), 0
+      iffalse             L28
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "FusionCalculator")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petSlotsState")
+      getproperty         QName(PackageNamespace(""), "leftSlotPetVO")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petSlotsState")
+      getproperty         QName(PackageNamespace(""), "rightSlotPetVO")
+      callproperty        QName(PackageNamespace(""), "getStrengthPercentage"), 2
+      callpropvoid        QName(PackageNamespace(""), "setFusionStrength"), 1
+
+      jump                L31
+
+L28:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+L31:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:FusionStrengthMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

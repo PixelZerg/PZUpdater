@@ -1,0 +1,207 @@
+class
+ refid "kabam.rotmg.pets.view:PetSkinGroupMediator"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view"), "PetSkinGroupMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view:PetSkinGroupMediator")
+  iinit
+   refid "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.view"), "PetSkinGroup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petFormModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetFormModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateSelectedPetForm") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.controller.reskin"), "UpdateSelectedPetForm")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petFormModel")
+      getproperty         QName(PackageNamespace(""), "petSkinGroupVOs")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "index")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#1"), PackageNamespace("kabam.rotmg.pets.view"), PackageInternalNs("kabam.rotmg.pets.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.view:PetSkinGroupMediator"), StaticProtectedNs("kabam.rotmg.pets.view:PetSkinGroupMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetSkinGroupVO")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "petRarityEnum")
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateSelectedPetForm")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#0"), "onUpdateSelectedPetForm")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "skinSelected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#0"), "onSkinSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#0"), "isSelectedPetRarerThan"), 1
+      setproperty         QName(PackageNamespace(""), "disabled")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "init"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#0"), "onSkinSelected")
+   method
+    refid "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize/onSkinSelected"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petFormModel")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getSkinID"), 0
+      callpropvoid        QName(PackageNamespace(""), "setSelectedSkin"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateSelectedPetForm")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#0"), "onUpdateSelectedPetForm")
+   method
+    refid "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize/onUpdateSelectedPetForm"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petFormModel")
+      callproperty        QName(PackageNamespace(""), "getSelectedSkin"), 0
+      callpropvoid        QName(PackageNamespace(""), "onSlotSelected"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize#0"), "isSelectedPetRarerThan")
+   method
+    refid "kabam.rotmg.pets.view:PetSkinGroupMediator/instance/kabam.rotmg.pets.view:PetSkinGroupMediator/instance/initialize/isSelectedPetRarerThan"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petFormModel")
+      callproperty        QName(PackageNamespace(""), "getSelectedPet"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      setlocal2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getRarity"), 0
+      callproperty        QName(PackageNamespace(""), "selectByValue"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "ordinal")
+      convert_i
+      setlocal            4
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "ordinal")
+      getlocal            4
+      greaterthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view:PetSkinGroupMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

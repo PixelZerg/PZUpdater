@@ -1,0 +1,115 @@
+class
+ refid "kabam.rotmg.arena.model:ArenaLeaderboardModel"
+ instance QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.model:ArenaLeaderboardModel")
+  iinit
+   refid "kabam.rotmg.arena.model:ArenaLeaderboardModel/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "clearFilters")
+   method
+    refid "kabam.rotmg.arena.model:ArenaLeaderboardModel/instance/clearFilters"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "FILTERS")
+      coerce_a
+      setlocal3
+
+      jump                L19
+
+L11:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "clearEntries"), 0
+
+L19:
+      hasnext2            3, 2
+      iftrue              L11
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.model:ArenaLeaderboardModel/class/init"
+  body
+   maxstack 8
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "FILTERS")
+    getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.arena.model:ArenaLeaderboardModel/class/init#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.arena.model:ArenaLeaderboardModel/class/init#1"), PackageNamespace("kabam.rotmg.arena.model"), PackageInternalNs("kabam.rotmg.arena.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.arena.model:ArenaLeaderboardModel"), StaticProtectedNs("kabam.rotmg.arena.model:ArenaLeaderboardModel"), PackageNamespace("__AS3__.vec")])
+    getlex              QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+    applytype           1
+    getglobalscope
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+    getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+    getproperty         QName(PackageNamespace(""), "ARENA_LEADERBOARD_ALLTIME")
+    pushstring          "alltime"
+    constructprop       QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter"), 2
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+    getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+    getproperty         QName(PackageNamespace(""), "ARENA_LEADERBOARD_WEEKLY")
+    pushstring          "weekly"
+    constructprop       QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter"), 2
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")
+    getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+    getproperty         QName(PackageNamespace(""), "ARENA_LEADERBOARD_YOURRANK")
+    pushstring          "personal"
+    constructprop       QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter"), 2
+    newarray            3
+    call                1
+    initproperty        QName(PackageNamespace(""), "FILTERS")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "FILTERS") slotid 1 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter")>) end
+end ; class

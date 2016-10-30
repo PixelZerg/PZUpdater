@@ -1,0 +1,123 @@
+class
+ refid "kabam.rotmg.messaging.impl.outgoing:ChangeTrade"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "ChangeTrade")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "OutgoingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:ChangeTrade")
+  iinit
+   refid "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), PackageInternalNs("kabam.rotmg.messaging.impl.outgoing"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:ChangeTrade"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:ChangeTrade"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:OutgoingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "Boolean")
+     applytype           1
+     construct           0
+     initproperty        QName(PackageNamespace(""), "offer_")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "offer_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Boolean")>) end
+  trait method QName(PackageNamespace(""), "writeToOutput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/instance/writeToOutput"
+    param QName(PackageNamespace("flash.utils"), "IDataOutput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offer_")
+      getproperty         QName(PackageNamespace(""), "length")
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeShort"), 1
+
+      pushbyte            0
+      setlocal2
+
+      jump                L18
+
+L10:
+      label
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offer_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/instance#0"), PrivateNamespace(null, "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/instance#1"), PackageNamespace(""), PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), PackageInternalNs("kabam.rotmg.messaging.impl.outgoing"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:ChangeTrade"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:ChangeTrade"), StaticProtectedNs("kabam.rotmg.messaging.impl.outgoing:OutgoingMessage"), StaticProtectedNs("kabam.lib.net.impl:Message")])
+      callpropvoid        QName(Namespace("flash.utils:IDataOutput"), "writeBoolean"), 1
+
+      inclocal_i          2
+L18:
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "offer_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L10
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "CHANGETRADE"
+      pushstring          "offer_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.outgoing:ChangeTrade/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

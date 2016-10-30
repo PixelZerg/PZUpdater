@@ -1,0 +1,296 @@
+class
+ refid "kabam.lib.tasks:TaskGroup"
+ instance QName(PackageNamespace("kabam.lib.tasks"), "TaskGroup")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.tasks:TaskGroup")
+  iinit
+   refid "kabam.lib.tasks:TaskGroup/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#1"), PackageNamespace(""), PackageNamespace("kabam.lib.tasks"), PackageInternalNs("kabam.lib.tasks"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.tasks:TaskGroup"), StaticProtectedNs("kabam.lib.tasks:TaskGroup"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "pending") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "add")
+   method
+    refid "kabam.lib.tasks:TaskGroup/instance/add"
+    param QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.lib.tasks:TaskGroup"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.lib.tasks:TaskGroup/instance/kabam.lib.tasks:TaskGroup:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks")
+      getproperty         QName(PackageNamespace(""), "length")
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "pending")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "pending")
+      pushbyte            0
+      ifngt               L14
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "startAllTasks"), 0
+
+      jump                L17
+
+L14:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.lib.tasks:TaskGroup"), "onReset") flag OVERRIDE
+   method
+    refid "kabam.lib.tasks:TaskGroup/instance/kabam.lib.tasks:TaskGroup:onReset"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks")
+      coerce_a
+      setlocal3
+
+      jump                L20
+
+L12:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+L20:
+      hasnext2            3, 2
+      iftrue              L12
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "startAllTasks")
+   method
+    refid "kabam.lib.tasks:TaskGroup/instance/kabam.lib.tasks:TaskGroup/instance/startAllTasks"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "pending")
+      convert_i
+      setlocal1
+
+      jump                L21
+
+L7:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#1"), PackageNamespace(""), PackageNamespace("kabam.lib.tasks"), PackageInternalNs("kabam.lib.tasks"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.tasks:TaskGroup"), StaticProtectedNs("kabam.lib.tasks:TaskGroup"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getproperty         QName(PackageNamespace(""), "lastly")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "onTaskFinished")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#1"), PackageNamespace(""), PackageNamespace("kabam.lib.tasks"), PackageInternalNs("kabam.lib.tasks"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.tasks:TaskGroup"), StaticProtectedNs("kabam.lib.tasks:TaskGroup"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+L21:
+      getlocal1
+      dup
+      decrement_i
+      setlocal1
+
+      iftrue              L7
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "onTaskFinished")
+   method
+    refid "kabam.lib.tasks:TaskGroup/instance/kabam.lib.tasks:TaskGroup/instance/onTaskFinished"
+    param QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal2
+      iffalse             L22
+
+      getlocal0
+      dup
+      setlocal            4
+
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "pending")
+      decrement_i
+      dup
+      setlocal            5
+
+      getlocal            4
+      getlocal            5
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "pending")
+
+      kill                5
+      kill                4
+      pushbyte            0
+      ifne                L21
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+L21:
+      jump                L26
+
+L22:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushfalse
+      getlocal3
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+L26:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    refid "kabam.lib.tasks:TaskGroup/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "[TaskGroup("
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskGroup/instance#0"), "tasks")
+      pushstring          ","
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+      add
+      pushstring          ")]"
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.tasks:TaskGroup/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

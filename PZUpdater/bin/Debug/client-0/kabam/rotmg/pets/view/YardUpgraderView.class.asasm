@@ -1,0 +1,716 @@
+class
+ refid "kabam.rotmg.pets.view:YardUpgraderView"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view"), "YardUpgraderView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view:YardUpgraderView")
+  iinit
+   refid "kabam.rotmg.pets.view:YardUpgraderView/instance/init#1"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.view"), "YardUpgraderView_PetYardImage")
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "PetYardImage")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+     getproperty         QName(PackageNamespace(""), "WINDOW_BACKGROUND_WIDTH")
+     pushshort           392
+     callproperty        QName(PackageNamespace(""), "returnYardUpgradeWindowBackground"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "background")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            18
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             11776947
+     pushbyte            13
+     pushfalse
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777103
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushstring          "YardUpgraderView.upgrade"
+     pushshort           357
+     callproperty        QName(PackageNamespace(""), "returnFameOrGoldButtonBar"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+     getproperty         QName(PackageNamespace(""), "WINDOW_BACKGROUND_WIDTH")
+     callproperty        QName(PackageNamespace(""), "returnCloseButton"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "closeButton")
+
+     getlocal0
+     getlocal0
+     constructprop       QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "PetYardImage"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "petYardImage")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view"), "StatusBox")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view"), "StatusBox"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "currentMaxBox")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "closed")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "PetYardImage") type QName(PackageNamespace(""), "Class") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "background") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PopupWindowBackground") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "FameOrGoldBuyButtons") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "closeButton") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "DialogCloseButton") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "petYardImage") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "currentMaxBox") type QName(PackageNamespace("kabam.rotmg.pets.view"), "StatusBox") end
+  trait const QName(PackageNamespace(""), "closed") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "famePurchase") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "goldPurchase") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "vo") type QName(PackageNamespace("kabam.rotmg.pets.data"), "YardUpgraderVO") end
+  trait method QName(PackageNamespace(""), "init")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/init#0"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "YardUpgraderVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "vo")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "closeButton")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "handlePurchaseButtons"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "setTextValues"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "waitForTextChanged"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "addChildren"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionAssets"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "handlePurchaseButtons")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/handlePurchaseButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getproperty         QName(PackageNamespace(""), "fameButtonClicked")
+      initproperty        QName(PackageNamespace(""), "famePurchase")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getproperty         QName(PackageNamespace(""), "goldButtonClicked")
+      initproperty        QName(PackageNamespace(""), "goldPurchase")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "vo")
+      getproperty         QName(PackageNamespace(""), "famePrice")
+      callpropvoid        QName(PackageNamespace(""), "setFamePrice"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "vo")
+      getproperty         QName(PackageNamespace(""), "goldPrice")
+      callpropvoid        QName(PackageNamespace(""), "setGoldPrice"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "setTextValues")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/setTextValues"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "YardUpgraderView.title"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "vo")
+      getproperty         QName(PackageNamespace(""), "nextRarityLevel")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "wrapInBraces"), 1
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      pushstring          "YardUpgraderView.info"
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "WINDOW_BACKGROUND_WIDTH")
+      pushbyte            40
+      subtract
+      callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setWordWrap"), 1
+      getlex              QName(PackageNamespace("flash.text"), "TextFormatAlign")
+      getproperty         QName(PackageNamespace(""), "CENTER")
+      callpropvoid        QName(PackageNamespace(""), "setHorizontalAlign"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "currentMaxBox")
+      pushstring          "YardUpgraderView.currentMax"
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "vo")
+      getproperty         QName(PackageNamespace(""), "currentRarityLevel")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "wrapInBraces"), 1
+      callpropvoid        QName(PackageNamespace(""), "updateTextfields"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "wrapInBraces")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/wrapInBraces"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "{"
+      getlocal1
+      add
+      pushstring          "}"
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "onClosed")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/onClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closed")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getproperty         QName(PackageNamespace(""), "positioned")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionButtonBar")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setFeedGoldCost")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/setFeedGoldCost"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setGoldPrice"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setFeedFameCost")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/setFeedFameCost"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setFamePrice"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "onAnimating")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/onAnimating"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "closeButton")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "disabled")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setDisabled"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "addChildren")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "petYardImage")
+      pushbyte            31
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "background")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "closeButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "petYardImage")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "currentMaxBox")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionAssets")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/positionAssets"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionThis"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "petYardImage")
+      pushbyte            30
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "currentMaxBox")
+      pushbyte            11
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "currentMaxBox")
+      pushshort           300
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionThis")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/positionThis"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushdouble          0.5
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushdouble          0.5
+      multiply
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "waitForTextChanged")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/waitForTextChanged"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionTextField")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getproperty         QName(PackageNamespace(""), "positioned")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionButtonBar")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionTextField")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/positionTextField"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "WINDOW_BACKGROUND_WIDTH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushdouble          0.5
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "WINDOW_BACKGROUND_WIDTH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushdouble          0.5
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "WINDOW_BACKGROUND_WIDTH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushdouble          0.5
+      multiply
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "titleTextfield")
+      pushbyte            20
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "upgradeTextfield")
+      pushshort           229
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "rarityTextfield")
+      pushshort           269
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "positionButtonBar")
+   method
+    refid "kabam.rotmg.pets.view:YardUpgraderView/instance/kabam.rotmg.pets.view:YardUpgraderView/instance/positionButtonBar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "WINDOW_BACKGROUND_WIDTH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view:YardUpgraderView/instance"), "buttonBar")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view:YardUpgraderView/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

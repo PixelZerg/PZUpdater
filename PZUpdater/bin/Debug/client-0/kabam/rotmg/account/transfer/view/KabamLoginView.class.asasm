@@ -1,0 +1,507 @@
+class
+ refid "kabam.rotmg.account.transfer.view:KabamLoginView"
+ instance QName(PackageNamespace("kabam.rotmg.account.transfer.view"), "KabamLoginView")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.transfer.view:KabamLoginView")
+  iinit
+   refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "Kabam.com account transfer"
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "WEB_LOGIN_DIALOG_LEFT")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "WEB_LOGIN_DIALOG_RIGHT")
+     pushstring          "/signIn"
+     constructsuper      4
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "makeUI"), 0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "forgotText")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     initproperty        QName(PackageNamespace(""), "forgot")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlex              QName(PackageNamespace(""), "leftButton_")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     initproperty        QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("kabam.rotmg.account.transfer.model"), "TransferAccountData")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "signIn")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "signIn") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "forgot") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "email") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "password") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "forgotText") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "makeUI")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/makeUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            13
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      pushstring          "Please login to Kabam.com"
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+      pushbyte            5
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      pushdouble          0.5
+      pushbyte            12
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.account.ui:Frame"), "positionText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "headerText")
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.account.ui:Frame"), "positionText"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "WEB_LOGIN_DIALOG_EMAIL")
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "email")
+
+      findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "email")
+      callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "WEB_LOGIN_DIALOG_PASSWORD")
+      pushtrue
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "password")
+
+      findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "password")
+      callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText")
+      pushbyte            12
+      pushfalse
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "WEB_LOGIN_DIALOG_FORGOT")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedClickableText"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "forgotText")
+
+      findpropstrict      QName(PackageNamespace(""), "addNavigationText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "forgotText")
+      callpropvoid        QName(PackageNamespace(""), "addNavigationText"), 1
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onSignIn")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onRemovedFromStage")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onKeyDown")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.util"), "KeyCodes")
+      getproperty         QName(PackageNamespace(""), "ENTER")
+      ifne                L9
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onSignInSub"), 0
+
+L9:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onCancel")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onSignIn")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/onSignIn"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onSignInSub"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "onSignInSub")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/onSignInSub"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.account.transfer.model"), "TransferAccountData")
+      setlocal1
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "isEmailValid"), 0
+      convert_b
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "isPasswordValid"), 0
+      convert_b
+L14:
+      iffalse             L33
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.transfer.model"), "TransferAccountData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.transfer.model"), "TransferAccountData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.transfer.model"), "TransferAccountData")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "email")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      setproperty         QName(PackageNamespace(""), "currentEmail")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "password")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      setproperty         QName(PackageNamespace(""), "currentPassword")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "signIn")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L33:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "isPasswordValid")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/isPasswordValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "password")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      pushstring          ""
+      equals
+      not
+      setlocal1
+
+      getlocal1
+      iftrue              L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "password")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "WEB_LOGIN_DIALOG_PASSWORD_ERROR")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L16:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "isEmailValid")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/kabam.rotmg.account.transfer.view:KabamLoginView/instance/isEmailValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "email")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      pushstring          ""
+      equals
+      not
+      setlocal1
+
+      getlocal1
+      iftrue              L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "email")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "WEBLOGINDIALOG_EMAIL_ERROR")
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L16:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setError")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/setError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "password")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setEmail")
+   method
+    refid "kabam.rotmg.account.transfer.view:KabamLoginView/instance/setEmail"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.view:KabamLoginView/instance"), "email")
+      getproperty         QName(PackageNamespace(""), "inputText_")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "text")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.transfer.view:KabamLoginView/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

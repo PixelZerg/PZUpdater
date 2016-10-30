@@ -1,0 +1,794 @@
+class
+ refid "com.company.assembleegameclient.mapeditor:SubmitMapForm"
+ instance QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitMapForm")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm")
+  iinit
+   refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   body
+    maxstack 9
+    localcount 4
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "SubmitMapForm.Title"
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "FRAME_CANCEL")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "WEB_CHANGE_PASSWORD_RIGHT")
+     pushnull
+     pushshort           300
+     constructsuper      5
+
+     findproperty        QName(PackageNamespace(""), "cancel")
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     setproperty         QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "account")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapjm")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+     pushstring          "Map Name"
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 1
+     initproperty        QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapName")
+
+     findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+     getlocal0
+     getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapName")
+     callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.editor.view.components.savedialog"), "TagsInputField")
+     pushstring          ""
+     pushshort           238
+     pushbyte            50
+     pushtrue
+     constructprop       QName(PackageNamespace("kabam.rotmg.editor.view.components.savedialog"), "TagsInputField"), 4
+     initproperty        QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "tags")
+
+     findpropstrict      QName(PackageNamespace(""), "addComponent")
+     getlocal0
+     getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "tags")
+     pushbyte            12
+     callpropvoid        QName(PackageNamespace(""), "addComponent"), 2
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField")
+     pushstring          "Description"
+     pushfalse
+     pushshort           238
+     pushbyte            100
+     pushbyte            20
+     pushshort           256
+     pushtrue
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField"), 7
+     initproperty        QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+
+     findpropstrict      QName(PackageNamespace(""), "addTextInputField")
+     getlocal0
+     getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+     callpropvoid        QName(PackageNamespace(""), "addTextInputField"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addSpace")
+     pushbyte            35
+     callpropvoid        QName(PackageNamespace(""), "addSpace"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+     pushstring          "Overwrite"
+     pushtrue
+     pushbyte            12
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 3
+     initproperty        QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "checkbox")
+
+     findpropstrict      QName(PackageNamespace(""), "addCheckBox")
+     getlocal0
+     getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "checkbox")
+     callpropvoid        QName(PackageNamespace(""), "addCheckBox"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "enableButtons"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapName") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "TextInputField") end
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "tags") type QName(PackageNamespace("kabam.rotmg.editor.view.components.savedialog"), "TagsInputField") end
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapjm") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "account") type QName(PackageNamespace("kabam.rotmg.account.core"), "Account") end
+  trait slot QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "checkbox") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "disableButtons")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/disableButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onSubmit")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "leftButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "enableButtons")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/enableButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onSubmit")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "leftButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onCancel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onSubmit")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/onSubmit"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 20
+     localcount 10
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "disableButtons"), 0
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapName")
+      callpropvoid        QName(PackageNamespace(""), "clearError"), 0
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.lib.json"), "JsonParser")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.lib.json"), "JsonParser")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapjm")
+      callproperty        QName(Namespace("kabam.lib.json:JsonParser"), "parse"), 1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      getlocal3
+      pushstring          "width"
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      convert_i
+      setlocal            4
+
+      getlocal3
+      pushstring          "height"
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      convert_i
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader")
+      constructprop       QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader"), 0
+      coerce              QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader")
+      dup
+      setlocal            6
+
+      pushstring          "guid"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "password"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getPassword"), 0
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "name"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapName")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "description"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "width"
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "height"
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "mapjm"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapjm")
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "tags"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "tags")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "totalObjects"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("numObjects", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      pushstring          "totalTiles"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("numTiles", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlocal            6
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("thumbnail", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushstring          "foo.png"
+      pushstring          "thumbnail"
+      callpropvoid        QName(PackageNamespace(""), "addFile"), 3
+
+      getlocal            6
+      pushstring          "overwrite"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "checkbox")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      iffalse             L104
+
+      pushstring          "on"
+      coerce              QName(PackageNamespace(""), "Object")
+      jump                L106
+
+L104:
+      pushstring          "off"
+      coerce              QName(PackageNamespace(""), "Object")
+L106:
+      callpropvoid        QName(PackageNamespace(""), "addVariable"), 2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      dup
+      setlocal            7
+
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "getAppEngineUrl"), 1
+      pushstring          "/ugc/save"
+      add
+      setlocal            8
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "enableButtons"), 0
+
+      pushstring          "name"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapName")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      pushstring          "description"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      pushstring          "width"
+      getlocal            4
+      pushstring          "height"
+      getlocal            5
+      pushstring          "mapjm"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapjm")
+      pushstring          "tags"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "tags")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      pushstring          "totalObjects"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("numObjects", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushstring          "totalTiles"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("numTiles", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushstring          "thumbnail"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("thumbnail", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushstring          "overwrite"
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "checkbox")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      iffalse             L160
+
+      pushstring          "on"
+      coerce_a
+      jump                L162
+
+L160:
+      pushstring          "off"
+      coerce_a
+L162:
+      newobject           10
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            9
+
+      getlocal0
+      getlocal            9
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "validated"), 1
+      iffalse             L185
+
+      getlocal            6
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal            6
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onCompleteException")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal            6
+      getlocal            8
+      callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+      jump                L187
+
+L185:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "enableButtons"), 0
+
+L187:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onCompleteException")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/onCompleteException"
+    param QName(PackageNamespace("flash.events"), "IOErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      pushstring          "Exception. If persists, please contact dev team."
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "enableButtons"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onComplete")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/onComplete"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      callproperty        QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader"), 1
+      coerce              QName(PackageNamespace("ru.inspirit.net"), "MultipartURLLoader")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "loader")
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "<Success/>"
+      ifne                L30
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      pushstring          "Success! Thank you!"
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.fortune.components"), "TimerCallback")
+      pushbyte            2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onCancel")
+      constructprop       QName(PackageNamespace("kabam.rotmg.fortune.components"), "TimerCallback"), 2
+      pop
+      jump                L57
+
+L30:
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "loader")
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "<.*>(.*)</.*>"
+      callproperty        Multiname("match", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      greaterthan
+      iffalse             L47
+
+      getlocal3
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_s
+      jump                L51
+
+L47:
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "loader")
+      getproperty         QName(PackageNamespace(""), "data")
+      coerce_s
+L51:
+      coerce_s
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+L57:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "enableButtons"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onCancel")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/onCancel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlex              QName(PackageNamespace(""), "parent")
+      iffalse             L9
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L9:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onRemovedFromStage")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      iffalse             L10
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "onSubmit")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L10:
+      getlex              QName(PackageNamespace(""), "cancel")
+      iffalse             L17
+
+      getlex              QName(PackageNamespace(""), "cancel")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      findproperty        QName(PackageNamespace(""), "cancel")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "cancel")
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "validated")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/validated"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          "name"
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getproperty         Multiname("length", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushbyte            6
+      lessthan
+      dup
+      iftrue              L17
+
+      pop
+      getlocal1
+      pushstring          "name"
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getproperty         Multiname("length", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushbyte            24
+      greaterthan
+L17:
+      iffalse             L24
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapName")
+      pushstring          "Map name length out of range (6-24 chars)"
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      pushfalse
+      returnvalue
+
+L24:
+      getlocal1
+      pushstring          "description"
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getproperty         Multiname("length", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushbyte            10
+      lessthan
+      dup
+      iftrue              L39
+
+      pop
+      getlocal1
+      pushstring          "description"
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getproperty         Multiname("length", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushshort           250
+      greaterthan
+L39:
+      iffalse             L46
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      pushstring          "Description length out of range (10-250 chars)"
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      pushfalse
+      returnvalue
+
+L46:
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "isValidMap"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), "isValidMap")
+   method
+    refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/isValidMap"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("numExits", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushbyte            1
+      ifnlt               L13
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      pushstring          "Must have at least one User Dungeon End region drawn in this dungeon. (tmp)"
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      pushfalse
+      returnvalue
+
+L13:
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "mapInfo")
+      getproperty         Multiname("numEntries", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:SubmitMapForm/instance/com.company.assembleegameclient.mapeditor:SubmitMapForm/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:SubmitMapForm"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushbyte            1
+      ifnlt               L24
+
+      getlocal0
+      getproperty         QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "descr")
+      pushstring          "Must have at least one Spawn Region drawn in this dungeon. (tmp)"
+      callpropvoid        QName(PackageNamespace(""), "setError"), 1
+
+      pushfalse
+      returnvalue
+
+L24:
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "cancel") slotid 1 type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+ trait method QName(PackageNamespace(""), "isInitialized") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.mapeditor:SubmitMapForm/class/isInitialized"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace(""), "cancel")
+     pushnull
+     equals
+     not
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,220 @@
+class
+ refid "kabam.rotmg.arena.view:ArenaTimerMediator"
+ instance QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaTimerMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.view:ArenaTimerMediator")
+  iinit
+   refid "kabam.rotmg.arena.view:ArenaTimerMediator/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           6000
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "delayTimer")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.view"), "ArenaTimer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "imminentWave") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.control"), "ImminentArenaWaveSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "arenaDeath") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.control"), "ArenaDeathSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "delayTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.view:ArenaTimerMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "imminentWave")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "startView")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "arenaDeath")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "onArenaDeath")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "delayTimer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "onRestart")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.view:ArenaTimerMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "imminentWave")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "startView")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "arenaDeath")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "onArenaDeath")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "onArenaDeath")
+   method
+    refid "kabam.rotmg.arena.view:ArenaTimerMediator/instance/kabam.rotmg.arena.view:ArenaTimerMediator/instance/onArenaDeath"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "onRestart")
+   method
+    refid "kabam.rotmg.arena.view:ArenaTimerMediator/instance/kabam.rotmg.arena.view:ArenaTimerMediator/instance/onRestart"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "delayTimer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      pushshort           300
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "startView")
+   method
+    refid "kabam.rotmg.arena.view:ArenaTimerMediator/instance/kabam.rotmg.arena.view:ArenaTimerMediator/instance/startView"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.view:ArenaTimerMediator/instance"), "delayTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.view:ArenaTimerMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

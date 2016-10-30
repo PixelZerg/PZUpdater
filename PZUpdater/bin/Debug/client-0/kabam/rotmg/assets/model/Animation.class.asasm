@@ -1,0 +1,528 @@
+class
+ refid "kabam.rotmg.assets.model:Animation"
+ instance QName(PackageNamespace("kabam.rotmg.assets.model"), "Animation")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.assets.model:Animation")
+  iinit
+   refid "kabam.rotmg.assets.model:Animation/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "makeBitmap"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "bitmap")
+
+     getlocal0
+     findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+     getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#1"), PackageNamespace("kabam.rotmg.assets.model"), PackageInternalNs("kabam.rotmg.assets.model"), ProtectedNamespace("kabam.rotmg.assets.model:Animation"), StaticProtectedNs("kabam.rotmg.assets.model:Animation"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("flash.display"), "BitmapData")
+     applytype           1
+     pushbyte            0
+     construct           1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames")
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "makeTimer"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "timer")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "DEFAULT_SPEED") type QName(PackageNamespace(""), "int") value Integer(200) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "bitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "BitmapData")>) end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "index") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "count") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "disposed") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "makeBitmap")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/kabam.rotmg.assets.model:Animation/instance/makeBitmap"
+    returns QName(PackageNamespace("flash.display"), "Bitmap")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "makeTimer")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/kabam.rotmg.assets.model:Animation/instance/makeTimer"
+    returns QName(PackageNamespace("flash.utils"), "Timer")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "DEFAULT_SPEED")
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "Timer")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "iterate")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSpeed")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/getSpeed"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "timer")
+      getproperty         QName(PackageNamespace(""), "delay")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSpeed")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/setSpeed"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "timer")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "delay")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setFrames")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/setFrames"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_REST
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "index")
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      coerce_a
+      setlocal            4
+
+      jump                L30
+
+L18:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames")
+      getlocal2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "count")
+
+L30:
+      hasnext2            4, 3
+      iftrue              L18
+
+      kill                4
+      kill                3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started")
+      iffalse             L40
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      jump                L42
+
+L40:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "iterate"), 0
+
+L42:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addFrame")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/addFrame"
+    param QName(PackageNamespace("flash.display"), "BitmapData")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "count")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started")
+      coerce_a
+      dup
+      iffalse             L17
+
+      pop
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "start"), 0
+      coerce_a
+L17:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "start")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/start"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started")
+      not
+      dup
+      iffalse             L12
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "count")
+      pushbyte            0
+      greaterthan
+L12:
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "iterate"), 0
+
+L18:
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "stop")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/stop"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started")
+      coerce_a
+      dup
+      iffalse             L12
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "timer")
+      callproperty        QName(PackageNamespace(""), "stop"), 0
+      coerce_a
+L12:
+      pop
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "iterate")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/kabam.rotmg.assets.model:Animation/instance/iterate"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "index")
+      increment_i
+      dup
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "index")
+
+      kill                3
+      kill                2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "count")
+      modulo
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "index")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "bitmap")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "index")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#1"), PackageNamespace("kabam.rotmg.assets.model"), PackageInternalNs("kabam.rotmg.assets.model"), ProtectedNamespace("kabam.rotmg.assets.model:Animation"), StaticProtectedNs("kabam.rotmg.assets.model:Animation"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "disposed")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "index")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "count")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "frames")
+      coerce_a
+      setlocal3
+
+      jump                L35
+
+L27:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+L35:
+      hasnext2            3, 2
+      iftrue              L27
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isStarted")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/isStarted"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "started")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isDisposed")
+   method
+    refid "kabam.rotmg.assets.model:Animation/instance/isDisposed"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.assets.model:Animation/instance#0"), "disposed")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.assets.model:Animation/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,112 @@
+class
+ refid "com.company.util:DateFormatterReplacement"
+ instance QName(PackageNamespace("com.company.util"), "DateFormatterReplacement")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.util:DateFormatterReplacement")
+  iinit
+   refid "com.company.util:DateFormatterReplacement/instance/init"
+   body
+    maxstack 13
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "January"
+     pushstring          "February"
+     pushstring          "March"
+     pushstring          "April"
+     pushstring          "May"
+     pushstring          "June"
+     pushstring          "July"
+     pushstring          "August"
+     pushstring          "September"
+     pushstring          "October"
+     pushstring          "November"
+     pushstring          "December"
+     newarray            12
+     initproperty        QName(PrivateNamespace(null, "com.company.util:DateFormatterReplacement/instance"), "months")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "formatString") type QName(PackageNamespace(""), "String") end
+  trait const QName(PrivateNamespace(null, "com.company.util:DateFormatterReplacement/instance"), "months") type QName(PackageNamespace(""), "Array") end
+  trait method QName(PackageNamespace(""), "format")
+   method
+    refid "com.company.util:DateFormatterReplacement/instance/format"
+    param QName(PackageNamespace(""), "Date")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "formatString")
+      coerce_s
+      setlocal2
+
+      getlocal2
+      pushstring          "D"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "date")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      setlocal2
+
+      getlocal2
+      pushstring          "YYYY"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "fullYear")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      setlocal2
+
+      getlocal2
+      pushstring          "MMMM"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.util:DateFormatterReplacement/instance"), "months")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "month")
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.util:DateFormatterReplacement/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.util:DateFormatterReplacement/instance/format"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), ProtectedNamespace("com.company.util:DateFormatterReplacement"), StaticProtectedNs("com.company.util:DateFormatterReplacement")])
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      coerce_s
+      setlocal2
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.util:DateFormatterReplacement/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

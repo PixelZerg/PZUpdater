@@ -1,0 +1,98 @@
+class
+ refid "kabam.rotmg.messaging.impl.outgoing:InvDrop"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "InvDrop")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "OutgoingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.outgoing:InvDrop")
+  iinit
+   refid "kabam.rotmg.messaging.impl.outgoing:InvDrop/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData")
+     constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData"), 0
+     initproperty        QName(PackageNamespace(""), "slotObject_")
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "slotObject_") type QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "SlotObjectData") end
+  trait method QName(PackageNamespace(""), "writeToOutput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.outgoing:InvDrop/instance/writeToOutput"
+    param QName(PackageNamespace("flash.utils"), "IDataOutput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "slotObject_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "writeToOutput"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.outgoing:InvDrop/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "INVDROP"
+      pushstring          "slotObject_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.outgoing:InvDrop/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

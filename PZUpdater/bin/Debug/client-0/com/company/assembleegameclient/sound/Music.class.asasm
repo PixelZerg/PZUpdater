@@ -1,0 +1,252 @@
+class
+ refid "com.company.assembleegameclient.sound:Music"
+ instance QName(PackageNamespace("com.company.assembleegameclient.sound"), "Music")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.sound:Music")
+  iinit
+   refid "com.company.assembleegameclient.sound:Music/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.sound:Music/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "music_")
+    pushnull
+    setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "music_")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicChannel_")
+    pushnull
+    setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicChannel_")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "volume")
+    pushdouble          0.3
+    setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "volume")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "music_") slotid 1 type QName(PackageNamespace("flash.media"), "Sound") value Null() end
+ trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform") slotid 2 type QName(PackageNamespace("flash.media"), "SoundTransform") end
+ trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicChannel_") slotid 3 type QName(PackageNamespace("flash.media"), "SoundChannel") value Null() end
+ trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "volume") slotid 4 type QName(PackageNamespace(""), "Number") value Double(0.3) end
+ trait method QName(PackageNamespace(""), "load") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.sound:Music/class/load"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+     setlocal1
+
+     getlocal1
+     pushtrue
+     callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "getAppEngineUrl"), 1
+     pushstring          "/music/sorc.mp3"
+     add
+     setlocal2
+
+     findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "volume")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getproperty         Multiname("musicVolume", [PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:Music"), StaticProtectedNs("com.company.assembleegameclient.sound:Music")])
+     setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "volume")
+
+     findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     findpropstrict      QName(PackageNamespace("flash.media"), "SoundTransform")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getproperty         Multiname("playMusic", [PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:Music"), StaticProtectedNs("com.company.assembleegameclient.sound:Music")])
+     iffalse             L28
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "volume")
+     convert_d
+     jump                L30
+
+L28:
+     pushbyte            0
+     convert_d
+L30:
+     constructprop       QName(PackageNamespace("flash.media"), "SoundTransform"), 1
+     setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+
+     findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "music_")
+     findpropstrict      QName(PackageNamespace("flash.media"), "Sound")
+     constructprop       QName(PackageNamespace("flash.media"), "Sound"), 0
+     setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "music_")
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "music_")
+     findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+     getlocal2
+     constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+     callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+     findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicChannel_")
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "music_")
+     pushbyte            0
+     getlex              QName(PackageNamespace(""), "int")
+     getproperty         QName(PackageNamespace(""), "MAX_VALUE")
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     callproperty        QName(PackageNamespace(""), "play"), 3
+     setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicChannel_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setPlayMusic") flag FINAL dispid 4
+  method
+   refid "com.company.assembleegameclient.sound:Music/class/setPlayMusic"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+     callproperty        QName(PackageNamespace(""), "global"), 0
+     pushstring          "sound"
+     getlocal1
+     iffalse             L9
+
+     pushstring          "musicOn"
+     jump                L10
+
+L9:
+     pushstring          "musicOff"
+L10:
+     callpropvoid        QName(PackageNamespace(""), "trackEvent"), 2
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getlocal1
+     setproperty         Multiname("playMusic", [PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:Music"), StaticProtectedNs("com.company.assembleegameclient.sound:Music")])
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getproperty         Multiname("playMusic", [PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:Music"), StaticProtectedNs("com.company.assembleegameclient.sound:Music")])
+     iffalse             L25
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "volume")
+     convert_d
+     jump                L27
+
+L25:
+     pushbyte            0
+     convert_d
+L27:
+     setproperty         QName(PackageNamespace(""), "volume")
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicChannel_")
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     setproperty         QName(PackageNamespace(""), "soundTransform")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setMusicVolume") flag FINAL dispid 5
+  method
+   refid "com.company.assembleegameclient.sound:Music/class/setMusicVolume"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getlocal1
+     setproperty         Multiname("musicVolume", [PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:Music"), StaticProtectedNs("com.company.assembleegameclient.sound:Music")])
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getproperty         Multiname("playMusic", [PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:Music"), StaticProtectedNs("com.company.assembleegameclient.sound:Music")])
+     iftrue              L13
+
+     returnvoid
+
+L13:
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     pushnull
+     ifeq                L20
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "volume")
+
+     jump                L25
+
+L20:
+     findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     findpropstrict      QName(PackageNamespace("flash.media"), "SoundTransform")
+     getlocal1
+     constructprop       QName(PackageNamespace("flash.media"), "SoundTransform"), 1
+     setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+
+L25:
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicChannel_")
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:Music/class#0"), "musicVolumeTransform")
+     setproperty         QName(PackageNamespace(""), "soundTransform")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

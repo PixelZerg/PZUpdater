@@ -1,0 +1,837 @@
+class
+ refid "com.company.assembleegameclient.map:ParticleModalMap"
+ instance QName(PackageNamespace("com.company.assembleegameclient.map"), "ParticleModalMap")
+  extends QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap")
+  iinit
+   refid "com.company.assembleegameclient.map:ParticleModalMap/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_OPTIONAL
+   optional Integer(-1)
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 11
+    maxscopedepth 12
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:Map"), StaticProtectedNs("com.company.assembleegameclient.map:AbstractMap"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "objsToAdd_")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:Map"), StaticProtectedNs("com.company.assembleegameclient.map:AbstractMap"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "idsToRemove_")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:Map"), StaticProtectedNs("com.company.assembleegameclient.map:AbstractMap"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("flash.display"), "IGraphicsData")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "graphicsData_")
+
+     getlocal0
+     pushnull
+     constructsuper      1
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "MODE_SNOW")
+     ifne                L32
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "activateModeSnow")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L32:
+     getlocal1
+     getlex              QName(PackageNamespace(""), "MODE_AUTO_UPDATE")
+     ifne                L41
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "updater")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L41:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "inUpdate_") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "objsToAdd_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")>) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "idsToRemove_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dt") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dtBuildup") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "graphicsData_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>) end
+  trait method QName(PackageNamespace(""), "addObj") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/addObj"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal1
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "inUpdate_")
+      iffalse             L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "objsToAdd_")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      jump                L19
+
+L16:
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "internalAddObj"), 1
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "internalAddObj") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/internalAddObj"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "boDict_")
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:Map"), StaticProtectedNs("com.company.assembleegameclient.map:AbstractMap"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushnull
+      ifeq                L12
+
+      returnvoid
+
+L12:
+      getlocal1
+      getlocal0
+      setproperty         QName(PackageNamespace(""), "map_")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:Map"), StaticProtectedNs("com.company.assembleegameclient.map:AbstractMap"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "internalRemoveObj") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/internalRemoveObj"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "boDict_")
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:Map"), StaticProtectedNs("com.company.assembleegameclient.map:AbstractMap"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+      setlocal3
+
+      getlocal3
+      pushnull
+      ifne                L14
+
+      returnvoid
+
+L14:
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "removeFromMap"), 0
+
+      getlocal2
+      getlocal1
+      deleteproperty      MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:ParticleModalMap"), StaticProtectedNs("com.company.assembleegameclient.map:Map"), StaticProtectedNs("com.company.assembleegameclient.map:AbstractMap"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "inUpdate_")
+
+      pushbyte            0
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "boDict_")
+      coerce_a
+      setlocal            6
+
+      jump                L32
+
+L16:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+      setlocal3
+
+      getlocal3
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "update"), 2
+      iftrue              L32
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "idsToRemove_")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L32:
+      hasnext2            6, 5
+      iftrue              L16
+
+      kill                6
+      kill                5
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "inUpdate_")
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "objsToAdd_")
+      coerce_a
+      setlocal            6
+
+      jump                L55
+
+L46:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+      setlocal3
+
+      getlocal0
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "internalAddObj"), 1
+
+L55:
+      hasnext2            6, 5
+      iftrue              L46
+
+      kill                6
+      kill                5
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "objsToAdd_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "idsToRemove_")
+      coerce_a
+      setlocal            6
+
+      jump                L79
+
+L70:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      convert_i
+      setlocal            4
+
+      getlocal0
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "internalRemoveObj"), 1
+
+L79:
+      hasnext2            6, 5
+      iftrue              L70
+
+      kill                6
+      kill                5
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "idsToRemove_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/draw"
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 7
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "graphicsData_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      getlex              QName(PackageNamespace(""), "boDict_")
+      coerce_a
+      setlocal            6
+
+      jump                L33
+
+L17:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "BasicObject")
+      setlocal3
+
+      inclocal_i          4
+      getlocal3
+      getlex              QName(PackageNamespace(""), "PSCALE")
+      callpropvoid        QName(PackageNamespace(""), "computeSortValNoCamera"), 1
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "graphicsData_")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 3
+
+L33:
+      hasnext2            6, 5
+      iftrue              L17
+
+      kill                6
+      kill                5
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "graphicsData_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifngt               L48
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "graphicsData_")
+      callpropvoid        QName(PackageNamespace(""), "drawGraphicsData"), 1
+
+L48:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "activateModeSnow")
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/com.company.assembleegameclient.map:ParticleModalMap/instance/activateModeSnow"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      pushshort           600
+      setlocal2
+
+      pushshort           600
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      pushbyte            0
+      ifeq                L17
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      subtract
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dt")
+
+L17:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dtBuildup")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dt")
+      add
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dtBuildup")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dtBuildup")
+      pushshort           500
+      ifngt               L42
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dtBuildup")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushshort           600
+      multiply
+      pushbyte            -100
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "doSnow"), 2
+
+L42:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dt")
+      callpropvoid        QName(PackageNamespace(""), "update"), 2
+
+      getlocal0
+      pushnull
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "updater")
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/com.company.assembleegameclient.map:ParticleModalMap/instance/updater"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      pushbyte            0
+      ifeq                L13
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      subtract
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dt")
+
+L13:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "dt")
+      callpropvoid        QName(PackageNamespace(""), "update"), 2
+
+      getlocal0
+      pushnull
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "time")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "doNova")
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/doNova"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Integer(20)
+    optional Integer(12447231)
+    body
+     maxstack 4
+     localcount 7
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      dup
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "NovaEffect")
+      getlocal            5
+      getlocal3
+      getlocal            4
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "NovaEffect"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "NovaEffect")
+      setlocal            6
+
+      getlocal0
+      getlocal            6
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.map:ParticleModalMap/instance#0"), "doSnow")
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/com.company.assembleegameclient.map:ParticleModalMap/instance/doSnow"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Integer(20)
+    optional Integer(12447231)
+    body
+     maxstack 6
+     localcount 8
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+      setlocal            6
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      getlocal            6
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            6
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      pushshort           600
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ConfettiEffect")
+      getlocal            5
+      getlocal            6
+      getlocal            4
+      getlocal3
+      pushtrue
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ConfettiEffect"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ConfettiEffect")
+      setlocal            7
+
+      getlocal0
+      getlocal            7
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "doLightning")
+   method
+    refid "com.company.assembleegameclient.map:ParticleModalMap/instance/doLightning"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Integer(200)
+    optional Integer(12447231)
+    optional Integer(1)
+    body
+     maxstack 6
+     localcount 11
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+      dup
+      setlocal            8
+
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            8
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+      dup
+      setlocal            9
+
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "x_")
+
+      getlocal            9
+      findpropstrict      QName(PackageNamespace(""), "getLocalPos")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "getLocalPos"), 1
+      setproperty         QName(PackageNamespace(""), "y_")
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "LightningEffect")
+      getlocal            8
+      getlocal            9
+      getlocal            6
+      getlocal            5
+      getlocal            7
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "LightningEffect"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "LightningEffect")
+      setlocal            10
+
+      getlocal0
+      getlocal            10
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.map:ParticleModalMap/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 10
+   maxscopedepth 11
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "MODE_SNOW")
+    pushbyte            1
+    initproperty        QName(PackageNamespace(""), "MODE_SNOW")
+
+    findproperty        QName(PackageNamespace(""), "MODE_AUTO_UPDATE")
+    pushbyte            2
+    initproperty        QName(PackageNamespace(""), "MODE_AUTO_UPDATE")
+
+    findproperty        QName(PackageNamespace(""), "PSCALE")
+    pushbyte            16
+    initproperty        QName(PackageNamespace(""), "PSCALE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MODE_SNOW") slotid 1 type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "MODE_AUTO_UPDATE") slotid 2 type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(PackageNamespace(""), "PSCALE") slotid 3 type QName(PackageNamespace(""), "Number") value Integer(16) end
+ trait method QName(PackageNamespace(""), "getLocalPos") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.map:ParticleModalMap/class/getLocalPos"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "PSCALE")
+     divide
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

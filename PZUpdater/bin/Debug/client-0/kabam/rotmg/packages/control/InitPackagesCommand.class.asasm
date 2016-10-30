@@ -1,0 +1,98 @@
+class
+ refid "kabam.rotmg.packages.control:InitPackagesCommand"
+ instance QName(PackageNamespace("kabam.rotmg.packages.control"), "InitPackagesCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.packages.control:InitPackagesCommand")
+  iinit
+   refid "kabam.rotmg.packages.control:InitPackagesCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "beginnersPackageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "packageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.packages.services"), "PackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "beginnersPackageAvailable") flag METADATA type QName(PackageNamespace("kabam.rotmg.packages.control"), "BeginnersPackageAvailableSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "packageAvailable") flag METADATA type QName(PackageNamespace("kabam.rotmg.packages.control"), "PackageAvailableSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.packages.control:InitPackagesCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "beginnersPackageModel")
+      callproperty        QName(PackageNamespace(""), "isBeginnerAvailable"), 0
+      iffalse             L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "beginnersPackageAvailable")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      jump                L17
+
+L10:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "packageModel")
+      callproperty        QName(PackageNamespace(""), "hasPackages"), 0
+      iffalse             L17
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "packageAvailable")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.packages.control:InitPackagesCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

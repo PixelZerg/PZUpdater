@@ -1,0 +1,108 @@
+class
+ refid "kabam.rotmg.game.logging:RollingMeanLoopMonitor"
+ instance QName(PackageNamespace("kabam.rotmg.game.logging"), "RollingMeanLoopMonitor")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("LoopMonitor", [PackageNamespace("kabam.rotmg.game.logging")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.logging:RollingMeanLoopMonitor")
+  iinit
+   refid "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     newobject           0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance"), "watchMap")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "watch") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ConsoleWatchSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance"), "watchMap") type QName(PackageNamespace(""), "Object") end
+  trait method QName(PackageNamespace(""), "recordTime")
+   method
+    refid "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance/recordTime"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance"), "watchMap")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance"), "watchMap")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance"), PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance/recordTime"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.logging"), PackageInternalNs("kabam.rotmg.game.logging"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.logging:RollingMeanLoopMonitor"), StaticProtectedNs("kabam.rotmg.game.logging:RollingMeanLoopMonitor")])
+      coerce_a
+      dup
+      iftrue              L17
+
+      pop
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.logging"), "GameSpriteLoopWatch")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.logging"), "GameSpriteLoopWatch"), 1
+      coerce_a
+L17:
+      dup
+      setlocal            4
+
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance"), PrivateNamespace(null, "kabam.rotmg.game.logging:RollingMeanLoopMonitor/instance/recordTime"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.logging"), PackageInternalNs("kabam.rotmg.game.logging"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.logging:RollingMeanLoopMonitor"), StaticProtectedNs("kabam.rotmg.game.logging:RollingMeanLoopMonitor")])
+
+      getlocal            4
+      kill                4
+      coerce              QName(PackageNamespace("kabam.rotmg.game.logging"), "GameSpriteLoopWatch")
+      setlocal3
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "logTime"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "watch")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.logging:RollingMeanLoopMonitor/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

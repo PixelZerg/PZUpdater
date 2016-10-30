@@ -1,0 +1,368 @@
+class
+ refid "kabam.lib.util:DateValidator"
+ instance QName(PackageNamespace("kabam.lib.util"), "DateValidator")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.util:DateValidator")
+  iinit
+   refid "kabam.lib.util:DateValidator/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace(""), "Date")
+     constructprop       QName(PackageNamespace(""), "Date"), 0
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getFullYear"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "thisYear")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "thisYear") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "isValidMonth")
+   method
+    refid "kabam.lib.util:DateValidator/instance/isValidMonth"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            0
+      greaterthan
+      dup
+      iffalse             L11
+
+      pop
+      getlocal1
+      pushbyte            12
+      lessequals
+L11:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isValidDay")
+   method
+    refid "kabam.lib.util:DateValidator/instance/isValidDay"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    optional Integer(-1)
+    optional Integer(-1)
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            0
+      greaterthan
+      dup
+      iffalse             L14
+
+      pop
+      getlocal1
+      getlocal0
+      getlocal2
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "getDaysInMonth"), 2
+      lessequals
+L14:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getDaysInMonth")
+   method
+    refid "kabam.lib.util:DateValidator/instance/getDaysInMonth"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag HAS_OPTIONAL
+    optional Integer(-1)
+    optional Integer(-1)
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            -1
+      ifne                L7
+
+      pushbyte            31
+      returnvalue
+
+L7:
+      getlocal1
+      getlex              QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "FEBRUARY")
+      equals
+      iffalse             L16
+
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "getDaysInFebruary"), 1
+      convert_i
+      jump                L21
+
+L16:
+      getlex              QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "DAYS_IN_MONTH")
+      getlocal1
+      decrement
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), PrivateNamespace(null, "kabam.lib.util:DateValidator#1"), PackageNamespace(""), PackageNamespace("kabam.lib.util"), PackageInternalNs("kabam.lib.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.util:DateValidator"), StaticProtectedNs("kabam.lib.util:DateValidator")])
+      convert_i
+L21:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "getDaysInFebruary")
+   method
+    refid "kabam.lib.util:DateValidator/instance/kabam.lib.util:DateValidator/getDaysInFebruary"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            -1
+      equals
+      dup
+      iftrue              L12
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "isLeapYear"), 1
+      convert_b
+L12:
+      iffalse             L15
+
+      pushbyte            29
+      returnvalue
+
+L15:
+      pushbyte            28
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isLeapYear")
+   method
+    refid "kabam.lib.util:DateValidator/instance/isLeapYear"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            4
+      modulo
+      pushbyte            0
+      equals
+      setlocal2
+
+      getlocal1
+      pushbyte            100
+      modulo
+      pushbyte            0
+      equals
+      setlocal3
+
+      getlocal1
+      pushshort           400
+      modulo
+      pushbyte            0
+      equals
+      setlocal            4
+
+      getlocal2
+      convert_b
+      dup
+      iffalse             L32
+
+      pop
+      getlocal3
+      not
+      dup
+      iftrue              L32
+
+      pop
+      getlocal            4
+      convert_b
+L32:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isValidDate")
+   method
+    refid "kabam.lib.util:DateValidator/instance/isValidDate"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal3
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "isValidYear"), 2
+      convert_b
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "isValidMonth"), 1
+      convert_b
+L14:
+      dup
+      iffalse             L23
+
+      pop
+      getlocal0
+      getlocal2
+      getlocal1
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "isValidDay"), 3
+      convert_b
+L23:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isValidYear")
+   method
+    refid "kabam.lib.util:DateValidator/instance/isValidYear"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "thisYear")
+      lessequals
+      dup
+      iffalse             L15
+
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "thisYear")
+      getlocal2
+      subtract
+      greaterthan
+L15:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.util:DateValidator/class/init"
+  body
+   maxstack 15
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "DAYS_IN_MONTH")
+    getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), PrivateNamespace(null, "kabam.lib.util:DateValidator#1"), PackageNamespace(""), PackageNamespace("kabam.lib.util"), PackageInternalNs("kabam.lib.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.util:DateValidator"), StaticProtectedNs("kabam.lib.util:DateValidator"), PackageNamespace("__AS3__.vec")])
+    getlex              QName(PackageNamespace(""), "int")
+    applytype           1
+    getglobalscope
+    pushbyte            31
+    pushbyte            -1
+    pushbyte            31
+    pushbyte            30
+    pushbyte            31
+    pushbyte            30
+    pushbyte            31
+    dup
+    pushbyte            30
+    pushbyte            31
+    pushbyte            30
+    pushbyte            31
+    newarray            12
+    call                1
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "DAYS_IN_MONTH")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "FEBRUARY")
+    pushbyte            2
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "FEBRUARY")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "DAYS_IN_MONTH") slotid 1 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>) end
+ trait const QName(PrivateNamespace(null, "kabam.lib.util:DateValidator#0"), "FEBRUARY") slotid 2 type QName(PackageNamespace(""), "int") value Integer(2) end
+end ; class

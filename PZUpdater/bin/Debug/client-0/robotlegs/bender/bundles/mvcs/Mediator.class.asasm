@@ -1,0 +1,279 @@
+class
+ refid "robotlegs.bender.bundles.mvcs:Mediator"
+ instance QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IMediator", [PackageNamespace("robotlegs.bender.extensions.mediatorMap.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator")
+  iinit
+   refid "robotlegs.bender.bundles.mvcs:Mediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "eventMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.localEventMap.api"), "IEventMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "eventDispatcher") flag METADATA type QName(PackageNamespace("flash.events"), "IEventDispatcher")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.bundles.mvcs:Mediator/instance"), "_viewComponent") type QName(PackageNamespace(""), "Object") end
+  trait setter QName(PackageNamespace(""), "viewComponent")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/viewComponent/setter"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "robotlegs.bender.bundles.mvcs:Mediator/instance"), "_viewComponent")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventMap")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.localEventMap.api:IEventMap"), "unmapListeners"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addViewListener")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/robotlegs.bender.bundles.mvcs:Mediator:addViewListener"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventMap")
+      findpropstrict      QName(PackageNamespace("flash.events"), "IEventDispatcher")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.bundles.mvcs:Mediator/instance"), "_viewComponent")
+      callproperty        QName(PackageNamespace("flash.events"), "IEventDispatcher"), 1
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.localEventMap.api:IEventMap"), "mapListener"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "addContextListener")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/robotlegs.bender.bundles.mvcs:Mediator:addContextListener"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventMap")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventDispatcher")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.localEventMap.api:IEventMap"), "mapListener"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeViewListener")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/robotlegs.bender.bundles.mvcs:Mediator:removeViewListener"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventMap")
+      findpropstrict      QName(PackageNamespace("flash.events"), "IEventDispatcher")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.bundles.mvcs:Mediator/instance"), "_viewComponent")
+      callproperty        QName(PackageNamespace("flash.events"), "IEventDispatcher"), 1
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.localEventMap.api:IEventMap"), "unmapListener"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "removeContextListener")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/robotlegs.bender.bundles.mvcs:Mediator:removeContextListener"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventMap")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventDispatcher")
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.localEventMap.api:IEventMap"), "unmapListener"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "dispatch")
+   method
+    refid "robotlegs.bender.bundles.mvcs:Mediator/instance/robotlegs.bender.bundles.mvcs:Mediator:dispatch"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventDispatcher")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "type")
+      callproperty        QName(Namespace("flash.events:IEventDispatcher"), "hasEventListener"), 1
+      iffalse             L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "eventDispatcher")
+      getlocal1
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "dispatchEvent"), 1
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.bundles.mvcs:Mediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

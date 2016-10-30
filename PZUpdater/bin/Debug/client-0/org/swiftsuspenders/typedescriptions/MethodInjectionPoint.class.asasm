@@ -1,0 +1,263 @@
+class
+ refid "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"
+ instance QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "MethodInjectionPoint")
+  extends QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "InjectionPoint")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint")
+  iinit
+   refid "org.swiftsuspenders.typedescriptions:MethodInjectionPoint/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace("flash.utils"), "Dictionary")
+   body
+    maxstack 2
+    localcount 6
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_methodName")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterMappingIDs")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_requiredParameters")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_isOptional")
+
+     getlocal0
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "injectParameters")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterMappingIDs") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_requiredParameters") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_isOptional") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_methodName") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "applyInjection") flag OVERRIDE
+   method
+    refid "org.swiftsuspenders.typedescriptions:MethodInjectionPoint/instance/applyInjection"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      callproperty        QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "gatherParameterValues"), 3
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "length")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_requiredParameters")
+      ifnge               L23
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_methodName")
+      getproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint/instance"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:InjectionPoint")])
+      getlex              QName(PackageNamespace(""), "Function")
+      astypelate
+      getlocal1
+      getlocal            4
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L23:
+      getlocal            4
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "gatherParameterValues")
+   method
+    refid "org.swiftsuspenders.typedescriptions:MethodInjectionPoint/instance/org.swiftsuspenders.typedescriptions:MethodInjectionPoint:gatherParameterValues"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 6
+     localcount 10
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal            7
+
+      pushnull
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterMappingIDs")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            4
+
+      getlex              QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterValues")
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      setlocal            5
+
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushbyte            0
+      setlocal            6
+
+      jump                L91
+
+L22:
+      label
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterMappingIDs")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint/instance"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:InjectionPoint")])
+      coerce_s
+      setlocal            7
+
+      getlocal3
+      dup
+      setlocal            9
+
+      getlex              QName(PackageNamespace("org.swiftsuspenders.utils"), "SsInternal")
+      coerce              QName(PackageNamespace(""), "Namespace")
+      getproperty         RTQName("getProvider")
+      getlocal            9
+      getlocal            7
+      call                1
+      kill                9
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      dup
+      setlocal            8
+
+      iftrue              L82
+
+      getlocal            6
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_requiredParameters")
+      greaterequals
+      dup
+      iftrue              L53
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_isOptional")
+      convert_b
+L53:
+      iffalse             L55
+
+      jump                L94
+
+L55:
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.errors"), "InjectorMissingMappingError")
+      pushstring          "Injector is missing a mapping to handle injection into target \""
+      getlocal1
+      add
+      pushstring          "\" of type \""
+      add
+      findpropstrict      QName(PackageNamespace("avmplus"), "getQualifiedClassName")
+      getlocal2
+      callproperty        QName(PackageNamespace("avmplus"), "getQualifiedClassName"), 1
+      add
+      pushstring          "\". \x09\x09\x09\x09\x09\x09Target dependency: "
+      add
+      getlocal            7
+      add
+      pushstring          ", method: "
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_methodName")
+      add
+      pushstring          ", parameter: "
+      add
+      getlocal            6
+      pushbyte            1
+      add
+      add
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.errors"), "InjectorMissingMappingError"), 1
+      throw
+
+L82:
+      getlocal            5
+      getlocal            6
+      getlocal            8
+      getlocal2
+      getlocal3
+      getlex              QName(PackageNamespace(""), "injectParameters")
+      callproperty        QName(Namespace("org.swiftsuspenders.dependencyproviders:DependencyProvider"), "apply"), 3
+      setproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint/instance"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:InjectionPoint")])
+
+      inclocal_i          6
+L91:
+      getlocal            6
+      getlocal            4
+      iflt                L22
+
+L94:
+      getlocal            5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.typedescriptions:MethodInjectionPoint/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterValues")
+    newarray            0
+    initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterValues")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:MethodInjectionPoint"), "_parameterValues") slotid 1 type QName(PackageNamespace(""), "Array") end
+end ; class

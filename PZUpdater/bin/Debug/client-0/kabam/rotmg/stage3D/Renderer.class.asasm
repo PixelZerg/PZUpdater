@@ -1,0 +1,2071 @@
+class
+ refid "kabam.rotmg.stage3D:Renderer"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D"), "Renderer")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.stage3D:Renderer")
+  iinit
+   refid "kabam.rotmg.stage3D:Renderer/instance/init#0"
+   param QName(PackageNamespace("kabam.rotmg.stage3D"), "Render3D")
+   body
+    maxstack 7
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 0
+     initproperty        QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "cameraMatrix_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+     constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+     getlex              QName(PackageNamespace(""), "Number")
+     applytype           1
+     pushbyte            16
+     pushtrue
+     construct           2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+
+     getlocal0
+     pushstring          "m44 op, va0, vc0"
+     pushstring          "m44 v0, va0, vc8"
+     pushstring          "m44 v1, va1, vc8"
+     pushstring          "mov v2, va2"
+     newarray            4
+     pushstring          "\n"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+     initproperty        QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_vertexShader")
+
+     getlocal0
+     pushstring          "tex oc, v2, fs0 <2d,clamp>"
+     newarray            1
+     pushstring          "\n"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "join"), 1
+     initproperty        QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_fragmentShader")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+     getlex              QName(PackageNamespace(""), "Number")
+     applytype           1
+     getglobalscope
+     pushdouble          0.4
+     pushdouble          0.6
+     pushdouble          0.4
+     pushdouble          1.5
+     newarray            4
+     call                1
+     initproperty        QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_")
+
+     getlocal0
+     constructsuper      0
+
+     getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Renderer")
+     pushfalse
+     setproperty         QName(PackageNamespace(""), "inGame")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "setTranslationToTitle"), 0
+
+     getlocal1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "onRender")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "context3D") flag METADATA type QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Context3DProxy")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "textureFactory") flag METADATA type QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "TextureFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tX") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tY") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "program2") type QName(PackageNamespace("flash.display3D"), "Program3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postProcessingProgram_") type QName(PackageNamespace("flash.display3D"), "Program3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurPostProcessing_") type QName(PackageNamespace("flash.display3D"), "Program3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "shadowProgram_") type QName(PackageNamespace("flash.display3D"), "Program3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_") type QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "Graphic3D") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_projection") type QName(PackageNamespace("flash.geom"), "Matrix3D") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "cameraMatrix_") type QName(PackageNamespace("flash.geom"), "Matrix3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_") type QName(PackageNamespace("flash.geom"), "Vector3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_") type QName(PackageNamespace("flash.geom"), "Vector3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_") type QName(PackageNamespace("flash.geom"), "Vector3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_") type QName(PackageNamespace("flash.geom"), "Vector3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Number")>) end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "widthOffset_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "heightOffset_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "stageWidth") type QName(PackageNamespace(""), "Number") value Integer(600) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "stageHeight") type QName(PackageNamespace(""), "Number") value Integer(600) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "sceneTexture_") type QName(PackageNamespace("flash.display3D.textures"), "Texture") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurFactor") type QName(PackageNamespace(""), "Number") value Double(0.01) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterVertexBuffer_") type QName(PackageNamespace("flash.display3D"), "VertexBuffer3D") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterIndexBuffer_") type QName(PackageNamespace("flash.display3D"), "IndexBuffer3D") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_vertexShader") type QName(PackageNamespace(""), "String") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_fragmentShader") type QName(PackageNamespace(""), "String") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Number")>) end
+  trait method QName(PackageNamespace(""), "init")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/init#1"
+    param QName(PackageNamespace("flash.display3D"), "Context3D")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 17
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Util")
+      pushbyte            56
+      pushbyte            1
+      pushdouble          0.1
+      pushshort           2048
+      callproperty        QName(PackageNamespace(""), "perspectiveProjection"), 4
+      initproperty        QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_projection")
+
+      findpropstrict      QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler")
+      constructprop       QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler"), 0
+      coerce              QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler")
+      setlocal2
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_vertexShader")
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      findpropstrict      QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler")
+      constructprop       QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler"), 0
+      coerce              QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler")
+      setlocal3
+
+      getlocal3
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_fragmentShader")
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      initproperty        QName(PackageNamespace(""), "program2")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "program2")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+      pushstring          "tex ft0, v0, fs0 <2d,clamp,linear>\n"
+      pushstring          "dp3 ft0.x, ft0, fc0\n"
+      add
+      pushstring          "mov ft0.y, ft0.x\n"
+      add
+      pushstring          "mov ft0.z, ft0.x\n"
+      add
+      pushstring          "mov oc, ft0\n"
+      add
+      setlocal            4
+
+      pushstring          "mov op, va0\n"
+      pushstring          "add vt0, vc0.xxxx, va0\n"
+      add
+      pushstring          "div vt0, vt0, vc0.yyyy\n"
+      add
+      pushstring          "sub vt0.y, vc0.x, vt0.y\n"
+      add
+      pushstring          "mov v0, vt0\n"
+      add
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler")
+      constructprop       QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler"), 0
+      coerce              QName(PackageNamespace("com.adobe.utils"), "AGALMiniAssembler")
+      dup
+      setlocal            6
+
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            7
+
+      getlocal            6
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            8
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postProcessingProgram_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postProcessingProgram_")
+      getlocal            7
+      getlocal            8
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+      pushstring          "sub ft0, v0, fc0\n"
+      pushstring          "sub ft0.zw, ft0.zw, ft0.zw\n"
+      add
+      pushstring          "dp3 ft1, ft0, ft0\n"
+      add
+      pushstring          "sqt ft1, ft1\n"
+      add
+      pushstring          "div ft1.xy, ft1.xy, fc0.zz\n"
+      add
+      pushstring          "pow ft1.x, ft1.x, fc0.w\n"
+      add
+      pushstring          "mul ft0.xy, ft0.xy, ft1.xx\n"
+      add
+      pushstring          "div ft0.xy, ft0.xy, ft1.yy\n"
+      add
+      pushstring          "add ft0.xy, ft0.xy, fc0.xy\n"
+      add
+      pushstring          "tex oc, ft0, fs0<2d,clamp>\n"
+      add
+      setlocal            9
+
+      pushstring          "m44 op, va0, vc0\n"
+      pushstring          "mov v0, va1\n"
+      add
+      setlocal            10
+
+      getlocal            6
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      getlocal            10
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            11
+
+      getlocal            6
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      getlocal            9
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            12
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurPostProcessing_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurPostProcessing_")
+      getlocal            11
+      getlocal            12
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+      pushstring          "m44 op, va0, vc0\n"
+      pushstring          "mov v0, va1\n"
+      add
+      pushstring          "mov v1, va2\n"
+      add
+      setlocal            13
+
+      getlocal            6
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      getlocal            13
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            14
+
+      pushstring          "sub ft0.xy, v1.xy, fc4.xx\n"
+      pushstring          "mul ft0.xy, ft0.xy, ft0.xy\n"
+      add
+      pushstring          "add ft0.x, ft0.x, ft0.y\n"
+      add
+      pushstring          "slt ft0.y, ft0.x, fc4.y\n"
+      add
+      pushstring          "mul oc, v0, ft0.yyyy\n"
+      add
+      setlocal            15
+
+      getlocal            6
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      getlocal            15
+      callpropvoid        QName(PackageNamespace(""), "assemble"), 2
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "agalcode")
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            16
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "createProgram"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "shadowProgram_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "shadowProgram_")
+      getlocal            14
+      getlocal            16
+      callpropvoid        QName(PackageNamespace(""), "upload"), 2
+
+      getlocal0
+      getlocal1
+      pushshort           1024
+      pushshort           1024
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DTextureFormat")
+      getproperty         QName(PackageNamespace(""), "BGRA")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "createTexture"), 4
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "sceneTexture_")
+
+      getlocal0
+      getlocal1
+      pushbyte            4
+      dup
+      callproperty        QName(PackageNamespace(""), "createVertexBuffer"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterVertexBuffer_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterVertexBuffer_")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_POSITIONS")
+      pushbyte            0
+      pushbyte            4
+      callpropvoid        QName(PackageNamespace(""), "uploadFromVector"), 3
+
+      getlocal0
+      getlocal1
+      pushbyte            6
+      callproperty        QName(PackageNamespace(""), "createIndexBuffer"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterIndexBuffer_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterIndexBuffer_")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_TRIS")
+      pushbyte            0
+      pushbyte            6
+      callpropvoid        QName(PackageNamespace(""), "uploadFromVector"), 3
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "Graphic3D")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "UpdateCameraMatrix")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/kabam.rotmg.stage3D:Renderer/UpdateCameraMatrix"
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "angleRad_")
+      negate
+      convert_d
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+      pushbyte            -1
+      setproperty         QName(PackageNamespace(""), "z")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "widthOffset_")
+      add
+      negate
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "heightOffset_")
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "z_")
+      negate
+      setproperty         QName(PackageNamespace(""), "z")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "z")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal2
+      getlex              QName(PackageNamespace(""), "Math")
+      getproperty         QName(PackageNamespace(""), "PI")
+      pushbyte            2
+      divide
+      add
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal2
+      getlex              QName(PackageNamespace(""), "Math")
+      getproperty         QName(PackageNamespace(""), "PI")
+      pushbyte            2
+      divide
+      add
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "z")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            3
+      pushbyte            0
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            4
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            5
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            6
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            7
+      pushbyte            0
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            8
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+      getproperty         QName(PackageNamespace(""), "z")
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            9
+      pushbyte            1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            10
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+      getproperty         QName(PackageNamespace(""), "z")
+      negate
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            11
+      pushbyte            0
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            12
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "r_")
+      callproperty        QName(PackageNamespace(""), "dotProduct"), 1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            13
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "u_")
+      callproperty        QName(PackageNamespace(""), "dotProduct"), 1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            14
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "p_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "f_")
+      callproperty        QName(PackageNamespace(""), "dotProduct"), 1
+      negate
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      pushbyte            15
+      pushbyte            1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+      constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "Matrix3D")
+      setlocal3
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "rd_")
+      setproperty         QName(PackageNamespace(""), "rawData")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "cameraMatrix_")
+      callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "cameraMatrix_")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "append"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "onRender")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/kabam.rotmg.stage3D:Renderer/onRender"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Object3DStage3D")>)
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.display"), "StageScaleMode")
+      getproperty         QName(PackageNamespace(""), "NO_SCALE")
+      setproperty         QName(PackageNamespace(""), "scaleMode")
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            3
+      multiply
+      pushbyte            4
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "stageWidth")
+      equals
+      not
+      dup
+      iftrue              L28
+
+      pop
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "stageHeight")
+      equals
+      not
+L28:
+      iffalse             L31
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "resizeStage3DBackBuffer"), 0
+
+L31:
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Renderer")
+      getproperty         QName(PackageNamespace(""), "inGame")
+      pushtrue
+      ifne                L38
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "setTranslationToGame"), 0
+
+      jump                L40
+
+L38:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "setTranslationToTitle"), 0
+
+L40:
+      getlocal            6
+      pushbyte            0
+      ifngt               L52
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      getlocal            5
+      getlocal            6
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "renderWithPostEffect"), 6
+
+      jump                L59
+
+L52:
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      getlocal            5
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "renderScene"), 5
+
+L59:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callpropvoid        QName(PackageNamespace(""), "present"), 0
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.display"), "StageScaleMode")
+      getproperty         QName(PackageNamespace(""), "EXACT_FIT")
+      setproperty         QName(PackageNamespace(""), "scaleMode")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "resizeStage3DBackBuffer")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/kabam.rotmg.stage3D:Renderer/resizeStage3DBackBuffer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            3
+      multiply
+      pushbyte            4
+      divide
+      pushbyte            1
+      lessthan
+      dup
+      iftrue              L19
+
+      pop
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      pushbyte            1
+      lessthan
+L19:
+      iffalse             L21
+
+      returnvoid
+
+L21:
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stage3Ds")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      coerce              QName(PackageNamespace("flash.display"), "Stage3D")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            3
+      multiply
+      pushbyte            4
+      divide
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      pushbyte            2
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "configureBackBuffer"), 4
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            3
+      multiply
+      pushbyte            4
+      divide
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "stageWidth")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "stageHeight")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "stageHeight")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "renderWithPostEffect")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/kabam.rotmg.stage3D:Renderer/renderWithPostEffect"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Object3DStage3D")>)
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 8
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "sceneTexture_")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setRenderToTexture"), 2
+
+      getlocal0
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      getlocal            5
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "renderScene"), 5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "setRenderToBackBuffer"), 0
+
+      jump                L107
+
+L21:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postProcessingProgram_")
+      callpropvoid        QName(PackageNamespace(""), "setProgram"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "sceneTexture_")
+      callpropvoid        QName(PackageNamespace(""), "setTextureAt"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushdouble          0.5
+      pushdouble          0.5
+      pushdouble          0.5
+      callpropvoid        QName(PackageNamespace(""), "clear"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterVertexBuffer_")
+      pushbyte            0
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DVertexBufferFormat")
+      getproperty         QName(PackageNamespace(""), "FLOAT_2")
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            1
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 2
+
+      jump                L134
+
+L59:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurPostProcessing_")
+      callpropvoid        QName(PackageNamespace(""), "setProgram"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "sceneTexture_")
+      callpropvoid        QName(PackageNamespace(""), "setTextureAt"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushdouble          0.5
+      pushdouble          0.5
+      pushdouble          0.5
+      callpropvoid        QName(PackageNamespace(""), "clear"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterVertexBuffer_")
+      pushbyte            0
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DVertexBufferFormat")
+      getproperty         QName(PackageNamespace(""), "FLOAT_2")
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterVertexBuffer_")
+      pushbyte            2
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DVertexBufferFormat")
+      getproperty         QName(PackageNamespace(""), "FLOAT_2")
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 4
+
+      jump                L134
+
+L101:
+      label
+      jump                L134
+
+      ; 0x10
+      ; 0x50
+      ; 0x00
+      ; 0x00
+L107:
+      getlocal            6
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "STAGE3D_FILTER_PAUSE")
+      getlocal            7
+      ifstrictne          L114
+
+      pushbyte            0
+      jump                L132
+
+L114:
+      getlex              QName(PackageNamespace(""), "STAGE3D_FILTER_BLIND")
+      getlocal            7
+      ifstrictne          L119
+
+      pushbyte            1
+      jump                L132
+
+L119:
+      getlex              QName(PackageNamespace(""), "STAGE3D_FILTER_DRUNK")
+      getlocal            7
+      ifstrictne          L124
+
+      pushbyte            2
+      jump                L132
+
+L124:
+      jump                L131
+
+      ; 0x24
+      ; 0x03
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L131:
+      pushbyte            3
+L132:
+      kill                7
+      lookupswitch        L101, [L21, L21, L59, L101]
+
+L134:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            2
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setVertexBufferAt"), 2
+
+      jump                L231
+
+L141:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      pushbyte            0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_VERTEX_CONSTANTS")
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromVector"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      pushbyte            0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "GRAYSCALE_FRAGMENT_CONSTANTS")
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromVector"), 3
+
+      jump                L258
+
+L157:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      pushbyte            0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_VERTEX_CONSTANTS")
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromVector"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      pushbyte            0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "BLIND_FRAGMENT_CONSTANTS")
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromVector"), 3
+
+      jump                L258
+
+L173:
+      label
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_")
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      pushdouble          0.2
+      lessequals
+      dup
+      iftrue              L189
+
+      pop
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_")
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      pushdouble          1.8
+      greaterequals
+L189:
+      iffalse             L196
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurFactor")
+      pushbyte            -1
+      multiply
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurFactor")
+
+L196:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_")
+      pushbyte            3
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_")
+      pushbyte            3
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "blurFactor")
+      add
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      pushbyte            0
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+      constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromMatrix"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "blurFragmentConstants_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            4
+      divide
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromVector"), 4
+
+      jump                L258
+
+L229:
+      label
+      jump                L258
+
+L231:
+      getlocal            6
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "STAGE3D_FILTER_PAUSE")
+      getlocal            7
+      ifstrictne          L238
+
+      pushbyte            0
+      jump                L256
+
+L238:
+      getlex              QName(PackageNamespace(""), "STAGE3D_FILTER_BLIND")
+      getlocal            7
+      ifstrictne          L243
+
+      pushbyte            1
+      jump                L256
+
+L243:
+      getlex              QName(PackageNamespace(""), "STAGE3D_FILTER_DRUNK")
+      getlocal            7
+      ifstrictne          L248
+
+      pushbyte            2
+      jump                L256
+
+L248:
+      jump                L255
+
+      ; 0x24
+      ; 0x03
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L255:
+      pushbyte            3
+L256:
+      kill                7
+      lookupswitch        L229, [L141, L157, L173, L229]
+
+L258:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      pushbyte            0
+      dup
+      dup
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "clear"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "postFilterIndexBuffer_")
+      callpropvoid        QName(PackageNamespace(""), "drawTriangles"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "renderScene")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/kabam.rotmg.stage3D:Renderer/renderScene"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Object3DStage3D")>)
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_ACTIVATION
+    body
+     maxstack 9
+     localcount 10
+     initscopedepth 5
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal            6
+
+      pushscope
+
+      getscopeobject      1
+      pushbyte            0
+      setslot             8
+
+      getscopeobject      1
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "IGraphicsData")
+      setslot             9
+
+      getscopeobject      1
+      getlocal1
+      setslot             1
+
+      getscopeobject      1
+      getlocal2
+      setslot             2
+
+      getscopeobject      1
+      getlocal3
+      setslot             3
+
+      getscopeobject      1
+      getlocal            4
+      setslot             4
+
+      getscopeobject      1
+      getlocal            5
+      setslot             5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getscopeobject      1
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix3D")
+      constructprop       QName(PackageNamespace("flash.geom"), "Matrix3D"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "Matrix3D")
+      setslot             6
+
+      getscopeobject      1
+      pushbyte            0
+      convert_u
+      setslot             7
+
+      getlocal0
+      getscopeobject      1
+      getslot             3
+      negate
+      pushbyte            2
+      divide
+      initproperty        QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "widthOffset_")
+
+      getlocal0
+      getscopeobject      1
+      getslot             4
+      pushbyte            2
+      divide
+      initproperty        QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "heightOffset_")
+
+      getlocal0
+      getscopeobject      1
+      getslot             5
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "UpdateCameraMatrix"), 1
+
+      pushbyte            0
+      setlocal            7
+
+      getscopeobject      1
+      getslot             1
+      coerce_a
+      setlocal            8
+
+      jump                L384
+
+L64:
+      label
+      getscopeobject      1
+      getlocal            8
+      getlocal            7
+      nextvalue
+      coerce              QName(PackageNamespace("flash.display"), "IGraphicsData")
+      setslot             9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DTriangleFace")
+      getproperty         QName(PackageNamespace(""), "NONE")
+      callpropvoid        QName(PackageNamespace(""), "setCulling"), 1
+
+      getscopeobject      1
+      getslot             9
+      getlex              QName(PackageNamespace("flash.display"), "GraphicsBitmapFill")
+      istypelate
+      dup
+      iffalse             L91
+
+      pop
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "GraphicsFillExtra")
+      findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsBitmapFill")
+      getscopeobject      1
+      getslot             9
+      callproperty        QName(PackageNamespace("flash.display"), "GraphicsBitmapFill"), 1
+      callproperty        QName(PackageNamespace(""), "isSoftwareDraw"), 1
+      not
+L91:
+      iffalse             L177
+
+L92:
+      getscopeobject      1
+      findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsBitmapFill")
+      getscopeobject      1
+      getslot             9
+      callproperty        QName(PackageNamespace("flash.display"), "GraphicsBitmapFill"), 1
+      getproperty         QName(PackageNamespace(""), "bitmapData")
+      getproperty         QName(PackageNamespace(""), "width")
+      convert_i
+      setslot             8
+
+L101:
+      jump                L119
+
+L102:
+      getlocal0
+      pushscope
+
+      getlocal            6
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal            9
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+      kill                9
+      jump                L384
+
+      ; 0x1D
+      ; 0x08
+      ; 0x09
+L119:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_")
+      findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsBitmapFill")
+      getscopeobject      1
+      getslot             9
+      callproperty        QName(PackageNamespace("flash.display"), "GraphicsBitmapFill"), 1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callpropvoid        QName(PackageNamespace(""), "setGraphic"), 2
+
+      getscopeobject      1
+      getslot             6
+      callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+      getscopeobject      1
+      getslot             6
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_")
+      callproperty        QName(PackageNamespace(""), "getMatrix3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "append"), 1
+
+      getscopeobject      1
+      getslot             6
+      pushbyte            1
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "HALF_WIDTH")
+      divide
+      pushbyte            1
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "HALF_HEIGHT")
+      divide
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "appendScale"), 3
+
+      getscopeobject      1
+      getslot             6
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tX")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "WIDTH")
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tY")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "HEIGHT")
+      divide
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "appendTranslation"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      pushbyte            0
+      getscopeobject      1
+      getslot             6
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromMatrix"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callpropvoid        QName(PackageNamespace(""), "render"), 1
+
+L177:
+      getscopeobject      1
+      getslot             9
+      getlex              QName(PackageNamespace("flash.display"), "GraphicsGradientFill")
+      istypelate
+      iffalse             L254
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "shadowProgram_")
+      callpropvoid        QName(PackageNamespace(""), "setProgram"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_")
+      findpropstrict      QName(PackageNamespace("flash.display"), "GraphicsGradientFill")
+      getscopeobject      1
+      getslot             9
+      callproperty        QName(PackageNamespace("flash.display"), "GraphicsGradientFill"), 1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "HALF_WIDTH")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "HALF_HEIGHT")
+      callpropvoid        QName(PackageNamespace(""), "setGradientFill"), 4
+
+      getscopeobject      1
+      getslot             6
+      callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+      getscopeobject      1
+      getslot             6
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_")
+      callproperty        QName(PackageNamespace(""), "getMatrix3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "append"), 1
+
+      getscopeobject      1
+      getslot             6
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tX")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "WIDTH")
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tY")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "HEIGHT")
+      divide
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "appendTranslation"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      pushbyte            0
+      getscopeobject      1
+      getslot             6
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromMatrix"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "FRAGMENT")
+      pushbyte            4
+      getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      getlex              QName(PackageNamespace(""), "Number")
+      applytype           1
+      getglobalscope
+      pushdouble          0.5
+      pushdouble          0.25
+      pushdouble          0
+      pushdouble          0
+      newarray            4
+      call                1
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromVector"), 3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "graphic3D_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callpropvoid        QName(PackageNamespace(""), "renderShadow"), 1
+
+L254:
+      getscopeobject      1
+      getslot             9
+      pushnull
+      equals
+      dup
+      iffalse             L267
+
+      pop
+      getscopeobject      1
+      getslot             2
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      equals
+      not
+L267:
+      iffalse             L384
+
+L268:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "program2")
+      callpropvoid        QName(PackageNamespace(""), "setProgram"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DTriangleFace")
+      getproperty         QName(PackageNamespace(""), "BACK")
+      callpropvoid        QName(PackageNamespace(""), "setCulling"), 1
+
+      getscopeobject      1
+      getslot             2
+      getscopeobject      1
+      getslot             7
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "widthOffset_")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "heightOffset_")
+      callpropvoid        QName(PackageNamespace(""), "UpdateModelMatrix"), 2
+
+      getscopeobject      1
+      getslot             6
+      callpropvoid        QName(PackageNamespace(""), "identity"), 0
+
+      getscopeobject      1
+      getslot             6
+      getscopeobject      1
+      getslot             2
+      getscopeobject      1
+      getslot             7
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      callproperty        QName(PackageNamespace(""), "GetModelMatrix"), 0
+      callpropvoid        QName(PackageNamespace(""), "append"), 1
+
+      getscopeobject      1
+      getslot             6
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "cameraMatrix_")
+      callpropvoid        QName(PackageNamespace(""), "append"), 1
+
+      getscopeobject      1
+      getslot             6
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), "_projection")
+      callpropvoid        QName(PackageNamespace(""), "append"), 1
+
+      getscopeobject      1
+      getslot             6
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tX")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "WIDTH")
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tY")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+      getproperty         QName(PackageNamespace(""), "HEIGHT")
+      divide
+      pushdouble          11.5
+      multiply
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "appendTranslation"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      pushbyte            0
+      getscopeobject      1
+      getslot             6
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromMatrix"), 4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DProgramType")
+      getproperty         QName(PackageNamespace(""), "VERTEX")
+      pushbyte            8
+      getscopeobject      1
+      getslot             2
+      getscopeobject      1
+      getslot             7
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      callproperty        QName(PackageNamespace(""), "GetModelMatrix"), 0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setProgramConstantsFromMatrix"), 4
+
+      getscopeobject      1
+      getslot             2
+      getscopeobject      1
+      getslot             7
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context3D")
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "draw"), 1
+
+      getscopeobject      1
+      getslot             7
+      increment
+      convert_u
+      getscopeobject      1
+      swap
+      setslot             7
+
+L366:
+      jump                L384
+
+L367:
+      getlocal0
+      pushscope
+
+      getlocal            6
+      pushscope
+
+      newcatch            1
+      dup
+      setlocal            9
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+      kill                9
+      jump                L384
+
+      ; 0x1D
+      ; 0x08
+      ; 0x09
+L384:
+      hasnext2            8, 7
+      iftrue              L64
+
+      kill                8
+      kill                7
+      returnvoid
+     end ; code
+     try from L92 to L101 target L102 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "e") end
+     try from L268 to L366 target L367 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "e") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "graphicsDatas") slotid 1 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>) end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "grahpicsData3d") slotid 2 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.stage3D.Object3D"), "Object3DStage3D")>) end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "mapWidth") slotid 3 type QName(PackageNamespace(""), "Number") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "mapHeight") slotid 4 type QName(PackageNamespace(""), "Number") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "camera") slotid 5 type QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "finalTransform") slotid 6 type QName(PackageNamespace("flash.geom"), "Matrix3D") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "index3d") slotid 7 type QName(PackageNamespace(""), "uint") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "test") slotid 8 type QName(PackageNamespace(""), "int") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.stage3D"), "graphicsData") slotid 9 type QName(PackageNamespace("flash.display"), "IGraphicsData") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "setTranslationToGame")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/kabam.rotmg.stage3D:Renderer/setTranslationToGame"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tX")
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("centerOnPlayer", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+      iffalse             L13
+
+      pushbyte            -50
+      convert_d
+      jump                L25
+
+L13:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+      getproperty         QName(PackageNamespace(""), "OFFSET_SCREEN_RECT")
+      getproperty         QName(PackageNamespace(""), "y")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+      getproperty         QName(PackageNamespace(""), "CENTER_SCREEN_RECT")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      add
+      pushbyte            2
+      multiply
+      convert_d
+L25:
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tY")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "setTranslationToTitle")
+   method
+    refid "kabam.rotmg.stage3D:Renderer/instance/kabam.rotmg.stage3D:Renderer/setTranslationToTitle"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      pushbyte            0
+      dup
+      setlocal1
+
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tY")
+
+      getlocal1
+      kill                1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "tX")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D:Renderer/class/init"
+  body
+   maxstack 5
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "STAGE3D_FILTER_PAUSE")
+    pushbyte            1
+    initproperty        QName(PackageNamespace(""), "STAGE3D_FILTER_PAUSE")
+
+    findproperty        QName(PackageNamespace(""), "STAGE3D_FILTER_BLIND")
+    pushbyte            2
+    initproperty        QName(PackageNamespace(""), "STAGE3D_FILTER_BLIND")
+
+    findproperty        QName(PackageNamespace(""), "STAGE3D_FILTER_DRUNK")
+    pushbyte            3
+    initproperty        QName(PackageNamespace(""), "STAGE3D_FILTER_DRUNK")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_VERTEX_CONSTANTS")
+    findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+    getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+    getlex              QName(PackageNamespace(""), "Number")
+    applytype           1
+    pushbyte            4
+    construct           1
+    dup
+    pushbyte            0
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            1
+    pushbyte            2
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            2
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            3
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_VERTEX_CONSTANTS")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "GRAYSCALE_FRAGMENT_CONSTANTS")
+    findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+    getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+    getlex              QName(PackageNamespace(""), "Number")
+    applytype           1
+    pushbyte            4
+    construct           1
+    dup
+    pushbyte            0
+    pushdouble          0.3
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            1
+    pushdouble          0.59
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            2
+    pushdouble          0.11
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            3
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "GRAYSCALE_FRAGMENT_CONSTANTS")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "BLIND_FRAGMENT_CONSTANTS")
+    findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+    getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+    getlex              QName(PackageNamespace(""), "Number")
+    applytype           1
+    pushbyte            4
+    construct           1
+    dup
+    pushbyte            0
+    pushdouble          0.05
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            1
+    pushdouble          0.05
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            2
+    pushdouble          0.05
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            3
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "BLIND_FRAGMENT_CONSTANTS")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_POSITIONS")
+    findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+    getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+    getlex              QName(PackageNamespace(""), "Number")
+    applytype           1
+    pushbyte            16
+    construct           1
+    dup
+    pushbyte            0
+    pushbyte            -1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            1
+    dup
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            2
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            3
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            4
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            5
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            6
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            7
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            8
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            9
+    pushbyte            -1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            10
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            11
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            12
+    pushbyte            -1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            13
+    pushbyte            -1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            14
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            15
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_POSITIONS")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_TRIS")
+    findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+    getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#1"), PackageNamespace("kabam.rotmg.stage3D"), PackageInternalNs("kabam.rotmg.stage3D"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.stage3D:Renderer"), StaticProtectedNs("kabam.rotmg.stage3D:Renderer")])
+    getlex              QName(PackageNamespace(""), "uint")
+    applytype           1
+    pushbyte            6
+    construct           1
+    dup
+    pushbyte            0
+    dup
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            1
+    pushbyte            2
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            2
+    pushbyte            3
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            3
+    pushbyte            0
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            4
+    pushbyte            1
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            5
+    pushbyte            2
+    setproperty         MultinameL([PackageNamespace("")])
+
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_TRIS")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "STAGE3D_FILTER_PAUSE") slotid 1 type QName(PackageNamespace(""), "uint") value Integer(1) end
+ trait const QName(PackageNamespace(""), "STAGE3D_FILTER_BLIND") slotid 2 type QName(PackageNamespace(""), "uint") value Integer(2) end
+ trait const QName(PackageNamespace(""), "STAGE3D_FILTER_DRUNK") slotid 3 type QName(PackageNamespace(""), "uint") value Integer(3) end
+ trait slot QName(PackageNamespace(""), "inGame") slotid 4 type QName(PackageNamespace(""), "Boolean") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_VERTEX_CONSTANTS") slotid 5 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Number")>) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "GRAYSCALE_FRAGMENT_CONSTANTS") slotid 6 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Number")>) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "BLIND_FRAGMENT_CONSTANTS") slotid 7 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Number")>) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_POSITIONS") slotid 8 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Number")>) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Renderer#0"), "POST_FILTER_TRIS") slotid 9 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>) end
+end ; class

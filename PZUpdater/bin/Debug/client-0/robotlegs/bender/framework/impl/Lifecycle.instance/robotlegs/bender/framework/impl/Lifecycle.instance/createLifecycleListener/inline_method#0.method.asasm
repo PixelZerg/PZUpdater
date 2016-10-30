@@ -1,0 +1,38 @@
+method
+ refid "robotlegs.bender.framework.impl:Lifecycle/instance/robotlegs.bender.framework.impl:Lifecycle/instance/createLifecycleListener/inline_method#0"
+ param QName(PackageNamespace("robotlegs.bender.framework.api"), "LifecycleEvent")
+ returns QName(PackageNamespace(""), "void")
+ flag NEED_ARGUMENTS
+ body
+  maxstack 3
+  localcount 3
+  initscopedepth 6
+  maxscopedepth 6
+  code
+   getlex              QName(PackageInternalNs("robotlegs.bender.framework.impl"), "once")
+   coerce_a
+   dup
+   iffalse             L15
+
+   pop
+   findpropstrict      QName(PackageNamespace("flash.events"), "IEventDispatcher")
+   getlocal1
+   getproperty         QName(PackageNamespace(""), "target")
+   callproperty        QName(PackageNamespace("flash.events"), "IEventDispatcher"), 1
+   getlocal1
+   getproperty         QName(PackageNamespace(""), "type")
+   getlocal2
+   getproperty         Multiname("callee", [PrivateNamespace(null, "robotlegs.bender.framework.impl:Lifecycle/instance"), PackageNamespace(""), PrivateNamespace(null, "robotlegs.bender.framework.impl:Lifecycle/instance/robotlegs.bender.framework.impl"), PackageNamespace("robotlegs.bender.framework.impl"), PackageInternalNs("robotlegs.bender.framework.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.framework.impl:Lifecycle"), StaticProtectedNs("robotlegs.bender.framework.impl:Lifecycle"), StaticProtectedNs("flash.events:EventDispatcher")])
+   callproperty        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+   coerce_a
+L15:
+   pop
+   findpropstrict      QName(PackageInternalNs("robotlegs.bender.framework.impl"), "handler")
+   getlocal1
+   getproperty         QName(PackageNamespace(""), "type")
+   callproplex         QName(PackageInternalNs("robotlegs.bender.framework.impl"), "handler"), 1
+   pop
+   returnvoid
+  end ; code
+ end ; body
+end ; method

@@ -1,0 +1,140 @@
+class
+ refid "com.junkbyte.console:ConsoleConfig"
+ instance QName(PackageNamespace("com.junkbyte.console"), "ConsoleConfig")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.junkbyte.console:ConsoleConfig")
+  iinit
+   refid "com.junkbyte.console:ConsoleConfig/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getproperty         QName(PackageNamespace(""), "FATAL")
+     initproperty        QName(PackageNamespace(""), "autoStackPriority")
+
+     getlocal0
+     newfunction         "com.junkbyte.console:ConsoleConfig/instance/init/inline_method#0"
+     initproperty        QName(PackageNamespace(""), "traceCall")
+
+     getlocal0
+     newfunction         "com.junkbyte.console:ConsoleConfig/instance/init/inline_method#1"
+     initproperty        QName(PackageNamespace(""), "timeStampFormatter")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.junkbyte.console"), "ConsoleStyle")
+     constructprop       QName(PackageNamespace("com.junkbyte.console"), "ConsoleStyle"), 0
+     initproperty        QName(PrivateNamespace(null, "com.junkbyte.console:ConsoleConfig/instance"), "_style")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "keystrokePassword") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "remotingPassword") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "maxLines") type QName(PackageNamespace(""), "uint") value Integer(1000) end
+  trait slot QName(PackageNamespace(""), "maxRepeats") type QName(PackageNamespace(""), "int") value Integer(75) end
+  trait slot QName(PackageNamespace(""), "autoStackPriority") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "defaultStackDepth") type QName(PackageNamespace(""), "int") value Integer(2) end
+  trait slot QName(PackageNamespace(""), "useObjectLinking") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "objectHardReferenceTimer") type QName(PackageNamespace(""), "uint") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "tracing") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "traceCall") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(PackageNamespace(""), "showTimestamp") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "timeStampFormatter") type QName(PackageNamespace(""), "Function") end
+  trait method QName(PrivateNamespace(null, "com.junkbyte.console:ConsoleConfig/instance"), "makeTimeDigit")
+   method
+    refid "com.junkbyte.console:ConsoleConfig/instance/com.junkbyte.console:ConsoleConfig/instance/makeTimeDigit"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            10
+      ifnlt               L9
+
+      pushstring          "0"
+      getlocal1
+      add
+      returnvalue
+
+L9:
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showLineNumber") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "remotingConnectionName") type QName(PackageNamespace(""), "String") value Utf8("_Console") end
+  trait slot QName(PackageNamespace(""), "allowedRemoteDomain") type QName(PackageNamespace(""), "String") value Utf8("*") end
+  trait slot QName(PackageNamespace(""), "commandLineAllowed") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "commandLineAutoScope") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "commandLineInputPassThrough") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(PackageNamespace(""), "commandLineAutoCompleteEnabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "keyBindsEnabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "displayRollerEnabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "rulerToolEnabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "rulerHidesMouse") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "sharedObjectName") type QName(PackageNamespace(""), "String") value Utf8("com.junkbyte/Console/UserData") end
+  trait slot QName(PackageNamespace(""), "sharedObjectPath") type QName(PackageNamespace(""), "String") value Utf8("/") end
+  trait slot QName(PackageNamespace(""), "rememberFilterSettings") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "alwaysOnTop") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait getter QName(PackageNamespace(""), "style")
+   method
+    refid "com.junkbyte.console:ConsoleConfig/instance/style/getter"
+    returns QName(PackageNamespace("com.junkbyte.console"), "ConsoleStyle")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.junkbyte.console:ConsoleConfig/instance"), "_style")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "com.junkbyte.console:ConsoleConfig/instance"), "_style") type QName(PackageNamespace("com.junkbyte.console"), "ConsoleStyle") end
+ end ; instance
+ cinit
+  refid "com.junkbyte.console:ConsoleConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

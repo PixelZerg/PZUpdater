@@ -1,0 +1,175 @@
+class
+ refid "kabam.rotmg.pets.view.components:PetIconFactory"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIconFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:PetIconFactory")
+  iinit
+   refid "kabam.rotmg.pets.view.components:PetIconFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "outlineSize") type QName(PackageNamespace(""), "Number") value Double(1.4) end
+  trait method QName(PackageNamespace(""), "create")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIconFactory/instance/create"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon")
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getPetSkinTexture"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal3
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      coerce              QName(PackageNamespace("flash.display"), "Bitmap")
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon")
+      dup
+      setlocal            5
+
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "setBitmap"), 1
+
+      getlocal            5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPetSkinTexture")
+   method
+    refid "kabam.rotmg.pets.view.components:PetIconFactory/instance/getPetSkinTexture"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "BitmapData")
+    body
+     maxstack 8
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            4
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            5
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getSkinMaskedImage"), 0
+      iffalse             L15
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getSkinMaskedImage"), 0
+      getproperty         QName(PackageNamespace(""), "image_")
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      jump                L17
+
+L15:
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+L17:
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      getlocal3
+      iffalse             L53
+
+      getlocal2
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getproperty         QName(PackageNamespace(""), "minSize")
+      subtract
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "width")
+      divide
+      convert_d
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal3
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getSkinMaskedImage"), 0
+      getproperty         QName(PackageNamespace(""), "mask_")
+      pushbyte            100
+      pushtrue
+      pushbyte            0
+      dup
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "resize"), 7
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            5
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal            5
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "outlineSize")
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            5
+
+      returnvalue
+
+L53:
+      findpropstrict      QName(PackageNamespace(""), "BitmapDataSpy")
+      getlocal2
+      getlocal2
+      constructprop       QName(PackageNamespace(""), "BitmapDataSpy"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:PetIconFactory/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

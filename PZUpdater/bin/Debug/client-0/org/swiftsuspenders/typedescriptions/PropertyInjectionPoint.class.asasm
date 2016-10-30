@@ -1,0 +1,147 @@
+class
+ refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"
+ instance QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PropertyInjectionPoint")
+  extends QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "InjectionPoint")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint")
+  iinit
+   refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace("flash.utils"), "Dictionary")
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_propertyName")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_mappingId")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_optional")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "injectParameters")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_propertyName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_mappingId") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_optional") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "applyInjection") flag OVERRIDE
+   method
+    refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance/applyInjection"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 6
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal3
+      dup
+      setlocal            5
+
+      getlex              QName(PackageNamespace("org.swiftsuspenders.utils"), "SsInternal")
+      coerce              QName(PackageNamespace(""), "Namespace")
+      getproperty         RTQName("getProvider")
+      getlocal            5
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_mappingId")
+      call                1
+      kill                5
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      dup
+      setlocal            4
+
+      iftrue              L45
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_optional")
+      iffalse             L21
+
+      returnvoid
+
+L21:
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.errors"), "InjectorMissingMappingError")
+      pushstring          "Injector is missing a mapping to handle injection into property \""
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_propertyName")
+      add
+      pushstring          "\" of object \""
+      add
+      getlocal1
+      add
+      pushstring          "\" with type \""
+      add
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getQualifiedClassName")
+      getlocal2
+      callproperty        QName(PackageNamespace("flash.utils"), "getQualifiedClassName"), 1
+      add
+      pushstring          "\". Target dependency: \""
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_mappingId")
+      add
+      pushstring          "\""
+      add
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.errors"), "InjectorMissingMappingError"), 1
+      throw
+
+L45:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), "_propertyName")
+      getlocal            4
+      getlocal2
+      getlocal3
+      getlex              QName(PackageNamespace(""), "injectParameters")
+      callproperty        QName(Namespace("org.swiftsuspenders.dependencyproviders:DependencyProvider"), "apply"), 3
+      setproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/instance/applyInjection"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:PropertyInjectionPoint"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:InjectionPoint")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.typedescriptions:PropertyInjectionPoint/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

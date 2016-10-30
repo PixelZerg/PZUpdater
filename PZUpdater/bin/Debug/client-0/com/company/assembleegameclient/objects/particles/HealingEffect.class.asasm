@@ -1,0 +1,197 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:HealingEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealingEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:HealingEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:HealingEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PackageNamespace(""), "lastPart_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "lastPart_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:HealingEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 9
+     localcount 8
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      pushnan
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealParticle")
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      ifne                L18
+
+      pushfalse
+      returnvalue
+
+L18:
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "x_")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getproperty         QName(PackageNamespace(""), "y_")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lastPart_")
+      subtract
+      convert_i
+      setlocal3
+
+      getlocal3
+      pushshort           500
+      ifngt               L107
+
+      pushbyte            2
+      getlex              QName(PackageNamespace(""), "Math")
+      getproperty         QName(PackageNamespace(""), "PI")
+      multiply
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      convert_d
+      setlocal            4
+
+      pushbyte            3
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            5
+      multiply
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      add
+      pushbyte            20
+      multiply
+      convert_i
+      setlocal            5
+
+      pushdouble          0.3
+      pushdouble          0.4
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      add
+      convert_d
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealParticle")
+      pushint             16777215
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.3
+      multiply
+      getlocal            5
+      pushshort           1000
+      pushdouble          0.1
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.1
+      multiply
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      getlocal            4
+      getlocal            6
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealParticle"), 8
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HealParticle")
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "x_")
+      getlocal            6
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "y_")
+      getlocal            6
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      add
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "lastPart_")
+
+L107:
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:HealingEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

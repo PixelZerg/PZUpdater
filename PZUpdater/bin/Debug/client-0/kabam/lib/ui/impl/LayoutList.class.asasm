@@ -1,0 +1,614 @@
+class
+ refid "kabam.lib.ui.impl:LayoutList"
+ instance QName(PackageNamespace("kabam.lib.ui.impl"), "LayoutList")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("List", [PackageNamespace("kabam.lib.ui.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.ui.impl:LayoutList")
+  iinit
+   refid "kabam.lib.ui.impl:LayoutList/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "itemsChanged")
+
+     getlocal0
+     findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+     getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), PackageNamespace("kabam.lib.ui.impl"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList/instance"), PackageInternalNs("kabam.lib.ui.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.ui.impl:LayoutList"), StaticProtectedNs("kabam.lib.ui.impl:LayoutList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+     getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+     applytype           1
+     pushbyte            0
+     construct           1
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Shape")
+     constructprop       QName(PackageNamespace("flash.display"), "Shape"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "containerMask")
+
+     getlocal0
+     getlex              QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "NULL_LAYOUT")
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "layout")
+
+     getlocal0
+     getlex              QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "ZERO_SIZE")
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "size")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "containerMask")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "itemsChanged") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>) end
+  trait const QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait const QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "containerMask") type QName(PackageNamespace("flash.display"), "Shape") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "layout") type QName(PackageNamespace("kabam.lib.ui.api"), "Layout") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "size") type QName(PackageNamespace("kabam.lib.ui.api"), "Size") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "offset") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "getLayout")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/getLayout"
+    returns QName(PackageNamespace("kabam.lib.ui.api"), "Layout")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "layout")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setLayout")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/setLayout"
+    param QName(PackageNamespace("kabam.lib.ui.api"), "Layout")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      coerce              QName(PackageNamespace("kabam.lib.ui.api"), "Layout")
+      dup
+      iftrue              L10
+
+      pop
+      getlex              QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "NULL_LAYOUT")
+      coerce              QName(PackageNamespace("kabam.lib.ui.api"), "Layout")
+L10:
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "layout")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "offset")
+      negate
+      callpropvoid        QName(Namespace("kabam.lib.ui.api:Layout"), "layout"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSize")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/getSize"
+    returns QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "size")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSize")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/setSize"
+    param QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      coerce              QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+      dup
+      iftrue              L10
+
+      pop
+      getlex              QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "ZERO_SIZE")
+      coerce              QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+L10:
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "size")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "applySizeToMask"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSizeOfItems")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/getSizeOfItems"
+    returns QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container")
+      callproperty        QName(PackageNamespace(""), "getRect"), 1
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace("kabam.lib.ui.api"), "Size"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "applySizeToMask")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/kabam.lib.ui.impl:LayoutList/applySizeToMask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "containerMask")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlocal1
+      pushint             10027263
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal1
+      pushbyte            0
+      dup
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "size")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "size")
+      getproperty         QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "containerMask")
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addItem")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/addItem"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "addToListAndContainer"), 1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateLayout"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemsChanged")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getItemAt")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/getItemAt"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), PackageNamespace("kabam.lib.ui.impl"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList/instance"), PackageInternalNs("kabam.lib.ui.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.ui.impl:LayoutList"), StaticProtectedNs("kabam.lib.ui.impl:LayoutList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItems")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/setItems"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "clearList"), 0
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "addItemsToListAndContainer"), 1
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "offset")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateLayout"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemsChanged")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getItemCount")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/getItemCount"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      getproperty         QName(PackageNamespace(""), "length")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "clearList")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/kabam.lib.ui.impl:LayoutList/clearList"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal1
+
+      jump                L16
+
+L8:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), PackageNamespace("kabam.lib.ui.impl"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList/instance"), PackageInternalNs("kabam.lib.ui.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.ui.impl:LayoutList"), StaticProtectedNs("kabam.lib.ui.impl:LayoutList"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L16:
+      getlocal1
+      dup
+      decrement_i
+      setlocal1
+
+      iftrue              L8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "addItemsToListAndContainer")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/kabam.lib.ui.impl:LayoutList/addItemsToListAndContainer"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      coerce_a
+      setlocal            4
+
+      jump                L20
+
+L11:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("flash.display"), "DisplayObject")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "addToListAndContainer"), 1
+
+L20:
+      hasnext2            4, 3
+      iftrue              L11
+
+      kill                4
+      kill                3
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "addToListAndContainer")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/kabam.lib.ui.impl:LayoutList/addToListAndContainer"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "container")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setOffset")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/setOffset"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "offset")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "updateLayout"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getOffset")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/getOffset"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "offset")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateLayout")
+   method
+    refid "kabam.lib.ui.impl:LayoutList/instance/updateLayout"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "layout")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "list")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "offset")
+      negate
+      callpropvoid        QName(Namespace("kabam.lib.ui.api:Layout"), "layout"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.ui.impl:LayoutList/class/init"
+  body
+   maxstack 4
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "NULL_LAYOUT")
+    findpropstrict      QName(PackageNamespace("kabam.lib.ui.impl"), "NullLayout")
+    constructprop       QName(PackageNamespace("kabam.lib.ui.impl"), "NullLayout"), 0
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "NULL_LAYOUT")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "ZERO_SIZE")
+    findpropstrict      QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+    pushbyte            0
+    dup
+    constructprop       QName(PackageNamespace("kabam.lib.ui.api"), "Size"), 2
+    initproperty        QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "ZERO_SIZE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "NULL_LAYOUT") slotid 1 type QName(PackageNamespace("kabam.lib.ui.api"), "Layout") end
+ trait const QName(PrivateNamespace(null, "kabam.lib.ui.impl:LayoutList"), "ZERO_SIZE") slotid 2 type QName(PackageNamespace("kabam.lib.ui.api"), "Size") end
+end ; class

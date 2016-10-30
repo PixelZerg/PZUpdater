@@ -1,0 +1,613 @@
+class
+ refid "org.osflash.signals:Slot"
+ instance QName(PackageNamespace("org.osflash.signals"), "Slot")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ISlot", [PackageNamespace("org.osflash.signals")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.osflash.signals:Slot")
+  iinit
+   refid "org.osflash.signals:Slot/instance/init"
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace("org.osflash.signals"), "IOnceSignal")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "int")
+   flag HAS_OPTIONAL
+   optional False()
+   optional Integer(0)
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_once")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_signal")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_priority")
+
+     getlocal0
+     getlocal1
+     callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "verifyListener"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("org.osflash.signals:Slot"), "_signal") type QName(PackageNamespace("org.osflash.signals"), "IOnceSignal") end
+  trait slot QName(ProtectedNamespace("org.osflash.signals:Slot"), "_enabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(ProtectedNamespace("org.osflash.signals:Slot"), "_once") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(ProtectedNamespace("org.osflash.signals:Slot"), "_priority") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params") type QName(PackageNamespace(""), "Array") end
+  trait method QName(PackageNamespace(""), "execute0")
+   method
+    refid "org.osflash.signals:Slot/instance/execute0"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_enabled")
+      iftrue              L6
+
+      returnvoid
+
+L6:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_once")
+      iffalse             L11
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+L11:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      convert_b
+      dup
+      iffalse             L21
+
+      pop
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_b
+L21:
+      iffalse             L29
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+      pushnull
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+      returnvoid
+
+L29:
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute1")
+   method
+    refid "org.osflash.signals:Slot/instance/execute1"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_enabled")
+      iftrue              L6
+
+      returnvoid
+
+L6:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_once")
+      iffalse             L11
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+L11:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      convert_b
+      dup
+      iffalse             L21
+
+      pop
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_b
+L21:
+      iffalse             L32
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+      pushnull
+      getlocal1
+      newarray            1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+      returnvoid
+
+L32:
+      getlocal0
+      getlocal1
+      callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "org.osflash.signals:Slot/instance/execute"
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_enabled")
+      iftrue              L6
+
+      returnvoid
+
+L6:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_once")
+      iffalse             L11
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "remove"), 0
+
+L11:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      convert_b
+      dup
+      iffalse             L21
+
+      pop
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_b
+L21:
+      iffalse             L28
+
+      getlocal1
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal1
+
+L28:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal2
+
+      getlocal2
+      pushbyte            0
+      ifne                L38
+
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener"), 0
+
+      jump                L79
+
+L38:
+      getlocal2
+      pushbyte            1
+      ifne                L47
+
+      getlocal0
+      getlocal1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#0"), ProtectedNamespace("org.osflash.signals:Slot"), PackageNamespace(""), PackageNamespace("org.osflash.signals"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#1"), PackageInternalNs("org.osflash.signals"), StaticProtectedNs("org.osflash.signals:Slot")])
+      callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener"), 1
+
+      jump                L79
+
+L47:
+      getlocal2
+      pushbyte            2
+      ifne                L59
+
+      getlocal0
+      getlocal1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#0"), ProtectedNamespace("org.osflash.signals:Slot"), PackageNamespace(""), PackageNamespace("org.osflash.signals"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#1"), PackageInternalNs("org.osflash.signals"), StaticProtectedNs("org.osflash.signals:Slot")])
+      getlocal1
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#0"), ProtectedNamespace("org.osflash.signals:Slot"), PackageNamespace(""), PackageNamespace("org.osflash.signals"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#1"), PackageInternalNs("org.osflash.signals"), StaticProtectedNs("org.osflash.signals:Slot")])
+      callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener"), 2
+
+      jump                L79
+
+L59:
+      getlocal2
+      pushbyte            3
+      ifne                L74
+
+      getlocal0
+      getlocal1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#0"), ProtectedNamespace("org.osflash.signals:Slot"), PackageNamespace(""), PackageNamespace("org.osflash.signals"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#1"), PackageInternalNs("org.osflash.signals"), StaticProtectedNs("org.osflash.signals:Slot")])
+      getlocal1
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#0"), ProtectedNamespace("org.osflash.signals:Slot"), PackageNamespace(""), PackageNamespace("org.osflash.signals"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#1"), PackageInternalNs("org.osflash.signals"), StaticProtectedNs("org.osflash.signals:Slot")])
+      getlocal1
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#0"), ProtectedNamespace("org.osflash.signals:Slot"), PackageNamespace(""), PackageNamespace("org.osflash.signals"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "org.osflash.signals:Slot/instance/execute#1"), PackageInternalNs("org.osflash.signals"), StaticProtectedNs("org.osflash.signals:Slot")])
+      callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener"), 3
+
+      jump                L79
+
+L74:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+      pushnull
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L79:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "listener")
+   method
+    refid "org.osflash.signals:Slot/instance/listener/getter"
+    returns QName(PackageNamespace(""), "Function")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "listener")
+   method
+    refid "org.osflash.signals:Slot/instance/listener/setter"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      getlocal1
+      ifne                L9
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Given listener is null.\nDid you want to set enabled to false instead?"
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L9:
+      getlocal0
+      getlocal1
+      callpropvoid        QName(ProtectedNamespace("org.osflash.signals:Slot"), "verifyListener"), 1
+
+      getlocal0
+      getlocal1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "once")
+   method
+    refid "org.osflash.signals:Slot/instance/once/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_once")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "priority")
+   method
+    refid "org.osflash.signals:Slot/instance/priority/getter"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_priority")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    refid "org.osflash.signals:Slot/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "[Slot listener: "
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+      add
+      pushstring          ", once: "
+      add
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_once")
+      add
+      pushstring          ", priority: "
+      add
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_priority")
+      add
+      pushstring          ", enabled: "
+      add
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_enabled")
+      add
+      pushstring          "]"
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "enabled")
+   method
+    refid "org.osflash.signals:Slot/instance/enabled/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_enabled")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "enabled")
+   method
+    refid "org.osflash.signals:Slot/instance/enabled/setter"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_enabled")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "params")
+   method
+    refid "org.osflash.signals:Slot/instance/params/getter"
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "params")
+   method
+    refid "org.osflash.signals:Slot/instance/params/setter"
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(ProtectedNamespace("org.osflash.signals:Slot"), "_params")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "remove")
+   method
+    refid "org.osflash.signals:Slot/instance/remove"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_signal")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_listener")
+      callpropvoid        QName(Namespace("org.osflash.signals:IOnceSignal"), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("org.osflash.signals:Slot"), "verifyListener")
+   method
+    refid "org.osflash.signals:Slot/instance/org.osflash.signals:Slot:verifyListener"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      getlocal1
+      ifne                L9
+
+      findpropstrict      QName(PackageNamespace(""), "ArgumentError")
+      pushstring          "Given listener is null."
+      constructprop       QName(PackageNamespace(""), "ArgumentError"), 1
+      throw
+
+L9:
+      pushnull
+      getlocal0
+      getproperty         QName(ProtectedNamespace("org.osflash.signals:Slot"), "_signal")
+      ifne                L17
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "Internal signal reference has not been set yet."
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.osflash.signals:Slot/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

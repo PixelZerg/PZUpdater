@@ -1,0 +1,315 @@
+class
+ refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components.slot"), "PetFeedFuseSlot")
+  extends QName(PackageNamespace("kabam.rotmg.pets.view.components.slot"), "FeedFuseSlot")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot")
+  iinit
+   refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "openPetPicker")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIconFactory")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIconFactory"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "petIconFactory")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+     getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+     getproperty         QName(PackageNamespace(""), "greyscaleFilterMatrix")
+     constructprop       QName(PackageNamespace("flash.filters"), "ColorMatrixFilter"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "grayscaleMatrix")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "onOpenPetPicker")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "updateTitle"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "openPetPicker") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "showFamily") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PackageNamespace(""), "processing") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "petIconFactory") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIconFactory") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "grayscaleMatrix") type QName(PackageNamespace("flash.filters"), "ColorMatrixFilter") end
+  trait method QName(PackageNamespace(""), "updateTitle")
+   method
+    refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance/updateTitle"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "icon")
+      not
+      dup
+      iftrue              L11
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "icon")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      convert_b
+L11:
+      iffalse             L17
+
+      findpropstrict      QName(PackageNamespace(""), "setTitle")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PETORFOODSLOT_FUSE_PET_TITLE")
+      newobject           0
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 2
+
+L17:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "onOpenPetPicker")
+   method
+    refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance/kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance/onOpenPetPicker"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "processing")
+      iftrue              L8
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openPetPicker")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L8:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPetIcon")
+   method
+    refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance/setPetIcon"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "petIconFactory")
+      getlocal1
+      pushbyte            48
+      callproperty        QName(PackageNamespace(""), "create"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "setIcon")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setIcon"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPet")
+   method
+    refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance/setPet"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      setlocal2
+
+      getlocal1
+      iffalse             L47
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setPetIcon"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "setTitle")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "BLANK")
+      pushstring          "data"
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 2
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "AppendingLineBuilder")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getRarity"), 0
+      callpropvoid        QName(PackageNamespace(""), "pushParams"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showFamily")
+      coerce_a
+      dup
+      iffalse             L39
+
+      pop
+      getlocal2
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetFamilyKeys")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getFamily"), 0
+      callproperty        QName(PackageNamespace(""), "getTranslationKey"), 1
+      callproperty        QName(PackageNamespace(""), "pushParams"), 1
+      coerce_a
+L39:
+      pop
+      findpropstrict      QName(PackageNamespace(""), "setSubtitle")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "BLANK")
+      pushstring          "data"
+      getlocal2
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "setSubtitle"), 2
+
+L47:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setProcessing")
+   method
+    refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance/setProcessing"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "processing")
+      getlocal1
+      ifeq                L38
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "processing")
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "icon")
+      getlocal1
+      iffalse             L20
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/instance"), "grayscaleMatrix")
+      newarray            1
+      coerce              QName(PackageNamespace(""), "Array")
+      jump                L22
+
+L20:
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+L22:
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal1
+      iffalse             L29
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+      getproperty         QName(PackageNamespace(""), "darkCT")
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      jump                L32
+
+L29:
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+L32:
+      coerce              QName(PackageNamespace("flash.geom"), "ColorTransform")
+      setlocal2
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.pets.view.components.slot:FeedFuseSlot"), "icon")
+      getproperty         QName(PackageNamespace(""), "transform")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "colorTransform")
+
+L38:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components.slot:PetFeedFuseSlot/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

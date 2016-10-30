@@ -1,0 +1,391 @@
+class
+ refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), "ItemTileSprite")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite")
+  iinit
+   refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+     initproperty        QName(PackageNamespace(""), "itemBitmap")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "itemBitmap")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     pushbyte            -1
+     initproperty        QName(PackageNamespace(""), "itemId")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "itemId") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "itemBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "bitmapFactory") type QName(PackageNamespace("kabam.rotmg.text.view"), "BitmapTextFactory") end
+  trait method QName(PackageNamespace(""), "setDim")
+   method
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite/instance/setDim"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findproperty        QName(PackageNamespace(""), "filters")
+      getlocal1
+      iffalse             L8
+
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), "DIM_FILTER")
+      coerce              QName(PackageNamespace(""), "Array")
+      jump                L10
+
+L8:
+      pushnull
+      coerce              QName(PackageNamespace(""), "Array")
+L10:
+      initproperty        QName(PackageNamespace(""), "filters")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setType")
+   method
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite/instance/setType"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "itemId")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "drawTile"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawTile")
+   method
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite/instance/drawTile"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemId")
+      convert_i
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.constants"), "ItemConstants")
+      getproperty         QName(PackageNamespace(""), "NO_ITEM")
+      ifeq                L152
+
+      getlocal1
+      pushint             36864
+      greaterequals
+      dup
+      iffalse             L28
+
+      pop
+      getlocal1
+      pushint             61440
+      lessthan
+L28:
+      iffalse             L31
+
+      pushint             36863
+      setlocal1
+
+L31:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal1
+      pushbyte            80
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "getRedrawnTextureFromType"), 3
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal3
+      coerce_a
+      convert_b
+      dup
+      iffalse             L55
+
+      pop
+      getlocal3
+      pushstring          "Doses"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      coerce_a
+      convert_b
+L55:
+      dup
+      iffalse             L61
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "bitmapFactory")
+      convert_b
+L61:
+      iffalse             L86
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "clone"), 0
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "bitmapFactory")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal3
+      getproperty         Multiname("Doses", [PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      pushbyte            12
+      pushint             16777215
+      pushfalse
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "IDENTITY_MATRIX")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "make"), 6
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            4
+
+      getlocal2
+      getlocal            4
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "DOSE_MATRIX")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+L86:
+      getlocal3
+      coerce_a
+      convert_b
+      dup
+      iffalse             L97
+
+      pop
+      getlocal3
+      pushstring          "Quantity"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      coerce_a
+      convert_b
+L97:
+      dup
+      iffalse             L103
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "bitmapFactory")
+      convert_b
+L103:
+      iffalse             L128
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "clone"), 0
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "bitmapFactory")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal3
+      getproperty         Multiname("Quantity", [PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#1"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), PackageInternalNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      pushbyte            12
+      pushint             16777215
+      pushfalse
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "IDENTITY_MATRIX")
+      pushfalse
+      callproperty        QName(PackageNamespace(""), "make"), 6
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            4
+
+      getlocal2
+      getlocal            4
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "DOSE_MATRIX")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+L128:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemBitmap")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemBitmap")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "width")
+      negate
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemBitmap")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "height")
+      negate
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findproperty        QName(PackageNamespace(""), "visible")
+      pushtrue
+      initproperty        QName(PackageNamespace(""), "visible")
+
+      jump                L155
+
+L152:
+      findproperty        QName(PackageNamespace(""), "visible")
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "visible")
+
+L155:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setBitmapFactory")
+   method
+    refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite/instance/setBitmapFactory"
+    param QName(PackageNamespace("kabam.rotmg.text.view"), "BitmapTextFactory")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "bitmapFactory")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite/class/init"
+  body
+   maxstack 22
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), "DIM_FILTER")
+    findpropstrict      QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+    pushdouble          0.4
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0.4
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0.4
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushdouble          0
+    pushbyte            1
+    pushdouble          0
+    newarray            20
+    constructprop       QName(PackageNamespace("flash.filters"), "ColorMatrixFilter"), 1
+    newarray            1
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), "DIM_FILTER")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "IDENTITY_MATRIX")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+    constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+    initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "IDENTITY_MATRIX")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "DOSE_MATRIX")
+    newfunction         "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite/class/init/inline_method"
+    getglobalscope
+    call                0
+    initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "DOSE_MATRIX")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite"), "DIM_FILTER") slotid 1 type QName(PackageNamespace(""), "Array") end
+ trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "IDENTITY_MATRIX") slotid 2 type QName(PackageNamespace("flash.geom"), "Matrix") end
+ trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels.itemgrids.itemtiles:ItemTileSprite#0"), "DOSE_MATRIX") slotid 3 type QName(PackageNamespace("flash.geom"), "Matrix") end
+end ; class

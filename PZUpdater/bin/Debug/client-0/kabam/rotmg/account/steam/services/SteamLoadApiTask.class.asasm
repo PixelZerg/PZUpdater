@@ -1,0 +1,258 @@
+class
+ refid "kabam.rotmg.account.steam.services:SteamLoadApiTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.steam.services"), "SteamLoadApiTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.steam.services:SteamLoadApiTask")
+  iinit
+   refid "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "info") flag METADATA type QName(PackageNamespace("flash.display"), "LoaderInfo")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "api") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.steam"), "SteamApi")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "layers") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "dialog") type QName(PackageNamespace("kabam.rotmg.account.steam.view"), "SteamSessionRequestErrorDialog") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.steam.services:SteamLoadApiTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/kabam.rotmg.account.steam.services:SteamLoadApiTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "startTask"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "layers")
+      getproperty         QName(PackageNamespace(""), "api")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+      astypelate
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getproperty         QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "loaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "requestSessionTicket")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "info")
+      getproperty         QName(PackageNamespace(""), "parameters")
+      getproperty         Multiname("steam_api_path", [PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/kabam.rotmg.account.steam.services:SteamLoadApiTask:startTask"), PackageNamespace("kabam.rotmg.account.steam.services"), PackageInternalNs("kabam.rotmg.account.steam.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.steam.services:SteamLoadApiTask"), StaticProtectedNs("kabam.rotmg.account.steam.services:SteamLoadApiTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callpropvoid        QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "load"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "requestSessionTicket")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/requestSessionTicket"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "requestSessionTicket"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getproperty         QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "sessionReceived")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "onSessionReceived")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      callpropvoid        QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "requestSessionTicket"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "onSessionReceived")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/onSessionReceived"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "session received - isValid? {0}"
+      getlocal1
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 2
+
+      getlocal1
+      iffalse             L14
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      jump                L16
+
+L14:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "showErrorDialog"), 0
+
+L16:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "showErrorDialog")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/showErrorDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "dialog")
+      coerce              QName(PackageNamespace("kabam.rotmg.account.steam.view"), "SteamSessionRequestErrorDialog")
+      dup
+      iftrue              L12
+
+      pop
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.steam.view"), "SteamSessionRequestErrorDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.steam.view"), "SteamSessionRequestErrorDialog"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.steam.view"), "SteamSessionRequestErrorDialog")
+L12:
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "dialog")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "dialog")
+      getproperty         QName(PackageNamespace(""), "ok")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "onOK")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "dialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "onOK")
+   method
+    refid "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/kabam.rotmg.account.steam.services:SteamLoadApiTask/instance/onOK"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.steam.services:SteamLoadApiTask/instance"), "requestSessionTicket"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.steam.services:SteamLoadApiTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,136 @@
+class
+ refid "com.company.util:ArrayIterator"
+ instance QName(PackageNamespace("com.company.util"), "ArrayIterator")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IIterator", [PackageNamespace("com.company.util")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.util:ArrayIterator")
+  iinit
+   refid "com.company.util:ArrayIterator/instance/init"
+   param QName(PackageNamespace(""), "Array")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "objects_")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "index_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "objects_") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "index_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "reset")
+   method
+    refid "com.company.util:ArrayIterator/instance/reset"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "index_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "next")
+   method
+    refid "com.company.util:ArrayIterator/instance/next"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "objects_")
+      getlocal0
+      dup
+      setlocal1
+
+      getproperty         QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "index_")
+      dup
+      increment_i
+      setlocal2
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "index_")
+
+      kill                2
+      kill                1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.util:ArrayIterator/instance/next"), PackageNamespace("com.company.util"), PackageInternalNs("com.company.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.util:ArrayIterator"), StaticProtectedNs("com.company.util:ArrayIterator")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "hasNext")
+   method
+    refid "com.company.util:ArrayIterator/instance/hasNext"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "index_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.util:ArrayIterator/instance"), "objects_")
+      getproperty         QName(PackageNamespace(""), "length")
+      lessthan
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.util:ArrayIterator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

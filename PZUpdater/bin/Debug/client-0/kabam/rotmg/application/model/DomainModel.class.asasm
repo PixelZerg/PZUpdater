@@ -1,0 +1,310 @@
+class
+ refid "kabam.rotmg.application.model:DomainModel"
+ instance QName(PackageNamespace("kabam.rotmg.application.model"), "DomainModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.application.model:DomainModel")
+  iinit
+   refid "kabam.rotmg.application.model:DomainModel/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "www.realmofthemadgod.com"
+     pushstring          "realmofthemadgodhrd.appspot.com"
+     pushstring          "realmofthemadgod.appspot.com"
+     newarray            3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "PRODUCTION_WHITELIST")
+
+     getlocal0
+     pushstring          "testing.realmofthemadgod.com"
+     pushstring          "rotmgtesting.appspot.com"
+     pushstring          "rotmghrdtesting.appspot.com"
+     newarray            3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TESTING_WHITELIST")
+
+     getlocal0
+     pushstring          "realmtesting2.appspot.com"
+     newarray            1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TESTING2_WHITELIST")
+
+     getlocal0
+     pushstring          "xlate.kabam.com"
+     newarray            1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TRANSLATION_WHITELIST")
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "PRODUCTION_WHITELIST")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TESTING_WHITELIST")
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TRANSLATION_WHITELIST")
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TESTING2_WHITELIST")
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "WHITELIST")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "LOCALHOST") type QName(PackageNamespace(""), "String") value Utf8("localhost") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "PRODUCTION_WHITELIST") type QName(PackageNamespace(""), "Array") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TESTING_WHITELIST") type QName(PackageNamespace(""), "Array") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TESTING2_WHITELIST") type QName(PackageNamespace(""), "Array") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "TRANSLATION_WHITELIST") type QName(PackageNamespace(""), "Array") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "WHITELIST") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "localDomain") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "applyDomainSecurity")
+   method
+    refid "kabam.rotmg.application.model:DomainModel/instance/applyDomainSecurity"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "WHITELIST")
+      coerce_a
+      setlocal3
+
+      jump                L21
+
+L12:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce_s
+      setlocal1
+
+      getlex              QName(PackageNamespace("flash.system"), "Security")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "allowDomain"), 1
+
+L21:
+      hasnext2            3, 2
+      iftrue              L12
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isLocalDomainValid")
+   method
+    refid "kabam.rotmg.application.model:DomainModel/instance/isLocalDomainValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      callproperty        QName(PackageNamespace(""), "isDesktop"), 0
+      convert_b
+      dup
+      iftrue              L12
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "isLocalDomainInWhiteList"), 0
+      convert_b
+L12:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isLocalDomainProduction")
+   method
+    refid "kabam.rotmg.application.model:DomainModel/instance/isLocalDomainProduction"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "getLocalDomain"), 0
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "PRODUCTION_WHITELIST")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "isLocalDomainInWhiteList")
+   method
+    refid "kabam.rotmg.application.model:DomainModel/instance/kabam.rotmg.application.model:DomainModel/instance/isLocalDomainInWhiteList"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal3
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "getLocalDomain"), 0
+      coerce_s
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "LOCALHOST")
+      equals
+      setlocal2
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "WHITELIST")
+      coerce_a
+      setlocal            5
+
+      jump                L37
+
+L21:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce_s
+      setlocal3
+
+      getlocal2
+      convert_b
+      dup
+      iftrue              L35
+
+      pop
+      getlocal1
+      getlocal3
+      equals
+L35:
+      convert_b
+      setlocal2
+
+L37:
+      hasnext2            5, 4
+      iftrue              L21
+
+      kill                5
+      kill                4
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "getLocalDomain")
+   method
+    refid "kabam.rotmg.application.model:DomainModel/instance/kabam.rotmg.application.model:DomainModel/instance/getLocalDomain"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "localDomain")
+      coerce_s
+      dup
+      iftrue              L13
+
+      pop
+      findpropstrict      QName(PackageNamespace("flash.net"), "LocalConnection")
+      constructprop       QName(PackageNamespace("flash.net"), "LocalConnection"), 0
+      getproperty         QName(PackageNamespace(""), "domain")
+      coerce_s
+L13:
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:DomainModel/instance"), "localDomain")
+
+      getlocal1
+      kill                1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application.model:DomainModel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,205 @@
+class
+ refid "kabam.rotmg.legends.service:GetLegendsListTask"
+ instance QName(PackageNamespace("kabam.rotmg.legends.service"), "GetLegendsListTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.legends.service:GetLegendsListTask")
+  iinit
+   refid "kabam.rotmg.legends.service:GetLegendsListTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "player") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.legends.model"), "LegendsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "factory") flag METADATA type QName(PackageNamespace("kabam.rotmg.legends.model"), "LegendFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "timespan") flag METADATA type QName(PackageNamespace("kabam.rotmg.legends.model"), "Timespan")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "charId") type QName(PackageNamespace(""), "int") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.legends.service:GetLegendsListTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.legends.service:GetLegendsListTask/instance/kabam.rotmg.legends.service:GetLegendsListTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/fame/list"
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), "makeRequestObject"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.legends.service:GetLegendsListTask/instance/kabam.rotmg.legends.service:GetLegendsListTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), "updateFameListData"), 1
+      coerce_a
+L11:
+      pop
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), "updateFameListData")
+   method
+    refid "kabam.rotmg.legends.service:GetLegendsListTask/instance/kabam.rotmg.legends.service:GetLegendsListTask/instance/updateFameListData"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "factory")
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      callproperty        QName(PackageNamespace(""), "makeLegends"), 1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.legends.model"), "Legend")>)
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setLegendList"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), "makeRequestObject")
+   method
+    refid "kabam.rotmg.legends.service:GetLegendsListTask/instance/kabam.rotmg.legends.service:GetLegendsListTask/instance/makeRequestObject"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timespan")
+      callproperty        QName(PackageNamespace(""), "getId"), 0
+      setproperty         Multiname("timespan", [PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance/kabam.rotmg.legends.service:GetLegendsListTask/instance/makeRequestObject"), PackageNamespace("kabam.rotmg.legends.service"), PackageInternalNs("kabam.rotmg.legends.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.service:GetLegendsListTask"), StaticProtectedNs("kabam.rotmg.legends.service:GetLegendsListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "player")
+      callproperty        QName(PackageNamespace(""), "getAccountId"), 0
+      setproperty         Multiname("accountId", [PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance/kabam.rotmg.legends.service:GetLegendsListTask/instance/makeRequestObject"), PackageNamespace("kabam.rotmg.legends.service"), PackageInternalNs("kabam.rotmg.legends.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.service:GetLegendsListTask"), StaticProtectedNs("kabam.rotmg.legends.service:GetLegendsListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "charId")
+      setproperty         Multiname("charId", [PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.legends.service:GetLegendsListTask/instance/kabam.rotmg.legends.service:GetLegendsListTask/instance/makeRequestObject"), PackageNamespace("kabam.rotmg.legends.service"), PackageInternalNs("kabam.rotmg.legends.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.legends.service:GetLegendsListTask"), StaticProtectedNs("kabam.rotmg.legends.service:GetLegendsListTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.legends.service:GetLegendsListTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

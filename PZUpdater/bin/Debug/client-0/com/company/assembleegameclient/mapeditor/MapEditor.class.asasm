@@ -1,0 +1,519 @@
+class
+ refid "com.company.assembleegameclient.mapeditor:MapEditor"
+ instance QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "MapEditor")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.mapeditor:MapEditor")
+  iinit
+   refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "EditingScreen")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "EditingScreen"), 0
+     initproperty        QName(PackageNamespace(""), "editingScreen_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "editingScreen_")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "MapTestEvent")
+     getproperty         QName(PackageNamespace(""), "MAP_TEST")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTest")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "editingScreen_")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitJMEvent")
+     getproperty         QName(PackageNamespace(""), "SUBMIT_JM_EVENT")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onSubmitMapPopup")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "editingScreen_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "model") type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "server") type QName(PackageNamespace("kabam.rotmg.servers.api"), "Server") end
+  trait slot QName(PackageNamespace(""), "editingScreen_") type QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "EditingScreen") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait slot QName(PackageNamespace(""), "returnButton_") type QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/initialize"
+    param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+    param QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "model")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "server")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTest")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/onMapTest"
+    param QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "MapTestEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 11
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "server")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "MAPTEST_GAMEID")
+      pushfalse
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "model")
+      callproperty        QName(PackageNamespace(""), "getSavedCharacters"), 0
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/onMapTest"), PackageInternalNs("com.company.assembleegameclient.mapeditor"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:MapEditor"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:MapEditor"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "charId"), 0
+      pushbyte            -1
+      pushnull
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "model")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mapJSON_")
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite"), 9
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "isEditor")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.game.events"), "ReconnectEvent")
+      getproperty         QName(PackageNamespace(""), "RECONNECT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.game.events"), "DeathEvent")
+      getproperty         QName(PackageNamespace(""), "DEATH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDoneSub")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDoneSub")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/onMapTestDoneSub"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushnull
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/onMapTestDone"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "cleanupGameSprite"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onSubmitMapPopup")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/onSubmitMapPopup"
+    param QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitJMEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitMapForm")
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitMapForm")
+      callproperty        QName(PackageNamespace(""), "isInitialized"), 0
+      iftrue              L48
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitMapForm")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mapJSON_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mapInfo_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "model")
+      getproperty         QName(PackageNamespace(""), "account")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitMapForm"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitMapForm")
+      setlocal2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "showCurtain"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      pushshort           800
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal2
+      pushshort           600
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "SubmitMapForm")
+      getproperty         QName(PackageNamespace(""), "cancel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onSubmitClose")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      callpropvoid        QName(PackageNamespace(""), "disableInput"), 0
+
+L48:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onSubmitClose")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/onSubmitClose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "hideCurtain"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      callpropvoid        QName(PackageNamespace(""), "enableInput"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onClientUpdate")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/onClientUpdate"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "cleanupGameSprite"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "editingScreen_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "showCurtain")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/showCurtain"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      pushnull
+      ifne                L28
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      pushdouble          0.4
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      getlex              QName(PackageNamespace(""), "width")
+      getlex              QName(PackageNamespace(""), "height")
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L28:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "hideCurtain")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/hideCurtain"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      getproperty         QName(PackageNamespace(""), "parent")
+      convert_b
+L14:
+      iffalse             L19
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "blackBackground")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "cleanupGameSprite")
+   method
+    refid "com.company.assembleegameclient.mapeditor:MapEditor/instance/com.company.assembleegameclient.mapeditor:MapEditor/instance/cleanupGameSprite"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.game.events"), "ReconnectEvent")
+      getproperty         QName(PackageNamespace(""), "RECONNECT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.game.events"), "DeathEvent")
+      getproperty         QName(PackageNamespace(""), "DEATH")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDone")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "onMapTestDoneSub")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:MapEditor/instance"), "gameSprite_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.mapeditor:MapEditor/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

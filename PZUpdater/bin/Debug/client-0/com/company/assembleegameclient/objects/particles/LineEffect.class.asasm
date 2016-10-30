@@ -1,0 +1,256 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:LineEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "LineEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:LineEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:LineEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+   param QName(PackageNamespace(""), "int")
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "start_")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "end_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "color_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "end_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "runNormalRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:LineEffect/instance/runNormalRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 8
+     localcount 7
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            5
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      pushbyte            30
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L58
+
+L23:
+      label
+      getlex              QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      getlocal            4
+      getlocal3
+      divide
+      callproperty        QName(PackageNamespace(""), "interpolate"), 3
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle")
+      pushbyte            100
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      pushshort           700
+      pushdouble          0.5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      pushbyte            1
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      pushbyte            1
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle"), 6
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            6
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "y")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          4
+L58:
+      getlocal            4
+      getlocal3
+      iflt                L23
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runEasyRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:LineEffect/instance/runEasyRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 8
+     localcount 7
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            5
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      pushbyte            5
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L58
+
+L23:
+      label
+      getlex              QName(PackageNamespace("flash.geom"), "Point")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "end_")
+      getlocal            4
+      getlocal3
+      divide
+      callproperty        QName(PackageNamespace(""), "interpolate"), 3
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle")
+      pushbyte            100
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      pushshort           200
+      pushdouble          0.5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      pushbyte            1
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "RandomUtil")
+      pushbyte            1
+      callproperty        QName(PackageNamespace(""), "plusMinus"), 1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "SparkParticle"), 6
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            6
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "y")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          4
+L58:
+      getlocal            4
+      getlocal3
+      iflt                L23
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:LineEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,29 @@
+script
+ sinit
+  refid "kabam.rotmg.account:AccountConfig/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 3
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("AccountConfig", [PackageNamespace("kabam.rotmg.account")])
+    getlex              QName(PackageNamespace(""), "Object")
+    pushscope
+
+    getlex              QName(PackageNamespace(""), "Object")
+    newclass            "kabam.rotmg.account:AccountConfig"
+    popscope
+    initproperty        QName(PackageNamespace("kabam.rotmg.account"), "AccountConfig")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("kabam.rotmg.account"), "AccountConfig")
+  #include "AccountConfig.class.asasm"
+ end ; trait
+end ; script

@@ -1,0 +1,315 @@
+class
+ refid "com.company.assembleegameclient.util:PaymentMethod"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod")
+  iinit
+   refid "com.company.assembleegameclient.util:PaymentMethod/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "label_")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "provider_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "paymentid_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "label_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "provider_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "paymentid_") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "getURL")
+   method
+    refid "com.company.assembleegameclient.util:PaymentMethod/instance/getURL"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace("com.company.assembleegameclient.util.offer"), "Offer")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      setlocal            4
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLVariables")
+      constructprop       QName(PackageNamespace("flash.net"), "URLVariables"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLVariables")
+      dup
+      setlocal            6
+
+      pushstring          "tok"
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      getlocal            6
+      pushstring          "exp"
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      getlocal            6
+      pushstring          "guid"
+      getlocal            4
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserId"), 0
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      getlocal            6
+      pushstring          "provider"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "provider_")
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      jump                L64
+
+L37:
+      label
+      getlocal            6
+      pushstring          "jwt"
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "jwt_")
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      jump                L87
+
+L44:
+      label
+      getlocal            6
+      pushstring          "jwt"
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "jwt_")
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      getlocal            6
+      pushstring          "price"
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "price_")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      getlocal            6
+      pushstring          "paymentid"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "paymentid_")
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+
+      jump                L87
+
+L62:
+      label
+      jump                L87
+
+L64:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "provider_")
+      setlocal            7
+
+      pushstring          "co"
+      getlocal            7
+      ifstrictne          L72
+
+      pushbyte            0
+      jump                L85
+
+L72:
+      pushstring          "ps"
+      getlocal            7
+      ifstrictne          L77
+
+      pushbyte            1
+      jump                L85
+
+L77:
+      jump                L84
+
+      ; 0x24
+      ; 0x02
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L84:
+      pushbyte            2
+L85:
+      kill                7
+      lookupswitch        L62, [L37, L44, L62]
+
+L87:
+      getlocal            5
+      pushtrue
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "getAppEngineUrl"), 1
+      pushstring          "/credits/add?"
+      add
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:PaymentMethod/class/init"
+  body
+   maxstack 5
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "GO_METHOD")
+    getlocal0
+    getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+    getproperty         QName(PackageNamespace(""), "PAYMENTS_GOOGLE_CHECKOUT")
+    pushstring          "co"
+    pushstring          ""
+    construct           3
+    initproperty        QName(PackageNamespace(""), "GO_METHOD")
+
+    findproperty        QName(PackageNamespace(""), "PAYPAL_METHOD")
+    getlocal0
+    getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+    getproperty         QName(PackageNamespace(""), "PAYMENTS_PAYPAL")
+    pushstring          "ps"
+    pushstring          "P3"
+    construct           3
+    initproperty        QName(PackageNamespace(""), "PAYPAL_METHOD")
+
+    findproperty        QName(PackageNamespace(""), "CREDITS_METHOD")
+    getlocal0
+    getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+    getproperty         QName(PackageNamespace(""), "PAYMENTS_CREDIT_CARDS")
+    pushstring          "ps"
+    pushstring          "CH"
+    construct           3
+    initproperty        QName(PackageNamespace(""), "CREDITS_METHOD")
+
+    findproperty        QName(PackageNamespace(""), "PAYMENT_METHODS")
+    findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+    getproperty         Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#0"), PackageNamespace(""), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "com.company.assembleegameclient.util:PaymentMethod#1"), PackageNamespace("com.company.assembleegameclient.util"), PackageInternalNs("com.company.assembleegameclient.util"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.util:PaymentMethod"), StaticProtectedNs("com.company.assembleegameclient.util:PaymentMethod")])
+    getlocal0
+    applytype           1
+    pushbyte            3
+    construct           1
+    dup
+    pushbyte            0
+    getlex              QName(PackageNamespace(""), "GO_METHOD")
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            1
+    getlex              QName(PackageNamespace(""), "PAYPAL_METHOD")
+    setproperty         MultinameL([PackageNamespace("")])
+
+    dup
+    pushbyte            2
+    getlex              QName(PackageNamespace(""), "CREDITS_METHOD")
+    setproperty         MultinameL([PackageNamespace("")])
+
+    initproperty        QName(PackageNamespace(""), "PAYMENT_METHODS")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "GO_METHOD") slotid 1 type QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod") end
+ trait const QName(PackageNamespace(""), "PAYPAL_METHOD") slotid 2 type QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod") end
+ trait const QName(PackageNamespace(""), "CREDITS_METHOD") slotid 3 type QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod") end
+ trait const QName(PackageNamespace(""), "PAYMENT_METHODS") slotid 4 type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")>) end
+ trait method QName(PackageNamespace(""), "getPaymentMethodByLabel") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.util:PaymentMethod/class/getPaymentMethodByLabel"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+     setlocal2
+
+     pushbyte            0
+     setlocal3
+
+     getlex              QName(PackageNamespace(""), "PAYMENT_METHODS")
+     coerce_a
+     setlocal            4
+
+     jump                L23
+
+L11:
+     label
+     getlocal            4
+     getlocal3
+     nextvalue
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "PaymentMethod")
+     setlocal2
+
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "label_")
+     getlocal1
+     ifne                L23
+
+     getlocal2
+     returnvalue
+
+L23:
+     hasnext2            4, 3
+     iftrue              L11
+
+     kill                4
+     kill                3
+     pushnull
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

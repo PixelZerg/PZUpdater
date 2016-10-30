@@ -1,0 +1,501 @@
+class
+ refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi"
+ instance QName(PackageNamespace("kabam.rotmg.account.kongregate.view"), "LiveKongregateApi")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("KongregateApi", [PackageNamespace("kabam.rotmg.account.kongregate.view")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi")
+  iinit
+   refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "_loaded")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "Object")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "_purchaseResponse")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "local") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.kongregate.services"), "KongregateSharedObject")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "apiLogin") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.kongregate.signals"), "RelayApiLoginSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "_loaded") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "_purchaseResponse") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "loader") type QName(PackageNamespace("flash.display"), "Loader") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api") end
+  trait method QName(PackageNamespace(""), "load")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/load"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.system"), "Security")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "allowDomain"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "kongregate api loading"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Loader")
+      constructprop       QName(PackageNamespace("flash.display"), "Loader"), 0
+      dup
+      setlocal2
+
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "loader")
+
+      getlocal2
+      kill                2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "loader")
+      getproperty         QName(PackageNamespace(""), "contentLoaderInfo")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "onAPILoaded")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "loader")
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      getlocal1
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+      callpropvoid        QName(PackageNamespace(""), "load"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "onAPILoaded")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/onAPILoaded"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "loader")
+      getproperty         QName(PackageNamespace(""), "contentLoaderInfo")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "onAPILoaded")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      getproperty         Multiname("content", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callpropvoid        Multiname("connect", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "addExternalLoginListenerForGuestUser"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loaded")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "kongregate api loaded"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "addExternalLoginListenerForGuestUser")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/addExternalLoginListenerForGuestUser"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        Multiname("isGuest", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "kongregate guest detected - listening for external login"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      pushstring          "login"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "onExternalLogin")
+      callpropvoid        Multiname("addEventListener", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 2
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "onExternalLogin")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/onExternalLogin"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "external login from kongregate detected"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "apiLogin")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "loaded")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/loaded/getter"
+    returns QName(PackageNamespace("org.osflash.signals"), "Signal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "_loaded")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "showRegistrationDialog")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/showRegistrationDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "showRegistrationBox request sent to kongregate"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callpropvoid        Multiname("showRegistrationBox", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isGuest")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/isGuest"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        Multiname("isGuest", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getAuthentication")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/getAuthentication"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        Multiname("getUserId", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+      setproperty         Multiname("userId", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        Multiname("getUsername", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+      setproperty         Multiname("username", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        Multiname("getGameAuthToken", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+      setproperty         Multiname("gameAuthToken", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reportStatistic")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/reportStatistic"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("stats", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getlocal1
+      getlocal2
+      callpropvoid        Multiname("submit", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserName")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/getUserName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        Multiname("getUsername", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserId")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/getUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("services", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        Multiname("getUserId", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "purchaseItems")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/purchaseItems"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "api")
+      getproperty         Multiname("mtx", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getlocal1
+      newarray            1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "onPurchase")
+      callpropvoid        Multiname("purchaseItems", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#1"), PackageNamespace("kabam.rotmg.account.kongregate.view"), PackageInternalNs("kabam.rotmg.account.kongregate.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("kabam.rotmg.account.kongregate.view:LiveKongregateApi"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "onPurchase")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/onPurchase"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "_purchaseResponse")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "purchaseResponse")
+   method
+    refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance/purchaseResponse/getter"
+    returns QName(PackageNamespace("org.osflash.signals"), "Signal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.view:LiveKongregateApi/instance#0"), "_purchaseResponse")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kongregate.view:LiveKongregateApi/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

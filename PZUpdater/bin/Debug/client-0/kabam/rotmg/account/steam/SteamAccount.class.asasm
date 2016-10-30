@@ -1,0 +1,574 @@
+class
+ refid "kabam.rotmg.account.steam:SteamAccount"
+ instance QName(PackageNamespace("kabam.rotmg.account.steam"), "SteamAccount")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("Account", [PackageNamespace("kabam.rotmg.account.core")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.steam:SteamAccount")
+  iinit
+   refid "kabam.rotmg.account.steam:SteamAccount/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "api") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.steam"), "SteamApi")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "userId") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "password") type QName(PackageNamespace(""), "String") value Null() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "isVerifiedEmail") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "platformToken") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "updateUser")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/updateUser"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "userId")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "password")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserName")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getUserName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      callproperty        QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "getPersonaName"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getUserId")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "userId")
+      coerce_s
+      dup
+      iftrue              L10
+
+      pop
+      pushstring          ""
+L10:
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "userId")
+
+      getlocal1
+      kill                1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPassword")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getPassword"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSecret")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getSecret"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "password")
+      coerce_s
+      dup
+      iftrue              L10
+
+      pop
+      pushstring          ""
+L10:
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "password")
+
+      getlocal1
+      kill                1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCredentials")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getCredentials"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getUserId"), 0
+      setproperty         Multiname("guid", [PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance/getCredentials"), PackageNamespace("kabam.rotmg.account.steam"), PackageInternalNs("kabam.rotmg.account.steam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.steam:SteamAccount"), StaticProtectedNs("kabam.rotmg.account.steam:SteamAccount")])
+
+      getlocal1
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getSecret"), 0
+      setproperty         Multiname("secret", [PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance/getCredentials"), PackageNamespace("kabam.rotmg.account.steam"), PackageInternalNs("kabam.rotmg.account.steam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.steam:SteamAccount"), StaticProtectedNs("kabam.rotmg.account.steam:SteamAccount")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      callproperty        QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "getSteamId"), 0
+      setproperty         Multiname("steamid", [PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance/getCredentials"), PackageNamespace("kabam.rotmg.account.steam"), PackageInternalNs("kabam.rotmg.account.steam"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.steam:SteamAccount"), StaticProtectedNs("kabam.rotmg.account.steam:SteamAccount")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isRegistered")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/isRegistered"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getSecret"), 0
+      pushstring          ""
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isLinked")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/isLinked"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.util"), "EmailValidator")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "userId")
+      callproperty        QName(PackageNamespace(""), "isValidEmail"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "gameNetworkUserId")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/gameNetworkUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      callproperty        QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "getSteamId"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "gameNetwork")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/gameNetwork"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "NETWORK_NAME")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "playPlatform")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/playPlatform"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "steam"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reportIntStat")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/reportIntStat"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(Namespace("kabam.rotmg.account.steam:SteamApi"), "reportStatistic"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getRequestPrefix")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getRequestPrefix"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "/steamworks"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getEntryTag")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getEntryTag"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "steamworks"
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clear")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/clear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "verify")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/verify"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "isVerifiedEmail")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isVerified")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/isVerified"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "isVerifiedEmail")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPlatformToken")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getPlatformToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "platformToken")
+      coerce_s
+      dup
+      iftrue              L9
+
+      pop
+      pushstring          ""
+L9:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPlatformToken")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/setPlatformToken"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.steam:SteamAccount/instance"), "platformToken")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMoneyAccessToken")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getMoneyAccessToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "No current support for new Kabam offer wall on Steam."
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMoneyUserId")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getMoneyUserId"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "No current support for new Kabam offer wall on Steam."
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getToken")
+   method
+    refid "kabam.rotmg.account.steam:SteamAccount/instance/getToken"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.steam:SteamAccount/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "NETWORK_NAME")
+    pushstring          "steam"
+    initproperty        QName(PackageNamespace(""), "NETWORK_NAME")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "NETWORK_NAME") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("steam") end
+end ; class

@@ -1,0 +1,295 @@
+class
+ refid "com.company.assembleegameclient.mapeditor:DungeonChooser"
+ instance QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "DungeonChooser")
+  extends QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "Chooser")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser")
+  iinit
+   refid "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/init"
+   param QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   optional Utf8("")
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "Layer")
+     getproperty         QName(PackageNamespace(""), "OBJECT")
+     constructsuper      1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "cache")
+
+     getlocal0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "GroupDivider")
+     getproperty         QName(PackageNamespace(""), "DEFAULT_DUNGEON")
+     getlocal1
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "reloadObjects"), 3
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "currentDungon") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "cache") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "lastSearch") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait method QName(PackageNamespace(""), "getLastSearch")
+   method
+    refid "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/getLastSearch"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "lastSearch")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reloadObjects")
+   method
+    refid "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional False()
+    body
+     maxstack 4
+     localcount 13
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "RegExp")
+      setlocal            5
+
+      pushnull
+      coerce_s
+      setlocal            7
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            8
+
+      pushbyte            0
+      setlocal            9
+
+      pushnull
+      coerce              QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "ObjectElement")
+      setlocal            10
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "currentDungon")
+
+      getlocal3
+      iftrue              L23
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Chooser"), "removeElements")
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Chooser"), "removeElements"), 0
+
+L23:
+      getlocal0
+      getlocal2
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "lastSearch")
+
+      getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:Chooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), PackageNamespace("__AS3__.vec")])
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>)
+      setlocal            4
+
+      getlocal2
+      pushstring          ""
+      ifeq                L41
+
+      findpropstrict      QName(PackageNamespace(""), "RegExp")
+      getlocal2
+      pushstring          "gix"
+      constructprop       QName(PackageNamespace(""), "RegExp"), 2
+      coerce              QName(PackageNamespace(""), "RegExp")
+      setlocal            5
+
+L41:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "GroupDivider")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentDungon")
+      callproperty        QName(PackageNamespace(""), "getDungeonsXML"), 1
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal            6
+
+      pushbyte            0
+      setlocal            11
+
+      getlocal            6
+      coerce_a
+      setlocal            12
+
+      jump                L80
+
+L53:
+      label
+      getlocal            12
+      getlocal            11
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            8
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal            8
+      getproperty         MultinameA("id", [PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:Chooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      coerce_s
+      setlocal            7
+
+      getlocal            5
+      pushnull
+      equals
+      dup
+      iftrue              L76
+
+      pop
+      getlocal            7
+      getlocal            5
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "search"), 1
+      pushbyte            0
+      greaterequals
+L76:
+      iffalse             L80
+
+      getlocal            4
+      getlocal            7
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L80:
+      hasnext2            12, 11
+      iftrue              L53
+
+      kill                12
+      kill                11
+      getlocal            4
+      getlex              QName(PackageNamespace("com.company.util"), "MoreStringUtil")
+      getproperty         QName(PackageNamespace(""), "cmp")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sort"), 1
+
+      pushbyte            0
+      setlocal            11
+
+      getlocal            4
+      coerce_a
+      setlocal            12
+
+      jump                L136
+
+L94:
+      label
+      getlocal            12
+      getlocal            11
+      nextvalue
+      coerce_s
+      setlocal            7
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "idToType_")
+      getlocal            7
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:Chooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      convert_i
+      setlocal            9
+
+      getlocal            6
+      getlocal            9
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:Chooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "cache")
+      getlocal            9
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:Chooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      iftrue              L127
+
+      findpropstrict      QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "ObjectElement")
+      getlocal            8
+      constructprop       QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "ObjectElement"), 1
+      coerce              QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "ObjectElement")
+      setlocal            10
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "cache")
+      getlocal            9
+      getlocal            10
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:Chooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      jump                L133
+
+L127:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), "cache")
+      getlocal            9
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance"), PackageNamespace("com.company.assembleegameclient.mapeditor"), PackageNamespace(""), PackageInternalNs("com.company.assembleegameclient.mapeditor"), PrivateNamespace(null, "com.company.assembleegameclient.mapeditor:DungeonChooser/instance/reloadObjects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:DungeonChooser"), StaticProtectedNs("com.company.assembleegameclient.mapeditor:Chooser"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageInternalNs("com.company.assembleegameclient.mapeditor"), "ObjectElement")
+      setlocal            10
+
+L133:
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Chooser"), "addElement")
+      getlocal            10
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Chooser"), "addElement"), 1
+
+L136:
+      hasnext2            12, 11
+      iftrue              L94
+
+      kill                12
+      kill                11
+      getlex              QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Chooser"), "scrollBar_")
+      getlex              QName(PackageNamespace(""), "HEIGHT")
+      getlex              QName(ProtectedNamespace("com.company.assembleegameclient.mapeditor:Chooser"), "elementSprite_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIndicatorSize"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.mapeditor:DungeonChooser/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

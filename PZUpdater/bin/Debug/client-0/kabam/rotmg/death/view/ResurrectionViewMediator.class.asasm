@@ -1,0 +1,208 @@
+class
+ refid "kabam.rotmg.death.view:ResurrectionViewMediator"
+ instance QName(PackageNamespace("kabam.rotmg.death.view"), "ResurrectionViewMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.death.view:ResurrectionViewMediator")
+  iinit
+   refid "kabam.rotmg.death.view:ResurrectionViewMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "death") flag METADATA type QName(PackageNamespace("kabam.rotmg.death.model"), "DeathModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.death.view"), "ResurrectionView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playGame") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "PlayGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.death.view:ResurrectionViewMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.death.view:ResurrectionViewMediator/instance"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "showDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.death.view:ResurrectionViewMediator/instance"), "onShowDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "death")
+      callproperty        QName(PackageNamespace(""), "getLastDeath"), 0
+      getproperty         QName(PackageNamespace(""), "background")
+      callpropvoid        QName(PackageNamespace(""), "init"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.death.view:ResurrectionViewMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "showDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.death.view:ResurrectionViewMediator/instance"), "onShowDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.death.view:ResurrectionViewMediator/instance"), "onClosed")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.death.view:ResurrectionViewMediator/instance"), "onShowDialog")
+   method
+    refid "kabam.rotmg.death.view:ResurrectionViewMediator/instance/kabam.rotmg.death.view:ResurrectionViewMediator/instance/onShowDialog"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.death.view:ResurrectionViewMediator/instance"), "onClosed")
+   method
+    refid "kabam.rotmg.death.view:ResurrectionViewMediator/instance/kabam.rotmg.death.view:ResurrectionViewMediator/instance/onClosed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      setlocal1
+
+      getlocal1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "createCharacter")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      getproperty         QName(PackageNamespace(""), "currentCharId")
+      setproperty         QName(PackageNamespace(""), "charId")
+
+      getlocal1
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "isNewGame")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playGame")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.death.view:ResurrectionViewMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

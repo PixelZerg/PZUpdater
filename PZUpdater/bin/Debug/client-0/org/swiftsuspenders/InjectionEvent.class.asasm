@@ -1,0 +1,96 @@
+class
+ refid "org.swiftsuspenders:InjectionEvent"
+ instance QName(PackageNamespace("org.swiftsuspenders"), "InjectionEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders:InjectionEvent")
+  iinit
+   refid "org.swiftsuspenders:InjectionEvent/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Class")
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "instance")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "instanceType")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "instance") end
+  trait slot QName(PackageNamespace(""), "instanceType") type QName(PackageNamespace(""), "Class") end
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    refid "org.swiftsuspenders:InjectionEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectionEvent")
+      getlex              QName(PackageNamespace(""), "type")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "instance")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "instanceType")
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectionEvent"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders:InjectionEvent/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "POST_INSTANTIATE")
+    pushstring          "postInstantiate"
+    initproperty        QName(PackageNamespace(""), "POST_INSTANTIATE")
+
+    findproperty        QName(PackageNamespace(""), "PRE_CONSTRUCT")
+    pushstring          "preConstruct"
+    initproperty        QName(PackageNamespace(""), "PRE_CONSTRUCT")
+
+    findproperty        QName(PackageNamespace(""), "POST_CONSTRUCT")
+    pushstring          "postConstruct"
+    initproperty        QName(PackageNamespace(""), "POST_CONSTRUCT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "POST_INSTANTIATE") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("postInstantiate") end
+ trait const QName(PackageNamespace(""), "PRE_CONSTRUCT") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("preConstruct") end
+ trait const QName(PackageNamespace(""), "POST_CONSTRUCT") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("postConstruct") end
+end ; class

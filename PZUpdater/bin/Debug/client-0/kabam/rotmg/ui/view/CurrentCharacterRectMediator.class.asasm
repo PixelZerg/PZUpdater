@@ -1,0 +1,378 @@
+class
+ refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "CurrentCharacterRectMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:CurrentCharacterRectMediator")
+  iinit
+   refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.screens.charrects"), "CurrentCharacterRect")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "track") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackEventSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playGame") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "PlayGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.characters.model"), "CharacterModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "classesModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showTooltip") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "ShowTooltipSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideTooltips") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "HideTooltipsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "deleteCharacter")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onDeleteCharacter")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "showToolTip")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onShow")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "hideTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onShow")
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/onShow"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showTooltip")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onHide")
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/onHide"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideTooltips")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "hideTooltip")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "showToolTip")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onShow")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onSelected")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "deleteCharacter")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onDeleteCharacter")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onSelected")
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/onSelected"
+    param QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "classesModel")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "objectType"), 0
+      callproperty        QName(PackageNamespace(""), "getCharacterClass"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+      setlocal2
+
+      getlocal2
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIsSelected"), 1
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "skins")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "skinType"), 0
+      callproperty        QName(PackageNamespace(""), "getSkin"), 1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIsSelected"), 1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "trackCharacterSelection"), 1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "launchGame"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "trackCharacterSelection")
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/trackCharacterSelection"
+    param QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      setlocal2
+
+      getlocal2
+      pushstring          "character"
+      setproperty         QName(PackageNamespace(""), "category")
+
+      getlocal2
+      pushstring          "select"
+      setproperty         QName(PackageNamespace(""), "action")
+
+      getlocal2
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "displayId"), 0
+      setproperty         QName(PackageNamespace(""), "label")
+
+      getlocal2
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "level"), 0
+      setproperty         QName(PackageNamespace(""), "value")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "track")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "launchGame")
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/launchGame"
+    param QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      setlocal2
+
+      getlocal2
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "createCharacter")
+
+      getlocal2
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "charId"), 0
+      setproperty         QName(PackageNamespace(""), "charId")
+
+      getlocal2
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "isNewGame")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playGame")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance"), "onDeleteCharacter")
+   method
+    refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/kabam.rotmg.ui.view:CurrentCharacterRectMediator/instance/onDeleteCharacter"
+    param QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.rotmg.characters.model:CharacterModel"), "select"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.characters.deletion.view"), "ConfirmDeleteCharacterDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.characters.deletion.view"), "ConfirmDeleteCharacterDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:CurrentCharacterRectMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

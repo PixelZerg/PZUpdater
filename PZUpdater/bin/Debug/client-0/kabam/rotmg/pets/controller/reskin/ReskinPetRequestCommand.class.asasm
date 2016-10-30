@@ -1,0 +1,117 @@
+class
+ refid "kabam.rotmg.pets.controller.reskin:ReskinPetRequestCommand"
+ instance QName(PackageNamespace("kabam.rotmg.pets.controller.reskin"), "ReskinPetRequestCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.controller.reskin:ReskinPetRequestCommand")
+  iinit
+   refid "kabam.rotmg.pets.controller.reskin:ReskinPetRequestCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "vo") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "ReskinPetVO")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "socketServer") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "reskinModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetFormModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.controller.reskin:ReskinPetRequestCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "ReskinPet")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection")
+      getproperty         QName(PackageNamespace(""), "PET_CHANGE_FORM_MSG")
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "ReskinPet")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "ReskinPet")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reskinModel")
+      callproperty        QName(PackageNamespace(""), "getSelectedPet"), 0
+      callproperty        QName(PackageNamespace(""), "getID"), 0
+      setproperty         QName(PackageNamespace(""), "petInstanceId")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reskinModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reskinModel")
+      callproperty        QName(PackageNamespace(""), "getSelectedSkin"), 0
+      callproperty        QName(PackageNamespace(""), "getpetTypeFromSkinID"), 1
+      setproperty         QName(PackageNamespace(""), "pickedNewPetType")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reskinModel")
+      getproperty         QName(PackageNamespace(""), "slotObjectData")
+      setproperty         QName(PackageNamespace(""), "item")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socketServer")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.controller.reskin:ReskinPetRequestCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

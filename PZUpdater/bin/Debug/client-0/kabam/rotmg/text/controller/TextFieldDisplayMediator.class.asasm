@@ -1,0 +1,93 @@
+class
+ refid "kabam.rotmg.text.controller:TextFieldDisplayMediator"
+ instance QName(PackageNamespace("kabam.rotmg.text.controller"), "TextFieldDisplayMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.text.controller:TextFieldDisplayMediator")
+  iinit
+   refid "kabam.rotmg.text.controller:TextFieldDisplayMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "textFieldDisplay") flag METADATA type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplay")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "fontModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.text.model"), "FontModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "textAndMapProvider") flag METADATA type QName(PackageNamespace("kabam.rotmg.text.model"), "TextAndMapProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.text.controller:TextFieldDisplayMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "textFieldDisplay")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fontModel")
+      callproperty        QName(PackageNamespace(""), "getFont"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.text.view:TextFieldDisplay"), "setFont"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "textFieldDisplay")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "textAndMapProvider")
+      callproperty        QName(Namespace("kabam.rotmg.text.model:TextAndMapProvider"), "getTextField"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.text.view:TextFieldDisplay"), "setTextField"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "textFieldDisplay")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "textAndMapProvider")
+      callproperty        QName(Namespace("kabam.rotmg.text.model:TextAndMapProvider"), "getStringMap"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.text.view:TextFieldDisplay"), "setStringMap"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.text.controller:TextFieldDisplayMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

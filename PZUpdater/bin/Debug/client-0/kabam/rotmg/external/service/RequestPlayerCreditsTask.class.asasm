@@ -1,0 +1,437 @@
+class
+ refid "kabam.rotmg.external.service:RequestPlayerCreditsTask"
+ instance QName(PackageNamespace("kabam.rotmg.external.service"), "RequestPlayerCreditsTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.external.service:RequestPlayerCreditsTask")
+  iinit
+   refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/init"
+   body
+    maxstack 4
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushbyte            2
+     pushbyte            5
+     pushbyte            15
+     newarray            3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryTimes")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           1000
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryTimes") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryCount") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(ProtectedNamespace("kabam.rotmg.external.service:RequestPlayerCreditsTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "handleTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "handleTimer")
+   method
+    refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask/handleTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryTimes")
+      dup
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryCount")
+      dup
+      setlocal3
+
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace("kabam.rotmg.external.service"), PackageInternalNs("kabam.rotmg.external.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      decrement
+      setlocal            4
+
+      getlocal2
+      getlocal3
+      getlocal            4
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace("kabam.rotmg.external.service"), PackageInternalNs("kabam.rotmg.external.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      kill                4
+      kill                2
+      kill                3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryTimes")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryCount")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace("kabam.rotmg.external.service"), PackageInternalNs("kabam.rotmg.external.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      pushbyte            0
+      ifnle               L50
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "handleTimer")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "makeRequest"), 0
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryCount")
+      increment_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryCount")
+
+      kill                3
+      kill                2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+L50:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "makeRequest")
+   method
+    refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask/makeRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "REQUEST")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "makeRequestObject"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "onComplete")
+   method
+    refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      pushfalse
+      setlocal3
+
+      getlocal1
+      iffalse             L35
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      callproperty        Multiname("toString", [PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask"), PackageNamespace("kabam.rotmg.external.service"), PackageInternalNs("kabam.rotmg.external.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.rotmg.external.service:RequestPlayerCreditsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")]), 0
+      coerce_s
+      dup
+      setlocal            4
+
+      pushstring          ""
+      equals
+      not
+      dup
+      iffalse             L28
+
+      pop
+      getlocal            4
+      pushstring          "Error"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "search"), 1
+      pushbyte            -1
+      equals
+      not
+L28:
+      iffalse             L34
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "setCredits"), 1
+
+L34:
+      jump                L53
+
+L35:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryCount")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "retryTimes")
+      getproperty         QName(PackageNamespace(""), "length")
+      ifnlt               L53
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "handleTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      pushtrue
+      setlocal3
+
+L53:
+      getlocal3
+      not
+      coerce_a
+      dup
+      iffalse             L64
+
+      pop
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callproperty        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+      coerce_a
+L64:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "setCredits")
+   method
+    refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask/setCredits"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            0
+      ifnge               L55
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L19
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      pushnull
+      equals
+      not
+L19:
+      dup
+      iffalse             L29
+
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getproperty         QName(PackageNamespace(""), "credits_")
+      equals
+      not
+L29:
+      iffalse             L36
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "player")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "credits_")
+
+      jump                L55
+
+L36:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L50
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getCredits"), 0
+      getlocal1
+      equals
+      not
+L50:
+      iffalse             L55
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setCredits"), 1
+
+L55:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "makeRequestObject")
+   method
+    refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/instance/kabam.rotmg.external.service:RequestPlayerCreditsTask/makeRequestObject"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.external.service:RequestPlayerCreditsTask/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "REQUEST")
+    pushstring          "account/getCredits"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "REQUEST")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.external.service:RequestPlayerCreditsTask"), "REQUEST") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("account/getCredits") end
+end ; class

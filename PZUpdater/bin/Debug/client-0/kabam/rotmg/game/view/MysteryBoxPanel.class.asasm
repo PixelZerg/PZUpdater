@@ -1,0 +1,606 @@
+class
+ refid "kabam.rotmg.game.view:MysteryBoxPanel"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "MysteryBoxPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:MysteryBoxPanel")
+  iinit
+   refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   param QName(PackageNamespace(""), "uint")
+   body
+    maxstack 5
+    localcount 10
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "SellableObject")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "buyItem")
+
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     coerce              QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+     setlocal3
+
+     getlocal3
+     getlex              QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "GetMysteryBoxesTask")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "GetMysteryBoxesTask")
+     dup
+     setlocal            4
+
+     callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            16
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     pushbyte            44
+     subtract
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "SELLABLEOBJECTPANEL_TEXT")
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setWordWrap"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setMultiLine"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+     getproperty         QName(PackageNamespace(""), "CENTER")
+     callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     dup
+     dup
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "icon_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "icon_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     pushnull
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "bitmap_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "icon_")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "bitmap_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     pushstring          "MysteryBoxPanel.open"
+     setlocal            5
+
+     pushstring          "MysteryBoxPanel.checkBackLater"
+     setlocal            6
+
+     pushstring          "MysteryBoxPanel.mysteryBoxShop"
+     setlocal            7
+
+     getlocal3
+     getlex              QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "MysteryBoxModel")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "MysteryBoxModel")
+     setlocal            8
+
+     getlocal3
+     getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+     setlocal            9
+
+     getlocal            8
+     callproperty        QName(PackageNamespace(""), "isInitialized"), 0
+     convert_b
+     dup
+     iftrue              L114
+
+     pop
+     getlocal            9
+     callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+     not
+L114:
+     iffalse             L133
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+     pushbyte            16
+     getlocal            5
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onInfoButtonClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     jump                L143
+
+L133:
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+     pushbyte            16
+     getlocal            6
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L143:
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlocal            7
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "bitmap_")
+     getlex              QName(PackageNamespace("kabam.rotmg.arena.util"), "ArenaViewAssetFactory")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "returnHostBitmap"), 1
+     getproperty         QName(PackageNamespace(""), "bitmapData")
+     setproperty         QName(PackageNamespace(""), "bitmapData")
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "buyItem") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "owner_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "SellableObject") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "buyButton_") type QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "icon_") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "bitmap_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PackageNamespace(""), "setOwner")
+   method
+    refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/setOwner"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "SellableObject")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "owner_")
+      ifne                L7
+
+      returnvoid
+
+L7:
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "owner_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "buyButton_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "owner_")
+      getproperty         QName(PackageNamespace(""), "price_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "owner_")
+      getproperty         QName(PackageNamespace(""), "currency_")
+      callpropvoid        QName(PackageNamespace(""), "setPrice"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "owner_")
+      callproperty        QName(PackageNamespace(""), "soldObjectName"), 0
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "bitmap_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "owner_")
+      callproperty        QName(PackageNamespace(""), "getIcon"), 0
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onAddedToStage")
+   method
+    refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/kabam.rotmg.game.view:MysteryBoxPanel/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "icon_")
+      pushbyte            -4
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "icon_")
+      pushbyte            -8
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+      pushbyte            44
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onRemovedFromStage")
+   method
+    refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/kabam.rotmg.game.view:MysteryBoxPanel/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onInfoButtonClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onInfoButtonClick")
+   method
+    refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/kabam.rotmg.game.view:MysteryBoxPanel/instance/onInfoButtonClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onInfoButton"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onInfoButton")
+   method
+    refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/kabam.rotmg.game.view:MysteryBoxPanel/instance/onInfoButton"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 5
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      coerce              QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "MysteryBoxModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.mysterybox.services"), "MysteryBoxModel")
+      setlocal2
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+      setlocal3
+
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      setlocal            4
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "isInitialized"), 0
+      convert_b
+      dup
+      iffalse             L30
+
+      pop
+      getlocal3
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      convert_b
+L30:
+      iffalse             L36
+
+      getlocal            4
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.mysterybox.components"), "MysteryBoxSelectModal")
+      constructprop       QName(PackageNamespace("kabam.rotmg.mysterybox.components"), "MysteryBoxSelectModal"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L50
+
+L36:
+      getlocal3
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iftrue              L50
+
+      getlocal            4
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+      pushstring          "SellableObjectPanelMediator.text"
+      pushstring          "type"
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getproperty         QName(PackageNamespace(""), "GOLD")
+      callproperty        QName(PackageNamespace(""), "typeToName"), 1
+      newobject           1
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L50:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onKeyDown")
+   method
+    refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/kabam.rotmg.game.view:MysteryBoxPanel/instance/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("interact", [PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance/kabam.rotmg.game.view:MysteryBoxPanel/instance/onKeyDown"), PackageNamespace("kabam.rotmg.game.view"), PackageInternalNs("kabam.rotmg.game.view"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.company.assembleegameclient.ui.panels"), ProtectedNamespace("kabam.rotmg.game.view:MysteryBoxPanel"), StaticProtectedNs("kabam.rotmg.game.view:MysteryBoxPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      equals
+      dup
+      iffalse             L15
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+L15:
+      iffalse             L18
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "onInfoButton"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "BUTTON_OFFSET") type QName(PackageNamespace(""), "int") value Integer(17) end
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    refid "kabam.rotmg.game.view:MysteryBoxPanel/instance/draw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "nameText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            30
+      ifngt               L12
+
+      pushbyte            0
+      convert_d
+      jump                L14
+
+L12:
+      pushbyte            12
+      convert_d
+L14:
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+      getlex              QName(PackageNamespace(""), "HEIGHT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      subtract
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "BUTTON_OFFSET")
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iftrue              L49
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MysteryBoxPanel/instance"), "infoButton_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L49:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:MysteryBoxPanel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

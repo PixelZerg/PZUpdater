@@ -1,0 +1,172 @@
+class
+ refid "com.company.assembleegameclient.background:Background"
+ instance QName(PackageNamespace("com.company.assembleegameclient.background"), "Background")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.background:Background")
+  iinit
+   refid "com.company.assembleegameclient.background:Background/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findproperty        QName(PackageNamespace(""), "visible")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "visible")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    refid "com.company.assembleegameclient.background:Background/instance/draw"
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.background:Background/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "NO_BACKGROUND")
+    pushbyte            0
+    initproperty        QName(PackageNamespace(""), "NO_BACKGROUND")
+
+    findproperty        QName(PackageNamespace(""), "STAR_BACKGROUND")
+    pushbyte            1
+    initproperty        QName(PackageNamespace(""), "STAR_BACKGROUND")
+
+    findproperty        QName(PackageNamespace(""), "NEXUS_BACKGROUND")
+    pushbyte            2
+    initproperty        QName(PackageNamespace(""), "NEXUS_BACKGROUND")
+
+    findproperty        QName(PackageNamespace(""), "NUM_BACKGROUND")
+    pushbyte            3
+    initproperty        QName(PackageNamespace(""), "NUM_BACKGROUND")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "NO_BACKGROUND") slotid 1 type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(PackageNamespace(""), "STAR_BACKGROUND") slotid 2 type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "NEXUS_BACKGROUND") slotid 3 type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(PackageNamespace(""), "NUM_BACKGROUND") slotid 4 type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait method QName(PackageNamespace(""), "getBackground") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.background:Background/class/getBackground"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace("com.company.assembleegameclient.background"), "Background")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 8
+    maxscopedepth 9
+    code
+     getlocal0
+     pushscope
+
+     jump                L16
+
+L3:
+     label
+     pushnull
+     returnvalue
+
+L6:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.background"), "StarBackground")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.background"), "StarBackground"), 0
+     returnvalue
+
+L10:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.background"), "NexusBackground")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.background"), "NexusBackground"), 0
+     returnvalue
+
+L14:
+     label
+     jump                L43
+
+L16:
+     getlocal1
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "NO_BACKGROUND")
+     getlocal2
+     ifstrictne          L23
+
+     pushbyte            0
+     jump                L41
+
+L23:
+     getlex              QName(PackageNamespace(""), "STAR_BACKGROUND")
+     getlocal2
+     ifstrictne          L28
+
+     pushbyte            1
+     jump                L41
+
+L28:
+     getlex              QName(PackageNamespace(""), "NEXUS_BACKGROUND")
+     getlocal2
+     ifstrictne          L33
+
+     pushbyte            2
+     jump                L41
+
+L33:
+     jump                L40
+
+     ; 0x24
+     ; 0x03
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L40:
+     pushbyte            3
+L41:
+     kill                2
+     lookupswitch        L14, [L3, L6, L10, L14]
+
+L43:
+     pushnull
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

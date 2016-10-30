@@ -1,0 +1,124 @@
+class
+ refid "org.swiftsuspenders.utils:TypeDescriptor"
+ instance QName(PackageNamespace("org.swiftsuspenders.utils"), "TypeDescriptor")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.utils:TypeDescriptor")
+  iinit
+   refid "org.swiftsuspenders.utils:TypeDescriptor/instance/init"
+   param QName(PackageNamespace("org.swiftsuspenders.reflection"), "Reflector")
+   param QName(PackageNamespace("flash.utils"), "Dictionary")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "_descriptionsCache")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#0"), "_reflector")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "_descriptionsCache") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#0"), "_reflector") type QName(PackageNamespace("org.swiftsuspenders.reflection"), "Reflector") end
+  trait method QName(PackageNamespace(""), "getDescription")
+   method
+    refid "org.swiftsuspenders.utils:TypeDescriptor/instance/getDescription"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "_descriptionsCache")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "_descriptionsCache")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#0"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#1"), PackageNamespace("org.swiftsuspenders.utils"), PackageInternalNs("org.swiftsuspenders.utils"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.utils:TypeDescriptor"), StaticProtectedNs("org.swiftsuspenders.utils:TypeDescriptor")])
+      coerce_a
+      dup
+      iftrue              L18
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#0"), "_reflector")
+      getlocal1
+      callproperty        QName(Namespace("org.swiftsuspenders.reflection:Reflector"), "describeInjections"), 1
+      coerce_a
+L18:
+      dup
+      setlocal2
+
+      setproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#0"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#1"), PackageNamespace("org.swiftsuspenders.utils"), PackageInternalNs("org.swiftsuspenders.utils"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.utils:TypeDescriptor"), StaticProtectedNs("org.swiftsuspenders.utils:TypeDescriptor")])
+
+      getlocal2
+      kill                2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addDescription")
+   method
+    refid "org.swiftsuspenders.utils:TypeDescriptor/instance/addDescription"
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "_descriptionsCache")
+      getlocal1
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#0"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.utils:TypeDescriptor/instance#1"), PackageNamespace("org.swiftsuspenders.utils"), PackageInternalNs("org.swiftsuspenders.utils"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.utils:TypeDescriptor"), StaticProtectedNs("org.swiftsuspenders.utils:TypeDescriptor")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.utils:TypeDescriptor/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

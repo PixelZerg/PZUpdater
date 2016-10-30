@@ -1,0 +1,114 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:AllyShoot"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "AllyShoot")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "IncomingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:AllyShoot")
+  iinit
+   refid "kabam.rotmg.messaging.impl.incoming:AllyShoot/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "bulletId_") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "ownerId_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "containerType_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "angle_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "parseFromInput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:AllyShoot/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUnsignedByte"), 0
+      initproperty        QName(PackageNamespace(""), "bulletId_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "ownerId_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readShort"), 0
+      initproperty        QName(PackageNamespace(""), "containerType_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readFloat"), 0
+      initproperty        QName(PackageNamespace(""), "angle_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:AllyShoot/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "ALLYSHOOT"
+      pushstring          "bulletId_"
+      pushstring          "ownerId_"
+      pushstring          "containerType_"
+      pushstring          "angle_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:AllyShoot/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

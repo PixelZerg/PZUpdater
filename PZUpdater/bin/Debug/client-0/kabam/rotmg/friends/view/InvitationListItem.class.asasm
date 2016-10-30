@@ -1,0 +1,553 @@
+class
+ refid "kabam.rotmg.friends.view:InvitationListItem"
+ instance QName(PackageNamespace("kabam.rotmg.friends.view"), "InvitationListItem")
+  extends QName(PackageNamespace("kabam.rotmg.friends.view"), "FListItem")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.friends.view:InvitationListItem")
+  iinit
+   refid "kabam.rotmg.friends.view:InvitationListItem/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendVO")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   body
+    maxstack 3
+    localcount 4
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     getlocal3
+     callpropvoid        QName(ProtectedNamespace("kabam.rotmg.friends.view:InvitationListItem"), "init"), 2
+
+     getlocal0
+     getlocal1
+     pushstring          ""
+     callpropvoid        QName(PackageNamespace(""), "update"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_senderName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_portrait") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_nameText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton") type QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButton") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton") type QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButton") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton") type QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButton") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.friends.view:InvitationListItem"), "init") flag OVERRIDE
+   method
+    refid "kabam.rotmg.friends.view:InvitationListItem/instance/kabam.rotmg.friends.view:InvitationListItem:init"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 11
+     localcount 5
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButtonFactory")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushint             6710886
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      getlocal1
+      getlocal2
+      pushbyte            10
+      dup
+      callpropvoid        QName(PackageNamespace(""), "drawRoundRect"), 6
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_portrait")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_portrait")
+      pushbyte            2
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_portrait")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            18
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_nameText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_nameText")
+      pushbyte            11
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_nameText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.ui.icons"), "IconButtonFactory")
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            11
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "rect")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      pushbyte            0
+      pushbyte            1
+      pushbyte            0
+      pushbyte            1
+      pushshort           182
+      pushshort           255
+      pushshort           160
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 8
+      callpropvoid        QName(PackageNamespace(""), "colorTransform"), 2
+
+      getlocal0
+      getlocal3
+      getlocal            4
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "GUILD_ACCEPT")
+      pushstring          ""
+      pushstring          ""
+      callproperty        QName(PackageNamespace(""), "create"), 4
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "width")
+      pushshort           200
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton")
+      pushbyte            11
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onAcceptClicked")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            12
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "rect")
+      findpropstrict      QName(PackageNamespace("flash.geom"), "ColorTransform")
+      pushbyte            1
+      pushbyte            0
+      dup
+      pushbyte            1
+      pushshort           255
+      pushshort           188
+      pushshort           188
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.geom"), "ColorTransform"), 8
+      callpropvoid        QName(PackageNamespace(""), "colorTransform"), 2
+
+      getlocal0
+      getlocal3
+      getlocal            4
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "GUILD_REJECTION")
+      pushstring          ""
+      pushstring          ""
+      callproperty        QName(PackageNamespace(""), "create"), 4
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            110
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton")
+      pushbyte            11
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onRejectClicked")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getlocal3
+      getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+      pushstring          "lofiInterfaceBig"
+      pushbyte            8
+      callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+      pushstring          ""
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_BLOCK_BUTTON")
+      pushstring          ""
+      callproperty        QName(PackageNamespace(""), "create"), 4
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_BLOCK_BUTTON_DESC")
+      callpropvoid        QName(PackageNamespace(""), "setToolTipText"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onBlockClicked")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            25
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+      pushbyte            12
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onRemovedFromState")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "kabam.rotmg.friends.view:InvitationListItem/instance/update"
+    param QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendVO")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_senderName")
+      ifeq                L31
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_senderName")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_portrait")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getPortrait"), 0
+      setproperty         QName(PackageNamespace(""), "bitmapData")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_nameText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_senderName")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StaticStringBuilder"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_nameText")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_portrait")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            12
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+L31:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.friends.view:InvitationListItem/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      jump                L8
+
+L3:
+      label
+      getlocal0
+      getlex              QName(PackageNamespace(""), "numChildren")
+      decrement
+      callpropvoid        QName(PackageNamespace(""), "removeChildAt"), 1
+
+L8:
+      getlex              QName(PackageNamespace(""), "numChildren")
+      pushbyte            0
+      ifgt                L3
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_portrait")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_nameText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onAcceptClicked")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_acceptButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onRejectClicked")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_rejectButton")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onBlockClicked")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_blockButton")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onRemovedFromState")
+   method
+    refid "kabam.rotmg.friends.view:InvitationListItem/instance/kabam.rotmg.friends.view:InvitationListItem/instance/onRemovedFromState"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onRemovedFromState")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onAcceptClicked")
+   method
+    refid "kabam.rotmg.friends.view:InvitationListItem/instance/kabam.rotmg.friends.view:InvitationListItem/instance/onAcceptClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "actionSignal")
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "ACCEPT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_senderName")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onRejectClicked")
+   method
+    refid "kabam.rotmg.friends.view:InvitationListItem/instance/kabam.rotmg.friends.view:InvitationListItem/instance/onRejectClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "actionSignal")
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "REJECT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_senderName")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "onBlockClicked")
+   method
+    refid "kabam.rotmg.friends.view:InvitationListItem/instance/kabam.rotmg.friends.view:InvitationListItem/instance/onBlockClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "actionSignal")
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "BLOCK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:InvitationListItem/instance"), "_senderName")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.friends.view:InvitationListItem/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

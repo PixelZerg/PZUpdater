@@ -1,0 +1,169 @@
+class
+ refid "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.view"), "BeginnersPackageButtonMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.promotions.view:BeginnersPackageButtonMediator")
+  iinit
+   refid "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.view"), "BeginnersPackageButton")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showBeginnersPackage") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.signals"), "ShowBeginnersPackageSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "markedAsPurchased")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance"), "onMarkedAsPurchased")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance"), "onButtonClick")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getDaysRemaining"), 0
+      callpropvoid        QName(PackageNamespace(""), "setDaysRemaining"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "markedAsPurchased")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance"), "onMarkedAsPurchased")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "clicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance"), "onButtonClick")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance"), "onButtonClick")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance/kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance/onButtonClick"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showBeginnersPackage")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance"), "onMarkedAsPurchased")
+   method
+    refid "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance/kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/instance/onMarkedAsPurchased"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.view:BeginnersPackageButtonMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

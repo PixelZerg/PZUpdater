@@ -1,0 +1,455 @@
+class
+ refid "com.company.assembleegameclient.game:IdleWatcher"
+ instance QName(PackageNamespace("com.company.assembleegameclient.game"), "IdleWatcher")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.game:IdleWatcher")
+  iinit
+   refid "com.company.assembleegameclient.game:IdleWatcher/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "addTextLine")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") value Null() end
+  trait slot QName(PackageNamespace(""), "idleTime_") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "addTextLine") type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal") end
+  trait method QName(PackageNamespace(""), "start")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/start"
+    param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "gs_")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PackageNamespace(""), "idleTime_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_MOVE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "onMouseMove")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/update"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      convert_i
+      setlocal2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      getlocal1
+      add
+      initproperty        QName(PackageNamespace(""), "idleTime_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+      multiply
+      ifnlt               L20
+
+      pushfalse
+      returnvalue
+
+L20:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+      multiply
+      greaterequals
+      dup
+      iffalse             L34
+
+      pop
+      getlocal2
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+      multiply
+      lessthan
+L34:
+      iffalse             L42
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "addTextLine")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "makeFirstWarning"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      pushfalse
+      returnvalue
+
+L42:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "SECOND_WARNING_MINUTES")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+      multiply
+      greaterequals
+      dup
+      iffalse             L56
+
+      pop
+      getlocal2
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "SECOND_WARNING_MINUTES")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+      multiply
+      lessthan
+L56:
+      iffalse             L64
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "addTextLine")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "makeSecondWarning"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      pushfalse
+      returnvalue
+
+L64:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "idleTime_")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+      multiply
+      greaterequals
+      dup
+      iffalse             L78
+
+      pop
+      getlocal2
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES")
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+      multiply
+      lessthan
+L78:
+      iffalse             L86
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "addTextLine")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "makeThirdWarning"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      pushtrue
+      returnvalue
+
+L86:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "makeFirstWarning")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/makeFirstWarning"
+    returns QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      constructprop       QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "ERROR_CHAT_NAME")
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal1
+      pushstring          "You have been idle for "
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES")
+      add
+      pushstring          " minutes, you will be disconnected if you are idle for "
+      add
+      pushstring          "more than "
+      add
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES")
+      add
+      pushstring          " minutes."
+      add
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "makeSecondWarning")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/makeSecondWarning"
+    returns QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      constructprop       QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "ERROR_CHAT_NAME")
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal1
+      pushstring          "You have been idle for "
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "SECOND_WARNING_MINUTES")
+      add
+      pushstring          " minutes, you will be disconnected if you are idle for "
+      add
+      pushstring          "more than "
+      add
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES")
+      add
+      pushstring          " minutes."
+      add
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "makeThirdWarning")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/makeThirdWarning"
+    returns QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      constructprop       QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "ERROR_CHAT_NAME")
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal1
+      pushstring          "You have been idle for "
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES")
+      add
+      pushstring          " minutes, disconnecting."
+      add
+      setproperty         QName(PackageNamespace(""), "text")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "stop")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/stop"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_MOVE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "onMouseMove")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "gs_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "onMouseMove")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/onMouseMove"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PackageNamespace(""), "idleTime_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "onKeyDown")
+   method
+    refid "com.company.assembleegameclient.game:IdleWatcher/instance/com.company.assembleegameclient.game:IdleWatcher/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PackageNamespace(""), "idleTime_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.game:IdleWatcher/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+    pushbyte            60
+    pushshort           1000
+    multiply
+    initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES")
+    pushbyte            10
+    initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "SECOND_WARNING_MINUTES")
+    pushbyte            15
+    initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "SECOND_WARNING_MINUTES")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES")
+    pushbyte            20
+    initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "MINUTE_IN_MS") slotid 1 type QName(PackageNamespace(""), "int") value Double(60000) end
+ trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "FIRST_WARNING_MINUTES") slotid 2 type QName(PackageNamespace(""), "int") value Integer(10) end
+ trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "SECOND_WARNING_MINUTES") slotid 3 type QName(PackageNamespace(""), "int") value Integer(15) end
+ trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.game:IdleWatcher"), "KICK_MINUTES") slotid 4 type QName(PackageNamespace(""), "int") value Integer(20) end
+end ; class

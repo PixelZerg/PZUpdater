@@ -1,0 +1,206 @@
+class
+ refid "com.company.assembleegameclient.objects:PortalNameParser"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "PortalNameParser")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects:PortalNameParser")
+  iinit
+   refid "com.company.assembleegameclient.objects:PortalNameParser/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "parse")
+   method
+    refid "com.company.assembleegameclient.objects:PortalNameParser/instance/parse"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "NAME_PARSER")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "match"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      getlocal2
+      pushnull
+      ifne                L14
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance"), "wrapNameWithBracesIfRequired"), 1
+      returnvalue
+
+L14:
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance"), "makePatternFromParts"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance"), "wrapNameWithBracesIfRequired")
+   method
+    refid "com.company.assembleegameclient.objects:PortalNameParser/instance/com.company.assembleegameclient.objects:PortalNameParser/instance/wrapNameWithBracesIfRequired"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "{"
+      equals
+      dup
+      iffalse             L17
+
+      pop
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      decrement
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "charAt"), 1
+      pushstring          "}"
+      equals
+L17:
+      iffalse             L20
+
+      getlocal1
+      returnvalue
+
+L20:
+      pushstring          "{"
+      getlocal1
+      add
+      pushstring          "}"
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance"), "makePatternFromParts")
+   method
+    refid "com.company.assembleegameclient.objects:PortalNameParser/instance/com.company.assembleegameclient.objects:PortalNameParser/instance/makePatternFromParts"
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "{"
+      getlocal1
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance/com.company.assembleegameclient.objects:PortalNameParser/instance/makePatternFromParts"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), ProtectedNamespace("com.company.assembleegameclient.objects:PortalNameParser"), StaticProtectedNs("com.company.assembleegameclient.objects:PortalNameParser")])
+      add
+      pushstring          "}"
+      add
+      setlocal2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      ifngt               L25
+
+      getlocal2
+      pushstring          " ("
+      getlocal1
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.company.assembleegameclient.objects:PortalNameParser/instance/com.company.assembleegameclient.objects:PortalNameParser/instance/makePatternFromParts"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), ProtectedNamespace("com.company.assembleegameclient.objects:PortalNameParser"), StaticProtectedNs("com.company.assembleegameclient.objects:PortalNameParser")])
+      add
+      pushstring          ")"
+      add
+      add
+      coerce_s
+      setlocal2
+
+L25:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeBuilder")
+   method
+    refid "com.company.assembleegameclient.objects:PortalNameParser/instance/makeBuilder"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "StringBuilder")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "PatternBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "PatternBuilder"), 0
+      getlocal0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "parse"), 1
+      callproperty        QName(PackageNamespace(""), "setPattern"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:PortalNameParser/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "NAME_PARSER")
+    getlex              QName(PackageNamespace(""), "RegExp")
+    pushstring          "(.+)\\s\\((.+)\\)"
+    construct           1
+    initproperty        QName(PackageNamespace(""), "NAME_PARSER")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "NAME_PARSER") slotid 1 type QName(PackageNamespace(""), "RegExp") end
+end ; class

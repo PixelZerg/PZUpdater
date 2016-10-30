@@ -1,0 +1,148 @@
+class
+ refid "com.company.assembleegameclient.map:AnimateProperties"
+ instance QName(PackageNamespace("com.company.assembleegameclient.map"), "AnimateProperties")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.map:AnimateProperties")
+  iinit
+   refid "com.company.assembleegameclient.map:AnimateProperties/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "type_") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "dx_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PackageNamespace(""), "dy_") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait method QName(PackageNamespace(""), "parseXML")
+   method
+    refid "com.company.assembleegameclient.map:AnimateProperties/instance/parseXML"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      jump                L15
+
+L3:
+      label
+      getlocal0
+      getlex              QName(PackageNamespace(""), "WAVE_ANIMATE")
+      initproperty        QName(PackageNamespace(""), "type_")
+
+      jump                L39
+
+L8:
+      label
+      getlocal0
+      getlex              QName(PackageNamespace(""), "FLOW_ANIMATE")
+      initproperty        QName(PackageNamespace(""), "type_")
+
+      jump                L39
+
+L13:
+      label
+      jump                L39
+
+L15:
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      setlocal2
+
+      pushstring          "Wave"
+      getlocal2
+      ifstrictne          L24
+
+      pushbyte            0
+      jump                L37
+
+L24:
+      pushstring          "Flow"
+      getlocal2
+      ifstrictne          L29
+
+      pushbyte            1
+      jump                L37
+
+L29:
+      jump                L36
+
+      ; 0x24
+      ; 0x02
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L36:
+      pushbyte            2
+L37:
+      kill                2
+      lookupswitch        L13, [L3, L8, L13]
+
+L39:
+      getlocal0
+      getlocal1
+      getproperty         MultinameA("dx", [PrivateNamespace(null, "com.company.assembleegameclient.map:AnimateProperties/instance/parseXML#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:AnimateProperties/instance/parseXML#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:AnimateProperties"), StaticProtectedNs("com.company.assembleegameclient.map:AnimateProperties")])
+      initproperty        QName(PackageNamespace(""), "dx_")
+
+      getlocal0
+      getlocal1
+      getproperty         MultinameA("dy", [PrivateNamespace(null, "com.company.assembleegameclient.map:AnimateProperties/instance/parseXML#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map:AnimateProperties/instance/parseXML#1"), PackageNamespace("com.company.assembleegameclient.map"), PackageInternalNs("com.company.assembleegameclient.map"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map:AnimateProperties"), StaticProtectedNs("com.company.assembleegameclient.map:AnimateProperties")])
+      initproperty        QName(PackageNamespace(""), "dy_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.map:AnimateProperties/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "NO_ANIMATE")
+    pushbyte            0
+    initproperty        QName(PackageNamespace(""), "NO_ANIMATE")
+
+    findproperty        QName(PackageNamespace(""), "WAVE_ANIMATE")
+    pushbyte            1
+    initproperty        QName(PackageNamespace(""), "WAVE_ANIMATE")
+
+    findproperty        QName(PackageNamespace(""), "FLOW_ANIMATE")
+    pushbyte            2
+    initproperty        QName(PackageNamespace(""), "FLOW_ANIMATE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "NO_ANIMATE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(PackageNamespace(""), "WAVE_ANIMATE") slotid 2 type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "FLOW_ANIMATE") slotid 3 type QName(PackageNamespace(""), "int") value Integer(2) end
+end ; class

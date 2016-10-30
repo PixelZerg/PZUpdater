@@ -1,0 +1,154 @@
+class
+ refid "com.company.assembleegameclient.sound:SFX"
+ instance QName(PackageNamespace("com.company.assembleegameclient.sound"), "SFX")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.sound:SFX")
+  iinit
+   refid "com.company.assembleegameclient.sound:SFX/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.sound:SFX/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#0"), "sfxTrans_") slotid 1 type QName(PackageNamespace("flash.media"), "SoundTransform") end
+ trait method QName(PackageNamespace(""), "load") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.sound:SFX/class/load"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#0"), "sfxTrans_")
+     findpropstrict      QName(PackageNamespace("flash.media"), "SoundTransform")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getproperty         Multiname("playSFX", [PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:SFX"), StaticProtectedNs("com.company.assembleegameclient.sound:SFX")])
+     iffalse             L11
+
+     pushbyte            1
+     convert_d
+     jump                L13
+
+L11:
+     pushbyte            0
+     convert_d
+L13:
+     constructprop       QName(PackageNamespace("flash.media"), "SoundTransform"), 1
+     setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#0"), "sfxTrans_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setPlaySFX") flag FINAL dispid 4
+  method
+   refid "com.company.assembleegameclient.sound:SFX/class/setPlaySFX"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+     callproperty        QName(PackageNamespace(""), "global"), 0
+     pushstring          "sound"
+     getlocal1
+     iffalse             L9
+
+     pushstring          "soundOn"
+     jump                L10
+
+L9:
+     pushstring          "soundOff"
+L10:
+     callpropvoid        QName(PackageNamespace(""), "trackEvent"), 2
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getlocal1
+     setproperty         Multiname("playSFX", [PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:SFX"), StaticProtectedNs("com.company.assembleegameclient.sound:SFX")])
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+     callpropvoid        QName(PackageNamespace(""), "updateTransform"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setSFXVolume") flag FINAL dispid 5
+  method
+   refid "com.company.assembleegameclient.sound:SFX/class/setSFXVolume"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     getproperty         QName(PackageNamespace(""), "data_")
+     getlocal1
+     setproperty         Multiname("SFXVolume", [PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#0"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.sound:SFX/class#1"), PackageNamespace("com.company.assembleegameclient.sound"), PackageInternalNs("com.company.assembleegameclient.sound"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.sound:SFX"), StaticProtectedNs("com.company.assembleegameclient.sound:SFX")])
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+     callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "updateVolume"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

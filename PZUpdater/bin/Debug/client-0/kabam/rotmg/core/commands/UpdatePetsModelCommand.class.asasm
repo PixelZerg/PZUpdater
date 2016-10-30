@@ -1,0 +1,170 @@
+class
+ refid "kabam.rotmg.core.commands:UpdatePetsModelCommand"
+ instance QName(PackageNamespace("kabam.rotmg.core.commands"), "UpdatePetsModelCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand")
+  iinit
+   refid "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "XML")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("Account", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      pushstring          "PetYardType"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")]), 1
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), "parseYardFromXML"), 0
+      callpropvoid        QName(PackageNamespace(""), "setPetYardType"), 1
+
+L13:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "Pet"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")]), 1
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), "parsePetFromXML"), 0
+      callpropvoid        QName(PackageNamespace(""), "setActivePet"), 1
+
+L23:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), "parseYardFromXML")
+   method
+    refid "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance/kabam.rotmg.core.commands:UpdatePetsModelCommand/instance/parseYardFromXML"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetYardEnum")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("Account", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      getproperty         Multiname("PetYardType", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      callproperty        QName(PackageNamespace(""), "selectByOrdinal"), 1
+      getproperty         QName(PackageNamespace(""), "value")
+      coerce_s
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getXMLfromId"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal2
+      getproperty         MultinameA("type", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), "parsePetFromXML")
+   method
+    refid "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance/kabam.rotmg.core.commands:UpdatePetsModelCommand/instance/parsePetFromXML"
+    returns QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("Pet", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal1
+      getproperty         MultinameA("instanceId", [PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      callproperty        QName(PackageNamespace(""), "getPetVO"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:UpdatePetsModelCommand/instance#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("kabam.rotmg.core.commands:UpdatePetsModelCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      callpropvoid        QName(PackageNamespace(""), "apply"), 1
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.commands:UpdatePetsModelCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

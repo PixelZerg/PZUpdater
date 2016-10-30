@@ -1,0 +1,205 @@
+class
+ refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator"
+ instance QName(PackageNamespace("kabam.rotmg.characters.reskin.view"), "ReskinCharacterMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.characters.reskin.view:ReskinCharacterMediator")
+  iinit
+   refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.characters.reskin.view"), "ReskinCharacterView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "player") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "reskinCharacter") flag METADATA type QName(PackageNamespace("kabam.rotmg.characters.reskin.control"), "ReskinCharacterSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "skins") type QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkins") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "getCharacterSkins"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "skins")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "onSelected")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancelled")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "onCancelled")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "getCharacterSkins")
+   method
+    refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/getCharacterSkins"
+    returns QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkins")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getSelected"), 0
+      getproperty         QName(PackageNamespace(""), "skins")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "onSelected")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "cancelled")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "onCancelled")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "onSelected")
+   method
+    refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/onSelected"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reskinCharacter")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "skins")
+      callproperty        QName(PackageNamespace(""), "getSelectedSkin"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance"), "onCancelled")
+   method
+    refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/instance/onCancelled"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.characters.reskin.view:ReskinCharacterMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

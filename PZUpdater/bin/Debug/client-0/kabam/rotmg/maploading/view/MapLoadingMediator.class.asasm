@@ -1,0 +1,200 @@
+class
+ refid "kabam.rotmg.maploading.view:MapLoadingMediator"
+ instance QName(PackageNamespace("kabam.rotmg.maploading.view"), "MapLoadingMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingMediator")
+  iinit
+   refid "kabam.rotmg.maploading.view:MapLoadingMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.view"), "MapLoadingView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mapLoading") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "MapLoadedSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideMapLoading") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "HideMapLoadingSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hideMapLoadingNoFade") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.signals"), "HideMapLoadingSignalNoFade")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "characterAnimationFactory") flag METADATA type QName(PackageNamespace("kabam.rotmg.maploading.commands"), "CharacterAnimationFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "characterAnimationFactory")
+      callproperty        QName(PackageNamespace(""), "make"), 0
+      callpropvoid        QName(PackageNamespace(""), "showAnimation"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mapLoading")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingMediator/instance"), "onMapLoaded")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideMapLoading")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingMediator/instance"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideMapLoadingNoFade")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingMediator/instance"), "onHideNoFade")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingMediator/instance"), "onMapLoaded")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingMediator/instance/kabam.rotmg.maploading.view:MapLoadingMediator/instance/onMapLoaded"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "MapInfo")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "displayName_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "difficulty_")
+      callpropvoid        QName(PackageNamespace(""), "showMap"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hideMapLoading")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingMediator/instance"), "onHide")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingMediator/instance"), "onHide")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingMediator/instance/kabam.rotmg.maploading.view:MapLoadingMediator/instance/onHide"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingMediator/instance"), "onHideNoFade")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingMediator/instance/kabam.rotmg.maploading.view:MapLoadingMediator/instance/onHideNoFade"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "disableNoFadeOut"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.maploading.view:MapLoadingMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

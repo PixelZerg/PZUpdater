@@ -1,0 +1,259 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:FlowEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "FlowEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:FlowEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:FlowEffect/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "WorldPosData")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace(""), "int")
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x_")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y_")
+     constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+     initproperty        QName(PackageNamespace(""), "start_")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "go_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "color_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "go_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PackageNamespace(""), "color_") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "runNormalRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:FlowEffect/instance/runNormalRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 6
+     localcount 7
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            5
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:FlowEffect"), "FlowParticle")
+      getproperty         QName(PackageNamespace(""), "total_")
+      pushshort           200
+      ifngt               L13
+
+      pushfalse
+      returnvalue
+
+L13:
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      pushbyte            5
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L59
+
+L28:
+      label
+      pushbyte            3
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            5
+      multiply
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      add
+      pushbyte            20
+      multiply
+      convert_i
+      setlocal            5
+
+      findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:FlowEffect"), "FlowParticle")
+      pushdouble          0.5
+      getlocal            5
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      constructprop       QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:FlowEffect"), "FlowParticle"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            6
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          4
+L59:
+      getlocal            4
+      getlocal3
+      iflt                L28
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runEasyRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:FlowEffect/instance/runEasyRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 6
+     localcount 7
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            5
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:FlowEffect"), "FlowParticle")
+      getproperty         QName(PackageNamespace(""), "total_")
+      pushshort           200
+      ifngt               L13
+
+      pushfalse
+      returnvalue
+
+L13:
+      findproperty        QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "x")
+      initproperty        QName(PackageNamespace(""), "x_")
+
+      findproperty        QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getproperty         QName(PackageNamespace(""), "y")
+      initproperty        QName(PackageNamespace(""), "y_")
+
+      pushbyte            3
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      jump                L59
+
+L28:
+      label
+      pushbyte            3
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            5
+      multiply
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      add
+      pushbyte            10
+      multiply
+      convert_i
+      setlocal            5
+
+      findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:FlowEffect"), "FlowParticle")
+      pushdouble          0.5
+      getlocal            5
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "start_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go_")
+      constructprop       QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:FlowEffect"), "FlowParticle"), 5
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            6
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          4
+L59:
+      getlocal            4
+      getlocal3
+      iflt                L28
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:FlowEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

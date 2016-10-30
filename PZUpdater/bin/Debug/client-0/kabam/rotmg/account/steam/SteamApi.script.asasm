@@ -1,0 +1,25 @@
+script
+ sinit
+  refid "kabam.rotmg.account.steam:SteamApi/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 2
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("SteamApi", [PackageNamespace("kabam.rotmg.account.steam")])
+    pushnull
+    newclass            "kabam.rotmg.account.steam:SteamApi"
+    initproperty        QName(PackageNamespace("kabam.rotmg.account.steam"), "SteamApi")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("kabam.rotmg.account.steam"), "SteamApi")
+  #include "SteamApi.class.asasm"
+ end ; trait
+end ; script

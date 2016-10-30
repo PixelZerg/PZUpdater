@@ -1,0 +1,290 @@
+class
+ refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"
+ instance QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsPanelMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator")
+  iinit
+   refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsPanel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openNoModalDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogNoModalSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "init"), 0
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsPanel")
+      callproperty        QName(PackageNamespace(""), "hasQuests"), 0
+      iffalse             L32
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsContainer")
+      getproperty         QName(PackageNamespace(""), "modalIsOpen")
+      iftrue              L27
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.questrewards.view"), "feedButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), "onButtonLeftClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      jump                L32
+
+L27:
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "enableInteract")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "enableInteract")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.questrewards.view"), "feedButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), "onButtonLeftClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "destroy"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), "onButtonLeftClick")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsPanelMediator:onButtonLeftClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsContainer")
+      getproperty         QName(PackageNamespace(""), "modalIsOpen")
+      iftrue              L30
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openNoModalDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsContainer")
+      constructprop       QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsContainer"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.questrewards.view"), "feedButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), "onButtonLeftClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "enableInteract")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+L30:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "enableInteract")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/enableInteract"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.questrewards.view"), "QuestRewardsView")
+      getproperty         QName(PackageNamespace(""), "closed")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "enableInteract")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageInternalNs("kabam.rotmg.questrewards.view"), "feedButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), "onButtonLeftClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), "onKeyDown")
+   method
+    refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("interact", [PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.questrewards.view"), PackageInternalNs("kabam.rotmg.questrewards.view"), ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), PrivateNamespace(null, "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/instance/onKeyDown"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      equals
+      dup
+      iffalse             L16
+
+      pop
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+L16:
+      iffalse             L20
+
+      getlocal0
+      pushnull
+      callpropvoid        QName(ProtectedNamespace("kabam.rotmg.questrewards.view:QuestRewardsPanelMediator"), "onButtonLeftClick"), 1
+
+L20:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.questrewards.view:QuestRewardsPanelMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

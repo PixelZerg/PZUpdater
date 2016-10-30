@@ -1,0 +1,360 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "RisingFuryEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:RisingFuryEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   param QName(PackageNamespace(""), "uint")
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "go")
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "x_")
+     pushbyte            10
+     multiply
+     callproperty        QName(PackageNamespace(""), "floor"), 1
+     pushbyte            10
+     divide
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "startX")
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "y_")
+     pushbyte            10
+     multiply
+     callproperty        QName(PackageNamespace(""), "floor"), 1
+     pushbyte            10
+     divide
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "startY")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "time")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "createTimer"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "createParticleField"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "start_") type QName(PackageNamespace("flash.geom"), "Point") end
+  trait slot QName(PackageNamespace(""), "go") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "startX") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "startY") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "particleField") type QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleField") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "time") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "isCharged") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "createTimer")
+   method
+    refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/createTimer"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "texture_")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            8
+      equals
+      iffalse             L12
+
+      pushbyte            50
+      convert_u
+      jump                L14
+
+L12:
+      pushbyte            30
+      convert_u
+L14:
+      convert_u
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      getlocal1
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "time")
+      getlocal1
+      divide
+      callproperty        QName(PackageNamespace(""), "round"), 1
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "timer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "onTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER_COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "onChargingComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "onTimer")
+   method
+    refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/onTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "x_")
+      pushbyte            10
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      pushbyte            10
+      divide
+      convert_d
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "y_")
+      pushbyte            10
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      pushbyte            10
+      divide
+      convert_d
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "startX")
+      getlocal2
+      equals
+      not
+      dup
+      iftrue              L37
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "startY")
+      getlocal3
+      equals
+      not
+L37:
+      iffalse             L44
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "particleField")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+L44:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "onChargingComplete")
+   method
+    refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/onChargingComplete"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "particleField")
+      callpropvoid        QName(PackageNamespace(""), "destroy"), 0
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      pushbyte            33
+      pushbyte            12
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+      coerce              QName(PackageNamespace("flash.utils"), "Timer")
+      setlocal2
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "onShockTimer")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "onShockTimer")
+   method
+    refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/onShockTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "isCharged")
+      not
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "isCharged")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "isCharged")
+      callpropvoid        QName(PackageNamespace(""), "toggleChargingEffect"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "createParticleField")
+   method
+    refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/createParticleField"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleField")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "texture_")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "texture_")
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleField"), 2
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "particleField")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:RisingFuryEffect/instance"), "particleField")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:RisingFuryEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

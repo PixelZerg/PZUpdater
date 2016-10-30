@@ -1,0 +1,232 @@
+class
+ refid "kabam.rotmg.errors.view:ErrorMediator"
+ instance QName(PackageNamespace("kabam.rotmg.errors.view"), "ErrorMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.errors.view:ErrorMediator")
+  iinit
+   refid "kabam.rotmg.errors.view:ErrorMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "UNCAUGHT_ERROR_EVENTS") type QName(PackageNamespace(""), "String") value Utf8("uncaughtErrorEvents") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "UNCAUGHT_ERROR") type QName(PackageNamespace(""), "String") value Utf8("uncaughtError") end
+  trait slot QName(PackageNamespace(""), "contextView") flag METADATA type QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "error") flag METADATA type QName(PackageNamespace("kabam.rotmg.errors.control"), "ErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "loaderInfo") type QName(PackageNamespace("flash.display"), "LoaderInfo") end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.errors.view:ErrorMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "contextView")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "loaderInfo")
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "canCatchGlobalErrors"), 0
+      iffalse             L12
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "addGlobalErrorListener"), 0
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.errors.view:ErrorMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "canCatchGlobalErrors"), 0
+      iffalse             L7
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "removeGlobalErrorListener"), 0
+
+L7:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "canCatchGlobalErrors")
+   method
+    refid "kabam.rotmg.errors.view:ErrorMediator/instance/kabam.rotmg.errors.view:ErrorMediator/instance/canCatchGlobalErrors"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "loaderInfo")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "UNCAUGHT_ERROR_EVENTS")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "hasOwnProperty"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "addGlobalErrorListener")
+   method
+    refid "kabam.rotmg.errors.view:ErrorMediator/instance/kabam.rotmg.errors.view:ErrorMediator/instance/addGlobalErrorListener"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.events"), "IEventDispatcher")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "loaderInfo")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "UNCAUGHT_ERROR_EVENTS")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance/kabam.rotmg.errors.view:ErrorMediator/instance"), PackageNamespace("kabam.rotmg.errors.view"), PackageInternalNs("kabam.rotmg.errors.view"), ProtectedNamespace("kabam.rotmg.errors.view:ErrorMediator"), StaticProtectedNs("kabam.rotmg.errors.view:ErrorMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      callproperty        QName(PackageNamespace("flash.events"), "IEventDispatcher"), 1
+      coerce              QName(PackageNamespace("flash.events"), "IEventDispatcher")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "UNCAUGHT_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "handleUncaughtError")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "removeGlobalErrorListener")
+   method
+    refid "kabam.rotmg.errors.view:ErrorMediator/instance/kabam.rotmg.errors.view:ErrorMediator/instance/removeGlobalErrorListener"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.events"), "IEventDispatcher")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "loaderInfo")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "UNCAUGHT_ERROR_EVENTS")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance/kabam.rotmg.errors.view:ErrorMediator/instance"), PackageNamespace("kabam.rotmg.errors.view"), PackageInternalNs("kabam.rotmg.errors.view"), ProtectedNamespace("kabam.rotmg.errors.view:ErrorMediator"), StaticProtectedNs("kabam.rotmg.errors.view:ErrorMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+      callproperty        QName(PackageNamespace("flash.events"), "IEventDispatcher"), 1
+      coerce              QName(PackageNamespace("flash.events"), "IEventDispatcher")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "UNCAUGHT_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "handleUncaughtError")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.errors.view:ErrorMediator/instance"), "handleUncaughtError")
+   method
+    refid "kabam.rotmg.errors.view:ErrorMediator/instance/kabam.rotmg.errors.view:ErrorMediator/instance/handleUncaughtError"
+    param QName(PackageNamespace("flash.events"), "ErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "error")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.errors.view:ErrorMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

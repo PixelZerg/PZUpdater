@@ -1,0 +1,167 @@
+class
+ refid "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.kongregate.commands"), "KongregateRegisterAccountCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand")
+  iinit
+   refid "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "RegisterAccountTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "update") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "UpdateAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "taskError") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/execute"), "onSuccess"), 0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/execute"), "onFailure"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask"), 3
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/execute"), "onSuccess")
+   method
+    refid "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/execute/onSuccess"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.kongregate.view"), "KongregateAccountDetailDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.kongregate.view"), "KongregateAccountDetailDialog"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/execute"), "onFailure")
+   method
+    refid "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/instance/execute/onFailure"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "taskError")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kongregate.commands:KongregateRegisterAccountCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

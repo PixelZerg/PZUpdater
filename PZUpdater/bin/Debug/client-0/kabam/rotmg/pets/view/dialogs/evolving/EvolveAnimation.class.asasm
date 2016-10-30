@@ -1,0 +1,298 @@
+class
+ refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolveAnimation")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation")
+  iinit
+   refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.assets"), "EmbeddedAssets")
+     constructprop       QName(PackageNamespace(""), "EvolveBackground"), 0
+     initproperty        QName(PackageNamespace(""), "background")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.assets"), "EmbeddedAssets")
+     constructprop       QName(PackageNamespace(""), "EvolveBackground"), 0
+     initproperty        QName(PackageNamespace(""), "backgroundMask")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "background")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "backgroundMask")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "petIconFactory") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIconFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "transition") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolveTransition")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait const QName(PackageNamespace(""), "background") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait const QName(PackageNamespace(""), "backgroundMask") type QName(PackageNamespace("flash.display"), "DisplayObject") end
+  trait slot QName(PackageNamespace(""), "initialPet") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon") end
+  trait slot QName(PackageNamespace(""), "evolvedPet") type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolvedPet") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "evolvePetInfo") type QName(PackageNamespace("kabam.rotmg.messaging.impl"), "EvolvePetInfo") end
+  trait method QName(PackageNamespace(""), "setEvolvedPets")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/setEvolvedPets"
+    param QName(PackageNamespace("kabam.rotmg.messaging.impl"), "EvolvePetInfo")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petIconFactory")
+      pushbyte            6
+      setproperty         QName(PackageNamespace(""), "outlineSize")
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "evolvePetInfo")
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "initialPet")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "addInitialPet"), 1
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "finalPet")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "makeEvolvedPet"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transition")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transition")
+      getproperty         QName(PackageNamespace(""), "opaqueReached")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "onOpaque")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transition")
+      callpropvoid        QName(PackageNamespace(""), "play"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPetInfo")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/getPetInfo"
+    returns QName(PackageNamespace("kabam.rotmg.messaging.impl"), "EvolvePetInfo")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "evolvePetInfo")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "makeEvolvedPet")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/makeEvolvedPet"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolvedPet")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      initproperty        QName(PackageNamespace(""), "evolvedPet")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolvedPet")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setPet"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolvedPet")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "backgroundMask")
+      setproperty         QName(PackageNamespace(""), "mask")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolvedPet")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "background")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolvedPet")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "background")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "addInitialPet")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/addInitialPet"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petIconFactory")
+      getlocal1
+      pushbyte            100
+      callproperty        QName(PackageNamespace(""), "create"), 2
+      initproperty        QName(PackageNamespace(""), "initialPet")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "initialPet")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "background")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "initialPet")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "initialPet")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "background")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "initialPet")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "y")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "initialPet")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance"), "onOpaque")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/instance/onOpaque"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "initialPet")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChildAt")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "evolvedPet")
+      findpropstrict      QName(PackageNamespace(""), "getChildIndex")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transition")
+      callproperty        QName(PackageNamespace(""), "getChildIndex"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChildAt"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveAnimation/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

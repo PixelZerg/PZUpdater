@@ -1,0 +1,774 @@
+class
+ refid "com.company.assembleegameclient.util:GuildUtil"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "GuildUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.util:GuildUtil")
+  iinit
+   refid "com.company.assembleegameclient.util:GuildUtil/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:GuildUtil/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "INITIATE")
+    pushbyte            0
+    initproperty        QName(PackageNamespace(""), "INITIATE")
+
+    findproperty        QName(PackageNamespace(""), "MEMBER")
+    pushbyte            10
+    initproperty        QName(PackageNamespace(""), "MEMBER")
+
+    findproperty        QName(PackageNamespace(""), "OFFICER")
+    pushbyte            20
+    initproperty        QName(PackageNamespace(""), "OFFICER")
+
+    findproperty        QName(PackageNamespace(""), "LEADER")
+    pushbyte            30
+    initproperty        QName(PackageNamespace(""), "LEADER")
+
+    findproperty        QName(PackageNamespace(""), "FOUNDER")
+    pushbyte            40
+    initproperty        QName(PackageNamespace(""), "FOUNDER")
+
+    findproperty        QName(PackageNamespace(""), "MAX_MEMBERS")
+    pushbyte            50
+    initproperty        QName(PackageNamespace(""), "MAX_MEMBERS")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "INITIATE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(PackageNamespace(""), "MEMBER") slotid 2 type QName(PackageNamespace(""), "int") value Integer(10) end
+ trait const QName(PackageNamespace(""), "OFFICER") slotid 3 type QName(PackageNamespace(""), "int") value Integer(20) end
+ trait const QName(PackageNamespace(""), "LEADER") slotid 4 type QName(PackageNamespace(""), "int") value Integer(30) end
+ trait const QName(PackageNamespace(""), "FOUNDER") slotid 5 type QName(PackageNamespace(""), "int") value Integer(40) end
+ trait const QName(PackageNamespace(""), "MAX_MEMBERS") slotid 6 type QName(PackageNamespace(""), "int") value Integer(50) end
+ trait method QName(PackageNamespace(""), "rankToString") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/rankToString"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     jump                L35
+
+L3:
+     label
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_RANK_INITIATE")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces"), 1
+     returnvalue
+
+L9:
+     label
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_RANK_MEMBER")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces"), 1
+     returnvalue
+
+L15:
+     label
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_RANK_OFFICER")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces"), 1
+     returnvalue
+
+L21:
+     label
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_RANK_LEADER")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces"), 1
+     returnvalue
+
+L27:
+     label
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_RANK_FOUNDER")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces"), 1
+     returnvalue
+
+L33:
+     label
+     jump                L72
+
+L35:
+     getlocal1
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "INITIATE")
+     getlocal2
+     ifstrictne          L42
+
+     pushbyte            0
+     jump                L70
+
+L42:
+     getlex              QName(PackageNamespace(""), "MEMBER")
+     getlocal2
+     ifstrictne          L47
+
+     pushbyte            1
+     jump                L70
+
+L47:
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     getlocal2
+     ifstrictne          L52
+
+     pushbyte            2
+     jump                L70
+
+L52:
+     getlex              QName(PackageNamespace(""), "LEADER")
+     getlocal2
+     ifstrictne          L57
+
+     pushbyte            3
+     jump                L70
+
+L57:
+     getlex              QName(PackageNamespace(""), "FOUNDER")
+     getlocal2
+     ifstrictne          L62
+
+     pushbyte            4
+     jump                L70
+
+L62:
+     jump                L69
+
+     ; 0x24
+     ; 0x05
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L69:
+     pushbyte            5
+L70:
+     kill                2
+     lookupswitch        L33, [L3, L9, L15, L21, L27, L33]
+
+L72:
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_RANK_UNKNOWN")
+     callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces"), 1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.util:GuildUtil/class/rankToString"), "wrapInBraces") flag FINAL dispid 4
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/com.company.assembleegameclient.util:GuildUtil/class/rankToString/wrapInBraces"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushstring          "{"
+     getlocal1
+     add
+     pushstring          "}"
+     add
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "rankToIcon") flag FINAL dispid 5
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/rankToIcon"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   body
+    maxstack 6
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L48
+
+L6:
+     label
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterfaceBig"
+     pushbyte            20
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L85
+
+L14:
+     label
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterfaceBig"
+     pushbyte            19
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L85
+
+L22:
+     label
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterfaceBig"
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L85
+
+L30:
+     label
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterfaceBig"
+     pushbyte            17
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L85
+
+L38:
+     label
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiInterfaceBig"
+     pushbyte            16
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal3
+
+     jump                L85
+
+L46:
+     label
+     jump                L85
+
+L48:
+     getlocal1
+     setlocal            4
+
+     getlex              QName(PackageNamespace(""), "INITIATE")
+     getlocal            4
+     ifstrictne          L55
+
+     pushbyte            0
+     jump                L83
+
+L55:
+     getlex              QName(PackageNamespace(""), "MEMBER")
+     getlocal            4
+     ifstrictne          L60
+
+     pushbyte            1
+     jump                L83
+
+L60:
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     getlocal            4
+     ifstrictne          L65
+
+     pushbyte            2
+     jump                L83
+
+L65:
+     getlex              QName(PackageNamespace(""), "LEADER")
+     getlocal            4
+     ifstrictne          L70
+
+     pushbyte            3
+     jump                L83
+
+L70:
+     getlex              QName(PackageNamespace(""), "FOUNDER")
+     getlocal            4
+     ifstrictne          L75
+
+     pushbyte            4
+     jump                L83
+
+L75:
+     jump                L82
+
+     ; 0x24
+     ; 0x05
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L82:
+     pushbyte            5
+L83:
+     kill                4
+     lookupswitch        L46, [L6, L14, L22, L30, L38, L46]
+
+L85:
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal3
+     getlocal2
+     pushtrue
+     pushbyte            0
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "redraw"), 5
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "guildFameIcon") flag FINAL dispid 6
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/guildFameIcon"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace("flash.display"), "BitmapData")
+   body
+    maxstack 6
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.util"), "AssetLibrary")
+     pushstring          "lofiObj3"
+     pushshort           226
+     callproperty        QName(PackageNamespace(""), "getImageFromSet"), 2
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+     getlocal2
+     getlocal1
+     pushtrue
+     pushbyte            0
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "redraw"), 5
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "allowedChange") flag FINAL dispid 7
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/allowedChange"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal2
+     getlocal3
+     ifne                L7
+
+     pushfalse
+     returnvalue
+
+L7:
+     getlocal1
+     getlex              QName(PackageNamespace(""), "FOUNDER")
+     equals
+     dup
+     iffalse             L16
+
+     pop
+     getlocal2
+     getlex              QName(PackageNamespace(""), "FOUNDER")
+     lessthan
+L16:
+     dup
+     iffalse             L22
+
+     pop
+     getlocal3
+     getlex              QName(PackageNamespace(""), "FOUNDER")
+     lessthan
+L22:
+     iffalse             L25
+
+     pushtrue
+     returnvalue
+
+L25:
+     getlocal1
+     getlex              QName(PackageNamespace(""), "LEADER")
+     equals
+     dup
+     iffalse             L34
+
+     pop
+     getlocal2
+     getlex              QName(PackageNamespace(""), "LEADER")
+     lessthan
+L34:
+     dup
+     iffalse             L40
+
+     pop
+     getlocal3
+     getlex              QName(PackageNamespace(""), "LEADER")
+     lessequals
+L40:
+     iffalse             L43
+
+     pushtrue
+     returnvalue
+
+L43:
+     getlocal1
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     equals
+     dup
+     iffalse             L52
+
+     pop
+     getlocal2
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     lessthan
+L52:
+     dup
+     iffalse             L58
+
+     pop
+     getlocal3
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     lessthan
+L58:
+     iffalse             L61
+
+     pushtrue
+     returnvalue
+
+L61:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "promotedRank") flag FINAL dispid 8
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/promotedRank"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "int")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     jump                L14
+
+L3:
+     label
+     getlex              QName(PackageNamespace(""), "MEMBER")
+     returnvalue
+
+L6:
+     label
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     returnvalue
+
+L9:
+     label
+     getlex              QName(PackageNamespace(""), "LEADER")
+     returnvalue
+
+L12:
+     label
+     jump                L41
+
+L14:
+     getlocal1
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "INITIATE")
+     getlocal2
+     ifstrictne          L21
+
+     pushbyte            0
+     jump                L39
+
+L21:
+     getlex              QName(PackageNamespace(""), "MEMBER")
+     getlocal2
+     ifstrictne          L26
+
+     pushbyte            1
+     jump                L39
+
+L26:
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     getlocal2
+     ifstrictne          L31
+
+     pushbyte            2
+     jump                L39
+
+L31:
+     jump                L38
+
+     ; 0x24
+     ; 0x03
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L38:
+     pushbyte            3
+L39:
+     kill                2
+     lookupswitch        L12, [L3, L6, L9, L12]
+
+L41:
+     getlex              QName(PackageNamespace(""), "FOUNDER")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "canPromote") flag FINAL dispid 9
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/canPromote"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "promotedRank")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "promotedRank"), 1
+     convert_i
+     setlocal3
+
+     findpropstrict      QName(PackageNamespace(""), "allowedChange")
+     getlocal1
+     getlocal2
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "allowedChange"), 3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "demotedRank") flag FINAL dispid 10
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/demotedRank"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "int")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     jump                L14
+
+L3:
+     label
+     getlex              QName(PackageNamespace(""), "MEMBER")
+     returnvalue
+
+L6:
+     label
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     returnvalue
+
+L9:
+     label
+     getlex              QName(PackageNamespace(""), "LEADER")
+     returnvalue
+
+L12:
+     label
+     jump                L41
+
+L14:
+     getlocal1
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     getlocal2
+     ifstrictne          L21
+
+     pushbyte            0
+     jump                L39
+
+L21:
+     getlex              QName(PackageNamespace(""), "LEADER")
+     getlocal2
+     ifstrictne          L26
+
+     pushbyte            1
+     jump                L39
+
+L26:
+     getlex              QName(PackageNamespace(""), "FOUNDER")
+     getlocal2
+     ifstrictne          L31
+
+     pushbyte            2
+     jump                L39
+
+L31:
+     jump                L38
+
+     ; 0x24
+     ; 0x03
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L38:
+     pushbyte            3
+L39:
+     kill                2
+     lookupswitch        L12, [L3, L6, L9, L12]
+
+L41:
+     getlex              QName(PackageNamespace(""), "INITIATE")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "canDemote") flag FINAL dispid 11
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/canDemote"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "demotedRank")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "demotedRank"), 1
+     convert_i
+     setlocal3
+
+     findpropstrict      QName(PackageNamespace(""), "allowedChange")
+     getlocal1
+     getlocal2
+     getlocal3
+     callproperty        QName(PackageNamespace(""), "allowedChange"), 3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "canRemove") flag FINAL dispid 12
+  method
+   refid "com.company.assembleegameclient.util:GuildUtil/class/canRemove"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "OFFICER")
+     greaterequals
+     dup
+     iffalse             L11
+
+     pop
+     getlocal2
+     getlocal1
+     lessthan
+L11:
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

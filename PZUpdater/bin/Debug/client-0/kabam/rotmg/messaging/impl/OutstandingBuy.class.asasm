@@ -1,0 +1,188 @@
+class
+ refid "kabam.rotmg.messaging.impl:OutstandingBuy"
+ instance QName(PackageInternalNs("kabam.rotmg.messaging.impl"), "OutstandingBuy")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl:OutstandingBuy")
+  iinit
+   refid "kabam.rotmg.messaging.impl:OutstandingBuy/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "id_")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "price_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "currency_")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "converted_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "id_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "price_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "currency_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "converted_") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "record")
+   method
+    refid "kabam.rotmg.messaging.impl:OutstandingBuy/instance/record"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      jump                L43
+
+L3:
+      label
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "credits"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "converted_")
+      iffalse             L12
+
+      pushstring          "buyConverted"
+      jump                L13
+
+L12:
+      pushstring          "buy"
+L13:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "id_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "price_")
+      callpropvoid        QName(PackageNamespace(""), "trackEvent"), 4
+
+      jump                L74
+
+L19:
+      label
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "credits"
+      pushstring          "buyFame"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "id_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "price_")
+      callpropvoid        QName(PackageNamespace(""), "trackEvent"), 4
+
+      jump                L74
+
+L30:
+      label
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "credits"
+      pushstring          "buyGuildFame"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "id_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "price_")
+      callpropvoid        QName(PackageNamespace(""), "trackEvent"), 4
+
+      jump                L74
+
+L41:
+      label
+      jump                L74
+
+L43:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:OutstandingBuy/instance"), "currency_")
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getproperty         QName(PackageNamespace(""), "GOLD")
+      getlocal1
+      ifstrictne          L52
+
+      pushbyte            0
+      jump                L72
+
+L52:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getproperty         QName(PackageNamespace(""), "FAME")
+      getlocal1
+      ifstrictne          L58
+
+      pushbyte            1
+      jump                L72
+
+L58:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getproperty         QName(PackageNamespace(""), "GUILD_FAME")
+      getlocal1
+      ifstrictne          L64
+
+      pushbyte            2
+      jump                L72
+
+L64:
+      jump                L71
+
+      ; 0x24
+      ; 0x03
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L71:
+      pushbyte            3
+L72:
+      kill                1
+      lookupswitch        L41, [L3, L19, L30, L41]
+
+L74:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl:OutstandingBuy/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

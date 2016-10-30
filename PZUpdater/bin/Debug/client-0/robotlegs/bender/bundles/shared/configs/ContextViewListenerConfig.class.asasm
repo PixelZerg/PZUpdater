@@ -1,0 +1,76 @@
+class
+ refid "robotlegs.bender.bundles.shared.configs:ContextViewListenerConfig"
+ instance QName(PackageNamespace("robotlegs.bender.bundles.shared.configs"), "ContextViewListenerConfig")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.bundles.shared.configs:ContextViewListenerConfig")
+  iinit
+   refid "robotlegs.bender.bundles.shared.configs:ContextViewListenerConfig/instance/init#1"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "contextView") flag METADATA type QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "viewManager") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.viewManager.api"), "IViewManager")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "init") flag METADATA
+   method
+    refid "robotlegs.bender.bundles.shared.configs:ContextViewListenerConfig/instance/init#0"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "viewManager")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "contextView")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.viewManager.api:IViewManager"), "addContainer"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+   metadata "PostConstruct"
+   end ; metadata
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.bundles.shared.configs:ContextViewListenerConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

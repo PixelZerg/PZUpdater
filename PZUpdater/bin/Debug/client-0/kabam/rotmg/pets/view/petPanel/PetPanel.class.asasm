@@ -1,0 +1,580 @@
+class
+ refid "kabam.rotmg.pets.view.petPanel:PetPanel"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.petPanel"), "PetPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.petPanel:PetPanel")
+  iinit
+   refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     initproperty        QName(PackageNamespace(""), "petBitmapContainer")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "addToolTip")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             16777215
+     pushbyte            16
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "nameTextField")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsViewAssetFactory")
+     pushint             11974326
+     pushbyte            12
+     pushfalse
+     callproperty        QName(PackageNamespace(""), "returnTextfield"), 3
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "rarityTextField")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "petVO")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "petBitmapContainer")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "MOUSE_OVER")
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal"), 2
+     initproperty        QName(PackageNamespace(""), "petBitmapRollover")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "petBitmapRollover")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "onRollOver")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     getlocal0
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "getSkin"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "petBitmap")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "addChildren"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionChildren"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "updateTextFields"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "createButtons"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "petBitmapRollover") type QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal") end
+  trait slot QName(PackageNamespace(""), "petBitmapContainer") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PackageNamespace(""), "followButton") type QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton") end
+  trait slot QName(PackageNamespace(""), "releaseButton") type QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton") end
+  trait slot QName(PackageNamespace(""), "unFollowButton") type QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton") end
+  trait slot QName(PackageNamespace(""), "petVO") type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO") end
+  trait const QName(PackageNamespace(""), "addToolTip") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "nameTextField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "rarityTextField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "petBitmap") type QName(PackageNamespace("flash.display"), "Bitmap") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "createButtons")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/createButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PET_PANEL_FOLLOW")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "makeButton"), 1
+      initproperty        QName(PackageNamespace(""), "followButton")
+
+      getlocal0
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "RELEASE")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "makeButton"), 1
+      initproperty        QName(PackageNamespace(""), "releaseButton")
+
+      getlocal0
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PET_PANEL_UNFOLLOW")
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "makeButton"), 1
+      initproperty        QName(PackageNamespace(""), "unFollowButton")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "alignButtons"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "makeButton")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/makeButton"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "FONT_SIZE")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setState")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/setState"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsConstants")
+      getproperty         QName(PackageNamespace(""), "INTERACTING")
+      equals
+      callpropvoid        QName(PackageNamespace(""), "toggleButtons"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toggleButtons")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/toggleButtons"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "followButton")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "releaseButton")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "unFollowButton")
+      getlocal1
+      not
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "addChildren")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmapContainer")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "petBitmap")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petBitmapContainer")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "nameTextField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "rarityTextField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "updateTextFields")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/updateTextFields"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "nameTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petVO")
+      callproperty        QName(PackageNamespace(""), "getName"), 0
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "rarityTextField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petVO")
+      callproperty        QName(PackageNamespace(""), "getRarity"), 0
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionChildren")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/positionChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "petBitmap")
+      pushbyte            4
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "petBitmap")
+      pushbyte            -3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "nameTextField")
+      pushbyte            58
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "nameTextField")
+      pushbyte            23
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "rarityTextField")
+      pushbyte            58
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "rarityTextField")
+      pushbyte            35
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "alignButtons")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/alignButtons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionFollow"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionRelease"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionUnfollow"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionFollow")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/positionFollow"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "followButton")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "INVENTORY_PADDING")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "sendToBottom")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "followButton")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "sendToBottom"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionRelease")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/positionRelease"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "releaseButton")
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "releaseButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "INVENTORY_PADDING")
+      subtract
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "HUD_PADDING")
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "sendToBottom")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "releaseButton")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "sendToBottom"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "positionUnfollow")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/positionUnfollow"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "unFollowButton")
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "unFollowButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      pushbyte            2
+      divide
+      setproperty         QName(PackageNamespace(""), "x")
+
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "sendToBottom")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "unFollowButton")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "sendToBottom"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "onRollOver")
+   method
+    refid "kabam.rotmg.pets.view.petPanel:PetPanel/instance/kabam.rotmg.pets.view.petPanel:PetPanel/onRollOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetTooltip")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petVO")
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetTooltip"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetTooltip")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "attachToTarget"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addToolTip")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.petPanel:PetPanel/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "FONT_SIZE")
+    pushbyte            16
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "FONT_SIZE")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "INVENTORY_PADDING")
+    pushbyte            6
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "INVENTORY_PADDING")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "HUD_PADDING")
+    pushbyte            5
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "HUD_PADDING")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "FONT_SIZE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(16) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "INVENTORY_PADDING") slotid 2 type QName(PackageNamespace(""), "int") value Integer(6) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "HUD_PADDING") slotid 3 type QName(PackageNamespace(""), "int") value Integer(5) end
+ trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.petPanel:PetPanel"), "sendToBottom") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.pets.view.petPanel:PetPanel/class/kabam.rotmg.pets.view.petPanel:PetPanel/sendToBottom"
+   param QName(PackageNamespace("kabam.rotmg.editor.view"), "StaticTextButton")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getlex              QName(PackageNamespace(""), "HEIGHT")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "height")
+     subtract
+     pushbyte            4
+     subtract
+     setproperty         QName(PackageNamespace(""), "y")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

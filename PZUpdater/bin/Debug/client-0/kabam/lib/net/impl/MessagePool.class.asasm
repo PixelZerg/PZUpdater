@@ -1,0 +1,305 @@
+class
+ refid "kabam.lib.net.impl:MessagePool"
+ instance QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.net.impl:MessagePool")
+  iinit
+   refid "kabam.lib.net.impl:MessagePool/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Class")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "type")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "id")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "callback")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "type") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(PackageNamespace(""), "callback") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(PackageNamespace(""), "id") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail") type QName(PackageNamespace("kabam.lib.net.impl"), "Message") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "count") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "populate")
+   method
+    refid "kabam.lib.net.impl:MessagePool/instance/populate"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "MessagePool")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+      setlocal2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "count")
+      getlocal1
+      add
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "count")
+
+      jump                L45
+
+L12:
+      label
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "id")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "callback")
+      constructprop       QName(PackageNamespace(""), "type"), 2
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+      setlocal2
+
+      getlocal2
+      getlocal0
+      setproperty         QName(PackageNamespace(""), "pool")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      dup
+      iffalse             L37
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      getlocal2
+      dup
+      setlocal3
+
+      setproperty         QName(PackageNamespace(""), "next")
+
+      getlocal3
+      kill                3
+L37:
+      pop
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      setproperty         QName(PackageNamespace(""), "prev")
+
+      getlocal0
+      getlocal2
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+
+L45:
+      getlocal1
+      dup
+      decrement_i
+      setlocal1
+
+      iftrue              L12
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "require")
+   method
+    refid "kabam.lib.net.impl:MessagePool/instance/require"
+    returns QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+      setlocal1
+
+      getlocal1
+      iffalse             L20
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      getproperty         QName(PackageNamespace(""), "prev")
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+
+      getlocal1
+      pushnull
+      setproperty         QName(PackageNamespace(""), "prev")
+
+      getlocal1
+      pushnull
+      setproperty         QName(PackageNamespace(""), "next")
+
+      jump                L42
+
+L20:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "id")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "callback")
+      constructprop       QName(PackageNamespace(""), "type"), 2
+      coerce              QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      setproperty         QName(PackageNamespace(""), "pool")
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "count")
+      increment_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "count")
+
+      kill                3
+      kill                2
+L42:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getCount")
+   method
+    refid "kabam.lib.net.impl:MessagePool/instance/getCount"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "count")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageInternalNs("kabam.lib.net.impl"), "append")
+   method
+    refid "kabam.lib.net.impl:MessagePool/instance/kabam.lib.net.impl:append"
+    param QName(PackageNamespace("kabam.lib.net.impl"), "Message")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      dup
+      iffalse             L15
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      getlocal1
+      dup
+      setlocal2
+
+      setproperty         QName(PackageNamespace(""), "next")
+
+      getlocal2
+      kill                2
+L15:
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+      setproperty         QName(PackageNamespace(""), "prev")
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "dispose")
+   method
+    refid "kabam.lib.net.impl:MessagePool/instance/dispose"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.net.impl:MessagePool/instance"), "tail")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.net.impl:MessagePool/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

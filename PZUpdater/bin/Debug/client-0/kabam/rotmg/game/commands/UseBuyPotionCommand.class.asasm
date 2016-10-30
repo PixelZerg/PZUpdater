@@ -1,0 +1,355 @@
+class
+ refid "kabam.rotmg.game.commands:UseBuyPotionCommand"
+ instance QName(PackageNamespace("kabam.rotmg.game.commands"), "UseBuyPotionCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.commands:UseBuyPotionCommand")
+  iinit
+   refid "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection")
+     getproperty         QName(PackageNamespace(""), "instance")
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "gsc")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "vo") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "UseBuyPotionVO")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "potInventoryModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "PotionInventoryModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "gsc") type QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "count") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potion") type QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel") end
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player_")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      pushnull
+      ifne                L14
+
+      returnvoid
+
+L14:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId")
+      callproperty        QName(PackageNamespace(""), "getPotionCount"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "count")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potInventoryModel")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId")
+      callproperty        QName(PackageNamespace(""), "getPotionModel"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potion")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "count")
+      pushbyte            0
+      greaterthan
+      dup
+      iftrue              L43
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "canPurchasePotion"), 0
+      convert_b
+L43:
+      iffalse             L47
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "usePotionIfEffective"), 0
+
+      jump                L51
+
+L47:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "Not safe to purchase potion"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+L51:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "canPurchasePotion")
+   method
+    refid "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/kabam.rotmg.game.commands:UseBuyPotionCommand/instance/canPurchasePotion"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "credits_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potion")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId")
+      callproperty        QName(PackageNamespace(""), "getPotionCount"), 1
+      callproperty        QName(PackageNamespace(""), "currentCost"), 1
+      greaterequals
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("contextualPotionBuy", [PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), PackageNamespace("kabam.rotmg.game.commands"), PackageInternalNs("kabam.rotmg.game.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.commands:UseBuyPotionCommand"), StaticProtectedNs("kabam.rotmg.game.commands:UseBuyPotionCommand")])
+      convert_b
+      setlocal2
+
+      getlocal1
+      convert_b
+      dup
+      iffalse             L27
+
+      pop
+      getlocal2
+      convert_b
+L27:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "usePotionIfEffective")
+   method
+    refid "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/kabam.rotmg.game.commands:UseBuyPotionCommand/instance/usePotionIfEffective"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "isPlayerStatMaxed"), 0
+      iffalse             L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "UseBuyPotionCommand.execute: User has MAX of that attribute, not requesting a use/buy from server."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      jump                L15
+
+L10:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "sendServerRequest"), 0
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.sound"), "SoundEffectLibrary")
+      pushstring          "use_potion"
+      callpropvoid        QName(PackageNamespace(""), "play"), 1
+
+L15:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "isPlayerStatMaxed")
+   method
+    refid "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/kabam.rotmg.game.commands:UseBuyPotionCommand/instance/isPlayerStatMaxed"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "PotionInventoryModel")
+      getproperty         QName(PackageNamespace(""), "HEALTH_POTION_ID")
+      ifne                L15
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "hp_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "maxHP_")
+      greaterequals
+      returnvalue
+
+L15:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "PotionInventoryModel")
+      getproperty         QName(PackageNamespace(""), "MAGIC_POTION_ID")
+      ifne                L28
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "mp_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "maxMP_")
+      greaterequals
+      returnvalue
+
+L28:
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "sendServerRequest")
+   method
+    refid "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/kabam.rotmg.game.commands:UseBuyPotionCommand/instance/sendServerRequest"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "PotionInventoryModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      callproperty        QName(PackageNamespace(""), "getPotionSlot"), 1
+      convert_i
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("contextualPotionBuy", [PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance/kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), PackageNamespace("kabam.rotmg.game.commands"), PackageInternalNs("kabam.rotmg.game.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.commands:UseBuyPotionCommand"), StaticProtectedNs("kabam.rotmg.game.commands:UseBuyPotionCommand")])
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "gsc")
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "potionId")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getproperty         QName(PackageNamespace(""), "y_")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "useItem"), 7
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.commands:UseBuyPotionCommand/instance"), "player")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      callproperty        QName(PackageNamespace(""), "getPotionCount"), 1
+      pushbyte            0
+      ifne                L47
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potInventoryModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "vo")
+      getproperty         QName(PackageNamespace(""), "objectId")
+      callproperty        QName(PackageNamespace(""), "getPotionModel"), 1
+      callpropvoid        QName(PackageNamespace(""), "purchasedPot"), 0
+
+L47:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.commands:UseBuyPotionCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,125 @@
+class
+ refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "EvolveTransition")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition")
+  iinit
+   refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "opaqueReached")
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlex              QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving.configuration"), "EvolveTransitionConfiguration")
+     callproperty        QName(PackageNamespace(""), "makeBackground"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving.configuration"), "ToOpaqueTween")
+     getlocal0
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving.configuration"), "ToOpaqueTween"), 1
+     initproperty        QName(PackageNamespace(""), "toOpaqueTween")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving.configuration"), "AfterOpaqueTween")
+     getlocal0
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving.configuration"), "AfterOpaqueTween"), 1
+     initproperty        QName(PackageNamespace(""), "afterOpaqueTween")
+
+     findproperty        QName(PackageNamespace(""), "alpha")
+     pushbyte            0
+     initproperty        QName(PackageNamespace(""), "alpha")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "opaqueReached") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "toOpaqueTween") type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "TweenProxy") end
+  trait slot QName(PackageNamespace(""), "afterOpaqueTween") type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs.evolving"), "TweenProxy") end
+  trait method QName(PackageNamespace(""), "play")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition/instance/play"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "toOpaqueTween")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition/instance/play"), "toOpaqueComplete")
+      callpropvoid        QName(PackageNamespace(""), "setOnComplete"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "toOpaqueTween")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition/instance/play"), "toOpaqueComplete")
+   method
+    refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition/instance/kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition/instance/play/toOpaqueComplete"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "opaqueReached")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "afterOpaqueTween")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.dialogs.evolving:EvolveTransition/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

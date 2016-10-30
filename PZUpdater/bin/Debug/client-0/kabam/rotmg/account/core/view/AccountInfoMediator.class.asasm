@@ -1,0 +1,216 @@
+class
+ refid "kabam.rotmg.account.core.view:AccountInfoMediator"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.view"), "AccountInfoMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.view:AccountInfoMediator")
+  iinit
+   refid "kabam.rotmg.account.core.view:AccountInfoMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.view"), "AccountInfoView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "update") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "UpdateAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.core.view:AccountInfoMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserName"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core.view:AccountInfoView"), "setInfo"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:AccountInfoMediator/instance"), "updateDisplayName"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:AccountInfoMediator/instance"), "updateLogin")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:AccountInfoMediator/instance"), "updateDisplayName")
+   method
+    refid "kabam.rotmg.account.core.view:AccountInfoMediator/instance/kabam.rotmg.account.core.view:AccountInfoMediator/instance/updateDisplayName"
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      istypelate
+      iffalse             L45
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      setlocal1
+
+      getlocal1
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L28
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "userDisplayName")
+      pushnull
+      equals
+      not
+L28:
+      dup
+      iffalse             L36
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "userDisplayName")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+L36:
+      iffalse             L45
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "userDisplayName")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core.view:AccountInfoView"), "setInfo"), 2
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.core.view:AccountInfoMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:AccountInfoMediator/instance"), "updateLogin")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:AccountInfoMediator/instance"), "updateLogin")
+   method
+    refid "kabam.rotmg.account.core.view:AccountInfoMediator/instance/kabam.rotmg.account.core.view:AccountInfoMediator/instance/updateLogin"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserName"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core.view:AccountInfoView"), "setInfo"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.core.view:AccountInfoMediator/instance"), "updateDisplayName"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.view:AccountInfoMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,277 @@
+class
+ refid "kabam.rotmg.application.impl:ProductionSetup"
+ instance QName(PackageNamespace("kabam.rotmg.application.impl"), "ProductionSetup")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ApplicationSetup", [PackageNamespace("kabam.rotmg.application.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.application.impl:ProductionSetup")
+  iinit
+   refid "kabam.rotmg.application.impl:ProductionSetup/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "http://"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "SERVER")
+     add
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "UNENCRYPTED")
+
+     getlocal0
+     pushstring          "https://"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "SERVER")
+     add
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "ENCRYPTED")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "SERVER") type QName(PackageNamespace(""), "String") value Utf8("realmofthemadgodhrd.appspot.com") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "UNENCRYPTED") type QName(PackageNamespace(""), "String") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "ENCRYPTED") type QName(PackageNamespace(""), "String") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "ANALYTICS") type QName(PackageNamespace(""), "String") value Utf8("UA-11236645-4") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "BUILD_LABEL") type QName(PackageNamespace(""), "String") value Utf8("RotMG #{VERSION}.{MINOR}") end
+  trait method QName(PackageNamespace(""), "getAppEngineUrl")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/getAppEngineUrl"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_OPTIONAL
+    optional False()
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "UNENCRYPTED")
+      coerce_s
+      jump                L11
+
+L8:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "ENCRYPTED")
+      coerce_s
+L11:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getAnalyticsCode")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/getAnalyticsCode"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "ANALYTICS")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBuildLabel")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/getBuildLabel"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:ProductionSetup/instance"), "BUILD_LABEL")
+      pushstring          "{VERSION}"
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "BUILD_VERSION")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      pushstring          "{MINOR}"
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "MINOR_VERSION")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "useLocalTextures")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/useLocalTextures"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isToolingEnabled")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/isToolingEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isGameLoopMonitored")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/isGameLoopMonitored"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "useProductionDialogs")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/useProductionDialogs"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "areErrorsReported")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/areErrorsReported"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "areDeveloperHotkeysEnabled")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/areDeveloperHotkeysEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isDebug")
+   method
+    refid "kabam.rotmg.application.impl:ProductionSetup/instance/isDebug"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application.impl:ProductionSetup/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

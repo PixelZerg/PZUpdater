@@ -1,0 +1,405 @@
+class
+ refid "kabam.rotmg.account:AccountConfig"
+ instance QName(PackageNamespace("kabam.rotmg.account"), "AccountConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account:AccountConfig")
+  iinit
+   refid "kabam.rotmg.account:AccountConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "root") flag METADATA type QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "commandMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.api"), "ISignalCommandMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "mediatorMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.mediatorMap.api"), "IMediatorMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "info") flag METADATA type QName(PackageNamespace("flash.display"), "LoaderInfo")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.account:AccountConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "configureCommonFunctionality"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "configureAccountSpecificFunctionality"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "lifecycle")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "init")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILifecycle"), "afterInitializing"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "configureCommonFunctionality")
+   method
+    refid "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance/configureCommonFunctionality"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.signals"), "UpdateAccountInfoSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.services"), "VerifyAgeTask")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.services"), "GetCharListTask")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.core.signals"), "MoneyFrameEnableCancelSignal")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.model"), "OfferModel")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.tasks"), "SaveSecurityQuestionsTask")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.view"), "MoneyFrame")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "MoneyFrameMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsDialog")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.mediators"), "SecurityQuestionsMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsInfoDialog")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.mediators"), "SecurityQuestionsMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mediatorMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsConfirmDialog")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.mediatorMap.api:IMediatorMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.mediators"), "SecurityQuestionsMediator")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.mediatorMap.dsl:IMediatorMapper"), "toMediator"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.signals"), "BuyCharacterSlotSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core"), "BuyCharacterSlotCommand")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.control"), "IsAccountRegisteredToBuyGoldGuard")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMappingConfig"), "withGuards"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.signals"), "PurchaseGoldSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.commands"), "PurchaseGoldCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.signals"), "VerifyAgeSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.commands"), "VerifyAgeCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.signals"), "SaveSecurityQuestionsSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.account.securityQuestions.commands"), "SaveSecurityQuestionsCommand")
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "configureAccountSpecificFunctionality")
+   method
+    refid "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance/configureAccountSpecificFunctionality"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isKongregate"), 0
+      iffalse             L10
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.kongregate"), "KongregateAccountConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      jump                L30
+
+L10:
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isSteam"), 0
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.steam"), "SteamAccountConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      jump                L30
+
+L18:
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isKabam"), 0
+      iffalse             L26
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.kabam"), "KabamAccountConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      jump                L30
+
+L26:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccountConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+L30:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "context")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.transfer"), "TransferAccountConfig")
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:IContext"), "configure"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isKongregate")
+   method
+    refid "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance/isKongregate"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "info")
+      getproperty         QName(PackageNamespace(""), "parameters")
+      getproperty         Multiname("kongregate_api_path", [PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance"), PackageNamespace("kabam.rotmg.account"), PackageInternalNs("kabam.rotmg.account"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account:AccountConfig"), StaticProtectedNs("kabam.rotmg.account:AccountConfig")])
+      pushnull
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isSteam")
+   method
+    refid "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance/isSteam"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "info")
+      getproperty         QName(PackageNamespace(""), "parameters")
+      getproperty         Multiname("steam_api_path", [PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance"), PackageNamespace("kabam.rotmg.account"), PackageInternalNs("kabam.rotmg.account"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account:AccountConfig"), StaticProtectedNs("kabam.rotmg.account:AccountConfig")])
+      pushnull
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isKabam")
+   method
+    refid "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance/isKabam"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "info")
+      getproperty         QName(PackageNamespace(""), "parameters")
+      getproperty         Multiname("kabam_signed_request", [PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance"), PackageNamespace("kabam.rotmg.account"), PackageInternalNs("kabam.rotmg.account"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account:AccountConfig"), StaticProtectedNs("kabam.rotmg.account:AccountConfig")])
+      pushnull
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "init")
+   method
+    refid "kabam.rotmg.account:AccountConfig/instance/kabam.rotmg.account:AccountConfig/instance/init"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "isKongregate {0}"
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isKongregate"), 0
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "isSteam {0}"
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isSteam"), 0
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "isKabam {0}"
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account:AccountConfig/instance"), "isKabam"), 0
+      newarray            1
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account:AccountConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

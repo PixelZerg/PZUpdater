@@ -1,0 +1,81 @@
+class
+ refid "kabam.rotmg.core.commands:UpdatePlayerModelCommand"
+ instance QName(PackageNamespace("kabam.rotmg.core.commands"), "UpdatePlayerModelCommand")
+  extends QName(PackageNamespace("com.company.assembleegameclient.editor"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.commands:UpdatePlayerModelCommand")
+  iinit
+   refid "kabam.rotmg.core.commands:UpdatePlayerModelCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "XML")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.core.commands:UpdatePlayerModelCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharactersList")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharactersList"), 1
+      callpropvoid        QName(PackageNamespace(""), "setCharacterList"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "isInvalidated")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.commands:UpdatePlayerModelCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

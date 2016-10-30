@@ -1,0 +1,739 @@
+class
+ refid "com.company.assembleegameclient.screens:NewCharacterScreen"
+ instance QName(PackageNamespace("com.company.assembleegameclient.screens"), "NewCharacterScreen")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen")
+  iinit
+   refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     newobject           0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "boxes_")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "tooltip")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "selected")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "close")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "buy")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view.components"), "ScreenBase")
+     constructprop       QName(PackageNamespace("kabam.rotmg.ui.view.components"), "ScreenBase"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountScreen")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountScreen"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     findpropstrict      QName(PackageNamespace("com.company.rotmg.graphics"), "ScreenGraphic")
+     constructprop       QName(PackageNamespace("com.company.rotmg.graphics"), "ScreenGraphic"), 0
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_") type QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "creditDisplay_") type QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "boxes_") type QName(PackageNamespace(""), "Object") end
+  trait slot QName(PackageNamespace(""), "tooltip") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "close") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "selected") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "buy") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "isInitialized") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/initialize"
+    param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 8
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      coerce_s
+      setlocal            5
+
+      pushfalse
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "isInitialized")
+      iffalse             L21
+
+      returnvoid
+
+L21:
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "isInitialized")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.constants"), "ScreenTypes")
+      getproperty         QName(PackageNamespace(""), "BACK")
+      pushbyte            36
+      pushfalse
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "TitleMenuOption"), 3
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onBackClick")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      getproperty         QName(PackageNamespace(""), "MIDDLE")
+      callpropvoid        QName(PackageNamespace(""), "setVerticalAlign"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.view"), "CreditDisplay"), 0
+      initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "creditDisplay_")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "creditDisplay_")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getCredits"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getFame"), 0
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "creditDisplay_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      pushbyte            0
+      setlocal2
+
+      jump                L181
+
+L66:
+      label
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "playerChars_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal3
+      getproperty         MultinameA("type", [PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal            4
+
+      getlocal3
+      getproperty         MultinameA("id", [PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_s
+      setlocal            5
+
+      getlocal1
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharactersList")
+      getproperty         QName(PackageNamespace(""), "UNAVAILABLE")
+      callproperty        QName(PackageNamespace(""), "isClassAvailability"), 2
+      iffalse             L90
+
+      jump                L180
+
+L90:
+      getlocal1
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharactersList")
+      getproperty         QName(PackageNamespace(""), "UNRESTRICTED")
+      callproperty        QName(PackageNamespace(""), "isClassAvailability"), 2
+      convert_b
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      getlocal3
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getCharStats"), 0
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getlocal1
+      getlocal            6
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox"), 4
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      dup
+      setlocal            7
+
+      pushbyte            50
+      pushshort           140
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal2
+      pushbyte            5
+      modulo
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      multiply
+      add
+      pushbyte            70
+      add
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            7
+      pushbyte            88
+      pushshort           140
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal2
+      pushbyte            5
+      divide
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      multiply
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "boxes_")
+      getlocal            4
+      getlocal            7
+      setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlocal            7
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "ROLL_OVER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onCharBoxOver")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal            7
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "ROLL_OUT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onCharBoxOut")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "characterSelectClicked_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onCharBoxClick")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "buyButtonClicked_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onBuyClicked")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal            4
+      pushshort           784
+      equals
+      dup
+      iffalse             L173
+
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "available_")
+      not
+L173:
+      iffalse             L177
+
+      getlocal            7
+      pushbyte            75
+      callpropvoid        QName(PackageNamespace(""), "setSale"), 1
+
+L177:
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal            7
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L180:
+      inclocal_i          2
+L181:
+      getlocal2
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "playerChars_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L66
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "backButton_")
+      pushshort           550
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "creditDisplay_")
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "stageWidth")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "creditDisplay_")
+      pushbyte            20
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "/newCharScreen"
+      callpropvoid        QName(PackageNamespace(""), "trackPageview"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onBackClick")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/com.company.assembleegameclient.screens:NewCharacterScreen/instance/onBackClick"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "close")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onCharBoxOver")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/com.company.assembleegameclient.screens:NewCharacterScreen/instance/onCharBoxOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      setlocal2
+
+      getlocal2
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setOver"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tooltip")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getTooltip"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onCharBoxOut")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/com.company.assembleegameclient.screens:NewCharacterScreen/instance/onCharBoxOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      setlocal2
+
+      getlocal2
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setOver"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tooltip")
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onCharBoxClick")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/com.company.assembleegameclient.screens:NewCharacterScreen/instance/onCharBoxClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tooltip")
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      getproperty         Multiname("parent", [PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "available_")
+      iftrue              L17
+
+      returnvoid
+
+L17:
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "objectType"), 0
+      convert_i
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "typeToDisplayId_")
+      getlocal3
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_s
+      setlocal            4
+
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "character"
+      pushstring          "create"
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "trackEvent"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updateCreditsAndFame")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/updateCreditsAndFame"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "creditDisplay_")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/update"
+    param QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 8
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      coerce_s
+      setlocal            5
+
+      pushfalse
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      setlocal            7
+
+      pushbyte            0
+      setlocal2
+
+      jump                L75
+
+L18:
+      label
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "playerChars_")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal3
+      getproperty         MultinameA("type", [PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal3
+      getproperty         MultinameA("id", [PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      coerce_s
+      setlocal            5
+
+      getlocal1
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharactersList")
+      getproperty         QName(PackageNamespace(""), "UNAVAILABLE")
+      callproperty        QName(PackageNamespace(""), "isClassAvailability"), 2
+      iffalse             L44
+
+      jump                L74
+
+L44:
+      getlocal1
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharactersList")
+      getproperty         QName(PackageNamespace(""), "UNRESTRICTED")
+      callproperty        QName(PackageNamespace(""), "isClassAvailability"), 2
+      convert_b
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "boxes_")
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      dup
+      setlocal            7
+
+      iffalse             L74
+
+      getlocal            7
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setIsBuyButtonEnabled"), 1
+
+      getlocal            6
+      convert_b
+      dup
+      iftrue              L71
+
+      pop
+      getlocal1
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "isLevelRequirementsMet"), 1
+      convert_b
+L71:
+      iffalse             L74
+
+      getlocal            7
+      callpropvoid        QName(PackageNamespace(""), "unlock"), 0
+
+L74:
+      inclocal_i          2
+L75:
+      getlocal2
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "playerChars_")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L18
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), "onBuyClicked")
+   method
+    refid "com.company.assembleegameclient.screens:NewCharacterScreen/instance/com.company.assembleegameclient.screens:NewCharacterScreen/instance/onBuyClicked"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      getproperty         Multiname("parent", [PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      astypelate
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterBox")
+      setlocal2
+
+      getlocal2
+      convert_b
+      dup
+      iffalse             L19
+
+      pop
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "available_")
+      not
+L19:
+      iffalse             L34
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "playerXML_")
+      getproperty         MultinameA("type", [PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#0"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.screens"), PrivateNamespace(null, "com.company.assembleegameclient.screens:NewCharacterScreen/instance#1"), PackageInternalNs("com.company.assembleegameclient.screens"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("com.company.assembleegameclient.screens:NewCharacterScreen"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal3
+
+      getlocal2
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setIsBuyButtonEnabled"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buy")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L34:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.screens:NewCharacterScreen/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

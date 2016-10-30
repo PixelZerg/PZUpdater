@@ -1,0 +1,676 @@
+class
+ refid "kabam.rotmg.util.components:VerticalScrollingList"
+ instance QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("List", [PackageNamespace("kabam.lib.ui.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.util.components:VerticalScrollingList")
+  iinit
+   refid "kabam.rotmg.util.components:VerticalScrollingList/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "Boolean")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "scrollStateChanged")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "makeLayout"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "makeVerticalList"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "makeScrollbar"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "scrollStateChanged") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "layout") type QName(PackageNamespace("kabam.lib.ui.impl"), "VerticalLayout") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list") type QName(PackageNamespace("kabam.lib.ui.impl"), "LayoutList") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar") type QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "isEnabled") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "size") type QName(PackageNamespace("kabam.lib.ui.api"), "Size") end
+  trait method QName(PackageNamespace(""), "getIsEnabled")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/getIsEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "isEnabled")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setIsEnabled")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/setIsEnabled"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "isEnabled")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setIsEnabled"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSize")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/setSize"
+    param QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "size")
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "isScrollbarVisible"), 0
+      iffalse             L18
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      getlex              QName(PackageNamespace(""), "SCROLLBAR_GUTTER")
+      subtract
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace("kabam.lib.ui.api"), "Size"), 2
+      coerce              QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+      setlocal1
+
+L18:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setSize"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "refreshScrollbar"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSize")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/getSize"
+    returns QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "size")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPadding")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/setPadding"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "layout")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setPadding"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callpropvoid        QName(PackageNamespace(""), "updateLayout"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "refreshScrollbar"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addItem")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/addItem"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addItem"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItems")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/setItems"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setItems"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getItemAt")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/getItemAt"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getItemCount")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/getItemCount"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getItemCount"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getListHeight")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/getListHeight"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getSizeOfItems"), 0
+      getproperty         QName(PackageNamespace(""), "height")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "makeLayout")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/kabam.rotmg.util.components:VerticalScrollingList/instance/makeLayout"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.lib.ui.impl"), "VerticalLayout")
+      constructprop       QName(PackageNamespace("kabam.lib.ui.impl"), "VerticalLayout"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "layout")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isScrollbarVisible")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/isScrollbarVisible"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      getproperty         QName(PackageNamespace(""), "visible")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "makeVerticalList")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/kabam.rotmg.util.components:VerticalScrollingList/instance/makeVerticalList"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.lib.ui.impl"), "LayoutList")
+      constructprop       QName(PackageNamespace("kabam.lib.ui.impl"), "LayoutList"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      getproperty         QName(PackageNamespace(""), "itemsChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "refreshScrollbar")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "layout")
+      callpropvoid        QName(PackageNamespace(""), "setLayout"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "refreshScrollbar")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/kabam.rotmg.util.components:VerticalScrollingList/instance/refreshScrollbar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal3
+
+      pushfalse
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getSize"), 0
+      coerce              QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getSizeOfItems"), 0
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      setlocal3
+
+      getlocal3
+      getlocal2
+      greaterthan
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      getproperty         QName(PackageNamespace(""), "visible")
+      getlocal            4
+      equals
+      not
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setIsEnabled"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal            4
+      coerce_a
+      dup
+      iffalse             L50
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setIsEnabled"), 1
+      coerce_a
+L50:
+      pop
+      getlocal            4
+      coerce_a
+      dup
+      iffalse             L61
+
+      pop
+      getlocal0
+      getlocal2
+      getlocal3
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "updateScrollbarSize"), 2
+      coerce_a
+L61:
+      pop
+      getlocal            5
+      coerce_a
+      dup
+      iffalse             L71
+
+      pop
+      getlocal0
+      getlocal            4
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "updateUiAndDispatchStateChange"), 1
+      coerce_a
+L71:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "updateUiAndDispatchStateChange")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/kabam.rotmg.util.components:VerticalScrollingList/instance/updateUiAndDispatchStateChange"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "size")
+      callpropvoid        QName(PackageNamespace(""), "setSize"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollStateChanged")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "updateScrollbarSize")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/kabam.rotmg.util.components:VerticalScrollingList/instance/updateScrollbarSize"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal1
+      getlocal2
+      divide
+      multiply
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      getlocal3
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setSize"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getSize"), 0
+      getproperty         QName(PackageNamespace(""), "width")
+      getlex              QName(PackageNamespace(""), "SCROLLBAR_PADDING")
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "makeScrollbar")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/kabam.rotmg.util.components:VerticalScrollingList/instance/makeScrollbar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar")
+      constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      getproperty         QName(PackageNamespace(""), "positionChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "onPositionChanged")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "scrollbar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "onPositionChanged")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollingList/instance/kabam.rotmg.util.components:VerticalScrollingList/instance/onPositionChanged"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getSizeOfItems"), 0
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getSize"), 0
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollingList/instance"), "list")
+      getlocal2
+      getlocal1
+      multiply
+      callpropvoid        QName(PackageNamespace(""), "setOffset"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.util.components:VerticalScrollingList/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "SCROLLBAR_PADDING")
+    pushbyte            2
+    initproperty        QName(PackageNamespace(""), "SCROLLBAR_PADDING")
+
+    findproperty        QName(PackageNamespace(""), "SCROLLBAR_GUTTER")
+    getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar")
+    getproperty         QName(PackageNamespace(""), "WIDTH")
+    getlex              QName(PackageNamespace(""), "SCROLLBAR_PADDING")
+    add
+    initproperty        QName(PackageNamespace(""), "SCROLLBAR_GUTTER")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "SCROLLBAR_PADDING") slotid 1 type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(PackageNamespace(""), "SCROLLBAR_GUTTER") slotid 2 type QName(PackageNamespace(""), "int") end
+end ; class

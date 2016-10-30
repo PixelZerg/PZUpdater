@@ -1,0 +1,389 @@
+class
+ refid "kabam.rotmg.game.commands:PlayGameCommand"
+ instance QName(PackageNamespace("kabam.rotmg.game.commands"), "PlayGameCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.commands:PlayGameCommand")
+  iinit
+   refid "kabam.rotmg.game.commands:PlayGameCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "petsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "servers") flag METADATA type QName(PackageNamespace("kabam.rotmg.servers.api"), "ServerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "GetCharListTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "socketServerModel") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.game.commands:PlayGameCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "isNewGame")
+      iftrue              L11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "socketServerModel")
+      getlex              QName(PackageNamespace("kabam.rotmg.game.commands"), "PlayGameCommand")
+      getproperty         QName(PackageNamespace(""), "RECONNECT_DELAY")
+      setproperty         QName(PackageNamespace(""), "connectDelayMS")
+
+L11:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "recordCharacterUseInSharedObject"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "makeGameView"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "updatePet"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "updatePet")
+   method
+    refid "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance/updatePet"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "currentCharId")
+      callproperty        QName(PackageNamespace(""), "getCharacterById"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+      setlocal1
+
+      getlocal1
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petsModel")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getPetVO"), 0
+      callpropvoid        QName(PackageNamespace(""), "setActivePet"), 1
+
+      jump                L44
+
+L18:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "currentCharId")
+      coerce_a
+      convert_b
+      dup
+      iffalse             L31
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petsModel")
+      callproperty        QName(PackageNamespace(""), "getActivePet"), 0
+      coerce_a
+      convert_b
+L31:
+      dup
+      iffalse             L38
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "isNewGame")
+      not
+L38:
+      iffalse             L40
+
+      returnvoid
+
+L40:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petsModel")
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setActivePet"), 1
+
+L44:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "recordCharacterUseInSharedObject")
+   method
+    refid "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance/recordCharacterUseInSharedObject"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("charIdUseMap", [PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.commands"), PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageInternalNs("kabam.rotmg.game.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.commands:PlayGameCommand"), StaticProtectedNs("kabam.rotmg.game.commands:PlayGameCommand")])
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "charId")
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      constructprop       QName(PackageNamespace(""), "Date"), 0
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "getTime"), 0
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.commands"), PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageInternalNs("kabam.rotmg.game.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.commands:PlayGameCommand"), StaticProtectedNs("kabam.rotmg.game.commands:PlayGameCommand")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "makeGameView")
+   method
+    refid "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance/makeGameView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 11
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "server")
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      dup
+      iftrue              L13
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "servers")
+      callproperty        QName(Namespace("kabam.rotmg.servers.api:ServerModel"), "getServer"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+L13:
+      coerce              QName(PackageNamespace("kabam.rotmg.servers.api"), "Server")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "isNewGame")
+      iffalse             L23
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "getInitialGameId"), 0
+      convert_i
+      jump                L27
+
+L23:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "gameId")
+      convert_i
+L27:
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "createCharacter")
+      convert_b
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "charId")
+      convert_i
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "isNewGame")
+      iffalse             L45
+
+      pushbyte            -1
+      jump                L49
+
+L45:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "keyTime")
+      convert_i
+L49:
+      convert_i
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "key")
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "currentCharId")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+      getlocal1
+      getlocal2
+      getlocal3
+      getlocal            4
+      getlocal            5
+      getlocal            6
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      pushnull
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         QName(PackageNamespace(""), "isFromArena")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite"), 9
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), "getInitialGameId")
+   method
+    refid "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance/getInitialGameId"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("needsTutorial", [PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.commands"), PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageInternalNs("kabam.rotmg.game.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.commands:PlayGameCommand"), StaticProtectedNs("kabam.rotmg.game.commands:PlayGameCommand")])
+      iffalse             L13
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "TUTORIAL_GAMEID")
+      convert_i
+      setlocal1
+
+      jump                L26
+
+L13:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("needsRandomRealm", [PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.commands"), PrivateNamespace(null, "kabam.rotmg.game.commands:PlayGameCommand/instance/kabam.rotmg.game.commands:PlayGameCommand/instance"), PackageInternalNs("kabam.rotmg.game.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.commands:PlayGameCommand"), StaticProtectedNs("kabam.rotmg.game.commands:PlayGameCommand")])
+      iffalse             L22
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "RANDOM_REALM_GAMEID")
+      convert_i
+      setlocal1
+
+      jump                L26
+
+L22:
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "NEXUS_GAMEID")
+      convert_i
+      setlocal1
+
+L26:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.commands:PlayGameCommand/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "RECONNECT_DELAY")
+    pushshort           2000
+    initproperty        QName(PackageNamespace(""), "RECONNECT_DELAY")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "RECONNECT_DELAY") slotid 1 type QName(PackageNamespace(""), "int") value Integer(2000) end
+end ; class

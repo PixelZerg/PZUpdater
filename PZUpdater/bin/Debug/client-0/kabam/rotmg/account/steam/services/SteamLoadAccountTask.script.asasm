@@ -1,0 +1,37 @@
+script
+ sinit
+  refid "kabam.rotmg.account.steam.services:SteamLoadAccountTask/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("SteamLoadAccountTask", [PackageNamespace("kabam.rotmg.account.steam.services")])
+    getlex              QName(PackageNamespace(""), "Object")
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+    pushscope
+
+    getlex              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+    newclass            "kabam.rotmg.account.steam.services:SteamLoadAccountTask"
+    popscope
+    popscope
+    popscope
+    initproperty        QName(PackageNamespace("kabam.rotmg.account.steam.services"), "SteamLoadAccountTask")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("kabam.rotmg.account.steam.services"), "SteamLoadAccountTask")
+  #include "SteamLoadAccountTask.class.asasm"
+ end ; trait
+end ; script

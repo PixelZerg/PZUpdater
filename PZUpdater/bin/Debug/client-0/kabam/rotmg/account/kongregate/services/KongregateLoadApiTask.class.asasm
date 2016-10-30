@@ -1,0 +1,139 @@
+class
+ refid "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.kongregate.services"), "KongregateLoadApiTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  implements Multiname("LoadApiTask", [PackageNamespace("kabam.rotmg.account.core.services")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateLoadApiTask")
+  iinit
+   refid "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "info") flag METADATA type QName(PackageNamespace("flash.display"), "LoaderInfo")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "api") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.kongregate.view"), "KongregateApi")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "local") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.kongregate.services"), "KongregateSharedObject")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "layers") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateLoadApiTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/kabam.rotmg.account.kongregate.services:KongregateLoadApiTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "info")
+      getproperty         QName(PackageNamespace(""), "parameters")
+      getproperty         Multiname("kongregate_api_path", [PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/kabam.rotmg.account.kongregate.services:KongregateLoadApiTask:startTask#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/kabam.rotmg.account.kongregate.services:KongregateLoadApiTask:startTask#1"), PackageNamespace("kabam.rotmg.account.kongregate.services"), PackageInternalNs("kabam.rotmg.account.kongregate.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateLoadApiTask"), StaticProtectedNs("kabam.rotmg.account.kongregate.services:KongregateLoadApiTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      coerce_s
+      setlocal1
+
+      getlex              QName(PackageNamespace("flash.system"), "Security")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "allowDomain"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "layers")
+      getproperty         QName(PackageNamespace(""), "api")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+      astypelate
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getproperty         QName(Namespace("kabam.rotmg.account.kongregate.view:KongregateApi"), "loaded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/kabam.rotmg.account.kongregate.services:KongregateLoadApiTask:startTask#0"), "onApiLoaded")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "api")
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.rotmg.account.kongregate.view:KongregateApi"), "load"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/kabam.rotmg.account.kongregate.services:KongregateLoadApiTask:startTask#0"), "onApiLoaded")
+   method
+    refid "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/instance/kabam.rotmg.account.kongregate.services:KongregateLoadApiTask:startTask/onApiLoaded"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kongregate.services:KongregateLoadApiTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

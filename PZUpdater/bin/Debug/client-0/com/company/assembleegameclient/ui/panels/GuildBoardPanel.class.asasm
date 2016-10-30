@@ -1,0 +1,217 @@
+class
+ refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "GuildBoardPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "ButtonPanel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels:GuildBoardPanel")
+  iinit
+   refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 11
+    maxscopedepth 12
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_BOARD_TITLE")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "PANEL_VIEW_BUTTON")
+     constructsuper      3
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.ui.panels:GuildBoardPanel"), "onButtonClick") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/com.company.assembleegameclient.ui.panels:GuildBoardPanel:onButtonClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "openWindow"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "openWindow")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/openWindow"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "player_")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal1
+
+      getlocal1
+      pushnull
+      ifne                L11
+
+      returnvoid
+
+L11:
+      getlex              QName(PackageNamespace(""), "gs_")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.board"), "GuildBoardWindow")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "guildRank_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "GuildUtil")
+      getproperty         QName(PackageNamespace(""), "OFFICER")
+      greaterequals
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.board"), "GuildBoardWindow"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "onAddedToStage")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "onRemovedFromStage")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "onKeyDown")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("interact", [PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance/onKeyDown"), PackageNamespace("com.company.assembleegameclient.ui.panels"), PackageInternalNs("com.company.assembleegameclient.ui.panels"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.panels:GuildBoardPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:GuildBoardPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:ButtonPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      equals
+      dup
+      iffalse             L15
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+L15:
+      iffalse             L18
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildBoardPanel/instance"), "openWindow"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels:GuildBoardPanel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 10
+   maxscopedepth 11
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,348 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:BubbleParticle"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleParticle")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:BubbleParticle")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:BubbleParticle/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   body
+    maxstack 6
+    localcount 7
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushdouble          0
+     pushbyte            75
+     getlex              QName(PackageNamespace(""), "Math")
+     callproperty        QName(PackageNamespace(""), "random"), 0
+     pushbyte            50
+     multiply
+     add
+     constructsuper      3
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "dZ")
+
+     getlocal0
+     getlocal3
+     pushshort           1000
+     multiply
+     initproperty        QName(PackageNamespace(""), "life")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "lifeVariance")
+
+     getlocal0
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "speedVariance")
+
+     getlocal0
+     getlocal            6
+     initproperty        QName(PackageNamespace(""), "spread")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PackageNamespace(""), "frequencyX")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PackageNamespace(""), "frequencyY")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:BubbleParticle/instance/update"), "SPREAD_DAMPER") type QName(PackageNamespace(""), "Number") value Double(0.0025) end
+  trait slot QName(PackageNamespace(""), "startTime") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "speed") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "spread") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "dZ") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "life") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "lifeVariance") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "speedVariance") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "timeLeft") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "frequencyX") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "frequencyY") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "restart")
+   method
+    refid "com.company.assembleegameclient.objects.particles:BubbleParticle/instance/restart"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 5
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "startTime")
+
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      convert_d
+      setlocal3
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "dZ")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "dZ")
+      getlocal3
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "speedVariance")
+      subtract
+      multiply
+      multiply
+      subtract
+      pushbyte            10
+      multiply
+      initproperty        QName(PackageNamespace(""), "speed")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "spread")
+      pushbyte            0
+      ifngt               L47
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "spread")
+      multiply
+      pushdouble          0.1
+      subtract
+      initproperty        QName(PackageNamespace(""), "frequencyX")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "spread")
+      multiply
+      pushdouble          0.1
+      subtract
+      initproperty        QName(PackageNamespace(""), "frequencyY")
+
+L47:
+      getlocal2
+      getlocal1
+      subtract
+      pushshort           1000
+      divide
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "life")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "life")
+      getlocal3
+      pushbyte            1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "lifeVariance")
+      subtract
+      multiply
+      multiply
+      subtract
+      initproperty        QName(PackageNamespace(""), "timeLeft")
+
+      findproperty        QName(PackageNamespace(""), "z_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal            4
+      multiply
+      initproperty        QName(PackageNamespace(""), "z_")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeFromMap") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:BubbleParticle/instance/removeFromMap"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callsupervoid       QName(PackageNamespace(""), "removeFromMap"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "update") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:BubbleParticle/instance/update"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 5
+     localcount 4
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "startTime")
+      subtract
+      pushshort           1000
+      divide
+      convert_d
+      setlocal3
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timeLeft")
+      getlocal2
+      subtract
+      initproperty        QName(PackageNamespace(""), "timeLeft")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timeLeft")
+      pushbyte            0
+      ifnle               L22
+
+      pushfalse
+      returnvalue
+
+L22:
+      findproperty        QName(PackageNamespace(""), "z_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "speed")
+      getlocal3
+      multiply
+      initproperty        QName(PackageNamespace(""), "z_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "spread")
+      pushbyte            0
+      ifngt               L52
+
+      findpropstrict      QName(PackageNamespace(""), "moveTo")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frequencyX")
+      getlocal2
+      multiply
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:BubbleParticle/instance/update"), "SPREAD_DAMPER")
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "y_")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "frequencyY")
+      getlocal2
+      multiply
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:BubbleParticle/instance/update"), "SPREAD_DAMPER")
+      multiply
+      add
+      callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+L52:
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:BubbleParticle/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PackageNamespace(""), "create") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.objects.particles:BubbleParticle/class/create"
+   param null
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleParticle")
+   body
+    maxstack 7
+    localcount 9
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "FreeList")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getObject"), 1
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleParticle")
+     astypelate
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleParticle")
+     dup
+     setlocal            8
+
+     iftrue              L21
+
+     getlocal0
+     getlocal2
+     getlocal3
+     getlocal            4
+     getlocal            5
+     getlocal            6
+     getlocal            7
+     construct           6
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "BubbleParticle")
+     setlocal            8
+
+L21:
+     getlocal            8
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

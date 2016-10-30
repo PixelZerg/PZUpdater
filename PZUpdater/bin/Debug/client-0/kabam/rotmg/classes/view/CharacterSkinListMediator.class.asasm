@@ -1,0 +1,142 @@
+class
+ refid "kabam.rotmg.classes.view:CharacterSkinListMediator"
+ instance QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.classes.view:CharacterSkinListMediator")
+  iinit
+   refid "kabam.rotmg.classes.view:CharacterSkinListMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "ClassesModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "factory") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItemFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListMediator/instance"), "setSkins")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getSelected"), 0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListMediator/instance"), "setSkins"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "selected")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListMediator/instance"), "setSkins")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListMediator/instance"), "setSkins")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListMediator/instance/kabam.rotmg.classes.view:CharacterSkinListMediator/instance/setSkins"
+    param QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterClass")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "factory")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "skins")
+      callproperty        QName(PackageNamespace(""), "make"), 1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setItems"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.classes.view:CharacterSkinListMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

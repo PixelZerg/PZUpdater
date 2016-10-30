@@ -1,0 +1,164 @@
+class
+ refid "kabam.rotmg.messaging.impl.incoming:Death"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "Death")
+  extends QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "IncomingMessage")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.incoming:Death")
+  iinit
+   refid "kabam.rotmg.messaging.impl.incoming:Death/instance/init"
+   param QName(PackageNamespace(""), "uint")
+   param QName(PackageNamespace(""), "Function")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     constructsuper      2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "accountId_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "charId_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "killedBy_") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "zombieId") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "zombieType") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "isZombie") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "background") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait method QName(PackageNamespace(""), "disposeBackground")
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:Death/instance/disposeBackground"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "background")
+      coerce_a
+      dup
+      iffalse             L12
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "background")
+      callproperty        QName(PackageNamespace(""), "dispose"), 0
+      coerce_a
+L12:
+      pop
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "background")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "parseFromInput") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:Death/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      initproperty        QName(PackageNamespace(""), "accountId_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "charId_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUTF"), 0
+      initproperty        QName(PackageNamespace(""), "killedBy_")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "zombieType")
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readInt"), 0
+      initproperty        QName(PackageNamespace(""), "zombieId")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "zombieId")
+      pushbyte            -1
+      equals
+      not
+      initproperty        QName(PackageNamespace(""), "isZombie")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString") flag OVERRIDE
+   method
+    refid "kabam.rotmg.messaging.impl.incoming:Death/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString")
+      pushstring          "DEATH"
+      pushstring          "accountId_"
+      pushstring          "charId_"
+      pushstring          "killedBy_"
+      callproperty        QName(ProtectedNamespace("kabam.lib.net.impl:Message"), "formatToString"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.incoming:Death/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,242 @@
+class
+ refid "kabam.rotmg.game.logging:GameSpriteLoopWatch"
+ instance QName(PackageNamespace("kabam.rotmg.game.logging"), "GameSpriteLoopWatch")
+  extends QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.logging:GameSpriteLoopWatch")
+  iinit
+   refid "kabam.rotmg.game.logging:GameSpriteLoopWatch/instance/init"
+   param QName(PackageNamespace(""), "String")
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.logging"), PackageInternalNs("kabam.rotmg.game.logging"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.lib.console.model:Watch"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "int")
+     applytype           1
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "COUNT")
+     pushtrue
+     construct           2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "times")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PackageNamespace(""), "rollingTotal")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "count")
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "int")
+     getproperty         QName(PackageNamespace(""), "MAX_VALUE")
+     initproperty        QName(PackageNamespace(""), "min")
+
+     getlocal0
+     pushbyte            -1
+     initproperty        QName(PackageNamespace(""), "max")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "times") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "count") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "rollingTotal") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "mean") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "max") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "min") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "logTime")
+   method
+    refid "kabam.rotmg.game.logging:GameSpriteLoopWatch/instance/logTime"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "count")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "COUNT")
+      ifnlt               L30
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollingTotal")
+      getlocal1
+      add
+      initproperty        QName(PackageNamespace(""), "rollingTotal")
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "count")
+      increment_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "count")
+
+      kill                3
+      kill                2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "times")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index")
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.logging"), PackageInternalNs("kabam.rotmg.game.logging"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.lib.console.model:Watch")])
+
+      jump                L52
+
+L30:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollingTotal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "times")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.logging"), PackageInternalNs("kabam.rotmg.game.logging"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.lib.console.model:Watch")])
+      subtract
+      initproperty        QName(PackageNamespace(""), "rollingTotal")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollingTotal")
+      getlocal1
+      add
+      initproperty        QName(PackageNamespace(""), "rollingTotal")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "times")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index")
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.game.logging"), PackageInternalNs("kabam.rotmg.game.logging"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.rotmg.game.logging:GameSpriteLoopWatch"), StaticProtectedNs("kabam.lib.console.model:Watch")])
+
+L52:
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index")
+      increment_i
+      dup
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index")
+
+      kill                3
+      kill                2
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "COUNT")
+      ifne                L69
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "index")
+
+L69:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rollingTotal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "count")
+      divide
+      initproperty        QName(PackageNamespace(""), "mean")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "max")
+      ifngt               L83
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "max")
+
+L83:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "min")
+      ifnlt               L90
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "min")
+
+L90:
+      findproperty        QName(PackageNamespace(""), "data")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "WATCH_PATTERN")
+      pushstring          "{NAME}"
+      getlex              QName(PackageNamespace(""), "name")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      pushstring          "{MEAN}"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mean")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      pushstring          "{MIN}"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "min")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      pushstring          "{MAX}"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "max")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      initproperty        QName(PackageNamespace(""), "data")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.logging:GameSpriteLoopWatch/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "WATCH_PATTERN")
+    pushstring          "[{NAME}] [0x33FF33:{/x {MEAN}ms (min {MIN}ms, max {MAX}ms)]"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "WATCH_PATTERN")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "COUNT")
+    pushbyte            10
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "COUNT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "WATCH_PATTERN") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("[{NAME}] [0x33FF33:{/x {MEAN}ms (min {MIN}ms, max {MAX}ms)]") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.game.logging:GameSpriteLoopWatch"), "COUNT") slotid 2 type QName(PackageNamespace(""), "int") value Integer(10) end
+end ; class

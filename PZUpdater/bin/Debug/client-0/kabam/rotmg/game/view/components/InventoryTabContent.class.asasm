@@ -1,0 +1,171 @@
+class
+ refid "kabam.rotmg.game.view.components:InventoryTabContent"
+ instance QName(PackageNamespace("kabam.rotmg.game.view.components"), "InventoryTabContent")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view.components:InventoryTabContent")
+  iinit
+   refid "kabam.rotmg.game.view.components:InventoryTabContent/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+     constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "PotionInventoryView")
+     constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "PotionInventoryView"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "potionsInventory")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "init"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "addChildren"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "positionChildren"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent") type QName(PackageNamespace("flash.display"), "Sprite") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storage") type QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "InventoryGrid") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "potionsInventory") type QName(PackageNamespace("kabam.rotmg.ui.view"), "PotionInventoryView") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "init")
+   method
+    refid "kabam.rotmg.game.view.components:InventoryTabContent/instance/kabam.rotmg.game.view.components:InventoryTabContent/instance/init"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "InventoryGrid")
+      getlocal1
+      getlocal1
+      pushbyte            4
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.panels.itemgrids"), "InventoryGrid"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storage")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent")
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.model"), "TabStripModel")
+      getproperty         QName(PackageNamespace(""), "MAIN_INVENTORY")
+      setproperty         QName(PackageNamespace(""), "name")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "addChildren")
+   method
+    refid "kabam.rotmg.game.view.components:InventoryTabContent/instance/kabam.rotmg.game.view.components:InventoryTabContent/instance/addChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storage")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "potionsInventory")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "positionChildren")
+   method
+    refid "kabam.rotmg.game.view.components:InventoryTabContent/instance/kabam.rotmg.game.view.components:InventoryTabContent/instance/positionChildren"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent")
+      pushbyte            7
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storageContent")
+      pushbyte            7
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "potionsInventory")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view.components:InventoryTabContent/instance"), "storage")
+      getproperty         QName(PackageNamespace(""), "height")
+      pushbyte            4
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view.components:InventoryTabContent/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

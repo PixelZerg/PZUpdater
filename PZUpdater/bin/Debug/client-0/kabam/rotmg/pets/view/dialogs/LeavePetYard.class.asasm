@@ -1,0 +1,146 @@
+class
+ refid "kabam.rotmg.pets.view.dialogs:LeavePetYard"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "LeavePetYard")
+  extends QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetDialog")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.dialogs:LeavePetYard")
+  iinit
+   refid "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+   body
+    maxstack 6
+    localcount 2
+    initscopedepth 11
+    maxscopedepth 12
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "closeDialogSignal")
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "gameSprite")
+
+     getlocal0
+     pushstring          "LeavePetYardDialog.title"
+     pushstring          "LeavePetYardDialog.text"
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "PET_DIALOG_REMAIN")
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "PET_DIALOG_LEAVE")
+     pushnull
+     constructsuper      5
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+     getproperty         QName(PackageNamespace(""), "LEFT_BUTTON")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "onClose")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "Dialog")
+     getproperty         QName(PackageNamespace(""), "RIGHT_BUTTON")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "onExitToNexus")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlex              QName(PackageNamespace(""), "titleText_")
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setMultiLine"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "gameSprite") type QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "closeDialogSignal") type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "onClose")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance/kabam.rotmg.pets.view.dialogs:LeavePetYard/instance/onClose"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "closeDialogSignal")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "onExitToNexus")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance/kabam.rotmg.pets.view.dialogs:LeavePetYard/instance/onExitToNexus"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 11
+     maxscopedepth 12
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      callpropvoid        QName(PackageNamespace(""), "escape"), 0
+
+      getlex              QName(PackageNamespace("com.company.googleanalytics"), "GA")
+      callproperty        QName(PackageNamespace(""), "global"), 0
+      pushstring          "enterPortal"
+      pushstring          "Nexus Button"
+      callpropvoid        QName(PackageNamespace(""), "trackEvent"), 2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      pushfalse
+      setproperty         Multiname("needsRandomRealm", [PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance/kabam.rotmg.pets.view.dialogs:LeavePetYard/instance/onExitToNexus"), PackageNamespace("kabam.rotmg.pets.view.dialogs"), PackageInternalNs("kabam.rotmg.pets.view.dialogs"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.view.dialogs:LeavePetYard"), StaticProtectedNs("kabam.rotmg.pets.view.dialogs:LeavePetYard"), StaticProtectedNs("kabam.rotmg.pets.view.dialogs:PetDialog"), StaticProtectedNs("com.company.assembleegameclient.ui.dialogs:Dialog"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:LeavePetYard/instance"), "closeDialogSignal")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.dialogs:LeavePetYard/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 10
+   maxscopedepth 11
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

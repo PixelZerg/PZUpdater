@@ -1,0 +1,941 @@
+class
+ refid "kabam.rotmg.friends.view:FriendListMediator"
+ instance QName(PackageNamespace("kabam.rotmg.friends.view"), "FriendListMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.friends.view:FriendListMediator")
+  iinit
+   refid "kabam.rotmg.friends.view:FriendListMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.friends.view"), "FriendListView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "actionSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.friends.controller"), "FriendActionSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "chatSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "enterGame") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "EnterGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playGame") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "PlayGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "actionSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "onFriendActed")
+      callpropvoid        Multiname("add", [PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#1"), PackageNamespace("kabam.rotmg.friends.view"), PackageInternalNs("kabam.rotmg.friends.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")]), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tabSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "onTabSwitched")
+      callpropvoid        Multiname("add", [PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#1"), PackageNamespace("kabam.rotmg.friends.view"), PackageInternalNs("kabam.rotmg.friends.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")]), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "dataSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "initView")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callpropvoid        QName(PackageNamespace(""), "loadData"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "actionSignal")
+      callpropvoid        Multiname("removeAll", [PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#1"), PackageNamespace("kabam.rotmg.friends.view"), PackageInternalNs("kabam.rotmg.friends.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")]), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "tabSignal")
+      callpropvoid        Multiname("removeAll", [PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#1"), PackageNamespace("kabam.rotmg.friends.view"), PackageInternalNs("kabam.rotmg.friends.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")]), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "initView")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/initView"
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    optional False()
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L17
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getAllFriends"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getAllInvitations"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getCurrentServerName"), 0
+      callpropvoid        QName(PackageNamespace(""), "init"), 3
+
+      jump                L22
+
+L17:
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "errorStr")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "reportError"), 1
+
+L22:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "reportError")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/reportError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      getlocal1
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "onTabSwitched")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/onTabSwitched"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      jump                L24
+
+L3:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getAllFriends"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getCurrentServerName"), 0
+      callpropvoid        QName(PackageNamespace(""), "updateFriendTab"), 2
+
+      jump                L48
+
+L14:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getAllInvitations"), 0
+      callpropvoid        QName(PackageNamespace(""), "updateInvitationTab"), 1
+
+      jump                L48
+
+L22:
+      label
+      jump                L48
+
+L24:
+      getlocal1
+      setlocal2
+
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "FRIEND_TAB")
+      getlocal2
+      ifstrictne          L32
+
+      pushbyte            0
+      jump                L46
+
+L32:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "INVITE_TAB")
+      getlocal2
+      ifstrictne          L38
+
+      pushbyte            1
+      jump                L46
+
+L38:
+      jump                L45
+
+      ; 0x24
+      ; 0x02
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L45:
+      pushbyte            2
+L46:
+      kill                2
+      lookupswitch        L22, [L3, L14, L22]
+
+L48:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "onFriendActed")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/onFriendActed"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 9
+     localcount 7
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      pushnull
+      coerce_s
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendRequestVO")
+      getlocal1
+      getlocal2
+      constructprop       QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendRequestVO"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendRequestVO")
+      setlocal3
+
+      jump                L152
+
+L15:
+      label
+      getlocal2
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L27
+
+      pop
+      getlocal2
+      pushstring          ""
+      equals
+      not
+L27:
+      iffalse             L39
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getFilterFriends"), 1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getCurrentServerName"), 0
+      callpropvoid        QName(PackageNamespace(""), "updateFriendTab"), 2
+
+      jump                L51
+
+L39:
+      getlocal2
+      pushstring          ""
+      ifne                L51
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getAllFriends"), 0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getCurrentServerName"), 0
+      callpropvoid        QName(PackageNamespace(""), "updateFriendTab"), 2
+
+L51:
+      returnvoid
+
+L52:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "ifReachMax"), 0
+      iffalse             L63
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_REACH_CAPACITY")
+      callpropvoid        QName(PackageNamespace(""), "updateInput"), 1
+
+      returnvoid
+
+L63:
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "inviteFriendCallback")
+      setproperty         QName(PackageNamespace(""), "callback")
+
+      jump                L212
+
+L68:
+      label
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "removeFriendCallback")
+      setproperty         QName(PackageNamespace(""), "callback")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_REMOVE_TITLE")
+      coerce_s
+      setlocal            4
+
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_REMOVE_TEXT")
+      coerce_s
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.friends.view"), "FriendUpdateConfirmDialog")
+      getlocal            4
+      getlocal            5
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRAME_CANCEL")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_REMOVE_BUTTON")
+      getlocal3
+      pushstring          "name"
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "target")
+      newobject           1
+      constructprop       QName(PackageNamespace("kabam.rotmg.friends.view"), "FriendUpdateConfirmDialog"), 6
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+
+L98:
+      label
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "acceptInvitationCallback")
+      setproperty         QName(PackageNamespace(""), "callback")
+
+      jump                L212
+
+L104:
+      label
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "rejectInvitationCallback")
+      setproperty         QName(PackageNamespace(""), "callback")
+
+      jump                L212
+
+L110:
+      label
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "blockInvitationCallback")
+      setproperty         QName(PackageNamespace(""), "callback")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_BLOCK_TITLE")
+      coerce_s
+      setlocal            4
+
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_BLOCK_TEXT")
+      coerce_s
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.friends.view"), "FriendUpdateConfirmDialog")
+      getlocal            4
+      getlocal            5
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRAME_CANCEL")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_BLOCK_BUTTON")
+      getlocal3
+      pushstring          "name"
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "target")
+      newobject           1
+      constructprop       QName(PackageNamespace("kabam.rotmg.friends.view"), "FriendUpdateConfirmDialog"), 6
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+
+L140:
+      label
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "whisperCallback"), 1
+
+      returnvoid
+
+L145:
+      label
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "jumpCallback"), 1
+
+      returnvoid
+
+L150:
+      label
+      jump                L212
+
+L152:
+      getlocal1
+      setlocal            6
+
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "SEARCH")
+      getlocal            6
+      ifstrictne          L160
+
+      pushbyte            0
+      jump                L210
+
+L160:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "INVITE")
+      getlocal            6
+      ifstrictne          L166
+
+      pushbyte            1
+      jump                L210
+
+L166:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "REMOVE")
+      getlocal            6
+      ifstrictne          L172
+
+      pushbyte            2
+      jump                L210
+
+L172:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "ACCEPT")
+      getlocal            6
+      ifstrictne          L178
+
+      pushbyte            3
+      jump                L210
+
+L178:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "REJECT")
+      getlocal            6
+      ifstrictne          L184
+
+      pushbyte            4
+      jump                L210
+
+L184:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "BLOCK")
+      getlocal            6
+      ifstrictne          L190
+
+      pushbyte            5
+      jump                L210
+
+L190:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "WHISPER")
+      getlocal            6
+      ifstrictne          L196
+
+      pushbyte            6
+      jump                L210
+
+L196:
+      getlex              QName(PackageNamespace("kabam.rotmg.friends.model"), "FriendConstant")
+      getproperty         QName(PackageNamespace(""), "JUMP")
+      getlocal            6
+      ifstrictne          L202
+
+      pushbyte            7
+      jump                L210
+
+L202:
+      jump                L209
+
+      ; 0x24
+      ; 0x08
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L209:
+      pushbyte            8
+L210:
+      kill                6
+      lookupswitch        L150, [L15, L52, L68, L98, L104, L110, L140, L145, L150]
+
+L212:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "actionSignal")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "inviteFriendCallback")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/inviteFriendCallback"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_SENT_INVITATION_TEXT")
+      pushstring          "name"
+      getlocal3
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "updateInput"), 2
+
+      jump                L29
+
+L13:
+      getlocal2
+      pushstring          "Blocked"
+      ifne                L25
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "FRIEND_SENT_INVITATION_TEXT")
+      pushstring          "name"
+      getlocal3
+      newobject           1
+      callpropvoid        QName(PackageNamespace(""), "updateInput"), 2
+
+      jump                L29
+
+L25:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "updateInput"), 1
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "removeFriendCallback")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/removeFriendCallback"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "removeFriend"), 1
+
+      jump                L12
+
+L9:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "reportError"), 1
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "acceptInvitationCallback")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/acceptInvitationCallback"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L22
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      callpropvoid        QName(PackageNamespace(""), "seedFriends"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "removeInvitation"), 1
+      iffalse             L21
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getAllInvitations"), 0
+      callpropvoid        QName(PackageNamespace(""), "updateInvitationTab"), 1
+
+L21:
+      jump                L25
+
+L22:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "reportError"), 1
+
+L25:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "rejectInvitationCallback")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/rejectInvitationCallback"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L16
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "removeInvitation"), 1
+      iffalse             L15
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getAllInvitations"), 0
+      callpropvoid        QName(PackageNamespace(""), "updateInvitationTab"), 1
+
+L15:
+      jump                L19
+
+L16:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "reportError"), 1
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "blockInvitationCallback")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/blockInvitationCallback"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "removeInvitation"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "whisperCallback")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/whisperCallback"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatSignal")
+      pushtrue
+      pushstring          "/tell "
+      getlocal1
+      add
+      pushstring          " "
+      add
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callproperty        QName(PackageNamespace(""), "getCloseSignal"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), "jumpCallback")
+   method
+    refid "kabam.rotmg.friends.view:FriendListMediator/instance/kabam.rotmg.friends.view:FriendListMediator/instance/jumpCallback"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getlocal1
+      setproperty         Multiname("preferredServer", [PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.friends.view:FriendListMediator/instance#1"), PackageNamespace("kabam.rotmg.friends.view"), PackageInternalNs("kabam.rotmg.friends.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("kabam.rotmg.friends.view:FriendListMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "save"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "enterGame")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      getproperty         QName(PackageNamespace(""), "currentCharId")
+      callproperty        QName(PackageNamespace(""), "getCharacterById"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.appengine"), "SavedCharacter")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.game.model"), "GameInitData")
+      setlocal3
+
+      getlocal3
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "createCharacter")
+
+      getlocal3
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "charId"), 0
+      setproperty         QName(PackageNamespace(""), "charId")
+
+      getlocal3
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "isNewGame")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playGame")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.friends.view:FriendListMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

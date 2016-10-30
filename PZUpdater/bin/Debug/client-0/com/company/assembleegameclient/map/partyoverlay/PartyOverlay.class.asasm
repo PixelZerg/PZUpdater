@@ -1,0 +1,358 @@
+class
+ refid "com.company.assembleegameclient.map.partyoverlay:PartyOverlay"
+ instance QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PartyOverlay")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PartyOverlay")
+  iinit
+   refid "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+     setlocal3
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "map_")
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#0"), PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#1"), PackageInternalNs("com.company.assembleegameclient.map.partyoverlay"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+     applytype           1
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Party")
+     getproperty         QName(PackageNamespace(""), "NUM_MEMBERS")
+     pushtrue
+     construct           2
+     initproperty        QName(PackageNamespace(""), "partyMemberArrows_")
+
+     pushbyte            0
+     setlocal2
+
+     jump                L36
+
+L22:
+     label
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow"), 0
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+     setlocal3
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "partyMemberArrows_")
+     getlocal2
+     getlocal3
+     setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#0"), PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#1"), PackageInternalNs("com.company.assembleegameclient.map.partyoverlay"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     inclocal_i          2
+L36:
+     getlocal2
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Party")
+     getproperty         QName(PackageNamespace(""), "NUM_MEMBERS")
+     iflt                L22
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "QuestArrow")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "map_")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "QuestArrow"), 1
+     initproperty        QName(PackageNamespace(""), "questArrow_")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "questArrow_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#0"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "map_") type QName(PackageNamespace("com.company.assembleegameclient.map"), "Map") end
+  trait slot QName(PackageNamespace(""), "partyMemberArrows_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")>) value Null() end
+  trait slot QName(PackageNamespace(""), "questArrow_") type QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "QuestArrow") end
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#0"), "onRemovedFromStage")
+   method
+    refid "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance/com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "GameObjectArrow")
+      callpropvoid        QName(PackageNamespace(""), "removeMenu"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "draw")
+   method
+    refid "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance/draw"
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 12
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal            7
+
+      pushbyte            0
+      setlocal            8
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+      setlocal            9
+
+      pushnan
+      setlocal            10
+
+      pushnan
+      setlocal            11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "player_")
+      pushnull
+      ifne                L23
+
+      returnvoid
+
+L23:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "party_")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Party")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "map_")
+      getproperty         QName(PackageNamespace(""), "player_")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L138
+
+L36:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "partyMemberArrows_")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#0"), PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#1"), PackageInternalNs("com.company.assembleegameclient.map.partyoverlay"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+      dup
+      setlocal            6
+
+      getproperty         QName(PackageNamespace(""), "mouseOver_")
+      iffalse             L47
+
+      jump                L137
+
+L47:
+      getlocal            5
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "members_")
+      getproperty         QName(PackageNamespace(""), "length")
+      ifnge               L56
+
+      getlocal            6
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setGameObject"), 1
+
+      jump                L137
+
+L56:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "members_")
+      getlocal            5
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#0"), PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#1"), PackageInternalNs("com.company.assembleegameclient.map.partyoverlay"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      dup
+      setlocal            7
+
+      getproperty         QName(PackageNamespace(""), "drawn_")
+      convert_b
+      dup
+      iftrue              L72
+
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "map_")
+      pushnull
+      equals
+L72:
+      dup
+      iftrue              L78
+
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "dead_")
+      convert_b
+L78:
+      iffalse             L83
+
+      getlocal            6
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setGameObject"), 1
+
+      jump                L137
+
+L83:
+      getlocal            6
+      getlocal            7
+      callpropvoid        QName(PackageNamespace(""), "setGameObject"), 1
+
+      pushbyte            0
+      setlocal            8
+
+      jump                L130
+
+L89:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "partyMemberArrows_")
+      getlocal            8
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#0"), PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/instance#1"), PackageInternalNs("com.company.assembleegameclient.map.partyoverlay"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("com.company.assembleegameclient.map.partyoverlay:PartyOverlay"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map.partyoverlay"), "PlayerArrow")
+      setlocal            9
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "x")
+      subtract
+      convert_d
+      setlocal            10
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "y")
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "y")
+      subtract
+      convert_d
+      setlocal            11
+
+      getlocal            10
+      getlocal            10
+      multiply
+      getlocal            11
+      getlocal            11
+      multiply
+      add
+      pushbyte            64
+      ifnlt               L129
+
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "mouseOver_")
+      iftrue              L125
+
+      getlocal            9
+      getlocal            7
+      callpropvoid        QName(PackageNamespace(""), "addGameObject"), 1
+
+L125:
+      getlocal            6
+      pushnull
+      callpropvoid        QName(PackageNamespace(""), "setGameObject"), 1
+
+      jump                L133
+
+L129:
+      inclocal_i          8
+L130:
+      getlocal            8
+      getlocal            5
+      iflt                L89
+
+L133:
+      getlocal            6
+      getlocal2
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+L137:
+      inclocal_i          5
+L138:
+      getlocal            5
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Party")
+      getproperty         QName(PackageNamespace(""), "NUM_MEMBERS")
+      iflt                L36
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "questArrow_")
+      getproperty         QName(PackageNamespace(""), "mouseOver_")
+      iftrue              L151
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "questArrow_")
+      getlocal2
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+L151:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.map.partyoverlay:PartyOverlay/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

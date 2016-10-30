@@ -1,0 +1,690 @@
+class
+ refid "kabam.rotmg.messaging.impl:PetUpdater"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl"), "PetUpdater")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater")
+  iinit
+   refid "kabam.rotmg.messaging.impl:PetUpdater/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "petsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "gameSprite") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "updatePetVOs")
+   method
+    refid "kabam.rotmg.messaging.impl:PetUpdater/instance/updatePetVOs"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet")
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 10
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      setlocal            4
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      setlocal            5
+
+      pushundefined
+      coerce_a
+      setlocal            6
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vo")
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      dup
+      iftrue              L22
+
+      pop
+      getlocal0
+      getlocal1
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), "createPetVO"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+L22:
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      setlocal3
+
+      getlocal3
+      pushnull
+      ifne                L28
+
+      returnvoid
+
+L28:
+      pushbyte            0
+      setlocal            7
+
+      getlocal2
+      coerce_a
+      setlocal            8
+
+      jump                L295
+
+L34:
+      label
+      getlocal            8
+      getlocal            7
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "statValue_")
+      coerce_a
+      setlocal            6
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "statType_")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "TEXTURE_STAT")
+      ifne                L52
+
+      getlocal3
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "setSkin"), 1
+
+L52:
+      jump                L186
+
+L53:
+      label
+      getlocal3
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "setID"), 1
+
+      jump                L289
+
+L58:
+      label
+      getlocal3
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "strStatValue_")
+      callpropvoid        QName(PackageNamespace(""), "setName"), 1
+
+      jump                L289
+
+L64:
+      label
+      getlocal3
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "setType"), 1
+
+      jump                L289
+
+L69:
+      label
+      getlocal3
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "setRarity"), 1
+
+      jump                L289
+
+L74:
+      label
+      getlocal3
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "setMaxAbilityPower"), 1
+
+      jump                L289
+
+L79:
+      label
+      jump                L289
+
+L81:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "points")
+
+      jump                L289
+
+L92:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "points")
+
+      jump                L289
+
+L103:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "points")
+
+      jump                L289
+
+L114:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "level")
+
+      jump                L289
+
+L125:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "level")
+
+      jump                L289
+
+L136:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "level")
+
+      jump                L289
+
+L147:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "type")
+
+      jump                L289
+
+L158:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "type")
+
+      jump                L289
+
+L169:
+      label
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      dup
+      setlocal            5
+
+      getlocal            6
+      setproperty         QName(PackageNamespace(""), "type")
+
+      jump                L289
+
+L180:
+      label
+      jump                L289
+
+      ; 0x10
+      ; 0x67
+      ; 0x01
+      ; 0x00
+L186:
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "statType_")
+      setlocal            9
+
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_INSTANCEID_STAT")
+      getlocal            9
+      ifstrictne          L195
+
+      pushbyte            0
+      jump                L287
+
+L195:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_NAME_STAT")
+      getlocal            9
+      ifstrictne          L201
+
+      pushbyte            1
+      jump                L287
+
+L201:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_TYPE_STAT")
+      getlocal            9
+      ifstrictne          L207
+
+      pushbyte            2
+      jump                L287
+
+L207:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_RARITY_STAT")
+      getlocal            9
+      ifstrictne          L213
+
+      pushbyte            3
+      jump                L287
+
+L213:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_MAXABILITYPOWER_STAT")
+      getlocal            9
+      ifstrictne          L219
+
+      pushbyte            4
+      jump                L287
+
+L219:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_FAMILY_STAT")
+      getlocal            9
+      ifstrictne          L225
+
+      pushbyte            5
+      jump                L287
+
+L225:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_FIRSTABILITY_POINT_STAT")
+      getlocal            9
+      ifstrictne          L231
+
+      pushbyte            6
+      jump                L287
+
+L231:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_SECONDABILITY_POINT_STAT")
+      getlocal            9
+      ifstrictne          L237
+
+      pushbyte            7
+      jump                L287
+
+L237:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_THIRDABILITY_POINT_STAT")
+      getlocal            9
+      ifstrictne          L243
+
+      pushbyte            8
+      jump                L287
+
+L243:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_FIRSTABILITY_POWER_STAT")
+      getlocal            9
+      ifstrictne          L249
+
+      pushbyte            9
+      jump                L287
+
+L249:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_SECONDABILITY_POWER_STAT")
+      getlocal            9
+      ifstrictne          L255
+
+      pushbyte            10
+      jump                L287
+
+L255:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_THIRDABILITY_POWER_STAT")
+      getlocal            9
+      ifstrictne          L261
+
+      pushbyte            11
+      jump                L287
+
+L261:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_FIRSTABILITY_TYPE_STAT")
+      getlocal            9
+      ifstrictne          L267
+
+      pushbyte            12
+      jump                L287
+
+L267:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_SECONDABILITY_TYPE_STAT")
+      getlocal            9
+      ifstrictne          L273
+
+      pushbyte            13
+      jump                L287
+
+L273:
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_THIRDABILITY_TYPE_STAT")
+      getlocal            9
+      ifstrictne          L279
+
+      pushbyte            14
+      jump                L287
+
+L279:
+      jump                L286
+
+      ; 0x24
+      ; 0x0F
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L286:
+      pushbyte            15
+L287:
+      kill                9
+      lookupswitch        L180, [L53, L58, L64, L69, L74, L79, L81, L92, L103, L114, L125, L136, L147, L158, L169, L180]
+
+L289:
+      getlocal            5
+      iffalse             L295
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "updated")
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L295:
+      hasnext2            8, 7
+      iftrue              L34
+
+      kill                8
+      kill                7
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), "createPetVO")
+   method
+    refid "kabam.rotmg.messaging.impl:PetUpdater/instance/kabam.rotmg.messaging.impl:PetUpdater/instance/createPetVO"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet")
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")>)
+    returns QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      setlocal3
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal2
+      coerce_a
+      setlocal            6
+
+      jump                L59
+
+L14:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statType_")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "PET_INSTANCEID_STAT")
+      ifne                L59
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petsModel")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statValue_")
+      callproperty        QName(PackageNamespace(""), "getCachedVOOnly"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      setlocal            4
+
+      getlocal1
+      getlocal            4
+      iffalse             L38
+
+      getlocal            4
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      jump                L55
+
+L38:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      getproperty         QName(PackageNamespace(""), "map")
+      getproperty         QName(PackageNamespace(""), "isPetYard")
+      iffalse             L50
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petsModel")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statValue_")
+      callproperty        QName(PackageNamespace(""), "getPetVO"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      jump                L55
+
+L50:
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statValue_")
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+L55:
+      setproperty         QName(PackageNamespace(""), "vo")
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "vo")
+      returnvalue
+
+L59:
+      hasnext2            6, 5
+      iftrue              L14
+
+      kill                6
+      kill                5
+      pushnull
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "updatePet")
+   method
+    refid "kabam.rotmg.messaging.impl:PetUpdater/instance/updatePet"
+    param QName(PackageNamespace("com.company.assembleegameclient.objects"), "Pet")
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      setlocal3
+
+      pushundefined
+      coerce_a
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal2
+      coerce_a
+      setlocal            6
+
+      jump                L51
+
+L14:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statValue_")
+      coerce_a
+      setlocal            4
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statType_")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "TEXTURE_STAT")
+      ifne                L32
+
+      getlocal1
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "setSkin"), 1
+
+L32:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statType_")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "SIZE_STAT")
+      ifne                L40
+
+      getlocal1
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "size_")
+
+L40:
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "statType_")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "StatData")
+      getproperty         QName(PackageNamespace(""), "CONDITION_STAT")
+      ifne                L51
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "condition_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "ConditionEffect")
+      getproperty         QName(PackageNamespace(""), "CE_FIRST_BATCH")
+      getlocal            4
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.messaging.impl:PetUpdater/instance#1"), PackageNamespace("kabam.rotmg.messaging.impl"), PackageInternalNs("kabam.rotmg.messaging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.messaging.impl:PetUpdater"), StaticProtectedNs("kabam.rotmg.messaging.impl:PetUpdater")])
+
+L51:
+      hasnext2            6, 5
+      iftrue              L14
+
+      kill                6
+      kill                5
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl:PetUpdater/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

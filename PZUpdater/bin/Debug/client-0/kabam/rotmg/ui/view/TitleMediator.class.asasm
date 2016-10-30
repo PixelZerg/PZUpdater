@@ -1,0 +1,742 @@
+class
+ refid "kabam.rotmg.ui.view:TitleMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view:TitleMediator")
+  iinit
+   refid "kabam.rotmg.ui.view:TitleMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "playerModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreenWithValidData") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "enterGame") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.signals"), "EnterGameSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openAccountInfo") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "OpenAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "layers") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.view"), "Layers")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "securityQuestionsModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.securityQuestions.data"), "SecurityQuestionsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "optionalButtonsAdded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "onOptionalButtonsAdded")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "makeEnvironmentData"), 0
+      callpropvoid        QName(PackageNamespace(""), "initialize"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "playClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "handleIntentionToPlay")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "serversClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showServersScreen")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "accountClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "handleIntentionToReviewAccount")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "legendsClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showLegendsScreen")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "supportClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "openSupportPage")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "isNewToEditing"), 0
+      iffalse             L53
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "ButtonFactory")
+      callproperty        QName(PackageNamespace(""), "getEditorButton"), 0
+      pushstring          "new"
+      callpropvoid        QName(PackageNamespace(""), "putNoticeTagToOption"), 2
+
+L53:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "kabamTransferClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "openKabamTransferView")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "securityQuestionsModel")
+      getproperty         QName(PackageNamespace(""), "showSecurityQuestionsOnStartup")
+      iffalse             L68
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsInfoDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.securityQuestions.view"), "SecurityQuestionsInfoDialog"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L68:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "openSupportPage")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/openSupportPage"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLVariables")
+      constructprop       QName(PackageNamespace("flash.net"), "URLVariables"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLVariables")
+      setlocal1
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 0
+      coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+      setlocal2
+
+      pushfalse
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+      pushstring          "SalesforceMobile"
+      callproperty        QName(PackageNamespace(""), "settingExists"), 1
+      convert_b
+      dup
+      iffalse             L24
+
+      pop
+      getlex              QName(PackageNamespace("kabam.rotmg.application"), "DynamicSettings")
+      pushstring          "SalesforceMobile"
+      callproperty        QName(PackageNamespace(""), "getSettingValue"), 1
+      pushbyte            1
+      equals
+L24:
+      iffalse             L27
+
+      pushtrue
+      setlocal3
+
+L27:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "getSalesForceData"), 0
+      coerce_s
+      dup
+      setlocal            4
+
+      pushstring          "unavailable"
+      equals
+      dup
+      iftrue              L40
+
+      pop
+      getlocal3
+      not
+L40:
+      iffalse             L65
+
+      getlocal1
+      pushstring          "en_US"
+      setproperty         Multiname("language", [PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), PackageNamespace(""), PackageNamespace("kabam.rotmg.ui.view"), PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/openSupportPage"), PackageInternalNs("kabam.rotmg.ui.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+
+      getlocal1
+      pushstring          "a0Za000000jIBFUEA4"
+      setproperty         Multiname("game", [PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), PackageNamespace(""), PackageNamespace("kabam.rotmg.ui.view"), PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/openSupportPage"), PackageInternalNs("kabam.rotmg.ui.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+
+      getlocal1
+      pushstring          "Other_Game_Issues"
+      setproperty         Multiname("issue", [PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), PackageNamespace(""), PackageNamespace("kabam.rotmg.ui.view"), PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/openSupportPage"), PackageInternalNs("kabam.rotmg.ui.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+
+      getlocal2
+      pushstring          "http://rotmg.decagames.io"
+      setproperty         QName(PackageNamespace(""), "url")
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.net"), "URLRequestMethod")
+      getproperty         QName(PackageNamespace(""), "GET")
+      setproperty         QName(PackageNamespace(""), "method")
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "data")
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "navigateToURL")
+      getlocal2
+      pushstring          "_blank"
+      callpropvoid        QName(PackageNamespace("flash.net"), "navigateToURL"), 2
+
+      jump                L108
+
+L65:
+      getlex              QName(PackageNamespace("flash.system"), "Capabilities")
+      getproperty         QName(PackageNamespace(""), "playerType")
+      pushstring          "PlugIn"
+      equals
+      dup
+      iftrue              L76
+
+      pop
+      getlex              QName(PackageNamespace("flash.system"), "Capabilities")
+      getproperty         QName(PackageNamespace(""), "playerType")
+      pushstring          "ActiveX"
+      equals
+L76:
+      iffalse             L91
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "supportCalledBefore")
+      iftrue              L87
+
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      pushstring          "openSalesForceFirstTime"
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "call"), 2
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "supportCalledBefore")
+      pushtrue
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "supportCalledBefore")
+
+      jump                L90
+
+L87:
+      getlex              QName(PackageNamespace("flash.external"), "ExternalInterface")
+      pushstring          "reopenSalesForce"
+      callpropvoid        QName(PackageNamespace(""), "call"), 1
+
+L90:
+      jump                L108
+
+L91:
+      getlocal1
+      getlocal            4
+      setproperty         Multiname("data", [PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), PackageNamespace(""), PackageNamespace("kabam.rotmg.ui.view"), PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/openSupportPage"), PackageInternalNs("kabam.rotmg.ui.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("kabam.rotmg.ui.view:TitleMediator"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Mediator")])
+
+      getlocal2
+      pushstring          "http://rotmg.decagames.io"
+      setproperty         QName(PackageNamespace(""), "url")
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.net"), "URLRequestMethod")
+      getproperty         QName(PackageNamespace(""), "GET")
+      setproperty         QName(PackageNamespace(""), "method")
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "data")
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "navigateToURL")
+      getlocal2
+      pushstring          "_blank"
+      callpropvoid        QName(PackageNamespace("flash.net"), "navigateToURL"), 2
+
+L108:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "onOptionalButtonsAdded")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/onOptionalButtonsAdded"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "editorClicked")
+      coerce_a
+      dup
+      iffalse             L16
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "editorClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showMapEditor")
+      callproperty        QName(PackageNamespace(""), "add"), 1
+      coerce_a
+L16:
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "quitClicked")
+      coerce_a
+      dup
+      iffalse             L31
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "quitClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "attemptToCloseClient")
+      callproperty        QName(PackageNamespace(""), "add"), 1
+      coerce_a
+L31:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showLanguagesScreen")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/showLanguagesScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.language"), "LanguageOptionOverlay")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.language"), "LanguageOptionOverlay"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "makeEnvironmentData")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/makeEnvironmentData"
+    returns QName(PackageNamespace("kabam.rotmg.ui.model"), "EnvironmentData")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.model"), "EnvironmentData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.model"), "EnvironmentData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.model"), "EnvironmentData")
+      setlocal1
+
+      getlocal1
+      getlex              QName(PackageNamespace("flash.system"), "Capabilities")
+      getproperty         QName(PackageNamespace(""), "playerType")
+      pushstring          "Desktop"
+      equals
+      setproperty         QName(PackageNamespace(""), "isDesktop")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "isAdmin"), 0
+      convert_b
+      dup
+      iftrue              L24
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "playerModel")
+      callproperty        QName(PackageNamespace(""), "mapEditor"), 0
+      convert_b
+L24:
+      setproperty         QName(PackageNamespace(""), "canMapEdit")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setup")
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "getBuildLabel"), 0
+      setproperty         QName(PackageNamespace(""), "buildLabel")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "playClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "handleIntentionToPlay")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "serversClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showServersScreen")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "accountClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "handleIntentionToReviewAccount")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "legendsClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showLegendsScreen")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "supportClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "openSupportPage")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "optionalButtonsAdded")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "onOptionalButtonsAdded")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "editorClicked")
+      coerce_a
+      dup
+      iffalse             L52
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "editorClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showMapEditor")
+      callproperty        QName(PackageNamespace(""), "remove"), 1
+      coerce_a
+L52:
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "quitClicked")
+      coerce_a
+      dup
+      iffalse             L67
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "quitClicked")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "attemptToCloseClient")
+      callproperty        QName(PackageNamespace(""), "remove"), 1
+      coerce_a
+L67:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "openKabamTransferView")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/openKabamTransferView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "openKabamTransferView"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "handleIntentionToPlay")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/handleIntentionToPlay"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "enterGame")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showServersScreen")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/showServersScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "ServersScreen")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "ServersScreen"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "handleIntentionToReviewAccount")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/handleIntentionToReviewAccount"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openAccountInfo")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showLegendsScreen")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/showLegendsScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.legends.view"), "LegendsView"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "showMapEditor")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/showMapEditor"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "MapEditor")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.mapeditor"), "MapEditor"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "attemptToCloseClient")
+   method
+    refid "kabam.rotmg.ui.view:TitleMediator/instance/kabam.rotmg.ui.view:TitleMediator/attemptToCloseClient"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "dispatch")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "APP_CLOSE_EVENT"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(ProtectedNamespace("robotlegs.bender.bundles.mvcs:Mediator"), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view:TitleMediator/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "supportCalledBefore")
+    pushfalse
+    setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "supportCalledBefore")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view:TitleMediator"), "supportCalledBefore") slotid 1 type QName(PackageNamespace(""), "Boolean") value False() end
+end ; class

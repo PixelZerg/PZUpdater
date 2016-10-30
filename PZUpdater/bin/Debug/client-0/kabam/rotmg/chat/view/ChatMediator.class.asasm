@@ -1,0 +1,763 @@
+class
+ refid "kabam.rotmg.chat.view:ChatMediator"
+ instance QName(PackageNamespace("kabam.rotmg.chat.view"), "ChatMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.chat.view:ChatMediator")
+  iinit
+   refid "kabam.rotmg.chat.view:ChatMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.view"), "Chat")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "shortcuts") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatShortcutModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "showChatInput") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.control"), "ShowChatInputSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "scrollList") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.control"), "ScrollListSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "tellModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.model"), "TellModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "hudModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.ui.model"), "HUDModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "register") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "RegisterSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage") type QName(PackageNamespace("flash.display"), "Stage") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "scrollDirection") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "scrollBuffer") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "listenersAdded") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "bounds")
+      getproperty         QName(PackageNamespace(""), "left")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getproperty         QName(PackageNamespace(""), "bounds")
+      getproperty         QName(PackageNamespace(""), "top")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      callpropvoid        QName(PackageNamespace(""), "setup"), 2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "stage")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "addListeners"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showChatInput")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onShowChatInput")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onOpenDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onCloseDialog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onOpenDialog")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/onOpenDialog"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "removeListeners"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onCloseDialog")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/onCloseDialog"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "addListeners"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onShowChatInput")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/onShowChatInput"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L13
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      setproperty         QName(PackageNamespace(""), "focus")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "listenersAdded")
+
+      jump                L19
+
+L13:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "addListeners"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      pushnull
+      setproperty         QName(PackageNamespace(""), "focus")
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onRegister")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/onRegister"
+    param QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "error")
+      pushnull
+      ifne                L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "removeRegisterBlock"), 0
+
+L9:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "removeListeners"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showChatInput")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onShowChatInput")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onOpenDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onCloseDialog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "addListeners")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/addListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "listenersAdded")
+      iftrue              L22
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_UP")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onKeyUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "listenersAdded")
+
+L22:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "removeListeners")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/removeListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "listenersAdded")
+      iffalse             L29
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_UP")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onKeyUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "iterate")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "listenersAdded")
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onKeyDown")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getScrollUp"), 0
+      ifne                L12
+
+      getlocal0
+      pushbyte            -1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "setupScroll"), 1
+
+      jump                L21
+
+L12:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getScrollDown"), 0
+      ifne                L21
+
+      getlocal0
+      pushbyte            1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "setupScroll"), 1
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "setupScroll")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/setupScroll"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "scrollDirection")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollList")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "scrollBuffer")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "iterate")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "iterate")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/iterate"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "scrollBuffer")
+      dup
+      increment_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "scrollBuffer")
+
+      kill                3
+      kill                2
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "SCROLL_BUFFER_SIZE")
+      ifnge               L21
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrollList")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "scrollDirection")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "onKeyUp")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/onKeyUp"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "listenersAdded")
+      iffalse             L9
+
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "checkForInputTrigger"), 1
+
+L9:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getScrollUp"), 0
+      equals
+      dup
+      iftrue              L24
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getScrollDown"), 0
+      equals
+L24:
+      iffalse             L32
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "iterate")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L32:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "checkForInputTrigger")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/checkForInputTrigger"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "stage")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+      dup
+      iftrue              L15
+
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getTellShortcut"), 0
+      equals
+L15:
+      iffalse             L57
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getCommandShortcut"), 0
+      ifne                L25
+
+      getlocal0
+      pushstring          "/"
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "triggerOrPromptRegistration"), 1
+
+      jump                L57
+
+L25:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getChatShortcut"), 0
+      ifne                L34
+
+      getlocal0
+      pushstring          ""
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "triggerOrPromptRegistration"), 1
+
+      jump                L57
+
+L34:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getGuildShortcut"), 0
+      ifne                L43
+
+      getlocal0
+      pushstring          "/g "
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "triggerOrPromptRegistration"), 1
+
+      jump                L57
+
+L43:
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shortcuts")
+      callproperty        QName(PackageNamespace(""), "getTellShortcut"), 0
+      ifne                L57
+
+      getlocal0
+      pushstring          "/tell "
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tellModel")
+      callproperty        QName(PackageNamespace(""), "getNext"), 0
+      add
+      pushstring          " "
+      add
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "triggerOrPromptRegistration"), 1
+
+L57:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "triggerOrPromptRegistration")
+   method
+    refid "kabam.rotmg.chat.view:ChatMediator/instance/kabam.rotmg.chat.view:ChatMediator/triggerOrPromptRegistration"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iffalse             L12
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "showChatInput")
+      pushtrue
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 2
+
+      jump                L34
+
+L12:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L26
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "hudModel")
+      getproperty         QName(PackageNamespace(""), "gameSprite")
+      callproperty        QName(PackageNamespace(""), "evalIsNotInCombatMapArea"), 0
+      convert_b
+L26:
+      iffalse             L34
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "CHAT_REGISTER_TO_CHAT")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L34:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.view:ChatMediator/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "SCROLL_BUFFER_SIZE")
+    pushbyte            10
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "SCROLL_BUFFER_SIZE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.chat.view:ChatMediator"), "SCROLL_BUFFER_SIZE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(10) end
+end ; class

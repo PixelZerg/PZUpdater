@@ -1,0 +1,313 @@
+class
+ refid "kabam.rotmg.pets.view.dialogs:PetItem"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItem")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("Disableable", [PackageNamespace("kabam.rotmg.pets.view.dialogs")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.dialogs:PetItem")
+  iinit
+   refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "ItemBackgroundFactory")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "ItemBackgroundFactory"), 0
+     initproperty        QName(PackageNamespace(""), "itemBackgroundFactory")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "itemBackgroundFactory") type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "ItemBackgroundFactory") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "petIcon") type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "background") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "size") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "backgroundGraphic") type QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItemBackground") end
+  trait method QName(PackageNamespace(""), "setPetIcon")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/setPetIcon"
+    param QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "petIcon")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "disable")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/disable"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "petIcon")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isEnabled")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/isEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "petIcon")
+      callproperty        QName(PackageNamespace(""), "isEnabled"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSize")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/setSize"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "size")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setBackground")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/setBackground"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "background")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "backgroundGraphic")
+      iffalse             L12
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "backgroundGraphic")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L12:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItemBackground")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "itemBackgroundFactory")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "size")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "getCuts"), 0
+      callproperty        QName(PackageNamespace(""), "create"), 2
+      callproperty        QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItemBackground"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "backgroundGraphic")
+
+      findpropstrict      QName(PackageNamespace(""), "addChildAt")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "backgroundGraphic")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "addChildAt"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "getCuts")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/kabam.rotmg.pets.view.dialogs:PetItem/getCuts"
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      dup
+      dup
+      pushbyte            0
+      newarray            4
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "background")
+      getlex              QName(PackageNamespace(""), "REGULAR")
+      ifeq                L20
+
+      getlocal1
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "CUT_STATES")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "background")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), PackageNamespace(""), PackageNamespace("kabam.rotmg.pets.view.dialogs"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem/instance/kabam.rotmg.pets.view.dialogs:PetItem/getCuts"), PackageInternalNs("kabam.rotmg.pets.view.dialogs"), ProtectedNamespace("kabam.rotmg.pets.view.dialogs:PetItem"), StaticProtectedNs("kabam.rotmg.pets.view.dialogs:PetItem"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+L20:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBackground")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/getBackground"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "background")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPetVO")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItem/instance/getPetVO"
+    returns QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "petIcon")
+      callproperty        QName(PackageNamespace(""), "getPetVO"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.dialogs:PetItem/class/init"
+  body
+   maxstack 5
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "TOP_LEFT")
+    pushstring          "topLeft"
+    initproperty        QName(PackageNamespace(""), "TOP_LEFT")
+
+    findproperty        QName(PackageNamespace(""), "TOP_RIGHT")
+    pushstring          "topRight"
+    initproperty        QName(PackageNamespace(""), "TOP_RIGHT")
+
+    findproperty        QName(PackageNamespace(""), "BOTTOM_RIGHT")
+    pushstring          "bottomRight"
+    initproperty        QName(PackageNamespace(""), "BOTTOM_RIGHT")
+
+    findproperty        QName(PackageNamespace(""), "BOTTOM_LEFT")
+    pushstring          "bottomLeft"
+    initproperty        QName(PackageNamespace(""), "BOTTOM_LEFT")
+
+    findproperty        QName(PackageNamespace(""), "REGULAR")
+    pushstring          "regular"
+    initproperty        QName(PackageNamespace(""), "REGULAR")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "CUT_STATES")
+    getlex              QName(PackageNamespace(""), "TOP_LEFT")
+    getlex              QName(PackageNamespace(""), "TOP_RIGHT")
+    getlex              QName(PackageNamespace(""), "BOTTOM_RIGHT")
+    getlex              QName(PackageNamespace(""), "BOTTOM_LEFT")
+    newarray            4
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "CUT_STATES")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "TOP_LEFT") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("topLeft") end
+ trait const QName(PackageNamespace(""), "TOP_RIGHT") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("topRight") end
+ trait const QName(PackageNamespace(""), "BOTTOM_RIGHT") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("bottomRight") end
+ trait const QName(PackageNamespace(""), "BOTTOM_LEFT") slotid 4 type QName(PackageNamespace(""), "String") value Utf8("bottomLeft") end
+ trait const QName(PackageNamespace(""), "REGULAR") slotid 5 type QName(PackageNamespace(""), "String") value Utf8("regular") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.dialogs:PetItem"), "CUT_STATES") slotid 6 type QName(PackageNamespace(""), "Array") end
+end ; class

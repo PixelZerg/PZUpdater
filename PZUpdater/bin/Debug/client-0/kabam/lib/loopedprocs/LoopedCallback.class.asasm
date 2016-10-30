@@ -1,0 +1,106 @@
+class
+ refid "kabam.lib.loopedprocs:LoopedCallback"
+ instance QName(PackageNamespace("kabam.lib.loopedprocs"), "LoopedCallback")
+  extends QName(PackageNamespace("kabam.lib.loopedprocs"), "LoopedProcess")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.loopedprocs:LoopedCallback")
+  iinit
+   refid "kabam.lib.loopedprocs:LoopedCallback/instance/init"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Function")
+   flag NEED_REST
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "callback")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "parameters")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "callback") type QName(PackageNamespace(""), "Function") end
+  trait slot QName(PackageNamespace(""), "parameters") type QName(PackageNamespace(""), "Array") end
+  trait method QName(ProtectedNamespace("kabam.lib.loopedprocs:LoopedCallback"), "run") flag OVERRIDE
+   method
+    refid "kabam.lib.loopedprocs:LoopedCallback/instance/kabam.lib.loopedprocs:LoopedCallback:run"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "callback")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "parameters")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.lib.loopedprocs:LoopedCallback"), "onDestroyed") flag OVERRIDE
+   method
+    refid "kabam.lib.loopedprocs:LoopedCallback/instance/kabam.lib.loopedprocs:LoopedCallback:onDestroyed"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "callback")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PackageNamespace(""), "parameters")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.loopedprocs:LoopedCallback/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

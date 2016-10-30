@@ -1,0 +1,346 @@
+class
+ refid "com.company.assembleegameclient.objects.particles:HitEffect"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "HitEffect")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "ParticleEffect")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects.particles:HitEffect")
+  iinit
+   refid "com.company.assembleegameclient.objects.particles:HitEffect/instance/init"
+   param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>)
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   body
+    maxstack 2
+    localcount 6
+    initscopedepth 7
+    maxscopedepth 8
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "colors_")
+
+     findproperty        QName(PackageNamespace(""), "size_")
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "size_")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "numParts_")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "angle_")
+
+     getlocal0
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "speed_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "colors_") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "uint")>) end
+  trait slot QName(PackageNamespace(""), "numParts_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "angle_") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PackageNamespace(""), "speed_") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PackageNamespace(""), "runNormalRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:HitEffect/instance/runNormalRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 9
+     localcount 8
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L15
+
+      pushfalse
+      returnvalue
+
+L15:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "speed_")
+      pushshort           600
+      divide
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "angle_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getproperty         QName(PackageNamespace(""), "PI")
+      add
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      convert_d
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "speed_")
+      pushshort           600
+      divide
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "angle_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getproperty         QName(PackageNamespace(""), "PI")
+      add
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      convert_d
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L96
+
+L46:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect/instance"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.objects.particles"), PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:HitEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:HitEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")])
+      convert_u
+      setlocal            6
+
+      findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect"), "HitParticle")
+      getlocal            6
+      pushdouble          0.5
+      getlex              QName(PackageNamespace(""), "size_")
+      pushshort           200
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            100
+      multiply
+      add
+      getlocal3
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      pushdouble          0.4
+      multiply
+      add
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      pushdouble          0.4
+      multiply
+      add
+      pushbyte            0
+      constructprop       QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect"), "HitParticle"), 7
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          5
+L96:
+      getlocal            5
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "numParts_")
+      iflt                L46
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "runEasyRendering") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects.particles:HitEffect/instance/runEasyRendering"
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 9
+     localcount 8
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L15
+
+      pushfalse
+      returnvalue
+
+L15:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "speed_")
+      pushshort           600
+      divide
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "angle_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getproperty         QName(PackageNamespace(""), "PI")
+      add
+      callproperty        QName(PackageNamespace(""), "cos"), 1
+      multiply
+      convert_d
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "speed_")
+      pushshort           600
+      divide
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "angle_")
+      getlex              QName(PackageNamespace(""), "Math")
+      getproperty         QName(PackageNamespace(""), "PI")
+      add
+      callproperty        QName(PackageNamespace(""), "sin"), 1
+      multiply
+      convert_d
+      setlocal            4
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "numParts_")
+      pushdouble          0.2
+      multiply
+      initproperty        QName(PackageNamespace(""), "numParts_")
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L102
+
+L52:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "colors_")
+      getproperty         QName(PackageNamespace(""), "length")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect/instance"), PackageNamespace(""), PackageNamespace("com.company.assembleegameclient.objects.particles"), PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect"), PackageInternalNs("com.company.assembleegameclient.objects.particles"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects.particles:HitEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:HitEffect"), StaticProtectedNs("com.company.assembleegameclient.objects.particles:ParticleEffect"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")])
+      convert_u
+      setlocal            6
+
+      findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect"), "HitParticle")
+      getlocal            6
+      pushdouble          0.5
+      pushbyte            10
+      pushbyte            5
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushbyte            100
+      multiply
+      add
+      getlocal3
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      pushdouble          0.4
+      multiply
+      add
+      getlocal            4
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      pushdouble          0.5
+      subtract
+      pushdouble          0.4
+      multiply
+      add
+      pushbyte            0
+      constructprop       QName(PrivateNamespace(null, "com.company.assembleegameclient.objects.particles:HitEffect"), "HitParticle"), 7
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects.particles"), "Particle")
+      setlocal            7
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      callpropvoid        QName(PackageNamespace(""), "addObj"), 3
+
+      inclocal_i          5
+L102:
+      getlocal            5
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "numParts_")
+      iflt                L52
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects.particles:HitEffect/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 6
+   maxscopedepth 7
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

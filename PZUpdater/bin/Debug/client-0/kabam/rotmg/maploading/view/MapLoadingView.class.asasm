@@ -1,0 +1,642 @@
+class
+ refid "kabam.rotmg.maploading.view:MapLoadingView"
+ instance QName(PackageNamespace("kabam.rotmg.maploading.view"), "MapLoadingView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView")
+  iinit
+   refid "kabam.rotmg.maploading.view:MapLoadingView/instance/init"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "addBackground"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "makeLoadingScreen"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen") type QName(PackageNamespace("flash.display"), "DisplayObjectContainer") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "indicators") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "diffRow") type QName(PackageNamespace("flash.display"), "MovieClip") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "difficulty") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "animation") type QName(PackageNamespace("kabam.rotmg.assets.model"), "Animation") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "addBackground")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance/addBackground"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Sprite")
+      constructprop       QName(PackageNamespace("flash.display"), "Sprite"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Sprite")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      pushbyte            0
+      dup
+      pushshort           800
+      pushshort           600
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "makeLoadingScreen")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance/makeLoadingScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "MovieClip")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace(""), "MapLoadingScreen")
+      constructprop       QName(PackageNamespace(""), "MapLoadingScreen"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+      pushstring          "mapNameContainer"
+      callproperty        QName(PackageNamespace(""), "getChildByName"), 1
+      getlex              QName(PackageNamespace("flash.display"), "MovieClip")
+      astypelate
+      coerce              QName(PackageNamespace("flash.display"), "MovieClip")
+      setlocal1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            30
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             16777215
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField")
+      getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+      getproperty         QName(PackageNamespace(""), "CENTER")
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "x")
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+      pushstring          "difficulty_indicators"
+      callproperty        QName(PackageNamespace(""), "getChildByName"), 1
+      getlex              QName(PackageNamespace("flash.display"), "MovieClip")
+      astypelate
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "diffRow")
+
+      getlocal0
+      getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace("kabam.rotmg.maploading.view"), PackageInternalNs("kabam.rotmg.maploading.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), PackageNamespace("__AS3__.vec")])
+      getlex              QName(PackageNamespace("flash.display"), "DisplayObject")
+      applytype           1
+      getlex              QName(PackageNamespace(""), "MAX_DIFFICULTY")
+      construct           1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "indicators")
+
+      pushbyte            1
+      setlocal2
+
+      jump                L80
+
+L67:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "indicators")
+      getlocal2
+      decrement
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "diffRow")
+      pushstring          "indicator_"
+      getlocal2
+      add
+      callproperty        QName(PackageNamespace(""), "getChildByName"), 1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace("kabam.rotmg.maploading.view"), PackageInternalNs("kabam.rotmg.maploading.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+
+      inclocal_i          2
+L80:
+      getlocal2
+      getlex              QName(PackageNamespace(""), "MAX_DIFFICULTY")
+      ifle                L67
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "setValues"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "showMap")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/showMap"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      iffalse             L8
+
+      getlocal1
+      coerce_s
+      jump                L9
+
+L8:
+      pushstring          ""
+L9:
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapName")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "difficulty")
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "setValues"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "setValues")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance/setValues"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+      iffalse             L57
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapNameField")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "mapName")
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "difficulty")
+      pushbyte            0
+      ifnle               L30
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+      pushstring          "bgGroup"
+      callproperty        QName(PackageNamespace(""), "getChildByName"), 1
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "diffRow")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      jump                L57
+
+L30:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "screen")
+      pushstring          "bgGroup"
+      callproperty        QName(PackageNamespace(""), "getChildByName"), 1
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "diffRow")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      pushbyte            0
+      setlocal1
+
+      jump                L54
+
+L43:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "indicators")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace("kabam.rotmg.maploading.view"), PackageInternalNs("kabam.rotmg.maploading.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "difficulty")
+      lessthan
+      setproperty         QName(PackageNamespace(""), "visible")
+
+      inclocal_i          1
+L54:
+      getlocal1
+      getlex              QName(PackageNamespace(""), "MAX_DIFFICULTY")
+      iflt                L43
+
+L57:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "showAnimation")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/showAnimation"
+    param QName(PackageNamespace("kabam.rotmg.assets.model"), "Animation")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "animation")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal1
+      pushdouble          399.5
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "width")
+      pushdouble          0.5
+      multiply
+      subtract
+      pushbyte            5
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal1
+      pushdouble          245.85
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "height")
+      pushdouble          0.5
+      multiply
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "disable")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/disable"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "beginFadeOut"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "disableNoFadeOut")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/disableNoFadeOut"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L11:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "beginFadeOut")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance/beginFadeOut"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      getproperty         QName(PackageNamespace(""), "queueEmailConfirmation")
+      iffalse             L16
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "ConfirmEmailModal")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "ConfirmEmailModal"), 0
+      callpropvoid        Multiname("dispatch", [PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace("kabam.rotmg.maploading.view"), PackageInternalNs("kabam.rotmg.maploading.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "queueEmailConfirmation")
+
+      jump                L58
+
+L16:
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      getproperty         QName(PackageNamespace(""), "queuePasswordPrompt")
+      iffalse             L30
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialogForced")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialogForced"), 0
+      callpropvoid        Multiname("dispatch", [PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace("kabam.rotmg.maploading.view"), PackageInternalNs("kabam.rotmg.maploading.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "queuePasswordPrompt")
+
+      jump                L58
+
+L30:
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      getproperty         QName(PackageNamespace(""), "queuePasswordPromptFull")
+      iffalse             L45
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialogForced")
+      pushtrue
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebLoginDialogForced"), 1
+      callpropvoid        Multiname("dispatch", [PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace("kabam.rotmg.maploading.view"), PackageInternalNs("kabam.rotmg.maploading.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "queuePasswordPromptFull")
+
+      jump                L58
+
+L45:
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      getproperty         QName(PackageNamespace(""), "queueRegistrationPrompt")
+      iffalse             L58
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebRegisterDialog")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebRegisterDialog"), 0
+      callpropvoid        Multiname("dispatch", [PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance"), PackageNamespace("kabam.rotmg.maploading.view"), PackageInternalNs("kabam.rotmg.maploading.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("kabam.rotmg.maploading.view:MapLoadingView"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.ui.view"), "TitleView")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "queueRegistrationPrompt")
+
+L58:
+      findpropstrict      QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      getlocal0
+      getlex              QName(PackageNamespace(""), "FADE_OUT_TIME")
+      pushstring          "alpha"
+      pushdouble          0
+      newobject           1
+      constructprop       QName(PackageNamespace("com.gskinner.motion"), "GTween"), 3
+      coerce              QName(PackageNamespace("com.gskinner.motion"), "GTween")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "onFadeOutComplete")
+      setproperty         QName(PackageNamespace(""), "onComplete")
+
+      findproperty        QName(PackageNamespace(""), "mouseEnabled")
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "mouseEnabled")
+
+      findproperty        QName(PackageNamespace(""), "mouseChildren")
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "mouseChildren")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "onFadeOutComplete")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance/onFadeOutComplete"
+    param QName(PackageNamespace("com.gskinner.motion"), "GTween")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "parent")
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlex              QName(PackageNamespace(""), "parent")
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L11:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "onRemovedFromStage")
+   method
+    refid "kabam.rotmg.maploading.view:MapLoadingView/instance/kabam.rotmg.maploading.view:MapLoadingView/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.maploading.view:MapLoadingView/instance"), "animation")
+      callpropvoid        QName(PackageNamespace(""), "dispose"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.maploading.view:MapLoadingView/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "MAX_DIFFICULTY")
+    pushbyte            5
+    initproperty        QName(PackageNamespace(""), "MAX_DIFFICULTY")
+
+    findproperty        QName(PackageNamespace(""), "FADE_OUT_TIME")
+    pushdouble          0.58
+    initproperty        QName(PackageNamespace(""), "FADE_OUT_TIME")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "MAX_DIFFICULTY") slotid 1 type QName(PackageNamespace(""), "int") value Integer(5) end
+ trait const QName(PackageNamespace(""), "FADE_OUT_TIME") slotid 2 type QName(PackageNamespace(""), "Number") value Double(0.58) end
+end ; class

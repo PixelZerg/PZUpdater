@@ -1,0 +1,391 @@
+class
+ refid "kabam.rotmg.game.model:PotionInventoryModel"
+ instance QName(PackageNamespace("kabam.rotmg.game.model"), "PotionInventoryModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel")
+  iinit
+   refid "kabam.rotmg.game.model:PotionInventoryModel/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     initproperty        QName(PackageNamespace(""), "potionModels")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "updatePosition")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "potionModels") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PackageNamespace(""), "updatePosition") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PackageNamespace(""), "initializePotionModels")
+   method
+    refid "kabam.rotmg.game.model:PotionInventoryModel/instance/initializePotionModels"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 10
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel")
+      setlocal            7
+
+      getlocal1
+      getproperty         Multiname("PotionPurchaseCooldown", [PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      convert_i
+      setlocal2
+
+      getlocal1
+      getproperty         Multiname("PotionPurchaseCostCooldown", [PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      convert_i
+      setlocal3
+
+      getlocal1
+      getproperty         Multiname("MaxStackablePotions", [PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      convert_i
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace(""), "Array")
+      constructprop       QName(PackageNamespace(""), "Array"), 0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            5
+
+      pushbyte            0
+      setlocal            8
+
+      getlocal1
+      getproperty         Multiname("PotionPurchaseCosts", [PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      getproperty         Multiname("cost", [PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      coerce_a
+      setlocal            9
+
+      jump                L40
+
+L31:
+      label
+      getlocal            9
+      getlocal            8
+      nextvalue
+      convert_i
+      setlocal            6
+
+      getlocal            5
+      getlocal            6
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L40:
+      hasnext2            9, 8
+      iftrue              L31
+
+      kill                9
+      kill                8
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel")
+      dup
+      setlocal            7
+
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "purchaseCooldownMillis")
+
+      getlocal            7
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "priceCooldownMillis")
+
+      getlocal            7
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "maxPotionCount")
+
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "HEALTH_POTION_ID")
+      setproperty         QName(PackageNamespace(""), "objectId")
+
+      getlocal            7
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "position")
+
+      getlocal            7
+      getlocal            5
+      setproperty         QName(PackageNamespace(""), "costs")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionModels")
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "position")
+      getlocal            7
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), "update")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel")
+      constructprop       QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel")
+      dup
+      setlocal            7
+
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "purchaseCooldownMillis")
+
+      getlocal            7
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "priceCooldownMillis")
+
+      getlocal            7
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "maxPotionCount")
+
+      getlocal            7
+      getlex              QName(PackageNamespace(""), "MAGIC_POTION_ID")
+      setproperty         QName(PackageNamespace(""), "objectId")
+
+      getlocal            7
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "position")
+
+      getlocal            7
+      getlocal            5
+      setproperty         QName(PackageNamespace(""), "costs")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionModels")
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "position")
+      getlocal            7
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), "update")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPotionModel")
+   method
+    refid "kabam.rotmg.game.model:PotionInventoryModel/instance/getPotionModel"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal2
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionModels")
+      coerce_a
+      setlocal            4
+
+      jump                L30
+
+L12:
+      label
+      getlocal            4
+      getlocal3
+      nextname
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionModels")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      getproperty         Multiname("objectId", [PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      getlocal1
+      ifne                L30
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "potionModels")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#1"), PackageNamespace("kabam.rotmg.game.model"), PackageInternalNs("kabam.rotmg.game.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.game.model:PotionInventoryModel"), StaticProtectedNs("kabam.rotmg.game.model:PotionInventoryModel")])
+      returnvalue
+
+L30:
+      hasnext2            4, 3
+      iftrue              L12
+
+      kill                4
+      kill                3
+      pushnull
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.model:PotionInventoryModel/instance#0"), "update")
+   method
+    refid "kabam.rotmg.game.model:PotionInventoryModel/instance/kabam.rotmg.game.model:PotionInventoryModel/instance/update"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updatePosition")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.model:PotionInventoryModel/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "HEALTH_POTION_ID")
+    pushshort           2594
+    initproperty        QName(PackageNamespace(""), "HEALTH_POTION_ID")
+
+    findproperty        QName(PackageNamespace(""), "HEALTH_POTION_SLOT")
+    pushshort           254
+    initproperty        QName(PackageNamespace(""), "HEALTH_POTION_SLOT")
+
+    findproperty        QName(PackageNamespace(""), "MAGIC_POTION_ID")
+    pushshort           2595
+    initproperty        QName(PackageNamespace(""), "MAGIC_POTION_ID")
+
+    findproperty        QName(PackageNamespace(""), "MAGIC_POTION_SLOT")
+    pushshort           255
+    initproperty        QName(PackageNamespace(""), "MAGIC_POTION_SLOT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "HEALTH_POTION_ID") slotid 1 type QName(PackageNamespace(""), "int") value Integer(2594) end
+ trait const QName(PackageNamespace(""), "HEALTH_POTION_SLOT") slotid 2 type QName(PackageNamespace(""), "int") value Integer(254) end
+ trait const QName(PackageNamespace(""), "MAGIC_POTION_ID") slotid 3 type QName(PackageNamespace(""), "int") value Integer(2595) end
+ trait const QName(PackageNamespace(""), "MAGIC_POTION_SLOT") slotid 4 type QName(PackageNamespace(""), "int") value Integer(255) end
+ trait method QName(PackageNamespace(""), "getPotionSlot") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.game.model:PotionInventoryModel/class/getPotionSlot"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "int")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     jump                L11
+
+L3:
+     label
+     getlex              QName(PackageNamespace(""), "HEALTH_POTION_SLOT")
+     returnvalue
+
+L6:
+     label
+     getlex              QName(PackageNamespace(""), "MAGIC_POTION_SLOT")
+     returnvalue
+
+L9:
+     label
+     jump                L33
+
+L11:
+     getlocal1
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "HEALTH_POTION_ID")
+     getlocal2
+     ifstrictne          L18
+
+     pushbyte            0
+     jump                L31
+
+L18:
+     getlex              QName(PackageNamespace(""), "MAGIC_POTION_ID")
+     getlocal2
+     ifstrictne          L23
+
+     pushbyte            1
+     jump                L31
+
+L23:
+     jump                L30
+
+     ; 0x24
+     ; 0x02
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L30:
+     pushbyte            2
+L31:
+     kill                2
+     lookupswitch        L9, [L3, L6, L9]
+
+L33:
+     pushbyte            -1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

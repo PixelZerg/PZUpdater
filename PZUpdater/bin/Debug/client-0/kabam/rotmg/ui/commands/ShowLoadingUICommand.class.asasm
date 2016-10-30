@@ -1,0 +1,140 @@
+class
+ refid "kabam.rotmg.ui.commands:ShowLoadingUICommand"
+ instance QName(PackageNamespace("kabam.rotmg.ui.commands"), "ShowLoadingUICommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.commands:ShowLoadingUICommand")
+  iinit
+   refid "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "domain") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.model"), "DomainModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "domain")
+      callproperty        QName(PackageNamespace(""), "isLocalDomainValid"), 0
+      iffalse             L9
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/execute"), "showLoadingScreen"), 0
+
+      jump                L11
+
+L9:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/execute"), "openBadDomainView"), 0
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/execute"), "showLoadingScreen")
+   method
+    refid "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/execute/showLoadingScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountLoadingScreen")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "AccountLoadingScreen"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/execute"), "openBadDomainView")
+   method
+    refid "kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/kabam.rotmg.ui.commands:ShowLoadingUICommand/instance/execute/openBadDomainView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "bad domain, deny"
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "debug"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.view"), "BadDomainView")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.view"), "BadDomainView"), 0
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.commands:ShowLoadingUICommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,218 @@
+class
+ refid "kabam.rotmg.news.view:NewsCellMediator"
+ instance QName(PackageNamespace("kabam.rotmg.news.view"), "NewsCellMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.news.view:NewsCellMediator")
+  iinit
+   refid "kabam.rotmg.news.view:NewsCellMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.rotmg.news.view"), "NewsCell")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openPackageSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.packages.control"), "OpenPackageSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openSkinSignal") flag METADATA type QName(PackageNamespace("kabam.rotmg.news.controller"), "OpenSkinSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.news.view:NewsCellMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCellMediator/instance"), "onNewsClicked")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.news.view:NewsCellMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "clickSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCellMediator/instance"), "onNewsClicked")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.view:NewsCellMediator/instance"), "onNewsClicked")
+   method
+    refid "kabam.rotmg.news.view:NewsCellMediator/instance/kabam.rotmg.news.view:NewsCellMediator/instance/onNewsClicked"
+    param QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+      setlocal2
+
+      jump                L36
+
+L6:
+      label
+      findpropstrict      QName(PackageNamespace("flash.net"), "URLRequest")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "linkDetail")
+      constructprop       QName(PackageNamespace("flash.net"), "URLRequest"), 1
+      coerce              QName(PackageNamespace("flash.net"), "URLRequest")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("flash.net"), "navigateToURL")
+      getlocal2
+      pushstring          "_blank"
+      callpropvoid        QName(PackageNamespace("flash.net"), "navigateToURL"), 2
+
+      jump                L67
+
+L18:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openPackageSignal")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "linkDetail")
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L67
+
+L27:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openSkinSignal")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "linkDetail")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L67
+
+L34:
+      label
+      jump                L67
+
+L36:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "linkType")
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellLinkType")
+      getproperty         QName(PackageNamespace(""), "OPENS_LINK")
+      getlocal3
+      ifstrictne          L45
+
+      pushbyte            0
+      jump                L65
+
+L45:
+      getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellLinkType")
+      getproperty         QName(PackageNamespace(""), "OPENS_PACKAGE")
+      getlocal3
+      ifstrictne          L51
+
+      pushbyte            1
+      jump                L65
+
+L51:
+      getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellLinkType")
+      getproperty         QName(PackageNamespace(""), "OPENS_SKIN")
+      getlocal3
+      ifstrictne          L57
+
+      pushbyte            2
+      jump                L65
+
+L57:
+      jump                L64
+
+      ; 0x24
+      ; 0x03
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L64:
+      pushbyte            3
+L65:
+      kill                3
+      lookupswitch        L34, [L6, L18, L27, L34]
+
+L67:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.news.view:NewsCellMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

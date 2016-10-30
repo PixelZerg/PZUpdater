@@ -1,0 +1,197 @@
+class
+ refid "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"
+ instance QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats"), "StatsWatch")
+  extends QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("AppEngineRequestStats.as$1192:StatsWatch")
+  iinit
+   refid "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch/instance/init"
+   param QName(PackageNamespace(""), "String")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     pushstring          ""
+     constructsuper      2
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "count")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "ok")
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "time")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "count") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "time") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "mean") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "ok") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "addResponse")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch/instance/addResponse"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      coerce_a
+      dup
+      iffalse             L20
+
+      pop
+      getlocal0
+      dup
+      setlocal3
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "ok")
+      increment_i
+      dup
+      setlocal            4
+
+      getlocal3
+      getlocal            4
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "ok")
+
+      kill                4
+      kill                3
+      coerce_a
+L20:
+      pop
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "time")
+      getlocal2
+      add
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "time")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "time")
+      getlocal0
+      dup
+      setlocal3
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "count")
+      increment_i
+      dup
+      setlocal            4
+
+      getlocal3
+      getlocal            4
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "count")
+
+      kill                4
+      kill                3
+      divide
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "mean")
+
+      findproperty        QName(PackageNamespace(""), "data")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "report"), 0
+      initproperty        QName(PackageNamespace(""), "data")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "report")
+   method
+    refid "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch/instance/kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch/report"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "STATS_PATTERN")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "MEAN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "mean")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "COUNT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "count")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "OK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "ok")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "NAME")
+      getlex              QName(PackageNamespace(""), "name")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "STATS_PATTERN")
+    pushstring          "[APPENGINE STATS] [0xFFEE00:{/x={MEAN}ms, ok={OK}/{COUNT}} {NAME}]"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "STATS_PATTERN")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "MEAN")
+    pushstring          "{MEAN}"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "MEAN")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "COUNT")
+    pushstring          "{COUNT}"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "COUNT")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "OK")
+    pushstring          "{OK}"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "OK")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "NAME")
+    pushstring          "{NAME}"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "NAME")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "STATS_PATTERN") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("[APPENGINE STATS] [0xFFEE00:{/x={MEAN}ms, ok={OK}/{COUNT}} {NAME}]") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "MEAN") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("{MEAN}") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "COUNT") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("{COUNT}") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "OK") slotid 4 type QName(PackageNamespace(""), "String") value Utf8("{OK}") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:AppEngineRequestStats/StatsWatch"), "NAME") slotid 5 type QName(PackageNamespace(""), "String") value Utf8("{NAME}") end
+end ; class

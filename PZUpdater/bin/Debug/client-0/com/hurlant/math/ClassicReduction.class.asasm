@@ -1,0 +1,197 @@
+class
+ refid "com.hurlant.math:ClassicReduction"
+ instance QName(PackageInternalNs("com.hurlant.math"), "ClassicReduction")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IReduction", [PackageInternalNs("com.hurlant.math")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.hurlant.math:ClassicReduction")
+  iinit
+   refid "com.hurlant.math:ClassicReduction/instance/init"
+   param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "com.hurlant.math:ClassicReduction/instance"), "m")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.hurlant.math:ClassicReduction/instance"), "m") type QName(PackageNamespace("com.hurlant.math"), "BigInteger") end
+  trait method QName(PackageNamespace(""), "convert")
+   method
+    refid "com.hurlant.math:ClassicReduction/instance/convert"
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    returns QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(Namespace("http://crypto.hurlant.com/BigInteger"), "s")
+      pushbyte            0
+      lessthan
+      dup
+      iftrue              L15
+
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.hurlant.math:ClassicReduction/instance"), "m")
+      callproperty        QName(PackageNamespace(""), "compareTo"), 1
+      pushbyte            0
+      greaterequals
+L15:
+      iffalse             L21
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.hurlant.math:ClassicReduction/instance"), "m")
+      callproperty        QName(PackageNamespace(""), "mod"), 1
+      returnvalue
+
+L21:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "revert")
+   method
+    refid "com.hurlant.math:ClassicReduction/instance/revert"
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    returns QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "reduce")
+   method
+    refid "com.hurlant.math:ClassicReduction/instance/reduce"
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.hurlant.math:ClassicReduction/instance"), "m")
+      pushnull
+      getlocal1
+      callpropvoid        QName(Namespace("http://crypto.hurlant.com/BigInteger"), "divRemTo"), 3
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "mulTo")
+   method
+    refid "com.hurlant.math:ClassicReduction/instance/mulTo"
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal2
+      getlocal3
+      callpropvoid        QName(Namespace("http://crypto.hurlant.com/BigInteger"), "multiplyTo"), 2
+
+      getlocal0
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "reduce"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "sqrTo")
+   method
+    refid "com.hurlant.math:ClassicReduction/instance/sqrTo"
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    param QName(PackageNamespace("com.hurlant.math"), "BigInteger")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getlocal2
+      callpropvoid        QName(Namespace("http://crypto.hurlant.com/BigInteger"), "squareTo"), 1
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "reduce"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.hurlant.math:ClassicReduction/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

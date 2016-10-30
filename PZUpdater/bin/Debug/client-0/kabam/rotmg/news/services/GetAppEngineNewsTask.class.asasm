@@ -1,0 +1,409 @@
+class
+ refid "kabam.rotmg.news.services:GetAppEngineNewsTask"
+ instance QName(PackageNamespace("kabam.rotmg.news.services"), "GetAppEngineNewsTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  implements Multiname("GetNewsTask", [PackageNamespace("kabam.rotmg.news.services")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask")
+  iinit
+   refid "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.news.model"), "NewsModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "languageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "lastRan") type QName(PackageNamespace(""), "int") value Integer(-1) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "numUpdateAttempts") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "updateCooldown") type QName(PackageNamespace(""), "int") value Integer(600) end
+  trait method QName(ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      dup
+      setlocal1
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "numUpdateAttempts")
+      increment_i
+      setlocal2
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "numUpdateAttempts")
+
+      kill                2
+      kill                1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "lastRan")
+      pushbyte            -1
+      equals
+      dup
+      iftrue              L30
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "lastRan")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "updateCooldown")
+      add
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      pushshort           1000
+      divide
+      lessthan
+L30:
+      iffalse             L53
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      pushshort           1000
+      divide
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "lastRan")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/app/globalNews"
+      pushstring          "language"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguage"), 0
+      newobject           1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      jump                L58
+
+L53:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "reset")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+L58:
+      pushstring          "production"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toLowerCase"), 0
+      pushstring          "dev"
+      equals
+      not
+      dup
+      iffalse             L71
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "updateCooldown")
+      pushbyte            0
+      equals
+      not
+L71:
+      dup
+      iffalse             L78
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "numUpdateAttempts")
+      pushbyte            2
+      greaterequals
+L78:
+      iffalse             L82
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "updateCooldown")
+
+L82:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "onComplete")
+   method
+    refid "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "onNewsRequestDone"), 1
+
+      jump                L11
+
+L8:
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "onNewsRequestError"), 1
+
+L11:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "reset")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "onNewsRequestDone")
+   method
+    refid "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask/onNewsRequestDone"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 7
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            4
+
+      getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask"), PackageNamespace("__AS3__.vec")])
+      getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+      applytype           1
+      construct           0
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")>)
+      setlocal2
+
+      getlex              QName(PackageNamespace(""), "JSON")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "parse"), 1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal3
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal3
+      coerce_a
+      setlocal            6
+
+      jump                L33
+
+L22:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal            4
+
+      getlocal2
+      getlocal0
+      getlocal            4
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "returnNewsCellVO"), 1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L33:
+      hasnext2            6, 5
+      iftrue              L22
+
+      kill                6
+      kill                5
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "updateNews"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "returnNewsCellVO")
+   method
+    refid "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask/returnNewsCellVO"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+      constructprop       QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellVO")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      getproperty         Multiname("title", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      setproperty         QName(PackageNamespace(""), "headline")
+
+      getlocal2
+      getlocal1
+      getproperty         Multiname("image", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      setproperty         QName(PackageNamespace(""), "imageURL")
+
+      getlocal2
+      getlocal1
+      getproperty         Multiname("linkDetail", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      setproperty         QName(PackageNamespace(""), "linkDetail")
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace(""), "Number")
+      getlocal1
+      getproperty         Multiname("startTime", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "Number"), 1
+      setproperty         QName(PackageNamespace(""), "startDate")
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace(""), "Number")
+      getlocal1
+      getproperty         Multiname("endTime", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "Number"), 1
+      setproperty         QName(PackageNamespace(""), "endDate")
+
+      getlocal2
+      getlex              QName(PackageNamespace("kabam.rotmg.news.model"), "NewsCellLinkType")
+      getlocal1
+      getproperty         Multiname("linkType", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "parse"), 1
+      setproperty         QName(PackageNamespace(""), "linkType")
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal1
+      getproperty         Multiname("platform", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      pushstring          ","
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      setproperty         QName(PackageNamespace(""), "networks")
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace(""), "uint")
+      getlocal1
+      getproperty         Multiname("priority", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "uint"), 1
+      setproperty         QName(PackageNamespace(""), "priority")
+
+      getlocal2
+      findpropstrict      QName(PackageNamespace(""), "uint")
+      getlocal1
+      getproperty         Multiname("slot", [PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask"), PackageNamespace("kabam.rotmg.news.services"), PackageInternalNs("kabam.rotmg.news.services"), ProtectedNamespace("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.rotmg.news.services:GetAppEngineNewsTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "uint"), 1
+      setproperty         QName(PackageNamespace(""), "slot")
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "onNewsRequestError")
+   method
+    refid "kabam.rotmg.news.services:GetAppEngineNewsTask/instance/kabam.rotmg.news.services:GetAppEngineNewsTask/onNewsRequestError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      pushstring          "Unable to get news data."
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.news.services:GetAppEngineNewsTask/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "TEN_MINUTES")
+    pushshort           600
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "TEN_MINUTES")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.news.services:GetAppEngineNewsTask"), "TEN_MINUTES") slotid 1 type QName(PackageNamespace(""), "int") value Integer(600) end
+end ; class

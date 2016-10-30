@@ -1,0 +1,128 @@
+class
+ refid "kabam.rotmg.characters.reskin.control:ReskinCharacterCommand"
+ instance QName(PackageNamespace("kabam.rotmg.characters.reskin.control"), "ReskinCharacterCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.characters.reskin.control:ReskinCharacterCommand")
+  iinit
+   refid "kabam.rotmg.characters.reskin.control:ReskinCharacterCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "skin") flag METADATA type QName(PackageNamespace("kabam.rotmg.classes.model"), "CharacterSkin")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "messages") flag METADATA type QName(PackageNamespace("kabam.lib.net.api"), "MessageProvider")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "server") flag METADATA type QName(PackageNamespace("kabam.lib.net.impl"), "SocketServer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.characters.reskin.control:ReskinCharacterCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "messages")
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl"), "GameServerConnection")
+      getproperty         QName(PackageNamespace(""), "RESKIN")
+      callproperty        QName(Namespace("kabam.lib.net.api:MessageProvider"), "require"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "Reskin")
+      astypelate
+      coerce              QName(PackageNamespace("kabam.rotmg.messaging.impl.outgoing"), "Reskin")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "skin")
+      getproperty         QName(PackageNamespace(""), "id")
+      setproperty         QName(PackageNamespace(""), "skinID")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.game.model"), "GameModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      getproperty         Multiname("player", [PrivateNamespace(null, "kabam.rotmg.characters.reskin.control:ReskinCharacterCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.characters.reskin.control:ReskinCharacterCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.characters.reskin.control"), PackageInternalNs("kabam.rotmg.characters.reskin.control"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.characters.reskin.control:ReskinCharacterCommand"), StaticProtectedNs("kabam.rotmg.characters.reskin.control:ReskinCharacterCommand")])
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+      setlocal2
+
+      getlocal2
+      pushnull
+      ifeq                L42
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "clearTextureCache"), 0
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "skinTypes16")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "skinID")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      ifeq                L39
+
+      getlocal2
+      pushbyte            70
+      setproperty         QName(PackageNamespace(""), "size_")
+
+      jump                L42
+
+L39:
+      getlocal2
+      pushbyte            100
+      setproperty         QName(PackageNamespace(""), "size_")
+
+L42:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "server")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "sendMessage"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.characters.reskin.control:ReskinCharacterCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

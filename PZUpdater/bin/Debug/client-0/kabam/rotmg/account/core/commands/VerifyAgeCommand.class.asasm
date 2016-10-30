@@ -1,0 +1,152 @@
+class
+ refid "kabam.rotmg.account.core.commands:VerifyAgeCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.core.commands"), "VerifyAgeCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.core.commands:VerifyAgeCommand")
+  iinit
+   refid "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance"), "UNABLE_TO_VERIFY") type QName(PackageNamespace(""), "String") value Utf8("Unable to verify age") end
+  trait slot QName(PackageNamespace(""), "task") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "VerifyAgeTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreen") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "task")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask"), 1
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance"), "makeSuccessTask"), 0
+      callpropvoid        QName(PackageNamespace(""), "addSuccessTask"), 1
+
+      getlocal1
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance"), "makeFailureTask"), 0
+      callpropvoid        QName(PackageNamespace(""), "addFailureTask"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance"), "makeSuccessTask")
+   method
+    refid "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance/kabam.rotmg.account.core.commands:VerifyAgeCommand/instance/makeSuccessTask"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreen")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance"), "makeFailureTask")
+   method
+    refid "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance/kabam.rotmg.account.core.commands:VerifyAgeCommand/instance/makeFailureTask"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.core.commands:VerifyAgeCommand/instance"), "UNABLE_TO_VERIFY")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui.dialogs"), "ErrorDialog"), 1
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.core.commands:VerifyAgeCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

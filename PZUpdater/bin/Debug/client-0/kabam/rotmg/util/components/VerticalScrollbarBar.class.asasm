@@ -1,0 +1,535 @@
+class
+ refid "kabam.rotmg.util.components:VerticalScrollbarBar"
+ instance QName(PackageInternalNs("kabam.rotmg.util.components"), "VerticalScrollbarBar")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag FINAL
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.util.components:VerticalScrollbarBar")
+  iinit
+   refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/init"
+   body
+    maxstack 5
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "dragging")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "Number")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "scrolling")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.graphics"), "BevelRect")
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     getlex              QName(PackageNamespace(""), "PADDING")
+     pushbyte            2
+     multiply
+     subtract
+     pushbyte            0
+     getlex              QName(PackageNamespace(""), "BEVEL")
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.graphics"), "BevelRect"), 3
+     initproperty        QName(PackageNamespace(""), "rect")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.graphics"), "GraphicsHelper")
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.graphics"), "GraphicsHelper"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "helper")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "dragging") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "scrolling") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "rect") type QName(PackageNamespace("kabam.rotmg.util.graphics"), "BevelRect") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "helper") type QName(PackageNamespace("kabam.rotmg.util.graphics"), "GraphicsHelper") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "downOffset") type QName(PackageNamespace(""), "Number") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isOver") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isDown") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "redraw")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/redraw"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isOver")
+      convert_b
+      dup
+      iftrue              L11
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isDown")
+      convert_b
+L11:
+      iffalse             L14
+
+      pushint             16767876
+      jump                L15
+
+L14:
+      pushint             13421772
+L15:
+      convert_i
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "helper")
+      getlex              QName(PackageNamespace(""), "PADDING")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rect")
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "drawBevelRect"), 4
+
+      getlex              QName(PackageNamespace(""), "graphics")
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addMouseListeners")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/addMouseListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_OVER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_OUT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "parent")
+      convert_b
+      dup
+      iffalse             L28
+
+      pop
+      getlex              QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "parent")
+      convert_b
+L28:
+      iffalse             L37
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_WHEEL")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.util.components:VerticalScrollbarBar"), "onMouseWheel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      jump                L47
+
+L37:
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      iffalse             L47
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_WHEEL")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.util.components:VerticalScrollbarBar"), "onMouseWheel")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L47:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.util.components:VerticalScrollbarBar"), "onMouseWheel")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/kabam.rotmg.util.components:VerticalScrollbarBar:onMouseWheel"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "delta")
+      pushbyte            0
+      ifngt               L11
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrolling")
+      pushdouble          -0.25
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      jump                L19
+
+L11:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "delta")
+      pushbyte            0
+      ifnlt               L19
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "scrolling")
+      pushdouble          0.25
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeMouseListeners")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/removeMouseListeners"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_OVER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseOver")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_OUT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseOut")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlex              QName(PackageNamespace(""), "parent")
+      convert_b
+      dup
+      iffalse             L28
+
+      pop
+      getlex              QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "parent")
+      convert_b
+L28:
+      iffalse             L37
+
+      getlex              QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "parent")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_WHEEL")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.util.components:VerticalScrollbarBar"), "onMouseWheel")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      jump                L47
+
+L37:
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      iffalse             L47
+
+      getlex              QName(PackageNamespace(""), "WebMain")
+      getproperty         QName(PackageNamespace(""), "STAGE")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_WHEEL")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.util.components:VerticalScrollbarBar"), "onMouseWheel")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L47:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseUp"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseDown")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/kabam.rotmg.util.components:VerticalScrollbarBar/instance/onMouseDown"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isDown")
+
+      getlocal0
+      getlex              QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "mouseY")
+      getlex              QName(PackageNamespace(""), "y")
+      subtract
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "downOffset")
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushnull
+      ifeq                L20
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_UP")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L20:
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "iterate")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseUp")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/kabam.rotmg.util.components:VerticalScrollbarBar/instance/onMouseUp"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isDown")
+
+      getlex              QName(PackageNamespace(""), "stage")
+      pushnull
+      ifeq                L14
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "MOUSE_UP")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseUp")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L14:
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "iterate")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseOver")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/kabam.rotmg.util.components:VerticalScrollbarBar/instance/onMouseOver"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isOver")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "onMouseOut")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/kabam.rotmg.util.components:VerticalScrollbarBar/instance/onMouseOut"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "isOver")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "redraw"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "iterate")
+   method
+    refid "kabam.rotmg.util.components:VerticalScrollbarBar/instance/kabam.rotmg.util.components:VerticalScrollbarBar/instance/iterate"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "dragging")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PackageNamespace(""), "parent")
+      getproperty         QName(PackageNamespace(""), "mouseY")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.util.components:VerticalScrollbarBar/instance"), "downOffset")
+      subtract
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.util.components:VerticalScrollbarBar/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "WIDTH")
+    getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar")
+    getproperty         QName(PackageNamespace(""), "WIDTH")
+    initproperty        QName(PackageNamespace(""), "WIDTH")
+
+    findproperty        QName(PackageNamespace(""), "BEVEL")
+    getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar")
+    getproperty         QName(PackageNamespace(""), "BEVEL")
+    initproperty        QName(PackageNamespace(""), "BEVEL")
+
+    findproperty        QName(PackageNamespace(""), "PADDING")
+    getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollbar")
+    getproperty         QName(PackageNamespace(""), "PADDING")
+    initproperty        QName(PackageNamespace(""), "PADDING")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") slotid 1 type QName(PackageNamespace(""), "int") value Integer(20) end
+ trait const QName(PackageNamespace(""), "BEVEL") slotid 2 type QName(PackageNamespace(""), "int") value Integer(4) end
+ trait const QName(PackageNamespace(""), "PADDING") slotid 3 type QName(PackageNamespace(""), "int") value Integer(0) end
+end ; class

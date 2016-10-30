@@ -1,0 +1,801 @@
+class
+ refid "com.company.assembleegameclient.objects:ConnectedObject"
+ instance QName(PackageNamespace("com.company.assembleegameclient.objects"), "ConnectedObject")
+  extends QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject")
+  iinit
+   refid "com.company.assembleegameclient.objects:ConnectedObject/instance/init"
+   param QName(PackageNamespace(""), "XML")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     findproperty        QName(PackageNamespace(""), "hasShadow_")
+     pushfalse
+     initproperty        QName(PackageNamespace(""), "hasShadow_")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "rotation_") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "draw") flag OVERRIDE
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/draw"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "IGraphicsData")>)
+    param QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 11
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.engine3d"), "ObjectFace3D")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      pushbyte            0
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Square")
+      setlocal            8
+
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      pushnull
+      ifne                L20
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "rebuild3D"), 0
+
+L20:
+      getlex              QName(PackageNamespace("flash.geom"), "Utils3D")
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "wToS_")
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getproperty         QName(PackageNamespace(""), "vW_")
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getproperty         QName(PackageNamespace(""), "vS_")
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getproperty         QName(PackageNamespace(""), "uvts_")
+      callpropvoid        QName(PackageNamespace(""), "projectVectors"), 4
+
+      pushbyte            0
+      setlocal            9
+
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getproperty         QName(PackageNamespace(""), "faces_")
+      coerce_a
+      setlocal            10
+
+      jump                L126
+
+L37:
+      label
+      getlocal            10
+      getlocal            9
+      nextvalue
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.engine3d"), "ObjectFace3D")
+      dup
+      setlocal            4
+
+      getproperty         QName(PackageNamespace(""), "normalW_")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushdouble          0.4
+      greaterthan
+      iffalse             L51
+
+      pushbyte            1
+      jump                L60
+
+L51:
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "normalW_")
+      getproperty         QName(PackageNamespace(""), "x")
+      pushdouble          -0.4
+      lessthan
+      iffalse             L59
+
+      pushbyte            -1
+      jump                L60
+
+L59:
+      pushbyte            0
+L60:
+      convert_i
+      setlocal            5
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "normalW_")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushdouble          0.4
+      greaterthan
+      iffalse             L70
+
+      pushbyte            1
+      jump                L79
+
+L70:
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "normalW_")
+      getproperty         QName(PackageNamespace(""), "y")
+      pushdouble          -0.4
+      lessthan
+      iffalse             L78
+
+      pushbyte            -1
+      jump                L79
+
+L78:
+      pushbyte            0
+L79:
+      convert_i
+      setlocal            6
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "texture_")
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+      getlocal            5
+      pushbyte            0
+      equals
+      not
+      dup
+      iftrue              L96
+
+      pop
+      getlocal            6
+      pushbyte            0
+      equals
+      not
+L96:
+      iffalse             L121
+
+      getlex              QName(PackageNamespace(""), "map_")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlocal            5
+      add
+      getlex              QName(PackageNamespace(""), "y_")
+      getlocal            6
+      add
+      callproperty        QName(PackageNamespace(""), "lookupSquare"), 2
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Square")
+      dup
+      setlocal            8
+
+      pushnull
+      equals
+      dup
+      iftrue              L117
+
+      pop
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "texture_")
+      pushnull
+      equals
+L117:
+      iffalse             L121
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal            7
+
+L121:
+      getlocal            4
+      getlocal1
+      pushbyte            0
+      getlocal            7
+      callpropvoid        QName(PackageNamespace(""), "draw"), 3
+
+L126:
+      hasnext2            10, 9
+      iftrue              L37
+
+      kill                10
+      kill                9
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "rebuild3D")
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/rebuild3D"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findproperty        QName(PackageNamespace(""), "obj3D_")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.engine3d"), "Object3D")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.engine3d"), "Object3D"), 0
+      initproperty        QName(PackageNamespace(""), "obj3D_")
+
+      findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "getConnectedResults")
+      getlex              QName(PackageNamespace(""), "connectType_")
+      callproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "getConnectedResults"), 1
+      coerce              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#0"), "ConnectedResults")
+      setlocal1
+
+      getlocal1
+      pushnull
+      ifne                L18
+
+      findproperty        QName(PackageNamespace(""), "obj3D_")
+      pushnull
+      initproperty        QName(PackageNamespace(""), "obj3D_")
+
+      returnvoid
+
+L18:
+      getlocal0
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "rotation_")
+      initproperty        QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "rotation_")
+
+      jump                L56
+
+L23:
+      label
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildDot"), 0
+
+      jump                L99
+
+L27:
+      label
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildShortLine"), 0
+
+      jump                L99
+
+L31:
+      label
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildL"), 0
+
+      jump                L99
+
+L35:
+      label
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildLine"), 0
+
+      jump                L99
+
+L39:
+      label
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildT"), 0
+
+      jump                L99
+
+L43:
+      label
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildCross"), 0
+
+      jump                L99
+
+L47:
+      label
+      findproperty        QName(PackageNamespace(""), "obj3D_")
+      pushnull
+      initproperty        QName(PackageNamespace(""), "obj3D_")
+
+      returnvoid
+
+      ; 0x10
+      ; 0x87
+      ; 0x00
+      ; 0x00
+L56:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "type_")
+      setlocal2
+
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "DOT_TYPE")
+      getlocal2
+      ifstrictne          L64
+
+      pushbyte            0
+      jump                L97
+
+L64:
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "SHORT_LINE_TYPE")
+      getlocal2
+      ifstrictne          L69
+
+      pushbyte            1
+      jump                L97
+
+L69:
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "L_TYPE")
+      getlocal2
+      ifstrictne          L74
+
+      pushbyte            2
+      jump                L97
+
+L74:
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "LINE_TYPE")
+      getlocal2
+      ifstrictne          L79
+
+      pushbyte            3
+      jump                L97
+
+L79:
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "T_TYPE")
+      getlocal2
+      ifstrictne          L84
+
+      pushbyte            4
+      jump                L97
+
+L84:
+      getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "CROSS_TYPE")
+      getlocal2
+      ifstrictne          L89
+
+      pushbyte            5
+      jump                L97
+
+L89:
+      jump                L96
+
+      ; 0x24
+      ; 0x06
+      ; 0x10
+      ; 0x02
+      ; 0x00
+      ; 0x00
+L96:
+      pushbyte            6
+L97:
+      kill                2
+      lookupswitch        L47, [L23, L27, L31, L35, L39, L43, L47]
+
+L99:
+      getlex              QName(PackageNamespace(""), "obj3D_")
+      getlex              QName(PackageNamespace(""), "x_")
+      getlex              QName(PackageNamespace(""), "y_")
+      pushbyte            0
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "rotation_")
+      pushbyte            90
+      multiply
+      callpropvoid        QName(PackageNamespace(""), "setPosition"), 4
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildDot")
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/com.company.assembleegameclient.objects:ConnectedObject:buildDot"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildShortLine")
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/com.company.assembleegameclient.objects:ConnectedObject:buildShortLine"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildL")
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/com.company.assembleegameclient.objects:ConnectedObject:buildL"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildLine")
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/com.company.assembleegameclient.objects:ConnectedObject:buildLine"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildT")
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/com.company.assembleegameclient.objects:ConnectedObject:buildT"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), "buildCross")
+   method
+    refid "com.company.assembleegameclient.objects:ConnectedObject/instance/com.company.assembleegameclient.objects:ConnectedObject:buildCross"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.objects:ConnectedObject/class/init"
+  body
+   maxstack 5
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "DOT_TYPE")
+    pushbyte            0
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "DOT_TYPE")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "SHORT_LINE_TYPE")
+    pushbyte            1
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "SHORT_LINE_TYPE")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "L_TYPE")
+    pushbyte            2
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "L_TYPE")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "LINE_TYPE")
+    pushbyte            3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "LINE_TYPE")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "T_TYPE")
+    pushbyte            4
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "T_TYPE")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "CROSS_TYPE")
+    pushbyte            5
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "CROSS_TYPE")
+
+    findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+    pushnull
+    setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N0")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            -1
+    pushbyte            -1
+    pushbyte            0
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N0")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N1")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            0
+    pushbyte            -1
+    pushbyte            0
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N1")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N2")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            1
+    pushbyte            -1
+    pushbyte            0
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N2")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N3")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            1
+    pushbyte            0
+    dup
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N3")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N4")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            1
+    dup
+    pushbyte            0
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N4")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N5")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            0
+    pushbyte            1
+    pushbyte            0
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N5")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N6")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            -1
+    pushbyte            1
+    pushbyte            0
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N6")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N7")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            -1
+    pushbyte            0
+    dup
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N7")
+
+    findproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N8")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Vector3D")
+    pushbyte            0
+    dup
+    pushbyte            1
+    constructprop       QName(PackageNamespace("flash.geom"), "Vector3D"), 3
+    initproperty        QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N8")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "DOT_TYPE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "SHORT_LINE_TYPE") slotid 2 type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "L_TYPE") slotid 3 type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "LINE_TYPE") slotid 4 type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "T_TYPE") slotid 5 type QName(PackageNamespace(""), "int") value Integer(4) end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "CROSS_TYPE") slotid 6 type QName(PackageNamespace(""), "int") value Integer(5) end
+ trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_") slotid 7 type QName(PackageNamespace("flash.utils"), "Dictionary") value Null() end
+ trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "init") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.objects:ConnectedObject/class/com.company.assembleegameclient.objects:ConnectedObject/init"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     findproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     setproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper")
+     pushint             33686018
+     getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "DOT_TYPE")
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper"), 2
+
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper")
+     pushint             16908802
+     getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "SHORT_LINE_TYPE")
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper"), 2
+
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper")
+     pushint             16843266
+     getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "L_TYPE")
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper"), 2
+
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper")
+     pushint             16908546
+     getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "LINE_TYPE")
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper"), 2
+
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper")
+     pushint             16843265
+     getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "T_TYPE")
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper"), 2
+
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper")
+     pushint             16843009
+     getlex              QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "CROSS_TYPE")
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "getConnectedResults") flag FINAL dispid 4
+  method
+   refid "com.company.assembleegameclient.objects:ConnectedObject/class/com.company.assembleegameclient.objects:ConnectedObject/getConnectedResults"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#0"), "ConnectedResults")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+     pushnull
+     ifne                L7
+
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "init")
+     callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "init"), 0
+
+L7:
+     getlocal1
+     pushint             252645135
+     bitand
+     setlocal2
+
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+     getlocal2
+     getproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#0"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")])
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "initHelper") flag FINAL dispid 5
+  method
+   refid "com.company.assembleegameclient.objects:ConnectedObject/class/com.company.assembleegameclient.objects:ConnectedObject/initHelper"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            4
+
+     pushbyte            0
+     setlocal3
+
+     jump                L35
+
+L7:
+     label
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+     findpropstrict      QName(PackageNamespace(""), "String")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "String"), 1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "hasOwnProperty"), 1
+     iffalse             L15
+
+     jump                L34
+
+L15:
+     getlex              QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), "dict_")
+     getlocal1
+     findpropstrict      QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#0"), "ConnectedResults")
+     getlocal2
+     getlocal3
+     constructprop       QName(PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#0"), "ConnectedResults"), 2
+     setproperty         MultinameL([PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#1"), StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.objects:ConnectedObject#0"), PackageNamespace("com.company.assembleegameclient.objects"), PackageInternalNs("com.company.assembleegameclient.objects"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.objects:ConnectedObject"), StaticProtectedNs("com.company.assembleegameclient.objects:GameObject"), StaticProtectedNs("com.company.assembleegameclient.objects:BasicObject")])
+
+     getlocal1
+     pushshort           255
+     bitand
+     setlocal            4
+
+     getlocal1
+     pushbyte            8
+     rshift
+     getlocal            4
+     pushbyte            24
+     lshift
+     bitor
+     setlocal1
+
+L34:
+     inclocal_i          3
+L35:
+     getlocal3
+     pushbyte            4
+     iflt                L7
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N0") slotid 8 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N1") slotid 9 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N2") slotid 10 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N3") slotid 11 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N4") slotid 12 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N5") slotid 13 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N6") slotid 14 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N7") slotid 15 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+ trait const QName(StaticProtectedNs("com.company.assembleegameclient.objects:ConnectedObject"), "N8") slotid 16 type QName(PackageNamespace("flash.geom"), "Vector3D") end
+end ; class

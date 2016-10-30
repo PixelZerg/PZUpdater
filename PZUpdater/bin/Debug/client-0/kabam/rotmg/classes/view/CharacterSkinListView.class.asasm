@@ -1,0 +1,231 @@
+class
+ refid "kabam.rotmg.classes.view:CharacterSkinListView"
+ instance QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.classes.view:CharacterSkinListView")
+  iinit
+   refid "kabam.rotmg.classes.view:CharacterSkinListView/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "makeList"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "list")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "list") type QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "items") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>) end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "makeList")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListView/instance/kabam.rotmg.classes.view:CharacterSkinListView/instance/makeList"
+    returns QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList")
+      constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.ui.api"), "Size")
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      getlex              QName(PackageNamespace(""), "HEIGHT")
+      constructprop       QName(PackageNamespace("kabam.lib.ui.api"), "Size"), 2
+      callpropvoid        QName(PackageNamespace(""), "setSize"), 1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "scrollStateChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "onScrollStateChanged")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      getlex              QName(PackageNamespace(""), "PADDING")
+      callpropvoid        QName(PackageNamespace(""), "setPadding"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setItems")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListView/instance/setItems"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("flash.display"), "DisplayObject")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "items")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "list")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setItems"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "isScrollbarVisible"), 0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "onScrollStateChanged"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "onScrollStateChanged")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListView/instance/kabam.rotmg.classes.view:CharacterSkinListView/instance/onScrollStateChanged"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItem")
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItem")
+      getproperty         QName(PackageNamespace(""), "WIDTH")
+      convert_i
+      setlocal2
+
+      getlocal1
+      iftrue              L17
+
+      getlocal2
+      getlex              QName(PackageNamespace("kabam.rotmg.util.components"), "VerticalScrollingList")
+      getproperty         QName(PackageNamespace(""), "SCROLLBAR_GUTTER")
+      add
+      convert_i
+      setlocal2
+
+L17:
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "items")
+      coerce_a
+      setlocal            5
+
+      jump                L33
+
+L24:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.classes.view"), "CharacterSkinListItem")
+      setlocal3
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setWidth"), 1
+
+L33:
+      hasnext2            5, 4
+      iftrue              L24
+
+      kill                5
+      kill                4
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getListHeight")
+   method
+    refid "kabam.rotmg.classes.view:CharacterSkinListView/instance/getListHeight"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.classes.view:CharacterSkinListView/instance"), "list")
+      callproperty        QName(PackageNamespace(""), "getListHeight"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.classes.view:CharacterSkinListView/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "PADDING")
+    pushbyte            5
+    initproperty        QName(PackageNamespace(""), "PADDING")
+
+    findproperty        QName(PackageNamespace(""), "WIDTH")
+    pushshort           442
+    initproperty        QName(PackageNamespace(""), "WIDTH")
+
+    findproperty        QName(PackageNamespace(""), "HEIGHT")
+    pushshort           400
+    initproperty        QName(PackageNamespace(""), "HEIGHT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "PADDING") slotid 1 type QName(PackageNamespace(""), "int") value Integer(5) end
+ trait const QName(PackageNamespace(""), "WIDTH") slotid 2 type QName(PackageNamespace(""), "int") value Integer(442) end
+ trait const QName(PackageNamespace(""), "HEIGHT") slotid 3 type QName(PackageNamespace(""), "int") value Integer(400) end
+end ; class

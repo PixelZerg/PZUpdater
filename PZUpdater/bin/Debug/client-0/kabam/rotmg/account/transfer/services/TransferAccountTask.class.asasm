@@ -1,0 +1,247 @@
+class
+ refid "kabam.rotmg.account.transfer.services:TransferAccountTask"
+ instance QName(PackageNamespace("kabam.rotmg.account.transfer.services"), "TransferAccountTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  implements Multiname("MigrateAccountTask", [PackageNamespace("kabam.rotmg.account.core.services")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask")
+  iinit
+   refid "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "PlayerModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "transferData") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.transfer.model"), "TransferAccountData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/kabam/link"
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), "makeDataPacket"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), "onComplete")
+   method
+    refid "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), "onLinkDone"), 1
+      coerce_a
+L11:
+      pop
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), "makeDataPacket")
+   method
+    refid "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance/makeDataPacket"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      newobject           0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transferData")
+      getproperty         QName(PackageNamespace(""), "currentEmail")
+      setproperty         Multiname("kabamemail", [PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace("kabam.rotmg.account.transfer.services"), PackageInternalNs("kabam.rotmg.account.transfer.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transferData")
+      getproperty         QName(PackageNamespace(""), "currentPassword")
+      setproperty         Multiname("kabampassword", [PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace("kabam.rotmg.account.transfer.services"), PackageInternalNs("kabam.rotmg.account.transfer.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transferData")
+      getproperty         QName(PackageNamespace(""), "newEmail")
+      setproperty         Multiname("email", [PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace("kabam.rotmg.account.transfer.services"), PackageInternalNs("kabam.rotmg.account.transfer.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transferData")
+      getproperty         QName(PackageNamespace(""), "newPassword")
+      setproperty         Multiname("password", [PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace("kabam.rotmg.account.transfer.services"), PackageInternalNs("kabam.rotmg.account.transfer.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), "onLinkDone")
+   method
+    refid "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance/onLinkDone"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformModel")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformModel")
+      setlocal2
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getPlatform"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+      getproperty         QName(PackageNamespace(""), "WEB")
+      ifne                L27
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transferData")
+      getproperty         QName(PackageNamespace(""), "newEmail")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "transferData")
+      getproperty         QName(PackageNamespace(""), "newPassword")
+      pushstring          ""
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "updateUser"), 3
+
+      jump                L45
+
+L27:
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlocal3
+      getproperty         Multiname("GUID", [PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace("kabam.rotmg.account.transfer.services"), PackageInternalNs("kabam.rotmg.account.transfer.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getlocal3
+      getproperty         Multiname("Secret", [PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace("kabam.rotmg.account.transfer.services"), PackageInternalNs("kabam.rotmg.account.transfer.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      pushstring          ""
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "updateUser"), 3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlocal3
+      getproperty         Multiname("PlatformToken", [PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.account.transfer.services:TransferAccountTask/instance/kabam.rotmg.account.transfer.services:TransferAccountTask/instance"), PackageNamespace("kabam.rotmg.account.transfer.services"), PackageInternalNs("kabam.rotmg.account.transfer.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.rotmg.account.transfer.services:TransferAccountTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callpropvoid        QName(Namespace("kabam.rotmg.account.core:Account"), "setPlatformToken"), 1
+
+L45:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.transfer.services:TransferAccountTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,107 @@
+class
+ refid "kabam.lib.console.services:ConsoleLogTarget"
+ instance QName(PackageNamespace("kabam.lib.console.services"), "ConsoleLogTarget")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ILogTarget", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.console.services:ConsoleLogTarget")
+  iinit
+   refid "kabam.lib.console.services:ConsoleLogTarget/instance/init"
+   param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     getproperty         QName(Namespace("robotlegs.bender.framework.api:IContext"), "injector")
+     getlex              QName(PackageNamespace("kabam.lib.console.signals"), "ConsoleLogSignal")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance"), "consoleLog")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "LogMessageParser")
+     constructprop       QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "LogMessageParser"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance"), "messageParser")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance"), "consoleLog") type QName(PackageNamespace("kabam.lib.console.signals"), "ConsoleLogSignal") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance"), "messageParser") type QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "LogMessageParser") end
+  trait method QName(PackageNamespace(""), "log")
+   method
+    refid "kabam.lib.console.services:ConsoleLogTarget/instance/log"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 4
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("robotlegs.bender.framework.api"), "LogLevel")
+      getproperty         QName(PackageNamespace(""), "NAME")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance/log"), PackageNamespace("kabam.lib.console.services"), PackageInternalNs("kabam.lib.console.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.console.services:ConsoleLogTarget"), StaticProtectedNs("kabam.lib.console.services:ConsoleLogTarget")])
+      pushstring          " "
+      add
+      getlocal1
+      add
+      pushstring          " "
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance"), "messageParser")
+      getlocal            4
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "parseMessage"), 2
+      add
+      coerce_s
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.services:ConsoleLogTarget/instance"), "consoleLog")
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.console.services:ConsoleLogTarget/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,764 @@
+class
+ refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.components"), "FameOrGoldBuyButtons")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.components:FameOrGoldBuyButtons")
+  iinit
+   refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/init"
+   body
+    maxstack 6
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "positioned")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "goldButtonClicked")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "fameButtonClicked")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "clicked")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton")
+     pushstring          ""
+     pushbyte            14
+     pushbyte            0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+     getproperty         QName(PackageNamespace(""), "GOLD")
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton"), 4
+     initproperty        QName(PackageNamespace(""), "goldButton")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton")
+     pushstring          ""
+     pushbyte            14
+     pushbyte            0
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+     getproperty         QName(PackageNamespace(""), "FAME")
+     constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton"), 4
+     initproperty        QName(PackageNamespace(""), "fameButton")
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "makeTextField"), 0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+
+     getlocal0
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "makeTextField"), 0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "BUTTON_BAR_OR")
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     callproperty        QName(PackageNamespace(""), "setStringBuilder"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "goldButton")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onGoldClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "fameButton")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onFameClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "fameButton")
+     getproperty         QName(PackageNamespace(""), "readyForPlacement")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "goldButton")
+     getproperty         QName(PackageNamespace(""), "readyForPlacement")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+     callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PackageNamespace(""), "positioned") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "goldButtonClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "fameButtonClicked") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PackageNamespace(""), "clicked") type QName(PackageNamespace("org.osflash.signals"), "IOnceSignal") end
+  trait slot QName(PackageNamespace(""), "goldButton") type QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton") end
+  trait slot QName(PackageNamespace(""), "fameButton") type QName(PackageNamespace("kabam.rotmg.util.components"), "LegacyBuyButton") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "spacing") type QName(PackageNamespace(""), "int") value Integer(7) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait method QName(PackageNamespace(""), "setDisabled")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/setDisabled"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled")
+      getlocal1
+      ifeq                L21
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled")
+      not
+      callpropvoid        QName(PackageNamespace(""), "setEnabled"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled")
+      not
+      callpropvoid        QName(PackageNamespace(""), "setEnabled"), 1
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isDisabled")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/isDisabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setGoldPrice")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/setGoldPrice"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getproperty         QName(PackageNamespace(""), "GOLD")
+      callpropvoid        QName(PackageNamespace(""), "setPrice"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      not
+      coerce_a
+      dup
+      iffalse             L22
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      callproperty        QName(PackageNamespace(""), "addChild"), 1
+      coerce_a
+L22:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getGoldPrice")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/getGoldPrice"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      callproperty        QName(PackageNamespace(""), "getPrice"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setPrefix")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/setPrefix"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      not
+      coerce_a
+      dup
+      iffalse             L23
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+      callproperty        QName(PackageNamespace(""), "addChild"), 1
+      coerce_a
+L23:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearFameAndGold")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/clearFameAndGold"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      coerce_a
+      dup
+      iffalse             L15
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L15:
+      pop
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      coerce_a
+      dup
+      iffalse             L29
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L29:
+      pop
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      coerce_a
+      dup
+      iffalse             L43
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      callproperty        QName(PackageNamespace(""), "removeChild"), 1
+      coerce_a
+L43:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/positionComponents"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L16
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "spacing")
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+L16:
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L83
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      iffalse             L74
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      not
+      coerce_a
+      dup
+      iffalse             L40
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      callproperty        QName(PackageNamespace(""), "addChild"), 1
+      coerce_a
+L40:
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "spacing")
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      getproperty         QName(PackageNamespace(""), "x")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "or")
+      getproperty         QName(PackageNamespace(""), "width")
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "spacing")
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      jump                L83
+
+L74:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "spacing")
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+L83:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "positioned")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setFamePrice")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/setFamePrice"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+      getproperty         QName(PackageNamespace(""), "FAME")
+      callpropvoid        QName(PackageNamespace(""), "setPrice"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "contains")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      callproperty        QName(PackageNamespace(""), "contains"), 1
+      not
+      coerce_a
+      dup
+      iffalse             L22
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      callproperty        QName(PackageNamespace(""), "addChild"), 1
+      coerce_a
+L22:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getFamePrice")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/getFamePrice"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      callproperty        QName(PackageNamespace(""), "getPrice"), 0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onRemovedFromStage")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onRemovedFromStage")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onGoldClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onFameClick")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      getproperty         QName(PackageNamespace(""), "readyForPlacement")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getproperty         QName(PackageNamespace(""), "readyForPlacement")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "prefix")
+      getproperty         QName(PackageNamespace(""), "textChanged")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "positionComponents")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onFameClick")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/onFameClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled")
+      iftrue              L14
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButtonClicked")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "fameButton")
+      getproperty         QName(PackageNamespace(""), "price")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clicked")
+      callpropvoid        QName(Namespace("org.osflash.signals:IOnceSignal"), "dispatch"), 0
+
+L14:
+      getlocal0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setDisabled"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "onGoldClick")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/onGoldClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "disabled")
+      iftrue              L14
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButtonClicked")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "goldButton")
+      getproperty         QName(PackageNamespace(""), "price")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clicked")
+      callpropvoid        QName(Namespace("org.osflash.signals:IOnceSignal"), "dispatch"), 0
+
+L14:
+      getlocal0
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setDisabled"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "makeTextField")
+   method
+    refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/instance/kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/makeTextField"
+    returns QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      pushbyte            16
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setBold"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      getlocal1
+      pushbyte            3
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "grayfilter")
+    findpropstrict      QName(PackageNamespace("flash.filters"), "ColorMatrixFilter")
+    getlex              QName(PackageNamespace("com.company.util"), "MoreColorUtil")
+    getproperty         QName(PackageNamespace(""), "greyscaleFilterMatrix")
+    constructprop       QName(PackageNamespace("flash.filters"), "ColorMatrixFilter"), 1
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "grayfilter")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.view.components:FameOrGoldBuyButtons"), "grayfilter") slotid 1 type QName(PackageNamespace("flash.filters"), "ColorMatrixFilter") end
+end ; class

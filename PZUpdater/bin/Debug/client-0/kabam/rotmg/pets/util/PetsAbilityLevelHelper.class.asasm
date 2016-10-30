@@ -1,0 +1,125 @@
+class
+ refid "kabam.rotmg.pets.util:PetsAbilityLevelHelper"
+ instance QName(PackageNamespace("kabam.rotmg.pets.util"), "PetsAbilityLevelHelper")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.util:PetsAbilityLevelHelper")
+  iinit
+   refid "kabam.rotmg.pets.util:PetsAbilityLevelHelper/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class/init"
+  body
+   maxstack 4
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class"), "levelToPoints")
+    findpropstrict      QName(PackageNamespace("kabam.rotmg.util"), "GeometricSeries")
+    pushbyte            20
+    pushdouble          1.08
+    constructprop       QName(PackageNamespace("kabam.rotmg.util"), "GeometricSeries"), 2
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class"), "levelToPoints")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class"), "levelToPoints") slotid 1 type QName(PackageNamespace("kabam.rotmg.util"), "GeometricSeries") end
+ trait method QName(PackageNamespace(""), "getTotalAbilityPointsForLevel") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class/getTotalAbilityPointsForLevel"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class"), "levelToPoints")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getSummation"), 1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getCurrentPointsForLevel") flag FINAL dispid 4
+  method
+   refid "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class/getCurrentPointsForLevel"
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 3
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     findpropstrict      QName(PackageNamespace(""), "getTotalAbilityPointsForLevel")
+     getlocal2
+     decrement
+     callproperty        QName(PackageNamespace(""), "getTotalAbilityPointsForLevel"), 1
+     convert_d
+     setlocal3
+
+     getlocal1
+     getlocal3
+     subtract
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getAbilityPointsforLevel") flag FINAL dispid 5
+  method
+   refid "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class/getAbilityPointsforLevel"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.pets.util:PetsAbilityLevelHelper/class"), "levelToPoints")
+     getlocal1
+     decrement
+     callproperty        QName(PackageNamespace(""), "getTerm"), 1
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

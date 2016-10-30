@@ -1,0 +1,259 @@
+class
+ refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMapper")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ICommandMapper", [PackageNamespace("robotlegs.bender.extensions.commandCenter.dsl")])
+  implements Multiname("ICommandUnmapper", [PackageNamespace("robotlegs.bender.extensions.commandCenter.dsl")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.commandCenter.impl:CommandMapper")
+  iinit
+   refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/init"
+   param QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandTrigger")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+     constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_trigger")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings") type QName(PackageNamespace("flash.utils"), "Dictionary") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_trigger") type QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandTrigger") end
+  trait method QName(PackageNamespace(""), "toCommand")
+   method
+    refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/toCommand"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.dsl"), "ICommandMappingConfig")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#1"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), PackageInternalNs("robotlegs.bender.extensions.commandCenter.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.commandCenter.impl:CommandMapper"), StaticProtectedNs("robotlegs.bender.extensions.commandCenter.impl:CommandMapper")])
+      callproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "locked"), 1
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.dsl"), "ICommandMappingConfig")
+      dup
+      iftrue              L16
+
+      pop
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "createMapping"), 1
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.dsl"), "ICommandMappingConfig")
+L16:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "fromCommand")
+   method
+    refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/fromCommand"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#1"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), PackageInternalNs("robotlegs.bender.extensions.commandCenter.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.commandCenter.impl:CommandMapper"), StaticProtectedNs("robotlegs.bender.extensions.commandCenter.impl:CommandMapper")])
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")
+      setlocal2
+
+      getlocal2
+      coerce_a
+      dup
+      iffalse             L18
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_trigger")
+      getlocal2
+      callproperty        QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandTrigger"), "removeMapping"), 1
+      coerce_a
+L18:
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings")
+      getlocal1
+      deleteproperty      MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#1"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), PackageInternalNs("robotlegs.bender.extensions.commandCenter.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.commandCenter.impl:CommandMapper"), StaticProtectedNs("robotlegs.bender.extensions.commandCenter.impl:CommandMapper")])
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "fromAll")
+   method
+    refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/fromAll"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings")
+      coerce_a
+      setlocal3
+
+      jump                L28
+
+L12:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.api"), "ICommandMapping")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_trigger")
+      getlocal1
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandTrigger"), "removeMapping"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings")
+      getlocal1
+      getproperty         QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandMapping"), "commandClass")
+      deleteproperty      MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#1"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), PackageInternalNs("robotlegs.bender.extensions.commandCenter.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.commandCenter.impl:CommandMapper"), StaticProtectedNs("robotlegs.bender.extensions.commandCenter.impl:CommandMapper")])
+      pop
+L28:
+      hasnext2            3, 2
+      iftrue              L12
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "createMapping")
+   method
+    refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/createMapping"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMapping")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMapping")
+      getlocal1
+      constructprop       QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMapping"), 1
+      coerce              QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMapping")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_trigger")
+      getlocal2
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.api:ICommandTrigger"), "addMapping"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "_mappings")
+      getlocal1
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#1"), PackageNamespace(""), PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), PackageInternalNs("robotlegs.bender.extensions.commandCenter.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.commandCenter.impl:CommandMapper"), StaticProtectedNs("robotlegs.bender.extensions.commandCenter.impl:CommandMapper")])
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance#0"), "locked")
+   method
+    refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/robotlegs.bender.extensions.commandCenter.impl:CommandMapper/instance/locked"
+    param QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMapping")
+    returns QName(PackageNamespace("robotlegs.bender.extensions.commandCenter.impl"), "CommandMapping")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iftrue              L6
+
+      pushnull
+      returnvalue
+
+L6:
+      getlocal1
+      callpropvoid        QName(PackageInternalNs("robotlegs.bender.extensions.commandCenter.impl"), "invalidate"), 0
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.extensions.commandCenter.impl:CommandMapper/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

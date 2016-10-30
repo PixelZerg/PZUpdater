@@ -1,0 +1,145 @@
+class
+ refid "kabam.rotmg.account.kabam.view:KabamAccountInfoView"
+ instance QName(PackageNamespace("kabam.rotmg.account.kabam.view"), "KabamAccountInfoView")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  implements Multiname("AccountInfoView", [PackageNamespace("kabam.rotmg.account.core.view")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kabam.view:KabamAccountInfoView")
+  iinit
+   refid "kabam.rotmg.account.kabam.view:KabamAccountInfoView/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "makeAccountText"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "accountText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "userName") type QName(PackageNamespace(""), "String") value Utf8("") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "isRegistered") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "makeAccountText")
+   method
+    refid "kabam.rotmg.account.kabam.view:KabamAccountInfoView/instance/kabam.rotmg.account.kabam.view:KabamAccountInfoView/makeAccountText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "FONT_SIZE")
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "accountText")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "accountText")
+      getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+      getproperty         QName(PackageNamespace(""), "CENTER")
+      callpropvoid        QName(PackageNamespace(""), "setAutoSize"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "accountText")
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      pushbyte            1
+      pushbyte            4
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "accountText")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setInfo")
+   method
+    refid "kabam.rotmg.account.kabam.view:KabamAccountInfoView/instance/setInfo"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "userName")
+
+      getlocal0
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "isRegistered")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "accountText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "KABAMACCOUNTINFOVIEW_ACCOUNTINFO")
+      pushstring          "userName"
+      getlocal1
+      newobject           1
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kabam.view:KabamAccountInfoView/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "FONT_SIZE")
+    pushbyte            18
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "FONT_SIZE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.account.kabam.view:KabamAccountInfoView"), "FONT_SIZE") slotid 1 type QName(PackageNamespace(""), "int") value Integer(18) end
+end ; class

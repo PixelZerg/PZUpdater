@@ -1,0 +1,208 @@
+class
+ refid "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"
+ instance QName(PackageNamespace("kabam.rotmg.promotions.commands"), "BuyBeginnersPackageCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand")
+  iinit
+   refid "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "model") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.model"), "BeginnersPackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openAccountPayment") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "OpenAccountPaymentSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "makePayment") flag METADATA type QName(PackageNamespace("kabam.rotmg.promotions.signals"), "MakeBeginnersPackagePaymentSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "openMoneyWindow") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "OpenMoneyWindowSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      iffalse             L9
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "openAccountSpecificPaymentScreen"), 0
+
+      jump                L11
+
+L9:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "promptUserToRegisterAndAbort"), 0
+
+L11:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "openAccountSpecificPaymentScreen")
+   method
+    refid "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/instance/kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/openAccountSpecificPaymentScreen"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      istypelate
+      dup
+      iftrue              L13
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.kabam"), "KabamAccount")
+      istypelate
+L13:
+      iffalse             L18
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openMoneyWindow")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      jump                L20
+
+L18:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "makePaymentImmediately"), 0
+
+L20:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "makePaymentImmediately")
+   method
+    refid "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/instance/kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/makePaymentImmediately"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.core"), "PaymentData")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "model")
+      callproperty        QName(PackageNamespace(""), "getOffer"), 0
+      setproperty         QName(PackageNamespace(""), "offer")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "makePayment")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "promptUserToRegisterAndAbort")
+   method
+    refid "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/instance/kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/promptUserToRegisterAndAbort"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "REGISTER_DIALOG_TEXT")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.core.view"), "RegisterPromptDialog"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "REGISTER_DIALOG_TEXT")
+    getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+    getproperty         QName(PackageNamespace(""), "BUY_BEGINNERS_PACKAGE_COMMAND_REGISTER_DIALOG")
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "REGISTER_DIALOG_TEXT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.promotions.commands:BuyBeginnersPackageCommand"), "REGISTER_DIALOG_TEXT") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("BuyBeginnersPackageCommand.registerDialog") end
+end ; class

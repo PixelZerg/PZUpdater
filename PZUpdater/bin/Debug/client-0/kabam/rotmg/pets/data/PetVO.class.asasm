@@ -1,0 +1,1021 @@
+class
+ refid "kabam.rotmg.pets.data:PetVO"
+ instance QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.data:PetVO")
+  iinit
+   refid "kabam.rotmg.pets.data:PetVO/instance/init"
+   param QName(PackageNamespace(""), "int")
+   flag HAS_OPTIONAL
+   optional Void()
+   body
+    maxstack 4
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO"), 0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO"), 0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+     constructprop       QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO"), 0
+     newarray            3
+     initproperty        QName(PackageNamespace(""), "abilityList")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "updated")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "id")
+
+     getlocal0
+     getlex              QName(PackageNamespace(""), "XML")
+     pushstring          "<data/>"
+     construct           1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "staticData")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "listenToAbilities"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "staticData") type QName(PackageNamespace(""), "XML") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "id") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "type") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "rarity") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "name") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "maxAbilityPower") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "abilityList") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skinID") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skin") type QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar") end
+  trait const QName(PackageNamespace(""), "updated") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "listenToAbilities")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/kabam.rotmg.pets.data:PetVO/listenToAbilities"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      coerce_a
+      setlocal3
+
+      jump                L23
+
+L12:
+      label
+      getlocal3
+      getlocal2
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "updated")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "onAbilityUpdate")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+L23:
+      hasnext2            3, 2
+      iftrue              L12
+
+      kill                3
+      kill                2
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "maxedAllAbilities")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/maxedAllAbilities"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      setlocal2
+
+      pushbyte            0
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      coerce_a
+      setlocal            4
+
+      jump                L25
+
+L14:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "level")
+      pushbyte            100
+      ifne                L25
+
+      inclocal_i          1
+L25:
+      hasnext2            4, 3
+      iftrue              L14
+
+      kill                4
+      kill                3
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      getproperty         QName(PackageNamespace(""), "length")
+      equals
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "onAbilityUpdate")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/kabam.rotmg.pets.data:PetVO/onAbilityUpdate"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updated")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "apply")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/apply"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "extractBasicData"), 1
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "extractAbilityData"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "extractBasicData")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/kabam.rotmg.pets.data:PetVO/extractBasicData"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         MultinameA("instanceId", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      coerce_a
+      dup
+      iffalse             L13
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         MultinameA("instanceId", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      callproperty        QName(PackageNamespace(""), "setID"), 1
+      coerce_a
+L13:
+      pop
+      getlocal1
+      getproperty         MultinameA("type", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      coerce_a
+      dup
+      iffalse             L25
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         MultinameA("type", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      callproperty        QName(PackageNamespace(""), "setType"), 1
+      coerce_a
+L25:
+      pop
+      getlocal1
+      getproperty         MultinameA("name", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      coerce_a
+      dup
+      iffalse             L37
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         MultinameA("name", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      callproperty        QName(PackageNamespace(""), "setName"), 1
+      coerce_a
+L37:
+      pop
+      getlocal1
+      getproperty         MultinameA("skin", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      coerce_a
+      dup
+      iffalse             L49
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         MultinameA("skin", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      callproperty        QName(PackageNamespace(""), "setSkin"), 1
+      coerce_a
+L49:
+      pop
+      getlocal1
+      getproperty         MultinameA("rarity", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      coerce_a
+      dup
+      iffalse             L61
+
+      pop
+      getlocal0
+      getlocal1
+      getproperty         MultinameA("rarity", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      callproperty        QName(PackageNamespace(""), "setRarity"), 1
+      coerce_a
+L61:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "extractAbilityData")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/extractAbilityData"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_u
+      setlocal3
+
+      pushbyte            0
+      convert_u
+      setlocal2
+
+      jump                L64
+
+L19:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "AbilityVO")
+      setlocal            4
+
+      getlocal1
+      getproperty         Multiname("Abilities", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         Multiname("Ability", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         MultinameA("type", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      convert_i
+      setlocal            5
+
+      getlocal            4
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "getPetDataDisplayId")
+      getlocal            5
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "getPetDataDisplayId"), 1
+      setproperty         QName(PackageNamespace(""), "name")
+
+      getlocal            4
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "getPetDataDescription")
+      getlocal            5
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "getPetDataDescription"), 1
+      setproperty         QName(PackageNamespace(""), "description")
+
+      getlocal            4
+      getlocal1
+      getproperty         Multiname("Abilities", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         Multiname("Ability", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         MultinameA("power", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      setproperty         QName(PackageNamespace(""), "level")
+
+      getlocal            4
+      getlocal1
+      getproperty         Multiname("Abilities", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         Multiname("Ability", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         MultinameA("points", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      setproperty         QName(PackageNamespace(""), "points")
+
+      getlocal2
+      increment
+      convert_u
+      setlocal2
+
+L64:
+      getlocal2
+      getlocal3
+      iflt                L19
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getFamily")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getFamily"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "staticData")
+      getproperty         Multiname("Family", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setID")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/setID"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "id")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getID")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getID"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "id")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setType")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/setType"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "type")
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getproperty         QName(PackageNamespace(""), "xmlLibrary_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "type")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "staticData")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getType")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getType"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "type")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setRarity")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/setRarity"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "selectByOrdinal"), 1
+      getproperty         QName(PackageNamespace(""), "value")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "rarity")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "unlockAbilitiesBasedOnPetRarity"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updated")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "unlockAbilitiesBasedOnPetRarity")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/kabam.rotmg.pets.data:PetVO/unlockAbilitiesBasedOnPetRarity"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      pushtrue
+      callpropvoid        Multiname("setUnlocked", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")]), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getproperty         QName(PackageNamespace(""), "UNCOMMON")
+      getproperty         QName(PackageNamespace(""), "ordinal")
+      greaterequals
+      callpropvoid        Multiname("setUnlocked", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")]), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityList")
+      pushbyte            2
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getlocal1
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getproperty         QName(PackageNamespace(""), "LEGENDARY")
+      getproperty         QName(PackageNamespace(""), "ordinal")
+      greaterequals
+      callpropvoid        Multiname("setUnlocked", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")]), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getRarity")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getRarity"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "rarity")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setName")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/setName"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "name")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updated")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getName")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getName"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "name")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setMaxAbilityPower")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/setMaxAbilityPower"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "maxAbilityPower")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updated")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getMaxAbilityPower")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getMaxAbilityPower"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "maxAbilityPower")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSkin")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/setSkin"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skinID")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updated")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSkinID")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getSkinID"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skinID")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSkin")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getSkin"
+    returns QName(PackageNamespace("flash.display"), "Bitmap")
+    body
+     maxstack 7
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "makeSkin"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skin")
+      pushbyte            0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "STAND")
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "imageFromAngle"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "rarity")
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetRarityEnum")
+      getproperty         QName(PackageNamespace(""), "DIVINE")
+      getproperty         QName(PackageNamespace(""), "value")
+      equals
+      iffalse             L22
+
+      pushbyte            40
+      jump                L23
+
+L22:
+      pushbyte            80
+L23:
+      convert_i
+      setlocal2
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "TextureRedrawer")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "image_")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "mask_")
+      getlocal2
+      pushtrue
+      pushbyte            0
+      dup
+      callproperty        QName(PackageNamespace(""), "resize"), 6
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util.redrawers"), "GlowRedrawer")
+      getlocal3
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "outlineGlow"), 2
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+      getlocal3
+      constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getSkinMaskedImage")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/getSkinMaskedImage"
+    returns QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "makeSkin"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skin")
+      iffalse             L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skin")
+      pushbyte            0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChar")
+      getproperty         QName(PackageNamespace(""), "STAND")
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "imageFromAngle"), 3
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+      jump                L18
+
+L16:
+      pushnull
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.util"), "MaskedImage")
+L18:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "makeSkin")
+   method
+    refid "kabam.rotmg.pets.data:PetVO/instance/kabam.rotmg.pets.data:PetVO/makeSkin"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skinID")
+      callproperty        QName(PackageNamespace(""), "getIdFromType"), 1
+      callproperty        QName(PackageNamespace(""), "getXMLfromId"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal1
+
+      getlocal1
+      getproperty         Multiname("AnimatedTexture", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         Multiname("File", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      coerce_s
+      setlocal2
+
+      getlocal1
+      getproperty         Multiname("AnimatedTexture", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      getproperty         Multiname("Index", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+      convert_i
+      setlocal3
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "AnimatedChars")
+      getlocal2
+      getlocal3
+      callproperty        QName(PackageNamespace(""), "getAnimatedChar"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "skin")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.data:PetVO/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "getPetDataDescription") flag FINAL dispid 3
+  method
+   refid "kabam.rotmg.pets.data:PetVO/class/kabam.rotmg.pets.data:PetVO/getPetDataDescription"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getPetDataXMLByType"), 1
+     getproperty         Multiname("Description", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "getPetDataDisplayId") flag FINAL dispid 4
+  method
+   refid "kabam.rotmg.pets.data:PetVO/class/kabam.rotmg.pets.data:PetVO/getPetDataDisplayId"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("com.company.assembleegameclient.objects"), "ObjectLibrary")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getPetDataXMLByType"), 1
+     getproperty         Multiname("DisplayId", [PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#1"), PackageNamespace("kabam.rotmg.pets.data"), PackageInternalNs("kabam.rotmg.pets.data"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.pets.data:PetVO"), StaticProtectedNs("kabam.rotmg.pets.data:PetVO")])
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "clone") flag FINAL dispid 5
+  method
+   refid "kabam.rotmg.pets.data:PetVO/class/clone"
+   param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+   returns QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.pets.data:PetVO#0"), "id")
+     construct           1
+     coerce              QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+     setlocal2
+
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,119 @@
+class
+ refid "org.swiftsuspenders.mapping:MappingEvent"
+ instance QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.mapping:MappingEvent")
+  iinit
+   refid "org.swiftsuspenders.mapping:MappingEvent/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Class")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace("org.swiftsuspenders.mapping"), "InjectionMapping")
+   body
+    maxstack 2
+    localcount 5
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PackageNamespace(""), "mappedType")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PackageNamespace(""), "mappedName")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "mapping")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "mappedType") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(PackageNamespace(""), "mappedName") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "mapping") type QName(PackageNamespace("org.swiftsuspenders.mapping"), "InjectionMapping") end
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    refid "org.swiftsuspenders.mapping:MappingEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getlex              QName(PackageNamespace(""), "type")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mappedType")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mappedName")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "mapping")
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent"), 4
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.mapping:MappingEvent/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "PRE_MAPPING_CREATE")
+    pushstring          "preMappingCreate"
+    initproperty        QName(PackageNamespace(""), "PRE_MAPPING_CREATE")
+
+    findproperty        QName(PackageNamespace(""), "POST_MAPPING_CREATE")
+    pushstring          "postMappingCreate"
+    initproperty        QName(PackageNamespace(""), "POST_MAPPING_CREATE")
+
+    findproperty        QName(PackageNamespace(""), "PRE_MAPPING_CHANGE")
+    pushstring          "preMappingChange"
+    initproperty        QName(PackageNamespace(""), "PRE_MAPPING_CHANGE")
+
+    findproperty        QName(PackageNamespace(""), "POST_MAPPING_CHANGE")
+    pushstring          "postMappingChange"
+    initproperty        QName(PackageNamespace(""), "POST_MAPPING_CHANGE")
+
+    findproperty        QName(PackageNamespace(""), "POST_MAPPING_REMOVE")
+    pushstring          "postMappingRemove"
+    initproperty        QName(PackageNamespace(""), "POST_MAPPING_REMOVE")
+
+    findproperty        QName(PackageNamespace(""), "MAPPING_OVERRIDE")
+    pushstring          "mappingOverride"
+    initproperty        QName(PackageNamespace(""), "MAPPING_OVERRIDE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "PRE_MAPPING_CREATE") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("preMappingCreate") end
+ trait const QName(PackageNamespace(""), "POST_MAPPING_CREATE") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("postMappingCreate") end
+ trait const QName(PackageNamespace(""), "PRE_MAPPING_CHANGE") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("preMappingChange") end
+ trait const QName(PackageNamespace(""), "POST_MAPPING_CHANGE") slotid 4 type QName(PackageNamespace(""), "String") value Utf8("postMappingChange") end
+ trait const QName(PackageNamespace(""), "POST_MAPPING_REMOVE") slotid 5 type QName(PackageNamespace(""), "String") value Utf8("postMappingRemove") end
+ trait const QName(PackageNamespace(""), "MAPPING_OVERRIDE") slotid 6 type QName(PackageNamespace(""), "String") value Utf8("mappingOverride") end
+end ; class

@@ -1,0 +1,140 @@
+class
+ refid "kabam.lib.tasks:TaskMonitor"
+ instance QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.tasks:TaskMonitor")
+  iinit
+   refid "kabam.lib.tasks:TaskMonitor/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+     getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), PackageNamespace("__AS3__.vec"), PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance/init"), PackageNamespace(""), PackageNamespace("kabam.lib.tasks"), PackageInternalNs("kabam.lib.tasks"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.lib.tasks:TaskMonitor"), StaticProtectedNs("kabam.lib.tasks:TaskMonitor")])
+     getlex              QName(PackageNamespace("kabam.lib.tasks"), "Task")
+     applytype           1
+     pushbyte            0
+     construct           1
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "tasks")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "tasks") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.lib.tasks"), "Task")>) end
+  trait method QName(PackageNamespace(""), "add")
+   method
+    refid "kabam.lib.tasks:TaskMonitor/instance/add"
+    param QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "tasks")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      getlocal1
+      getproperty         QName(Namespace("kabam.lib.tasks:Task"), "finished")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "onTaskFinished")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "has")
+   method
+    refid "kabam.lib.tasks:TaskMonitor/instance/has"
+    param QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "tasks")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "onTaskFinished")
+   method
+    refid "kabam.lib.tasks:TaskMonitor/instance/kabam.lib.tasks:TaskMonitor/instance/onTaskFinished"
+    param QName(PackageNamespace("kabam.lib.tasks"), "Task")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Utf8("")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "tasks")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:TaskMonitor/instance"), "tasks")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.tasks:TaskMonitor/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

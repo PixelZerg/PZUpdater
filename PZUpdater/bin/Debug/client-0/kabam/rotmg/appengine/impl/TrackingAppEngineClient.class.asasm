@@ -1,0 +1,254 @@
+class
+ refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient"
+ instance QName(PackageNamespace("kabam.rotmg.appengine.impl"), "TrackingAppEngineClient")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("AppEngineClient", [PackageNamespace("kabam.rotmg.appengine.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.appengine.impl:TrackingAppEngineClient")
+  iinit
+   refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "track") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackEventSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "wrapped") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.impl"), "SimpleAppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "target") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "time") type QName(PackageNamespace(""), "int") end
+  trait getter QName(PackageNamespace(""), "complete")
+   method
+    refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/complete/getter"
+    returns QName(PackageNamespace("org.osflash.signals"), "OnceSignal")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getproperty         QName(PackageNamespace(""), "complete")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setDataFormat")
+   method
+    refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/setDataFormat"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setDataFormat"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setSendEncrypted")
+   method
+    refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/setSendEncrypted"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setSendEncrypted"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setMaxRetries")
+   method
+    refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/setMaxRetries"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setMaxRetries"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "sendRequest")
+   method
+    refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/sendRequest"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "target")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "time")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getproperty         QName(PackageNamespace(""), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "trackResponse")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "wrapped")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "trackResponse")
+   method
+    refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/trackResponse"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      setlocal3
+
+      getlocal3
+      pushstring          "AppEngineResponseTime"
+      setproperty         QName(PackageNamespace(""), "category")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "target")
+      setproperty         QName(PackageNamespace(""), "action")
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance"), "time")
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      subtract
+      setproperty         QName(PackageNamespace(""), "value")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "track")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "requestInProgress")
+   method
+    refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/instance/requestInProgress"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.appengine.impl:TrackingAppEngineClient/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

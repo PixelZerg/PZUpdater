@@ -1,0 +1,263 @@
+class
+ refid "kabam.rotmg.stage3D:Stage3DConfig"
+ instance QName(PackageNamespace("kabam.rotmg.stage3D"), "Stage3DConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.stage3D:Stage3DConfig")
+  iinit
+   refid "kabam.rotmg.stage3D:Stage3DConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "stageProxy") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "renderer") type QName(PackageNamespace("kabam.rotmg.stage3D"), "Renderer") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "stage3D") type QName(PackageNamespace("com.company.assembleegameclient.util"), "Stage3DProxy") end
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.stage3D:Stage3DConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "mapSingletons"), 0
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stageProxy")
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "getStage3Ds"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "stage3D")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "stage3D")
+      getlex              QName(PackageNamespace("flash.events"), "ErrorEvent")
+      getproperty         QName(PackageNamespace(""), "ERROR")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "clearGpuRenderEvent")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "stage3D")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "CONTEXT3D_CREATE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "onContextCreate")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "stage3D")
+      callpropvoid        QName(PackageNamespace(""), "requestContext3D"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "mapSingletons")
+   method
+    refid "kabam.rotmg.stage3D:Stage3DConfig/instance/kabam.rotmg.stage3D:Stage3DConfig/instance/mapSingletons"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Render3D")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "TextureFactory")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "IndexBufferFactory")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "VertexBufferFactory")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "onContextCreate")
+   method
+    refid "kabam.rotmg.stage3D:Stage3DConfig/instance/kabam.rotmg.stage3D:Stage3DConfig/instance/onContextCreate"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "stage3D")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "CONTEXT3D_CREATE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "onContextCreate")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.stage3D:Stage3DConfig/instance"), "stage3D")
+      callproperty        QName(PackageNamespace(""), "getContext3D"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Context3DProxy")
+      setlocal2
+
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      getproperty         QName(PackageNamespace(""), "driverInfo")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toLowerCase"), 0
+      pushstring          "software"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte            -1
+      ifeq                L24
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      callpropvoid        QName(PackageNamespace(""), "clearGpuRender"), 0
+
+L24:
+      getlocal2
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      getlex              QName(PackageNamespace(""), "HEIGHT")
+      pushbyte            2
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "configureBackBuffer"), 4
+
+      getlocal2
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DBlendFactor")
+      getproperty         QName(PackageNamespace(""), "SOURCE_ALPHA")
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DBlendFactor")
+      getproperty         QName(PackageNamespace(""), "ONE_MINUS_SOURCE_ALPHA")
+      callpropvoid        QName(PackageNamespace(""), "setBlendFactors"), 2
+
+      getlocal2
+      pushfalse
+      getlex              QName(PackageNamespace("flash.display3D"), "Context3DCompareMode")
+      getproperty         QName(PackageNamespace(""), "LESS_EQUAL")
+      callpropvoid        QName(PackageNamespace(""), "setDepthTest"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.proxies"), "Context3DProxy")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "toValue"), 1
+
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D.graphic3D"), "Graphic3DHelper")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.stage3D"), "Renderer")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      initproperty        QName(PackageNamespace(""), "renderer")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "renderer")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "init"), 1
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.engine3d"), "Model3D")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "GetContext3D"), 0
+      callpropvoid        QName(PackageNamespace(""), "Create3dBuffer"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.stage3D:Stage3DConfig/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "WIDTH")
+    pushshort           600
+    initproperty        QName(PackageNamespace(""), "WIDTH")
+
+    findproperty        QName(PackageNamespace(""), "HALF_WIDTH")
+    getlex              QName(PackageNamespace(""), "WIDTH")
+    pushbyte            2
+    divide
+    initproperty        QName(PackageNamespace(""), "HALF_WIDTH")
+
+    findproperty        QName(PackageNamespace(""), "HEIGHT")
+    pushshort           600
+    initproperty        QName(PackageNamespace(""), "HEIGHT")
+
+    findproperty        QName(PackageNamespace(""), "HALF_HEIGHT")
+    getlex              QName(PackageNamespace(""), "HEIGHT")
+    pushbyte            2
+    divide
+    initproperty        QName(PackageNamespace(""), "HALF_HEIGHT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") slotid 1 type QName(PackageNamespace(""), "int") value Integer(600) end
+ trait const QName(PackageNamespace(""), "HALF_WIDTH") slotid 2 type QName(PackageNamespace(""), "int") value Double(300) end
+ trait const QName(PackageNamespace(""), "HEIGHT") slotid 3 type QName(PackageNamespace(""), "int") value Integer(600) end
+ trait const QName(PackageNamespace(""), "HALF_HEIGHT") slotid 4 type QName(PackageNamespace(""), "int") value Double(300) end
+end ; class

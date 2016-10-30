@@ -1,0 +1,275 @@
+class
+ refid "kabam.rotmg.protip.model:EmbeddedProTipModel"
+ instance QName(PackageNamespace("kabam.rotmg.protip.model"), "EmbeddedProTipModel")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IProTipModel", [PackageNamespace("kabam.rotmg.protip.model")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel")
+  iinit
+   refid "kabam.rotmg.protip.model:EmbeddedProTipModel/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     pushbyte            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "index")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "makeTipsVector"), 0
+
+     getlocal0
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "tips")
+     getproperty         QName(PackageNamespace(""), "length")
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "count")
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "makeRandomizedIndexVector"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "tips") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "indices") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "index") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "count") type QName(PackageNamespace(""), "int") end
+  trait method QName(PackageNamespace(""), "getTip")
+   method
+    refid "kabam.rotmg.protip.model:EmbeddedProTipModel/instance/getTip"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "indices")
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "index")
+      dup
+      increment_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "index")
+
+      kill                3
+      kill                2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "count")
+      modulo
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel")])
+      convert_i
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "tips")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel")])
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "makeTipsVector")
+   method
+    refid "kabam.rotmg.protip.model:EmbeddedProTipModel/instance/kabam.rotmg.protip.model:EmbeddedProTipModel/instance/makeTipsVector"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      findpropstrict      QName(PackageNamespace(""), "protipsXML")
+      constructprop       QName(PackageNamespace(""), "protipsXML"), 0
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal1
+
+      getlocal0
+      findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+      getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel"), PackageNamespace("__AS3__.vec")])
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      pushbyte            0
+      construct           1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "tips")
+
+      pushbyte            0
+      setlocal3
+
+      getlocal1
+      getproperty         Multiname("Protip", [PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel")])
+      coerce_a
+      setlocal            4
+
+      jump                L37
+
+L26:
+      label
+      getlocal            4
+      getlocal3
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "tips")
+      getlocal2
+      callproperty        Multiname("toString", [PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel")]), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L37:
+      hasnext2            4, 3
+      iftrue              L26
+
+      kill                4
+      kill                3
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "tips")
+      getproperty         QName(PackageNamespace(""), "length")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "count")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "makeRandomizedIndexVector")
+   method
+    refid "kabam.rotmg.protip.model:EmbeddedProTipModel/instance/kabam.rotmg.protip.model:EmbeddedProTipModel/instance/makeRandomizedIndexVector"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+      getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel"), PackageNamespace("__AS3__.vec")])
+      getlex              QName(PackageNamespace(""), "int")
+      applytype           1
+      pushbyte            0
+      construct           1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "int")>)
+      setlocal1
+
+      pushbyte            0
+      setlocal2
+
+      jump                L18
+
+L13:
+      label
+      getlocal1
+      getlocal2
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          2
+L18:
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "count")
+      iflt                L13
+
+      getlocal0
+      findpropstrict      Multiname("Vector", [PackageNamespace("__AS3__.vec")])
+      getproperty         Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel"), PackageNamespace("__AS3__.vec")])
+      getlex              QName(PackageNamespace(""), "int")
+      applytype           1
+      pushbyte            0
+      construct           1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "indices")
+
+      jump                L49
+
+L31:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "indices")
+      getlocal1
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal2
+      dup
+      decrement_i
+      setlocal2
+
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      pushbyte            1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), PackageNamespace(""), PackageNamespace("kabam.rotmg.protip.model"), PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#1"), PackageInternalNs("kabam.rotmg.protip.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.protip.model:EmbeddedProTipModel"), StaticProtectedNs("kabam.rotmg.protip.model:EmbeddedProTipModel")])
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L49:
+      getlocal2
+      pushbyte            0
+      ifgt                L31
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.protip.model:EmbeddedProTipModel/instance#0"), "indices")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "fixed")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.protip.model:EmbeddedProTipModel/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "protipsXML")
+    getlex              QName(PackageNamespace("kabam.rotmg.protip.model"), "EmbeddedProTipModel_protipsXML")
+    setproperty         QName(PackageNamespace(""), "protipsXML")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PackageNamespace(""), "protipsXML") slotid 1 type QName(PackageNamespace(""), "Class") end
+end ; class

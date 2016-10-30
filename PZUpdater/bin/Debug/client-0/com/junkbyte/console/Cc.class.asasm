@@ -1,0 +1,2184 @@
+class
+ refid "com.junkbyte.console:Cc"
+ instance QName(PackageNamespace("com.junkbyte.console"), "Cc")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.junkbyte.console:Cc")
+  iinit
+   refid "com.junkbyte.console:Cc/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.junkbyte.console:Cc/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console") slotid 1 type QName(PackageNamespace("com.junkbyte.console"), "Console") end
+ trait slot QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_config") slotid 2 type QName(PackageNamespace("com.junkbyte.console"), "ConsoleConfig") end
+ trait getter QName(PackageNamespace(""), "config") flag FINAL dispid 3
+  method
+   refid "com.junkbyte.console:Cc/class/config/getter"
+   returns QName(PackageNamespace("com.junkbyte.console"), "ConsoleConfig")
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_config")
+     iftrue              L8
+
+     findproperty        QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_config")
+     findpropstrict      QName(PackageNamespace("com.junkbyte.console"), "ConsoleConfig")
+     constructprop       QName(PackageNamespace("com.junkbyte.console"), "ConsoleConfig"), 0
+     setproperty         QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_config")
+
+L8:
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_config")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "start") flag FINAL dispid 4
+  method
+   refid "com.junkbyte.console:Cc/class/start"
+   param QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Utf8("")
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L17
+
+     getlocal1
+     convert_b
+     dup
+     iffalse             L12
+
+     pop
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "parent")
+     not
+L12:
+     iffalse             L16
+
+     getlocal1
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L16:
+     jump                L28
+
+L17:
+     findproperty        QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     findpropstrict      QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getlocal2
+     getlex              QName(PackageNamespace(""), "config")
+     constructprop       QName(PackageNamespace("com.junkbyte.console"), "Console"), 2
+     setproperty         QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+
+     getlocal1
+     iffalse             L28
+
+     getlocal1
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L28:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "startOnStage") flag FINAL dispid 5
+  method
+   refid "com.junkbyte.console:Cc/class/startOnStage"
+   param QName(PackageNamespace("flash.display"), "DisplayObject")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Utf8("")
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L29
+
+     getlocal1
+     coerce_a
+     convert_b
+     dup
+     iffalse             L14
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "stage")
+     coerce_a
+     convert_b
+L14:
+     dup
+     iffalse             L23
+
+     pop
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "parent")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "stage")
+     equals
+     not
+L23:
+     iffalse             L28
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "stage")
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L28:
+     jump                L57
+
+L29:
+     getlocal1
+     convert_b
+     dup
+     iffalse             L37
+
+     pop
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "stage")
+     convert_b
+L37:
+     iffalse             L44
+
+     findpropstrict      QName(PackageNamespace(""), "start")
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "stage")
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "start"), 2
+
+     jump                L57
+
+L44:
+     findproperty        QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     findpropstrict      QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getlocal2
+     getlex              QName(PackageNamespace(""), "config")
+     constructprop       QName(PackageNamespace("com.junkbyte.console"), "Console"), 2
+     setproperty         QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+
+     getlocal1
+     iffalse             L57
+
+     getlocal1
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "addedToStageHandle")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+L57:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "add") flag FINAL dispid 6
+  method
+   refid "com.junkbyte.console:Cc/class/add"
+   param null
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(2)
+   optional False()
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "add"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "ch") flag FINAL dispid 7
+  method
+   refid "com.junkbyte.console:Cc/class/ch"
+   param null
+   param null
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(2)
+   optional False()
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "ch"), 4
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "log") flag FINAL dispid 8
+  method
+   refid "com.junkbyte.console:Cc/class/log"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "log")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "info") flag FINAL dispid 9
+  method
+   refid "com.junkbyte.console:Cc/class/info"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "info")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "debug") flag FINAL dispid 10
+  method
+   refid "com.junkbyte.console:Cc/class/debug"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "debug")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "warn") flag FINAL dispid 11
+  method
+   refid "com.junkbyte.console:Cc/class/warn"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "warn")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "error") flag FINAL dispid 12
+  method
+   refid "com.junkbyte.console:Cc/class/error"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "error")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "fatal") flag FINAL dispid 13
+  method
+   refid "com.junkbyte.console:Cc/class/fatal"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "fatal")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "logch") flag FINAL dispid 14
+  method
+   refid "com.junkbyte.console:Cc/class/logch"
+   param null
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlex              QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getproperty         QName(PackageNamespace(""), "LOG")
+     callpropvoid        QName(PackageNamespace(""), "addCh"), 3
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "infoch") flag FINAL dispid 15
+  method
+   refid "com.junkbyte.console:Cc/class/infoch"
+   param null
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlex              QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getproperty         QName(PackageNamespace(""), "INFO")
+     callpropvoid        QName(PackageNamespace(""), "addCh"), 3
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "debugch") flag FINAL dispid 16
+  method
+   refid "com.junkbyte.console:Cc/class/debugch"
+   param null
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlex              QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getproperty         QName(PackageNamespace(""), "DEBUG")
+     callpropvoid        QName(PackageNamespace(""), "addCh"), 3
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "warnch") flag FINAL dispid 17
+  method
+   refid "com.junkbyte.console:Cc/class/warnch"
+   param null
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlex              QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getproperty         QName(PackageNamespace(""), "WARN")
+     callpropvoid        QName(PackageNamespace(""), "addCh"), 3
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "errorch") flag FINAL dispid 18
+  method
+   refid "com.junkbyte.console:Cc/class/errorch"
+   param null
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlex              QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getproperty         QName(PackageNamespace(""), "ERROR")
+     callpropvoid        QName(PackageNamespace(""), "addCh"), 3
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "fatalch") flag FINAL dispid 19
+  method
+   refid "com.junkbyte.console:Cc/class/fatalch"
+   param null
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlex              QName(PackageNamespace("com.junkbyte.console"), "Console")
+     getproperty         QName(PackageNamespace(""), "FATAL")
+     callpropvoid        QName(PackageNamespace(""), "addCh"), 3
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "stack") flag FINAL dispid 20
+  method
+   refid "com.junkbyte.console:Cc/class/stack"
+   param null
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(-1)
+   optional Integer(5)
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "stack"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "stackch") flag FINAL dispid 21
+  method
+   refid "com.junkbyte.console:Cc/class/stackch"
+   param null
+   param null
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(-1)
+   optional Integer(5)
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "stackch"), 4
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "inspect") flag FINAL dispid 22
+  method
+   refid "com.junkbyte.console:Cc/class/inspect"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional True()
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L8
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "inspect"), 2
+
+L8:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "inspectch") flag FINAL dispid 23
+  method
+   refid "com.junkbyte.console:Cc/class/inspectch"
+   param null
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional True()
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "inspectch"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "explode") flag FINAL dispid 24
+  method
+   refid "com.junkbyte.console:Cc/class/explode"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(3)
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L8
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "explode"), 2
+
+L8:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "explodech") flag FINAL dispid 25
+  method
+   refid "com.junkbyte.console:Cc/class/explodech"
+   param null
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(3)
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "explodech"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "addHTML") flag FINAL dispid 26
+  method
+   refid "com.junkbyte.console:Cc/class/addHTML"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "addHTML")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "addHTMLch") flag FINAL dispid 27
+  method
+   refid "com.junkbyte.console:Cc/class/addHTMLch"
+   param null
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L14
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "addHTMLch")
+     pushnull
+     findpropstrict      QName(PackageNamespace(""), "Array")
+     getlocal1
+     getlocal2
+     constructprop       QName(PackageNamespace(""), "Array"), 2
+     getlocal3
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L14:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "map") flag FINAL dispid 28
+  method
+   refid "com.junkbyte.console:Cc/class/map"
+   param QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   param QName(PackageNamespace(""), "uint")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(0)
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L8
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "map"), 2
+
+L8:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "mapch") flag FINAL dispid 29
+  method
+   refid "com.junkbyte.console:Cc/class/mapch"
+   param null
+   param QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   param QName(PackageNamespace(""), "uint")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(0)
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "mapch"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "clear") flag FINAL dispid 30
+  method
+   refid "com.junkbyte.console:Cc/class/clear"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Null()
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "clear"), 1
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "bindKey") flag FINAL dispid 31
+  method
+   refid "com.junkbyte.console:Cc/class/bindKey"
+   param QName(PackageNamespace("com.junkbyte.console"), "KeyBind")
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace(""), "Array")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Null()
+   optional Null()
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "bindKey"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "addMenu") flag FINAL dispid 32
+  method
+   refid "com.junkbyte.console:Cc/class/addMenu"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace(""), "Array")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Null()
+   optional Null()
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            4
+     callpropvoid        QName(PackageNamespace(""), "addMenu"), 4
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "listenUncaughtErrors") flag FINAL dispid 33
+  method
+   refid "com.junkbyte.console:Cc/class/listenUncaughtErrors"
+   param QName(PackageNamespace("flash.display"), "LoaderInfo")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "listenUncaughtErrors"), 1
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "store") flag FINAL dispid 34
+  method
+   refid "com.junkbyte.console:Cc/class/store"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional False()
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "store"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "addSlashCommand") flag FINAL dispid 35
+  method
+   refid "com.junkbyte.console:Cc/class/addSlashCommand"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Function")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Utf8("")
+   optional True()
+   optional Utf8(";")
+   body
+    maxstack 6
+    localcount 6
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L11
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            4
+     getlocal            5
+     callpropvoid        QName(PackageNamespace(""), "addSlashCommand"), 5
+
+L11:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "watch") flag FINAL dispid 36
+  method
+   refid "com.junkbyte.console:Cc/class/watch"
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   optional Null()
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "watch"), 2
+     returnvalue
+
+L9:
+     pushnull
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "unwatch") flag FINAL dispid 37
+  method
+   refid "com.junkbyte.console:Cc/class/unwatch"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     callpropvoid        QName(PackageNamespace(""), "unwatch"), 1
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "addGraph") flag FINAL dispid 38
+  method
+   refid "com.junkbyte.console:Cc/class/addGraph"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace("flash.geom"), "Rectangle")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Integer(-1)
+   optional Null()
+   optional Null()
+   optional False()
+   body
+    maxstack 8
+    localcount 8
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L13
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            4
+     getlocal            5
+     getlocal            6
+     getlocal            7
+     callpropvoid        QName(PackageNamespace(""), "addGraph"), 7
+
+L13:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "fixGraphRange") flag FINAL dispid 39
+  method
+   refid "com.junkbyte.console:Cc/class/fixGraphRange"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Double(nan)
+   optional Double(nan)
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "fixGraphRange"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "removeGraph") flag FINAL dispid 40
+  method
+   refid "com.junkbyte.console:Cc/class/removeGraph"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Object")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional Null()
+   optional Null()
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "removeGraph"), 3
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setViewingChannels") flag FINAL dispid 41
+  method
+   refid "com.junkbyte.console:Cc/class/setViewingChannels"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "setViewingChannels")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setIgnoredChannels") flag FINAL dispid 42
+  method
+   refid "com.junkbyte.console:Cc/class/setIgnoredChannels"
+   returns QName(PackageNamespace(""), "void")
+   flag NEED_REST
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L9
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "setIgnoredChannels")
+     pushnull
+     getlocal1
+     callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L9:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "minimumPriority") flag FINAL dispid 43
+  method
+   refid "com.junkbyte.console:Cc/class/minimumPriority/setter"
+   param QName(PackageNamespace(""), "uint")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "minimumPriority")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "width") flag FINAL dispid 44
+  method
+   refid "com.junkbyte.console:Cc/class/width/getter"
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "width")
+     returnvalue
+
+L7:
+     pushbyte            0
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "width") flag FINAL dispid 45
+  method
+   refid "com.junkbyte.console:Cc/class/width/setter"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "width")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "height") flag FINAL dispid 46
+  method
+   refid "com.junkbyte.console:Cc/class/height/getter"
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "height")
+     returnvalue
+
+L7:
+     pushbyte            0
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "height") flag FINAL dispid 47
+  method
+   refid "com.junkbyte.console:Cc/class/height/setter"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "height")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "x") flag FINAL dispid 48
+  method
+   refid "com.junkbyte.console:Cc/class/x/getter"
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "x")
+     returnvalue
+
+L7:
+     pushbyte            0
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "x") flag FINAL dispid 49
+  method
+   refid "com.junkbyte.console:Cc/class/x/setter"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "x")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "y") flag FINAL dispid 50
+  method
+   refid "com.junkbyte.console:Cc/class/y/getter"
+   returns QName(PackageNamespace(""), "Number")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "y")
+     returnvalue
+
+L7:
+     pushbyte            0
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "y") flag FINAL dispid 51
+  method
+   refid "com.junkbyte.console:Cc/class/y/setter"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "y")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "visible") flag FINAL dispid 52
+  method
+   refid "com.junkbyte.console:Cc/class/visible/getter"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "visible")
+     returnvalue
+
+L7:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "visible") flag FINAL dispid 53
+  method
+   refid "com.junkbyte.console:Cc/class/visible/setter"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "visible")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "fpsMonitor") flag FINAL dispid 54
+  method
+   refid "com.junkbyte.console:Cc/class/fpsMonitor/getter"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "fpsMonitor")
+     returnvalue
+
+L7:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "fpsMonitor") flag FINAL dispid 55
+  method
+   refid "com.junkbyte.console:Cc/class/fpsMonitor/setter"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "fpsMonitor")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "memoryMonitor") flag FINAL dispid 56
+  method
+   refid "com.junkbyte.console:Cc/class/memoryMonitor/getter"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "memoryMonitor")
+     returnvalue
+
+L7:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "memoryMonitor") flag FINAL dispid 57
+  method
+   refid "com.junkbyte.console:Cc/class/memoryMonitor/setter"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "memoryMonitor")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "commandLine") flag FINAL dispid 58
+  method
+   refid "com.junkbyte.console:Cc/class/commandLine/getter"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "commandLine")
+     returnvalue
+
+L7:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "commandLine") flag FINAL dispid 59
+  method
+   refid "com.junkbyte.console:Cc/class/commandLine/setter"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "commandLine")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "displayRoller") flag FINAL dispid 60
+  method
+   refid "com.junkbyte.console:Cc/class/displayRoller/getter"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "displayRoller")
+     returnvalue
+
+L7:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "displayRoller") flag FINAL dispid 61
+  method
+   refid "com.junkbyte.console:Cc/class/displayRoller/setter"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "displayRoller")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "setRollerCaptureKey") flag FINAL dispid 62
+  method
+   refid "com.junkbyte.console:Cc/class/setRollerCaptureKey"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   flag HAS_OPTIONAL
+   optional False()
+   optional False()
+   optional False()
+   body
+    maxstack 5
+    localcount 5
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L10
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal            4
+     getlocal2
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "setRollerCaptureKey"), 4
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "remoting") flag FINAL dispid 63
+  method
+   refid "com.junkbyte.console:Cc/class/remoting/getter"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "remoting")
+     returnvalue
+
+L7:
+     pushfalse
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait setter QName(PackageNamespace(""), "remoting") flag FINAL dispid 64
+  method
+   refid "com.junkbyte.console:Cc/class/remoting/setter"
+   param QName(PackageNamespace(""), "Boolean")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L7
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     setproperty         QName(PackageNamespace(""), "remoting")
+
+L7:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "remotingSocket") flag FINAL dispid 65
+  method
+   refid "com.junkbyte.console:Cc/class/remotingSocket"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L8
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     getlocal2
+     callpropvoid        QName(PackageNamespace(""), "remotingSocket"), 2
+
+L8:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "remove") flag FINAL dispid 66
+  method
+   refid "com.junkbyte.console:Cc/class/remove"
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L14
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "parent")
+     iffalse             L11
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "parent")
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L11:
+     findproperty        QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     pushnull
+     setproperty         QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+
+L14:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getAllLog") flag FINAL dispid 67
+  method
+   refid "com.junkbyte.console:Cc/class/getAllLog"
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   flag HAS_OPTIONAL
+   optional Utf8("\r\n")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     iffalse             L8
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getAllLog"), 1
+     returnvalue
+
+L8:
+     pushstring          ""
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait getter QName(PackageNamespace(""), "instance") flag FINAL dispid 68
+  method
+   refid "com.junkbyte.console:Cc/class/instance/getter"
+   returns QName(PackageNamespace("com.junkbyte.console"), "Console")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "addedToStageHandle") flag FINAL dispid 69
+  method
+   refid "com.junkbyte.console:Cc/class/com.junkbyte.console:Cc/class/addedToStageHandle"
+   param QName(PackageNamespace("flash.events"), "Event")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "currentTarget")
+     getlex              QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+     astypelate
+     coerce              QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+     setlocal2
+
+     getlocal2
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "addedToStageHandle")
+     callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     convert_b
+     dup
+     iffalse             L22
+
+     pop
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     getproperty         QName(PackageNamespace(""), "parent")
+     pushnull
+     equals
+L22:
+     iffalse             L27
+
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "stage")
+     getlex              QName(PrivateNamespace(null, "com.junkbyte.console:Cc/class"), "_console")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L27:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

@@ -1,0 +1,220 @@
+class
+ refid "kabam.lib.signals:DeferredQueueSignal"
+ instance QName(PackageNamespace("kabam.lib.signals"), "DeferredQueueSignal")
+  extends QName(PackageNamespace("org.osflash.signals"), "Signal")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.signals:DeferredQueueSignal")
+  iinit
+   refid "kabam.lib.signals:DeferredQueueSignal/instance/init"
+   flag NEED_REST
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     newarray            0
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "log") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait method QName(PackageNamespace(""), "dispatch") flag OVERRIDE
+   method
+    refid "kabam.lib.signals:DeferredQueueSignal/instance/dispatch"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_REST
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "log")
+      iffalse             L9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L9:
+      getlocal0
+      getsuper            QName(PackageNamespace(""), "dispatch")
+      getlocal0
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "add") flag OVERRIDE
+   method
+    refid "kabam.lib.signals:DeferredQueueSignal/instance/add"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callsuper           QName(PackageNamespace(""), "add"), 1
+      coerce              QName(PackageNamespace("org.osflash.signals"), "ISlot")
+      setlocal2
+
+      jump                L15
+
+L8:
+      label
+      getlocal1
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "shift"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+L15:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L8
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "log")
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addOnce") flag OVERRIDE
+   method
+    refid "kabam.lib.signals:DeferredQueueSignal/instance/addOnce"
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace("org.osflash.signals"), "ISlot")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("org.osflash.signals"), "ISlot")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifngt               L17
+
+      getlocal1
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "shift"), 0
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+      jump                L25
+
+L17:
+      getlocal0
+      getlocal1
+      callsuper           QName(PackageNamespace(""), "addOnce"), 1
+      coerce              QName(PackageNamespace("org.osflash.signals"), "ISlot")
+      setlocal2
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "log")
+
+L25:
+      jump                L30
+
+L26:
+      label
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "shift"), 0
+
+L30:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifgt                L26
+
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getNumData")
+   method
+    refid "kabam.lib.signals:DeferredQueueSignal/instance/getNumData"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.signals:DeferredQueueSignal/instance"), "data")
+      getproperty         QName(PackageNamespace(""), "length")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.signals:DeferredQueueSignal/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

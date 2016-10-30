@@ -1,0 +1,166 @@
+class
+ refid "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand"
+ instance QName(PackageNamespace("kabam.rotmg.core.commands"), "ConfigurePaymentsWindowCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand")
+  iinit
+   refid "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "commandMap") flag METADATA type QName(PackageNamespace("robotlegs.bender.extensions.signalCommandMap.api"), "ISignalCommandMap")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "XML")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "commandMap")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.signals"), "OpenMoneyWindowSignal")
+      callproperty        QName(Namespace("robotlegs.bender.extensions.signalCommandMap.api:ISignalCommandMap"), "map"), 1
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance"), "getPaymentsCommandClass"), 0
+      callpropvoid        QName(Namespace("robotlegs.bender.extensions.commandCenter.dsl:ICommandMapper"), "toCommand"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance"), "getPaymentsCommandClass")
+   method
+    refid "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/getPaymentsCommandClass"
+    returns QName(PackageNamespace(""), "Class")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance"), "useExternalPaymentsWindow"), 0
+      iffalse             L8
+
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.commands"), "ExternalOpenMoneyWindowCommand")
+      coerce              QName(PackageNamespace(""), "Class")
+      jump                L10
+
+L8:
+      getlex              QName(PackageNamespace("kabam.rotmg.account.core.commands"), "InternalOpenMoneyWindowCommand")
+      coerce              QName(PackageNamespace(""), "Class")
+L10:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance"), "useExternalPaymentsWindow")
+   method
+    refid "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/useExternalPaymentsWindow"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.kabam"), "KabamAccount")
+      istypelate
+      dup
+      iftrue              L13
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web"), "WebAccount")
+      istypelate
+L13:
+      dup
+      iffalse             L22
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "UseExternalPayments"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/useExternalPaymentsWindow"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand"), StaticProtectedNs("kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand")])
+      pushnull
+      equals
+L22:
+      dup
+      iftrue              L34
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "Boolean")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "UseExternalPayments"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/instance/useExternalPaymentsWindow"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand"), StaticProtectedNs("kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      callproperty        QName(PackageNamespace(""), "Boolean"), 1
+      convert_b
+L34:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.commands:ConfigurePaymentsWindowCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

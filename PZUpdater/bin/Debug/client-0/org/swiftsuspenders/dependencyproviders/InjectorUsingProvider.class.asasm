@@ -1,0 +1,77 @@
+class
+ refid "org.swiftsuspenders.dependencyproviders:InjectorUsingProvider"
+ instance QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "InjectorUsingProvider")
+  extends QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ForwardingProvider")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.dependencyproviders:InjectorUsingProvider")
+  iinit
+   refid "org.swiftsuspenders.dependencyproviders:InjectorUsingProvider/instance/init"
+   param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   param QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal2
+     constructsuper      1
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "injector")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "injector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait method QName(PackageNamespace(""), "apply") flag OVERRIDE
+   method
+    refid "org.swiftsuspenders.dependencyproviders:InjectorUsingProvider/instance/apply"
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    param QName(PackageNamespace("flash.utils"), "Dictionary")
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "provider")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlocal3
+      callproperty        QName(Namespace("org.swiftsuspenders.dependencyproviders:DependencyProvider"), "apply"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.dependencyproviders:InjectorUsingProvider/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

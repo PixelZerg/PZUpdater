@@ -1,0 +1,923 @@
+class
+ refid "kabam.rotmg.account.web.view:MigrationDialog"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.view"), "MigrationDialog")
+  extends QName(PackageNamespace("kabam.rotmg.account.core.view"), "EmptyFrame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog")
+  iinit
+   refid "kabam.rotmg.account.web.view:MigrationDialog/instance/init"
+   param QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   param QName(PackageNamespace(""), "Number")
+   body
+    maxstack 4
+    localcount 3
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           2000
+     pushbyte            0
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "timerProgressCheck")
+
+     getlocal0
+     pushshort           500
+     pushshort           220
+     pushstring          "Maintenance Needed"
+     constructsuper      3
+
+     getlocal0
+     pushfalse
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "isClosed")
+
+     findpropstrict      QName(PackageNamespace(""), "setDesc")
+     pushstring          "Press OK to begin maintenance on \n\n"
+     getlocal1
+     callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserName"), 0
+     add
+     pushstring          "\n\nor cancel to login with a different account"
+     add
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "setDesc"), 2
+
+     getlocal0
+     pushstring          "Cancel"
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "makeAndAddLeftButton"), 1
+
+     getlocal0
+     pushstring          "OK"
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "makeAndAddRightButton"), 1
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "account")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "status")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+     callproperty        QName(PackageNamespace(""), "getInjector"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+     callproperty        QName(PackageNamespace(""), "getInstance"), 1
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "client")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "okButton")
+
+     findproperty        QName(PackageNamespace(""), "cancel")
+     findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+     getlocal0
+     getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+     initproperty        QName(PackageNamespace(""), "cancel")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+     initproperty        QName(PackageNamespace(""), "done")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "okButton")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "okButton_doMigrate")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "done")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "closeMyself")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     getlex              QName(PackageNamespace(""), "cancel")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "removeMigrateCallback")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     getlex              QName(PackageNamespace(""), "cancel")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "closeMyself")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "done") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "okButton") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "account") type QName(PackageNamespace("kabam.rotmg.account.core"), "Account") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "client") type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progressCheckClient") type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "lastPercent") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "total") type QName(PackageNamespace(""), "Number") value Integer(100) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar") type QName(PackageNamespace("kabam.rotmg.account.web.view"), "ProgressBar") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_") type QName(PackageNamespace("kabam.rotmg.util.components"), "SimpleButton") end
+  trait slot QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_") type QName(PackageNamespace("kabam.rotmg.util.components"), "SimpleButton") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "timerProgressCheck") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "status") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "isClosed") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "okButton_doMigrate")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/okButton_doMigrate"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setEnabled"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "status")
+      pushbyte            1
+      ifne                L29
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "onMigrateStartComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "client")
+      pushstring          "/migrate/doMigration"
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+L29:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "startPercentLoop")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/startPercentLoop"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "timerProgressCheck")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "percentLoop")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progressCheckClient")
+      pushnull
+      ifne                L19
+
+      getlocal0
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "SimpleAppEngineClient")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progressCheckClient")
+
+L19:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "timerProgressCheck")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      pushbyte            0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "updatePercent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "stopPercentLoop")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/stopPercentLoop"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            100
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "updatePercent"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "timerProgressCheck")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "timerProgressCheck")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "percentLoop")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "percentLoop")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/percentLoop"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progressCheckClient")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "onUpdateStatusComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progressCheckClient")
+      pushstring          "/migrate/progress"
+      getlocal2
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "onUpdateStatusComplete")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/onUpdateStatusComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 7
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushnull
+      coerce_s
+      setlocal            4
+
+      pushnan
+      setlocal            5
+
+      pushnan
+      setlocal            6
+
+      getlocal1
+      iffalse             L76
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "isClosed")
+      pushtrue
+      ifne                L19
+
+      returnvoid
+
+L19:
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal3
+      pushstring          "Percent"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace(""), ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace("kabam.rotmg.account.web.view"), PackageInternalNs("kabam.rotmg.account.web.view"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("kabam.rotmg.account.web.view:MigrationDialog"), StaticProtectedNs("kabam.rotmg.account.core.view:EmptyFrame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      iffalse             L61
+
+      getlocal3
+      getproperty         Multiname("Percent", [PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace(""), ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace("kabam.rotmg.account.web.view"), PackageInternalNs("kabam.rotmg.account.web.view"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("kabam.rotmg.account.web.view:MigrationDialog"), StaticProtectedNs("kabam.rotmg.account.core.view:EmptyFrame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_s
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace(""), "Number")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "Number"), 1
+      convert_d
+      dup
+      setlocal            5
+
+      pushbyte            100
+      ifne                L53
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "isClosed")
+      pushfalse
+      ifne                L52
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "stopPercentLoop"), 0
+
+      getlocal0
+      getlocal            5
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "updatePercent"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "done")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+L52:
+      jump                L60
+
+L53:
+      getlocal            5
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "lastPercent")
+      ifeq                L60
+
+      getlocal0
+      getlocal            5
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "updatePercent"), 1
+
+L60:
+      jump                L76
+
+L61:
+      getlocal3
+      pushstring          "MigrateStatus"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace(""), ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace("kabam.rotmg.account.web.view"), PackageInternalNs("kabam.rotmg.account.web.view"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("kabam.rotmg.account.web.view:MigrationDialog"), StaticProtectedNs("kabam.rotmg.account.core.view:EmptyFrame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      iffalse             L76
+
+      getlocal3
+      getproperty         Multiname("MigrateStatus", [PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace(""), ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace("kabam.rotmg.account.web.view"), PackageInternalNs("kabam.rotmg.account.web.view"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("kabam.rotmg.account.web.view:MigrationDialog"), StaticProtectedNs("kabam.rotmg.account.core.view:EmptyFrame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      convert_d
+      dup
+      setlocal            6
+
+      pushbyte            44
+      ifne                L76
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "stopPercentLoop"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "reset"), 0
+
+L76:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "updatePercent")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/updatePercent"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "update"), 1
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "lastPercent")
+
+      findpropstrict      QName(PackageNamespace(""), "setDesc")
+      pushstring          ""
+      getlocal1
+      add
+      pushstring          "%"
+      add
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setDesc"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "onMigrateStartComplete")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/onMigrateStartComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushnan
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "isClosed")
+      iffalse             L11
+
+      returnvoid
+
+L11:
+      getlocal1
+      iffalse             L51
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal2
+      constructprop       QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      getlocal3
+      pushstring          "MigrateStatus"
+      callproperty        Multiname("hasOwnProperty", [PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace(""), ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace("kabam.rotmg.account.web.view"), PackageInternalNs("kabam.rotmg.account.web.view"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("kabam.rotmg.account.web.view:MigrationDialog"), StaticProtectedNs("kabam.rotmg.account.core.view:EmptyFrame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")]), 1
+      iffalse             L50
+
+      getlocal3
+      getproperty         Multiname("MigrateStatus", [PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace(""), ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance"), PackageNamespace("kabam.rotmg.account.web.view"), PackageInternalNs("kabam.rotmg.account.web.view"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNs("kabam.rotmg.account.web.view:MigrationDialog"), StaticProtectedNs("kabam.rotmg.account.core.view:EmptyFrame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      convert_d
+      dup
+      setlocal            4
+
+      pushbyte            44
+      ifne                L34
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "stopPercentLoop"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "reset"), 0
+
+      jump                L50
+
+L34:
+      getlocal            4
+      pushbyte            4
+      ifne                L46
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "addProgressBar"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "setTitle")
+      pushstring          "Migration In Progress"
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "startPercentLoop"), 0
+
+      jump                L50
+
+L46:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "stopPercentLoop"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "reset"), 0
+
+L50:
+      jump                L55
+
+L51:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "stopPercentLoop"), 0
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "reset"), 0
+
+L55:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "reset")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/reset"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "setTitle")
+      pushstring          "Error, please try again. Maintenance needed"
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "setDesc")
+      pushstring          "Press OK to begin maintenance on \n\n"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getUserName"), 0
+      add
+      pushstring          "\n\nor cancel to login with a different account"
+      add
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setDesc"), 2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "removeProgressBar"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "okButton")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "okButton_doMigrate")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setEnabled"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "addProgressBar")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/addProgressBar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal2
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "removeProgressBar"), 0
+
+      getlex              QName(PackageNamespace(""), "TEXT_MARGIN")
+      convert_d
+      setlocal1
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+      pushbyte            3
+      divide
+      convert_d
+      setlocal2
+
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+      getlocal1
+      pushbyte            2
+      multiply
+      subtract
+      convert_d
+      setlocal3
+
+      pushbyte            40
+      convert_d
+      setlocal            4
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "ProgressBar")
+      getlocal3
+      getlocal            4
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "ProgressBar"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "removeProgressBar")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/removeProgressBar"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L16
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+      getproperty         QName(PackageNamespace(""), "parent")
+      pushnull
+      equals
+      not
+L16:
+      iffalse             L21
+
+      findpropstrict      QName(PackageNamespace(""), "removeChild")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "progBar")
+      callpropvoid        QName(PackageNamespace(""), "removeChild"), 1
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "removeMigrateCallback")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/removeMigrateCallback"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "done")
+      callpropvoid        QName(PackageNamespace(""), "removeAll"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "closeMyself")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/closeMyself"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "isClosed")
+
+      getlex              QName(PackageNamespace("kabam.rotmg.core"), "StaticInjectorContext")
+      callproperty        QName(PackageNamespace(""), "getInjector"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+      setlocal1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "makeAndAddLeftButton")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/makeAndAddLeftButton"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "SimpleButton")
+      getlocal1
+      constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "SimpleButton"), 1
+      initproperty        QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+
+      getlocal1
+      pushstring          ""
+      ifeq                L36
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "buttonMode")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+      pushbyte            2
+      divide
+      pushbyte            100
+      subtract
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+      pushbyte            50
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+L36:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:MigrationDialog/instance"), "makeAndAddRightButton")
+   method
+    refid "kabam.rotmg.account.web.view:MigrationDialog/instance/kabam.rotmg.account.web.view:MigrationDialog/instance/makeAndAddRightButton"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.util.components"), "SimpleButton")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "leftButton_")
+      getproperty         QName(PackageNamespace(""), "text")
+      getproperty         QName(PackageNamespace(""), "text")
+      constructprop       QName(PackageNamespace("kabam.rotmg.util.components"), "SimpleButton"), 1
+      initproperty        QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      callpropvoid        QName(PackageNamespace(""), "freezeSize"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      getlocal1
+      pushstring          ""
+      ifeq                L42
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "buttonMode")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalWidth")
+      pushbyte            2
+      divide
+      pushbyte            100
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("kabam.rotmg.account.web.view:MigrationDialog"), "rightButton_")
+      getlex              QName(ProtectedNamespace("kabam.rotmg.account.core.view:EmptyFrame"), "modalHeight")
+      pushbyte            50
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+L42:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.view:MigrationDialog/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,311 @@
+class
+ refid "kabam.rotmg.account.web.commands:WebLoginCommand"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.commands"), "WebLoginCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.commands:WebLoginCommand")
+  iinit
+   refid "kabam.rotmg.account.web.commands:WebLoginCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "loginTask") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.services"), "LoginTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "monitor") flag METADATA type QName(PackageNamespace("kabam.lib.tasks"), "TaskMonitor")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "closeDialogs") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "CloseDialogsSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "loginError") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TaskErrorSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "updateLogin") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core.signals"), "UpdateAccountInfoSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "track") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "TrackEventSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "invalidate") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "InvalidateDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setScreenWithValidData") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.signals"), "SetScreenWithValidDataSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "screenModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.core.model"), "ScreenModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "getPackageTask") flag METADATA type QName(PackageNamespace("kabam.rotmg.packages.services"), "GetPackagesTask")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "setScreenTask") type QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask") end
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.account.web.commands:WebLoginCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setScreenWithValidData")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "getTargetScreen"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "setScreenTask")
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loginTask")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "makeSuccessTask"), 0
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "makeFailureTask"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask"), 3
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "BranchingTask")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "monitor")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "makeSuccessTask")
+   method
+    refid "kabam.rotmg.account.web.commands:WebLoginCommand/instance/kabam.rotmg.account.web.commands:WebLoginCommand/instance/makeSuccessTask"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "closeDialogs")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "track")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "getTrackingData"), 0
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "updateLogin")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "invalidate")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 1
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "getPackageTask")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "setScreenTask")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "makeFailureTask")
+   method
+    refid "kabam.rotmg.account.web.commands:WebLoginCommand/instance/kabam.rotmg.account.web.commands:WebLoginCommand/instance/makeFailureTask"
+    returns QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence"), 0
+      coerce              QName(PackageNamespace("kabam.lib.tasks"), "TaskSequence")
+      setlocal1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loginError")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "loginTask")
+      constructprop       QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask"), 2
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "setScreenTask")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "getTargetScreen")
+   method
+    refid "kabam.rotmg.account.web.commands:WebLoginCommand/instance/kabam.rotmg.account.web.commands:WebLoginCommand/instance/getTargetScreen"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "screenModel")
+      callproperty        QName(PackageNamespace(""), "getCurrentScreenType"), 0
+      coerce              QName(PackageNamespace(""), "Class")
+      setlocal1
+
+      getlocal1
+      pushnull
+      equals
+      dup
+      iftrue              L16
+
+      pop
+      getlocal1
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.game"), "GameSprite")
+      equals
+L16:
+      iffalse             L20
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.screens"), "CharacterSelectionAndNewsScreen")
+      coerce              QName(PackageNamespace(""), "Class")
+      setlocal1
+
+L20:
+      getlocal1
+      construct           0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.commands:WebLoginCommand/instance"), "getTrackingData")
+   method
+    refid "kabam.rotmg.account.web.commands:WebLoginCommand/instance/kabam.rotmg.account.web.commands:WebLoginCommand/instance/getTrackingData"
+    returns QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.core.service"), "TrackingData")
+      setlocal1
+
+      getlocal1
+      pushstring          "account"
+      setproperty         QName(PackageNamespace(""), "category")
+
+      getlocal1
+      pushstring          "signedIn"
+      setproperty         QName(PackageNamespace(""), "action")
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.commands:WebLoginCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,189 @@
+class
+ refid "kabam.rotmg.game.view:MapOverlayMediator"
+ instance QName(PackageNamespace("kabam.rotmg.game.view"), "MapOverlayMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.game.view:MapOverlayMediator")
+  iinit
+   refid "kabam.rotmg.game.view:MapOverlayMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.map.mapoverlay"), "MapOverlay")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "addSpeechBalloon") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddSpeechBalloonSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "chatFilter") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.model"), "ChatFilter")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.game.view:MapOverlayMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addSpeechBalloon")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MapOverlayMediator/instance"), "onAddSpeechBalloon")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.game.view:MapOverlayMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "addSpeechBalloon")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.game.view:MapOverlayMediator/instance"), "onAddSpeechBalloon")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.game.view:MapOverlayMediator/instance"), "onAddSpeechBalloon")
+   method
+    refid "kabam.rotmg.game.view:MapOverlayMediator/instance/kabam.rotmg.game.view:MapOverlayMediator/instance/onAddSpeechBalloon"
+    param QName(PackageNamespace("kabam.rotmg.game.model"), "AddSpeechBalloonVO")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 14
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "isRegistered"), 0
+      convert_b
+      dup
+      iftrue              L16
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatFilter")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "go")
+      getproperty         QName(PackageNamespace(""), "name_")
+      callproperty        QName(PackageNamespace(""), "guestChatFilter"), 1
+      convert_b
+L16:
+      iffalse             L21
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text")
+      coerce_s
+      jump                L22
+
+L21:
+      pushstring          ". . ."
+L22:
+      coerce_s
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.map.mapoverlay"), "SpeechBalloon")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "go")
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "name")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "isTrade")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "isGuild")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "background")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "backgroundAlpha")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "outline")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "outlineAlpha")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "textColor")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "lifetime")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bold")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "hideable")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.map.mapoverlay"), "SpeechBalloon"), 13
+      coerce_a
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "addSpeechBalloon"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.game.view:MapOverlayMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

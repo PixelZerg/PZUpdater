@@ -1,0 +1,815 @@
+class
+ refid "org.swiftsuspenders.mapping:InjectionMapping"
+ instance QName(PackageNamespace("org.swiftsuspenders.mapping"), "InjectionMapping")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ProviderlessMapping", [PackageNamespace("org.swiftsuspenders.mapping")])
+  implements Multiname("UnsealedMapping", [PackageNamespace("org.swiftsuspenders.mapping")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.mapping:InjectionMapping")
+  iinit
+   refid "org.swiftsuspenders.mapping:InjectionMapping/instance/init"
+   param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   param QName(PackageNamespace(""), "Class")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   body
+    maxstack 3
+    localcount 5
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_type")
+
+     getlocal0
+     getlocal3
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_name")
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_mappingId")
+
+     getlocal0
+     pushtrue
+     initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_defaultProviderSet")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ClassProvider")
+     getlocal2
+     constructprop       QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ClassProvider"), 1
+     callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "mapProvider"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_type") type QName(PackageNamespace(""), "Class") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_name") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_mappingId") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_defaultProviderSet") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_overridingInjector") type QName(PackageNamespace("org.swiftsuspenders"), "Injector") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_soft") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_local") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealKey") type QName(PackageNamespace(""), "Object") end
+  trait method QName(PackageNamespace(""), "asSingleton")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/asSingleton"
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "UnsealedMapping")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_type")
+      callpropvoid        QName(PackageNamespace(""), "toSingleton"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toType")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/toType"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "UnsealedMapping")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ClassProvider")
+      getlocal1
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ClassProvider"), 1
+      callpropvoid        QName(PackageNamespace(""), "toProvider"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toSingleton")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/toSingleton"
+    param QName(PackageNamespace(""), "Class")
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "UnsealedMapping")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "SingletonProvider")
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "SingletonProvider"), 2
+      callpropvoid        QName(PackageNamespace(""), "toProvider"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toValue")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/toValue"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "UnsealedMapping")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ValueProvider")
+      getlocal1
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ValueProvider"), 1
+      callpropvoid        QName(PackageNamespace(""), "toProvider"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toProvider")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/toProvider"
+    param QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "UnsealedMapping")
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "throwSealedError"), 0
+      coerce_a
+L11:
+      pop
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "hasProvider"), 0
+      convert_b
+      dup
+      iffalse             L22
+
+      pop
+      getlocal1
+      pushnull
+      equals
+      not
+L22:
+      dup
+      iffalse             L28
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_defaultProviderSet")
+      not
+L28:
+      iffalse             L64
+
+      findpropstrict      QName(PackageNamespace(""), "trace")
+      pushstring          "Warning: Injector already has a mapping for "
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_mappingId")
+      add
+      pushstring          ".\n "
+      add
+      pushstring          "If you have overridden this mapping intentionally you can use "
+      add
+      pushstring          "\"injector.unmap()\" prior to your replacement mapping in order to "
+      add
+      pushstring          "avoid seeing this message."
+      add
+      callpropvoid        QName(PackageNamespace(""), "trace"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getproperty         QName(PackageNamespace(""), "MAPPING_OVERRIDE")
+      callproperty        QName(PackageNamespace(""), "hasEventListener"), 1
+      dup
+      iffalse             L63
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getproperty         QName(PackageNamespace(""), "MAPPING_OVERRIDE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_type")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_name")
+      getlocal0
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent"), 4
+      callproperty        QName(PackageNamespace(""), "dispatchEvent"), 1
+L63:
+      pop
+L64:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPreChangeEvent"), 0
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_defaultProviderSet")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "mapProvider"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPostChangeEvent"), 0
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "softly")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/softly"
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "ProviderlessMapping")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+      coerce_a
+      dup
+      iffalse             L14
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "throwSealedError"), 0
+      coerce_a
+L14:
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_soft")
+      iftrue              L32
+
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getProvider"), 0
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPreChangeEvent"), 0
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_soft")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "mapProvider"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPostChangeEvent"), 0
+
+L32:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "locally")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/locally"
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "ProviderlessMapping")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "throwSealedError"), 0
+      coerce_a
+L11:
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_local")
+      iffalse             L17
+
+      getlocal0
+      returnvalue
+
+L17:
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getProvider"), 0
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPreChangeEvent"), 0
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_local")
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "mapProvider"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPostChangeEvent"), 0
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "seal")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/seal"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+      iffalse             L9
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectorError")
+      pushstring          "Mapping is already sealed."
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectorError"), 1
+      throw
+
+L9:
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+
+      getlocal0
+      newobject           0
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealKey")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealKey")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "unseal")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/unseal"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "InjectionMapping")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+      iftrue              L9
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectorError")
+      pushstring          "Can't unseal a non-sealed mapping."
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectorError"), 1
+      throw
+
+L9:
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealKey")
+      ifstricteq          L17
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectorError")
+      pushstring          "Can't unseal mapping without the correct key."
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectorError"), 1
+      throw
+
+L17:
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealKey")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "isSealed")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/isSealed/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "hasProvider")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/hasProvider"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Boolean")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.utils"), "SsInternal")
+      coerce              QName(PackageNamespace(""), "Namespace")
+      getproperty         RTQName("providerMappings")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_mappingId")
+      getproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), PackageNamespace(""), PackageNamespace("org.swiftsuspenders.mapping"), PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#1"), PackageInternalNs("org.swiftsuspenders.mapping"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.mapping:InjectionMapping"), StaticProtectedNs("org.swiftsuspenders.mapping:InjectionMapping")])
+      callproperty        QName(PackageNamespace(""), "Boolean"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getProvider")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/getProvider"
+    returns QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.utils"), "SsInternal")
+      coerce              QName(PackageNamespace(""), "Namespace")
+      getproperty         RTQName("providerMappings")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_mappingId")
+      getproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), PackageNamespace(""), PackageNamespace("org.swiftsuspenders.mapping"), PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#1"), PackageInternalNs("org.swiftsuspenders.mapping"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.mapping:InjectionMapping"), StaticProtectedNs("org.swiftsuspenders.mapping:InjectionMapping")])
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+      jump                L20
+
+L13:
+      label
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ForwardingProvider")
+      getlocal1
+      callproperty        QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ForwardingProvider"), 1
+      getproperty         QName(PackageNamespace(""), "provider")
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+L20:
+      getlocal1
+      getlex              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ForwardingProvider")
+      istypelate
+      iftrue              L13
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setInjector")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/setInjector"
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    returns QName(PackageNamespace("org.swiftsuspenders.mapping"), "InjectionMapping")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_sealed")
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "throwSealedError"), 0
+      coerce_a
+L11:
+      pop
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_overridingInjector")
+      ifne                L18
+
+      getlocal0
+      returnvalue
+
+L18:
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "getProvider"), 0
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal2
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_overridingInjector")
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "mapProvider"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "mapProvider")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/org.swiftsuspenders.mapping:InjectionMapping/instance/mapProvider"
+    param QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_soft")
+      iffalse             L10
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "SoftDependencyProvider")
+      getlocal1
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "SoftDependencyProvider"), 1
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+L10:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_local")
+      iffalse             L18
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "LocalOnlyProvider")
+      getlocal1
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "LocalOnlyProvider"), 1
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+L18:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_overridingInjector")
+      iffalse             L28
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "InjectorUsingProvider")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_overridingInjector")
+      getlocal1
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "InjectorUsingProvider"), 2
+      coerce              QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+      setlocal1
+
+L28:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.utils"), "SsInternal")
+      coerce              QName(PackageNamespace(""), "Namespace")
+      getproperty         RTQName("providerMappings")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_mappingId")
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), PackageNamespace(""), PackageNamespace("org.swiftsuspenders.mapping"), PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#1"), PackageInternalNs("org.swiftsuspenders.mapping"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.mapping:InjectionMapping"), StaticProtectedNs("org.swiftsuspenders.mapping:InjectionMapping")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "throwSealedError")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/org.swiftsuspenders.mapping:InjectionMapping/instance/throwSealedError"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectorError")
+      pushstring          "Can't change a sealed mapping"
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectorError"), 1
+      throw
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPreChangeEvent")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/org.swiftsuspenders.mapping:InjectionMapping/instance/dispatchPreChangeEvent"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getproperty         QName(PackageNamespace(""), "PRE_MAPPING_CHANGE")
+      callproperty        QName(PackageNamespace(""), "hasEventListener"), 1
+      dup
+      iffalse             L22
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getproperty         QName(PackageNamespace(""), "PRE_MAPPING_CHANGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_type")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_name")
+      getlocal0
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent"), 4
+      callproperty        QName(PackageNamespace(""), "dispatchEvent"), 1
+L22:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "dispatchPostChangeEvent")
+   method
+    refid "org.swiftsuspenders.mapping:InjectionMapping/instance/org.swiftsuspenders.mapping:InjectionMapping/instance/dispatchPostChangeEvent"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getproperty         QName(PackageNamespace(""), "POST_MAPPING_CHANGE")
+      callproperty        QName(PackageNamespace(""), "hasEventListener"), 1
+      dup
+      iffalse             L22
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_creatingInjector")
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getlex              QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent")
+      getproperty         QName(PackageNamespace(""), "POST_MAPPING_CHANGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_type")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.mapping:InjectionMapping/instance#0"), "_name")
+      getlocal0
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.mapping"), "MappingEvent"), 4
+      callproperty        QName(PackageNamespace(""), "dispatchEvent"), 1
+L22:
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.mapping:InjectionMapping/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

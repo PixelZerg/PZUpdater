@@ -1,0 +1,617 @@
+class
+ refid "com.company.assembleegameclient.ui:TradePanel"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradePanel")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui:TradePanel")
+  iinit
+   refid "com.company.assembleegameclient.ui:TradePanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   param QName(PackageNamespace("kabam.rotmg.messaging.impl.incoming"), "TradeStart")
+   body
+    maxstack 6
+    localcount 4
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "gs_")
+
+     getlocal0
+     getproperty         QName(PackageNamespace(""), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player_")
+     getproperty         QName(PackageNamespace(""), "name_")
+     coerce_s
+     setlocal3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+     getlocal1
+     getlocal3
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "myItems_")
+     pushtrue
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory"), 4
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+     pushbyte            14
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "CHANGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onMyInvChange")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+     getlocal1
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "yourName_")
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "yourItems_")
+     pushfalse
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory"), 4
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+     pushbyte            14
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+     pushshort           174
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+     pushbyte            16
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "PLAYERMENU_CANCEL")
+     pushbyte            80
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 3
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onCancelClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onCancelTextChanged")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeButton")
+     pushbyte            16
+     pushbyte            80
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeButton"), 2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+     pushbyte            3
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     multiply
+     pushbyte            4
+     divide
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+     getproperty         QName(PackageNamespace(""), "bWidth")
+     pushbyte            2
+     divide
+     subtract
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onTradeClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     callpropvoid        QName(PackageNamespace(""), "checkTrade"), 0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "gs_") type QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeButton") end
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onCancelTextChanged")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/com.company.assembleegameclient.ui:TradePanel/instance/onCancelTextChanged"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      pushbyte            4
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+      getproperty         QName(PackageNamespace(""), "bWidth")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+      getlex              QName(PackageNamespace(""), "HEIGHT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "cancelButton_")
+      getproperty         QName(PackageNamespace(""), "y")
+      setproperty         QName(PackageNamespace(""), "y")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setYourOffer")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/setYourOffer"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Boolean")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "setOffer"), 1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "checkTrade"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "youAccepted")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/youAccepted"
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Boolean")>)
+    param TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "Boolean")>)
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "isOffer"), 1
+      convert_b
+      dup
+      iffalse             L15
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "isOffer"), 1
+      convert_b
+L15:
+      iffalse             L21
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+      getproperty         QName(PackageNamespace(""), "TRADEACCEPTED_MESSAGE")
+      callpropvoid        QName(PackageNamespace(""), "setMessage"), 1
+
+L21:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onAddedToStage")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/com.company.assembleegameclient.ui:TradePanel/instance/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ACTIVATE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onActivate")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onRemovedFromStage")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/com.company.assembleegameclient.ui:TradePanel/instance/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "stage")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ACTIVATE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onActivate")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onActivate")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/com.company.assembleegameclient.ui:TradePanel/instance/onActivate"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onMyInvChange")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/com.company.assembleegameclient.ui:TradePanel/instance/onMyInvChange"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      callproperty        QName(PackageNamespace(""), "getOffer"), 0
+      callpropvoid        QName(PackageNamespace(""), "changeTrade"), 1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "checkTrade"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onCancelClick")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/com.company.assembleegameclient.ui:TradePanel/instance/onCancelClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      callpropvoid        QName(PackageNamespace(""), "cancelTrade"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "CANCEL")
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "onTradeClick")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/com.company.assembleegameclient.ui:TradePanel/instance/onTradeClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      callproperty        QName(PackageNamespace(""), "getOffer"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      callproperty        QName(PackageNamespace(""), "getOffer"), 0
+      callpropvoid        QName(PackageNamespace(""), "acceptTrade"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+      getproperty         QName(PackageNamespace(""), "TRADEACCEPTED_MESSAGE")
+      callpropvoid        QName(PackageNamespace(""), "setMessage"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "checkTrade")
+   method
+    refid "com.company.assembleegameclient.ui:TradePanel/instance/checkTrade"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      callproperty        QName(PackageNamespace(""), "numIncluded"), 0
+      convert_i
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      callproperty        QName(PackageNamespace(""), "numEmpty"), 0
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      callproperty        QName(PackageNamespace(""), "numIncluded"), 0
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      callproperty        QName(PackageNamespace(""), "numEmpty"), 0
+      convert_i
+      setlocal            4
+
+      pushtrue
+      setlocal            5
+
+      getlocal3
+      getlocal1
+      subtract
+      getlocal2
+      subtract
+      pushbyte            0
+      ifngt               L39
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+      getproperty         QName(PackageNamespace(""), "NOTENOUGHSPACE_MESSAGE")
+      callpropvoid        QName(PackageNamespace(""), "setMessage"), 1
+
+      pushfalse
+      setlocal            5
+
+      jump                L44
+
+L39:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "myInv_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+      getproperty         QName(PackageNamespace(""), "CLICKITEMS_MESSAGE")
+      callpropvoid        QName(PackageNamespace(""), "setMessage"), 1
+
+L44:
+      getlocal1
+      getlocal3
+      subtract
+      getlocal            4
+      subtract
+      pushbyte            0
+      ifngt               L59
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+      getproperty         QName(PackageNamespace(""), "NOTENOUGHSPACE_MESSAGE")
+      callpropvoid        QName(PackageNamespace(""), "setMessage"), 1
+
+      pushfalse
+      setlocal            5
+
+      jump                L64
+
+L59:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "yourInv_")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.ui"), "TradeInventory")
+      getproperty         QName(PackageNamespace(""), "TRADEWAITING_MESSAGE")
+      callpropvoid        QName(PackageNamespace(""), "setMessage"), 1
+
+L64:
+      getlocal            5
+      iffalse             L70
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      jump                L73
+
+L70:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui:TradePanel/instance"), "tradeButton_")
+      callpropvoid        QName(PackageNamespace(""), "disable"), 0
+
+L73:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui:TradePanel/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "WIDTH")
+    pushshort           200
+    initproperty        QName(PackageNamespace(""), "WIDTH")
+
+    findproperty        QName(PackageNamespace(""), "HEIGHT")
+    pushshort           400
+    initproperty        QName(PackageNamespace(""), "HEIGHT")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "WIDTH") slotid 1 type QName(PackageNamespace(""), "int") value Integer(200) end
+ trait const QName(PackageNamespace(""), "HEIGHT") slotid 2 type QName(PackageNamespace(""), "int") value Integer(400) end
+end ; class

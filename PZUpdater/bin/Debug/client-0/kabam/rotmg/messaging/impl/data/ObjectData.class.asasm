@@ -1,0 +1,105 @@
+class
+ refid "kabam.rotmg.messaging.impl.data:ObjectData"
+ instance QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "ObjectData")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.messaging.impl.data:ObjectData")
+  iinit
+   refid "kabam.rotmg.messaging.impl.data:ObjectData/instance/init"
+   body
+    maxstack 2
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "ObjectStatusData")
+     constructprop       QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "ObjectStatusData"), 0
+     initproperty        QName(PackageNamespace(""), "status_")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "objectType_") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "status_") type QName(PackageNamespace("kabam.rotmg.messaging.impl.data"), "ObjectStatusData") end
+  trait method QName(PackageNamespace(""), "parseFromInput")
+   method
+    refid "kabam.rotmg.messaging.impl.data:ObjectData/instance/parseFromInput"
+    param QName(PackageNamespace("flash.utils"), "IDataInput")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callproperty        QName(Namespace("flash.utils:IDataInput"), "readUnsignedShort"), 0
+      initproperty        QName(PackageNamespace(""), "objectType_")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "status_")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "parseFromInput"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "toString")
+   method
+    refid "kabam.rotmg.messaging.impl.data:ObjectData/instance/toString"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "objectType_: "
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "objectType_")
+      add
+      pushstring          " status_: "
+      add
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "status_")
+      add
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.messaging.impl.data:ObjectData/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

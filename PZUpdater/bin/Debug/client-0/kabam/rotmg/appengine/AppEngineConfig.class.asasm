@@ -1,0 +1,218 @@
+class
+ refid "kabam.rotmg.appengine:AppEngineConfig"
+ instance QName(PackageNamespace("kabam.rotmg.appengine"), "AppEngineConfig")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IConfig", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.appengine:AppEngineConfig")
+  iinit
+   refid "kabam.rotmg.appengine:AppEngineConfig/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "TRACK_APP_ENGINE_CALLS") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PackageNamespace(""), "context") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "setup") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.api"), "ApplicationSetup")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "injector") flag METADATA type QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "configure")
+   method
+    refid "kabam.rotmg.appengine:AppEngineConfig/instance/configure"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureCoreDependencies"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "setup")
+      callproperty        QName(Namespace("kabam.rotmg.application.api:ApplicationSetup"), "isToolingEnabled"), 0
+      iffalse             L11
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureForTesting"), 0
+
+      jump                L19
+
+L11:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "TRACK_APP_ENGINE_CALLS")
+      iffalse             L17
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureForTracking"), 0
+
+      jump                L19
+
+L17:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureForSimplicity"), 0
+
+L19:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureCoreDependencies")
+   method
+    refid "kabam.rotmg.appengine:AppEngineConfig/instance/kabam.rotmg.appengine:AppEngineConfig/instance/configure/configureCoreDependencies"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "RetryLoader")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "AppEngineRetryLoader")
+      callpropvoid        QName(PackageNamespace(""), "toType"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureForTesting")
+   method
+    refid "kabam.rotmg.appengine:AppEngineConfig/instance/kabam.rotmg.appengine:AppEngineConfig/instance/configure/configureForTesting"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "AppEngineRequestStats")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      callpropvoid        QName(PackageNamespace(""), "asSingleton"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "SimpleAppEngineClient")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "StatsRecorderAppEngineClient")
+      callpropvoid        QName(PackageNamespace(""), "toType"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureForTracking")
+   method
+    refid "kabam.rotmg.appengine:AppEngineConfig/instance/kabam.rotmg.appengine:AppEngineConfig/instance/configure/configureForTracking"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "SimpleAppEngineClient")
+      callpropvoid        QName(PackageNamespace(""), "map"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "TrackingAppEngineClient")
+      callpropvoid        QName(PackageNamespace(""), "toType"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.appengine:AppEngineConfig/instance/configure"), "configureForSimplicity")
+   method
+    refid "kabam.rotmg.appengine:AppEngineConfig/instance/kabam.rotmg.appengine:AppEngineConfig/instance/configure/configureForSimplicity"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injector")
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+      callproperty        QName(PackageNamespace(""), "map"), 1
+      getlex              QName(PackageNamespace("kabam.rotmg.appengine.impl"), "SimpleAppEngineClient")
+      callpropvoid        QName(PackageNamespace(""), "toType"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.appengine:AppEngineConfig/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,164 @@
+class
+ refid "com.company.assembleegameclient.util:Currency"
+ instance QName(PackageNamespace("com.company.assembleegameclient.util"), "Currency")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.util:Currency")
+  iinit
+   refid "com.company.assembleegameclient.util:Currency/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.util:Currency/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "INVALID")
+    pushbyte            -1
+    initproperty        QName(PackageNamespace(""), "INVALID")
+
+    findproperty        QName(PackageNamespace(""), "GOLD")
+    pushbyte            0
+    initproperty        QName(PackageNamespace(""), "GOLD")
+
+    findproperty        QName(PackageNamespace(""), "FAME")
+    pushbyte            1
+    initproperty        QName(PackageNamespace(""), "FAME")
+
+    findproperty        QName(PackageNamespace(""), "GUILD_FAME")
+    pushbyte            2
+    initproperty        QName(PackageNamespace(""), "GUILD_FAME")
+
+    findproperty        QName(PackageNamespace(""), "FORTUNE")
+    pushbyte            3
+    initproperty        QName(PackageNamespace(""), "FORTUNE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "INVALID") slotid 1 type QName(PackageNamespace(""), "int") value Integer(-1) end
+ trait const QName(PackageNamespace(""), "GOLD") slotid 2 type QName(PackageNamespace(""), "int") value Integer(0) end
+ trait const QName(PackageNamespace(""), "FAME") slotid 3 type QName(PackageNamespace(""), "int") value Integer(1) end
+ trait const QName(PackageNamespace(""), "GUILD_FAME") slotid 4 type QName(PackageNamespace(""), "int") value Integer(2) end
+ trait const QName(PackageNamespace(""), "FORTUNE") slotid 5 type QName(PackageNamespace(""), "int") value Integer(3) end
+ trait method QName(PackageNamespace(""), "typeToName") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.util:Currency/class/typeToName"
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     jump                L17
+
+L3:
+     label
+     pushstring          "Gold"
+     returnvalue
+
+L6:
+     label
+     pushstring          "Fame"
+     returnvalue
+
+L9:
+     label
+     pushstring          "Guild Fame"
+     returnvalue
+
+L12:
+     label
+     pushstring          "Fortune Token"
+     returnvalue
+
+L15:
+     label
+     jump                L49
+
+L17:
+     getlocal1
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "GOLD")
+     getlocal2
+     ifstrictne          L24
+
+     pushbyte            0
+     jump                L47
+
+L24:
+     getlex              QName(PackageNamespace(""), "FAME")
+     getlocal2
+     ifstrictne          L29
+
+     pushbyte            1
+     jump                L47
+
+L29:
+     getlex              QName(PackageNamespace(""), "GUILD_FAME")
+     getlocal2
+     ifstrictne          L34
+
+     pushbyte            2
+     jump                L47
+
+L34:
+     getlex              QName(PackageNamespace(""), "FORTUNE")
+     getlocal2
+     ifstrictne          L39
+
+     pushbyte            3
+     jump                L47
+
+L39:
+     jump                L46
+
+     ; 0x24
+     ; 0x04
+     ; 0x10
+     ; 0x02
+     ; 0x00
+     ; 0x00
+L46:
+     pushbyte            4
+L47:
+     kill                2
+     lookupswitch        L15, [L3, L6, L9, L12, L15]
+
+L49:
+     pushstring          ""
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

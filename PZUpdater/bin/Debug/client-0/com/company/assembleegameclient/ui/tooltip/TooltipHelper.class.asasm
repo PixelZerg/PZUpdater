@@ -1,0 +1,218 @@
+class
+ refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "TooltipHelper")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.tooltip:TooltipHelper")
+  iinit
+   refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "BETTER_COLOR")
+    pushint             65280
+    initproperty        QName(PackageNamespace(""), "BETTER_COLOR")
+
+    findproperty        QName(PackageNamespace(""), "WORSE_COLOR")
+    pushint             16711680
+    initproperty        QName(PackageNamespace(""), "WORSE_COLOR")
+
+    findproperty        QName(PackageNamespace(""), "NO_DIFF_COLOR")
+    pushint             16777103
+    initproperty        QName(PackageNamespace(""), "NO_DIFF_COLOR")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PackageNamespace(""), "BETTER_COLOR") slotid 1 type QName(PackageNamespace(""), "uint") value Integer(65280) end
+ trait const QName(PackageNamespace(""), "WORSE_COLOR") slotid 2 type QName(PackageNamespace(""), "uint") value Integer(16711680) end
+ trait const QName(PackageNamespace(""), "NO_DIFF_COLOR") slotid 3 type QName(PackageNamespace(""), "uint") value Integer(16777103) end
+ trait method QName(PackageNamespace(""), "wrapInFontTag") flag FINAL dispid 3
+  method
+   refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper/class/wrapInFontTag"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 2
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushstring          "<font color=\""
+     getlocal2
+     add
+     pushstring          "\">"
+     add
+     getlocal1
+     add
+     pushstring          "</font>"
+     add
+     setlocal3
+
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getOpenTag") flag FINAL dispid 4
+  method
+   refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper/class/getOpenTag"
+   param QName(PackageNamespace(""), "uint")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 3
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushstring          "<font color=\"#"
+     getlocal1
+     pushbyte            16
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 1
+     add
+     pushstring          "\">"
+     add
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getCloseTag") flag FINAL dispid 5
+  method
+   refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper/class/getCloseTag"
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushstring          "</font>"
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getFormattedRangeString") flag FINAL dispid 6
+  method
+   refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper/class/getFormattedRangeString"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     subtract
+     convert_d
+     setlocal2
+
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal2
+     pushbyte            10
+     multiply
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     pushbyte            0
+     ifne                L22
+
+     findpropstrict      QName(PackageNamespace(""), "int")
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "int"), 1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+     coerce_s
+     jump                L26
+
+L22:
+     getlocal1
+     pushbyte            1
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toFixed"), 1
+     coerce_s
+L26:
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "getTextColor") flag FINAL dispid 7
+  method
+   refid "com.company.assembleegameclient.ui.tooltip:TooltipHelper/class/getTextColor"
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "uint")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     pushbyte            0
+     ifnlt               L7
+
+     getlex              QName(PackageNamespace(""), "WORSE_COLOR")
+     returnvalue
+
+L7:
+     getlocal1
+     pushbyte            0
+     ifngt               L12
+
+     getlex              QName(PackageNamespace(""), "BETTER_COLOR")
+     returnvalue
+
+L12:
+     getlex              QName(PackageNamespace(""), "NO_DIFF_COLOR")
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

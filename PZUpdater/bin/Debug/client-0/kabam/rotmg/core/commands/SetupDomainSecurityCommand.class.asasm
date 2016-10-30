@@ -1,0 +1,78 @@
+class
+ refid "kabam.rotmg.core.commands:SetupDomainSecurityCommand"
+ instance QName(PackageNamespace("kabam.rotmg.core.commands"), "SetupDomainSecurityCommand")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.commands:SetupDomainSecurityCommand")
+  iinit
+   refid "kabam.rotmg.core.commands:SetupDomainSecurityCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "domains") flag METADATA type QName(PackageNamespace("kabam.rotmg.application.model"), "DomainModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute")
+   method
+    refid "kabam.rotmg.core.commands:SetupDomainSecurityCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      callproperty        QName(PackageNamespace(""), "isWeb"), 0
+      iffalse             L9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "domains")
+      callpropvoid        QName(PackageNamespace(""), "applyDomainSecurity"), 0
+
+L9:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.commands:SetupDomainSecurityCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

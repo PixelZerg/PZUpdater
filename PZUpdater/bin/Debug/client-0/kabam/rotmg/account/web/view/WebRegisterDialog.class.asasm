@@ -1,0 +1,956 @@
+class
+ refid "kabam.rotmg.account.web.view:WebRegisterDialog"
+ instance QName(PackageNamespace("kabam.rotmg.account.web.view"), "WebRegisterDialog")
+  extends QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "Frame")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.web.view:WebRegisterDialog")
+  iinit
+   refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/init"
+   body
+    maxstack 6
+    localcount 1
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     newarray            0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+
+     getlocal0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "REGISTER_IMPERATIVE")
+     pushstring          "RegisterWebAccountDialog.leftButton"
+     pushstring          "RegisterWebAccountDialog.rightButton"
+     pushstring          "/registerAccount"
+     pushshort           326
+     constructsuper      5
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "makeUIElements"), 0
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "makeSignals"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "register") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "signIn") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PackageNamespace(""), "cancel") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "emailInput") type QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "passwordInput") type QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "retypePasswordInput") type QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "checkbox") type QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput") type QName(PackageNamespace("kabam.rotmg.account.ui.components"), "DateField") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "signInText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "tosText") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "endLink") type QName(PackageNamespace(""), "String") value Utf8("</a></font>") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "makeUIElements")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/makeUIElements"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_EMAIL")
+      pushfalse
+      pushshort           275
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "emailInput")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_WEB_ACCOUNT_PASSWORD")
+      pushtrue
+      pushshort           275
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "passwordInput")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "RETYPE_PASSWORD")
+      pushtrue
+      pushshort           275
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.view"), "LabeledField"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "retypePasswordInput")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.ui.components"), "DateField")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.ui.components"), "DateField"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "BIRTHDAY")
+      callpropvoid        QName(PackageNamespace(""), "setTitle"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addLabeledField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "emailInput")
+      callpropvoid        QName(PackageNamespace(""), "addLabeledField"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addLabeledField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "passwordInput")
+      callpropvoid        QName(PackageNamespace(""), "addLabeledField"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addLabeledField")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "retypePasswordInput")
+      callpropvoid        QName(PackageNamespace(""), "addLabeledField"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addComponent")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput")
+      pushbyte            17
+      callpropvoid        QName(PackageNamespace(""), "addComponent"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addSpace")
+      pushbyte            35
+      callpropvoid        QName(PackageNamespace(""), "addSpace"), 1
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "CHECK_BOX_TEXT")
+      pushfalse
+      pushbyte            12
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.account.ui"), "CheckBoxField"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "checkbox")
+
+      findpropstrict      QName(PackageNamespace(""), "addCheckBox")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "checkbox")
+      callpropvoid        QName(PackageNamespace(""), "addCheckBox"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "addSpace")
+      pushbyte            17
+      callpropvoid        QName(PackageNamespace(""), "addSpace"), 1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "makeTosText"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "addSpace")
+      pushbyte            17
+      pushbyte            2
+      multiply
+      callpropvoid        QName(PackageNamespace(""), "addSpace"), 1
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "makeSignInText"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeSignInText")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/makeSignInText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "signInText")
+
+      pushstring          "<font color=\"#7777EE\"><a href=\"event:flash.events.TextEvent\">"
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "signInText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "SIGN_IN_TEXT")
+      pushstring          "signIn"
+      getlocal1
+      pushstring          "_signIn"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "endLink")
+      newobject           2
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "signInText")
+      getlex              QName(PackageNamespace("flash.events"), "TextEvent")
+      getproperty         QName(PackageNamespace(""), "LINK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "linkEvent")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "signInText")
+      callpropvoid        QName(PackageNamespace(""), "configureTextAndAdd"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "makeTosText")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/makeTosText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 11
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "tosText")
+
+      pushstring          "<font color=\"#7777EE\"><a href=\""
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "TERMS_OF_USE_URL")
+      add
+      pushstring          "\" target=\"_blank\">"
+      add
+      setlocal1
+
+      pushstring          "<font color=\"#7777EE\"><a href=\""
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "PRIVACY_POLICY_URL")
+      add
+      pushstring          "\" target=\"_blank\">"
+      add
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "tosText")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "TOS_TEXT")
+      pushstring          "tou"
+      getlocal1
+      pushstring          "_tou"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "endLink")
+      pushstring          "policy"
+      getlocal2
+      pushstring          "_policy"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "endLink")
+      newobject           4
+      callproperty        QName(PackageNamespace(""), "setParams"), 2
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "tosText")
+      callpropvoid        QName(PackageNamespace(""), "configureTextAndAdd"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "configureTextAndAdd")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/configureTextAndAdd"
+    param QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushbyte            12
+      callproperty        QName(PackageNamespace(""), "setSize"), 1
+      pushint             11776947
+      callproperty        QName(PackageNamespace(""), "setColor"), 1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setBold"), 1
+
+      getlocal1
+      pushshort           275
+      callpropvoid        QName(PackageNamespace(""), "setTextWidth"), 1
+
+      getlocal1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setMultiLine"), 1
+      pushtrue
+      callproperty        QName(PackageNamespace(""), "setWordWrap"), 1
+      pushtrue
+      callpropvoid        QName(PackageNamespace(""), "setHTML"), 1
+
+      getlocal1
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      pushbyte            0
+      dup
+      dup
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+      newarray            1
+      setproperty         QName(PackageNamespace(""), "filters")
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      findpropstrict      QName(ProtectedNamespace("com.company.assembleegameclient.account.ui:Frame"), "positionText")
+      getlocal1
+      callpropvoid        QName(ProtectedNamespace("com.company.assembleegameclient.account.ui:Frame"), "positionText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "linkEvent")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/linkEvent"
+    param QName(PackageNamespace("flash.events"), "TextEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "signIn")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "makeSignals")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/makeSignals"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal")
+      getlex              QName(PackageNamespace(""), "leftButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeMappedSignal"), 2
+      initproperty        QName(PackageNamespace(""), "cancel")
+
+      getlex              QName(PackageNamespace(""), "rightButton_")
+      getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+      getproperty         QName(PackageNamespace(""), "CLICK")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "onRegister")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+      constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+      initproperty        QName(PackageNamespace(""), "register")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+      constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 0
+      initproperty        QName(PackageNamespace(""), "signIn")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "onRegister")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/onRegister"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "areInputsValid"), 0
+      convert_b
+      setlocal2
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "displayErrors"), 0
+
+      getlocal2
+      iffalse             L12
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "sendData"), 0
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "areInputsValid")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/areInputsValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "length")
+
+      pushtrue
+      setlocal1
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isEmailValid"), 0
+      convert_b
+      dup
+      iffalse             L16
+
+      pop
+      getlocal1
+      convert_b
+L16:
+      convert_b
+      setlocal1
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isPasswordValid"), 0
+      convert_b
+      dup
+      iffalse             L26
+
+      pop
+      getlocal1
+      convert_b
+L26:
+      convert_b
+      setlocal1
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isPasswordVerified"), 0
+      convert_b
+      dup
+      iffalse             L36
+
+      pop
+      getlocal1
+      convert_b
+L36:
+      convert_b
+      setlocal1
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isAgeVerified"), 0
+      convert_b
+      dup
+      iffalse             L46
+
+      pop
+      getlocal1
+      convert_b
+L46:
+      convert_b
+      setlocal1
+
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isAgeValid"), 0
+      convert_b
+      dup
+      iffalse             L56
+
+      pop
+      getlocal1
+      convert_b
+L56:
+      convert_b
+      setlocal1
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isAgeVerified")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/isAgeVerified"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("kabam.rotmg.account.web.view"), "DateFieldValidator")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput")
+      callproperty        QName(PackageNamespace(""), "getPlayerAge"), 1
+      convert_u
+      setlocal1
+
+      getlocal1
+      pushbyte            13
+      greaterequals
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput")
+      getlocal2
+      not
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      getlocal2
+      iftrue              L24
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "INELIGIBLE_AGE")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L24:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isAgeValid")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/isAgeValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput")
+      callproperty        QName(PackageNamespace(""), "isValidDate"), 0
+      convert_b
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "ageVerificationInput")
+      getlocal1
+      not
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      getlocal1
+      iftrue              L19
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "INVALID_BIRTHDATE")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L19:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isEmailValid")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/isEmailValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.util"), "EmailValidator")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "emailInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      callproperty        QName(PackageNamespace(""), "isValidEmail"), 1
+      convert_b
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "emailInput")
+      getlocal1
+      not
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      getlocal1
+      iftrue              L21
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "INVALID_EMAIL_ADDRESS")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L21:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isPasswordValid")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/isPasswordValid"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "passwordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            5
+      greaterequals
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "passwordInput")
+      getlocal1
+      not
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      getlocal1
+      iftrue              L21
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PASSWORD_TOO_SHORT")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L21:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "isPasswordVerified")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/isPasswordVerified"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "passwordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "retypePasswordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      equals
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "retypePasswordInput")
+      getlocal1
+      not
+      callpropvoid        QName(PackageNamespace(""), "setErrorHighlight"), 1
+
+      getlocal1
+      iftrue              L22
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "PASSWORDS_DONT_MATCH")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L22:
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "displayErrors")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/displayErrors"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L10
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "clearErrors"), 0
+
+      jump                L27
+
+L10:
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      equals
+      iffalse             L23
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "errors")
+      pushbyte            0
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.account.web.view"), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance/displayErrors"), PackageInternalNs("kabam.rotmg.account.web.view"), ProtectedNamespace("kabam.rotmg.account.web.view:WebRegisterDialog"), StaticProtectedNs("kabam.rotmg.account.web.view:WebRegisterDialog"), StaticProtectedNs("com.company.assembleegameclient.account.ui:Frame"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      coerce_s
+      jump                L26
+
+L23:
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "MULTIPLE_ERRORS_MESSAGE")
+      coerce_s
+L26:
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "displayErrorText"), 1
+
+L27:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "displayServerError")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/displayServerError"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "displayErrorText"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "clearErrors")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/clearErrors"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+      getproperty         QName(PackageNamespace(""), "REGISTER_IMPERATIVE")
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushint             11776947
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "displayErrorText")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/displayErrorText"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+      constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "setParams"), 1
+      callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+      getlex              QName(PackageNamespace(""), "titleText_")
+      pushint             16549442
+      callpropvoid        QName(PackageNamespace(""), "setColor"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "sendData")
+   method
+    refid "kabam.rotmg.account.web.view:WebRegisterDialog/instance/kabam.rotmg.account.web.view:WebRegisterDialog/instance/sendData"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+      constructprop       QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.account.web.model"), "AccountData")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "emailInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      setproperty         QName(PackageNamespace(""), "username")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "passwordInput")
+      callproperty        QName(PackageNamespace(""), "text"), 0
+      setproperty         QName(PackageNamespace(""), "password")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.web.view:WebRegisterDialog/instance"), "checkbox")
+      callproperty        QName(PackageNamespace(""), "isChecked"), 0
+      iffalse             L23
+
+      pushbyte            1
+      jump                L24
+
+L23:
+      pushbyte            0
+L24:
+      setproperty         QName(PackageNamespace(""), "signedUpKabamEmail")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "register")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.web.view:WebRegisterDialog/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

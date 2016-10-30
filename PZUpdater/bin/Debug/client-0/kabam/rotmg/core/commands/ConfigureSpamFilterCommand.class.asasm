@@ -1,0 +1,80 @@
+class
+ refid "kabam.rotmg.core.commands:ConfigureSpamFilterCommand"
+ instance QName(PackageNamespace("kabam.rotmg.core.commands"), "ConfigureSpamFilterCommand")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.core.commands:ConfigureSpamFilterCommand")
+  iinit
+   refid "kabam.rotmg.core.commands:ConfigureSpamFilterCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "data") flag METADATA type QName(PackageNamespace(""), "XML")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "spamFilter") flag METADATA type QName(PackageNamespace("kabam.rotmg.chat.control"), "SpamFilter")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.core.commands:ConfigureSpamFilterCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "spamFilter")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("FilterList", [PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigureSpamFilterCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigureSpamFilterCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:ConfigureSpamFilterCommand"), StaticProtectedNs("kabam.rotmg.core.commands:ConfigureSpamFilterCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")])
+      getlex              QName(PackageNamespace(""), "RegExp")
+      pushstring          "\\n"
+      pushstring          "g"
+      construct           2
+      callproperty        Multiname("split", [PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigureSpamFilterCommand/instance/execute#0"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.core.commands:ConfigureSpamFilterCommand/instance/execute#1"), PackageNamespace("kabam.rotmg.core.commands"), PackageInternalNs("kabam.rotmg.core.commands"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.core.commands:ConfigureSpamFilterCommand"), StaticProtectedNs("kabam.rotmg.core.commands:ConfigureSpamFilterCommand"), StaticProtectedNs("robotlegs.bender.bundles.mvcs:Command")]), 1
+      callpropvoid        QName(PackageNamespace(""), "setPatterns"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.core.commands:ConfigureSpamFilterCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

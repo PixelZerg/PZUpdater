@@ -1,0 +1,196 @@
+class
+ refid "kabam.rotmg.account.kongregate.services:KongregateSharedObject"
+ instance QName(PackageNamespace("kabam.rotmg.account.kongregate.services"), "KongregateSharedObject")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateSharedObject")
+  iinit
+   refid "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance"), "guid") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "getGuestGUID")
+   method
+    refid "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/getGuestGUID"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance"), "guid")
+      coerce_s
+      dup
+      iftrue              L12
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance"), "makeGuestGUID"), 0
+      coerce_s
+L12:
+      dup
+      setlocal1
+
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance"), "guid")
+
+      getlocal1
+      kill                1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance"), "makeGuestGUID")
+   method
+    refid "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/makeGuestGUID"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal1
+
+      pushnull
+      coerce              QName(PackageNamespace("flash.net"), "SharedObject")
+      setlocal2
+
+L8:
+      getlex              QName(PackageNamespace("flash.net"), "SharedObject")
+      pushstring          "KongregateRotMG"
+      pushstring          "/"
+      callproperty        QName(PackageNamespace(""), "getLocal"), 2
+      coerce              QName(PackageNamespace("flash.net"), "SharedObject")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "GuestGUID"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "hasOwnProperty"), 1
+      iffalse             L25
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "GuestGUID"
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/makeGuestGUID"), PackageNamespace("kabam.rotmg.account.kongregate.services"), PackageInternalNs("kabam.rotmg.account.kongregate.services"), ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateSharedObject"), StaticProtectedNs("kabam.rotmg.account.kongregate.services:KongregateSharedObject")])
+      coerce_s
+      setlocal1
+
+L25:
+      jump                L37
+
+L26:
+      getlocal0
+      pushscope
+
+      newcatch            0
+      dup
+      setlocal3
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+      kill                3
+L37:
+      getlocal1
+      pushnull
+      ifne                L69
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.util"), "GUID")
+      callproperty        QName(PackageNamespace(""), "create"), 0
+      coerce_s
+      setlocal1
+
+L44:
+      getlex              QName(PackageNamespace("flash.net"), "SharedObject")
+      pushstring          "KongregateRotMG"
+      pushstring          "/"
+      callproperty        QName(PackageNamespace(""), "getLocal"), 2
+      coerce              QName(PackageNamespace("flash.net"), "SharedObject")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "data")
+      pushstring          "GuestGUID"
+      getlocal1
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/kabam.rotmg.account.kongregate.services:KongregateSharedObject/instance/makeGuestGUID"), PackageNamespace("kabam.rotmg.account.kongregate.services"), PackageInternalNs("kabam.rotmg.account.kongregate.services"), ProtectedNamespace("kabam.rotmg.account.kongregate.services:KongregateSharedObject"), StaticProtectedNs("kabam.rotmg.account.kongregate.services:KongregateSharedObject")])
+
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "flush"), 0
+
+L57:
+      jump                L69
+
+L58:
+      getlocal0
+      pushscope
+
+      newcatch            1
+      dup
+      setlocal3
+
+      dup
+      pushscope
+
+      swap
+      setslot             1
+
+      popscope
+      kill                3
+L69:
+      getlocal1
+      returnvalue
+     end ; code
+     try from L8 to L25 target L26 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "error") end
+     try from L44 to L57 target L58 type QName(PackageNamespace(""), "Error") name QName(PackageNamespace(""), "error") end
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.account.kongregate.services:KongregateSharedObject/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

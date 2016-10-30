@@ -1,0 +1,604 @@
+class
+ refid "kabam.rotmg.packages.services:GetPackagesTask"
+ instance QName(PackageNamespace("kabam.rotmg.packages.services"), "GetPackagesTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask")
+  iinit
+   refid "kabam.rotmg.packages.services:GetPackagesTask/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     getlex              QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "HOUR")
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     initproperty        QName(PackageNamespace(""), "timer")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "packageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.packages.services"), "PackageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "logger") flag METADATA type QName(PackageNamespace("robotlegs.bender.framework.api"), "ILogger")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "languageModel") flag METADATA type QName(PackageNamespace("kabam.rotmg.language.model"), "LanguageModel")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "languageModel")
+      callproperty        QName(Namespace("kabam.rotmg.language.model:LanguageModel"), "getLanguage"), 0
+      setproperty         Multiname("language", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      pushstring          "/package/getPackages"
+      getlocal1
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "onComplete")
+   method
+    refid "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "handleOkay"), 1
+
+      jump                L15
+
+L8:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetPackageTask.onComplete: Request failed."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "warn"), 1
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushfalse
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+L15:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "handleOkay")
+   method
+    refid "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask/handleOkay"
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "hasNoPackage"), 1
+      iffalse             L28
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "logger")
+      pushstring          "GetPackageTask.onComplete: No package available, retrying in 1 hour."
+      callpropvoid        QName(Namespace("robotlegs.bender.framework.api:ILogger"), "info"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "timer_timerHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "packageModel")
+      newarray            0
+      callpropvoid        QName(PackageNamespace(""), "setPackages"), 1
+
+      jump                L36
+
+L28:
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      getlocal0
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "parse"), 1
+
+L36:
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "hasNoPackage")
+   method
+    refid "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask/hasNoPackage"
+    param null
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      getproperty         Multiname("Packages", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setlocal2
+
+      getlocal2
+      callproperty        Multiname("length", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")]), 0
+      pushbyte            0
+      equals
+      setlocal3
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "parse")
+   method
+    refid "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask/parse"
+    param QName(PackageNamespace(""), "XML")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 10
+     localcount 16
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      pushbyte            0
+      setlocal            4
+
+      pushnull
+      coerce_s
+      setlocal            5
+
+      pushbyte            0
+      setlocal            6
+
+      pushbyte            0
+      setlocal            7
+
+      pushbyte            0
+      setlocal            8
+
+      pushbyte            0
+      setlocal            9
+
+      pushnull
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal            10
+
+      pushnull
+      coerce_s
+      setlocal            11
+
+      pushbyte            0
+      setlocal            12
+
+      pushnull
+      coerce              QName(PackageNamespace("kabam.rotmg.packages.model"), "PackageInfo")
+      setlocal            13
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal2
+
+      pushbyte            0
+      setlocal            14
+
+      getlocal1
+      getproperty         Multiname("Packages", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getproperty         Multiname("Package", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      coerce_a
+      setlocal            15
+
+      jump                L120
+
+L40:
+      label
+      getlocal            15
+      getlocal            14
+      nextvalue
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal3
+      getproperty         MultinameA("id", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal3
+      getproperty         Multiname("Name", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      coerce_s
+      setlocal            5
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal3
+      getproperty         Multiname("Price", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal3
+      getproperty         Multiname("Quantity", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal            7
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal3
+      getproperty         Multiname("MaxPurchase", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal            8
+
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlocal3
+      getproperty         Multiname("Weight", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setlocal            9
+
+      findpropstrict      QName(PackageNamespace(""), "Date")
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal3
+      getproperty         Multiname("EndDate", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      constructprop       QName(PackageNamespace(""), "Date"), 1
+      coerce              QName(PackageNamespace(""), "Date")
+      setlocal            10
+
+      findpropstrict      QName(PackageNamespace(""), "String")
+      getlocal3
+      getproperty         Multiname("BgURL", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "String"), 1
+      coerce_s
+      setlocal            11
+
+      getlocal0
+      getlocal1
+      getlocal            4
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "getNumPurchased"), 2
+      convert_i
+      setlocal            12
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.packages.model"), "PackageInfo")
+      constructprop       QName(PackageNamespace("kabam.rotmg.packages.model"), "PackageInfo"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.packages.model"), "PackageInfo")
+      dup
+      setlocal            13
+
+      getlocal            4
+      getlocal            10
+      getlocal            5
+      getlocal            7
+      getlocal            8
+      getlocal            9
+      getlocal            6
+      getlocal            11
+      getlocal            12
+      callpropvoid        QName(PackageNamespace(""), "setData"), 9
+
+      getlocal2
+      getlocal            13
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L120:
+      hasnext2            15, 14
+      iftrue              L40
+
+      kill                15
+      kill                14
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "packageModel")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setPackages"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "getNumPurchased")
+   method
+    refid "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask/getNumPurchased"
+    param QName(PackageNamespace(""), "XML")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    flag NEED_ACTIVATION
+    body
+     maxstack 4
+     localcount 9
+     initscopedepth 6
+     maxscopedepth 9
+     code
+      getlocal0
+      pushscope
+
+      newactivation
+      dup
+      setlocal3
+
+      pushscope
+
+      getscopeobject      1
+      pushnull
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setslot             5
+
+      getscopeobject      1
+      getlocal1
+      setslot             1
+
+      getscopeobject      1
+      getlocal2
+      setslot             2
+
+      getscopeobject      1
+      pushbyte            0
+      setslot             3
+
+      getscopeobject      1
+      getscopeobject      1
+      getslot             1
+      getproperty         Multiname("History", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setslot             4
+
+      getscopeobject      1
+      getslot             4
+      iffalse             L81
+
+      getscopeobject      1
+      pushbyte            0
+      setlocal            5
+
+      getscopeobject      1
+      getslot             4
+      getproperty         Multiname("Package", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      checkfilter
+      coerce_a
+      setlocal            6
+
+      getlex              QName(PackageNamespace(""), "XMLList")
+      pushstring          ""
+      construct           1
+      setlocal            4
+
+      jump                L62
+
+L42:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      dup
+      setlocal            7
+
+      dup
+      setlocal            8
+
+      pushwith
+      getlex              MultinameA("id", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      getlex              Multiname("packageID", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      equals
+      iffalse             L59
+
+      getlocal            4
+      getlocal            5
+      getlocal            7
+      setproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+
+L59:
+      popscope
+      kill                8
+      kill                7
+L62:
+      hasnext2            6, 5
+      iftrue              L42
+
+      kill                6
+      kill                5
+      getlocal            4
+      kill                4
+      coerce              QName(PackageNamespace(""), "XMLList")
+      setslot             5
+
+      getscopeobject      1
+      getslot             5
+      iffalse             L81
+
+      getscopeobject      1
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getscopeobject      1
+      getslot             5
+      getproperty         Multiname("Count", [PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask"), PackageNamespace("kabam.rotmg.packages.services"), PackageInternalNs("kabam.rotmg.packages.services"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.rotmg.packages.services:GetPackagesTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      convert_i
+      setslot             3
+
+L81:
+      getscopeobject      1
+      getslot             3
+      returnvalue
+     end ; code
+     trait slot QName(PackageInternalNs("kabam.rotmg.packages.services"), "packagesXML") slotid 1 type QName(PackageNamespace(""), "XML") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.packages.services"), "packageID") slotid 2 type QName(PackageNamespace(""), "int") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.packages.services"), "numPurchased") slotid 3 type QName(PackageNamespace(""), "int") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.packages.services"), "history") slotid 4 type QName(PackageNamespace(""), "XMLList") end
+     trait slot QName(PackageInternalNs("kabam.rotmg.packages.services"), "packageHistory") slotid 5 type QName(PackageNamespace(""), "XMLList") end
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "timer_timerHandler")
+   method
+    refid "kabam.rotmg.packages.services:GetPackagesTask/instance/kabam.rotmg.packages.services:GetPackagesTask/timer_timerHandler"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "timer_timerHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "timer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("kabam.rotmg.packages.services:GetPackagesTask"), "startTask"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.packages.services:GetPackagesTask/class/init"
+  body
+   maxstack 3
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "HOUR")
+    pushshort           1000
+    pushbyte            60
+    multiply
+    pushbyte            60
+    multiply
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "HOUR")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.packages.services:GetPackagesTask"), "HOUR") slotid 1 type QName(PackageNamespace(""), "int") value Double(3600000) end
+end ; class

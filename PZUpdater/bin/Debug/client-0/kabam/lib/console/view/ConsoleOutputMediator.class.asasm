@@ -1,0 +1,281 @@
+class
+ refid "kabam.lib.console.view:ConsoleOutputMediator"
+ instance QName(PackageNamespace("kabam.lib.console.view"), "ConsoleOutputMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag FINAL
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.console.view:ConsoleOutputMediator")
+  iinit
+   refid "kabam.lib.console.view:ConsoleOutputMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "log") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ConsoleLogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "watch") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ConsoleWatchSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "unwatch") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ConsoleUnwatchSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "clear") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "ClearConsoleSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "copy") flag METADATA type QName(PackageNamespace("kabam.lib.console.signals"), "CopyConsoleTextSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("kabam.lib.console.view"), "ConsoleOutputView")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.lib.console.view:ConsoleOutputMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "log")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onLog")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "watch")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onWatch")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "unwatch")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onUnwatch")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clear")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onClear")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "copy")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onCopy")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.lib.console.view:ConsoleOutputMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "log")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onLog")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "watch")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onWatch")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "unwatch")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onUnwatch")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "clear")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onClear")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "copy")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onCopy")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onLog")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputMediator/instance/kabam.lib.console.view:ConsoleOutputMediator/instance/onLog"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "log"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onWatch")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputMediator/instance/kabam.lib.console.view:ConsoleOutputMediator/instance/onWatch"
+    param QName(PackageNamespace("kabam.lib.console.model"), "Watch")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "watch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onUnwatch")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputMediator/instance/kabam.lib.console.view:ConsoleOutputMediator/instance/onUnwatch"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "unwatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onClear")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputMediator/instance/kabam.lib.console.view:ConsoleOutputMediator/instance/onClear"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callpropvoid        QName(PackageNamespace(""), "clear"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.lib.console.view:ConsoleOutputMediator/instance"), "onCopy")
+   method
+    refid "kabam.lib.console.view:ConsoleOutputMediator/instance/kabam.lib.console.view:ConsoleOutputMediator/instance/onCopy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.system"), "System")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      callproperty        QName(PackageNamespace(""), "getText"), 0
+      callpropvoid        QName(PackageNamespace(""), "setClipboard"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.console.view:ConsoleOutputMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

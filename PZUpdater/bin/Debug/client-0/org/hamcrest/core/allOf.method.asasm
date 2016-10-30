@@ -1,0 +1,47 @@
+method
+ refid "org.hamcrest.core:allOf"
+ returns QName(PackageNamespace("org.hamcrest"), "Matcher")
+ flag NEED_REST
+ body
+  maxstack 2
+  localcount 3
+  initscopedepth 1
+  maxscopedepth 2
+  code
+   getlocal0
+   pushscope
+
+   getlocal1
+   coerce              QName(PackageNamespace(""), "Array")
+   setlocal2
+
+   getlocal1
+   getproperty         QName(PackageNamespace(""), "length")
+   pushbyte            1
+   equals
+   dup
+   iffalse             L17
+
+   pop
+   getlocal1
+   pushbyte            0
+   getproperty         MultinameL([PackageNamespace(""), PrivateNamespace(null, "org.hamcrest.core:allOf"), PackageNamespace("org.hamcrest.core"), PackageInternalNs("org.hamcrest.core"), Namespace("http://adobe.com/AS3/2006/builtin")])
+   getlex              QName(PackageNamespace(""), "Array")
+   istypelate
+L17:
+   iffalse             L23
+
+   getlocal1
+   pushbyte            0
+   getproperty         MultinameL([PackageNamespace(""), PrivateNamespace(null, "org.hamcrest.core:allOf"), PackageNamespace("org.hamcrest.core"), PackageInternalNs("org.hamcrest.core"), Namespace("http://adobe.com/AS3/2006/builtin")])
+   coerce              QName(PackageNamespace(""), "Array")
+   setlocal2
+
+L23:
+   findpropstrict      QName(PackageNamespace("org.hamcrest.core"), "AllOfMatcher")
+   getlocal2
+   constructprop       QName(PackageNamespace("org.hamcrest.core"), "AllOfMatcher"), 1
+   returnvalue
+  end ; code
+ end ; body
+end ; method

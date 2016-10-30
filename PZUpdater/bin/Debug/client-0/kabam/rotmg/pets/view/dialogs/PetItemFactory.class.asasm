@@ -1,0 +1,93 @@
+class
+ refid "kabam.rotmg.pets.view.dialogs:PetItemFactory"
+ instance QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItemFactory")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.view.dialogs:PetItemFactory")
+  iinit
+   refid "kabam.rotmg.pets.view.dialogs:PetItemFactory/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "petIconFactory") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIconFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "create")
+   method
+    refid "kabam.rotmg.pets.view.dialogs:PetItemFactory/instance/create"
+    param QName(PackageNamespace("kabam.rotmg.pets.data"), "PetVO")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItem")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItem")
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItem"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItem")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "petIconFactory")
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "create"), 2
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.components"), "PetIcon")
+      setlocal            4
+
+      getlocal3
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "setPetIcon"), 1
+
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setSize"), 1
+
+      getlocal3
+      getlex              QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "PetItem")
+      getproperty         QName(PackageNamespace(""), "REGULAR")
+      callpropvoid        QName(PackageNamespace(""), "setBackground"), 1
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.view.dialogs:PetItemFactory/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

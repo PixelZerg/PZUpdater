@@ -1,0 +1,205 @@
+class
+ refid "kabam.rotmg.arena.service:GetArenaLeaderboardTask"
+ instance QName(PackageNamespace("kabam.rotmg.arena.service"), "GetArenaLeaderboardTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.arena.service:GetArenaLeaderboardTask")
+  iinit
+   refid "kabam.rotmg.arena.service:GetArenaLeaderboardTask/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "account") flag METADATA type QName(PackageNamespace("kabam.rotmg.account.core"), "Account")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "client") flag METADATA type QName(PackageNamespace("kabam.rotmg.appengine.api"), "AppEngineClient")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "factory") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.service"), "ArenaLeaderboardFactory")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "reloadLeaderboard") flag METADATA type QName(PackageNamespace("kabam.rotmg.arena.control"), "ReloadLeaderboard")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "filter") type QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardFilter") end
+  trait method QName(ProtectedNamespace("kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.rotmg.arena.service:GetArenaLeaderboardTask/instance/kabam.rotmg.arena.service:GetArenaLeaderboardTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getproperty         QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "complete")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "onComplete")
+      callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "client")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "REQUEST")
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "makeRequestObject"), 0
+      callpropvoid        QName(Namespace("kabam.rotmg.appengine.api:AppEngineClient"), "sendRequest"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "onComplete")
+   method
+    refid "kabam.rotmg.arena.service:GetArenaLeaderboardTask/instance/kabam.rotmg.arena.service:GetArenaLeaderboardTask/onComplete"
+    param QName(PackageNamespace(""), "Boolean")
+    param null
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      coerce_a
+      dup
+      iffalse             L11
+
+      pop
+      getlocal0
+      getlocal2
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "updateLeaderboard"), 1
+      coerce_a
+L11:
+      pop
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "updateLeaderboard")
+   method
+    refid "kabam.rotmg.arena.service:GetArenaLeaderboardTask/instance/kabam.rotmg.arena.service:GetArenaLeaderboardTask/updateLeaderboard"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "factory")
+      findpropstrict      QName(PackageNamespace(""), "XML")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "XML"), 1
+      getproperty         Multiname("Record", [PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask/instance/kabam.rotmg.arena.service:GetArenaLeaderboardTask/updateLeaderboard"), PackageNamespace("kabam.rotmg.arena.service"), PackageInternalNs("kabam.rotmg.arena.service"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.arena.service:GetArenaLeaderboardTask"), StaticProtectedNs("kabam.rotmg.arena.service:GetArenaLeaderboardTask"), StaticProtectedNs("kabam.lib.tasks:BaseTask")])
+      callproperty        QName(PackageNamespace(""), "makeEntries"), 1
+      coerce              TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace("kabam.rotmg.arena.model"), "ArenaLeaderboardEntry")>)
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "filter")
+      getlocal2
+      callpropvoid        QName(PackageNamespace(""), "setEntries"), 1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "reloadLeaderboard")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "makeRequestObject")
+   method
+    refid "kabam.rotmg.arena.service:GetArenaLeaderboardTask/instance/kabam.rotmg.arena.service:GetArenaLeaderboardTask/makeRequestObject"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushstring          "type"
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "filter")
+      callproperty        QName(PackageNamespace(""), "getKey"), 0
+      newobject           1
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.company.util"), "MoreObjectUtil")
+      getlocal1
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "account")
+      callproperty        QName(Namespace("kabam.rotmg.account.core:Account"), "getCredentials"), 0
+      callpropvoid        QName(PackageNamespace(""), "addToObject"), 2
+
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.arena.service:GetArenaLeaderboardTask/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "REQUEST")
+    pushstring          "arena/getRecords"
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "REQUEST")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.arena.service:GetArenaLeaderboardTask"), "REQUEST") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("arena/getRecords") end
+end ; class

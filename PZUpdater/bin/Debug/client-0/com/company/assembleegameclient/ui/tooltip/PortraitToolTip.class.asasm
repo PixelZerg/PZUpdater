@@ -1,0 +1,99 @@
+class
+ refid "com.company.assembleegameclient.ui.tooltip:PortraitToolTip"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "PortraitToolTip")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.tooltip"), "ToolTip")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.tooltip:PortraitToolTip")
+  iinit
+   refid "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GameObject")
+   body
+    maxstack 7
+    localcount 3
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushint             6036765
+     pushbyte            1
+     pushint             16549442
+     pushbyte            1
+     pushfalse
+     constructsuper      5
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.display"), "Bitmap")
+     constructprop       QName(PackageNamespace("flash.display"), "Bitmap"), 0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/instance/init"), "portrait_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/instance/init"), "portrait_")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "x")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/instance/init"), "portrait_")
+     pushbyte            0
+     setproperty         QName(PackageNamespace(""), "y")
+
+     getlocal1
+     callproperty        QName(PackageNamespace(""), "getPortrait"), 0
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlex              QName(PackageNamespace("com.company.util"), "BitmapUtil")
+     getlocal2
+     pushbyte            10
+     dup
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "width")
+     pushbyte            20
+     subtract
+     getlocal2
+     getproperty         QName(PackageNamespace(""), "height")
+     pushbyte            20
+     subtract
+     callproperty        QName(PackageNamespace(""), "cropToBitmapData"), 5
+     coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+     setlocal2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/instance/init"), "portrait_")
+     getlocal2
+     setproperty         QName(PackageNamespace(""), "bitmapData")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/instance/init"), "portrait_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     findproperty        QName(PackageNamespace(""), "filters")
+     newarray            0
+     initproperty        QName(PackageNamespace(""), "filters")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/instance/init"), "portrait_") type QName(PackageNamespace("flash.display"), "Bitmap") end
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.tooltip:PortraitToolTip/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

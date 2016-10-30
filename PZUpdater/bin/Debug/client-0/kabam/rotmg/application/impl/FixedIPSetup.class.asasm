@@ -1,0 +1,311 @@
+class
+ refid "kabam.rotmg.application.impl:FixedIPSetup"
+ instance QName(PackageNamespace("kabam.rotmg.application.impl"), "FixedIPSetup")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ApplicationSetup", [PackageNamespace("kabam.rotmg.application.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.application.impl:FixedIPSetup")
+  iinit
+   refid "kabam.rotmg.application.impl:FixedIPSetup/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     pushstring          "http://"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "SERVER")
+     add
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "UNENCRYPTED")
+
+     getlocal0
+     pushstring          "https://"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "SERVER")
+     add
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ENCRYPTED")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "SERVER") type QName(PackageNamespace(""), "String") value Utf8("rotmgtesting.appspot.com") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "UNENCRYPTED") type QName(PackageNamespace(""), "String") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ENCRYPTED") type QName(PackageNamespace(""), "String") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ANALYTICS") type QName(PackageNamespace(""), "String") value Utf8("UA-99999999-1") end
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "BUILD_LABEL") type QName(PackageNamespace(""), "String") value Utf8("<font color='#9900FF'>{IP}</font> #{VERSION}") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ipAddress") type QName(PackageNamespace(""), "String") end
+  trait method QName(PackageNamespace(""), "setAddress")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/setAddress"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("kabam.rotmg.application.impl"), "FixedIPSetup")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ipAddress")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getAppEngineUrl")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/getAppEngineUrl"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "String")
+    flag HAS_OPTIONAL
+    optional False()
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "UNENCRYPTED")
+      coerce_s
+      jump                L11
+
+L8:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ENCRYPTED")
+      coerce_s
+L11:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getAnalyticsCode")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/getAnalyticsCode"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ANALYTICS")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getBuildLabel")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/getBuildLabel"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "BUILD_VERSION")
+      pushstring          "."
+      add
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "MINOR_VERSION")
+      add
+      coerce_s
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "BUILD_LABEL")
+      pushstring          "{IP}"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.impl:FixedIPSetup/instance"), "ipAddress")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      pushstring          "{VERSION}"
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "useLocalTextures")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/useLocalTextures"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isToolingEnabled")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/isToolingEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isGameLoopMonitored")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/isGameLoopMonitored"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "useProductionDialogs")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/useProductionDialogs"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "areErrorsReported")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/areErrorsReported"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "areDeveloperHotkeysEnabled")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/areDeveloperHotkeysEnabled"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushtrue
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isDebug")
+   method
+    refid "kabam.rotmg.application.impl:FixedIPSetup/instance/isDebug"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushfalse
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application.impl:FixedIPSetup/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

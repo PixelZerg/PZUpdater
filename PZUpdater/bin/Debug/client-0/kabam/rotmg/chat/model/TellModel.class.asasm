@@ -1,0 +1,188 @@
+class
+ refid "kabam.rotmg.chat.model:TellModel"
+ instance QName(PackageNamespace("kabam.rotmg.chat.model"), "TellModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.chat.model:TellModel")
+  iinit
+   refid "kabam.rotmg.chat.model:TellModel/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#1"), PackageNamespace("kabam.rotmg.chat.model"), PackageInternalNs("kabam.rotmg.chat.model"), ProtectedNamespace("kabam.rotmg.chat.model:TellModel"), StaticProtectedNs("kabam.rotmg.chat.model:TellModel"), PackageNamespace("__AS3__.vec")])
+     getlex              QName(PackageNamespace(""), "String")
+     applytype           1
+     construct           0
+     initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients") type TypeName(QName(PackageNamespace("__AS3__.vec"), "Vector")<QName(PackageNamespace(""), "String")>) end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "index") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait method QName(PackageNamespace(""), "push")
+   method
+    refid "kabam.rotmg.chat.model:TellModel/instance/push"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+      getlocal1
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      convert_i
+      setlocal2
+
+      getlocal2
+      pushbyte            -1
+      ifeq                L16
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+      getlocal2
+      pushbyte            1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "splice"), 2
+
+L16:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+      getlocal1
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "unshift"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getNext")
+   method
+    refid "kabam.rotmg.chat.model:TellModel/instance/getNext"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifngt               L23
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "index")
+      pushbyte            1
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+      getproperty         QName(PackageNamespace(""), "length")
+      modulo
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "index")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "index")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#1"), PackageNamespace("kabam.rotmg.chat.model"), PackageInternalNs("kabam.rotmg.chat.model"), ProtectedNamespace("kabam.rotmg.chat.model:TellModel"), StaticProtectedNs("kabam.rotmg.chat.model:TellModel")])
+      returnvalue
+
+L23:
+      pushstring          ""
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "resetRecipients")
+   method
+    refid "kabam.rotmg.chat.model:TellModel/instance/resetRecipients"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushbyte            -1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "index")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "clearRecipients")
+   method
+    refid "kabam.rotmg.chat.model:TellModel/instance/clearRecipients"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlex              Multiname("Vector", [PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#1"), PackageNamespace("kabam.rotmg.chat.model"), PackageInternalNs("kabam.rotmg.chat.model"), ProtectedNamespace("kabam.rotmg.chat.model:TellModel"), StaticProtectedNs("kabam.rotmg.chat.model:TellModel"), PackageNamespace("__AS3__.vec")])
+      getlex              QName(PackageNamespace(""), "String")
+      applytype           1
+      construct           0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "pastRecipients")
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.chat.model:TellModel/instance#0"), "index")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.chat.model:TellModel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,469 @@
+class
+ refid "org.swiftsuspenders.typedescriptions:TypeDescription"
+ instance QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.typedescriptions:TypeDescription")
+  iinit
+   refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/init"
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   optional True()
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal1
+     iffalse             L10
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "NoParamsConstructorInjectionPoint")
+     constructprop       QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "NoParamsConstructorInjectionPoint"), 0
+     initproperty        QName(PackageNamespace(""), "ctor")
+
+L10:
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "ctor") type QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "ConstructorInjectionPoint") end
+  trait slot QName(PackageNamespace(""), "injectionPoints") type QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "InjectionPoint") end
+  trait slot QName(PackageNamespace(""), "preDestroyMethods") type QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PreDestroyInjectionPoint") end
+  trait slot QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "_postConstructAdded") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "setConstructor")
+   method
+    refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/setConstructor"
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace("flash.utils"), "Dictionary")
+    returns QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+    flag HAS_OPTIONAL
+    optional Null()
+    optional Integer(2147483647)
+    optional Null()
+    body
+     maxstack 6
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "ConstructorInjectionPoint")
+      getlocal0
+      getlocal1
+      getlocal2
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      iftrue              L13
+
+      pop
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+L13:
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "createParameterMappings"), 2
+      getlocal3
+      getlocal            4
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "ConstructorInjectionPoint"), 3
+      initproperty        QName(PackageNamespace(""), "ctor")
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addFieldInjection")
+   method
+    refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/addFieldInjection"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace("flash.utils"), "Dictionary")
+    returns QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+    flag HAS_OPTIONAL
+    optional Utf8("")
+    optional False()
+    optional Null()
+    body
+     maxstack 6
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "_postConstructAdded")
+      iffalse             L9
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectorError")
+      pushstring          "Can't add injection point after post construct method"
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectorError"), 1
+      throw
+
+L9:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PropertyInjectionPoint")
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getQualifiedClassName")
+      getlocal2
+      callproperty        QName(PackageNamespace("flash.utils"), "getQualifiedClassName"), 1
+      pushstring          "|"
+      add
+      getlocal3
+      add
+      getlocal1
+      getlocal            4
+      getlocal            5
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PropertyInjectionPoint"), 4
+      callpropvoid        QName(PackageNamespace(""), "addInjectionPoint"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addMethodInjection")
+   method
+    refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/addMethodInjection"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace("flash.utils"), "Dictionary")
+    returns QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+    flag HAS_OPTIONAL
+    optional Null()
+    optional Integer(2147483647)
+    optional False()
+    optional Null()
+    body
+     maxstack 7
+     localcount 7
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "_postConstructAdded")
+      iffalse             L9
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders"), "InjectorError")
+      pushstring          "Can't add injection point after post construct method"
+      constructprop       QName(PackageNamespace("org.swiftsuspenders"), "InjectorError"), 1
+      throw
+
+L9:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "MethodInjectionPoint")
+      getlocal1
+      getlocal0
+      getlocal2
+      getlocal3
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      iftrue              L21
+
+      pop
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+L21:
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "createParameterMappings"), 2
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            4
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      getlocal            5
+      getlocal            6
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "MethodInjectionPoint"), 5
+      callpropvoid        QName(PackageNamespace(""), "addInjectionPoint"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addPostConstructMethod")
+   method
+    refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/addPostConstructMethod"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+    flag HAS_OPTIONAL
+    optional Null()
+    optional Integer(2147483647)
+    body
+     maxstack 7
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "_postConstructAdded")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PostConstructInjectionPoint")
+      getlocal1
+      getlocal0
+      getlocal2
+      getlocal3
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      iftrue              L17
+
+      pop
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+L17:
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "createParameterMappings"), 2
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            4
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      pushbyte            0
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PostConstructInjectionPoint"), 4
+      callpropvoid        QName(PackageNamespace(""), "addInjectionPoint"), 1
+
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addPreDestroyMethod")
+   method
+    refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/addPreDestroyMethod"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "TypeDescription")
+    flag HAS_OPTIONAL
+    optional Null()
+    optional Integer(2147483647)
+    body
+     maxstack 6
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PreDestroyInjectionPoint")
+      getlocal1
+      getlocal0
+      getlocal2
+      getlocal3
+      coerce              QName(PackageNamespace(""), "Array")
+      dup
+      iftrue              L13
+
+      pop
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+L13:
+      callproperty        QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "createParameterMappings"), 2
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            4
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "length")
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      pushbyte            0
+      constructprop       QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PreDestroyInjectionPoint"), 4
+      coerce              QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "PreDestroyInjectionPoint")
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "preDestroyMethods")
+      iffalse             L36
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "preDestroyMethods")
+      getproperty         QName(PackageNamespace(""), "last")
+      getlocal            5
+      setproperty         QName(PackageNamespace(""), "next")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "preDestroyMethods")
+      getlocal            5
+      setproperty         QName(PackageNamespace(""), "last")
+
+      jump                L43
+
+L36:
+      getlocal0
+      getlocal            5
+      initproperty        QName(PackageNamespace(""), "preDestroyMethods")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "preDestroyMethods")
+      getlocal            5
+      setproperty         QName(PackageNamespace(""), "last")
+
+L43:
+      getlocal0
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addInjectionPoint")
+   method
+    refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/addInjectionPoint"
+    param QName(PackageNamespace("org.swiftsuspenders.typedescriptions"), "InjectionPoint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injectionPoints")
+      iffalse             L15
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injectionPoints")
+      getproperty         QName(PackageNamespace(""), "last")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "next")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injectionPoints")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "last")
+
+      jump                L22
+
+L15:
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "injectionPoints")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "injectionPoints")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "last")
+
+L22:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), "createParameterMappings")
+   method
+    refid "org.swiftsuspenders.typedescriptions:TypeDescription/instance/org.swiftsuspenders.typedescriptions:TypeDescription/instance/createParameterMappings"
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 5
+     localcount 5
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "Array")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      constructprop       QName(PackageNamespace(""), "Array"), 1
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            4
+
+      jump                L34
+
+L13:
+      label
+      getlocal3
+      getlocal            4
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getQualifiedClassName")
+      getlocal1
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance/org.swiftsuspenders.typedescriptions:TypeDescription/instance/createParameterMappings"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:TypeDescription"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:TypeDescription")])
+      callproperty        QName(PackageNamespace("flash.utils"), "getQualifiedClassName"), 1
+      pushstring          "|"
+      add
+      getlocal2
+      getlocal            4
+      getproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance/org.swiftsuspenders.typedescriptions:TypeDescription/instance/createParameterMappings"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:TypeDescription"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:TypeDescription")])
+      coerce_a
+      dup
+      iftrue              L32
+
+      pop
+      pushstring          ""
+      coerce_a
+L32:
+      add
+      setproperty         MultinameL([PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance"), PackageNamespace("org.swiftsuspenders.typedescriptions"), PackageNamespace(""), PrivateNamespace(null, "org.swiftsuspenders.typedescriptions:TypeDescription/instance/org.swiftsuspenders.typedescriptions:TypeDescription/instance/createParameterMappings"), PackageInternalNs("org.swiftsuspenders.typedescriptions"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("org.swiftsuspenders.typedescriptions:TypeDescription"), StaticProtectedNs("org.swiftsuspenders.typedescriptions:TypeDescription")])
+
+L34:
+      getlocal            4
+      dup
+      decrement_i
+      setlocal            4
+
+      iftrue              L13
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.typedescriptions:TypeDescription/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

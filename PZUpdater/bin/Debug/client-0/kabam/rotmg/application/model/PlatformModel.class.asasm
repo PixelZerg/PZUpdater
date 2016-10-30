@@ -1,0 +1,264 @@
+class
+ refid "kabam.rotmg.application.model:PlatformModel"
+ instance QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.application.model:PlatformModel")
+  iinit
+   refid "kabam.rotmg.application.model:PlatformModel/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "root") flag METADATA type QName(PackageNamespace("flash.display"), "DisplayObjectContainer")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait const QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "DESKTOP") type QName(PackageNamespace(""), "String") value Utf8("Desktop") end
+  trait method QName(PackageNamespace(""), "isWeb")
+   method
+    refid "kabam.rotmg.application.model:PlatformModel/instance/isWeb"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.system"), "Capabilities")
+      getproperty         QName(PackageNamespace(""), "playerType")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "DESKTOP")
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "isDesktop")
+   method
+    refid "kabam.rotmg.application.model:PlatformModel/instance/isDesktop"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("flash.system"), "Capabilities")
+      getproperty         QName(PackageNamespace(""), "playerType")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "DESKTOP")
+      equals
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getPlatform")
+   method
+    refid "kabam.rotmg.application.model:PlatformModel/instance/getPlatform"
+    returns QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "platform")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "platform")
+      coerce              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+      dup
+      iftrue              L11
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "determinePlatform"), 0
+      coerce              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+L11:
+      dup
+      setlocal1
+
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "platform")
+
+      getlocal1
+      kill                1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "determinePlatform")
+   method
+    refid "kabam.rotmg.application.model:PlatformModel/instance/kabam.rotmg.application.model:PlatformModel/instance/determinePlatform"
+    returns QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "LoaderInfo")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "root")
+      getproperty         QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "root")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      callproperty        QName(PackageNamespace("flash.display"), "LoaderInfo"), 1
+      getproperty         QName(PackageNamespace(""), "parameters")
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal1
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "isKongregate"), 1
+      iffalse             L19
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+      getproperty         QName(PackageNamespace(""), "KONGREGATE")
+      returnvalue
+
+L19:
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "isSteam"), 1
+      iffalse             L26
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+      getproperty         QName(PackageNamespace(""), "STEAM")
+      returnvalue
+
+L26:
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "isKabam"), 1
+      iffalse             L33
+
+      getlex              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+      getproperty         QName(PackageNamespace(""), "KABAM")
+      returnvalue
+
+L33:
+      getlex              QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType")
+      getproperty         QName(PackageNamespace(""), "WEB")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "isKongregate")
+   method
+    refid "kabam.rotmg.application.model:PlatformModel/instance/kabam.rotmg.application.model:PlatformModel/instance/isKongregate"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         Multiname("kongregate_api_path", [PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.application.model"), PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance/kabam.rotmg.application.model:PlatformModel/instance"), PackageInternalNs("kabam.rotmg.application.model"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("kabam.rotmg.application"), ProtectedNamespace("kabam.rotmg.application.model:PlatformModel"), StaticProtectedNs("kabam.rotmg.application.model:PlatformModel")])
+      pushnull
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "isSteam")
+   method
+    refid "kabam.rotmg.application.model:PlatformModel/instance/kabam.rotmg.application.model:PlatformModel/instance/isSteam"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         Multiname("steam_api_path", [PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.application.model"), PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance/kabam.rotmg.application.model:PlatformModel/instance"), PackageInternalNs("kabam.rotmg.application.model"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("kabam.rotmg.application"), ProtectedNamespace("kabam.rotmg.application.model:PlatformModel"), StaticProtectedNs("kabam.rotmg.application.model:PlatformModel")])
+      pushnull
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "isKabam")
+   method
+    refid "kabam.rotmg.application.model:PlatformModel/instance/kabam.rotmg.application.model:PlatformModel/instance/isKabam"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         Multiname("kabam_signed_request", [PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), PackageNamespace(""), PackageNamespace("kabam.rotmg.application.model"), PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance/kabam.rotmg.application.model:PlatformModel/instance"), PackageInternalNs("kabam.rotmg.application.model"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("kabam.rotmg.application"), ProtectedNamespace("kabam.rotmg.application.model:PlatformModel"), StaticProtectedNs("kabam.rotmg.application.model:PlatformModel")])
+      pushnull
+      equals
+      not
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.application.model:PlatformModel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.application.model:PlatformModel/instance"), "platform") slotid 1 type QName(PackageNamespace("kabam.rotmg.application.model"), "PlatformType") end
+end ; class

@@ -1,0 +1,416 @@
+class
+ refid "kabam.rotmg.ui.model:PotionModel"
+ instance QName(PackageNamespace("kabam.rotmg.ui.model"), "PotionModel")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.model:PotionModel")
+  iinit
+   refid "kabam.rotmg.ui.model:PotionModel/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("org.osflash.signals"), "Signal")
+     getlex              QName(PackageNamespace(""), "int")
+     constructprop       QName(PackageNamespace("org.osflash.signals"), "Signal"), 1
+     initproperty        QName(PackageNamespace(""), "update")
+
+     getlocal0
+     pushtrue
+     initproperty        QName(PackageNamespace(""), "available")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "objectId") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "_costs") type QName(PackageNamespace(""), "Array") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "_priceCooldownMillis") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "_purchaseCooldownMillis") type QName(PackageNamespace(""), "uint") end
+  trait slot QName(PackageNamespace(""), "maxPotionCount") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "position") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "available") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costCoolDownTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costTimerSignal") type QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseCoolDownTimer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseTimerSignal") type QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal") end
+  trait slot QName(PackageNamespace(""), "update") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait setter QName(PackageNamespace(""), "costs")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/costs/setter"
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "_costs")
+
+      getlocal1
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L16
+
+      pop
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+L16:
+      iffalse             L20
+
+      getlocal0
+      pushbyte            0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+
+L20:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait getter QName(PackageNamespace(""), "costs")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/costs/getter"
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "_costs")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "priceCooldownMillis")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/priceCooldownMillis/setter"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "_priceCooldownMillis")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      getlocal1
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costCoolDownTimer")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costCoolDownTimer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costTimerSignal")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costTimerSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "coolDownPrice")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "purchaseCooldownMillis")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/purchaseCooldownMillis/setter"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PackageNamespace(""), "_purchaseCooldownMillis")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      getlocal1
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseCoolDownTimer")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseCoolDownTimer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      constructprop       QName(PackageNamespace("org.osflash.signals.natives"), "NativeSignal"), 3
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseTimerSignal")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseTimerSignal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "coolDownPurchase")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "purchasedPot")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/purchasedPot"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "available")
+      iffalse             L43
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costCoolDownTimer")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costCoolDownTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseCoolDownTimer")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseCoolDownTimer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PackageNamespace(""), "available")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "costs")
+      getproperty         QName(PackageNamespace(""), "length")
+      decrement
+      ifnlt               L38
+
+      getlocal0
+      dup
+      setlocal1
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+      increment_i
+      setlocal2
+
+      getlocal1
+      getlocal2
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+
+      kill                2
+      kill                1
+L38:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "position")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+L43:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "coolDownPurchase")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/kabam.rotmg.ui.model:PotionModel/instance/coolDownPurchase"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+      pushbyte            0
+      ifne                L9
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "purchaseCoolDownTimer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+L9:
+      getlocal0
+      pushtrue
+      initproperty        QName(PackageNamespace(""), "available")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "position")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "coolDownPrice")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/kabam.rotmg.ui.model:PotionModel/instance/coolDownPrice"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+      decrement_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+
+      kill                3
+      kill                2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+      pushbyte            0
+      ifne                L20
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costCoolDownTimer")
+      callpropvoid        QName(PackageNamespace(""), "stop"), 0
+
+L20:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "update")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "position")
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "currentCost")
+   method
+    refid "kabam.rotmg.ui.model:PotionModel/instance/currentCost"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal2
+
+      getlocal1
+      pushbyte            0
+      ifnle               L14
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "costs")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), "costIndex")
+      getproperty         MultinameL([PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance"), PackageNamespace(""), PrivateNamespace(null, "kabam.rotmg.ui.model:PotionModel/instance/currentCost"), PackageNamespace("kabam.rotmg.ui.model"), PackageInternalNs("kabam.rotmg.ui.model"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("kabam.rotmg.ui.model:PotionModel"), StaticProtectedNs("kabam.rotmg.ui.model:PotionModel")])
+      convert_i
+      setlocal2
+
+L14:
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.model:PotionModel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

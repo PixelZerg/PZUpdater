@@ -1,0 +1,351 @@
+class
+ refid "kabam.rotmg.ui.view.components:MapBackground"
+ instance QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MapBackground")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui.view.components:MapBackground")
+  iinit
+   refid "kabam.rotmg.ui.view.components:MapBackground/instance/init"
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "onAddedToStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "onRemovedFromStage")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "lastUpdate") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "time") type QName(PackageNamespace(""), "Number") end
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "onAddedToStage")
+   method
+    refid "kabam.rotmg.ui.view.components:MapBackground/instance/kabam.rotmg.ui.view.components:MapBackground/onAddedToStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 3
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "addChildAt")
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "backgroundMap")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "backgroundMap")
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+      dup
+      iftrue              L12
+
+      pop
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "makeMap"), 0
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+L12:
+      dup
+      setlocal2
+
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "backgroundMap")
+
+      getlocal2
+      kill                2
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "addChildAt"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "lastUpdate")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "onRemovedFromStage")
+   method
+    refid "kabam.rotmg.ui.view.components:MapBackground/instance/kabam.rotmg.ui.view.components:MapBackground/onRemovedFromStage"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "removeEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "ENTER_FRAME")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "onEnterFrame")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "onEnterFrame")
+   method
+    refid "kabam.rotmg.ui.view.components:MapBackground/instance/kabam.rotmg.ui.view.components:MapBackground/onEnterFrame"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getTimer")
+      callproperty        QName(PackageNamespace("flash.utils"), "getTimer"), 0
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "time")
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "time")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "lastUpdate")
+      subtract
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "TO_MILLISECONDS")
+      multiply
+      add
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+      getproperty         QName(PackageNamespace(""), "x_")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER")
+      add
+      ifngt               L29
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+      getproperty         QName(PackageNamespace(""), "x_")
+      subtract
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+
+L29:
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "camera")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "yVal")
+      pushbyte            12
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "ANGLE")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "RECTANGLE")
+      callpropvoid        QName(PackageNamespace(""), "configure"), 5
+
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "backgroundMap")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "camera")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "time")
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "time")
+      initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "lastUpdate")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "makeMap")
+   method
+    refid "kabam.rotmg.ui.view.components:MapBackground/instance/kabam.rotmg.ui.view.components:MapBackground/makeMap"
+    returns QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+    body
+     maxstack 7
+     localcount 4
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "EMBEDDED_BACKGROUNDMAP")
+      constructprop       QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "EMBEDDED_BACKGROUNDMAP"), 0
+      coerce              QName(PackageNamespace("flash.utils"), "ByteArray")
+      setlocal1
+
+      getlocal1
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "length")
+      callproperty        QName(PackageNamespace(""), "readUTFBytes"), 1
+      coerce_s
+      setlocal2
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map.serialization"), "MapDecoder")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getSize"), 1
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER")
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal")
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "yVal")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER")
+      findpropstrict      QName(PackageNamespace(""), "int")
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+      getproperty         QName(PackageNamespace(""), "y_")
+      pushbyte            2
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER")
+      multiply
+      subtract
+      getlex              QName(PackageNamespace(""), "Math")
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      multiply
+      callproperty        QName(PackageNamespace(""), "int"), 1
+      add
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "yVal")
+
+      findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "camera")
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera")
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera"), 0
+      setproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "camera")
+
+      findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+      pushnull
+      constructprop       QName(PackageNamespace("com.company.assembleegameclient.map"), "Map"), 1
+      coerce              QName(PackageNamespace("com.company.assembleegameclient.map"), "Map")
+      setlocal3
+
+      getlocal3
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+      getproperty         QName(PackageNamespace(""), "x_")
+      pushbyte            2
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER")
+      multiply
+      add
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+      getproperty         QName(PackageNamespace(""), "y_")
+      pushstring          "Background Map"
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.background"), "Background")
+      getproperty         QName(PackageNamespace(""), "NO_BACKGROUND")
+      pushfalse
+      pushfalse
+      callpropvoid        QName(PackageNamespace(""), "setProps"), 6
+
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "initialize"), 0
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map.serialization"), "MapDecoder")
+      getlocal2
+      getlocal3
+      pushbyte            0
+      dup
+      callpropvoid        QName(PackageNamespace(""), "writeMap"), 4
+
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.map.serialization"), "MapDecoder")
+      getlocal2
+      getlocal3
+      getlex              QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize")
+      getproperty         QName(PackageNamespace(""), "x_")
+      pushbyte            0
+      callpropvoid        QName(PackageNamespace(""), "writeMap"), 4
+
+      getlocal3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui.view.components:MapBackground/class/init"
+  body
+   maxstack 6
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER")
+    pushbyte            10
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "RECTANGLE")
+    findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+    pushshort           -400
+    pushshort           -300
+    pushshort           800
+    pushshort           600
+    constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "RECTANGLE")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "ANGLE")
+    pushbyte            7
+    getlex              QName(PackageNamespace(""), "Math")
+    getproperty         QName(PackageNamespace(""), "PI")
+    multiply
+    pushbyte            4
+    divide
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "ANGLE")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "TO_MILLISECONDS")
+    pushbyte            1
+    pushshort           1000
+    divide
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "TO_MILLISECONDS")
+
+    findproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "EMBEDDED_BACKGROUNDMAP")
+    getlex              QName(PackageNamespace("kabam.rotmg.ui.view.components"), "MapBackground_EMBEDDED_BACKGROUNDMAP")
+    initproperty        QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "EMBEDDED_BACKGROUNDMAP")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "BORDER") slotid 1 type QName(PackageNamespace(""), "int") value Integer(10) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "RECTANGLE") slotid 2 type QName(PackageNamespace("flash.geom"), "Rectangle") end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "ANGLE") slotid 3 type QName(PackageNamespace(""), "Number") value Double(5.497787143782138) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "TO_MILLISECONDS") slotid 4 type QName(PackageNamespace(""), "Number") value Double(0.001) end
+ trait const QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "EMBEDDED_BACKGROUNDMAP") slotid 5 type QName(PackageNamespace(""), "Class") end
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "backgroundMap") slotid 6 type QName(PackageNamespace("com.company.assembleegameclient.map"), "Map") end
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "mapSize") slotid 7 type QName(PackageNamespace("com.company.util"), "IntPoint") end
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "xVal") slotid 8 type QName(PackageNamespace(""), "Number") end
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "yVal") slotid 9 type QName(PackageNamespace(""), "Number") end
+ trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui.view.components:MapBackground"), "camera") slotid 10 type QName(PackageNamespace("com.company.assembleegameclient.map"), "Camera") end
+end ; class

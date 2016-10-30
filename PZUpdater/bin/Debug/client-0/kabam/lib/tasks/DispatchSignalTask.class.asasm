@@ -1,0 +1,84 @@
+class
+ refid "kabam.lib.tasks:DispatchSignalTask"
+ instance QName(PackageNamespace("kabam.lib.tasks"), "DispatchSignalTask")
+  extends QName(PackageNamespace("kabam.lib.tasks"), "BaseTask")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.lib.tasks:DispatchSignalTask")
+  iinit
+   refid "kabam.lib.tasks:DispatchSignalTask/instance/init"
+   param QName(PackageNamespace("org.osflash.signals"), "Signal")
+   flag NEED_REST
+   body
+    maxstack 2
+    localcount 3
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.tasks:DispatchSignalTask/instance"), "signal")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "kabam.lib.tasks:DispatchSignalTask/instance"), "params")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "kabam.lib.tasks:DispatchSignalTask/instance"), "signal") type QName(PackageNamespace("org.osflash.signals"), "Signal") end
+  trait slot QName(PrivateNamespace(null, "kabam.lib.tasks:DispatchSignalTask/instance"), "params") type QName(PackageNamespace(""), "Array") end
+  trait method QName(ProtectedNamespace("kabam.lib.tasks:DispatchSignalTask"), "startTask") flag OVERRIDE
+   method
+    refid "kabam.lib.tasks:DispatchSignalTask/instance/kabam.lib.tasks:DispatchSignalTask:startTask"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:DispatchSignalTask/instance"), "signal")
+      getproperty         QName(PackageNamespace(""), "dispatch")
+      pushnull
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.lib.tasks:DispatchSignalTask/instance"), "params")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "apply"), 2
+
+      findpropstrict      QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask")
+      pushtrue
+      callpropvoid        QName(ProtectedNamespace("kabam.lib.tasks:BaseTask"), "completeTask"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.lib.tasks:DispatchSignalTask/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

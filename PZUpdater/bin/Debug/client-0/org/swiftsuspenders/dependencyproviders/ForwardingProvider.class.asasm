@@ -1,0 +1,98 @@
+class
+ refid "org.swiftsuspenders.dependencyproviders:ForwardingProvider"
+ instance QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "ForwardingProvider")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("DependencyProvider", [PackageNamespace("org.swiftsuspenders.dependencyproviders")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("org.swiftsuspenders.dependencyproviders:ForwardingProvider")
+  iinit
+   refid "org.swiftsuspenders.dependencyproviders:ForwardingProvider/instance/init"
+   param QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PackageNamespace(""), "provider")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "provider") type QName(PackageNamespace("org.swiftsuspenders.dependencyproviders"), "DependencyProvider") end
+  trait method QName(PackageNamespace(""), "apply")
+   method
+    refid "org.swiftsuspenders.dependencyproviders:ForwardingProvider/instance/apply"
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace("org.swiftsuspenders"), "Injector")
+    param QName(PackageNamespace("flash.utils"), "Dictionary")
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 4
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "provider")
+      getlocal1
+      getlocal2
+      getlocal3
+      callproperty        QName(Namespace("org.swiftsuspenders.dependencyproviders:DependencyProvider"), "apply"), 3
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy")
+   method
+    refid "org.swiftsuspenders.dependencyproviders:ForwardingProvider/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "provider")
+      callpropvoid        QName(Namespace("org.swiftsuspenders.dependencyproviders:DependencyProvider"), "destroy"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "org.swiftsuspenders.dependencyproviders:ForwardingProvider/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

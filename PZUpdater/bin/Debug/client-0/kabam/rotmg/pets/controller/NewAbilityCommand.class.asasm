@@ -1,0 +1,87 @@
+class
+ refid "kabam.rotmg.pets.controller:NewAbilityCommand"
+ instance QName(PackageNamespace("kabam.rotmg.pets.controller"), "NewAbilityCommand")
+  extends QName(PackageNamespace("com.company.assembleegameclient.editor"), "Command")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.pets.controller:NewAbilityCommand")
+  iinit
+   refid "kabam.rotmg.pets.controller:NewAbilityCommand/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "openDialog") flag METADATA type QName(PackageNamespace("kabam.rotmg.dialogs.control"), "OpenDialogSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "displayIDGetter") flag METADATA type QName(PackageNamespace("kabam.rotmg.pets.data"), "PetAbilityDisplayIDGetter")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PackageNamespace(""), "abilityID") flag METADATA type QName(PackageNamespace(""), "int")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "kabam.rotmg.pets.controller:NewAbilityCommand/instance/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "NewAbility")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "displayIDGetter")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "abilityID")
+      callproperty        QName(PackageNamespace(""), "getID"), 1
+      constructprop       QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "NewAbility"), 1
+      coerce              QName(PackageNamespace("kabam.rotmg.pets.view.dialogs"), "NewAbility")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "openDialog")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.pets.controller:NewAbilityCommand/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

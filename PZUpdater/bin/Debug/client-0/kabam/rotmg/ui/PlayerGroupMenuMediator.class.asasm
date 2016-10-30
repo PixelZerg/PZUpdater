@@ -1,0 +1,127 @@
+class
+ refid "kabam.rotmg.ui:PlayerGroupMenuMediator"
+ instance QName(PackageNamespace("kabam.rotmg.ui"), "PlayerGroupMenuMediator")
+  extends QName(PackageNamespace("robotlegs.bender.bundles.mvcs"), "Mediator")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("kabam.rotmg.ui:PlayerGroupMenuMediator")
+  iinit
+   refid "kabam.rotmg.ui:PlayerGroupMenuMediator/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "view") flag METADATA type QName(PackageNamespace("com.company.assembleegameclient.ui.menu"), "PlayerGroupMenu")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "kabam.rotmg.ui:PlayerGroupMenuMediator/instance"), "addTextLine") flag METADATA type QName(PackageNamespace("kabam.rotmg.game.signals"), "AddTextLineSignal")
+   metadata "Inject"
+   end ; metadata
+  end ; trait
+  trait method QName(PackageNamespace(""), "initialize") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui:PlayerGroupMenuMediator/instance/initialize"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "unableToTeleport")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui:PlayerGroupMenuMediator/instance"), "onUnableToTeleport")
+      callpropvoid        QName(PackageNamespace(""), "add"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "destroy") flag OVERRIDE
+   method
+    refid "kabam.rotmg.ui:PlayerGroupMenuMediator/instance/destroy"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "view")
+      getproperty         QName(PackageNamespace(""), "unableToTeleport")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui:PlayerGroupMenuMediator/instance"), "onUnableToTeleport")
+      callpropvoid        QName(PackageNamespace(""), "remove"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "kabam.rotmg.ui:PlayerGroupMenuMediator/instance"), "onUnableToTeleport")
+   method
+    refid "kabam.rotmg.ui:PlayerGroupMenuMediator/instance/kabam.rotmg.ui:PlayerGroupMenuMediator/instance/onUnableToTeleport"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "kabam.rotmg.ui:PlayerGroupMenuMediator/instance"), "addTextLine")
+      getlex              QName(PackageNamespace("kabam.rotmg.chat.model"), "ChatMessage")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "ERROR_CHAT_NAME")
+      pushstring          "No players are eligible for teleporting"
+      callproperty        QName(PackageNamespace(""), "make"), 2
+      callpropvoid        QName(PackageNamespace(""), "dispatch"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "kabam.rotmg.ui:PlayerGroupMenuMediator/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

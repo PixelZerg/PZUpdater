@@ -1,0 +1,108 @@
+class
+ refid "robotlegs.bender.extensions.logging.impl:TraceLogTarget"
+ instance QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "TraceLogTarget")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("ILogTarget", [PackageNamespace("robotlegs.bender.framework.api")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("robotlegs.bender.extensions.logging.impl:TraceLogTarget")
+  iinit
+   refid "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance/init"
+   param QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "LogMessageParser")
+     constructprop       QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "LogMessageParser"), 0
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance"), "_messageParser")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance"), "_context")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait const QName(PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance"), "_messageParser") type QName(PackageNamespace("robotlegs.bender.extensions.logging.impl"), "LogMessageParser") end
+  trait slot QName(PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance"), "_context") type QName(PackageNamespace("robotlegs.bender.framework.api"), "IContext") end
+  trait method QName(PackageNamespace(""), "log")
+   method
+    refid "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance/log"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 5
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "trace")
+      getlocal3
+      pushstring          " "
+      add
+      getlex              QName(PackageNamespace("robotlegs.bender.framework.api"), "LogLevel")
+      getproperty         QName(PackageNamespace(""), "NAME")
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance"), PackageNamespace("robotlegs.bender.extensions.logging.impl"), PackageNamespace(""), PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance/log"), PackageInternalNs("robotlegs.bender.extensions.logging.impl"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("robotlegs.bender.extensions.logging.impl:TraceLogTarget"), StaticProtectedNs("robotlegs.bender.extensions.logging.impl:TraceLogTarget")])
+      add
+      pushstring          " "
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance"), "_context")
+      add
+      pushstring          " "
+      add
+      getlocal1
+      add
+      pushstring          " - "
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "robotlegs.bender.extensions.logging.impl:TraceLogTarget/instance"), "_messageParser")
+      getlocal            4
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "parseMessage"), 2
+      add
+      callpropvoid        QName(PackageNamespace(""), "trace"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "robotlegs.bender.extensions.logging.impl:TraceLogTarget/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

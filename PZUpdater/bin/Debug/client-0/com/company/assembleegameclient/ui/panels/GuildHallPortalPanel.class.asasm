@@ -1,0 +1,477 @@
+class
+ refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel"
+ instance QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "GuildHallPortalPanel")
+  extends QName(PackageNamespace("com.company.assembleegameclient.ui.panels"), "Panel")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.company.assembleegameclient.ui.panels:GuildHallPortalPanel")
+  iinit
+   refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/init"
+   param QName(PackageNamespace("com.company.assembleegameclient.game"), "AGameSprite")
+   param QName(PackageNamespace("com.company.assembleegameclient.objects"), "GuildHallPortal")
+   body
+    maxstack 5
+    localcount 4
+    initscopedepth 10
+    maxscopedepth 11
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+     setlocal3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter")
+     constructprop       QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter"), 0
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "waiter")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy")
+     getlocal0
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy"), 1
+     initproperty        QName(PackageNamespace(""), "stageProxy")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "owner_")
+
+     getlex              QName(PackageNamespace(""), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     pushnull
+     equals
+     dup
+     iftrue              L32
+
+     pop
+     getlex              QName(PackageNamespace(""), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player_")
+     pushnull
+     equals
+L32:
+     iffalse             L34
+
+     returnvoid
+
+L34:
+     getlex              QName(PackageNamespace(""), "gs_")
+     getproperty         QName(PackageNamespace(""), "map")
+     getproperty         QName(PackageNamespace(""), "player_")
+     coerce              QName(PackageNamespace("com.company.assembleegameclient.objects"), "Player")
+     setlocal3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16777215
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setWordWrap"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setMultiLine"), 1
+     getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+     getproperty         QName(PackageNamespace(""), "CENTER")
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setHTML"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "nameText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "nameText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_HALL_PORTAL_TITLE")
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     pushstring          "<p align=\"center\">"
+     callproperty        QName(PackageNamespace(""), "setPrefix"), 1
+     pushstring          "</p>"
+     callproperty        QName(PackageNamespace(""), "setPostfix"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "nameText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     dup
+     dup
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "nameText_")
+     pushbyte            6
+     setproperty         QName(PackageNamespace(""), "y")
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "nameText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "guildName_")
+     pushnull
+     equals
+     not
+     dup
+     iffalse             L102
+
+     pop
+     getlocal3
+     getproperty         QName(PackageNamespace(""), "guildName_")
+     getproperty         QName(PackageNamespace(""), "length")
+     pushbyte            0
+     greaterthan
+L102:
+     iffalse             L134
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton")
+     pushbyte            16
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "PANEL_ENTER")
+     constructprop       QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton"), 2
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+     getlex              QName(PackageNamespace("flash.events"), "MouseEvent")
+     getproperty         QName(PackageNamespace(""), "CLICK")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onEnterSpriteClick")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "waiter")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addEventListener")
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "ADDED_TO_STAGE")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onAdded")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     jump                L182
+
+L134:
+     getlocal0
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete"), 0
+     pushbyte            18
+     callproperty        QName(PackageNamespace(""), "setSize"), 1
+     pushint             16711680
+     callproperty        QName(PackageNamespace(""), "setColor"), 1
+     getlex              QName(PackageNamespace(""), "WIDTH")
+     callproperty        QName(PackageNamespace(""), "setTextWidth"), 1
+     getlex              QName(PackageNamespace("flash.text"), "TextFieldAutoSize")
+     getproperty         QName(PackageNamespace(""), "CENTER")
+     callproperty        QName(PackageNamespace(""), "setAutoSize"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setHTML"), 1
+     pushtrue
+     callproperty        QName(PackageNamespace(""), "setBold"), 1
+     initproperty        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+     findpropstrict      QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder")
+     constructprop       QName(PackageNamespace("kabam.rotmg.text.view.stringBuilder"), "LineBuilder"), 0
+     getlex              QName(PackageNamespace("kabam.rotmg.text.model"), "TextKey")
+     getproperty         QName(PackageNamespace(""), "GUILD_HALL_PORTAL_NO_GUILD")
+     callproperty        QName(PackageNamespace(""), "setParams"), 1
+     pushstring          "<p align=\"center\">"
+     callproperty        QName(PackageNamespace(""), "setPrefix"), 1
+     pushstring          "</p>"
+     callproperty        QName(PackageNamespace(""), "setPostfix"), 1
+     callpropvoid        QName(PackageNamespace(""), "setStringBuilder"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+     findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+     pushbyte            0
+     dup
+     dup
+     constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 3
+     newarray            1
+     setproperty         QName(PackageNamespace(""), "filters")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "waiter")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+     getproperty         QName(PackageNamespace(""), "textChanged")
+     callpropvoid        QName(PackageNamespace(""), "push"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "addChild")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+L182:
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "waiter")
+     getproperty         QName(PackageNamespace(""), "complete")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "alignUI")
+     callpropvoid        QName(PackageNamespace(""), "addOnce"), 1
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "stageProxy") type QName(PackageNamespace("com.company.assembleegameclient.util"), "StageProxy") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "owner_") type QName(PackageNamespace("com.company.assembleegameclient.objects"), "GuildHallPortal") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "nameText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_") type QName(PackageNamespace("com.company.assembleegameclient.ui"), "DeprecatedTextButton") end
+  trait slot QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_") type QName(PackageNamespace("kabam.rotmg.text.view"), "TextFieldDisplayConcrete") end
+  trait const QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "waiter") type QName(PackageNamespace("kabam.rotmg.ui.view"), "SignalWaiter") end
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "alignUI")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/alignUI"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+      iffalse             L15
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+      getlex              QName(PackageNamespace(""), "HEIGHT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "noGuildText_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            12
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+L15:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+      iffalse             L40
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+      getlex              QName(PackageNamespace(""), "WIDTH")
+      pushbyte            2
+      divide
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+      getproperty         QName(PackageNamespace(""), "width")
+      pushbyte            2
+      divide
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+      getlex              QName(PackageNamespace(""), "HEIGHT")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterButton_")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      pushbyte            4
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+L40:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onAdded")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/onAdded"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stageProxy")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addEventListener")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "REMOVED_FROM_STAGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onRemoved")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onRemoved")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/onRemoved"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "stageProxy")
+      getlex              QName(PackageNamespace("flash.events"), "KeyboardEvent")
+      getproperty         QName(PackageNamespace(""), "KEY_DOWN")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onKeyDown")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onEnterSpriteClick")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/onEnterSpriteClick"
+    param QName(PackageNamespace("flash.events"), "MouseEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterPortal"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "onKeyDown")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/onKeyDown"
+    param QName(PackageNamespace("flash.events"), "KeyboardEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "keyCode")
+      getlex              QName(PackageNamespace("com.company.assembleegameclient.parameters"), "Parameters")
+      getproperty         QName(PackageNamespace(""), "data_")
+      getproperty         Multiname("interact", [PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), PackageNamespace(""), PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/onKeyDown"), PackageNamespace("com.company.assembleegameclient.ui.panels"), PackageInternalNs("com.company.assembleegameclient.ui.panels"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.company.assembleegameclient.ui.panels:GuildHallPortalPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:GuildHallPortalPanel"), StaticProtectedNs("com.company.assembleegameclient.ui.panels:Panel"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher")])
+      equals
+      dup
+      iffalse             L15
+
+      pop
+      getlex              QName(PackageNamespace(""), "stage")
+      getproperty         QName(PackageNamespace(""), "focus")
+      pushnull
+      equals
+L15:
+      iffalse             L18
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterPortal"), 0
+
+L18:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "enterPortal")
+   method
+    refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance/enterPortal"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 1
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "gs_")
+      getproperty         QName(PackageNamespace(""), "gsc_")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/instance"), "owner_")
+      getproperty         QName(PackageNamespace(""), "objectId_")
+      callpropvoid        QName(PackageNamespace(""), "usePortal"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "com.company.assembleegameclient.ui.panels:GuildHallPortalPanel/class/init"
+  body
+   maxstack 1
+   localcount 1
+   initscopedepth 9
+   maxscopedepth 10
+   code
+    getlocal0
+    pushscope
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class
