@@ -81,7 +81,7 @@ namespace PZUpdater
                 ProcessStartInfo i = new ProcessStartInfo();
                 i.CreateNoWindow = true;
                 i.WindowStyle = ProcessWindowStyle.Hidden;
-                i.WorkingDirectory = workingDirectory;
+                i.WorkingDirectory =  workingDirectory;
                 i.FileName = file;
                 i.Arguments = args;
                 i.RedirectStandardOutput = true;

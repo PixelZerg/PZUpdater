@@ -56,7 +56,7 @@ namespace PZUpdater
 
             if (Consts.UseDMD)
             {
-                Program.RunCommand("rdmd", Consts.RABCDASM_DIR+"abcexport.d \"" + clientFile.FullName + "\"");
+                Program.RunCommand("rdmd", Consts.RABCDASM_DIR_ALT +"abcexport.d \"" + clientFile.FullName + "\"");
             }
             else
             {
@@ -68,7 +68,7 @@ namespace PZUpdater
                 abcFiles.Add(f);
                 if (Consts.UseDMD)
                 {
-                    Program.RunCommand("rdmd", Consts.RABCDASM_DIR + "rabcdasm.d \"" + f.FullName + "\"");
+                    Program.RunCommand("rdmd", Consts.RABCDASM_DIR_ALT + "rabcdasm.d \"" + f.FullName + "\"");
                 }
                 else
                 {

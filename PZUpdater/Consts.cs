@@ -19,6 +19,8 @@ namespace PZUpdater
 
         public const string PACKETIDS_TOP = "\"FAILURE\") slotid 1";
         public const string RABCDASM_DIR = "RABCDAsm\\";
+        public const string RABCDASM_DIR_ALT = "RABCDAsm/";
+        public const string RABCDASM_DIR_WO = "RABCDAsm";
         public const string OUTPUT_DIR = "Output\\";
     }
 }
