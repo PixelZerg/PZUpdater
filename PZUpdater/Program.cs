@@ -43,9 +43,9 @@ namespace PZUpdater
                 Console.WriteLine("FATAL: Your RABCDAsm directory is missing");
                 Console.ResetColor();
             }
-            if (!System.IO.Directory.Exists(Consts.OUTPUT_DIR))
+            if (!System.IO.Directory.Exists(Consts.OUTPUT_DIR_WO))
             {
-                System.IO.Directory.CreateDirectory(Consts.OUTPUT_DIR);
+                System.IO.Directory.CreateDirectory(Consts.OUTPUT_DIR_WO);
             }
 
             if (!overrideDMD)
@@ -81,7 +81,7 @@ namespace PZUpdater
                 ProcessStartInfo i = new ProcessStartInfo();
                 i.CreateNoWindow = true;
                 i.WindowStyle = ProcessWindowStyle.Hidden;
-                i.WorkingDirectory =  workingDirectory;
+                i.WorkingDirectory = workingDirectory;
                 i.FileName = file;
                 i.Arguments = args;
                 i.RedirectStandardOutput = true;
